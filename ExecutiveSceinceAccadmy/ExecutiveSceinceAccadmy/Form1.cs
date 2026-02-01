@@ -6,6 +6,13 @@ using System.Reflection.Emit;
 using System.Windows.Forms;
 //using ExecutiveSceinceAccadmy.StudentRegistration;
 using ExecutiveSceinceAccadmy.studentRegistrationForms;
+using ExecutiveSceinceAccadmy.FeeMangement;
+using ExecutiveSceinceAccadmy.AttendanceMangment;
+using ExecutiveSceinceAccadmy.DashBoadMangement;
+using ExecutiveSceinceAccadmy.ExpenseMangenment;
+using ExecutiveSceinceAccadmy.ReportManagement;
+using ExecutiveSceinceAccadmy.ResultManagement;
+    
 using ExecutiveScienceAcademy.classes;
 namespace ExecutiveSceinceAccadmy
 {
@@ -22,11 +29,11 @@ namespace ExecutiveSceinceAccadmy
                 title: "Executive Science Academy");
 
             StyleControls();
-           this.StartPosition = FormStartPosition.CenterScreen;
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
         private void StyleControls()
         {
-      
+
             UI.Instance.StylePanel(pnLogo,
                 backColor: Color.White,
                 borderColor: Color.FromArgb(0, 120, 215),
@@ -41,14 +48,14 @@ namespace ExecutiveSceinceAccadmy
             UI.Instance.StyleButton(btnExpense, borderRadius: 20);
             UI.Instance.StyleButton(stdBoard, borderRadius: 20);
             UI.Instance.StyleButton(btnTeacherBoard, borderRadius: 20);
-            UI.Instance.AddFormShadow(this);        
+            UI.Instance.AddFormShadow(this);
         }
-      
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
             lbLogo.Text = "Welcome To Executive Science Academy";
-            
+
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -71,7 +78,7 @@ namespace ExecutiveSceinceAccadmy
             }
         }
 
-    
+
         private GraphicsPath GetRoundedRectanglePath(Rectangle rect, int radius)
         {
             GraphicsPath path = new GraphicsPath();
@@ -86,7 +93,7 @@ namespace ExecutiveSceinceAccadmy
             return path;
         }
 
-     
+
         private void btnStdReg_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -101,12 +108,95 @@ namespace ExecutiveSceinceAccadmy
 
         private void btnResult_Click(object sender, EventArgs e)
         {
-            
+            this.Hide();
+            using (resultFrom ResultForm = new resultFrom())
+            {
+                ResultForm.ShowDialog();
+            }
+            this.Show();
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-           
+
+        }
+
+        private void BtnFeeSub_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (FeeForm stdFee = new FeeForm())
+            {
+                stdFee.ShowDialog();
+            }
+
+            this.Show();
+        }
+
+        private void stdBoard_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (DashBoardForm DashBoard = new DashBoardForm())
+            {
+                DashBoard.ShowDialog();
+            }
+
+            this.Show();
+        }
+
+        private void BtnAttend_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (attendanceForm attManagne = new attendanceForm())
+            {
+                attManagne.ShowDialog();
+            }
+
+            this.Show();
+        }
+
+        private void btnTeacherBoard_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (DashBoardForm DashBoard = new DashBoardForm())
+            {
+                DashBoard.ShowDialog();
+            }
+
+            this.Show();
+        }
+        
+
+        private void btnExpense_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (ExpenseForm expenseMange = new ExpenseForm())
+            {
+                expenseMange.ShowDialog();
+            }
+
+            this.Show();
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (ReportForm accaReportForm = new ReportForm())
+            {
+                accaReportForm.ShowDialog();
+            }
+
+            this.Show();
+        }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (DashBoardForm DashBoard = new DashBoardForm())
+            {
+                DashBoard.ShowDialog();
+            }
+
+            this.Show();
         }
     }
 }

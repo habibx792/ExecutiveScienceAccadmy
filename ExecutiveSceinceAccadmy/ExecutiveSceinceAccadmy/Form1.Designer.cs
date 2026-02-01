@@ -81,6 +81,7 @@
             btnAdmin.TabIndex = 2;
             btnAdmin.Text = "Admin DashBoad";
             btnAdmin.UseVisualStyleBackColor = false;
+            btnAdmin.Click += btnAdmin_Click;
             // 
             // BtnAttend
             // 
@@ -93,6 +94,7 @@
             BtnAttend.TabIndex = 3;
             BtnAttend.Text = "Attendance Mangement";
             BtnAttend.UseVisualStyleBackColor = false;
+            BtnAttend.Click += BtnAttend_Click;
             // 
             // btnReport
             // 
@@ -105,6 +107,7 @@
             btnReport.TabIndex = 4;
             btnReport.Text = "Accadmy Reports";
             btnReport.UseVisualStyleBackColor = false;
+            btnReport.Click += btnReport_Click;
             // 
             // BtnFeeSub
             // 
@@ -117,6 +120,7 @@
             BtnFeeSub.TabIndex = 5;
             BtnFeeSub.Text = "Fee Management";
             BtnFeeSub.UseVisualStyleBackColor = false;
+            BtnFeeSub.Click += BtnFeeSub_Click;
             // 
             // pnMagnt
             // 
@@ -145,6 +149,7 @@
             btnExpense.TabIndex = 8;
             btnExpense.Text = "Expense Mangement";
             btnExpense.UseVisualStyleBackColor = false;
+            btnExpense.Click += btnExpense_Click;
             // 
             // btnTeacherBoard
             // 
@@ -157,6 +162,7 @@
             btnTeacherBoard.TabIndex = 7;
             btnTeacherBoard.Text = "Teacher DashBoard";
             btnTeacherBoard.UseVisualStyleBackColor = false;
+            btnTeacherBoard.Click += btnTeacherBoard_Click;
             // 
             // stdBoard
             // 
@@ -169,6 +175,7 @@
             stdBoard.TabIndex = 6;
             stdBoard.Text = "Student DashBoard";
             stdBoard.UseVisualStyleBackColor = false;
+            stdBoard.Click += stdBoard_Click;
             // 
             // pnLogo
             // 
