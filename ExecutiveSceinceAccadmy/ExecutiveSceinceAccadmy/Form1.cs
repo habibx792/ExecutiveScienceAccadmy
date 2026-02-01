@@ -26,7 +26,7 @@ namespace ExecutiveSceinceAccadmy
         }
         private void StyleControls()
         {
-         
+      
             UI.Instance.StylePanel(pnLogo,
                 backColor: Color.White,
                 borderColor: Color.FromArgb(0, 120, 215),

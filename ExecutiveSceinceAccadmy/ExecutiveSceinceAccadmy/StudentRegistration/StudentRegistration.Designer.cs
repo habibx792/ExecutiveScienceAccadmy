@@ -14,29 +14,29 @@
 
         private void InitializeComponent()
         {
-            stdBoard = new Button();
+            btnSupReg = new Button();
             btnStdReg = new Button();
             BtnFeeSub = new Button();
             pnLogo = new Panel();
             lbLogo = new Label();
-            button3 = new Button();
-            panel1 = new Panel();
+            btnPrimaryReg = new Button();
+            pnMain = new Panel();
             pnLogo.SuspendLayout();
-            panel1.SuspendLayout();
+            pnMain.SuspendLayout();
             SuspendLayout();
             // 
-            // stdBoard
+            // btnSupReg
             // 
-            stdBoard.BackColor = Color.Black;
-            stdBoard.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            stdBoard.ForeColor = Color.Blue;
-            stdBoard.Location = new Point(573, 232);
-            stdBoard.Name = "stdBoard";
-            stdBoard.Size = new Size(348, 129);
-            stdBoard.TabIndex = 9;
-            stdBoard.Text = "Supplementary";
-            stdBoard.UseVisualStyleBackColor = false;
-            stdBoard.Click += stdBoard_Click;
+            btnSupReg.BackColor = Color.Black;
+            btnSupReg.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSupReg.ForeColor = Color.Blue;
+            btnSupReg.Location = new Point(573, 238);
+            btnSupReg.Name = "btnSupReg";
+            btnSupReg.Size = new Size(348, 129);
+            btnSupReg.TabIndex = 9;
+            btnSupReg.Text = "Supplementary";
+            btnSupReg.UseVisualStyleBackColor = false;
+            btnSupReg.Click += stdBoard_Click;
             // 
             // btnStdReg
             // 
@@ -82,29 +82,30 @@
             lbLogo.TabIndex = 0;
             lbLogo.Text = "Welcome To Executive Sceince Accadmy";
             // 
-            // button3
+            // btnPrimaryReg
             // 
-            button3.BackColor = Color.Black;
-            button3.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.Blue;
-            button3.Location = new Point(106, 247);
-            button3.Name = "button3";
-            button3.Size = new Size(340, 129);
-            button3.TabIndex = 13;
-            button3.Text = "Primary Student Student";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
+            btnPrimaryReg.BackColor = Color.Black;
+            btnPrimaryReg.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPrimaryReg.ForeColor = Color.Blue;
+            btnPrimaryReg.Location = new Point(106, 247);
+            btnPrimaryReg.Name = "btnPrimaryReg";
+            btnPrimaryReg.Size = new Size(340, 129);
+            btnPrimaryReg.TabIndex = 13;
+            btnPrimaryReg.Text = "Primary Student Student";
+            btnPrimaryReg.UseVisualStyleBackColor = false;
+            btnPrimaryReg.Click += button3_Click;
             // 
-            // panel1
+            // pnMain
             // 
-            panel1.Controls.Add(BtnFeeSub);
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(btnStdReg);
-            panel1.Controls.Add(stdBoard);
-            panel1.Location = new Point(81, 143);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1178, 482);
-            panel1.TabIndex = 14;
+            pnMain.Controls.Add(BtnFeeSub);
+            pnMain.Controls.Add(btnPrimaryReg);
+            pnMain.Controls.Add(btnStdReg);
+            pnMain.Controls.Add(btnSupReg);
+            pnMain.Location = new Point(81, 143);
+            pnMain.Name = "pnMain";
+            pnMain.Size = new Size(1178, 482);
+            pnMain.TabIndex = 14;
+            pnMain.Paint += panel1_Paint;
             // 
             // StudentRegistration
             // 
@@ -112,23 +113,23 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.OrangeRed;
             ClientSize = new Size(1318, 637);
-            Controls.Add(panel1);
+            Controls.Add(pnMain);
             Controls.Add(pnLogo);
             Name = "StudentRegistration";
             Text = "stdRegForm";
             Load += StudentRegistration_Load_1;
             pnLogo.ResumeLayout(false);
             pnLogo.PerformLayout();
-            panel1.ResumeLayout(false);
+            pnMain.ResumeLayout(false);
             ResumeLayout(false);
         }
 
-        private Button stdBoard;
+        private Button btnSupReg;
         private Button btnStdReg;
         private Button BtnFeeSub;
         private Panel pnLogo;
         private Label lbLogo;
-        private Button button3;
-        private Panel panel1;
+        private Button btnPrimaryReg;
+        private Panel pnMain;
     }
 }

@@ -27,7 +27,25 @@ namespace ExecutiveSceinceAccadmy.studentRegistrationForms
 
         private void StyleControls()
         {
-            UI.Instance.AddFormShadow(this);
+          
+        {
+            
+            UI.Instance.StylePanel(pnLogo,
+                backColor: Color.White,
+                borderColor: Color.FromArgb(0, 120, 215),
+                borderRadius: 20,
+                borderThickness: 2);
+            UI.Instance.StyleButton(btnStdReg, borderRadius: 20);
+            UI.Instance.StyleButton(BtnFeeSub, borderRadius: 20);
+                UI.Instance.StyleButton(btnPrimaryReg, borderRadius: 20);
+                UI.Instance.StyleButton(btnSupReg, borderRadius: 20);
+                UI.Instance.StylePanel(pnMain,
+               backColor: Color.White,
+               borderColor: Color.FromArgb(0, 120, 215),
+               borderRadius: 20,
+               borderThickness: 2);
+                UI.Instance.AddFormShadow(this);
+        }
 
         }
 
@@ -57,6 +75,11 @@ namespace ExecutiveSceinceAccadmy.studentRegistrationForms
         }
 
         private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
