@@ -41,8 +41,9 @@ namespace ExecutiveScienceAcademy.classes
         // Title bar height
         private const int TitleBarHeight = 40;
 
-        // Track created title bars
-        private Dictionary<Form, Panel> _formTitleBars = new Dictionary<Form, Panel>();
+        // Track form state
+        private Dictionary<Form, (Panel TitleBar, Button MinBtn, Button MaxBtn, Button CloseBtn, Label TitleLabel)> _formStates =
+            new Dictionary<Form, (Panel, Button, Button, Button, Label)>();
 
         // =======================
         // Style Form with Modern Controls
@@ -60,10 +61,6 @@ namespace ExecutiveScienceAcademy.classes
             form.FormBorderStyle = FormBorderStyle.None;
             form.DoubleBuffered(true);
 
-            // Store original size before adjustments
-            int originalHeight = form.Height;
-            int originalWidth = form.Width;
-
             // Apply rounded corners
             UpdateFormRoundedCorners(form, borderRadius);
 
@@ -71,9 +68,10 @@ namespace ExecutiveScienceAcademy.classes
             if (showCustomTitleBar)
             {
                 // Adjust form size to accommodate title bar
-                form.Height += TitleBarHeight;
+                int originalHeight = form.Height;
+                form.Height = originalHeight + TitleBarHeight;
 
-                // Move all existing controls down
+                // Move all existing controls down EXCEPT the title bar
                 MoveControlsDown(form, TitleBarHeight);
 
                 AddCustomTitleBar(form, titleBarColor, PrimaryColor, title ?? form.Text, borderRadius);
@@ -91,53 +89,97 @@ namespace ExecutiveScienceAcademy.classes
                 };
             }
 
-            // Update on resize
-            form.Resize += (s, e) =>
-            {
-                UpdateFormRoundedCorners(form, borderRadius);
+            // Handle form events
+            form.Resize += (s, e) => HandleFormResize(form, borderRadius);
+            form.ResizeBegin += (s, e) => SuspendTitleBarUpdates(form);
+            form.ResizeEnd += (s, e) => ResumeTitleBarUpdates(form, borderRadius);
 
-                // Update title bar width when form resizes
-                if (_formTitleBars.ContainsKey(form))
+            // Handle form closing to clean up
+            form.FormClosed += (s, e) =>
+            {
+                if (_formStates.ContainsKey(form))
                 {
-                    _formTitleBars[form].Width = form.Width;
+                    _formStates.Remove(form);
                 }
             };
-
-            // Handle maximize/restore
-            form.ResizeEnd += (s, e) =>
+        }
+        public void AddFormShadow(Form f)
+        {
+            f.Paint += (s, e) =>
             {
-                if (form.WindowState == FormWindowState.Maximized)
-                {
-                    form.Region = null; // Remove rounded corners when maximized
-                    // Hide custom title bar buttons in maximize mode
-                    if (_formTitleBars.ContainsKey(form))
-                    {
-                        UpdateTitleBarForMaximize(form, true);
-                    }
-                }
-                else
-                {
-                    UpdateFormRoundedCorners(form, borderRadius);
-                    // Show custom title bar buttons in normal mode
-                    if (_formTitleBars.ContainsKey(form))
-                    {
-                        UpdateTitleBarForMaximize(form, false);
-                    }
-                }
+                // Draw subtle shadow around form
+                ControlPaint.DrawBorder(e.Graphics, f.ClientRectangle,
+                    Color.FromArgb(100, 0, 0, 0), 0, ButtonBorderStyle.None,
+                    Color.FromArgb(100, 0, 0, 0), 0, ButtonBorderStyle.None,
+                    Color.FromArgb(100, 0, 0, 0), 1, ButtonBorderStyle.None,
+                    Color.FromArgb(100, 0, 0, 0), 1, ButtonBorderStyle.None);
             };
         }
 
         // =======================
-        // Move all existing controls down
+        // Handle Form Resize
+        // =======================
+        private void HandleFormResize(Form form, int borderRadius)
+        {
+            if (!_formStates.ContainsKey(form)) return;
+
+            var (titleBar, minBtn, maxBtn, closeBtn, titleLabel) = _formStates[form];
+
+            // Update title bar width
+            titleBar.Width = form.Width;
+
+            // Update button positions
+            if (closeBtn != null)
+                closeBtn.Left = form.Width - closeBtn.Width - 10;
+            if (maxBtn != null)
+                maxBtn.Left = closeBtn.Left - maxBtn.Width - 2;
+            if (minBtn != null)
+                minBtn.Left = maxBtn.Left - minBtn.Width - 2;
+
+            // Update rounded corners based on window state
+            if (form.WindowState == FormWindowState.Maximized)
+            {
+                form.Region = null;
+                if (maxBtn != null) maxBtn.Text = "🗗";
+            }
+            else
+            {
+                UpdateFormRoundedCorners(form, borderRadius);
+                if (maxBtn != null) maxBtn.Text = "🗖";
+            }
+        }
+
+        private void SuspendTitleBarUpdates(Form form)
+        {
+            if (!_formStates.ContainsKey(form)) return;
+
+            var (titleBar, minBtn, maxBtn, closeBtn, titleLabel) = _formStates[form];
+            titleBar.SuspendLayout();
+        }
+
+        private void ResumeTitleBarUpdates(Form form, int borderRadius)
+        {
+            if (!_formStates.ContainsKey(form)) return;
+
+            var (titleBar, minBtn, maxBtn, closeBtn, titleLabel) = _formStates[form];
+            titleBar.ResumeLayout();
+            HandleFormResize(form, borderRadius);
+        }
+
+        // =======================
+        // Move controls down (excluding title bar)
         // =======================
         private void MoveControlsDown(Form form, int pixels)
         {
             List<Control> controls = new List<Control>();
 
-            // Collect all controls
+            // Collect all controls except future title bar
             foreach (Control control in form.Controls)
             {
-                controls.Add(control);
+                if (!(control is Panel && control.Name == "TitleBar"))
+                {
+                    controls.Add(control);
+                }
             }
 
             // Move each control down
@@ -148,7 +190,7 @@ namespace ExecutiveScienceAcademy.classes
         }
 
         // =======================
-        // Add Custom Title Bar with Controls (Fixed Order)
+        // Add Custom Title Bar with Controls (FIXED VERSION)
         // =======================
         private void AddCustomTitleBar(Form form, Color titleBarColor, Color accentColor,
                                      string titleText, int borderRadius)
@@ -161,7 +203,8 @@ namespace ExecutiveScienceAcademy.classes
                 BackColor = titleBarColor,
                 Location = new Point(0, 0),
                 Name = "TitleBar",
-                Padding = new Padding(15, 0, 10, 0)
+                Padding = new Padding(15, 0, 10, 0),
+                Dock = DockStyle.Top
             };
 
             // Title label
@@ -174,15 +217,13 @@ namespace ExecutiveScienceAcademy.classes
                 TextAlign = ContentAlignment.MiddleLeft,
                 AutoSize = true,
                 Height = 25,
-                Name = "TitleLabel"
+                Name = "TitleLabel",
+                BackColor = Color.Transparent
             };
-
-            // Calculate button positions from right to left
-            int rightMargin = 10;
 
             // Close button
             Button closeBtn = CreateTitleBarButton("✕", Color.FromArgb(220, 53, 69));
-            closeBtn.Location = new Point(form.Width - closeBtn.Width - rightMargin,
+            closeBtn.Location = new Point(form.Width - closeBtn.Width - 10,
                                          (TitleBarHeight - closeBtn.Height) / 2);
             closeBtn.Click += (s, e) => form.Close();
             closeBtn.Name = "CloseButton";
@@ -198,14 +239,12 @@ namespace ExecutiveScienceAcademy.classes
                     form.WindowState = FormWindowState.Normal;
                     maxBtn.Text = "🗖";
                     UpdateFormRoundedCorners(form, borderRadius);
-                    UpdateTitleBarForMaximize(form, false);
                 }
                 else
                 {
                     form.WindowState = FormWindowState.Maximized;
                     maxBtn.Text = "🗗";
                     form.Region = null;
-                    UpdateTitleBarForMaximize(form, true);
                 }
             };
             maxBtn.Name = "MaximizeButton";
@@ -217,7 +256,7 @@ namespace ExecutiveScienceAcademy.classes
             minBtn.Click += (s, e) => form.WindowState = FormWindowState.Minimized;
             minBtn.Name = "MinimizeButton";
 
-            // Add controls to title bar IN CORRECT ORDER
+            // Add controls to title bar
             titleBar.Controls.Add(titleLabel);
             titleBar.Controls.Add(minBtn);
             titleBar.Controls.Add(maxBtn);
@@ -243,48 +282,15 @@ namespace ExecutiveScienceAcademy.classes
                 }
             };
 
-            // Add title bar to form AT THE BEGINNING (so it's at index 0)
+            // Add title bar to form
             form.Controls.Add(titleBar);
             titleBar.BringToFront();
 
-            // Store reference to title bar
-            _formTitleBars[form] = titleBar;
+            // Store all references
+            _formStates[form] = (titleBar, minBtn, maxBtn, closeBtn, titleLabel);
 
             // Update title label when form text changes
             form.TextChanged += (s, e) => titleLabel.Text = form.Text;
-
-            // Handle form closing to clean up
-            form.FormClosed += (s, e) =>
-            {
-                if (_formTitleBars.ContainsKey(form))
-                {
-                    _formTitleBars.Remove(form);
-                }
-            };
-        }
-
-        private void UpdateTitleBarForMaximize(Form form, bool isMaximized)
-        {
-            if (!_formTitleBars.ContainsKey(form)) return;
-
-            Panel titleBar = _formTitleBars[form];
-            if (isMaximized)
-            {
-                // Adjust title bar width when maximized
-                titleBar.Width = form.Width;
-
-                // Reposition buttons
-                Control closeBtn = titleBar.Controls["CloseButton"];
-                Control maxBtn = titleBar.Controls["MaximizeButton"];
-                Control minBtn = titleBar.Controls["MinimizeButton"];
-
-                if (closeBtn != null)
-                    closeBtn.Left = titleBar.Width - closeBtn.Width - 10;
-                if (maxBtn != null)
-                    maxBtn.Left = closeBtn.Left - maxBtn.Width - 2;
-                if (minBtn != null)
-                    minBtn.Left = maxBtn.Left - minBtn.Width - 2;
-            }
         }
 
         private Button CreateTitleBarButton(string text, Color backColor)
@@ -448,111 +454,29 @@ namespace ExecutiveScienceAcademy.classes
             txtBox.Font = new Font("Segoe UI", 10);
             txtBox.Padding = new Padding(10, 8, 10, 8);
 
-            // Store original location
-            Point originalLocation = txtBox.Location;
-            Control parent = txtBox.Parent;
-
             // Create rounded border panel
             Panel borderPanel = new Panel
             {
                 BackColor = borderColor ?? Color.FromArgb(220, 220, 220),
                 Size = new Size(txtBox.Width + 2, txtBox.Height + 2),
-                Location = new Point(originalLocation.X - 1, originalLocation.Y - 1),
+                Location = new Point(txtBox.Left - 1, txtBox.Top - 1),
                 Padding = new Padding(1)
             };
 
             ApplyRoundedCorners(borderPanel, borderRadius);
 
             // Remove textbox from parent and add to border panel
-            parent.Controls.Remove(txtBox);
+            txtBox.Parent.Controls.Remove(txtBox);
             borderPanel.Controls.Add(txtBox);
             txtBox.Dock = DockStyle.Fill;
 
             // Add border panel to parent
-            parent.Controls.Add(borderPanel);
+            txtBox.Parent.Controls.Add(borderPanel);
             borderPanel.BringToFront();
 
             // Focus effects
             txtBox.Enter += (s, e) => borderPanel.BackColor = PrimaryColor;
             txtBox.Leave += (s, e) => borderPanel.BackColor = borderColor ?? Color.FromArgb(220, 220, 220);
-        }
-
-        // =======================
-        // Style ComboBox
-        // =======================
-        public void StyleComboBox(ComboBox comboBox, int borderRadius = 8, Color? borderColor = null)
-        {
-            if (comboBox == null) return;
-
-            comboBox.FlatStyle = FlatStyle.Flat;
-            comboBox.BackColor = Color.White;
-            comboBox.Font = new Font("Segoe UI", 10);
-            comboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-
-            // Create rounded border panel
-            Panel borderPanel = new Panel
-            {
-                BackColor = borderColor ?? Color.FromArgb(220, 220, 220),
-                Size = new Size(comboBox.Width + 2, comboBox.Height + 2),
-                Location = new Point(comboBox.Left - 1, comboBox.Top - 1),
-                Padding = new Padding(1)
-            };
-
-            ApplyRoundedCorners(borderPanel, borderRadius);
-
-            // Remove combobox from parent and add to border panel
-            comboBox.Parent.Controls.Remove(comboBox);
-            borderPanel.Controls.Add(comboBox);
-            comboBox.Dock = DockStyle.Fill;
-
-            // Add border panel to parent
-            comboBox.Parent.Controls.Add(borderPanel);
-            borderPanel.BringToFront();
-
-            // Focus effects
-            comboBox.Enter += (s, e) => borderPanel.BackColor = PrimaryColor;
-            comboBox.Leave += (s, e) => borderPanel.BackColor = borderColor ?? Color.FromArgb(220, 220, 220);
-        }
-
-        // =======================
-        // Style DataGridView
-        // =======================
-        public void StyleDataGridView(DataGridView dgv, int borderRadius = 10)
-        {
-            if (dgv == null) return;
-
-            dgv.BorderStyle = BorderStyle.None;
-            dgv.BackgroundColor = Color.White;
-            dgv.GridColor = Color.FromArgb(240, 240, 240);
-            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(0, 120, 215, 50);
-            dgv.DefaultCellStyle.SelectionForeColor = Color.Black;
-            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(248, 248, 248);
-            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(50, 50, 50);
-            dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-            dgv.RowHeadersVisible = false;
-            dgv.EnableHeadersVisualStyles = false;
-            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgv.RowTemplate.Height = 35;
-            dgv.DoubleBuffered(true);
-
-            // Add rounded corners to DataGridView
-            Panel dgvContainer = new Panel
-            {
-                BackColor = Color.FromArgb(50, 50, 50),
-                Location = new Point(dgv.Left - 1, dgv.Top - 1),
-                Size = new Size(dgv.Width + 2, dgv.Height + 2),
-                Padding = new Padding(1)
-            };
-
-            ApplyRoundedCorners(dgvContainer, borderRadius);
-
-            // Move DataGridView into container
-            dgv.Parent.Controls.Remove(dgv);
-            dgvContainer.Controls.Add(dgv);
-            dgv.Dock = DockStyle.Fill;
-            dgv.Parent.Controls.Add(dgvContainer);
-            dgvContainer.BringToFront();
         }
 
         // =======================
@@ -604,6 +528,24 @@ namespace ExecutiveScienceAcademy.classes
         // =======================
         // Additional Modern Styling Methods
         // =======================
+        public void StyleDataGridView(DataGridView dgv)
+        {
+            if (dgv == null) return;
+
+            dgv.BorderStyle = BorderStyle.None;
+            dgv.BackgroundColor = Color.White;
+            dgv.GridColor = Color.FromArgb(240, 240, 240);
+            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(0, 120, 215, 50);
+            dgv.DefaultCellStyle.SelectionForeColor = Color.Black;
+            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(248, 248, 248);
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(50, 50, 50);
+            dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            dgv.RowHeadersVisible = false;
+            dgv.EnableHeadersVisualStyles = false;
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
         public void StyleLabel(Label label, bool isTitle = false)
         {
             if (label == null) return;
@@ -618,39 +560,6 @@ namespace ExecutiveScienceAcademy.classes
                 label.Font = new Font("Segoe UI", 10);
                 label.ForeColor = Color.FromArgb(80, 80, 80);
             }
-        }
-
-        public void StyleGroupBox(GroupBox groupBox, int borderRadius = 10)
-        {
-            if (groupBox == null) return;
-
-            groupBox.FlatStyle = FlatStyle.Flat;
-            groupBox.ForeColor = Color.FromArgb(50, 50, 50);
-            groupBox.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-
-            // Custom painting for rounded groupbox
-            groupBox.Paint += (s, e) =>
-            {
-                GroupBox gb = s as GroupBox;
-                if (gb == null) return;
-
-                e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-
-                // Draw rounded border
-                using (GraphicsPath path = GetRoundedRectanglePath(
-                    new Rectangle(0, gb.Font.Height / 2, gb.Width - 1, gb.Height - gb.Font.Height / 2 - 1),
-                    borderRadius))
-                using (Pen pen = new Pen(Color.FromArgb(200, 200, 200), 1))
-                {
-                    e.Graphics.DrawPath(pen, path);
-                }
-
-                // Draw groupbox text
-                Size textSize = TextRenderer.MeasureText(gb.Text, gb.Font);
-                Rectangle textRect = new Rectangle(15, 0, textSize.Width, textSize.Height);
-                e.Graphics.FillRectangle(new SolidBrush(gb.BackColor), textRect);
-                e.Graphics.DrawString(gb.Text, gb.Font, new SolidBrush(gb.ForeColor), 15, 0);
-            };
         }
 
         #region Win32 API for dragging

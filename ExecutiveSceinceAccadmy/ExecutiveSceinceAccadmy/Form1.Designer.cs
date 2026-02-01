@@ -32,9 +32,12 @@
             btnResult = new Button();
             btnAdmin = new Button();
             BtnAttend = new Button();
-            btnExpense = new Button();
+            btnReport = new Button();
             BtnFeeSub = new Button();
             pnMagnt = new Panel();
+            btnExpense = new Button();
+            btnTeacherBoard = new Button();
+            stdBoard = new Button();
             pnLogo = new Panel();
             lbLogo = new Label();
             pnMagnt.SuspendLayout();
@@ -46,7 +49,7 @@
             btnStdReg.BackColor = Color.Black;
             btnStdReg.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnStdReg.ForeColor = Color.Blue;
-            btnStdReg.Location = new Point(27, 43);
+            btnStdReg.Location = new Point(27, 30);
             btnStdReg.Name = "btnStdReg";
             btnStdReg.Size = new Size(349, 129);
             btnStdReg.TabIndex = 0;
@@ -59,7 +62,7 @@
             btnResult.BackColor = Color.Black;
             btnResult.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnResult.ForeColor = Color.Blue;
-            btnResult.Location = new Point(27, 201);
+            btnResult.Location = new Point(421, 188);
             btnResult.Name = "btnResult";
             btnResult.Size = new Size(349, 129);
             btnResult.TabIndex = 1;
@@ -72,7 +75,7 @@
             btnAdmin.BackColor = Color.Black;
             btnAdmin.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAdmin.ForeColor = Color.Blue;
-            btnAdmin.Location = new Point(790, 201);
+            btnAdmin.Location = new Point(790, 342);
             btnAdmin.Name = "btnAdmin";
             btnAdmin.Size = new Size(348, 129);
             btnAdmin.TabIndex = 2;
@@ -84,31 +87,31 @@
             BtnAttend.BackColor = Color.Black;
             BtnAttend.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             BtnAttend.ForeColor = Color.Blue;
-            BtnAttend.Location = new Point(790, 43);
+            BtnAttend.Location = new Point(28, 179);
             BtnAttend.Name = "BtnAttend";
             BtnAttend.Size = new Size(348, 129);
             BtnAttend.TabIndex = 3;
             BtnAttend.Text = "Attendance Mangement";
             BtnAttend.UseVisualStyleBackColor = false;
             // 
-            // btnExpense
+            // btnReport
             // 
-            btnExpense.BackColor = Color.Black;
-            btnExpense.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnExpense.ForeColor = Color.Blue;
-            btnExpense.Location = new Point(421, 201);
-            btnExpense.Name = "btnExpense";
-            btnExpense.Size = new Size(340, 129);
-            btnExpense.TabIndex = 4;
-            btnExpense.Text = "Expense Mangement";
-            btnExpense.UseVisualStyleBackColor = false;
+            btnReport.BackColor = Color.Black;
+            btnReport.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnReport.ForeColor = Color.Blue;
+            btnReport.Location = new Point(421, 342);
+            btnReport.Name = "btnReport";
+            btnReport.Size = new Size(349, 129);
+            btnReport.TabIndex = 4;
+            btnReport.Text = "Accadmy Reports";
+            btnReport.UseVisualStyleBackColor = false;
             // 
             // BtnFeeSub
             // 
             BtnFeeSub.BackColor = Color.Black;
             BtnFeeSub.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             BtnFeeSub.ForeColor = Color.Blue;
-            BtnFeeSub.Location = new Point(421, 43);
+            BtnFeeSub.Location = new Point(421, 30);
             BtnFeeSub.Name = "BtnFeeSub";
             BtnFeeSub.Size = new Size(340, 129);
             BtnFeeSub.TabIndex = 5;
@@ -117,16 +120,55 @@
             // 
             // pnMagnt
             // 
+            pnMagnt.Controls.Add(btnExpense);
+            pnMagnt.Controls.Add(btnTeacherBoard);
+            pnMagnt.Controls.Add(stdBoard);
             pnMagnt.Controls.Add(btnStdReg);
             pnMagnt.Controls.Add(BtnFeeSub);
             pnMagnt.Controls.Add(btnResult);
-            pnMagnt.Controls.Add(btnExpense);
+            pnMagnt.Controls.Add(btnReport);
             pnMagnt.Controls.Add(btnAdmin);
             pnMagnt.Controls.Add(BtnAttend);
             pnMagnt.Location = new Point(114, 153);
             pnMagnt.Name = "pnMagnt";
-            pnMagnt.Size = new Size(1155, 358);
+            pnMagnt.Size = new Size(1155, 483);
             pnMagnt.TabIndex = 6;
+            // 
+            // btnExpense
+            // 
+            btnExpense.BackColor = Color.Black;
+            btnExpense.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnExpense.ForeColor = Color.Blue;
+            btnExpense.Location = new Point(28, 342);
+            btnExpense.Name = "btnExpense";
+            btnExpense.Size = new Size(348, 129);
+            btnExpense.TabIndex = 8;
+            btnExpense.Text = "Expense Mangement";
+            btnExpense.UseVisualStyleBackColor = false;
+            // 
+            // btnTeacherBoard
+            // 
+            btnTeacherBoard.BackColor = Color.Black;
+            btnTeacherBoard.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnTeacherBoard.ForeColor = Color.Blue;
+            btnTeacherBoard.Location = new Point(790, 179);
+            btnTeacherBoard.Name = "btnTeacherBoard";
+            btnTeacherBoard.Size = new Size(348, 129);
+            btnTeacherBoard.TabIndex = 7;
+            btnTeacherBoard.Text = "Teacher DashBoard";
+            btnTeacherBoard.UseVisualStyleBackColor = false;
+            // 
+            // stdBoard
+            // 
+            stdBoard.BackColor = Color.Black;
+            stdBoard.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            stdBoard.ForeColor = Color.Blue;
+            stdBoard.Location = new Point(790, 30);
+            stdBoard.Name = "stdBoard";
+            stdBoard.Size = new Size(348, 129);
+            stdBoard.TabIndex = 6;
+            stdBoard.Text = "Student DashBoard";
+            stdBoard.UseVisualStyleBackColor = false;
             // 
             // pnLogo
             // 
@@ -140,10 +182,10 @@
             // lbLogo
             // 
             lbLogo.AutoSize = true;
-            lbLogo.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbLogo.Location = new Point(340, 26);
+            lbLogo.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbLogo.Location = new Point(397, 23);
             lbLogo.Name = "lbLogo";
-            lbLogo.Size = new Size(364, 25);
+            lbLogo.Size = new Size(529, 37);
             lbLogo.TabIndex = 0;
             lbLogo.Text = "Welcome To Executive Sceince Accadmy";
             lbLogo.Click += label1_Click;
@@ -170,10 +212,13 @@
         private Button btnResult;
         private Button btnAdmin;
         private Button BtnAttend;
-        private Button btnExpense;
+        private Button btnReport;
         private Button BtnFeeSub;
         private Panel pnMagnt;
         private Panel pnLogo;
         private Label lbLogo;
+        private Button stdBoard;
+        private Button btnExpense;
+        private Button btnTeacherBoard;
     }
 }

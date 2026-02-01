@@ -15,3 +15,4 @@ D:\Programming\Projects\ExecutiveScienceAccadmy\ExecutiveSceinceAccadmy\Executiv
 D:\Programming\Projects\ExecutiveScienceAccadmy\ExecutiveSceinceAccadmy\ExecutiveSceinceAccadmy\obj\Debug\net8.0-windows\ExecutiveSceinceAccadmy.pdb
 D:\Programming\Projects\ExecutiveScienceAccadmy\ExecutiveSceinceAccadmy\ExecutiveSceinceAccadmy\obj\Debug\net8.0-windows\ExecutiveSceinceAccadmy.genruntimeconfig.cache
 D:\Programming\Projects\ExecutiveScienceAccadmy\ExecutiveSceinceAccadmy\ExecutiveSceinceAccadmy\obj\Debug\net8.0-windows\ref\ExecutiveSceinceAccadmy.dll
+D:\Programming\Projects\ExecutiveScienceAccadmy\ExecutiveSceinceAccadmy\ExecutiveSceinceAccadmy\obj\Debug\net8.0-windows\ExecutiveSceinceAccadmy.studentRegistrationForms.StudentRegistration.resources
