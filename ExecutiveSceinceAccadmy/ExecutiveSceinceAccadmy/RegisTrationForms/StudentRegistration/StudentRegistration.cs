@@ -1,4 +1,7 @@
-﻿using ExecutiveScienceAcademy.classes;
+﻿using ExecutiveSceinceAccadmy.RegisTrationForms.RegularReg;
+using ExecutiveSceinceAccadmy.RegisTrationForms.RtsReg;
+using ExecutiveSceinceAccadmy.RegisTrationForms.suplementaryReg;
+using ExecutiveScienceAcademy.classes;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -45,7 +48,8 @@ namespace ExecutiveSceinceAccadmy.studentRegistrationForms
                borderRadius: 20,
                borderThickness: 2);
                 UI.Instance.AddFormShadow(this);
-        }
+                UI.Instance.setFormSize(this, 1373, 687);
+            }
 
         }
 
@@ -61,22 +65,48 @@ namespace ExecutiveSceinceAccadmy.studentRegistrationForms
 
         private void btnStdReg_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            using (RegularReg stdRegForm = new RegularReg())
+            {
+                stdRegForm.ShowDialog();
+            }
 
+            this.Show();
         }
 
         private void BtnFeeSub_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            using (RTSReg stdRegForm = new RTSReg())
+            {
+                stdRegForm.ShowDialog();
+            }
+
+            this.Show();
+
 
         }
 
         private void stdBoard_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            using (suplemenaryRegForm stdRegForm = new suplemenaryRegForm())
+            {
+                stdRegForm.ShowDialog();
+            }
 
+            this.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            using (PrimaryRegForm stdRegForm = new PrimaryRegForm())
+            {
+                stdRegForm.ShowDialog();
+            }
 
+            this.Show();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

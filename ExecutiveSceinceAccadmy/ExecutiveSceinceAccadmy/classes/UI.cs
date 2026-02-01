@@ -115,6 +115,10 @@ namespace ExecutiveScienceAcademy.classes
                     Color.FromArgb(100, 0, 0, 0), 1, ButtonBorderStyle.None);
             };
         }
+        public void setFormSize(Form f,int w,int h) 
+        {
+            f.Size = new Size(w, h);
+        }
 
         // =======================
         // Handle Form Resize
