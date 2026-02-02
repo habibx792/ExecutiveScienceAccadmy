@@ -449,39 +449,123 @@ namespace ExecutiveScienceAcademy.classes
         // =======================
         // Style TextBox with modern look
         // =======================
-        public void StyleTextBox(TextBox txtBox, int borderRadius = 8, Color? borderColor = null)
-        {
-            if (txtBox == null) return;
+        //public void MakeTextBoxModern(TextBox tb)
+        //{
+        //    if (tb == null || tb.Parent == null) return;
 
-            txtBox.BorderStyle = BorderStyle.None;
-            txtBox.BackColor = Color.White;
-            txtBox.Font = new Font("Segoe UI", 10);
-            txtBox.Padding = new Padding(10, 8, 10, 8);
+        //    Form form = tb.FindForm();
+        //    if (form == null) return;
 
-            // Create rounded border panel
-            Panel borderPanel = new Panel
-            {
-                BackColor = borderColor ?? Color.FromArgb(220, 220, 220),
-                Size = new Size(txtBox.Width + 2, txtBox.Height + 2),
-                Location = new Point(txtBox.Left - 1, txtBox.Top - 1),
-                Padding = new Padding(1)
-            };
+        //    int radius = 6; // Smaller radius for modern look
+        //    Color normal = Color.FromArgb(210, 210, 210); // Better gray
+        //    Color focused = Color.FromArgb(0, 120, 215);
 
-            ApplyRoundedCorners(borderPanel, borderRadius);
+        //    tb.BorderStyle = BorderStyle.None;
+        //    tb.BackColor = Color.WhiteSmoke; // Better background
+        //    tb.Font = new Font("Segoe UI", 10f);
+        //    tb.Height = 36; // Better touch target
 
-            // Remove textbox from parent and add to border panel
-            txtBox.Parent.Controls.Remove(txtBox);
-            borderPanel.Controls.Add(txtBox);
-            txtBox.Dock = DockStyle.Fill;
+        //    // Only use Multiline if needed
+        //    if (!tb.Multiline)
+        //    {
+        //        tb.Multiline = true;
+        //        tb.MinimumSize = new Size(0, tb.Height);
+        //        tb.MaximumSize = new Size(0, tb.Height);
+        //    }
 
-            // Add border panel to parent
-            txtBox.Parent.Controls.Add(borderPanel);
-            borderPanel.BringToFront();
+        //    // Optimized invalidation
+        //    void invalidate()
+        //    {
+        //        if (!form.IsDisposed && !form.Disposing && tb.IsHandleCreated)
+        //        {
+        //            Rectangle invalRect = new Rectangle(
+        //                tb.Left - 2,
+        //                tb.Top - 2,
+        //                tb.Width + 4,
+        //                tb.Height + 4);
+        //            form.Invalidate(invalRect);
+        //        }
+        //    }
 
-            // Focus effects
-            txtBox.Enter += (s, e) => borderPanel.BackColor = PrimaryColor;
-            txtBox.Leave += (s, e) => borderPanel.BackColor = borderColor ?? Color.FromArgb(220, 220, 220);
-        }
+        //    // Attach events once
+        //    EventHandler invalidateHandler = (s, e) => invalidate();
+
+        //    tb.Enter -= invalidateHandler;
+        //    tb.Leave -= invalidateHandler;
+        //    tb.TextChanged -= invalidateHandler;
+        //    tb.Resize -= invalidateHandler;
+        //    tb.LocationChanged -= invalidateHandler;
+
+        //    tb.Enter += invalidateHandler;
+        //    tb.Leave += invalidateHandler;
+        //    tb.TextChanged += invalidateHandler;
+        //    tb.Resize += invalidateHandler;
+        //    tb.LocationChanged += invalidateHandler;
+
+        //    // Remove existing paint handler to avoid duplicates
+        //    EventHandler<PaintEventArgs> paintHandler = null;
+
+        //    // Clean up old handler first
+            
+
+        //    paintHandler = (s, e) =>
+        //    {
+        //        if (tb.IsDisposed || !tb.Visible || tb.Bounds.IsEmpty) return;
+
+        //        Rectangle r = new Rectangle(
+        //            tb.Left - 1,
+        //            tb.Top - 1,
+        //            tb.Width + 1,
+        //            tb.Height + 1);
+
+        //        using (GraphicsPath path = RoundedRect(r, radius))
+        //        using (Pen pen = new Pen(tb.Focused ? focused : normal, 1.75f))
+        //        {
+        //            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+        //            e.Graphics.DrawPath(pen, path);
+
+        //            // Add subtle shadow when focused
+        //            if (tb.Focused)
+        //            {
+        //                using (Pen shadowPen = new Pen(Color.FromArgb(30, focused), 3f))
+        //                {
+        //                    e.Graphics.DrawPath(shadowPen, path);
+        //                }
+        //            }
+        //        }
+        //    };
+
+           
+        //}
+
+        //private GraphicsPath RoundedRect(Rectangle r, int radius)
+        //{
+        //    GraphicsPath path = new GraphicsPath();
+
+        //    if (radius <= 0)
+        //    {
+        //        path.AddRectangle(r);
+        //        return path;
+        //    }
+
+        //    int d = radius * 2;
+
+        //    // Ensure arcs fit in rectangle
+        //    if (d > r.Width) d = r.Width;
+        //    if (d > r.Height) d = r.Height;
+
+        //    // Top-left
+        //    path.AddArc(r.X, r.Y, d, d, 180, 90);
+        //    // Top-right
+        //    path.AddArc(r.Right - d, r.Y, d, d, 270, 90);
+        //    // Bottom-right
+        //    path.AddArc(r.Right - d, r.Bottom - d, d, d, 0, 90);
+        //    // Bottom-left
+        //    path.AddArc(r.X, r.Bottom - d, d, d, 90, 90);
+
+        //    path.CloseFigure();
+        //    return path;
+        //}
 
         // =======================
         // Helper Methods
@@ -549,6 +633,7 @@ namespace ExecutiveScienceAcademy.classes
             dgv.EnableHeadersVisualStyles = false;
             dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
+       
 
         public void StyleLabel(Label label, bool isTitle = false)
         {
@@ -577,6 +662,7 @@ namespace ExecutiveScienceAcademy.classes
         private static extern int SendMessage(IntPtr hWnd, int msg, int wParam, int lParam);
         #endregion
     }
+
 
     // Extension method for smooth double-buffering
     internal static class ControlExtensions
