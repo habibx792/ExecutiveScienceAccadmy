@@ -14,6 +14,7 @@ namespace ExecutiveSceinceAccadmy.DashBoadMangement
 {
     public partial class DashBoardForm : Form
     {
+
         public DashBoardForm()
         {
 
@@ -29,6 +30,7 @@ namespace ExecutiveSceinceAccadmy.DashBoadMangement
         }
         private void StyleControls()
         {
+
 
             //UI.Instance.MakeTextBoxModern(tbRollNo);
 
@@ -49,12 +51,11 @@ namespace ExecutiveSceinceAccadmy.DashBoadMangement
             UI.Instance.AddFormShadow(this);
            
             UI.Instance.setFormSize(this, 1373, 687);
-
-
         }
 
         private void DashBoardForm_Load(object sender, EventArgs e)
         {
+
 
         }
 

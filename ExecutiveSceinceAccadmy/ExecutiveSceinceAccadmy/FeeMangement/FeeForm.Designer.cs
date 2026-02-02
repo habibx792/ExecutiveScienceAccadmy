@@ -153,6 +153,7 @@
             pnLogo.PerformLayout();
             pnMain.ResumeLayout(false);
             pnMain.PerformLayout();
+
             ResumeLayout(false);
         }
 

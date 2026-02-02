@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             lbLogo = new Label();
             picBox = new PictureBox();
             lblRollNo = new Label();

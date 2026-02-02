@@ -27,8 +27,7 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
-        {
-            pnLogo = new Panel();
+        {            pnLogo = new Panel();
             lbLogo = new Label();
             comboBox1 = new ComboBox();
             comboBox2 = new ComboBox();
@@ -148,6 +147,7 @@
             pnLogo.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
+
         }
 
         #endregion

@@ -13,6 +13,7 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
 {
     public partial class FeeForm : Form
     {
+
         public FeeForm()
         {
             InitializeComponent();
@@ -47,15 +48,18 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
             UI.Instance.StyleButton(btnRts, borderRadius: 20);
             UI.Instance.AddFormShadow(this);
             UI.Instance.setFormSize(this, 1373, 687);
+
         }
 
         private void FeeForm_Load(object sender, EventArgs e)
         {
 
+
         }
 
         private void lbLogo_Click(object sender, EventArgs e)
         {
+
 
         }
     }

@@ -13,10 +13,12 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
 {
     public partial class attendanceForm : Form
     {
+        
         public attendanceForm()
         {
             InitializeComponent();
             UI.Instance.StyleForm(this,
+
               backgroundColor: Color.FromArgb(245, 245, 245),
               borderRadius: 25,
               showCustomTitleBar: true,
@@ -36,7 +38,6 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
                 borderThickness: 2);
             UI.Instance.AddFormShadow(this);
         }
-
         private void attendanceForm_Load(object sender, EventArgs e)
         {
 
