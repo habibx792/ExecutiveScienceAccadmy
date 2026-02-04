@@ -190,7 +190,6 @@ namespace ExecutiveSceinceAccadmy
             {
                 accaReportForm.ShowDialog();
             }
-
             this.Show();
         }
 

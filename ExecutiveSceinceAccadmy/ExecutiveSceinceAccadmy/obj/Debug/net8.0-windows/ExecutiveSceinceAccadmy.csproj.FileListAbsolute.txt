@@ -56,3 +56,6 @@ D:\ExecutiveScienceAccadmy\ExecutiveSceinceAccadmy\ExecutiveSceinceAccadmy\obj\D
 D:\ExecutiveScienceAccadmy\ExecutiveSceinceAccadmy\ExecutiveSceinceAccadmy\obj\Debug\net8.0-windows\ref\ExecutiveSceinceAccadmy.dll
 D:\Programming\Projects\ExecutiveScienceAccadmy\ExecutiveSceinceAccadmy\ExecutiveSceinceAccadmy\obj\Debug\net8.0-windows\ExecutiveSceinceAccadmy.AttendanceMangment.markAttedance.resources
 D:\Programming\Projects\ExecutiveScienceAccadmy\ExecutiveSceinceAccadmy\ExecutiveSceinceAccadmy\obj\Debug\net8.0-windows\ExecutiveSceinceAccadmy.LoginForm.resources
+D:\Programming\Projects\ExecutiveScienceAccadmy\ExecutiveSceinceAccadmy\ExecutiveSceinceAccadmy\obj\Debug\net8.0-windows\ExecutiveSceinceAccadmy.ExpenseMangenment.addExpense.resources
+D:\Programming\Projects\ExecutiveScienceAccadmy\ExecutiveSceinceAccadmy\ExecutiveSceinceAccadmy\obj\Debug\net8.0-windows\ExecutiveSceinceAccadmy.ExpenseMangenment.checkCurrMonth.resources
+D:\Programming\Projects\ExecutiveScienceAccadmy\ExecutiveSceinceAccadmy\ExecutiveSceinceAccadmy\obj\Debug\net8.0-windows\ExecutiveSceinceAccadmy.ExpenseMangenment.ExpenseReport.resources

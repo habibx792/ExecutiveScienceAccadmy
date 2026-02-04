@@ -3,48 +3,16 @@
   "WorkspaceRootPath": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|d:\\programming\\projects\\executivescienceaccadmy\\executivesceinceaccadmy\\executivesceinceaccadmy\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|solutionrelative:executivesceinceaccadmy\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|d:\\programming\\projects\\executivescienceaccadmy\\executivesceinceaccadmy\\executivesceinceaccadmy\\reportmanagement\\reportform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|solutionrelative:executivesceinceaccadmy\\reportmanagement\\reportform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\executivesceinceaccadmy\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|solutionrelative:executivesceinceaccadmy\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|d:\\programming\\projects\\executivescienceaccadmy\\executivesceinceaccadmy\\executivesceinceaccadmy\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|solutionrelative:executivesceinceaccadmy\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|d:\\programming\\projects\\executivescienceaccadmy\\executivesceinceaccadmy\\executivesceinceaccadmy\\attendancemangment\\attendanceform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|solutionrelative:executivesceinceaccadmy\\attendancemangment\\attendanceform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\executivesceinceaccadmy\\attendancemangment\\attendanceform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|solutionrelative:executivesceinceaccadmy\\attendancemangment\\attendanceform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|d:\\programming\\projects\\executivescienceaccadmy\\executivesceinceaccadmy\\executivesceinceaccadmy\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|solutionrelative:executivesceinceaccadmy\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\executivesceinceaccadmy\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|solutionrelative:executivesceinceaccadmy\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\executivesceinceaccadmy\\attendancemangment\\markattedance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|solutionrelative:executivesceinceaccadmy\\attendancemangment\\markattedance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|d:\\programming\\projects\\executivescienceaccadmy\\executivesceinceaccadmy\\executivesceinceaccadmy\\classes\\ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|solutionrelative:executivesceinceaccadmy\\classes\\ui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|d:\\programming\\projects\\executivescienceaccadmy\\executivesceinceaccadmy\\executivesceinceaccadmy\\dashboadmangement\\dashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|solutionrelative:executivesceinceaccadmy\\dashboadmangement\\dashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\executivesceinceaccadmy\\dashboadmangement\\dashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|solutionrelative:executivesceinceaccadmy\\dashboadmangement\\dashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,11 +22,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 2,
               "Title": "UI.cs",
               "DocumentMoniker": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\classes\\UI.cs",
               "RelativeDocumentMoniker": "ExecutiveSceinceAccadmy\\classes\\UI.cs",
@@ -67,7 +35,8 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAM0BAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-04T13:23:27.046Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -75,8 +44,8 @@
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\Form1.cs",
               "RelativeDocumentMoniker": "ExecutiveSceinceAccadmy\\Form1.cs",
-              "ToolTip": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\Form1.cs [Design]*",
-              "RelativeToolTip": "ExecutiveSceinceAccadmy\\Form1.cs [Design]*",
+              "ToolTip": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\Form1.cs [Design]",
+              "RelativeToolTip": "ExecutiveSceinceAccadmy\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-04T13:18:16.652Z",
               "IsPinned": true,
@@ -84,113 +53,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LoginForm.cs",
-              "DocumentMoniker": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\LoginForm.cs",
-              "RelativeDocumentMoniker": "ExecutiveSceinceAccadmy\\LoginForm.cs",
-              "ToolTip": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\LoginForm.cs",
-              "RelativeToolTip": "ExecutiveSceinceAccadmy\\LoginForm.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAADwv0UAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T15:08:47.758Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\Program.cs",
-              "RelativeDocumentMoniker": "ExecutiveSceinceAccadmy\\Program.cs",
-              "ToolTip": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\Program.cs",
-              "RelativeToolTip": "ExecutiveSceinceAccadmy\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T13:15:44.797Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "attendanceForm.cs",
-              "DocumentMoniker": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\AttendanceMangment\\attendanceForm.cs",
-              "RelativeDocumentMoniker": "ExecutiveSceinceAccadmy\\AttendanceMangment\\attendanceForm.cs",
-              "ToolTip": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\AttendanceMangment\\attendanceForm.cs",
-              "RelativeToolTip": "ExecutiveSceinceAccadmy\\AttendanceMangment\\attendanceForm.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAiwDAAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T14:51:31.963Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "attendanceForm.cs [Design]",
-              "DocumentMoniker": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\AttendanceMangment\\attendanceForm.cs",
-              "RelativeDocumentMoniker": "ExecutiveSceinceAccadmy\\AttendanceMangment\\attendanceForm.cs",
-              "ToolTip": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\AttendanceMangment\\attendanceForm.cs [Design]",
-              "RelativeToolTip": "ExecutiveSceinceAccadmy\\AttendanceMangment\\attendanceForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T14:45:30.964Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "DashBoardForm.cs",
-              "DocumentMoniker": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\DashBoadMangement\\DashBoardForm.cs",
-              "RelativeDocumentMoniker": "ExecutiveSceinceAccadmy\\DashBoadMangement\\DashBoardForm.cs",
-              "ToolTip": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\DashBoadMangement\\DashBoardForm.cs",
-              "RelativeToolTip": "ExecutiveSceinceAccadmy\\DashBoadMangement\\DashBoardForm.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAADQAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T13:20:31.871Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\Form1.cs",
-              "RelativeDocumentMoniker": "ExecutiveSceinceAccadmy\\Form1.cs",
-              "ToolTip": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\Form1.cs*",
-              "RelativeToolTip": "ExecutiveSceinceAccadmy\\Form1.cs*",
-              "ViewState": "AgIAACUAAAAAAAAAAAAqwCsAAAApAAAAAAAAAA==",
+              "Title": "ReportForm.cs",
+              "DocumentMoniker": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\ReportManagement\\ReportForm.cs",
+              "RelativeDocumentMoniker": "ExecutiveSceinceAccadmy\\ReportManagement\\ReportForm.cs",
+              "ToolTip": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\ReportManagement\\ReportForm.cs*",
+              "RelativeToolTip": "ExecutiveSceinceAccadmy\\ReportManagement\\ReportForm.cs*",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAiwCUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T13:18:19.89Z",
+              "WhenOpened": "2026-02-04T16:50:21.156Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "markAttedance.cs [Design]",
-              "DocumentMoniker": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\AttendanceMangment\\markAttedance.cs",
-              "RelativeDocumentMoniker": "ExecutiveSceinceAccadmy\\AttendanceMangment\\markAttedance.cs",
-              "ToolTip": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\AttendanceMangment\\markAttedance.cs [Design]",
-              "RelativeToolTip": "ExecutiveSceinceAccadmy\\AttendanceMangment\\markAttedance.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T14:46:15.609Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "LoginForm.cs [Design]",
-              "DocumentMoniker": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\LoginForm.cs",
-              "RelativeDocumentMoniker": "ExecutiveSceinceAccadmy\\LoginForm.cs",
-              "ToolTip": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\LoginForm.cs [Design]",
-              "RelativeToolTip": "ExecutiveSceinceAccadmy\\LoginForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T15:05:37.341Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "DashBoardForm.cs [Design]",
-              "DocumentMoniker": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\DashBoadMangement\\DashBoardForm.cs",
-              "RelativeDocumentMoniker": "ExecutiveSceinceAccadmy\\DashBoadMangement\\DashBoardForm.cs",
-              "ToolTip": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\DashBoadMangement\\DashBoardForm.cs [Design]",
-              "RelativeToolTip": "ExecutiveSceinceAccadmy\\DashBoadMangement\\DashBoardForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T13:20:30.364Z"
             }
           ]
         }

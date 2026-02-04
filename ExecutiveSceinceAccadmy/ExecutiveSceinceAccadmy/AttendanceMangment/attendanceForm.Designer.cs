@@ -32,11 +32,11 @@
             lbLogo = new Label();
             btnRts = new Button();
             btnMark = new Button();
-            btnUpAtt = new Button();
-            btnDashBoad = new Button();
-            btnSum = new Button();
             btnSujectWise = new Button();
             pnMain = new Panel();
+            btnDashBoad = new Button();
+            btnUpAtt = new Button();
+            btnSum = new Button();
             pnLogo.SuspendLayout();
             pnMain.SuspendLayout();
             SuspendLayout();
@@ -77,33 +77,6 @@
             btnMark.Text = "Class Wise";
             btnMark.UseVisualStyleBackColor = true;
             // 
-            // btnUpAtt
-            // 
-            btnUpAtt.Location = new Point(314, 234);
-            btnUpAtt.Name = "btnUpAtt";
-            btnUpAtt.Size = new Size(231, 130);
-            btnUpAtt.TabIndex = 23;
-            btnUpAtt.Text = "Update Attedance";
-            btnUpAtt.UseVisualStyleBackColor = true;
-            // 
-            // btnDashBoad
-            // 
-            btnDashBoad.Location = new Point(587, 234);
-            btnDashBoad.Name = "btnDashBoad";
-            btnDashBoad.Size = new Size(237, 130);
-            btnDashBoad.TabIndex = 22;
-            btnDashBoad.Text = "Attendance DashBoard";
-            btnDashBoad.UseVisualStyleBackColor = true;
-            // 
-            // btnSum
-            // 
-            btnSum.Location = new Point(44, 234);
-            btnSum.Name = "btnSum";
-            btnSum.Size = new Size(229, 130);
-            btnSum.TabIndex = 21;
-            btnSum.Text = "Show Summary";
-            btnSum.UseVisualStyleBackColor = true;
-            // 
             // btnSujectWise
             // 
             btnSujectWise.Location = new Point(324, 41);
@@ -125,6 +98,33 @@
             pnMain.Name = "pnMain";
             pnMain.Size = new Size(984, 391);
             pnMain.TabIndex = 26;
+            // 
+            // btnDashBoad
+            // 
+            btnDashBoad.Location = new Point(587, 234);
+            btnDashBoad.Name = "btnDashBoad";
+            btnDashBoad.Size = new Size(237, 130);
+            btnDashBoad.TabIndex = 22;
+            btnDashBoad.Text = "Attendance DashBoard";
+            btnDashBoad.UseVisualStyleBackColor = true;
+            // 
+            // btnUpAtt
+            // 
+            btnUpAtt.Location = new Point(314, 234);
+            btnUpAtt.Name = "btnUpAtt";
+            btnUpAtt.Size = new Size(231, 130);
+            btnUpAtt.TabIndex = 23;
+            btnUpAtt.Text = "Update Attedance";
+            btnUpAtt.UseVisualStyleBackColor = true;
+            // 
+            // btnSum
+            // 
+            btnSum.Location = new Point(44, 234);
+            btnSum.Name = "btnSum";
+            btnSum.Size = new Size(229, 130);
+            btnSum.TabIndex = 21;
+            btnSum.Text = "Show Summary";
+            btnSum.UseVisualStyleBackColor = true;
             // 
             // attendanceForm
             // 
@@ -149,10 +149,10 @@
         private Label lbLogo;
         private Button btnRts;
         private Button btnMark;
-        private Button btnUpAtt;
-        private Button btnDashBoad;
-        private Button btnSum;
         private Button btnSujectWise;
         private Panel pnMain;
+        private Button btnSum;
+        private Button btnUpAtt;
+        private Button btnDashBoad;
     }
 }
