@@ -54,3 +54,5 @@ D:\ExecutiveScienceAccadmy\ExecutiveSceinceAccadmy\ExecutiveSceinceAccadmy\obj\D
 D:\ExecutiveScienceAccadmy\ExecutiveSceinceAccadmy\ExecutiveSceinceAccadmy\obj\Debug\net8.0-windows\ExecutiveSceinceAccadmy.pdb
 D:\ExecutiveScienceAccadmy\ExecutiveSceinceAccadmy\ExecutiveSceinceAccadmy\obj\Debug\net8.0-windows\ExecutiveSceinceAccadmy.genruntimeconfig.cache
 D:\ExecutiveScienceAccadmy\ExecutiveSceinceAccadmy\ExecutiveSceinceAccadmy\obj\Debug\net8.0-windows\ref\ExecutiveSceinceAccadmy.dll
+D:\Programming\Projects\ExecutiveScienceAccadmy\ExecutiveSceinceAccadmy\ExecutiveSceinceAccadmy\obj\Debug\net8.0-windows\ExecutiveSceinceAccadmy.AttendanceMangment.markAttedance.resources
+D:\Programming\Projects\ExecutiveScienceAccadmy\ExecutiveSceinceAccadmy\ExecutiveSceinceAccadmy\obj\Debug\net8.0-windows\ExecutiveSceinceAccadmy.LoginForm.resources

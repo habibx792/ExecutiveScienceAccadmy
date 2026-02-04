@@ -399,6 +399,68 @@ namespace ExecutiveScienceAcademy.classes
             // Update rounded corners on resize
             btn.Resize += (s, e) => ApplyRoundedCorners(btn, borderRadius);
         }
+        public void MakeButtonModern(
+     Button btn,
+     int width = 140,
+     int height = 40,
+     int borderRadius = 15,
+     int borderSize = 0,
+     Color? backgroundColor = null,
+     Color? hoverColor = null,
+     Color? pressedColor = null,
+     Color? borderColor = null,
+     Color? textColor = null,
+     Font? font = null)
+        {
+            if (btn == null) return;
+
+            // 🔒 Prevent double styling - SIMPLE CHECK
+            if (btn.FlatStyle == FlatStyle.Flat && btn.Cursor == Cursors.Hand && btn.Padding.Top == 5)
+                return;
+
+            Color normal = backgroundColor ?? PrimaryColor;
+            Color hover = hoverColor ?? ControlPaint.Light(normal, 0.1f);
+            Color pressed = pressedColor ?? ControlPaint.Dark(normal, 0.15f);
+            Color border = borderColor ?? Color.Transparent;
+            Color fore = textColor ?? Color.White;
+
+            btn.Size = new Size(width, height);
+            btn.FlatStyle = FlatStyle.Flat;
+            btn.FlatAppearance.BorderSize = borderSize;
+            btn.FlatAppearance.BorderColor = border;
+            btn.BackColor = normal;
+            btn.ForeColor = fore;
+            btn.Font = font ?? new Font("Segoe UI Semibold", 11F);
+            btn.Cursor = Cursors.Hand;
+            btn.TextAlign = ContentAlignment.MiddleCenter;
+            btn.Padding = new Padding(10, 5, 10, 5);
+            btn.TabStop = false;
+
+            ApplyRoundedCorners(btn, borderRadius);
+
+            // Use named event handlers to prevent duplication
+           
+
+            btn.Resize -= (_, __) => ApplyRoundedCorners(btn, borderRadius);
+            btn.Resize += (_, __) => ApplyRoundedCorners(btn, borderRadius);
+
+            // Store colors in Tag
+            btn.Tag = new { normal, hover, pressed, fore };
+        }
+        private void ApplyRoundedCorners(Button btn, int radius)
+        {
+            if (btn == null || btn.Width <= 0 || btn.Height <= 0) return;
+
+            var path = new System.Drawing.Drawing2D.GraphicsPath();
+            path.AddArc(0, 0, radius, radius, 180, 90);
+            path.AddArc(btn.Width - radius, 0, radius, radius, 270, 90);
+            path.AddArc(btn.Width - radius, btn.Height - radius, radius, radius, 0, 90);
+            path.AddArc(0, btn.Height - radius, radius, radius, 90, 90);
+            path.CloseFigure();
+
+            btn.Region = new Region(path);
+        }
+
 
         // =======================
         // Style Panel with rounded corners

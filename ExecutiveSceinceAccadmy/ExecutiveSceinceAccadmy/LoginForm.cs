@@ -9,20 +9,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ExecutiveSceinceAccadmy.AttendanceMangment
+namespace ExecutiveSceinceAccadmy
 {
-    public partial class attendanceForm : Form
+    public partial class LoginForm : Form
     {
-        
-        public attendanceForm()
+        public LoginForm()
         {
+
             InitializeComponent();
             UI.Instance.StyleForm(this,
 
-              backgroundColor: Color.FromArgb(245, 245, 245),
-              borderRadius: 25,
-              showCustomTitleBar: true,
-              title: "Executive Science Academy");
+             backgroundColor: Color.FromArgb(245, 245, 245),
+             borderRadius: 25,
+             showCustomTitleBar: true,
+             title: "Executive Science Academy");
 
             StyleControls();
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -42,9 +42,33 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
                 borderRadius: 20,
                 borderThickness: 2);
         }
-        private void attendanceForm_Load(object sender, EventArgs e)
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(txtUser.Text!=""&&txtPass.Text!="")
+            {
+                this.Hide();
+                using (Form1 home = new Form1())
+                {
+                    home.ShowDialog();
+                }
+                this.Show();
+            }
         }
     }
 }
