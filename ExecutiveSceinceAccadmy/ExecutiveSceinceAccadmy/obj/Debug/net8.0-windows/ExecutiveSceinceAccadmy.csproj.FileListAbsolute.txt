@@ -58,4 +58,4 @@ D:\Programming\Projects\ExecutiveScienceAccadmy\ExecutiveSceinceAccadmy\Executiv
 D:\Programming\Projects\ExecutiveScienceAccadmy\ExecutiveSceinceAccadmy\ExecutiveSceinceAccadmy\obj\Debug\net8.0-windows\ExecutiveSceinceAccadmy.LoginForm.resources
 D:\Programming\Projects\ExecutiveScienceAccadmy\ExecutiveSceinceAccadmy\ExecutiveSceinceAccadmy\obj\Debug\net8.0-windows\ExecutiveSceinceAccadmy.ExpenseMangenment.addExpense.resources
 D:\Programming\Projects\ExecutiveScienceAccadmy\ExecutiveSceinceAccadmy\ExecutiveSceinceAccadmy\obj\Debug\net8.0-windows\ExecutiveSceinceAccadmy.ExpenseMangenment.checkCurrMonth.resources
-D:\Programming\Projects\ExecutiveScienceAccadmy\ExecutiveSceinceAccadmy\ExecutiveSceinceAccadmy\obj\Debug\net8.0-windows\ExecutiveSceinceAccadmy.ExpenseMangenment.ExpenseReport.resources
+D:\Programming\Projects\ExecutiveScienceAccadmy\ExecutiveSceinceAccadmy\ExecutiveSceinceAccadmy\obj\Debug\net8.0-windows\ExecutiveSceinceAccadmy.ExpenseMangenment.checkCurrentYear.resources

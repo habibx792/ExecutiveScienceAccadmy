@@ -58,6 +58,7 @@
             btnAdd.TabIndex = 24;
             btnAdd.Text = "add Expense";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // bntReport
             // 

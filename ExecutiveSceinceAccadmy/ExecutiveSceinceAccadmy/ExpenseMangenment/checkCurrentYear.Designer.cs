@@ -1,6 +1,6 @@
 ﻿namespace ExecutiveSceinceAccadmy.ExpenseMangenment
 {
-    partial class ExpenseReport
+    partial class checkCurrentYear
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             SuspendLayout();
             // 
-            // ExpenseReport
+            // checkCurrentYear
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1433, 632);
-            Name = "ExpenseReport";
-            Text = "ExpenseReport";
+            ClientSize = new Size(1309, 630);
+            Name = "checkCurrentYear";
+            Text = "checkCurrentYear";
             ResumeLayout(false);
         }
 

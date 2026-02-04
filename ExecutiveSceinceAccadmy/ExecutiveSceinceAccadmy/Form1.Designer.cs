@@ -40,6 +40,7 @@
             stdBoard = new Button();
             pnLogo = new Panel();
             lbLogo = new Label();
+            lblMain = new Label();
             pnMain.SuspendLayout();
             pnLogo.SuspendLayout();
             SuspendLayout();
@@ -180,7 +181,7 @@
             // pnLogo
             // 
             pnLogo.Controls.Add(lbLogo);
-            pnLogo.Location = new Point(114, 59);
+            pnLogo.Location = new Point(114, 12);
             pnLogo.Name = "pnLogo";
             pnLogo.Size = new Size(1155, 88);
             pnLogo.TabIndex = 7;
@@ -197,12 +198,23 @@
             lbLogo.Text = "Welcome To Executive Sceince Accadmy";
             lbLogo.Click += label1_Click;
             // 
+            // lblMain
+            // 
+            lblMain.AutoSize = true;
+            lblMain.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblMain.Location = new Point(636, 103);
+            lblMain.Name = "lblMain";
+            lblMain.Size = new Size(141, 32);
+            lblMain.TabIndex = 8;
+            lblMain.Text = "Main Panel";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.OrangeRed;
             ClientSize = new Size(1357, 648);
+            Controls.Add(lblMain);
             Controls.Add(pnLogo);
             Controls.Add(pnMain);
             Name = "Form1";
@@ -211,6 +223,7 @@
             pnLogo.ResumeLayout(false);
             pnLogo.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -227,5 +240,6 @@
         private Button stdBoard;
         private Button btnExpense;
         private Button btnTeacherBoard;
+        private Label lblMain;
     }
 }

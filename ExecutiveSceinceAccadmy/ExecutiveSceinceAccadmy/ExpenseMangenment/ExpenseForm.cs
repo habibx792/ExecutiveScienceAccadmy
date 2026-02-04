@@ -36,7 +36,7 @@ namespace ExecutiveSceinceAccadmy.ExpenseMangenment
         private void StyleControls()
         {
             UI.Instance.setFormSize(this, 1373, 687);
-         
+
 
             UI.Instance.StylePanel(pnLogo,
                 backColor: Color.White,
@@ -54,6 +54,16 @@ namespace ExecutiveSceinceAccadmy.ExpenseMangenment
         private void ExpenseForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (addExpense addExpense = new addExpense())
+            {
+                addExpense.ShowDialog();
+            }
+            this.Show();
         }
     }
 }

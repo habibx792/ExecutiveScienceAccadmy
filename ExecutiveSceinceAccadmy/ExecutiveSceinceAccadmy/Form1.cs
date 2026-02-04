@@ -1,5 +1,4 @@
-﻿
-using ExecutiveSceinceAccadmy.AttendanceMangment;
+﻿             using ExecutiveSceinceAccadmy.AttendanceMangment;
 using ExecutiveSceinceAccadmy.DashBoadMangement;
 using ExecutiveSceinceAccadmy.ExpenseMangenment;
 using ExecutiveSceinceAccadmy.FeeMangement;
@@ -55,6 +54,8 @@ namespace ExecutiveSceinceAccadmy
             UI.Instance.StyleButton(stdBoard, borderRadius: 20);
             UI.Instance.StyleButton(btnTeacherBoard, borderRadius: 20);
             UI.Instance.AddFormShadow(this);
+            UI.Instance.StyleLabel(lblMain);
+            lblMain.Font = new Font(lblMain.Font, FontStyle.Bold);
         }
 
 

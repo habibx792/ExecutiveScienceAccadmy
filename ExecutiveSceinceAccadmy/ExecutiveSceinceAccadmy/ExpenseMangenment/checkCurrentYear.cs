@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ExecutiveSceinceAccadmy.ExpenseMangenment
 {
-    public partial class ExpenseReport : Form
+    public partial class checkCurrentYear : Form
     {
-        public ExpenseReport()
+        public checkCurrentYear()
         {
             InitializeComponent();
         }

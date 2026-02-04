@@ -703,13 +703,13 @@ namespace ExecutiveScienceAcademy.classes
 
             if (isTitle)
             {
-                label.Font = new Font("Segoe UI", 14, FontStyle.Bold);
-                label.ForeColor = Color.FromArgb(50, 50, 50);
+                label.Font = new Font("Segoe UI", 20, FontStyle.Bold);
+                label.ForeColor = Color.FromArgb(0, 0, 0);
             }
             else
             {
-                label.Font = new Font("Segoe UI", 10);
-                label.ForeColor = Color.FromArgb(80, 80, 80);
+                label.Font = new Font("Segoe UI", 20);
+                label.ForeColor = Color.FromArgb(0, 0, 0);
             }
         }
 

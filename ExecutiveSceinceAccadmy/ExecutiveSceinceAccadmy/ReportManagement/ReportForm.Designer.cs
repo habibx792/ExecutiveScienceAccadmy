@@ -29,12 +29,10 @@
         private void InitializeComponent()
         {
             pnMain = new Panel();
-            btnMark = new Button();
-            btnRts = new Button();
-            btnSum = new Button();
-            btnUpAtt = new Button();
-            btnSujectWise = new Button();
-            btnDashBoad = new Button();
+            btnCurrMon = new Button();
+            btnAddExp = new Button();
+            btnCurrYearReport = new Button();
+            btnFromDate = new Button();
             pnLogo = new Panel();
             lbLogo = new Label();
             pnMain.SuspendLayout();
@@ -43,70 +41,51 @@
             // 
             // pnMain
             // 
-            pnMain.Controls.Add(btnMark);
-            pnMain.Controls.Add(btnRts);
-            pnMain.Controls.Add(btnSum);
-            pnMain.Controls.Add(btnUpAtt);
-            pnMain.Controls.Add(btnSujectWise);
-            pnMain.Controls.Add(btnDashBoad);
-            pnMain.Location = new Point(220, 186);
+            pnMain.Controls.Add(btnCurrMon);
+            pnMain.Controls.Add(btnAddExp);
+            pnMain.Controls.Add(btnCurrYearReport);
+            pnMain.Controls.Add(btnFromDate);
+            pnMain.Location = new Point(399, 185);
             pnMain.Name = "pnMain";
-            pnMain.Size = new Size(984, 391);
+            pnMain.Size = new Size(596, 396);
             pnMain.TabIndex = 28;
             // 
-            // btnMark
+            // btnCurrMon
             // 
-            btnMark.Location = new Point(44, 41);
-            btnMark.Name = "btnMark";
-            btnMark.Size = new Size(229, 130);
-            btnMark.TabIndex = 24;
-            btnMark.Text = "Class Wise";
-            btnMark.UseVisualStyleBackColor = true;
+            btnCurrMon.Location = new Point(315, 41);
+            btnCurrMon.Name = "btnCurrMon";
+            btnCurrMon.Size = new Size(221, 130);
+            btnCurrMon.TabIndex = 26;
+            btnCurrMon.Text = "Current Month";
+            btnCurrMon.UseVisualStyleBackColor = true;
             // 
-            // btnRts
+            // btnAddExp
             // 
-            btnRts.Location = new Point(587, 41);
-            btnRts.Name = "btnRts";
-            btnRts.Size = new Size(237, 130);
-            btnRts.TabIndex = 25;
-            btnRts.Text = "RTC Class Wise";
-            btnRts.UseVisualStyleBackColor = true;
+            btnAddExp.Location = new Point(44, 41);
+            btnAddExp.Name = "btnAddExp";
+            btnAddExp.Size = new Size(229, 130);
+            btnAddExp.TabIndex = 24;
+            btnAddExp.Text = "Add Expense";
+            btnAddExp.UseVisualStyleBackColor = true;
+            btnAddExp.Click += btnAddExp_Click;
             // 
-            // btnSum
+            // btnCurrYearReport
             // 
-            btnSum.Location = new Point(44, 234);
-            btnSum.Name = "btnSum";
-            btnSum.Size = new Size(229, 130);
-            btnSum.TabIndex = 21;
-            btnSum.Text = "Show Summary";
-            btnSum.UseVisualStyleBackColor = true;
+            btnCurrYearReport.Location = new Point(36, 185);
+            btnCurrYearReport.Name = "btnCurrYearReport";
+            btnCurrYearReport.Size = new Size(237, 130);
+            btnCurrYearReport.TabIndex = 25;
+            btnCurrYearReport.Text = "Current Year";
+            btnCurrYearReport.UseVisualStyleBackColor = true;
             // 
-            // btnUpAtt
+            // btnFromDate
             // 
-            btnUpAtt.Location = new Point(314, 234);
-            btnUpAtt.Name = "btnUpAtt";
-            btnUpAtt.Size = new Size(231, 130);
-            btnUpAtt.TabIndex = 23;
-            btnUpAtt.Text = "Update Attedance";
-            btnUpAtt.UseVisualStyleBackColor = true;
-            // 
-            // btnSujectWise
-            // 
-            btnSujectWise.Location = new Point(324, 41);
-            btnSujectWise.Name = "btnSujectWise";
-            btnSujectWise.Size = new Size(221, 130);
-            btnSujectWise.TabIndex = 20;
-            btnSujectWise.Text = "Suject Wise";
-            btnSujectWise.UseVisualStyleBackColor = true;
-            // 
-            // btnDashBoad
-            // 
-            btnDashBoad.Location = new Point(587, 234);
-            btnDashBoad.Name = "btnDashBoad";
-            btnDashBoad.Size = new Size(237, 130);
-            btnDashBoad.TabIndex = 22;
-            btnDashBoad.Text = "Attendance DashBoard";
-            btnDashBoad.UseVisualStyleBackColor = true;
+            btnFromDate.Location = new Point(315, 185);
+            btnFromDate.Name = "btnFromDate";
+            btnFromDate.Size = new Size(221, 130);
+            btnFromDate.TabIndex = 20;
+            btnFromDate.Text = "From ToDay";
+            btnFromDate.UseVisualStyleBackColor = true;
             // 
             // pnLogo
             // 
@@ -133,7 +112,7 @@
             ClientSize = new Size(1399, 605);
             Controls.Add(pnMain);
             Controls.Add(pnLogo);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "ReportForm";
             Text = "ReportForm";
             Load += ReportForm_Load;
@@ -146,13 +125,14 @@
         #endregion
 
         private Panel pnMain;
-        private Button btnMark;
+        private Button btnAddExp;
         private Button btnRts;
-        private Button btnSum;
+        private Button btnCurrYearReport;
         private Button btnUpAtt;
-        private Button btnSujectWise;
+        private Button btnFromDate;
         private Button btnDashBoad;
         private Panel pnLogo;
         private Label lbLogo;
+        private Button btnCurrMon;
     }
 }
