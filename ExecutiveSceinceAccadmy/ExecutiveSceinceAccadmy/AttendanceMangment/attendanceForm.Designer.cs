@@ -34,9 +34,9 @@
             btnMark = new Button();
             btnSujectWise = new Button();
             pnMain = new Panel();
-            btnDashBoad = new Button();
-            btnUpAtt = new Button();
             btnSum = new Button();
+            btnUpAtt = new Button();
+            btnDashBoad = new Button();
             pnLogo.SuspendLayout();
             pnMain.SuspendLayout();
             SuspendLayout();
@@ -94,19 +94,19 @@
             pnMain.Controls.Add(btnUpAtt);
             pnMain.Controls.Add(btnSujectWise);
             pnMain.Controls.Add(btnDashBoad);
-            pnMain.Location = new Point(183, 171);
+            pnMain.Location = new Point(239, 173);
             pnMain.Name = "pnMain";
-            pnMain.Size = new Size(984, 391);
+            pnMain.Size = new Size(873, 408);
             pnMain.TabIndex = 26;
             // 
-            // btnDashBoad
+            // btnSum
             // 
-            btnDashBoad.Location = new Point(587, 234);
-            btnDashBoad.Name = "btnDashBoad";
-            btnDashBoad.Size = new Size(237, 130);
-            btnDashBoad.TabIndex = 22;
-            btnDashBoad.Text = "Attendance DashBoard";
-            btnDashBoad.UseVisualStyleBackColor = true;
+            btnSum.Location = new Point(44, 234);
+            btnSum.Name = "btnSum";
+            btnSum.Size = new Size(229, 130);
+            btnSum.TabIndex = 21;
+            btnSum.Text = "Show Summary";
+            btnSum.UseVisualStyleBackColor = true;
             // 
             // btnUpAtt
             // 
@@ -117,14 +117,14 @@
             btnUpAtt.Text = "Update Attedance";
             btnUpAtt.UseVisualStyleBackColor = true;
             // 
-            // btnSum
+            // btnDashBoad
             // 
-            btnSum.Location = new Point(44, 234);
-            btnSum.Name = "btnSum";
-            btnSum.Size = new Size(229, 130);
-            btnSum.TabIndex = 21;
-            btnSum.Text = "Show Summary";
-            btnSum.UseVisualStyleBackColor = true;
+            btnDashBoad.Location = new Point(587, 234);
+            btnDashBoad.Name = "btnDashBoad";
+            btnDashBoad.Size = new Size(237, 130);
+            btnDashBoad.TabIndex = 22;
+            btnDashBoad.Text = "Attendance DashBoard";
+            btnDashBoad.UseVisualStyleBackColor = true;
             // 
             // attendanceForm
             // 
