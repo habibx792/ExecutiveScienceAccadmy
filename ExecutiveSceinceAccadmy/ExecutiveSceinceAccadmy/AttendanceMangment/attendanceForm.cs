@@ -25,6 +25,12 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
               title: "Executive Science Academy");
 
             StyleControls();
+            UI.Instance.StyleButton(btnDashBoad, borderRadius: 20);
+            UI.Instance.StyleButton(btnSujectWise, borderRadius: 20);
+            UI.Instance.StyleButton(btnSum, borderRadius: 20);
+            UI.Instance.StyleButton(btnRts, borderRadius: 20);
+            UI.Instance.StyleButton(btnUpAtt, borderRadius: 20);
+            UI.Instance.StyleButton(btnMark, borderRadius: 20);
             this.StartPosition = FormStartPosition.CenterScreen;
 
         }

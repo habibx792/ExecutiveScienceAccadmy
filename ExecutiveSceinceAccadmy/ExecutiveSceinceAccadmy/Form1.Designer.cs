@@ -34,13 +34,13 @@
             BtnAttend = new Button();
             btnReport = new Button();
             BtnFeeSub = new Button();
-            pnMagnt = new Panel();
+            pnMain = new Panel();
             btnExpense = new Button();
             btnTeacherBoard = new Button();
             stdBoard = new Button();
             pnLogo = new Panel();
             lbLogo = new Label();
-            pnMagnt.SuspendLayout();
+            pnMain.SuspendLayout();
             pnLogo.SuspendLayout();
             SuspendLayout();
             // 
@@ -122,21 +122,21 @@
             BtnFeeSub.UseVisualStyleBackColor = false;
             BtnFeeSub.Click += BtnFeeSub_Click;
             // 
-            // pnMagnt
+            // pnMain
             // 
-            pnMagnt.Controls.Add(btnExpense);
-            pnMagnt.Controls.Add(btnTeacherBoard);
-            pnMagnt.Controls.Add(stdBoard);
-            pnMagnt.Controls.Add(btnStdReg);
-            pnMagnt.Controls.Add(BtnFeeSub);
-            pnMagnt.Controls.Add(btnResult);
-            pnMagnt.Controls.Add(btnReport);
-            pnMagnt.Controls.Add(btnAdmin);
-            pnMagnt.Controls.Add(BtnAttend);
-            pnMagnt.Location = new Point(114, 153);
-            pnMagnt.Name = "pnMagnt";
-            pnMagnt.Size = new Size(1155, 483);
-            pnMagnt.TabIndex = 6;
+            pnMain.Controls.Add(btnExpense);
+            pnMain.Controls.Add(btnTeacherBoard);
+            pnMain.Controls.Add(stdBoard);
+            pnMain.Controls.Add(btnStdReg);
+            pnMain.Controls.Add(BtnFeeSub);
+            pnMain.Controls.Add(btnResult);
+            pnMain.Controls.Add(btnReport);
+            pnMain.Controls.Add(btnAdmin);
+            pnMain.Controls.Add(BtnAttend);
+            pnMain.Location = new Point(114, 153);
+            pnMain.Name = "pnMain";
+            pnMain.Size = new Size(1155, 483);
+            pnMain.TabIndex = 6;
             // 
             // btnExpense
             // 
@@ -204,10 +204,10 @@
             BackColor = Color.OrangeRed;
             ClientSize = new Size(1357, 648);
             Controls.Add(pnLogo);
-            Controls.Add(pnMagnt);
+            Controls.Add(pnMain);
             Name = "Form1";
             Load += Form1_Load;
-            pnMagnt.ResumeLayout(false);
+            pnMain.ResumeLayout(false);
             pnLogo.ResumeLayout(false);
             pnLogo.PerformLayout();
             ResumeLayout(false);
@@ -221,7 +221,7 @@
         private Button BtnAttend;
         private Button btnReport;
         private Button BtnFeeSub;
-        private Panel pnMagnt;
+        private Panel pnMain;
         private Panel pnLogo;
         private Label lbLogo;
         private Button stdBoard;

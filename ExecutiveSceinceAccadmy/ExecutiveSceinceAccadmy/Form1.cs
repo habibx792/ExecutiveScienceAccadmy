@@ -1,19 +1,20 @@
 ﻿
+using ExecutiveSceinceAccadmy.AttendanceMangment;
+using ExecutiveSceinceAccadmy.DashBoadMangement;
+using ExecutiveSceinceAccadmy.ExpenseMangenment;
+using ExecutiveSceinceAccadmy.FeeMangement;
+using ExecutiveSceinceAccadmy.ReportManagement;
+using ExecutiveSceinceAccadmy.ResultManagement;
+//using ExecutiveSceinceAccadmy.StudentRegistration;
+using ExecutiveSceinceAccadmy.studentRegistrationForms;
+    
+using ExecutiveScienceAcademy.classes;
 using System;
+using System.DirectoryServices.ActiveDirectory;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Reflection.Emit;
 using System.Windows.Forms;
-//using ExecutiveSceinceAccadmy.StudentRegistration;
-using ExecutiveSceinceAccadmy.studentRegistrationForms;
-using ExecutiveSceinceAccadmy.FeeMangement;
-using ExecutiveSceinceAccadmy.AttendanceMangment;
-using ExecutiveSceinceAccadmy.DashBoadMangement;
-using ExecutiveSceinceAccadmy.ExpenseMangenment;
-using ExecutiveSceinceAccadmy.ReportManagement;
-using ExecutiveSceinceAccadmy.ResultManagement;
-    
-using ExecutiveScienceAcademy.classes;
 namespace ExecutiveSceinceAccadmy
 {
     public partial class Form1 : Form
@@ -28,6 +29,7 @@ namespace ExecutiveSceinceAccadmy
                 showCustomTitleBar: true,
                 title: "Executive Science Academy");
 
+
             StyleControls();
             this.StartPosition = FormStartPosition.CenterScreen;
         }
@@ -39,6 +41,10 @@ namespace ExecutiveSceinceAccadmy
                 borderColor: Color.FromArgb(0, 120, 215),
                 borderRadius: 20,
                 borderThickness: 2);
+            UI.Instance.StylePanel(pnMain, backColor: Color.White,
+              borderColor: Color.FromArgb(0, 120, 215),
+              borderRadius: 20,
+              borderThickness: 2);
             UI.Instance.StyleButton(btnStdReg, borderRadius: 20);
             UI.Instance.StyleButton(BtnFeeSub, borderRadius: 20);
             UI.Instance.StyleButton(BtnAttend, borderRadius: 20);
