@@ -52,6 +52,7 @@
             pnLogo = new Panel();
             lbLogo = new Label();
             pnMainPn = new Panel();
+            pnHide = new Panel();
             pnAccadminc = new Panel();
             txtDeg = new TextBox();
             txtDegYear = new TextBox();
@@ -94,12 +95,13 @@
             // 
             // btnRegistation
             // 
-            btnRegistation.Location = new Point(1036, 468);
+            btnRegistation.Location = new Point(1051, 623);
             btnRegistation.Name = "btnRegistation";
             btnRegistation.Size = new Size(154, 59);
             btnRegistation.TabIndex = 0;
             btnRegistation.Text = "Register";
             btnRegistation.UseVisualStyleBackColor = true;
+            btnRegistation.Click += btnRegistation_Click;
             // 
             // pnPreq
             // 
@@ -116,9 +118,9 @@
             pnPreq.Controls.Add(comboBox4);
             pnPreq.Controls.Add(cmbClass);
             pnPreq.Controls.Add(Suject);
-            pnPreq.Location = new Point(89, 106);
+            pnPreq.Location = new Point(29, 52);
             pnPreq.Name = "pnPreq";
-            pnPreq.Size = new Size(1228, 131);
+            pnPreq.Size = new Size(1176, 131);
             pnPreq.TabIndex = 1;
             // 
             // lblRegiDate
@@ -310,13 +312,22 @@
             // pnMainPn
             // 
             pnMainPn.Controls.Add(pnAccadminc);
+            pnMainPn.Controls.Add(pnPreq);
             pnMainPn.Controls.Add(pnPerMain);
             pnMainPn.Controls.Add(pnPerson);
             pnMainPn.Controls.Add(btnRegistation);
-            pnMainPn.Location = new Point(89, 243);
+            pnMainPn.Location = new Point(89, 106);
             pnMainPn.Name = "pnMainPn";
-            pnMainPn.Size = new Size(1228, 530);
+            pnMainPn.Size = new Size(1228, 694);
             pnMainPn.TabIndex = 26;
+            pnMainPn.Paint += pnMainPn_Paint;
+            // 
+            // pnHide
+            // 
+            pnHide.Location = new Point(44, 661);
+            pnHide.Name = "pnHide";
+            pnHide.Size = new Size(25, 100);
+            pnHide.TabIndex = 27;
             // 
             // pnAccadminc
             // 
@@ -335,9 +346,9 @@
             pnAccadminc.Controls.Add(txtMark);
             pnAccadminc.Controls.Add(lblTotalMarks);
             pnAccadminc.Controls.Add(txtRollNo);
-            pnAccadminc.Location = new Point(13, 257);
+            pnAccadminc.Location = new Point(29, 397);
             pnAccadminc.Name = "pnAccadminc";
-            pnAccadminc.Size = new Size(1209, 205);
+            pnAccadminc.Size = new Size(1176, 205);
             pnAccadminc.TabIndex = 53;
             // 
             // txtDeg
@@ -483,9 +494,9 @@
             pnPerMain.Controls.Add(lblEmail);
             pnPerMain.Controls.Add(lblWatsap);
             pnPerMain.Controls.Add(lblFathOcc);
-            pnPerMain.Location = new Point(13, 49);
+            pnPerMain.Location = new Point(29, 189);
             pnPerMain.Name = "pnPerMain";
-            pnPerMain.Size = new Size(1209, 202);
+            pnPerMain.Size = new Size(1176, 202);
             pnPerMain.TabIndex = 42;
             // 
             // txtFatherMob
@@ -600,9 +611,9 @@
             // pnPerson
             // 
             pnPerson.Controls.Add(label19);
-            pnPerson.Location = new Point(16, 3);
+            pnPerson.Location = new Point(29, 3);
             pnPerson.Name = "pnPerson";
-            pnPerson.Size = new Size(1209, 43);
+            pnPerson.Size = new Size(1176, 43);
             pnPerson.TabIndex = 41;
             // 
             // label19
@@ -619,10 +630,10 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1346, 785);
+            ClientSize = new Size(1346, 812);
+            Controls.Add(pnHide);
             Controls.Add(pnMainPn);
             Controls.Add(pnLogo);
-            Controls.Add(pnPreq);
             Name = "RegisTracionForm";
             Text = "RegisTracionForm";
             Load += RegisTracionForm_Load;
@@ -698,5 +709,6 @@
         private Panel pnAccadminc;
         private Label lblSchool;
         private TextBox txtSchool;
+        private Panel pnHide;
     }
 }

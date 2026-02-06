@@ -17,7 +17,7 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
         public RegisTracionForm()
         {
             InitializeComponent();
-           
+
             UI.Instance.StyleForm(this,
                 backgroundColor: Color.FromArgb(245, 245, 245),
                 borderRadius: 25,
@@ -27,6 +27,7 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
 
             StyleControls();
             this.StartPosition = FormStartPosition.CenterScreen;
+            pnHide.Visible = false;
         }
         private void StyleControls()
         {
@@ -68,7 +69,7 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
             );
             UI.Instance.StyleTextBox(txtDeg, focusedBorderColor: Color.DodgerBlue,
          height: 42);
-                UI.Instance.StyleTextBox(txtDegYear, focusedBorderColor: Color.DodgerBlue, height: 42);
+            UI.Instance.StyleTextBox(txtDegYear, focusedBorderColor: Color.DodgerBlue, height: 42);
 
 
 
@@ -104,6 +105,51 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
         }
 
         private void RegisTracionForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRegistation_Click(object sender, EventArgs e)
+        {
+            pnHide.Visible = true;
+            pnMainPn.Visible = false;
+            pnHide.Height = 400;
+            pnHide.Width = 800;
+            pnHide.Location = new Point((this.ClientSize.Width - pnHide.Width) / 3, (this.ClientSize.Height - pnHide.Height) / 3);  
+            UI.Instance.StylePanel(pnHide,
+                backColor: Color.White,
+                borderColor: Color.FromArgb(0, 120, 215),
+                borderRadius: 20,
+                borderThickness: 2);
+            Label lblMessage = new Label();
+            lblMessage.Text = "You are registered";
+            lblMessage.AutoSize = false;
+            lblMessage.TextAlign = ContentAlignment.MiddleCenter;
+            lblMessage.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            lblMessage.ForeColor = Color.Black;
+            lblMessage.Width = 600;
+            lblMessage.Height = 40;
+            lblMessage.Location = new Point(
+                (pnHide.Width - lblMessage.Width) / 2,
+                80
+            );
+
+            Button btnRegister = new Button();
+            btnRegister.Text = "Print Form";
+            btnRegister.Width = 160;
+            btnRegister.Height = 40;
+            btnRegister.Location = new Point(
+                (pnHide.Width - btnRegister.Width) / 2,
+                160
+            );
+
+            pnHide.BringToFront();
+            pnHide.Controls.Clear(); 
+            pnHide.Controls.Add(lblMessage);
+            pnHide.Controls.Add(btnRegister);
+        }
+
+        private void pnMainPn_Paint(object sender, PaintEventArgs e)
         {
 
         }
