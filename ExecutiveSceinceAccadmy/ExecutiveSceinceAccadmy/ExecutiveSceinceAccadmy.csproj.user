@@ -31,19 +31,10 @@
     <Compile Update="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="RegisTrationForms\RegularReg\RegularReg.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="RegisTrationForms\RtsReg\RTSReg.cs">
+    <Compile Update="RegisTrationForms\StudentRegistration\RegisTracionForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="RegisTrationForms\StudentRegistration\StudentRegistration.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="RegisTrationForms\primarReg\PrimaryRegForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="RegisTrationForms\suplementaryReg\suplemenaryRegForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ReportManagement\ReportForm.cs">

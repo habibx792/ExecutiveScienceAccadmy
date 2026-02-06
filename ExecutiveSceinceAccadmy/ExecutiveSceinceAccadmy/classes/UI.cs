@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Net.NetworkInformation;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -11,6 +12,8 @@ namespace ExecutiveScienceAcademy.classes
     {
         // Singleton
         private static UI _instance;
+        private readonly System.Runtime.CompilerServices.ConditionalWeakTable<TextBox, PaintEventHandler> _textBoxPaintHandlers
+        = new System.Runtime.CompilerServices.ConditionalWeakTable<TextBox, PaintEventHandler>();
         private static readonly object _lock = new object();
 
         public static UI Instance
@@ -399,6 +402,102 @@ namespace ExecutiveScienceAcademy.classes
             // Update rounded corners on resize
             btn.Resize += (s, e) => ApplyRoundedCorners(btn, borderRadius);
         }
+        public void setBtnHeightWidth(Button btn, int height = 40, int width = 140, Color? color = null, Color? textColor = null, int borderRadius = 12, int borderSize = 0, Font? font = null)
+        {
+            if (btn == null) return;
+
+            Color normal = color ?? PrimaryColor;
+            Color fore = textColor ?? Color.White;
+            Color hover = ControlPaint.Light(normal, 0.08f);
+            Color pressed = ControlPaint.Dark(normal, 0.12f);
+
+            btn.SuspendLayout();
+
+            // Size & visual
+            btn.Size = new Size(width, height);
+            btn.FlatStyle = FlatStyle.Flat;
+            btn.FlatAppearance.BorderSize = borderSize;
+            btn.FlatAppearance.BorderColor = PrimaryColor;
+            btn.BackColor = normal;
+            btn.ForeColor = fore;
+            btn.Font = font ?? new Font("Segoe UI Semibold", 11F);
+            btn.Cursor = Cursors.Hand;
+            btn.TextAlign = ContentAlignment.MiddleCenter;
+            btn.Padding = new Padding(10, 5, 10, 5);
+            btn.TabStop = false;
+
+            // Rounded corners and resize handling
+            ApplyRoundedCorners(btn, borderRadius);
+            btn.Resize -= (_, __) => ApplyRoundedCorners(btn, borderRadius);
+            btn.Resize += (_, __) => ApplyRoundedCorners(btn, borderRadius);
+
+            // Store colors for event handlers
+            btn.Tag = new { normal, hover, pressed, fore };
+
+            // Hover/press/enable effects (use lightweight lambdas)
+            btn.MouseEnter -= Button_MouseEnter;
+            btn.MouseLeave -= Button_MouseLeave;
+            btn.MouseDown -= Button_MouseDown;
+            btn.MouseUp -= Button_MouseUp;
+            btn.EnabledChanged -= Button_EnabledChanged;
+
+            btn.MouseEnter += Button_MouseEnter;
+            btn.MouseLeave += Button_MouseLeave;
+            btn.MouseDown += Button_MouseDown;
+            btn.MouseUp += Button_MouseUp;
+            btn.EnabledChanged += Button_EnabledChanged;
+
+            btn.ResumeLayout();
+        }
+
+        // Named handlers to avoid duplicate anonymous subscriptions
+        private void Button_MouseEnter(object? sender, EventArgs e)
+        {
+            if (sender is Button b && b.Tag is { } tagObj)
+            {
+                dynamic tag = tagObj;
+                if (b.Enabled) b.BackColor = tag.hover;
+            }
+        }
+
+        private void Button_MouseLeave(object? sender, EventArgs e)
+        {
+            if (sender is Button b && b.Tag is { } tagObj)
+            {
+                dynamic tag = tagObj;
+                if (b.Enabled) b.BackColor = tag.normal;
+            }
+        }
+
+        private void Button_MouseDown(object? sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left) return;
+            if (sender is Button b && b.Tag is { } tagObj)
+            {
+                dynamic tag = tagObj;
+                if (b.Enabled) b.BackColor = tag.pressed;
+            }
+        }
+
+        private void Button_MouseUp(object? sender, MouseEventArgs e)
+        {
+            if (sender is Button b && b.Tag is { } tagObj)
+            {
+                dynamic tag = tagObj;
+                if (b.Enabled) b.BackColor = tag.hover;
+            }
+        }
+
+        private void Button_EnabledChanged(object? sender, EventArgs e)
+        {
+            if (sender is Button b && b.Tag is { } tagObj)
+            {
+                dynamic tag = tagObj;
+                b.BackColor = b.Enabled ? tag.normal : Color.FromArgb(200, 200, 200);
+                b.ForeColor = b.Enabled ? tag.fore : Color.DarkGray;
+            }
+        }
+
         public void MakeButtonModern(
      Button btn,
      int width = 140,
@@ -427,7 +526,7 @@ namespace ExecutiveScienceAcademy.classes
             btn.Size = new Size(width, height);
             btn.FlatStyle = FlatStyle.Flat;
             btn.FlatAppearance.BorderSize = borderSize;
-            btn.FlatAppearance.BorderColor = border;
+            btn.FlatAppearance.BorderColor = PrimaryColor;
             btn.BackColor = normal;
             btn.ForeColor = fore;
             btn.Font = font ?? new Font("Segoe UI Semibold", 11F);
@@ -461,10 +560,87 @@ namespace ExecutiveScienceAcademy.classes
             btn.Region = new Region(path);
         }
 
+        public void StyleTextBox(
+            TextBox tb,
+            int borderRadius = 6,
+            Color? backColor = null,
+            Color? borderColor = null,
+            int borderThickness = 1,
+            Color? focusedBorderColor = null,
+            int height = 36)
+        {
+            if (tb == null) return;
 
-        // =======================
-        // Style Panel with rounded corners
-        // =======================
+            // Ensure there's a parent to draw the custom border on
+            Control parent = tb.Parent ?? tb.FindForm();
+            if (parent == null)
+            {
+                tb.BorderStyle = BorderStyle.None;
+                return;
+            }
+
+            // Basic appearance
+            tb.BorderStyle = BorderStyle.None;
+            tb.BackColor = backColor ?? Color.White;
+            tb.Font = new Font("Segoe UI", 10f);
+            tb.Height = height;
+            tb.Multiline = true; // allows padding to take effect
+            tb.Padding = new Padding(8, Math.Max(2, (height - (int)tb.Font.GetHeight()) / 2), 8, 0);
+            tb.MinimumSize = new Size(0, height);
+
+            Color normal = borderColor ?? Color.FromArgb(210, 210, 210);
+            Color focus = focusedBorderColor ?? PrimaryColor;
+            int thickness = Math.Max(1, borderThickness);
+
+            // Paint handler draws rounded border around the textbox (relative to parent coordinates)
+            PaintEventHandler paintHandler = (s, e) =>
+            {
+                if (tb.IsDisposed || !tb.Visible) return;
+
+                e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+
+                Rectangle rect = new Rectangle(
+                    tb.Left - thickness,
+                    tb.Top - thickness,
+                    tb.Width + thickness * 2,
+                    tb.Height + thickness * 2);
+
+                using (GraphicsPath path = GetRoundedRectanglePath(rect, borderRadius))
+                using (Pen pen = new Pen(tb.Focused ? focus : normal, thickness))
+                {
+                    e.Graphics.DrawPath(pen, path);
+                }
+            };
+
+            // Ensure single subscription per TextBox and avoid duplicate handlers
+            if (_textBoxPaintHandlers.TryGetValue(tb, out var existing))
+            {
+                try { parent.Paint -= existing; } catch { }
+                _textBoxPaintHandlers.Remove(tb);
+            }
+
+            parent.Paint += paintHandler;
+            _textBoxPaintHandlers.Add(tb, paintHandler);
+
+            // Invalidate parent when textbox state changes so border updates immediately
+            void InvalidateParent(object? _, EventArgs __) { parent.Invalidate(); }
+
+            tb.GotFocus -= InvalidateParent;
+            tb.LostFocus -= InvalidateParent;
+            tb.Resize -= InvalidateParent;
+            tb.LocationChanged -= InvalidateParent;
+            tb.ParentChanged -= InvalidateParent;
+
+            tb.GotFocus += InvalidateParent;
+            tb.LostFocus += InvalidateParent;
+            tb.Resize += InvalidateParent;
+            tb.LocationChanged += InvalidateParent;
+            tb.ParentChanged += (s, e) =>
+            {
+                // If parent changed, reapply styling so the paint handler is attached to new parent
+                if (tb.Parent != null) StyleTextBox(tb, borderRadius, backColor, borderColor, borderThickness, focusedBorderColor, height);
+            };
+        }
         public void StylePanel(Panel panel,
                                Color? backColor = null,
                                Color? borderColor = null,

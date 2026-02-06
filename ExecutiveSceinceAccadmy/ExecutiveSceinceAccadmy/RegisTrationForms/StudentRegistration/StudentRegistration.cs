@@ -1,6 +1,4 @@
-﻿using ExecutiveSceinceAccadmy.RegisTrationForms.RegularReg;
-using ExecutiveSceinceAccadmy.RegisTrationForms.RtsReg;
-using ExecutiveSceinceAccadmy.RegisTrationForms.suplementaryReg;
+﻿using ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration;
 using ExecutiveScienceAcademy.classes;
 using System;
 using System.Drawing;
@@ -49,6 +47,8 @@ namespace ExecutiveSceinceAccadmy.studentRegistrationForms
                borderThickness: 2);
                 UI.Instance.AddFormShadow(this);
                 UI.Instance.setFormSize(this, 1373, 687);
+                UI.Instance.AddFormShadow(this);
+                UI.Instance.AddFormShadow(this);
             }
 
         }
@@ -66,7 +66,7 @@ namespace ExecutiveSceinceAccadmy.studentRegistrationForms
         private void btnStdReg_Click(object sender, EventArgs e)
         {
             this.Hide();
-            using (RegularReg stdRegForm = new RegularReg())
+            using (RegisTracionForm stdRegForm = new RegisTracionForm())
             {
                 stdRegForm.ShowDialog();
             }
@@ -77,7 +77,7 @@ namespace ExecutiveSceinceAccadmy.studentRegistrationForms
         private void BtnFeeSub_Click(object sender, EventArgs e)
         {
             this.Hide();
-            using (RTSReg stdRegForm = new RTSReg())
+            using (RegisTracionForm stdRegForm = new RegisTracionForm())
             {
                 stdRegForm.ShowDialog();
             }
@@ -90,7 +90,7 @@ namespace ExecutiveSceinceAccadmy.studentRegistrationForms
         private void stdBoard_Click(object sender, EventArgs e)
         {
             this.Hide();
-            using (suplemenaryRegForm stdRegForm = new suplemenaryRegForm())
+            using (RegisTracionForm stdRegForm = new RegisTracionForm())
             {
                 stdRegForm.ShowDialog();
             }
@@ -101,7 +101,7 @@ namespace ExecutiveSceinceAccadmy.studentRegistrationForms
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
-            using (PrimaryRegForm stdRegForm = new PrimaryRegForm())
+            using (RegisTracionForm stdRegForm = new RegisTracionForm())
             {
                 stdRegForm.ShowDialog();
             }
