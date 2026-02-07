@@ -93,6 +93,7 @@
             btnSearchFee.TabIndex = 16;
             btnSearchFee.Text = "Search Fee Recored";
             btnSearchFee.UseVisualStyleBackColor = true;
+            btnSearchFee.Click += btnSearchFee_Click;
             // 
             // btnRts
             // 
@@ -102,6 +103,7 @@
             btnRts.TabIndex = 15;
             btnRts.Text = "Submit RTS Fee";
             btnRts.UseVisualStyleBackColor = true;
+            btnRts.Click += btnRts_Click;
             // 
             // btnDefault
             // 
@@ -111,6 +113,7 @@
             btnDefault.TabIndex = 14;
             btnDefault.Text = "Defualter Student";
             btnDefault.UseVisualStyleBackColor = true;
+            btnDefault.Click += btnDefault_Click;
             // 
             // btnPrimary
             // 
@@ -120,6 +123,7 @@
             btnPrimary.TabIndex = 13;
             btnPrimary.Text = "Primary Fee Submission";
             btnPrimary.UseVisualStyleBackColor = true;
+            btnPrimary.Click += btnPrimary_Click;
             // 
             // btnSupp
             // 
@@ -129,6 +133,7 @@
             btnSupp.TabIndex = 12;
             btnSupp.Text = "Supplementary FeeSubmission";
             btnSupp.UseVisualStyleBackColor = true;
+            btnSupp.Click += btnSupp_Click;
             // 
             // btnRegularFee
             // 
@@ -138,6 +143,7 @@
             btnRegularFee.TabIndex = 11;
             btnRegularFee.Text = "Submit Regular Fee";
             btnRegularFee.UseVisualStyleBackColor = true;
+            btnRegularFee.Click += btnRegularFee_Click;
             // 
             // FeeForm
             // 
@@ -153,7 +159,6 @@
             pnLogo.PerformLayout();
             pnMain.ResumeLayout(false);
             pnMain.PerformLayout();
-
             ResumeLayout(false);
         }
 

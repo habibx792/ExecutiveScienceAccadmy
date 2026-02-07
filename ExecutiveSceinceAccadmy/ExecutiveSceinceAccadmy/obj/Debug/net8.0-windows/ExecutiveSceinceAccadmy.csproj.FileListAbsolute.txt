@@ -89,3 +89,6 @@ E:\Programming Codes\Academy Project\ExecutiveScienceAccadmy\ExecutiveSceinceAcc
 E:\Programming Codes\Academy Project\ExecutiveScienceAccadmy\ExecutiveSceinceAccadmy\ExecutiveSceinceAccadmy\obj\Debug\net8.0-windows\ExecutiveSceinceAccadmy.genruntimeconfig.cache
 E:\Programming Codes\Academy Project\ExecutiveScienceAccadmy\ExecutiveSceinceAccadmy\ExecutiveSceinceAccadmy\obj\Debug\net8.0-windows\ref\ExecutiveSceinceAccadmy.dll
 D:\Programming\Projects\ExecutiveScienceAccadmy\ExecutiveSceinceAccadmy\ExecutiveSceinceAccadmy\obj\Debug\net8.0-windows\ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration.RegisTracionForm.resources
+D:\Programming\Projects\ExecutiveScienceAccadmy\ExecutiveSceinceAccadmy\ExecutiveSceinceAccadmy\obj\Debug\net8.0-windows\ExecutiveSceinceAccadmy.FeeMangement.Defulter.resources
+D:\Programming\Projects\ExecutiveScienceAccadmy\ExecutiveSceinceAccadmy\ExecutiveSceinceAccadmy\obj\Debug\net8.0-windows\ExecutiveSceinceAccadmy.FeeMangement.FeeSubMission.resources
+D:\Programming\Projects\ExecutiveScienceAccadmy\ExecutiveSceinceAccadmy\ExecutiveSceinceAccadmy\obj\Debug\net8.0-windows\ExecutiveSceinceAccadmy.FeeMangement.searchFeeRecord.resources

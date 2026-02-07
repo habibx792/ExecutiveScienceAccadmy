@@ -22,7 +22,16 @@
     <Compile Update="ExpenseMangenment\ExpenseForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FeeMangement\Defulter.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FeeMangement\FeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FeeMangement\FeeSubMission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FeeMangement\searchFeeRecord.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Form1.cs">

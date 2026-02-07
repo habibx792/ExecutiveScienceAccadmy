@@ -332,6 +332,78 @@ namespace ExecutiveScienceAcademy.classes
         // =======================
         // Style Button with rounded corners
         // =======================
+        public void StyleButtonWidthHeight(Button btn,int height=40,int width=40, int borderRadius = 15, Color? backgroundColor = null)
+        {
+            if (btn == null) return;
+
+            btn.FlatStyle = FlatStyle.Flat;
+            btn.FlatAppearance.BorderSize = 0;
+            btn.Height = height;
+            btn.Width = width;
+
+            Color normal = backgroundColor ?? PrimaryColor;
+            Color hover = Color.FromArgb(
+                Math.Min(normal.R + 20, 255),
+                Math.Min(normal.G + 20, 255),
+                Math.Min(normal.B + 20, 255));
+            Color pressed = Color.FromArgb(
+                Math.Max(normal.R - 30, 0),
+                Math.Max(normal.G - 30, 0),
+                Math.Max(normal.B - 30, 0));
+            Color disabled = Color.FromArgb(200, 200, 200);
+
+            btn.BackColor = normal;
+            btn.ForeColor = Color.White;
+            btn.Font = new Font("Segoe UI Semibold", 11F);
+            btn.Cursor = Cursors.Hand;
+            btn.Padding = new Padding(10, 5, 10, 5);
+
+            // Rounded corners
+            ApplyRoundedCorners(btn, borderRadius);
+
+            // Hover / press effects
+            btn.MouseEnter += (s, e) =>
+            {
+                if (btn.Enabled)
+                {
+                    btn.BackColor = hover;
+                    btn.FlatAppearance.MouseOverBackColor = hover;
+                }
+            };
+
+            btn.MouseLeave += (s, e) =>
+            {
+                if (btn.Enabled)
+                {
+                    btn.BackColor = normal;
+                }
+            };
+
+            btn.MouseDown += (s, e) =>
+            {
+                if (btn.Enabled)
+                {
+                    btn.BackColor = pressed;
+                }
+            };
+
+            btn.MouseUp += (s, e) =>
+            {
+                if (btn.Enabled)
+                {
+                    btn.BackColor = hover;
+                }
+            };
+
+            btn.EnabledChanged += (s, e) =>
+            {
+                btn.BackColor = btn.Enabled ? normal : disabled;
+                btn.ForeColor = btn.Enabled ? Color.White : Color.DarkGray;
+            };
+
+            // Update rounded corners on resize
+            btn.Resize += (s, e) => ApplyRoundedCorners(btn, borderRadius);
+        }
         public void StyleButton(Button btn, int borderRadius = 15, Color? backgroundColor = null)
         {
             if (btn == null) return;

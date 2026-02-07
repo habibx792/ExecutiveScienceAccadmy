@@ -62,5 +62,68 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
 
 
         }
+
+        private void btnRegularFee_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (var feeSubMission = new FeeSubMission())
+            {
+                feeSubMission.ShowDialog();
+            }
+            this.Show();
+        }
+
+        private void btnRts_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (var feeSubMission = new FeeSubMission())
+            {
+                feeSubMission.ShowDialog();
+            }
+            this.Show();
+        }
+
+        private void btnPrimary_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (var feeSubMission = new FeeSubMission())
+            {
+                feeSubMission.ShowDialog();
+            }
+            this.Show();
+        }
+
+        private void btnSupp_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (var feeSubMission = new FeeSubMission())
+            {
+                feeSubMission.ShowDialog();
+            }
+            this.Show();
+        }
+
+        private void btnSearchFee_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (var feeSubMissionSearch = new searchFeeRecord())
+            {
+                feeSubMissionSearch.ShowDialog();
+            }
+            this.Show();
+        }
+
+        
+
+        private void btnDefault_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (var defulter = new Defulter())
+            {
+                defulter.ShowDialog();
+            }
+            this.Show();
+
+        }
     }
 }
