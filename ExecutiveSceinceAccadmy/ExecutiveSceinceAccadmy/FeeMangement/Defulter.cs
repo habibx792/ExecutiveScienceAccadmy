@@ -28,11 +28,11 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
         private void StyleControls()
         {
 
-            //UI.Instance.StylePanel(pnLogo,
-            //    backColor: Color.White,
-            //    borderColor: Color.FromArgb(0, 120, 215),
-            //    borderRadius: 20,
-            //    borderThickness: 2);
+            UI.Instance.StylePanel(pnLogo,
+                backColor: Color.White,
+                borderColor: Color.FromArgb(0, 120, 215),
+                borderRadius: 20,
+                borderThickness: 2);
             //UI.Instance.StylePanel(pnMain, backColor: Color.White,
             //  borderColor: Color.FromArgb(0, 120, 215),
             //  borderRadius: 20,
@@ -52,6 +52,11 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Defulter_Load(object sender, EventArgs e)
         {
 
         }
