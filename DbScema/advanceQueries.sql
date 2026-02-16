@@ -1,0 +1,2 @@
+-----------------------------------This is for view and other function and tractions and other advance thing to reduce difficulty
+-----------------------------------Here we define the queries which we need to apply on system
