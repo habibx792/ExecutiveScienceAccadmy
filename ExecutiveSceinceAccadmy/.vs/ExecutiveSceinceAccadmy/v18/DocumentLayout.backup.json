@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\executivesceinceaccadmy\\feemangement\\feesubmission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|d:\\programming\\projects\\executivescienceaccadmy\\executivesceinceaccadmy\\executivesceinceaccadmy\\feemangement\\feesubmission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|solutionrelative:executivesceinceaccadmy\\feemangement\\feesubmission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -27,7 +27,7 @@
       "RelativeMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|solutionrelative:executivesceinceaccadmy\\attendancemangment\\attendanceform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|d:\\programming\\projects\\executivescienceaccadmy\\executivesceinceaccadmy\\executivesceinceaccadmy\\attendancemangment\\attendanceform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\executivesceinceaccadmy\\attendancemangment\\attendanceform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|solutionrelative:executivesceinceaccadmy\\attendancemangment\\attendanceform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -39,7 +39,7 @@
       "RelativeMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|solutionrelative:executivesceinceaccadmy\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|d:\\programming\\projects\\executivescienceaccadmy\\executivesceinceaccadmy\\executivesceinceaccadmy\\attendancemangment\\teacheraattendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\executivesceinceaccadmy\\attendancemangment\\teacheraattendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|solutionrelative:executivesceinceaccadmy\\attendancemangment\\teacheraattendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -110,7 +110,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
@@ -135,21 +135,7 @@
               "RelativeToolTip": "ExecutiveSceinceAccadmy\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-04T13:18:16.652Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FeeSubMission.cs",
-              "DocumentMoniker": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\FeeMangement\\FeeSubMission.cs",
-              "RelativeDocumentMoniker": "ExecutiveSceinceAccadmy\\FeeMangement\\FeeSubMission.cs",
-              "ToolTip": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\FeeMangement\\FeeSubMission.cs*",
-              "RelativeToolTip": "ExecutiveSceinceAccadmy\\FeeMangement\\FeeSubMission.cs*",
-              "ViewState": "AgIAADIAAAAAAAAAAAAUwEMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T13:34:01.157Z",
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -198,8 +184,31 @@
               "ToolTip": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\AttendanceMangment\\attendanceForm.cs [Design]",
               "RelativeToolTip": "ExecutiveSceinceAccadmy\\AttendanceMangment\\attendanceForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T17:36:24.814Z",
+              "WhenOpened": "2026-02-04T17:36:24.814Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FeeSubMission.cs [Design]",
+              "DocumentMoniker": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\FeeMangement\\FeeSubMission.cs",
+              "RelativeDocumentMoniker": "ExecutiveSceinceAccadmy\\FeeMangement\\FeeSubMission.cs",
+              "ToolTip": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\FeeMangement\\FeeSubMission.cs [Design]",
+              "RelativeToolTip": "ExecutiveSceinceAccadmy\\FeeMangement\\FeeSubMission.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-07T18:11:12.018Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FeeSubMission.cs",
+              "DocumentMoniker": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\FeeMangement\\FeeSubMission.cs",
+              "RelativeDocumentMoniker": "ExecutiveSceinceAccadmy\\FeeMangement\\FeeSubMission.cs",
+              "ToolTip": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\FeeMangement\\FeeSubMission.cs",
+              "RelativeToolTip": "ExecutiveSceinceAccadmy\\FeeMangement\\FeeSubMission.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAUwEMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-16T13:34:01.157Z"
             },
             {
               "$type": "Document",
@@ -210,20 +219,7 @@
               "ToolTip": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\AttendanceMangment\\classWisAttencedance.cs [Design]",
               "RelativeToolTip": "ExecutiveSceinceAccadmy\\AttendanceMangment\\classWisAttencedance.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T12:24:45.996Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FeeSubMission.cs [Design]",
-              "DocumentMoniker": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\FeeMangement\\FeeSubMission.cs",
-              "RelativeDocumentMoniker": "ExecutiveSceinceAccadmy\\FeeMangement\\FeeSubMission.cs",
-              "ToolTip": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\FeeMangement\\FeeSubMission.cs [Design]*",
-              "RelativeToolTip": "ExecutiveSceinceAccadmy\\FeeMangement\\FeeSubMission.cs [Design]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-07T18:11:12.018Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-02-16T12:24:45.996Z"
             },
             {
               "$type": "Document",
@@ -234,8 +230,7 @@
               "ToolTip": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\FeeMangement\\FeeForm.cs [Design]",
               "RelativeToolTip": "ExecutiveSceinceAccadmy\\FeeMangement\\FeeForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-07T18:12:25.236Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-02-07T18:12:25.236Z"
             },
             {
               "$type": "Document",
@@ -247,8 +242,7 @@
               "RelativeToolTip": "ExecutiveSceinceAccadmy\\AttendanceMangment\\classWisAttencedance.Designer.cs",
               "ViewState": "AgIAAHgAAAAAAAAAAAAowJoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T12:34:42.789Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-16T12:34:42.789Z"
             },
             {
               "$type": "Document",
@@ -259,8 +253,7 @@
               "ToolTip": "D:\\Programming\\Projects\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\AttendanceMangment\\TeacheraAttendance.cs [Design]",
               "RelativeToolTip": "ExecutiveSceinceAccadmy\\AttendanceMangment\\TeacheraAttendance.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-16T13:25:23.424Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-02-16T13:25:23.424Z"
             },
             {
               "$type": "Document",
