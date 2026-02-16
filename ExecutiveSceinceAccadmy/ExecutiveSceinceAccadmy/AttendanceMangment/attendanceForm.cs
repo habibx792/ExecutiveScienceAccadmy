@@ -13,7 +13,7 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
 {
     public partial class attendanceForm : Form
     {
-        
+
         public attendanceForm()
         {
             InitializeComponent();
@@ -51,6 +51,16 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
         private void attendanceForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnMark_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using( classWisAttencedance attendance = new classWisAttencedance())
+            {
+                attendance.ShowDialog();
+            }
+            this.Show();
         }
     }
 }

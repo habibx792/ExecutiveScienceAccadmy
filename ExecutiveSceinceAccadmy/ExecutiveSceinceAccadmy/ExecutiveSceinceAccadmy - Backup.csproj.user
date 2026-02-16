@@ -4,9 +4,6 @@
     <Compile Update="AttendanceMangment\attendanceForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="AttendanceMangment\classWisAttencedance.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="AttendanceMangment\markAttedance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -40,7 +37,14 @@
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
+<<<<<<< HEAD
     <Compile Update="LoginForm.cs">
+=======
+    <Compile Update="RegisTrationForms\AlreadyRegi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="RegisTrationForms\RegularReg\RegularReg.cs">
+>>>>>>> b396c90e1aac28a13632dc8a6dd0b437b38d1eb8
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="RegisTrationForms\StudentRegistration\RegisTracionForm.cs">

@@ -76,6 +76,7 @@
             btnMark.TabIndex = 24;
             btnMark.Text = "Class Wise";
             btnMark.UseVisualStyleBackColor = true;
+            btnMark.Click += btnMark_Click;
             // 
             // btnSujectWise
             // 

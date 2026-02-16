@@ -32,14 +32,12 @@
             pnPreq = new Panel();
             lblRegiDate = new Label();
             dtpRegis = new DateTimePicker();
-            radioButton1 = new RadioButton();
             lblClass = new Label();
             lblDomain = new Label();
             comboBox1 = new ComboBox();
             radioButton2 = new RadioButton();
             radioButton3 = new RadioButton();
             radioButton4 = new RadioButton();
-            radioButton5 = new RadioButton();
             comboBox4 = new ComboBox();
             cmbClass = new ComboBox();
             Suject = new Label();
@@ -52,7 +50,6 @@
             pnLogo = new Panel();
             lbLogo = new Label();
             pnMainPn = new Panel();
-            pnHide = new Panel();
             pnAccadminc = new Panel();
             txtDeg = new TextBox();
             txtDegYear = new TextBox();
@@ -85,6 +82,8 @@
             lblFathOcc = new Label();
             pnPerson = new Panel();
             label19 = new Label();
+            radioButton5 = new RadioButton();
+            pnHide = new Panel();
             pnPreq.SuspendLayout();
             pnLogo.SuspendLayout();
             pnMainPn.SuspendLayout();
@@ -107,7 +106,6 @@
             // 
             pnPreq.Controls.Add(lblRegiDate);
             pnPreq.Controls.Add(dtpRegis);
-            pnPreq.Controls.Add(radioButton1);
             pnPreq.Controls.Add(lblClass);
             pnPreq.Controls.Add(lblDomain);
             pnPreq.Controls.Add(comboBox1);
@@ -138,17 +136,6 @@
             dtpRegis.Name = "dtpRegis";
             dtpRegis.Size = new Size(200, 23);
             dtpRegis.TabIndex = 25;
-            // 
-            // radioButton1
-            // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(71, 32);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(154, 19);
-            radioButton1.TabIndex = 3;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Already Register Student";
-            radioButton1.UseVisualStyleBackColor = true;
             // 
             // lblClass
             // 
@@ -191,7 +178,7 @@
             // radioButton3
             // 
             radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(759, 32);
+            radioButton3.Location = new Point(547, 32);
             radioButton3.Name = "radioButton3";
             radioButton3.Size = new Size(110, 19);
             radioButton3.TabIndex = 5;
@@ -202,24 +189,13 @@
             // radioButton4
             // 
             radioButton4.AutoSize = true;
-            radioButton4.Location = new Point(528, 32);
+            radioButton4.Location = new Point(296, 32);
             radioButton4.Name = "radioButton4";
             radioButton4.Size = new Size(88, 19);
             radioButton4.TabIndex = 6;
             radioButton4.TabStop = true;
             radioButton4.Text = "RTS Student";
             radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // radioButton5
-            // 
-            radioButton5.AutoSize = true;
-            radioButton5.Location = new Point(304, 32);
-            radioButton5.Name = "radioButton5";
-            radioButton5.Size = new Size(109, 19);
-            radioButton5.TabIndex = 7;
-            radioButton5.TabStop = true;
-            radioButton5.Text = "Regular Student";
-            radioButton5.UseVisualStyleBackColor = true;
             // 
             // comboBox4
             // 
@@ -321,13 +297,6 @@
             pnMainPn.Size = new Size(1228, 694);
             pnMainPn.TabIndex = 26;
             pnMainPn.Paint += pnMainPn_Paint;
-            // 
-            // pnHide
-            // 
-            pnHide.Location = new Point(44, 661);
-            pnHide.Name = "pnHide";
-            pnHide.Size = new Size(25, 100);
-            pnHide.TabIndex = 27;
             // 
             // pnAccadminc
             // 
@@ -626,6 +595,24 @@
             label19.TabIndex = 1;
             label19.Text = "Person Information And Education";
             // 
+            // radioButton5
+            // 
+            radioButton5.AutoSize = true;
+            radioButton5.Location = new Point(72, 32);
+            radioButton5.Name = "radioButton5";
+            radioButton5.Size = new Size(109, 19);
+            radioButton5.TabIndex = 7;
+            radioButton5.TabStop = true;
+            radioButton5.Text = "Regular Student";
+            radioButton5.UseVisualStyleBackColor = true;
+            // 
+            // pnHide
+            // 
+            pnHide.Location = new Point(44, 661);
+            pnHide.Name = "pnHide";
+            pnHide.Size = new Size(25, 100);
+            pnHide.TabIndex = 27;
+            // 
             // RegisTracionForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -659,11 +646,9 @@
         private ComboBox comboBox1;
         private Label Suject;
         private PrintDialog printDialog1;
-        private RadioButton radioButton1;
         private RadioButton radioButton2;
         private RadioButton radioButton3;
         private RadioButton radioButton4;
-        private RadioButton radioButton5;
         private ComboBox comboBox4;
         private ComboBox cmbClass;
         private TextBox txtStdCnic;
@@ -709,6 +694,7 @@
         private Panel pnAccadminc;
         private Label lblSchool;
         private TextBox txtSchool;
+        private RadioButton radioButton5;
         private Panel pnHide;
     }
 }
