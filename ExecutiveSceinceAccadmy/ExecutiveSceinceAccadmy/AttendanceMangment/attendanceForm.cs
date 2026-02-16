@@ -56,9 +56,20 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
         private void btnMark_Click(object sender, EventArgs e)
         {
             this.Hide();
-            using( classWisAttencedance attendance = new classWisAttencedance())
+            using (classWisAttencedance attendance = new classWisAttencedance())
             {
                 attendance.ShowDialog();
+            }
+            this.Show();
+        }
+
+        private void btnUpAtt_Click(object sender, EventArgs e)
+        {
+            this.Hide()
+                ;
+            using( TeacheraAttendance updateAtt = new TeacheraAttendance())
+            {
+                updateAtt.ShowDialog();
             }
             this.Show();
         }

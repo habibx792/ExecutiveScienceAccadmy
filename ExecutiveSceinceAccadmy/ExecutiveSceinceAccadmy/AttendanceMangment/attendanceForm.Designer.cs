@@ -102,7 +102,7 @@
             // 
             // btnSum
             // 
-            btnSum.Location = new Point(44, 234);
+            btnSum.Location = new Point(324, 234);
             btnSum.Name = "btnSum";
             btnSum.Size = new Size(229, 130);
             btnSum.TabIndex = 21;
@@ -111,12 +111,13 @@
             // 
             // btnUpAtt
             // 
-            btnUpAtt.Location = new Point(314, 234);
+            btnUpAtt.Location = new Point(42, 234);
             btnUpAtt.Name = "btnUpAtt";
             btnUpAtt.Size = new Size(231, 130);
             btnUpAtt.TabIndex = 23;
-            btnUpAtt.Text = "Update Attedance";
+            btnUpAtt.Text = "Teacher Attendance";
             btnUpAtt.UseVisualStyleBackColor = true;
+            btnUpAtt.Click += btnUpAtt_Click;
             // 
             // btnDashBoad
             // 
