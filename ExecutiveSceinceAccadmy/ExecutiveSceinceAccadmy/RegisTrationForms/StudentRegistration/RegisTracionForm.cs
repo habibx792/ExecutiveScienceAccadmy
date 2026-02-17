@@ -69,7 +69,7 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
             );
             UI.Instance.StyleTextBox(txtDeg, focusedBorderColor: Color.DodgerBlue,
          height: 42);
-            UI.Instance.StyleTextBox(txtDegYear, focusedBorderColor: Color.DodgerBlue, height: 42);
+           
 
 
 

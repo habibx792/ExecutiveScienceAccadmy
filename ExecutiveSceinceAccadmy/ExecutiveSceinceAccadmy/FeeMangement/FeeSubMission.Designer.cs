@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            Search = new Button();
             dateTimePicker1 = new DateTimePicker();
             textBox1 = new TextBox();
-            Search = new Button();
             dataGridView1 = new DataGridView();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -44,8 +44,17 @@
             panel1.Controls.Add(textBox1);
             panel1.Location = new Point(270, 77);
             panel1.Name = "panel1";
-            panel1.Size = new Size(755, 100);
+            panel1.Size = new Size(755, 125);
             panel1.TabIndex = 1;
+            // 
+            // Search
+            // 
+            Search.Location = new Point(280, 64);
+            Search.Name = "Search";
+            Search.Size = new Size(75, 33);
+            Search.TabIndex = 2;
+            Search.Text = "Search";
+            Search.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker1
             // 
@@ -62,15 +71,6 @@
             textBox1.Size = new Size(333, 23);
             textBox1.TabIndex = 4;
             textBox1.TextChanged += textBox1_TextChanged;
-            // 
-            // Search
-            // 
-            Search.Location = new Point(280, 64);
-            Search.Name = "Search";
-            Search.Size = new Size(75, 33);
-            Search.TabIndex = 2;
-            Search.Text = "Search";
-            Search.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 

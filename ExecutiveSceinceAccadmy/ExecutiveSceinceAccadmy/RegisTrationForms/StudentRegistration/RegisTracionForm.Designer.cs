@@ -38,6 +38,7 @@
             radioButton2 = new RadioButton();
             radioButton3 = new RadioButton();
             radioButton4 = new RadioButton();
+            radioButton5 = new RadioButton();
             comboBox4 = new ComboBox();
             cmbClass = new ComboBox();
             Suject = new Label();
@@ -52,7 +53,6 @@
             pnMainPn = new Panel();
             pnAccadminc = new Panel();
             txtDeg = new TextBox();
-            txtDegYear = new TextBox();
             label20 = new Label();
             lblSchool = new Label();
             txtTotalMark = new TextBox();
@@ -62,11 +62,12 @@
             lblRollNo = new Label();
             lblBoard = new Label();
             lblDeg = new Label();
-            lblDegYear = new Label();
             txtMark = new TextBox();
             lblTotalMarks = new Label();
             txtRollNo = new TextBox();
             pnPerMain = new Panel();
+            lblGend = new Label();
+            comboBox2 = new ComboBox();
             txtFatherMob = new TextBox();
             txtEmail = new TextBox();
             txtWatapp = new TextBox();
@@ -82,8 +83,9 @@
             lblFathOcc = new Label();
             pnPerson = new Panel();
             label19 = new Label();
-            radioButton5 = new RadioButton();
             pnHide = new Panel();
+            comboBox3 = new ComboBox();
+            lblDegYear = new Label();
             pnPreq.SuspendLayout();
             pnLogo.SuspendLayout();
             pnMainPn.SuspendLayout();
@@ -94,7 +96,7 @@
             // 
             // btnRegistation
             // 
-            btnRegistation.Location = new Point(1051, 623);
+            btnRegistation.Location = new Point(1051, 661);
             btnRegistation.Name = "btnRegistation";
             btnRegistation.Size = new Size(154, 59);
             btnRegistation.TabIndex = 0;
@@ -197,6 +199,17 @@
             radioButton4.Text = "RTS Student";
             radioButton4.UseVisualStyleBackColor = true;
             // 
+            // radioButton5
+            // 
+            radioButton5.AutoSize = true;
+            radioButton5.Location = new Point(72, 32);
+            radioButton5.Name = "radioButton5";
+            radioButton5.Size = new Size(109, 19);
+            radioButton5.TabIndex = 7;
+            radioButton5.TabStop = true;
+            radioButton5.Text = "Regular Student";
+            radioButton5.UseVisualStyleBackColor = true;
+            // 
             // comboBox4
             // 
             comboBox4.FormattingEnabled = true;
@@ -253,7 +266,7 @@
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(571, 92);
+            textBox4.Location = new Point(139, 211);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(206, 23);
             textBox4.TabIndex = 18;
@@ -294,14 +307,15 @@
             pnMainPn.Controls.Add(btnRegistation);
             pnMainPn.Location = new Point(89, 106);
             pnMainPn.Name = "pnMainPn";
-            pnMainPn.Size = new Size(1228, 694);
+            pnMainPn.Size = new Size(1228, 748);
             pnMainPn.TabIndex = 26;
             pnMainPn.Paint += pnMainPn_Paint;
             // 
             // pnAccadminc
             // 
+            pnAccadminc.Controls.Add(comboBox3);
+            pnAccadminc.Controls.Add(lblDegYear);
             pnAccadminc.Controls.Add(txtDeg);
-            pnAccadminc.Controls.Add(txtDegYear);
             pnAccadminc.Controls.Add(label20);
             pnAccadminc.Controls.Add(lblSchool);
             pnAccadminc.Controls.Add(txtTotalMark);
@@ -311,11 +325,10 @@
             pnAccadminc.Controls.Add(lblRollNo);
             pnAccadminc.Controls.Add(lblBoard);
             pnAccadminc.Controls.Add(lblDeg);
-            pnAccadminc.Controls.Add(lblDegYear);
             pnAccadminc.Controls.Add(txtMark);
             pnAccadminc.Controls.Add(lblTotalMarks);
             pnAccadminc.Controls.Add(txtRollNo);
-            pnAccadminc.Location = new Point(29, 397);
+            pnAccadminc.Location = new Point(29, 450);
             pnAccadminc.Name = "pnAccadminc";
             pnAccadminc.Size = new Size(1176, 205);
             pnAccadminc.TabIndex = 53;
@@ -326,13 +339,6 @@
             txtDeg.Name = "txtDeg";
             txtDeg.Size = new Size(171, 23);
             txtDeg.TabIndex = 22;
-            // 
-            // txtDegYear
-            // 
-            txtDegYear.Location = new Point(350, 69);
-            txtDegYear.Name = "txtDegYear";
-            txtDegYear.Size = new Size(111, 23);
-            txtDegYear.TabIndex = 24;
             // 
             // label20
             // 
@@ -347,7 +353,7 @@
             // lblSchool
             // 
             lblSchool.AutoSize = true;
-            lblSchool.Location = new Point(39, 158);
+            lblSchool.Location = new Point(699, 155);
             lblSchool.Name = "lblSchool";
             lblSchool.Size = new Size(43, 15);
             lblSchool.TabIndex = 52;
@@ -355,14 +361,14 @@
             // 
             // txtTotalMark
             // 
-            txtTotalMark.Location = new Point(873, 74);
+            txtTotalMark.Location = new Point(969, 64);
             txtTotalMark.Name = "txtTotalMark";
-            txtTotalMark.Size = new Size(105, 23);
+            txtTotalMark.Size = new Size(190, 23);
             txtTotalMark.TabIndex = 26;
             // 
             // txtSchool
             // 
-            txtSchool.Location = new Point(121, 158);
+            txtSchool.Location = new Point(766, 147);
             txtSchool.Name = "txtSchool";
             txtSchool.Size = new Size(393, 23);
             txtSchool.TabIndex = 51;
@@ -370,7 +376,7 @@
             // lblObtainMark
             // 
             lblObtainMark.AutoSize = true;
-            lblObtainMark.Location = new Point(639, 82);
+            lblObtainMark.Location = new Point(699, 77);
             lblObtainMark.Name = "lblObtainMark";
             lblObtainMark.Size = new Size(39, 15);
             lblObtainMark.TabIndex = 27;
@@ -379,9 +385,9 @@
             // 
             // txtBoard
             // 
-            txtBoard.Location = new Point(1049, 79);
+            txtBoard.Location = new Point(522, 155);
             txtBoard.Name = "txtBoard";
-            txtBoard.Size = new Size(114, 23);
+            txtBoard.Size = new Size(171, 23);
             txtBoard.TabIndex = 50;
             // 
             // lblRollNo
@@ -396,7 +402,7 @@
             // lblBoard
             // 
             lblBoard.AutoSize = true;
-            lblBoard.Location = new Point(994, 85);
+            lblBoard.Location = new Point(467, 161);
             lblBoard.Name = "lblBoard";
             lblBoard.Size = new Size(38, 15);
             lblBoard.TabIndex = 49;
@@ -411,26 +417,17 @@
             lblDeg.TabIndex = 29;
             lblDeg.Text = "Degree";
             // 
-            // lblDegYear
-            // 
-            lblDegYear.AutoSize = true;
-            lblDegYear.Location = new Point(296, 79);
-            lblDegYear.Name = "lblDegYear";
-            lblDegYear.Size = new Size(29, 15);
-            lblDegYear.TabIndex = 36;
-            lblDegYear.Text = "Year";
-            // 
             // txtMark
             // 
-            txtMark.Location = new Point(699, 80);
+            txtMark.Location = new Point(744, 70);
             txtMark.Name = "txtMark";
-            txtMark.Size = new Size(111, 23);
+            txtMark.Size = new Size(180, 23);
             txtMark.TabIndex = 45;
             // 
             // lblTotalMarks
             // 
             lblTotalMarks.AutoSize = true;
-            lblTotalMarks.Location = new Point(834, 83);
+            lblTotalMarks.Location = new Point(930, 73);
             lblTotalMarks.Name = "lblTotalMarks";
             lblTotalMarks.Size = new Size(33, 15);
             lblTotalMarks.TabIndex = 37;
@@ -440,11 +437,13 @@
             // 
             txtRollNo.Location = new Point(522, 74);
             txtRollNo.Name = "txtRollNo";
-            txtRollNo.Size = new Size(111, 23);
+            txtRollNo.Size = new Size(171, 23);
             txtRollNo.TabIndex = 44;
             // 
             // pnPerMain
             // 
+            pnPerMain.Controls.Add(lblGend);
+            pnPerMain.Controls.Add(comboBox2);
             pnPerMain.Controls.Add(txtStdName);
             pnPerMain.Controls.Add(textBox5);
             pnPerMain.Controls.Add(txtFahterName);
@@ -465,8 +464,26 @@
             pnPerMain.Controls.Add(lblFathOcc);
             pnPerMain.Location = new Point(29, 189);
             pnPerMain.Name = "pnPerMain";
-            pnPerMain.Size = new Size(1176, 202);
+            pnPerMain.Size = new Size(1176, 255);
             pnPerMain.TabIndex = 42;
+            // 
+            // lblGend
+            // 
+            lblGend.AutoSize = true;
+            lblGend.Location = new Point(478, 92);
+            lblGend.Name = "lblGend";
+            lblGend.Size = new Size(45, 15);
+            lblGend.TabIndex = 44;
+            lblGend.Text = "Gender";
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "Female", "Male" });
+            comboBox2.Location = new Point(571, 92);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(206, 23);
+            comboBox2.TabIndex = 43;
             // 
             // txtFatherMob
             // 
@@ -571,7 +588,7 @@
             // lblFathOcc
             // 
             lblFathOcc.AutoSize = true;
-            lblFathOcc.Location = new Point(456, 100);
+            lblFathOcc.Location = new Point(16, 219);
             lblFathOcc.Name = "lblFathOcc";
             lblFathOcc.Size = new Size(105, 15);
             lblFathOcc.TabIndex = 35;
@@ -595,17 +612,6 @@
             label19.TabIndex = 1;
             label19.Text = "Person Information And Education";
             // 
-            // radioButton5
-            // 
-            radioButton5.AutoSize = true;
-            radioButton5.Location = new Point(72, 32);
-            radioButton5.Name = "radioButton5";
-            radioButton5.Size = new Size(109, 19);
-            radioButton5.TabIndex = 7;
-            radioButton5.TabStop = true;
-            radioButton5.Text = "Regular Student";
-            radioButton5.UseVisualStyleBackColor = true;
-            // 
             // pnHide
             // 
             pnHide.Location = new Point(44, 661);
@@ -613,11 +619,29 @@
             pnHide.Size = new Size(25, 100);
             pnHide.TabIndex = 27;
             // 
+            // comboBox3
+            // 
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Items.AddRange(new object[] { "2000", "2001", "2002", "2004", "2005", "2006", "2007", "2008", "2009", "2010" });
+            comboBox3.Location = new Point(112, 155);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(167, 23);
+            comboBox3.TabIndex = 55;
+            // 
+            // lblDegYear
+            // 
+            lblDegYear.AutoSize = true;
+            lblDegYear.Location = new Point(54, 155);
+            lblDegYear.Name = "lblDegYear";
+            lblDegYear.Size = new Size(29, 15);
+            lblDegYear.TabIndex = 54;
+            lblDegYear.Text = "Year";
+            // 
             // RegisTracionForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1346, 812);
+            ClientSize = new Size(1346, 858);
             Controls.Add(pnHide);
             Controls.Add(pnMainPn);
             Controls.Add(pnLogo);
@@ -666,7 +690,6 @@
         private Label lblDob;
         private Label lblEmail;
         private Label lblTotalMarks;
-        private Label lblDegYear;
         private Label lblFathOcc;
         private Label lblWatsap;
         private Label lblFatherName;
@@ -677,7 +700,6 @@
         private Label lblRollNo;
         private Label lblObtainMark;
         private TextBox txtTotalMark;
-        private TextBox txtDegYear;
         private TextBox txtDeg;
         private TextBox txtWatapp;
         private TextBox txtEmail;
@@ -696,5 +718,9 @@
         private TextBox txtSchool;
         private RadioButton radioButton5;
         private Panel pnHide;
+        private Label lblGend;
+        private ComboBox comboBox2;
+        private ComboBox comboBox3;
+        private Label lblDegYear;
     }
 }
