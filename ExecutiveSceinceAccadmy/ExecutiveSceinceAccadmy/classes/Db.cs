@@ -1,40 +1,56 @@
-﻿//using System;
-//using System.Data.SqlClient;
-//using System.Windows.Forms;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.Data.SqlClient;
+namespace ExecutiveSceinceAccadmy.classes
+{
+    internal sealed class DB
+    {
+        private static readonly DB instance = new DB();
 
-//namespace ExecutiveSceinceAccadmy.classes
-//{
-//    internal class Db
-//    {
-//        private static string connectionString =
-//            @"Data Source=HABIBSYSTEM\SQLEXPRESS;Initial Catalog=Student;Integrated Security=True";
+        private static string str = @"Data Source=HABIBSYSTEM\SQLEXPRESS;Initial Catalog=Student;Integrated Security=True";
 
-//        public static SqlConnection CreateConnection()
-//        {
-//            SqlConnection con = new SqlConnection(connectionString);
+        private DB() { }
 
-//            try
-//            {
-//                con.Open();
-//                MessageBox.Show("Connected Successfully");
-//                return con;
-//            }
-//            catch (Exception ex)
-//            {
-//                MessageBox.Show("Connectivity Error: " + ex.Message);
-//                return null;   // Important fix
-//            }
-//        }
+        public static DB Instance
+        {
+            get { return instance; }
+        }
 
-//        public static SqlCommand GetCommand(string query, SqlConnection con)
-//        {
-//            if (con == null)
-//            {
-//                MessageBox.Show("Connection is not available.");
-//                return null;
-//            }
-
-//            return new SqlCommand(query, con);
-//        }
-//    }
-//}
+        public SqlConnection CreateConnection()
+        {
+            SqlConnection con = new SqlConnection(str);
+            try
+            {
+                con.Open();
+                MessageBox.Show("Connected");
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"Connectivity error: {ex.Message}");
+            }
+            return con;
+        }
+        public void setConnectionString(string newConnectionString)
+        {
+            if (!string.IsNullOrEmpty(newConnectionString))
+            {
+                str = newConnectionString;
+            }
+            else
+            {
+                MessageBox.Show("Invalid connection string.");
+            }
+        }
+        public string getConnectionString()
+        {
+            return str;
+        }
+        public SqlCommand GetCommand(string query, SqlConnection con)
+        {
+            return new SqlCommand(query, con);
+        }
+    }
+}
