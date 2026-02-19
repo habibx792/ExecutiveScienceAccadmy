@@ -52,5 +52,22 @@ namespace ExecutiveSceinceAccadmy.classes
         {
             return new SqlCommand(query, con);
         }
+        public void InsertionQuery(SqlConnection con)
+        {
+
+        }
+        public void updationQuery()
+        {
+
+        }
+
+        public void deleteQuery()
+        {
+        }
+        public void updateQuery()
+        {
+        }
+
     }
+
 }
