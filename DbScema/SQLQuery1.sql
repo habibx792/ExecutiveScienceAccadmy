@@ -6,7 +6,12 @@ CREATE TABLE domainTb (
     domainId VARCHAR(50) NOT NULL PRIMARY KEY,
     domainName VARCHAR(50) NOT NULL
 );
-
+create table adminTb
+(
+    adminCnic varchar(20)not null primary key,
+    userName varchar(20)not null,
+    password varchar(20)not null,
+);
 -- Class table (e.g., 9th, 10th, 11th) with domain reference
 CREATE TABLE classTb (
     classId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
