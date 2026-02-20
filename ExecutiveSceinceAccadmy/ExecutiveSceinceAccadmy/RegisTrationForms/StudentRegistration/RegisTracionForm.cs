@@ -28,6 +28,8 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
             StyleControls();
             this.StartPosition = FormStartPosition.CenterScreen;
             pnHide.Visible = false;
+            AutoScroll = true;
+
         }
         private void StyleControls()
         {
@@ -69,7 +71,7 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
             );
             UI.Instance.StyleTextBox(txtDeg, focusedBorderColor: Color.DodgerBlue,
          height: 42);
-           
+
 
 
 
@@ -106,6 +108,7 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
 
         private void RegisTracionForm_Load(object sender, EventArgs e)
         {
+            AutoScroll = true;
 
         }
 
@@ -115,7 +118,7 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
             pnMainPn.Visible = false;
             pnHide.Height = 400;
             pnHide.Width = 800;
-            pnHide.Location = new Point((this.ClientSize.Width - pnHide.Width) / 3, (this.ClientSize.Height - pnHide.Height) / 3);  
+            pnHide.Location = new Point((this.ClientSize.Width - pnHide.Width) / 3, (this.ClientSize.Height - pnHide.Height) / 3);
             UI.Instance.StylePanel(pnHide,
                 backColor: Color.White,
                 borderColor: Color.FromArgb(0, 120, 215),
@@ -144,12 +147,22 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
             );
 
             pnHide.BringToFront();
-            pnHide.Controls.Clear(); 
+            pnHide.Controls.Clear();
             pnHide.Controls.Add(lblMessage);
             pnHide.Controls.Add(btnRegister);
         }
 
         private void pnMainPn_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

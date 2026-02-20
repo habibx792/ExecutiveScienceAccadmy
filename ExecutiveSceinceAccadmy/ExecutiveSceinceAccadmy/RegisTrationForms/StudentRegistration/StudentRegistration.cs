@@ -24,20 +24,22 @@ namespace ExecutiveSceinceAccadmy.studentRegistrationForms
 
             StyleControls();
             StartPosition = FormStartPosition.CenterScreen;
+            UI.Instance.setFormSize(this, 1713, 1024);
+
         }
 
         private void StyleControls()
         {
-          
-        {
-            
-            UI.Instance.StylePanel(pnLogo,
-                backColor: Color.White,
-                borderColor: Color.FromArgb(0, 120, 215),
-                borderRadius: 20,
-                borderThickness: 2);
-            UI.Instance.StyleButton(btnStdReg, borderRadius: 20);
-            UI.Instance.StyleButton(BtnFeeSub, borderRadius: 20);
+
+            {
+
+                UI.Instance.StylePanel(pnLogo,
+                    backColor: Color.White,
+                    borderColor: Color.FromArgb(0, 120, 215),
+                    borderRadius: 20,
+                    borderThickness: 2);
+                UI.Instance.StyleButton(btnStdReg, borderRadius: 20);
+                UI.Instance.StyleButton(BtnFeeSub, borderRadius: 20);
                 UI.Instance.StyleButton(btnPrimaryReg, borderRadius: 20);
                 UI.Instance.StyleButton(btnSupReg, borderRadius: 20);
                 UI.Instance.StylePanel(pnMain,
@@ -46,9 +48,10 @@ namespace ExecutiveSceinceAccadmy.studentRegistrationForms
                borderRadius: 20,
                borderThickness: 2);
                 UI.Instance.AddFormShadow(this);
-                UI.Instance.setFormSize(this, 1373, 687);
+                UI.Instance.setFormSize(this, 1713, 1024);
                 UI.Instance.AddFormShadow(this);
                 UI.Instance.AddFormShadow(this);
+
             }
 
         }
@@ -110,6 +113,11 @@ namespace ExecutiveSceinceAccadmy.studentRegistrationForms
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pnLogo_Paint(object sender, PaintEventArgs e)
         {
 
         }
