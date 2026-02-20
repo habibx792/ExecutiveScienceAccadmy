@@ -89,7 +89,6 @@
             pnPerson = new Panel();
             label19 = new Label();
             pnHide = new Panel();
-            button1 = new Button();
             pnPreq.SuspendLayout();
             pnLogo.SuspendLayout();
             pnMainPn.SuspendLayout();
@@ -100,10 +99,9 @@
             // 
             // btnRegistation
             // 
-            btnRegistation.Location = new Point(1351, 1014);
-            btnRegistation.Margin = new Padding(4, 5, 4, 5);
+            btnRegistation.Location = new Point(1051, 661);
             btnRegistation.Name = "btnRegistation";
-            btnRegistation.Size = new Size(198, 90);
+            btnRegistation.Size = new Size(154, 59);
             btnRegistation.TabIndex = 0;
             btnRegistation.Text = "Register";
             btnRegistation.UseVisualStyleBackColor = true;
@@ -123,47 +121,43 @@
             pnPreq.Controls.Add(comboBox4);
             pnPreq.Controls.Add(cmbClass);
             pnPreq.Controls.Add(Suject);
-            pnPreq.Location = new Point(37, 80);
-            pnPreq.Margin = new Padding(4, 5, 4, 5);
+            pnPreq.Location = new Point(29, 52);
             pnPreq.Name = "pnPreq";
-            pnPreq.Size = new Size(1512, 201);
+            pnPreq.Size = new Size(1176, 131);
             pnPreq.TabIndex = 1;
+            pnPreq.Paint += pnPreq_Paint;
             // 
             // lblRegiDate
             // 
             lblRegiDate.AutoSize = true;
-            lblRegiDate.Location = new Point(1022, 141);
-            lblRegiDate.Margin = new Padding(4, 0, 4, 0);
+            lblRegiDate.Location = new Point(795, 92);
             lblRegiDate.Name = "lblRegiDate";
-            lblRegiDate.Size = new Size(142, 23);
+            lblRegiDate.Size = new Size(97, 15);
             lblRegiDate.TabIndex = 26;
             lblRegiDate.Text = "Registration Date";
             // 
             // dtpRegis
             // 
-            dtpRegis.Location = new Point(1185, 133);
-            dtpRegis.Margin = new Padding(4, 5, 4, 5);
+            dtpRegis.Location = new Point(922, 87);
             dtpRegis.Name = "dtpRegis";
-            dtpRegis.Size = new Size(256, 30);
+            dtpRegis.Size = new Size(200, 23);
             dtpRegis.TabIndex = 25;
             // 
             // lblClass
             // 
             lblClass.AutoSize = true;
-            lblClass.Location = new Point(93, 133);
-            lblClass.Margin = new Padding(4, 0, 4, 0);
+            lblClass.Location = new Point(72, 87);
             lblClass.Name = "lblClass";
-            lblClass.Size = new Size(48, 23);
+            lblClass.Size = new Size(34, 15);
             lblClass.TabIndex = 24;
             lblClass.Text = "Class";
             // 
             // lblDomain
             // 
             lblDomain.AutoSize = true;
-            lblDomain.Location = new Point(392, 133);
-            lblDomain.Margin = new Padding(4, 0, 4, 0);
+            lblDomain.Location = new Point(305, 87);
             lblDomain.Name = "lblDomain";
-            lblDomain.Size = new Size(70, 23);
+            lblDomain.Size = new Size(49, 15);
             lblDomain.TabIndex = 23;
             lblDomain.Text = "Domain";
             // 
@@ -171,19 +165,17 @@
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Primary", "Medical", "Computer", "Non-Medical", "Arts" });
-            comboBox1.Location = new Point(472, 129);
-            comboBox1.Margin = new Padding(4, 5, 4, 5);
+            comboBox1.Location = new Point(367, 84);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(199, 31);
+            comboBox1.Size = new Size(156, 23);
             comboBox1.TabIndex = 1;
             // 
             // radioButton2
             // 
             radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(1230, 49);
-            radioButton2.Margin = new Padding(4, 5, 4, 5);
+            radioButton2.Location = new Point(957, 32);
             radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(146, 27);
+            radioButton2.Size = new Size(105, 19);
             radioButton2.TabIndex = 4;
             radioButton2.TabStop = true;
             radioButton2.Text = "Supplementary";
@@ -192,10 +184,9 @@
             // radioButton3
             // 
             radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(703, 49);
-            radioButton3.Margin = new Padding(4, 5, 4, 5);
+            radioButton3.Location = new Point(547, 32);
             radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(153, 27);
+            radioButton3.Size = new Size(110, 19);
             radioButton3.TabIndex = 5;
             radioButton3.TabStop = true;
             radioButton3.Text = "Primary Student";
@@ -204,10 +195,9 @@
             // radioButton4
             // 
             radioButton4.AutoSize = true;
-            radioButton4.Location = new Point(381, 49);
-            radioButton4.Margin = new Padding(4, 5, 4, 5);
+            radioButton4.Location = new Point(296, 32);
             radioButton4.Name = "radioButton4";
-            radioButton4.Size = new Size(122, 27);
+            radioButton4.Size = new Size(88, 19);
             radioButton4.TabIndex = 6;
             radioButton4.TabStop = true;
             radioButton4.Text = "RTS Student";
@@ -216,10 +206,9 @@
             // radioButton5
             // 
             radioButton5.AutoSize = true;
-            radioButton5.Location = new Point(93, 49);
-            radioButton5.Margin = new Padding(4, 5, 4, 5);
+            radioButton5.Location = new Point(72, 32);
             radioButton5.Name = "radioButton5";
-            radioButton5.Size = new Size(153, 27);
+            radioButton5.Size = new Size(109, 19);
             radioButton5.TabIndex = 7;
             radioButton5.TabStop = true;
             radioButton5.Text = "Regular Student";
@@ -228,94 +217,84 @@
             // comboBox4
             // 
             comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(760, 129);
-            comboBox4.Margin = new Padding(4, 5, 4, 5);
+            comboBox4.Location = new Point(591, 84);
             comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(193, 31);
+            comboBox4.Size = new Size(151, 23);
             comboBox4.TabIndex = 10;
             // 
             // cmbClass
             // 
             cmbClass.FormattingEnabled = true;
             cmbClass.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" });
-            cmbClass.Location = new Point(161, 129);
-            cmbClass.Margin = new Padding(4, 5, 4, 5);
+            cmbClass.Location = new Point(125, 84);
             cmbClass.Name = "cmbClass";
-            cmbClass.Size = new Size(197, 31);
+            cmbClass.Size = new Size(154, 23);
             cmbClass.TabIndex = 11;
             // 
             // Suject
             // 
             Suject.AutoSize = true;
-            Suject.Location = new Point(680, 133);
-            Suject.Margin = new Padding(4, 0, 4, 0);
+            Suject.Location = new Point(529, 87);
             Suject.Name = "Suject";
-            Suject.Size = new Size(66, 23);
+            Suject.Size = new Size(46, 15);
             Suject.TabIndex = 2;
             Suject.Text = "Subject";
             // 
             // txtFahterName
             // 
-            txtFahterName.Location = new Point(734, 34);
-            txtFahterName.Margin = new Padding(4, 5, 4, 5);
+            txtFahterName.Location = new Point(571, 22);
             txtFahterName.Name = "txtFahterName";
-            txtFahterName.Size = new Size(264, 30);
+            txtFahterName.Size = new Size(206, 23);
             txtFahterName.TabIndex = 0;
             txtFahterName.TextChanged += textBox1_TextChanged;
             // 
             // txtStdCnic
             // 
-            txtStdCnic.Location = new Point(179, 141);
-            txtStdCnic.Margin = new Padding(4, 5, 4, 5);
+            txtStdCnic.Location = new Point(139, 92);
             txtStdCnic.Name = "txtStdCnic";
-            txtStdCnic.Size = new Size(320, 30);
+            txtStdCnic.Size = new Size(250, 23);
             txtStdCnic.TabIndex = 16;
             // 
             // txtStdName
             // 
-            txtStdName.Location = new Point(167, 34);
-            txtStdName.Margin = new Padding(4, 5, 4, 5);
+            txtStdName.Location = new Point(130, 22);
             txtStdName.Name = "txtStdName";
-            txtStdName.Size = new Size(320, 30);
+            txtStdName.Size = new Size(250, 23);
             txtStdName.TabIndex = 17;
             txtStdName.TextAlign = HorizontalAlignment.Center;
             txtStdName.TextChanged += textBox3_TextChanged;
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(179, 324);
-            textBox4.Margin = new Padding(4, 5, 4, 5);
+            textBox4.Location = new Point(139, 211);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(264, 30);
+            textBox4.Size = new Size(206, 23);
             textBox4.TabIndex = 18;
             textBox4.TextChanged += textBox4_TextChanged;
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(1184, 34);
-            textBox5.Margin = new Padding(4, 5, 4, 5);
+            textBox5.Location = new Point(921, 22);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(268, 30);
+            textBox5.Size = new Size(209, 23);
             textBox5.TabIndex = 19;
             textBox5.TextChanged += textBox5_TextChanged;
             // 
             // pnLogo
             // 
             pnLogo.Controls.Add(lbLogo);
-            pnLogo.Location = new Point(114, 18);
-            pnLogo.Margin = new Padding(4, 5, 4, 5);
+            pnLogo.Location = new Point(89, 12);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(1579, 135);
+            pnLogo.Size = new Size(1228, 88);
             pnLogo.TabIndex = 25;
             // 
             // lbLogo
             // 
             lbLogo.AutoSize = true;
             lbLogo.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbLogo.Location = new Point(510, 35);
-            lbLogo.Margin = new Padding(4, 0, 4, 0);
+            lbLogo.Location = new Point(397, 23);
             lbLogo.Name = "lbLogo";
-            lbLogo.Size = new Size(653, 46);
+            lbLogo.Size = new Size(529, 37);
             lbLogo.TabIndex = 0;
             lbLogo.Text = "Welcome To Executive Sceince Accadmy";
             // 
@@ -326,10 +305,9 @@
             pnMainPn.Controls.Add(pnPerMain);
             pnMainPn.Controls.Add(pnPerson);
             pnMainPn.Controls.Add(btnRegistation);
-            pnMainPn.Location = new Point(114, 163);
-            pnMainPn.Margin = new Padding(4, 5, 4, 5);
+            pnMainPn.Location = new Point(89, 106);
             pnMainPn.Name = "pnMainPn";
-            pnMainPn.Size = new Size(1579, 1147);
+            pnMainPn.Size = new Size(1228, 735);
             pnMainPn.TabIndex = 26;
             pnMainPn.Paint += pnMainPn_Paint;
             // 
@@ -350,150 +328,134 @@
             pnAccadminc.Controls.Add(txtMark);
             pnAccadminc.Controls.Add(lblTotalMarks);
             pnAccadminc.Controls.Add(txtRollNo);
-            pnAccadminc.Location = new Point(37, 689);
-            pnAccadminc.Margin = new Padding(4, 5, 4, 5);
+            pnAccadminc.Location = new Point(29, 449);
             pnAccadminc.Name = "pnAccadminc";
-            pnAccadminc.Size = new Size(1512, 314);
+            pnAccadminc.Size = new Size(1176, 205);
             pnAccadminc.TabIndex = 53;
             // 
             // comboBox3
             // 
             comboBox3.FormattingEnabled = true;
             comboBox3.Items.AddRange(new object[] { "2000", "2001", "2002", "2004", "2005", "2006", "2007", "2008", "2009", "2010" });
-            comboBox3.Location = new Point(144, 238);
-            comboBox3.Margin = new Padding(4, 5, 4, 5);
+            comboBox3.Location = new Point(112, 155);
             comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(214, 31);
+            comboBox3.Size = new Size(167, 23);
             comboBox3.TabIndex = 55;
             // 
             // lblDegYear
             // 
             lblDegYear.AutoSize = true;
-            lblDegYear.Location = new Point(69, 238);
-            lblDegYear.Margin = new Padding(4, 0, 4, 0);
+            lblDegYear.Location = new Point(54, 155);
             lblDegYear.Name = "lblDegYear";
-            lblDegYear.Size = new Size(42, 23);
+            lblDegYear.Size = new Size(29, 15);
             lblDegYear.TabIndex = 54;
             lblDegYear.Text = "Year";
             // 
             // txtDeg
             // 
-            txtDeg.Location = new Point(139, 106);
-            txtDeg.Margin = new Padding(4, 5, 4, 5);
+            txtDeg.Location = new Point(108, 69);
             txtDeg.Name = "txtDeg";
-            txtDeg.Size = new Size(219, 30);
+            txtDeg.Size = new Size(171, 23);
             txtDeg.TabIndex = 22;
             // 
             // label20
             // 
             label20.AutoSize = true;
             label20.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label20.Location = new Point(675, 35);
-            label20.Margin = new Padding(4, 0, 4, 0);
+            label20.Location = new Point(525, 23);
             label20.Name = "label20";
-            label20.Size = new Size(124, 32);
+            label20.Size = new Size(96, 25);
             label20.TabIndex = 43;
             label20.Text = "Accadmic";
             // 
             // lblSchool
             // 
             lblSchool.AutoSize = true;
-            lblSchool.Location = new Point(899, 238);
-            lblSchool.Margin = new Padding(4, 0, 4, 0);
+            lblSchool.Location = new Point(699, 155);
             lblSchool.Name = "lblSchool";
-            lblSchool.Size = new Size(61, 23);
+            lblSchool.Size = new Size(43, 15);
             lblSchool.TabIndex = 52;
             lblSchool.Text = "School";
             // 
             // txtTotalMark
             // 
-            txtTotalMark.Location = new Point(1246, 98);
-            txtTotalMark.Margin = new Padding(4, 5, 4, 5);
+            txtTotalMark.Location = new Point(969, 64);
             txtTotalMark.Name = "txtTotalMark";
-            txtTotalMark.Size = new Size(243, 30);
+            txtTotalMark.Size = new Size(190, 23);
             txtTotalMark.TabIndex = 26;
             // 
             // txtSchool
             // 
-            txtSchool.Location = new Point(985, 225);
-            txtSchool.Margin = new Padding(4, 5, 4, 5);
+            txtSchool.Location = new Point(766, 147);
             txtSchool.Name = "txtSchool";
-            txtSchool.Size = new Size(504, 30);
+            txtSchool.Size = new Size(393, 23);
             txtSchool.TabIndex = 51;
             // 
             // lblObtainMark
             // 
             lblObtainMark.AutoSize = true;
-            lblObtainMark.Location = new Point(899, 118);
-            lblObtainMark.Margin = new Padding(4, 0, 4, 0);
+            lblObtainMark.Location = new Point(699, 77);
             lblObtainMark.Name = "lblObtainMark";
-            lblObtainMark.Size = new Size(55, 23);
+            lblObtainMark.Size = new Size(39, 15);
             lblObtainMark.TabIndex = 27;
             lblObtainMark.Text = "Marks";
             lblObtainMark.Click += label3_Click;
             // 
             // txtBoard
             // 
-            txtBoard.Location = new Point(671, 238);
-            txtBoard.Margin = new Padding(4, 5, 4, 5);
+            txtBoard.Location = new Point(522, 155);
             txtBoard.Name = "txtBoard";
-            txtBoard.Size = new Size(219, 30);
+            txtBoard.Size = new Size(171, 23);
             txtBoard.TabIndex = 50;
             // 
             // lblRollNo
             // 
             lblRollNo.AutoSize = true;
-            lblRollNo.Location = new Point(600, 118);
-            lblRollNo.Margin = new Padding(4, 0, 4, 0);
+            lblRollNo.Location = new Point(467, 77);
             lblRollNo.Name = "lblRollNo";
-            lblRollNo.Size = new Size(75, 23);
+            lblRollNo.Size = new Size(52, 15);
             lblRollNo.TabIndex = 28;
             lblRollNo.Text = "Roll No :";
             // 
             // lblBoard
             // 
             lblBoard.AutoSize = true;
-            lblBoard.Location = new Point(600, 247);
-            lblBoard.Margin = new Padding(4, 0, 4, 0);
+            lblBoard.Location = new Point(467, 161);
             lblBoard.Name = "lblBoard";
-            lblBoard.Size = new Size(55, 23);
+            lblBoard.Size = new Size(38, 15);
             lblBoard.TabIndex = 49;
             lblBoard.Text = "Board";
             // 
             // lblDeg
             // 
             lblDeg.AutoSize = true;
-            lblDeg.Location = new Point(50, 118);
-            lblDeg.Margin = new Padding(4, 0, 4, 0);
+            lblDeg.Location = new Point(39, 77);
             lblDeg.Name = "lblDeg";
-            lblDeg.Size = new Size(65, 23);
+            lblDeg.Size = new Size(44, 15);
             lblDeg.TabIndex = 29;
             lblDeg.Text = "Degree";
             // 
             // txtMark
             // 
-            txtMark.Location = new Point(957, 107);
-            txtMark.Margin = new Padding(4, 5, 4, 5);
+            txtMark.Location = new Point(744, 70);
             txtMark.Name = "txtMark";
-            txtMark.Size = new Size(230, 30);
+            txtMark.Size = new Size(180, 23);
             txtMark.TabIndex = 45;
             // 
             // lblTotalMarks
             // 
             lblTotalMarks.AutoSize = true;
-            lblTotalMarks.Location = new Point(1196, 112);
-            lblTotalMarks.Margin = new Padding(4, 0, 4, 0);
+            lblTotalMarks.Location = new Point(930, 73);
             lblTotalMarks.Name = "lblTotalMarks";
-            lblTotalMarks.Size = new Size(46, 23);
+            lblTotalMarks.Size = new Size(33, 15);
             lblTotalMarks.TabIndex = 37;
             lblTotalMarks.Text = "Total";
             // 
             // txtRollNo
             // 
-            txtRollNo.Location = new Point(671, 113);
-            txtRollNo.Margin = new Padding(4, 5, 4, 5);
+            txtRollNo.Location = new Point(522, 74);
             txtRollNo.Name = "txtRollNo";
-            txtRollNo.Size = new Size(219, 30);
+            txtRollNo.Size = new Size(171, 23);
             txtRollNo.TabIndex = 44;
             // 
             // pnPerMain
@@ -522,54 +484,52 @@
             pnPerMain.Controls.Add(lblEmail);
             pnPerMain.Controls.Add(lblWatsap);
             pnPerMain.Controls.Add(lblFathOcc);
-            pnPerMain.Location = new Point(37, 290);
-            pnPerMain.Margin = new Padding(4, 5, 4, 5);
+            pnPerMain.Location = new Point(29, 189);
             pnPerMain.Name = "pnPerMain";
-            pnPerMain.Size = new Size(1512, 391);
+            pnPerMain.Size = new Size(1176, 255);
             pnPerMain.TabIndex = 42;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(616, 321);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(479, 209);
             label2.Name = "label2";
-            label2.Size = new Size(39, 23);
+            label2.Size = new Size(28, 15);
             label2.TabIndex = 47;
             label2.Text = "City";
             label2.Click += label2_Click;
             // 
             // txtCity
             // 
-            txtCity.Location = new Point(731, 314);
+            txtCity.Location = new Point(569, 205);
+            txtCity.Margin = new Padding(2);
             txtCity.Name = "txtCity";
-            txtCity.Size = new Size(267, 30);
+            txtCity.Size = new Size(209, 23);
             txtCity.TabIndex = 46;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(1070, 314);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(832, 205);
             label1.Name = "label1";
-            label1.Size = new Size(70, 23);
+            label1.Size = new Size(49, 15);
             label1.TabIndex = 45;
             label1.Text = "Address";
             // 
             // txtAdd
             // 
-            txtAdd.Location = new Point(1196, 314);
+            txtAdd.Location = new Point(930, 205);
+            txtAdd.Margin = new Padding(2);
             txtAdd.Name = "txtAdd";
-            txtAdd.Size = new Size(267, 30);
+            txtAdd.Size = new Size(209, 23);
             txtAdd.TabIndex = 29;
             // 
             // lblGend
             // 
             lblGend.AutoSize = true;
-            lblGend.Location = new Point(615, 141);
-            lblGend.Margin = new Padding(4, 0, 4, 0);
+            lblGend.Location = new Point(478, 92);
             lblGend.Name = "lblGend";
-            lblGend.Size = new Size(66, 23);
+            lblGend.Size = new Size(45, 15);
             lblGend.TabIndex = 44;
             lblGend.Text = "Gender";
             // 
@@ -577,181 +537,153 @@
             // 
             comboBox2.FormattingEnabled = true;
             comboBox2.Items.AddRange(new object[] { "Female", "Male" });
-            comboBox2.Location = new Point(734, 141);
-            comboBox2.Margin = new Padding(4, 5, 4, 5);
+            comboBox2.Location = new Point(571, 92);
             comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(264, 31);
+            comboBox2.Size = new Size(206, 23);
             comboBox2.TabIndex = 43;
             // 
             // txtFatherMob
             // 
-            txtFatherMob.Location = new Point(167, 230);
-            txtFatherMob.Margin = new Padding(4, 5, 4, 5);
+            txtFatherMob.Location = new Point(130, 150);
             txtFatherMob.Name = "txtFatherMob";
-            txtFatherMob.Size = new Size(320, 30);
+            txtFatherMob.Size = new Size(250, 23);
             txtFatherMob.TabIndex = 23;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(1184, 242);
-            txtEmail.Margin = new Padding(4, 5, 4, 5);
+            txtEmail.Location = new Point(921, 158);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(268, 30);
+            txtEmail.Size = new Size(209, 23);
             txtEmail.TabIndex = 25;
             // 
             // txtWatapp
             // 
-            txtWatapp.Location = new Point(734, 250);
-            txtWatapp.Margin = new Padding(4, 5, 4, 5);
+            txtWatapp.Location = new Point(571, 163);
             txtWatapp.Name = "txtWatapp";
-            txtWatapp.Size = new Size(264, 30);
+            txtWatapp.Size = new Size(206, 23);
             txtWatapp.TabIndex = 21;
             // 
             // dtpDOB
             // 
-            dtpDOB.Location = new Point(1184, 141);
-            dtpDOB.Margin = new Padding(4, 5, 4, 5);
+            dtpDOB.Location = new Point(921, 92);
             dtpDOB.Name = "dtpDOB";
-            dtpDOB.Size = new Size(268, 30);
+            dtpDOB.Size = new Size(209, 23);
             dtpDOB.TabIndex = 42;
             // 
             // lblFatherMob
             // 
             lblFatherMob.AutoSize = true;
-            lblFatherMob.Location = new Point(9, 242);
-            lblFatherMob.Margin = new Padding(4, 0, 4, 0);
+            lblFatherMob.Location = new Point(7, 158);
             lblFatherMob.Name = "lblFatherMob";
-            lblFatherMob.Size = new Size(151, 23);
+            lblFatherMob.Size = new Size(105, 15);
             lblFatherMob.TabIndex = 30;
             lblFatherMob.Text = "Father Mobile No :";
             // 
             // lblStdCNIC
             // 
             lblStdCNIC.AutoSize = true;
-            lblStdCNIC.Location = new Point(54, 153);
-            lblStdCNIC.Margin = new Padding(4, 0, 4, 0);
+            lblStdCNIC.Location = new Point(42, 100);
             lblStdCNIC.Name = "lblStdCNIC";
-            lblStdCNIC.Size = new Size(114, 23);
+            lblStdCNIC.Size = new Size(79, 15);
             lblStdCNIC.TabIndex = 31;
             lblStdCNIC.Text = "Student CNIC";
             // 
             // lblFathCnic
             // 
             lblFathCnic.AutoSize = true;
-            lblFathCnic.Location = new Point(1070, 46);
-            lblFathCnic.Margin = new Padding(4, 0, 4, 0);
+            lblFathCnic.Location = new Point(832, 30);
             lblFathCnic.Name = "lblFathCnic";
-            lblFathCnic.Size = new Size(102, 23);
+            lblFathCnic.Size = new Size(71, 15);
             lblFathCnic.TabIndex = 40;
             lblFathCnic.Text = "Father CNIC";
             // 
             // lblStdName
             // 
             lblStdName.AutoSize = true;
-            lblStdName.Location = new Point(37, 46);
-            lblStdName.Margin = new Padding(4, 0, 4, 0);
+            lblStdName.Location = new Point(29, 30);
             lblStdName.Name = "lblStdName";
-            lblStdName.Size = new Size(120, 23);
+            lblStdName.Size = new Size(83, 15);
             lblStdName.TabIndex = 32;
             lblStdName.Text = "Student Name";
             // 
             // lblDob
             // 
             lblDob.AutoSize = true;
-            lblDob.Location = new Point(1081, 153);
-            lblDob.Margin = new Padding(4, 0, 4, 0);
+            lblDob.Location = new Point(841, 100);
             lblDob.Name = "lblDob";
-            lblDob.Size = new Size(45, 23);
+            lblDob.Size = new Size(31, 15);
             lblDob.TabIndex = 39;
             lblDob.Text = "DOB";
             // 
             // lblFatherName
             // 
             lblFatherName.AutoSize = true;
-            lblFatherName.Location = new Point(602, 46);
-            lblFatherName.Margin = new Padding(4, 0, 4, 0);
+            lblFatherName.Location = new Point(468, 30);
             lblFatherName.Name = "lblFatherName";
-            lblFatherName.Size = new Size(108, 23);
+            lblFatherName.Size = new Size(75, 15);
             lblFatherName.TabIndex = 33;
             lblFatherName.Text = "Father Name";
             // 
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(1076, 255);
-            lblEmail.Margin = new Padding(4, 0, 4, 0);
+            lblEmail.Location = new Point(837, 166);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(70, 23);
+            lblEmail.Size = new Size(49, 15);
             lblEmail.TabIndex = 38;
             lblEmail.Text = "Domain";
             // 
             // lblWatsap
             // 
             lblWatsap.AutoSize = true;
-            lblWatsap.Location = new Point(575, 242);
-            lblWatsap.Margin = new Padding(4, 0, 4, 0);
+            lblWatsap.Location = new Point(447, 158);
             lblWatsap.Name = "lblWatsap";
-            lblWatsap.Size = new Size(78, 23);
+            lblWatsap.Size = new Size(55, 15);
             lblWatsap.TabIndex = 34;
             lblWatsap.Text = "WatsApp";
             // 
             // lblFathOcc
             // 
             lblFathOcc.AutoSize = true;
-            lblFathOcc.Location = new Point(21, 336);
-            lblFathOcc.Margin = new Padding(4, 0, 4, 0);
+            lblFathOcc.Location = new Point(16, 219);
             lblFathOcc.Name = "lblFathOcc";
-            lblFathOcc.Size = new Size(150, 23);
+            lblFathOcc.Size = new Size(105, 15);
             lblFathOcc.TabIndex = 35;
             lblFathOcc.Text = "Father Occupation";
             // 
             // pnPerson
             // 
             pnPerson.Controls.Add(label19);
-            pnPerson.Location = new Point(37, 5);
-            pnPerson.Margin = new Padding(4, 5, 4, 5);
+            pnPerson.Location = new Point(29, 3);
             pnPerson.Name = "pnPerson";
-            pnPerson.Size = new Size(1512, 66);
+            pnPerson.Size = new Size(1176, 43);
             pnPerson.TabIndex = 41;
             // 
             // label19
             // 
             label19.AutoSize = true;
             label19.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label19.Location = new Point(570, 14);
-            label19.Margin = new Padding(4, 0, 4, 0);
+            label19.Location = new Point(443, 9);
             label19.Name = "label19";
-            label19.Size = new Size(412, 32);
+            label19.Size = new Size(322, 25);
             label19.TabIndex = 1;
             label19.Text = "Person Information And Education";
             // 
             // pnHide
             // 
-            pnHide.Location = new Point(57, 1014);
-            pnHide.Margin = new Padding(4, 5, 4, 5);
+            pnHide.Location = new Point(44, 661);
             pnHide.Name = "pnHide";
-            pnHide.Size = new Size(32, 153);
+            pnHide.Size = new Size(25, 100);
             pnHide.TabIndex = 27;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(0, 0);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 28;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
             // 
             // RegisTracionForm
             // 
-            AutoScaleDimensions = new SizeF(9F, 23F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1731, 1055);
-            Controls.Add(button1);
+            ClientSize = new Size(1385, 847);
             Controls.Add(pnHide);
             Controls.Add(pnMainPn);
             Controls.Add(pnLogo);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "RegisTracionForm";
             Text = "RegisTracionForm";
             Load += RegisTracionForm_Load;
@@ -828,7 +760,6 @@
         private ComboBox comboBox2;
         private ComboBox comboBox3;
         private Label lblDegYear;
-        private Button button1;
         private Label label2;
         private TextBox txtCity;
         private Label label1;

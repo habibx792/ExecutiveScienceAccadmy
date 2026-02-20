@@ -1,31 +1,75 @@
-﻿namespace ExecutiveSceinceAccadmy
-{
-    partial class LoginForm
-    {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+﻿using ExecutiveScienceAcademy.classes;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
+namespace ExecutiveSceinceAccadmy
+{
+    public partial class LoginForm : Form
+    {
+        public LoginForm()
         {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
+
+            InitializeComponent();
+            UI.Instance.StyleForm(this,
+
+             backgroundColor: Color.FromArgb(245, 245, 245),
+             borderRadius: 25,
+             showCustomTitleBar: true,
+             title: "Executive Science Academy");
+
+            StyleControls();
+            this.StartPosition = FormStartPosition.CenterScreen;
+
+        }
+        private void StyleControls()
+        {
+
+            UI.Instance.StylePanel(pnLogo,
+                backColor: Color.White,
+                borderColor: Color.FromArgb(0, 120, 215),
+                borderRadius: 20,
+                borderThickness: 2);
+            UI.Instance.AddFormShadow(this);
+            UI.Instance.StylePanel(pnMain, backColor: Color.White,
+                borderColor: Color.FromArgb(0, 120, 215),
+                borderRadius: 20,
+                borderThickness: 2);
         }
 
-        #region Windows Form Designer generated code
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(txtUser.Text!=""&&txtPass.Text!="")
+            {
+                this.Hide();
+                using (Form1 home = new Form1())
+                {
+                    home.ShowDialog();
+                }
+                this.Show();
+            }
+        }
         private void InitializeComponent()
         {
             pnMain = new Panel();
@@ -39,8 +83,9 @@
             pnMain.SuspendLayout();
             pnLogo.SuspendLayout();
             SuspendLayout();
+
             // 
-            // pnMain
+            // pnMain - Login Card
             // 
             pnMain.BackColor = Color.White;
             pnMain.Controls.Add(btnLogin);
@@ -48,17 +93,18 @@
             pnMain.Controls.Add(label1);
             pnMain.Controls.Add(txtPass);
             pnMain.Controls.Add(txtUser);
-            pnMain.Location = new Point(450, 200);
+            pnMain.Location = new Point(450, 200);  // Centered (adjust based on form size)
             pnMain.Name = "pnMain";
             pnMain.Size = new Size(400, 300);
             pnMain.TabIndex = 0;
+
             // 
             // btnLogin
             // 
             btnLogin.BackColor = Color.FromArgb(0, 120, 215);
-            btnLogin.FlatAppearance.BorderSize = 0;
             btnLogin.FlatStyle = FlatStyle.Flat;
-            btnLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnLogin.FlatAppearance.BorderSize = 0;
+            btnLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnLogin.ForeColor = Color.White;
             btnLogin.Location = new Point(50, 210);
             btnLogin.Name = "btnLogin";
@@ -67,11 +113,12 @@
             btnLogin.Text = "Sign In";
             btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += button1_Click;
+
             // 
-            // label2
+            // label2 (Password)
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 10F);
+            label2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(64, 64, 64);
             label2.Location = new Point(50, 120);
             label2.Name = "label2";
@@ -79,58 +126,64 @@
             label2.TabIndex = 12;
             label2.Text = "Password";
             label2.Click += label2_Click;
+
             // 
-            // label1
+            // label1 (Username)
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 10F);
+            label1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.FromArgb(64, 64, 64);
             label1.Location = new Point(50, 50);
             label1.Name = "label1";
             label1.Size = new Size(71, 19);
             label1.TabIndex = 11;
             label1.Text = "Username";
+
             // 
             // txtPass
             // 
             txtPass.BorderStyle = BorderStyle.FixedSingle;
-            txtPass.Font = new Font("Segoe UI", 11F);
+            txtPass.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             txtPass.Location = new Point(50, 145);
             txtPass.Name = "txtPass";
             txtPass.Size = new Size(300, 27);
             txtPass.TabIndex = 10;
             txtPass.UseSystemPasswordChar = true;
+
             // 
             // txtUser
             // 
             txtUser.BorderStyle = BorderStyle.FixedSingle;
-            txtUser.Font = new Font("Segoe UI", 11F);
+            txtUser.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             txtUser.Location = new Point(50, 75);
             txtUser.Name = "txtUser";
             txtUser.Size = new Size(300, 27);
             txtUser.TabIndex = 9;
             txtUser.TextChanged += textBox1_TextChanged;
+
             // 
-            // pnLogo
+            // pnLogo - Top Bar with Title
             // 
             pnLogo.BackColor = Color.Transparent;
             pnLogo.Controls.Add(lbLogo);
-            pnLogo.Location = new Point(3, 12);
+            pnLogo.Location = new Point(0, 50);
             pnLogo.Name = "pnLogo";
             pnLogo.Size = new Size(1300, 80);
             pnLogo.TabIndex = 8;
+
             // 
             // lbLogo
             // 
             lbLogo.AutoSize = true;
             lbLogo.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbLogo.ForeColor = Color.FromArgb(0, 70, 140);
-            lbLogo.Location = new Point(400, 20);
+            lbLogo.Location = new Point(400, 20); // Centered roughly
             lbLogo.Name = "lbLogo";
-            lbLogo.Size = new Size(426, 45);
+            lbLogo.Size = new Size(500, 45);
             lbLogo.TabIndex = 0;
             lbLogo.Text = "Executive Science Academy";
             lbLogo.TextAlign = ContentAlignment.MiddleCenter;
+
             // 
             // LoginForm
             // 
@@ -142,21 +195,12 @@
             Name = "LoginForm";
             Text = "Login";
             Load += LoginForm_Load;
+
             pnMain.ResumeLayout(false);
             pnMain.PerformLayout();
             pnLogo.ResumeLayout(false);
             pnLogo.PerformLayout();
             ResumeLayout(false);
         }
-        #endregion
-
-        private Panel pnMain;
-        private TextBox txtUser;
-        private Panel pnLogo;
-        private Label lbLogo;
-        private Label label2;
-        private Label label1;
-        private TextBox txtPass;
-        private Button btnLogin;
     }
 }

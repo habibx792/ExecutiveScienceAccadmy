@@ -110,7 +110,9 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
         {
             AutoScroll = true;
 
+   
         }
+        
 
         private void btnRegistation_Click(object sender, EventArgs e)
         {
@@ -163,6 +165,11 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnPreq_Paint(object sender, PaintEventArgs e)
         {
 
         }
