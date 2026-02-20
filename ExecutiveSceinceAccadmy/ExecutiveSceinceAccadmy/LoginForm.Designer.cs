@@ -93,10 +93,13 @@
             // 
             // txtPass
             // 
+            txtPass.AutoCompleteMode = AutoCompleteMode.Suggest;
             txtPass.BorderStyle = BorderStyle.FixedSingle;
             txtPass.Font = new Font("Segoe UI", 11F);
             txtPass.Location = new Point(50, 145);
             txtPass.Name = "txtPass";
+            txtPass.PasswordChar = '*';
+            txtPass.PlaceholderText = "Enter Password";
             txtPass.Size = new Size(300, 27);
             txtPass.TabIndex = 10;
             txtPass.UseSystemPasswordChar = true;
@@ -107,6 +110,7 @@
             txtUser.Font = new Font("Segoe UI", 11F);
             txtUser.Location = new Point(50, 75);
             txtUser.Name = "txtUser";
+            txtUser.PlaceholderText = "Enter UserName";
             txtUser.Size = new Size(300, 27);
             txtUser.TabIndex = 9;
             txtUser.TextChanged += textBox1_TextChanged;

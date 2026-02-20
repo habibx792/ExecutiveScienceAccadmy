@@ -1,73 +1,128 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Data.SqlClient;
+﻿using Microsoft.Data.SqlClient;
+using System;
+using System.Windows.Forms;
+
 namespace ExecutiveSceinceAccadmy.classes
 {
-    internal sealed class DB
+    public static class DB
     {
-        private static readonly DB instance = new DB();
+        private static string str = @"Data Source=CODEX\SQLEXPRESS;Initial Catalog=accadmyDb;Integrated Security=True";
 
-        private static string str = @"Data Source=HABIBSYSTEM\SQLEXPRESS;Initial Catalog=Student;Integrated Security=True";
-
-        private DB() { }
-
-        public static DB Instance
+        public static SqlConnection CreateConnection()
         {
-            get { return instance; }
-        }
-
-        public SqlConnection CreateConnection()
-        {
-            SqlConnection con = new SqlConnection(str);
             try
             {
+                SqlConnection con = new SqlConnection(str);
                 con.Open();
-                MessageBox.Show("Connected");
+                return con;
             }
-            catch (SqlException ex)
+            catch (SqlException)
             {
-                MessageBox.Show($"Connectivity error: {ex.Message}");
+                return null;   // connection failed
             }
-            return con;
         }
-        public void setConnectionString(string newConnectionString)
+
+        // ---------- Admin Methods ----------
+
+        public static bool Login(string username, string password)
         {
-            if (!string.IsNullOrEmpty(newConnectionString))
+            using (SqlConnection con = CreateConnection())
             {
-                str = newConnectionString;
+                if (con == null) return false;   // connection failed
+
+                string query = "SELECT COUNT(*) FROM adminTb WHERE userName = @username AND password = @password";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@username", username);
+                    cmd.Parameters.AddWithValue("@password", password);
+                    int count = (int)cmd.ExecuteScalar();
+                    return count > 0;
+                }
             }
-            else
+        }
+
+        public static void Register(string cnic, string username, string password)
+        {
+            using (SqlConnection con = CreateConnection())
             {
-                MessageBox.Show("Invalid connection string.");
+                if (con == null)
+                {
+                    MessageBox.Show("Database connection failed.");
+                    return;
+                }
+
+                string query = "INSERT INTO adminTb (adminCnic, userName, password) VALUES (@cnic, @username, @password)";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@cnic", cnic);
+                    cmd.Parameters.AddWithValue("@username", username);
+                    cmd.Parameters.AddWithValue("@password", password);
+                    try
+                    {
+                        int rows = cmd.ExecuteNonQuery();
+                        MessageBox.Show(rows > 0 ? "Registration successful!" : "Registration failed.");
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show($"Database error: {ex.Message}");
+                    }
+                }
             }
         }
-        public string getConnectionString()
-        {
-            return str;
-        }
-        public SqlCommand GetCommand(string query, SqlConnection con)
-        {
-            return new SqlCommand(query, con);
-        }
-        public void InsertionQuery(SqlConnection con)
-        {
 
-        }
-        public void updationQuery()
+        public static void UpdateAdminPassword(string username, string newPassword)
         {
+            using (SqlConnection con = CreateConnection())
+            {
+                if (con == null)
+                {
+                    MessageBox.Show("Database connection failed.");
+                    return;
+                }
 
+                string query = "UPDATE adminTb SET password = @newPassword WHERE userName = @username";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@username", username);
+                    cmd.Parameters.AddWithValue("@newPassword", newPassword);
+                    try
+                    {
+                        int rows = cmd.ExecuteNonQuery();
+                        MessageBox.Show(rows > 0 ? "Password updated!" : "Username not found.");
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show($"Database error: {ex.Message}");
+                    }
+                }
+            }
         }
 
-        public void deleteQuery()
+        public static void DeleteAdmin(string username)
         {
-        }
-        public void updateQuery()
-        {
-        }
+            using (SqlConnection con = CreateConnection())
+            {
+                if (con == null)
+                {
+                    MessageBox.Show("Database connection failed.");
+                    return;
+                }
 
+                string query = "DELETE FROM adminTb WHERE userName = @username";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@username", username);
+                    try
+                    {
+                        int rows = cmd.ExecuteNonQuery();
+                        MessageBox.Show(rows > 0 ? "Admin deleted." : "Username not found.");
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show($"Database error: {ex.Message}");
+                    }
+                }
+            }
+        }
     }
-
 }

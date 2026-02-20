@@ -1,4 +1,5 @@
-﻿using ExecutiveScienceAcademy.classes;
+﻿using ExecutiveSceinceAccadmy.classes;
+using ExecutiveScienceAcademy.classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,17 +58,27 @@ namespace ExecutiveSceinceAccadmy
         {
 
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            if(txtUser.Text!=""&&txtPass.Text!="")
+            if (string.IsNullOrWhiteSpace(txtUser.Text) || string.IsNullOrWhiteSpace(txtPass.Text))
             {
+                MessageBox.Show("Please enter both username and password.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            bool loginSuccess = DB.Login(txtUser.Text, txtPass.Text);
+
+            if (loginSuccess)
+            {
+                // Login successful – open main form
                 this.Hide();
-                using (Form1 home = new Form1())
-                {
-                    home.ShowDialog();
-                }
-                this.Show();
+                Form1 mainForm = new Form1();
+                mainForm.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
