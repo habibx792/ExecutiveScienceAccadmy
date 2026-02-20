@@ -1,38 +1,39 @@
-CREATE DATABASE academyDb;
-USE academyDb;
+CREATE DATABASE accadmyDb;
+GO
 
--- Domain table (e.g., Science, Arts, Commerce)
+USE accadmyDb;
+GO
+
+---==================================== General Tables =========================================
+CREATE TABLE adminTb
+(
+    adminCnic VARCHAR(20) NOT NULL PRIMARY KEY,
+    userName VARCHAR(20) NOT NULL,
+    password VARCHAR(20) NOT NULL
+);
+
 CREATE TABLE domainTb (
     domainId VARCHAR(50) NOT NULL PRIMARY KEY,
     domainName VARCHAR(50) NOT NULL
 );
-create table adminTb
-(
-    adminCnic varchar(20)not null primary key,
-    userName varchar(20)not null,
-    password varchar(20)not null,
-);
--- Class table (e.g., 9th, 10th, 11th) with domain reference
+
 CREATE TABLE classTb (
-    classId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    classId INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     domainId VARCHAR(50) NOT NULL,
     className VARCHAR(50) NOT NULL,
-    FOREIGN KEY (domainId) REFERENCES domainTb(domainId) ON DELETE CASCADE,
-    INDEX idx_domain_class (domainId, classId)
+    FOREIGN KEY (domainId) REFERENCES domainTb(domainId) ON DELETE CASCADE
+);
+);
+CREATE TABLE subjectTb (
+    subjectId INT  NOT NULL ,
+    classId INT NOT NULL,
+    domainId VARCHAR(50) NOT NULL,
+    FOREIGN KEY (subjectId) REFERENCES SubjectPack(subjectId)
+    FOREIGN KEY (classId) REFERENCES classTb(classId) ON DELETE CASCADE,
+    FOREIGN KEY (domainId) REFERENCES domainTb(domainId) ON DELETE NO ACTION
 );
 
--- Fixed Subjects table
-CREATE TABLE subjectTb (
-    subjectId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    classId INT NOT NULL,
-    domainId VARCHAR(50) NOT NULL,  -- Changed from INT to VARCHAR(50)
-    subjectName VARCHAR(100) NOT NULL,
-    FOREIGN KEY (classId) REFERENCES classTb(classId) ON DELETE CASCADE,
-    FOREIGN KEY (domainId) REFERENCES domainTb(domainId) ON DELETE CASCADE,  -- Added missing FK
-    INDEX idx_class_subject (classId),
-    INDEX idx_domain_subject (domainId)
-);
--- Fixed Students table
+---======================================= Student Tables ======================================
 CREATE TABLE StudentTb (
     stdRegisNo VARCHAR(50) NOT NULL PRIMARY KEY,
     student_name VARCHAR(100) NOT NULL,
@@ -48,169 +49,205 @@ CREATE TABLE StudentTb (
     father_occupation VARCHAR(100),
     father_mobile_no VARCHAR(15) NOT NULL,
     student_type VARCHAR(30) NOT NULL DEFAULT 'Regular',
-    batchYear VARCHAR(7) not null,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    is_active BOOLEAN DEFAULT TRUE,
-    FOREIGN KEY (domainId) REFERENCES domainTb(domainId),
-    FOREIGN KEY (classId) REFERENCES classTb(classId),
-    INDEX idx_student_registration (stdRegisNo),
-    INDEX idx_student_name (student_name),
-    INDEX idx_father_cnic (father_cnic),
-    INDEX idx_father_mobile (father_mobile_no),
-    INDEX idx_gender (gender),
-    INDEX idx_student_type (student_type),
-    INDEX idx_batch_year (batchYear) -- Added index for batchYear
+    batchYear VARCHAR(7) NOT NULL,
+    created_at DATETIME DEFAULT GETDATE(),
+    updated_at DATETIME DEFAULT GETDATE(),
+    is_active BIT DEFAULT 1,
+    FOREIGN KEY (domainId) REFERENCES domainTb(domainId) ON DELETE NO ACTION,
+    FOREIGN KEY (classId) REFERENCES classTb(classId) ON DELETE NO ACTION
 );
--- Academic records table
+
 CREATE TABLE academicTb (
-    academicId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    academicId INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     stdRegisNo VARCHAR(50) NOT NULL,
     previous_qualification VARCHAR(100) NOT NULL,
-    passingYear varchar(5)not null,
-    registrationNo varchar(14)nout null,
+    passingYear VARCHAR(5) NOT NULL,
+    registrationNo VARCHAR(14) NOT NULL,
     previous_school_name VARCHAR(150) NOT NULL,
     TotalMarks INT NOT NULL,
     gainMarks INT NOT NULL,
-    Board VARCHAR(100) NOT NULL,
-    percentage DECIMAL(5,2) GENERATED ALWAYS AS (gainMarks * 100.0 / TotalMarks) STORED,
-    FOREIGN KEY (stdRegisNo) REFERENCES StudentTb(stdRegisNo) ON DELETE CASCADE,
-    INDEX idx_student_academic (stdRegisNo)
+    board VARCHAR(100) NOT NULL,
+    percentage AS (gainMarks * 100.0 / TotalMarks) PERSISTED,
+    FOREIGN KEY (stdRegisNo) REFERENCES StudentTb(stdRegisNo) ON DELETE CASCADE
 );
 
--- Student Fee Record table (corrected)
-CREATE TABLE studentFeeRecord (
-    feeId VARCHAR(100) NOT NULL PRIMARY KEY,
+CREATE TABLE stdAdress
+(
     stdRegisNo VARCHAR(50) NOT NULL,
-    Amount DOUBLE NOT NULL,
-    paymentMonth VARCHAR(20) NOT NULL,
-    paymentDate DATE DEFAULT (CURRENT_DATE),
-    isPay BIT(1) DEFAULT 0,
-    FOREIGN KEY (stdRegisNo) REFERENCES StudentTb(stdRegisNo) ON DELETE CASCADE,
-    INDEX idx_student_fee (stdRegisNo)
+    stdAddressId INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    address TEXT,
+    city VARCHAR(20) DEFAULT 'Faisalabad',
+    country VARCHAR(30) DEFAULT 'Pakistan'
 );
--- Teachers table
+
+---========================================= Teacher Tables =======================================
 CREATE TABLE teacherTb (
     teacherId VARCHAR(40) NOT NULL PRIMARY KEY,
     teacherName VARCHAR(50) NOT NULL,
     teacherQualification VARCHAR(50) NOT NULL,
-    isSalaried BIT(1) DEFAULT 0,
-    isPercentage BIT(1) DEFAULT 0,
-    dateOfJoin DATE DEFAULT (CURRENT_DATE),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    is_active BOOLEAN DEFAULT TRUE,
-    INDEX idx_teacher_name (teacherName)
+    isSalaried BIT DEFAULT 0,
+    isPercentage BIT DEFAULT 0,
+    dateOfJoin DATE DEFAULT GETDATE(),
+    created_at DATETIME DEFAULT GETDATE(),
+    updated_at DATETIME DEFAULT GETDATE(),
+    is_active BIT DEFAULT 1
 );
 
--- Teacher Class junction table
+CREATE TABLE teacherAddTb
+(
+    teacherAddId INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    teacherId VARCHAR(40) NOT NULL,
+    address TEXT,
+    city VARCHAR(20) DEFAULT 'Faisalabad',
+    country VARCHAR(30) DEFAULT 'Pakistan',
+    FOREIGN KEY (teacherId) REFERENCES teacherTb(teacherId) ON DELETE CASCADE
+);
+
 CREATE TABLE teacherClassTb (
     teacherId VARCHAR(40) NOT NULL,
     classId INT NOT NULL,
-    assigned_date DATE DEFAULT (CURRENT_DATE),
+    assigned_date DATE DEFAULT GETDATE(),
     PRIMARY KEY (teacherId, classId),
     FOREIGN KEY (teacherId) REFERENCES teacherTb(teacherId) ON DELETE CASCADE,
-    FOREIGN KEY (classId) REFERENCES classTb(classId) ON DELETE CASCADE,
-    INDEX idx_teacher_class (teacherId, classId)
+    FOREIGN KEY (classId) REFERENCES classTb(classId) ON DELETE NO ACTION
 );
 
--- Teacher Subject junction table
 CREATE TABLE teacherSubjectTb (
     teacherId VARCHAR(40) NOT NULL,
     subjectId INT NOT NULL,
-    assigned_date DATE DEFAULT (CURRENT_DATE),
+    assigned_date DATE DEFAULT GETDATE(),
     PRIMARY KEY (teacherId, subjectId),
     FOREIGN KEY (teacherId) REFERENCES teacherTb(teacherId) ON DELETE CASCADE,
-    FOREIGN KEY (subjectId) REFERENCES subjectTb(subjectId) ON DELETE CASCADE,
-    INDEX idx_teacher_subject (teacherId, subjectId)
+    FOREIGN KEY (subjectId) REFERENCES subjectTb(subjectId) ON DELETE NO ACTION
 );
 
--- Teacher Attendance table (MySQL syntax)
+---============================ Student & Teacher Attendance ===================================
 CREATE TABLE teacherAttendance (
-    attendId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    attendId INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     teacherId VARCHAR(40) NOT NULL,
-    isPresent BIT(1) DEFAULT 0,
+    isPresent BIT DEFAULT 0,
     day VARCHAR(15),
-    attendDate DATE DEFAULT (CURRENT_DATE),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (teacherId) REFERENCES teacherTb(teacherId) ON DELETE CASCADE,
-    INDEX idx_teacher_attendance (teacherId, attendDate)
+    attendDate DATE DEFAULT GETDATE(),
+    created_at DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (teacherId) REFERENCES teacherTb(teacherId) ON DELETE CASCADE
 );
 
--- Student Attendance table (MySQL syntax)
 CREATE TABLE studentAttendance (
-    attendId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    attendId INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     stdRegisNo VARCHAR(50) NOT NULL,
-    isPresent BIT(1) DEFAULT 0,
-    attenceType varchar(15) not null,
+    isPresent BIT DEFAULT 0,
+    attenceType VARCHAR(15) NOT NULL,
     day VARCHAR(15),
-    attendDate DATE DEFAULT (CURRENT_DATE),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (stdRegisNo) REFERENCES StudentTb(stdRegisNo) ON DELETE CASCADE,
-    INDEX idx_student_attendance (stdRegisNo, attendDate)
+    attendDate DATE DEFAULT GETDATE(),
+    created_at DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (stdRegisNo) REFERENCES StudentTb(stdRegisNo) ON DELETE CASCADE
 );
+
+---========================================= Fee & Profit Tables ================================
 CREATE TABLE feeTb (
     feeId VARCHAR(40) NOT NULL PRIMARY KEY,
     stdRegisNo VARCHAR(50) NOT NULL,
     paymentMonth VARCHAR(15) NOT NULL,
-    paymentDate DATE DEFAULT (CURRENT_DATE),
+    paymentDate DATE DEFAULT GETDATE(),
     amount DECIMAL(10,2) NOT NULL DEFAULT 0.00,
     discount DECIMAL(10,2) DEFAULT 0.00,
     paidAmount DECIMAL(10,2) DEFAULT 0.00,
     receivedBy VARCHAR(100) NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (stdRegisNo) REFERENCES StudentTb(stdRegisNo) ON DELETE CASCADE,
-    INDEX idx_fee_student (stdRegisNo),
-    INDEX idx_fee_date (paymentDate),
-    INDEX idx_fee_month (paymentMonth)
+    created_at DATETIME DEFAULT GETDATE(),
+    updated_at DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (stdRegisNo) REFERENCES StudentTb(stdRegisNo) ON DELETE CASCADE
 );
+
 CREATE TABLE teacherProfitTb (
-    teachProfitId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    teachProfitId INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     teacherId VARCHAR(40) NOT NULL,
     subjectId INT NOT NULL,
     teacherSubjectAmount DECIMAL(10,2) DEFAULT 0.00,
     collectionMonth VARCHAR(50) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    created_at DATETIME DEFAULT GETDATE(),
     FOREIGN KEY (teacherId) REFERENCES teacherTb(teacherId) ON DELETE CASCADE,
-    FOREIGN KEY (subjectId) REFERENCES subjectTb(subjectId) ON DELETE CASCADE,
-    INDEX idx_teacher_profit (teacherId, collectionMonth),
-    INDEX idx_subject_profit (subjectId, collectionMonth)
+    FOREIGN KEY (subjectId) REFERENCES subjectTb(subjectId) ON DELETE NO ACTION
 );
+
+---========================================= Admin Tables ========================================
+CREATE TABLE StdResult
+(
+    stdRegisNo VARCHAR(50) NOT NULL,
+    domainId VARCHAR(50) NOT NULL,
+    classId INT NOT NULL,
+    resultDate DATE NOT NULL DEFAULT GETDATE(),
+    gainedMakr INT NOT NULL,
+    totalMark INT DEFAULT 100,
+    CONSTRAINT PK_StdResult PRIMARY KEY (stdRegisNo, classId, resultDate),
+    CONSTRAINT FK_StdResult_Student FOREIGN KEY (stdRegisNo) REFERENCES StudentTb(stdRegisNo) ON DELETE CASCADE,
+    CONSTRAINT FK_StdResult_Domain FOREIGN KEY (domainId) REFERENCES domainTb(domainId) ON DELETE NO ACTION,
+    CONSTRAINT FK_StdResult_Class FOREIGN KEY (classId) REFERENCES classTb(classId) ON DELETE NO ACTION
+);
+
+CREATE TABLE setMark
+(
+    setMarkId INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    domainId VARCHAR(50) NOT NULL,
+    classId INT NOT NULL,
+    totalMark INT DEFAULT 100
+);
+
+CREATE TABLE setStdFeeTb (
+    setFeeId INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    amount FLOAT NOT NULL,
+    domainId VARCHAR(50) NOT NULL,
+    classId INT NOT NULL,
+    FOREIGN KEY (domainId) REFERENCES domainTb(domainId) ON DELETE CASCADE,
+    FOREIGN KEY (classId) REFERENCES classTb(classId) ON DELETE NO ACTION
+);
+
+CREATE TABLE teacherSalaySetTb
+(
+    teacherSalarySetId INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    teacherId VARCHAR(40) NOT NULL,
+    salary DECIMAL(10,2) NOT NULL,
+    salaryDate DATE NOT NULL DEFAULT GETDATE(),
+    FOREIGN KEY (teacherId) REFERENCES teacherTb(teacherId) ON DELETE CASCADE
+);
+
+CREATE TABLE setTeacherPercentageTB
+(
+    teacherSalarySetId INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    teacherId VARCHAR(40) NOT NULL,
+    percentag DECIMAL(10,2) NOT NULL,
+    percenDate DATE NOT NULL DEFAULT GETDATE(),
+    FOREIGN KEY (teacherId) REFERENCES teacherTb(teacherId) ON DELETE CASCADE
+);
+
 CREATE TABLE academySubjectProfitTb (
-    academyProfitId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    academyProfitId INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     subjectId INT NOT NULL,
     academySubjectProfit DECIMAL(10,2) DEFAULT 0.00,
     collectionMonth VARCHAR(50) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (subjectId) REFERENCES subjectTb(subjectId) ON DELETE CASCADE,
-    INDEX idx_subject_month (subjectId, collectionMonth)
+    created_at DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (subjectId) REFERENCES subjectTb(subjectId) ON DELETE NO ACTION
 );
--- Expense table
+
 CREATE TABLE expenseTb (
-    expenseId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    expenseType VARCHAR(50) NOT NULL,  
+    expenseId INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    expenseType VARCHAR(50) NOT NULL,
     expenseAmount DECIMAL(10,2) NOT NULL DEFAULT 0.00,
-    expenseDate DATE DEFAULT (CURRENT_DATE),
+    expenseDate DATE DEFAULT GETDATE(),
     expenseMonth VARCHAR(15) NOT NULL,
     expenseDescription TEXT NULL,
     paidTo VARCHAR(100) NULL,
-    paymentMethod ENUM('CASH', 'BANK', 'CHEQUE') DEFAULT 'CASH',
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    INDEX idx_expense_date (expenseDate),
-    INDEX idx_expense_month (expenseMonth),
-    INDEX idx_expense_type (expenseType)
+    paymentMethod VARCHAR(20) DEFAULT 'CASH',
+    created_at DATETIME DEFAULT GETDATE()
 );
--- Academy Report table (fixed spelling)-
+
 CREATE TABLE academyReportTb (
-    academyReportId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    reportMonth VARCHAR(15) NOT NULL UNIQUE, 
-    totalRevenue DECIMAL(10,2) DEFAULT 0.00,  
+    academyReportId INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    reportMonth VARCHAR(15) NOT NULL UNIQUE,
+    totalRevenue DECIMAL(10,2) DEFAULT 0.00,
     totalExpense DECIMAL(10,2) DEFAULT 0.00,
     teacherProfit DECIMAL(10,2) DEFAULT 0.00,
-    academyProfit DECIMAL(10,2) DEFAULT 0.00,  -
-    profitAmount DECIMAL(10,2) GENERATED ALWAYS AS (totalRevenue - totalExpense - teacherProfit) STORED,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    INDEX idx_report_month (reportMonth)
+    academyProfit DECIMAL(10,2) DEFAULT 0.00,
+    profitAmount AS (totalRevenue - totalExpense - teacherProfit) PERSISTED,
+    created_at DATETIME DEFAULT GETDATE(),
+    updated_at DATETIME DEFAULT GETDATE()
 );
