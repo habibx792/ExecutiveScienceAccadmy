@@ -117,11 +117,11 @@
             // 
             // pnLogo
             // 
-            pnLogo.BackColor = Color.Transparent;
+            pnLogo.BackColor = Color.IndianRed;
             pnLogo.Controls.Add(lbLogo);
-            pnLogo.Location = new Point(3, 12);
+            pnLogo.Location = new Point(12, 12);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(1300, 80);
+            pnLogo.Size = new Size(1281, 80);
             pnLogo.TabIndex = 8;
             // 
             // lbLogo

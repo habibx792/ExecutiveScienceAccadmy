@@ -33,15 +33,15 @@ namespace ExecutiveSceinceAccadmy
         {
 
             UI.Instance.StylePanel(pnLogo,
-                backColor: Color.White,
+                backColor: Color.IndianRed,
                 borderColor: Color.FromArgb(0, 120, 215),
                 borderRadius: 20,
-                borderThickness: 2);
+                borderThickness: 4);
             UI.Instance.AddFormShadow(this);
             UI.Instance.StylePanel(pnMain, backColor: Color.White,
                 borderColor: Color.FromArgb(0, 120, 215),
                 borderRadius: 20,
-                borderThickness: 2);
+                borderThickness: 4);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -62,26 +62,39 @@ namespace ExecutiveSceinceAccadmy
         {
             if (string.IsNullOrWhiteSpace(txtUser.Text) || string.IsNullOrWhiteSpace(txtPass.Text))
             {
-                MessageBox.Show("Please enter both username and password.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter both username and password.", "Input Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            bool loginSuccess = DB.Login(txtUser.Text, txtPass.Text);
+          
+            string username = txtUser.Text.Trim();
+            string password = txtPass.Text.Trim();
+
+            
+            bool loginSuccess = DB.Login(username, password);
 
             if (loginSuccess)
             {
-                // Login successful – open main form
                 this.Hide();
-                Form1 mainForm = new Form1();
-                mainForm.ShowDialog();
-                this.Close();
+                using (Form1 mainFom=new Form1() )
+                {
+                    
+                    Form1 mainForm = new Form1();
+                    mainForm.ShowDialog();
+                   
+                }
+                this.Show();
+
             }
             else
             {
-                MessageBox.Show("Invalid username or password.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Invalid username or password.", "Login Failed",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
     }
+
+
+    
 }

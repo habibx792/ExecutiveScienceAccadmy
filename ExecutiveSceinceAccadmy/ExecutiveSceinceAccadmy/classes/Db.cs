@@ -1,126 +1,60 @@
-﻿using Microsoft.Data.SqlClient;
-using System;
+﻿using System;
+using System.Data;
+using Microsoft.Data.SqlClient;  // Ensure this NuGet package is installed
 using System.Windows.Forms;
+using System.Runtime.CompilerServices;      // For showing error messages temporarily
 
 namespace ExecutiveSceinceAccadmy.classes
 {
     public static class DB
     {
-        private static string str = @"Data Source=CODEX\SQLEXPRESS;Initial Catalog=accadmyDb;Integrated Security=True";
-
-        public static SqlConnection CreateConnection()
+        
+        private static  string str = "Server=CODEX\\SQLEXPRESS;Database=accadmyDb;Integrated Security=True;TrustServerCertificate=true;";
+        public static SqlConnection getConnection()
         {
-            try
-            {
-                SqlConnection con = new SqlConnection(str);
-                con.Open();
-                return con;
-            }
-            catch (SqlException)
-            {
-                return null;   // connection failed
-            }
+            SqlConnection con = new SqlConnection(str);
+            con.Open();
+            return con;
+            
         }
-
-        // ---------- Admin Methods ----------
-
+        public static void setConnectionStr(string conStr)
+        {
+            str = conStr;
+        }
+        public static string getStr()
+        {
+            return str;
+        }
         public static bool Login(string username, string password)
         {
-            using (SqlConnection con = CreateConnection())
+           
+          
+
+            using (SqlConnection con = new SqlConnection(str))
             {
-                if (con == null) return false;   // connection failed
-
-                string query = "SELECT COUNT(*) FROM adminTb WHERE userName = @username AND password = @password";
-                using (SqlCommand cmd = new SqlCommand(query, con))
+                try
                 {
-                    cmd.Parameters.AddWithValue("@username", username);
-                    cmd.Parameters.AddWithValue("@password", password);
-                    int count = (int)cmd.ExecuteScalar();
-                    return count > 0;
-                }
-            }
-        }
-
-        public static void Register(string cnic, string username, string password)
-        {
-            using (SqlConnection con = CreateConnection())
-            {
-                if (con == null)
-                {
-                    MessageBox.Show("Database connection failed.");
-                    return;
-                }
-
-                string query = "INSERT INTO adminTb (adminCnic, userName, password) VALUES (@cnic, @username, @password)";
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    cmd.Parameters.AddWithValue("@cnic", cnic);
-                    cmd.Parameters.AddWithValue("@username", username);
-                    cmd.Parameters.AddWithValue("@password", password);
-                    try
+                    con.Open();
+                    string query = "SELECT COUNT(*) FROM adminTb WHERE userName = @u AND password = @p";
+                    using (SqlCommand cmd = new SqlCommand(query, con))
                     {
-                        int rows = cmd.ExecuteNonQuery();
-                        MessageBox.Show(rows > 0 ? "Registration successful!" : "Registration failed.");
-                    }
-                    catch (SqlException ex)
-                    {
-                        MessageBox.Show($"Database error: {ex.Message}");
+                       
+                        cmd.Parameters.Add("@u", SqlDbType.VarChar, 20).Value = username;
+                        cmd.Parameters.Add("@p", SqlDbType.VarChar, 20).Value = password;
+
+                        int count = (int)cmd.ExecuteScalar();
+                        return count > 0;
                     }
                 }
-            }
-        }
-
-        public static void UpdateAdminPassword(string username, string newPassword)
-        {
-            using (SqlConnection con = CreateConnection())
-            {
-                if (con == null)
+                catch (SqlException ex)
                 {
-                    MessageBox.Show("Database connection failed.");
-                    return;
+                    MessageBox.Show("Database error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
                 }
-
-                string query = "UPDATE adminTb SET password = @newPassword WHERE userName = @username";
-                using (SqlCommand cmd = new SqlCommand(query, con))
+                catch (Exception ex)
                 {
-                    cmd.Parameters.AddWithValue("@username", username);
-                    cmd.Parameters.AddWithValue("@newPassword", newPassword);
-                    try
-                    {
-                        int rows = cmd.ExecuteNonQuery();
-                        MessageBox.Show(rows > 0 ? "Password updated!" : "Username not found.");
-                    }
-                    catch (SqlException ex)
-                    {
-                        MessageBox.Show($"Database error: {ex.Message}");
-                    }
-                }
-            }
-        }
-
-        public static void DeleteAdmin(string username)
-        {
-            using (SqlConnection con = CreateConnection())
-            {
-                if (con == null)
-                {
-                    MessageBox.Show("Database connection failed.");
-                    return;
-                }
-
-                string query = "DELETE FROM adminTb WHERE userName = @username";
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    cmd.Parameters.AddWithValue("@username", username);
-                    try
-                    {
-                        int rows = cmd.ExecuteNonQuery();
-                        MessageBox.Show(rows > 0 ? "Admin deleted." : "Username not found.");
-                    }
-                    catch (SqlException ex)
-                    {
-                        MessageBox.Show($"Database error: {ex.Message}");
-                    }
+                    MessageBox.Show("Unexpected error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
                 }
             }
         }
