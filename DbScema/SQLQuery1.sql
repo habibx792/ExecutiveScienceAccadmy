@@ -23,6 +23,8 @@ CREATE TABLE classTb (
     className VARCHAR(50) NOT NULL,
     FOREIGN KEY (domainId) REFERENCES domainTb(domainId) ON DELETE CASCADE
 );
+
+
 );
 CREATE TABLE subjectTb (
     subjectId INT  NOT NULL ,
