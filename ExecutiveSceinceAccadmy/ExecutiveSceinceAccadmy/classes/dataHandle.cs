@@ -44,5 +44,17 @@ namespace ExecutiveSceinceAccadmy.classes
         {
             return DateTime.Now.ToString("yyyy-MM-dd");
         }
+        public static string currentYearLastTwoDigits()
+        {
+            return DateTime.Now.ToString("yy");
+        }
+        public static string createRegistrationNumber(string domain, string gender, string classLevel)
+        {
+            int currStd=DB.getCurrentStdNumber() + 1;
+            string year = currentYearLastTwoDigits();
+            DB.updateCurrentStdNumber(currStd);
+            return year + "-" + classLevel + "-" + domain + "-" + currStd.ToString();
+
+        }
     }
 }

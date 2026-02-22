@@ -20,11 +20,13 @@ namespace ExecutiveSceinceAccadmy.classes
             int age,
             string fatherName,
             string personPhoneNumber,
-            string fatherPhoneNumber,
+            
             string cnic,
+            string
+            gender,
             string specialization,
             List<string> subjects
-        ) : base(name, age, personPhoneNumber, cnic)
+        ) : base(name, age, personPhoneNumber, cnic,gender)
         {
             this.specialization = specialization;
             this.subjects = subjects;
