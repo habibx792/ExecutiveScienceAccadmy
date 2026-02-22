@@ -88,12 +88,13 @@ namespace ExecutiveSceinceAccadmy.classes
                 }
             }
         }
-        public static void registerAStudent(Student std)
-        {
-            Address ad=std.Address;
-            accadmicHistory accadmic = std.AcademicHistories;
-            Father fth=std.Father;
-            string 
-        }
+
+        //public static void registerAStudent(Student std)
+        //{
+        //    Address ad=std.Address;
+        //    accadmicHistory accadmic = std.AcademicHistories;
+        //    Father fth=std.Father;
+             
+        //}
     }
 }

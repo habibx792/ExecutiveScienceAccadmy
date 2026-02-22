@@ -11,6 +11,11 @@ CREATE TABLE adminTb
     userName VARCHAR(20) NOT NULL,
     password VARCHAR(20) NOT NULL
 );
+create table stdCountTB
+(
+    stdCountId int not null primary key,
+    stdCount int not null
+);
 
 CREATE TABLE domainTb (
     domainId VARCHAR(50) NOT NULL PRIMARY KEY,

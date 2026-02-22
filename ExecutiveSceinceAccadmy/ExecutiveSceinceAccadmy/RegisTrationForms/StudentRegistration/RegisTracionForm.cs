@@ -1,4 +1,5 @@
-﻿using ExecutiveScienceAcademy.classes;
+﻿using ExecutiveSceinceAccadmy.classes;
+using ExecutiveScienceAcademy.classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -59,27 +60,9 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
               borderColor: Color.FromArgb(0, 120, 215),
               borderRadius: 20,
               borderThickness: 2);
-            UI.Instance.StyleTextBox(
-            txtBoard,
-            focusedBorderColor: Color.DodgerBlue,
-             height: 42
-            );
-            UI.Instance.StyleTextBox(
-            txtDeg,
-            focusedBorderColor: Color.DodgerBlue,
-             height: 42
-            );
-            UI.Instance.StyleTextBox(txtDeg, focusedBorderColor: Color.DodgerBlue,
-         height: 42);
+           
 
-
-
-
-
-
-
-
-            lbLogo.Font = new Font(lbLogo.Font, FontStyle.Bold);
+            //lbLogo.Font = new Font(lbLogo.Font, FontStyle.Bold);
         }
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
@@ -110,11 +93,9 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
         {
             AutoScroll = true;
 
-   
-        }
-        
 
-        private void btnRegistation_Click(object sender, EventArgs e)
+        }
+        private void helpMethodOfRegies()
         {
             pnHide.Visible = true;
             pnMainPn.Visible = false;
@@ -139,7 +120,8 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
                 80
             );
 
-            Button btnRegister = new Button();
+            // fully qualify Button to avoid ambiguity with VisualStyleElement.Button
+            System.Windows.Forms.Button btnRegister = new System.Windows.Forms.Button();
             btnRegister.Text = "Print Form";
             btnRegister.Width = 160;
             btnRegister.Height = 40;
@@ -152,6 +134,71 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
             pnHide.Controls.Clear();
             pnHide.Controls.Add(lblMessage);
             pnHide.Controls.Add(btnRegister);
+        }
+
+        private void btnRegistation_Click(object sender, EventArgs e)
+        {
+            //prepate data to be inserted into database
+
+
+            string classLevel = cmbClass.SelectedItem.ToString();
+            string domain = cmbDomain.SelectedItem.ToString();
+            string customFormattedString = dtpRegis.Value.ToString("yyyy-MM-dd");
+            string stdName = txtStdName.Text;
+            string stdFatherName = txtStdFatherName.Text;
+            string stdCNIC = txtStdCNIC.Text;
+            string fatherCNIC = txtFatherCNIC.Text;
+            string stdContact = txtStdContact.Text;
+            string faterhContact = txtFatherContact.Text;
+            string gender = cmbGender.SelectedItem.ToString();
+            string stdDob = dtpDOB.Value.ToString("yyyy-MM-dd");
+            string fatherPhoneNumber = txtFatherContact.Text;
+            string watsAppNumber = txtWatsApp.Text;
+            string fatherJob = cmbFatherJob.SelectedItem.ToString();
+            string city = txtCity.Text;
+            string address = txtStdAddress.Text;
+            string country = "Pakistan";
+            //academic info
+            string institute = txtSchool.Text;
+            string previousDegree = cmbPrvDeg.SelectedItem.ToString();
+            string board = cmbBoard.SelectedItem.ToString();
+            string prevRegistrationNumber = txtPrevReg.Text;
+            string totalMarks = txtObtainedMarks.Text;
+            string obtainedMarks = txtObtainedMarks.Text;
+            string gen = "";
+            if (gender == "Male")
+            {
+                gen = "M";
+            }
+            else
+            {
+                gen = "F";
+            }
+            string registrationNumber = dataHandle.createRegistrationNumber(domain, gen, classLevel);
+
+
+            string passingYear = cmbPassingYear.SelectedItem.ToString();
+
+
+
+
+            if (rdReg.Checked)
+            {
+                MessageBox.Show("You are registered");
+            }
+            else if (rdPrim.Checked)
+            {
+                MessageBox.Show("You are registered");
+            }
+            else if (rdRTS.Checked)
+            {
+                MessageBox.Show("You are registered");
+            }
+            else if (rdSuple.Checked)
+            {
+                MessageBox.Show("You are registered");
+            }
+            helpMethodOfRegies();
         }
 
         private void pnMainPn_Paint(object sender, PaintEventArgs e)
@@ -170,6 +217,11 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
         }
 
         private void pnPreq_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged_2(object sender, EventArgs e)
         {
 
         }

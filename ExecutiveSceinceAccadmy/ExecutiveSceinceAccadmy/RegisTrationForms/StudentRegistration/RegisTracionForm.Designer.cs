@@ -34,46 +34,47 @@
             dtpRegis = new DateTimePicker();
             lblClass = new Label();
             lblDomain = new Label();
-            comboBox1 = new ComboBox();
-            radioButton2 = new RadioButton();
-            radioButton3 = new RadioButton();
-            radioButton4 = new RadioButton();
-            radioButton5 = new RadioButton();
+            cmbDomain = new ComboBox();
+            rdSuple = new RadioButton();
+            rdPrim = new RadioButton();
+            rdRTS = new RadioButton();
+            rdReg = new RadioButton();
             cmbClass = new ComboBox();
-            txtFahterName = new TextBox();
-            txtStdCnic = new TextBox();
+            txtStdFatherName = new TextBox();
+            txtStdCNIC = new TextBox();
             txtStdName = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
+            txtFatherCNIC = new TextBox();
             pnLogo = new Panel();
             lbLogo = new Label();
             pnMainPn = new Panel();
             pnAccadminc = new Panel();
-            comboBox3 = new ComboBox();
+            cmbBoard = new ComboBox();
+            cmbPrvDeg = new ComboBox();
+            cmbPassingYear = new ComboBox();
             lblDegYear = new Label();
-            txtDeg = new TextBox();
             label20 = new Label();
             lblSchool = new Label();
             txtTotalMark = new TextBox();
             txtSchool = new TextBox();
             lblObtainMark = new Label();
-            txtBoard = new TextBox();
             lblRollNo = new Label();
             lblBoard = new Label();
             lblDeg = new Label();
-            txtMark = new TextBox();
+            txtObtainedMarks = new TextBox();
             lblTotalMarks = new Label();
-            txtRollNo = new TextBox();
+            txtPrevReg = new TextBox();
             pnPerMain = new Panel();
+            txtStdContact = new TextBox();
+            lblStdContact = new Label();
+            cmbFatherJob = new ComboBox();
             label2 = new Label();
             txtCity = new TextBox();
             label1 = new Label();
-            txtAdd = new TextBox();
+            txtStdAddress = new TextBox();
             lblGend = new Label();
-            comboBox2 = new ComboBox();
-            txtFatherMob = new TextBox();
-            txtEmail = new TextBox();
-            txtWatapp = new TextBox();
+            cmbGender = new ComboBox();
+            txtFatherContact = new TextBox();
+            txtWatsApp = new TextBox();
             dtpDOB = new DateTimePicker();
             lblFatherMob = new Label();
             lblStdCNIC = new Label();
@@ -81,7 +82,6 @@
             lblStdName = new Label();
             lblDob = new Label();
             lblFatherName = new Label();
-            lblEmail = new Label();
             lblWatsap = new Label();
             lblFathOcc = new Label();
             pnPerson = new Panel();
@@ -111,11 +111,11 @@
             pnPreq.Controls.Add(dtpRegis);
             pnPreq.Controls.Add(lblClass);
             pnPreq.Controls.Add(lblDomain);
-            pnPreq.Controls.Add(comboBox1);
-            pnPreq.Controls.Add(radioButton2);
-            pnPreq.Controls.Add(radioButton3);
-            pnPreq.Controls.Add(radioButton4);
-            pnPreq.Controls.Add(radioButton5);
+            pnPreq.Controls.Add(cmbDomain);
+            pnPreq.Controls.Add(rdSuple);
+            pnPreq.Controls.Add(rdPrim);
+            pnPreq.Controls.Add(rdRTS);
+            pnPreq.Controls.Add(rdReg);
             pnPreq.Controls.Add(cmbClass);
             pnPreq.Location = new Point(29, 52);
             pnPreq.Name = "pnPreq";
@@ -151,64 +151,64 @@
             // lblDomain
             // 
             lblDomain.AutoSize = true;
-            lblDomain.Location = new Point(305, 87);
+            lblDomain.Location = new Point(463, 87);
             lblDomain.Name = "lblDomain";
             lblDomain.Size = new Size(49, 15);
             lblDomain.TabIndex = 23;
             lblDomain.Text = "Domain";
             // 
-            // comboBox1
+            // cmbDomain
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Primary", "Medical", "Computer", "Non-Medical", "Arts" });
-            comboBox1.Location = new Point(367, 84);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(156, 23);
-            comboBox1.TabIndex = 1;
+            cmbDomain.FormattingEnabled = true;
+            cmbDomain.Items.AddRange(new object[] { "Primary", "Medical", "Computer", "Non-Medical", "Arts" });
+            cmbDomain.Location = new Point(525, 84);
+            cmbDomain.Name = "cmbDomain";
+            cmbDomain.Size = new Size(156, 23);
+            cmbDomain.TabIndex = 1;
             // 
-            // radioButton2
+            // rdSuple
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(957, 32);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(105, 19);
-            radioButton2.TabIndex = 4;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Supplementary";
-            radioButton2.UseVisualStyleBackColor = true;
+            rdSuple.AutoSize = true;
+            rdSuple.Location = new Point(957, 32);
+            rdSuple.Name = "rdSuple";
+            rdSuple.Size = new Size(105, 19);
+            rdSuple.TabIndex = 4;
+            rdSuple.TabStop = true;
+            rdSuple.Text = "Supplementary";
+            rdSuple.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // rdPrim
             // 
-            radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(547, 32);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(110, 19);
-            radioButton3.TabIndex = 5;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "Primary Student";
-            radioButton3.UseVisualStyleBackColor = true;
+            rdPrim.AutoSize = true;
+            rdPrim.Location = new Point(547, 32);
+            rdPrim.Name = "rdPrim";
+            rdPrim.Size = new Size(110, 19);
+            rdPrim.TabIndex = 5;
+            rdPrim.TabStop = true;
+            rdPrim.Text = "Primary Student";
+            rdPrim.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // rdRTS
             // 
-            radioButton4.AutoSize = true;
-            radioButton4.Location = new Point(296, 32);
-            radioButton4.Name = "radioButton4";
-            radioButton4.Size = new Size(88, 19);
-            radioButton4.TabIndex = 6;
-            radioButton4.TabStop = true;
-            radioButton4.Text = "RTS Student";
-            radioButton4.UseVisualStyleBackColor = true;
+            rdRTS.AutoSize = true;
+            rdRTS.Location = new Point(296, 32);
+            rdRTS.Name = "rdRTS";
+            rdRTS.Size = new Size(88, 19);
+            rdRTS.TabIndex = 6;
+            rdRTS.TabStop = true;
+            rdRTS.Text = "RTS Student";
+            rdRTS.UseVisualStyleBackColor = true;
             // 
-            // radioButton5
+            // rdReg
             // 
-            radioButton5.AutoSize = true;
-            radioButton5.Location = new Point(72, 32);
-            radioButton5.Name = "radioButton5";
-            radioButton5.Size = new Size(109, 19);
-            radioButton5.TabIndex = 7;
-            radioButton5.TabStop = true;
-            radioButton5.Text = "Regular Student";
-            radioButton5.UseVisualStyleBackColor = true;
+            rdReg.AutoSize = true;
+            rdReg.Location = new Point(72, 32);
+            rdReg.Name = "rdReg";
+            rdReg.Size = new Size(109, 19);
+            rdReg.TabIndex = 7;
+            rdReg.TabStop = true;
+            rdReg.Text = "Regular Student";
+            rdReg.UseVisualStyleBackColor = true;
             // 
             // cmbClass
             // 
@@ -219,20 +219,20 @@
             cmbClass.Size = new Size(154, 23);
             cmbClass.TabIndex = 11;
             // 
-            // txtFahterName
+            // txtStdFatherName
             // 
-            txtFahterName.Location = new Point(571, 22);
-            txtFahterName.Name = "txtFahterName";
-            txtFahterName.Size = new Size(206, 23);
-            txtFahterName.TabIndex = 0;
-            txtFahterName.TextChanged += textBox1_TextChanged;
+            txtStdFatherName.Location = new Point(571, 22);
+            txtStdFatherName.Name = "txtStdFatherName";
+            txtStdFatherName.Size = new Size(206, 23);
+            txtStdFatherName.TabIndex = 0;
+            txtStdFatherName.TextChanged += textBox1_TextChanged;
             // 
-            // txtStdCnic
+            // txtStdCNIC
             // 
-            txtStdCnic.Location = new Point(139, 92);
-            txtStdCnic.Name = "txtStdCnic";
-            txtStdCnic.Size = new Size(250, 23);
-            txtStdCnic.TabIndex = 16;
+            txtStdCNIC.Location = new Point(139, 92);
+            txtStdCNIC.Name = "txtStdCNIC";
+            txtStdCNIC.Size = new Size(250, 23);
+            txtStdCNIC.TabIndex = 16;
             // 
             // txtStdName
             // 
@@ -243,21 +243,13 @@
             txtStdName.TextAlign = HorizontalAlignment.Center;
             txtStdName.TextChanged += textBox3_TextChanged;
             // 
-            // textBox4
+            // txtFatherCNIC
             // 
-            textBox4.Location = new Point(139, 211);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(206, 23);
-            textBox4.TabIndex = 18;
-            textBox4.TextChanged += textBox4_TextChanged;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(921, 22);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(209, 23);
-            textBox5.TabIndex = 19;
-            textBox5.TextChanged += textBox5_TextChanged;
+            txtFatherCNIC.Location = new Point(921, 22);
+            txtFatherCNIC.Name = "txtFatherCNIC";
+            txtFatherCNIC.Size = new Size(209, 23);
+            txtFatherCNIC.TabIndex = 19;
+            txtFatherCNIC.TextChanged += textBox5_TextChanged;
             // 
             // pnLogo
             // 
@@ -292,34 +284,52 @@
             // 
             // pnAccadminc
             // 
-            pnAccadminc.Controls.Add(comboBox3);
+            pnAccadminc.Controls.Add(cmbBoard);
+            pnAccadminc.Controls.Add(cmbPrvDeg);
+            pnAccadminc.Controls.Add(cmbPassingYear);
             pnAccadminc.Controls.Add(lblDegYear);
-            pnAccadminc.Controls.Add(txtDeg);
             pnAccadminc.Controls.Add(label20);
             pnAccadminc.Controls.Add(lblSchool);
             pnAccadminc.Controls.Add(txtTotalMark);
             pnAccadminc.Controls.Add(txtSchool);
             pnAccadminc.Controls.Add(lblObtainMark);
-            pnAccadminc.Controls.Add(txtBoard);
             pnAccadminc.Controls.Add(lblRollNo);
             pnAccadminc.Controls.Add(lblBoard);
             pnAccadminc.Controls.Add(lblDeg);
-            pnAccadminc.Controls.Add(txtMark);
+            pnAccadminc.Controls.Add(txtObtainedMarks);
             pnAccadminc.Controls.Add(lblTotalMarks);
-            pnAccadminc.Controls.Add(txtRollNo);
+            pnAccadminc.Controls.Add(txtPrevReg);
             pnAccadminc.Location = new Point(29, 449);
             pnAccadminc.Name = "pnAccadminc";
             pnAccadminc.Size = new Size(1176, 205);
             pnAccadminc.TabIndex = 53;
             // 
-            // comboBox3
+            // cmbBoard
             // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Items.AddRange(new object[] { "2000", "2001", "2002", "2004", "2005", "2006", "2007", "2008", "2009", "2010" });
-            comboBox3.Location = new Point(112, 155);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(167, 23);
-            comboBox3.TabIndex = 55;
+            cmbBoard.FormattingEnabled = true;
+            cmbBoard.Items.AddRange(new object[] { "Primary ", "FSD Board", "Lahore Board", "Islamabad Board" });
+            cmbBoard.Location = new Point(511, 158);
+            cmbBoard.Name = "cmbBoard";
+            cmbBoard.Size = new Size(167, 23);
+            cmbBoard.TabIndex = 57;
+            // 
+            // cmbPrvDeg
+            // 
+            cmbPrvDeg.FormattingEnabled = true;
+            cmbPrvDeg.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" });
+            cmbPrvDeg.Location = new Point(116, 77);
+            cmbPrvDeg.Name = "cmbPrvDeg";
+            cmbPrvDeg.Size = new Size(187, 23);
+            cmbPrvDeg.TabIndex = 56;
+            // 
+            // cmbPassingYear
+            // 
+            cmbPassingYear.FormattingEnabled = true;
+            cmbPassingYear.Items.AddRange(new object[] { "2000", "2001", "2002", "2004", "2005", "2006", "2007", "2008", "2009", "2010" });
+            cmbPassingYear.Location = new Point(112, 155);
+            cmbPassingYear.Name = "cmbPassingYear";
+            cmbPassingYear.Size = new Size(167, 23);
+            cmbPassingYear.TabIndex = 55;
             // 
             // lblDegYear
             // 
@@ -329,13 +339,6 @@
             lblDegYear.Size = new Size(29, 15);
             lblDegYear.TabIndex = 54;
             lblDegYear.Text = "Year";
-            // 
-            // txtDeg
-            // 
-            txtDeg.Location = new Point(108, 69);
-            txtDeg.Name = "txtDeg";
-            txtDeg.Size = new Size(171, 23);
-            txtDeg.TabIndex = 22;
             // 
             // label20
             // 
@@ -380,13 +383,6 @@
             lblObtainMark.Text = "Marks";
             lblObtainMark.Click += label3_Click;
             // 
-            // txtBoard
-            // 
-            txtBoard.Location = new Point(522, 155);
-            txtBoard.Name = "txtBoard";
-            txtBoard.Size = new Size(171, 23);
-            txtBoard.TabIndex = 50;
-            // 
             // lblRollNo
             // 
             lblRollNo.AutoSize = true;
@@ -414,12 +410,12 @@
             lblDeg.TabIndex = 29;
             lblDeg.Text = "Degree";
             // 
-            // txtMark
+            // txtObtainedMarks
             // 
-            txtMark.Location = new Point(744, 70);
-            txtMark.Name = "txtMark";
-            txtMark.Size = new Size(180, 23);
-            txtMark.TabIndex = 45;
+            txtObtainedMarks.Location = new Point(744, 70);
+            txtObtainedMarks.Name = "txtObtainedMarks";
+            txtObtainedMarks.Size = new Size(180, 23);
+            txtObtainedMarks.TabIndex = 45;
             // 
             // lblTotalMarks
             // 
@@ -430,29 +426,30 @@
             lblTotalMarks.TabIndex = 37;
             lblTotalMarks.Text = "Total";
             // 
-            // txtRollNo
+            // txtPrevReg
             // 
-            txtRollNo.Location = new Point(522, 74);
-            txtRollNo.Name = "txtRollNo";
-            txtRollNo.Size = new Size(171, 23);
-            txtRollNo.TabIndex = 44;
+            txtPrevReg.Location = new Point(522, 74);
+            txtPrevReg.Name = "txtPrevReg";
+            txtPrevReg.Size = new Size(171, 23);
+            txtPrevReg.TabIndex = 44;
             // 
             // pnPerMain
             // 
+            pnPerMain.Controls.Add(txtStdContact);
+            pnPerMain.Controls.Add(lblStdContact);
+            pnPerMain.Controls.Add(cmbFatherJob);
             pnPerMain.Controls.Add(label2);
             pnPerMain.Controls.Add(txtCity);
             pnPerMain.Controls.Add(label1);
-            pnPerMain.Controls.Add(txtAdd);
+            pnPerMain.Controls.Add(txtStdAddress);
             pnPerMain.Controls.Add(lblGend);
-            pnPerMain.Controls.Add(comboBox2);
+            pnPerMain.Controls.Add(cmbGender);
             pnPerMain.Controls.Add(txtStdName);
-            pnPerMain.Controls.Add(textBox5);
-            pnPerMain.Controls.Add(txtFahterName);
-            pnPerMain.Controls.Add(txtStdCnic);
-            pnPerMain.Controls.Add(textBox4);
-            pnPerMain.Controls.Add(txtFatherMob);
-            pnPerMain.Controls.Add(txtEmail);
-            pnPerMain.Controls.Add(txtWatapp);
+            pnPerMain.Controls.Add(txtFatherCNIC);
+            pnPerMain.Controls.Add(txtStdFatherName);
+            pnPerMain.Controls.Add(txtStdCNIC);
+            pnPerMain.Controls.Add(txtFatherContact);
+            pnPerMain.Controls.Add(txtWatsApp);
             pnPerMain.Controls.Add(dtpDOB);
             pnPerMain.Controls.Add(lblFatherMob);
             pnPerMain.Controls.Add(lblStdCNIC);
@@ -460,13 +457,38 @@
             pnPerMain.Controls.Add(lblStdName);
             pnPerMain.Controls.Add(lblDob);
             pnPerMain.Controls.Add(lblFatherName);
-            pnPerMain.Controls.Add(lblEmail);
             pnPerMain.Controls.Add(lblWatsap);
             pnPerMain.Controls.Add(lblFathOcc);
             pnPerMain.Location = new Point(29, 189);
             pnPerMain.Name = "pnPerMain";
             pnPerMain.Size = new Size(1176, 255);
             pnPerMain.TabIndex = 42;
+            // 
+            // txtStdContact
+            // 
+            txtStdContact.Location = new Point(933, 150);
+            txtStdContact.Name = "txtStdContact";
+            txtStdContact.Size = new Size(206, 23);
+            txtStdContact.TabIndex = 49;
+            txtStdContact.TextChanged += textBox1_TextChanged_2;
+            // 
+            // lblStdContact
+            // 
+            lblStdContact.AutoSize = true;
+            lblStdContact.Location = new Point(832, 158);
+            lblStdContact.Name = "lblStdContact";
+            lblStdContact.Size = new Size(92, 15);
+            lblStdContact.TabIndex = 50;
+            lblStdContact.Text = "student Contact";
+            // 
+            // cmbFatherJob
+            // 
+            cmbFatherJob.FormattingEnabled = true;
+            cmbFatherJob.Items.AddRange(new object[] { "Labour", "Doctor", "Teacher", "Army", "Other" });
+            cmbFatherJob.Location = new Point(147, 219);
+            cmbFatherJob.Name = "cmbFatherJob";
+            cmbFatherJob.Size = new Size(209, 23);
+            cmbFatherJob.TabIndex = 48;
             // 
             // label2
             // 
@@ -495,13 +517,13 @@
             label1.TabIndex = 45;
             label1.Text = "Address";
             // 
-            // txtAdd
+            // txtStdAddress
             // 
-            txtAdd.Location = new Point(930, 205);
-            txtAdd.Margin = new Padding(2);
-            txtAdd.Name = "txtAdd";
-            txtAdd.Size = new Size(209, 23);
-            txtAdd.TabIndex = 29;
+            txtStdAddress.Location = new Point(930, 205);
+            txtStdAddress.Margin = new Padding(2);
+            txtStdAddress.Name = "txtStdAddress";
+            txtStdAddress.Size = new Size(209, 23);
+            txtStdAddress.TabIndex = 29;
             // 
             // lblGend
             // 
@@ -512,35 +534,28 @@
             lblGend.TabIndex = 44;
             lblGend.Text = "Gender";
             // 
-            // comboBox2
+            // cmbGender
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Female", "Male" });
-            comboBox2.Location = new Point(571, 92);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(206, 23);
-            comboBox2.TabIndex = 43;
+            cmbGender.FormattingEnabled = true;
+            cmbGender.Items.AddRange(new object[] { "Female", "Male" });
+            cmbGender.Location = new Point(571, 92);
+            cmbGender.Name = "cmbGender";
+            cmbGender.Size = new Size(206, 23);
+            cmbGender.TabIndex = 43;
             // 
-            // txtFatherMob
+            // txtFatherContact
             // 
-            txtFatherMob.Location = new Point(130, 150);
-            txtFatherMob.Name = "txtFatherMob";
-            txtFatherMob.Size = new Size(250, 23);
-            txtFatherMob.TabIndex = 23;
+            txtFatherContact.Location = new Point(130, 150);
+            txtFatherContact.Name = "txtFatherContact";
+            txtFatherContact.Size = new Size(250, 23);
+            txtFatherContact.TabIndex = 23;
             // 
-            // txtEmail
+            // txtWatsApp
             // 
-            txtEmail.Location = new Point(921, 158);
-            txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(209, 23);
-            txtEmail.TabIndex = 25;
-            // 
-            // txtWatapp
-            // 
-            txtWatapp.Location = new Point(571, 163);
-            txtWatapp.Name = "txtWatapp";
-            txtWatapp.Size = new Size(206, 23);
-            txtWatapp.TabIndex = 21;
+            txtWatsApp.Location = new Point(571, 163);
+            txtWatsApp.Name = "txtWatsApp";
+            txtWatsApp.Size = new Size(206, 23);
+            txtWatsApp.TabIndex = 21;
             // 
             // dtpDOB
             // 
@@ -602,15 +617,6 @@
             lblFatherName.Size = new Size(75, 15);
             lblFatherName.TabIndex = 33;
             lblFatherName.Text = "Father Name";
-            // 
-            // lblEmail
-            // 
-            lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(837, 166);
-            lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(49, 15);
-            lblEmail.TabIndex = 38;
-            lblEmail.Text = "Domain";
             // 
             // lblWatsap
             // 
@@ -684,16 +690,15 @@
 
         private Button btnRegistation;
         private Panel pnPreq;
-        private TextBox txtFahterName;
-        private ComboBox comboBox1;
-        private RadioButton radioButton2;
-        private RadioButton radioButton3;
-        private RadioButton radioButton4;
+        private TextBox txtStdFatherName;
+        private ComboBox cmbDomain;
+        private RadioButton rdSuple;
+        private RadioButton rdPrim;
+        private RadioButton rdRTS;
         private ComboBox cmbClass;
-        private TextBox txtStdCnic;
+        private TextBox txtStdCNIC;
         private TextBox txtStdName;
-        private TextBox textBox4;
-        private TextBox textBox5;
+        private TextBox txtFatherCNIC;
         private Label lblDomain;
         private Label lblClass;
         private Panel pnLogo;
@@ -703,7 +708,6 @@
         private Panel pnMainPn;
         private Label lblFathCnic;
         private Label lblDob;
-        private Label lblEmail;
         private Label lblTotalMarks;
         private Label lblFathOcc;
         private Label lblWatsap;
@@ -715,31 +719,33 @@
         private Label lblRollNo;
         private Label lblObtainMark;
         private TextBox txtTotalMark;
-        private TextBox txtDeg;
-        private TextBox txtWatapp;
-        private TextBox txtEmail;
-        private TextBox txtFatherMob;
+        private TextBox txtWatsApp;
+        private TextBox txtFatherContact;
         private DateTimePicker dtpDOB;
         private Panel pnPerson;
         private Label label19;
         private Panel pnPerMain;
-        private TextBox txtBoard;
         private Label lblBoard;
-        private TextBox txtMark;
-        private TextBox txtRollNo;
+        private TextBox txtObtainedMarks;
+        private TextBox txtPrevReg;
         private Label label20;
         private Panel pnAccadminc;
         private Label lblSchool;
         private TextBox txtSchool;
-        private RadioButton radioButton5;
+        private RadioButton rdReg;
         private Panel pnHide;
         private Label lblGend;
-        private ComboBox comboBox2;
-        private ComboBox comboBox3;
+        private ComboBox cmbGender;
+        private ComboBox cmbPassingYear;
         private Label lblDegYear;
         private Label label2;
         private TextBox txtCity;
         private Label label1;
-        private TextBox txtAdd;
+        private TextBox txtStdAddress;
+        private ComboBox cmbFatherJob;
+        private TextBox txtStdContact;
+        private Label lblStdContact;
+        private ComboBox cmbPrvDeg;
+        private ComboBox cmbBoard;
     }
 }

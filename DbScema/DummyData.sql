@@ -33,3 +33,10 @@ values('Prim','1'),
 ('Comp','12th'),
 ('Art','12th');
 select * from classTb;
+insert into stdCountTB(stdCountId,stdCount)
+values(1,1);
+
+select * from stdCountTB;
+update stdCountTB
+SET stdCount = 2
+WHERE stdCountId = 1; 
