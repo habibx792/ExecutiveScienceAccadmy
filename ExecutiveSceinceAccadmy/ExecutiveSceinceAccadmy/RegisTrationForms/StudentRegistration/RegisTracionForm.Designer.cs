@@ -39,9 +39,7 @@
             radioButton3 = new RadioButton();
             radioButton4 = new RadioButton();
             radioButton5 = new RadioButton();
-            comboBox4 = new ComboBox();
             cmbClass = new ComboBox();
-            Suject = new Label();
             txtFahterName = new TextBox();
             txtStdCnic = new TextBox();
             txtStdName = new TextBox();
@@ -118,9 +116,7 @@
             pnPreq.Controls.Add(radioButton3);
             pnPreq.Controls.Add(radioButton4);
             pnPreq.Controls.Add(radioButton5);
-            pnPreq.Controls.Add(comboBox4);
             pnPreq.Controls.Add(cmbClass);
-            pnPreq.Controls.Add(Suject);
             pnPreq.Location = new Point(29, 52);
             pnPreq.Name = "pnPreq";
             pnPreq.Size = new Size(1176, 131);
@@ -214,14 +210,6 @@
             radioButton5.Text = "Regular Student";
             radioButton5.UseVisualStyleBackColor = true;
             // 
-            // comboBox4
-            // 
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Location = new Point(591, 84);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(151, 23);
-            comboBox4.TabIndex = 10;
-            // 
             // cmbClass
             // 
             cmbClass.FormattingEnabled = true;
@@ -230,15 +218,6 @@
             cmbClass.Name = "cmbClass";
             cmbClass.Size = new Size(154, 23);
             cmbClass.TabIndex = 11;
-            // 
-            // Suject
-            // 
-            Suject.AutoSize = true;
-            Suject.Location = new Point(529, 87);
-            Suject.Name = "Suject";
-            Suject.Size = new Size(46, 15);
-            Suject.TabIndex = 2;
-            Suject.Text = "Subject";
             // 
             // txtFahterName
             // 
@@ -707,11 +686,9 @@
         private Panel pnPreq;
         private TextBox txtFahterName;
         private ComboBox comboBox1;
-        private Label Suject;
         private RadioButton radioButton2;
         private RadioButton radioButton3;
         private RadioButton radioButton4;
-        private ComboBox comboBox4;
         private ComboBox cmbClass;
         private TextBox txtStdCnic;
         private TextBox txtStdName;
