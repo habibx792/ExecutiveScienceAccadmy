@@ -7,6 +7,7 @@ using System.Data;
 using System.DirectoryServices.ActiveDirectory;
 using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -30,6 +31,22 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
             this.StartPosition = FormStartPosition.CenterScreen;
             pnHide.Visible = false;
             AutoScroll = true;
+            List<string> domains = DB.loadALlDomain();
+            bool flag = false;
+            for (int i = 0; i < domains.Count; i++)
+            {
+                flag = true;
+                
+                cmbDomain.Items.Add(domains[i]);
+            }
+            if(flag)
+            {
+                MessageBox.Show("Domains loaded successfully");
+            }
+
+
+
+
 
         }
         private void StyleControls()
@@ -60,7 +77,7 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
               borderColor: Color.FromArgb(0, 120, 215),
               borderRadius: 20,
               borderThickness: 2);
-           
+
 
             //lbLogo.Font = new Font(lbLogo.Font, FontStyle.Bold);
         }
@@ -222,6 +239,11 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
         }
 
         private void textBox1_TextChanged_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rdPrim_CheckedChanged(object sender, EventArgs e)
         {
 
         }

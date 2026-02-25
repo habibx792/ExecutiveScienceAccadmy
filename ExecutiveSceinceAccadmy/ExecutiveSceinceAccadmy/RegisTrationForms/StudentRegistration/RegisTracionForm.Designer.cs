@@ -160,7 +160,6 @@
             // cmbDomain
             // 
             cmbDomain.FormattingEnabled = true;
-            cmbDomain.Items.AddRange(new object[] { "Primary", "Medical", "Computer", "Non-Medical", "Arts" });
             cmbDomain.Location = new Point(525, 84);
             cmbDomain.Name = "cmbDomain";
             cmbDomain.Size = new Size(156, 23);
@@ -187,6 +186,7 @@
             rdPrim.TabStop = true;
             rdPrim.Text = "Primary Student";
             rdPrim.UseVisualStyleBackColor = true;
+            rdPrim.CheckedChanged += rdPrim_CheckedChanged;
             // 
             // rdRTS
             // 

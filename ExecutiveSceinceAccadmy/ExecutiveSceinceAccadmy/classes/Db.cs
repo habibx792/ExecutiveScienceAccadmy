@@ -2,7 +2,8 @@
 using System.Data;
 using Microsoft.Data.SqlClient;  // Ensure this NuGet package is installed
 using System.Windows.Forms;
-using System.Runtime.CompilerServices;      // For showing error messages temporarily
+using System.Runtime.CompilerServices;
+using System.Numerics;      // For showing error messages temporarily
 
 namespace ExecutiveSceinceAccadmy.classes
 {
@@ -88,7 +89,26 @@ namespace ExecutiveSceinceAccadmy.classes
                 }
             }
         }
-
+     public static List<string>  loadALlDomain()
+        {
+            List<string> domains = new List<string>();
+            using (SqlConnection con = new SqlConnection(str))
+            {
+                con.Open();
+                string query = "select domainId from domainTb";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            domains.Add(reader.GetString(0));
+                        }
+                    }
+                }
+            }
+            return domains;
+        }
         //public static void registerAStudent(Student std)
         //{
         //    Address ad=std.Address;
