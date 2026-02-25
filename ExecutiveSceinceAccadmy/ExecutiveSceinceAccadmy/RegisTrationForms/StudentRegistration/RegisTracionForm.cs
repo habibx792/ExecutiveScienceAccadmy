@@ -39,11 +39,11 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
                 
                 cmbDomain.Items.Add(domains[i]);
             }
-            if(flag)
+            List<int>years=dataHandle.laodPrevisous_10Years();
+            for(int i=0;i<years.Count;i++)
             {
-                MessageBox.Show("Domains loaded successfully");
+                cmbPassingYear.Items.Add(years[i].ToString());
             }
-
 
 
 

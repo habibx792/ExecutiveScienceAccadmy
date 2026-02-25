@@ -325,7 +325,7 @@
             // cmbPassingYear
             // 
             cmbPassingYear.FormattingEnabled = true;
-            cmbPassingYear.Items.AddRange(new object[] { "2000", "2001", "2002", "2004", "2005", "2006", "2007", "2008", "2009", "2010" });
+            cmbPassingYear.Items.AddRange(new object[] { "" });
             cmbPassingYear.Location = new Point(112, 155);
             cmbPassingYear.Name = "cmbPassingYear";
             cmbPassingYear.Size = new Size(167, 23);

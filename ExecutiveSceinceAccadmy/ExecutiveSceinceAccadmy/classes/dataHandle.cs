@@ -56,5 +56,15 @@ namespace ExecutiveSceinceAccadmy.classes
             return year + "-" + classLevel + "-" + domain + "-" + currStd.ToString();
 
         }
+       public static List<int> laodPrevisous_10Years()
+        {
+            int currYear = getCurrentYear();
+            List<int> years = new List<int>();
+            for(int i=currYear-20;i<=currYear;i++)
+            {
+                years.Add(i);
+            }
+            return years;
+        }
     }
 }

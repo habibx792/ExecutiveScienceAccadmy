@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "D:\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|D:\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\executivesceinceaccadmy\\registrationforms\\studentregistration\\registracionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|d:\\executivescienceaccadmy\\executivesceinceaccadmy\\executivesceinceaccadmy\\registrationforms\\studentregistration\\registracionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|solutionrelative:executivesceinceaccadmy\\registrationforms\\studentregistration\\registracionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|d:\\executivescienceaccadmy\\executivesceinceaccadmy\\executivesceinceaccadmy\\registrationforms\\studentregistration\\registracionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|solutionrelative:executivesceinceaccadmy\\registrationforms\\studentregistration\\registracionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|d:\\executivescienceaccadmy\\executivesceinceaccadmy\\executivesceinceaccadmy\\registrationforms\\studentregistration\\registracionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|solutionrelative:executivesceinceaccadmy\\registrationforms\\studentregistration\\registracionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|d:\\executivescienceaccadmy\\executivesceinceaccadmy\\executivesceinceaccadmy\\classes\\datahandle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|solutionrelative:executivesceinceaccadmy\\classes\\datahandle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|d:\\executivescienceaccadmy\\executivesceinceaccadmy\\executivesceinceaccadmy\\classes\\db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -21,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|d:\\executivescienceaccadmy\\executivesceinceaccadmy\\executivesceinceaccadmy\\classes\\accadmichistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|solutionrelative:executivesceinceaccadmy\\classes\\accadmichistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|d:\\executivescienceaccadmy\\executivesceinceaccadmy\\executivesceinceaccadmy\\classes\\datahandle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|solutionrelative:executivesceinceaccadmy\\classes\\datahandle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F6A96915-0AC2-4AD3-A81F-388DFDE3CB1A}|ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy.csproj|d:\\executivescienceaccadmy\\executivesceinceaccadmy\\executivesceinceaccadmy\\classes\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -82,8 +82,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 7,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 7,
@@ -111,7 +115,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "DB.cs",
               "DocumentMoniker": "D:\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\classes\\DB.cs",
               "RelativeDocumentMoniker": "ExecutiveSceinceAccadmy\\classes\\DB.cs",
@@ -125,16 +129,17 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "dataHandle.cs",
               "DocumentMoniker": "D:\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\classes\\dataHandle.cs",
               "RelativeDocumentMoniker": "ExecutiveSceinceAccadmy\\classes\\dataHandle.cs",
               "ToolTip": "D:\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\classes\\dataHandle.cs",
               "RelativeToolTip": "ExecutiveSceinceAccadmy\\classes\\dataHandle.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAA4wDIAAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAAA8wD4AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-21T06:36:33.977Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -151,7 +156,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "RegisTracionForm.cs [Design]",
               "DocumentMoniker": "D:\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\RegisTrationForms\\StudentRegistration\\RegisTracionForm.cs",
               "RelativeDocumentMoniker": "ExecutiveSceinceAccadmy\\RegisTrationForms\\StudentRegistration\\RegisTracionForm.cs",
@@ -164,25 +169,21 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "RegisTracionForm.cs",
               "DocumentMoniker": "D:\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\RegisTrationForms\\StudentRegistration\\RegisTracionForm.cs",
               "RelativeDocumentMoniker": "ExecutiveSceinceAccadmy\\RegisTrationForms\\StudentRegistration\\RegisTracionForm.cs",
               "ToolTip": "D:\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\RegisTrationForms\\StudentRegistration\\RegisTracionForm.cs",
               "RelativeToolTip": "ExecutiveSceinceAccadmy\\RegisTrationForms\\StudentRegistration\\RegisTracionForm.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAQwCsAAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAuwG4AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-22T11:14:22.976Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "RegisTracionForm.Designer.cs",
               "DocumentMoniker": "D:\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\RegisTrationForms\\StudentRegistration\\RegisTracionForm.Designer.cs",
               "RelativeDocumentMoniker": "ExecutiveSceinceAccadmy\\RegisTrationForms\\StudentRegistration\\RegisTracionForm.Designer.cs",
@@ -195,7 +196,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "accadmicHistory.cs",
               "DocumentMoniker": "D:\\ExecutiveScienceAccadmy\\ExecutiveSceinceAccadmy\\ExecutiveSceinceAccadmy\\classes\\accadmicHistory.cs",
               "RelativeDocumentMoniker": "ExecutiveSceinceAccadmy\\classes\\accadmicHistory.cs",
