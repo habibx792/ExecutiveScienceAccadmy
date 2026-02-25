@@ -192,27 +192,32 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
                 gen = "F";
             }
             string registrationNumber = dataHandle.createRegistrationNumber(domain, gen, classLevel);
-
-
             string passingYear = cmbPassingYear.SelectedItem.ToString();
+            string stdType= "Regular";
+         
+          
 
 
 
 
             if (rdReg.Checked)
             {
+               stdType= "Regular";
                 MessageBox.Show("You are registered");
             }
             else if (rdPrim.Checked)
             {
+                stdType= "Primary";
                 MessageBox.Show("You are registered");
             }
             else if (rdRTS.Checked)
             {
+                stdType= "RTS";
                 MessageBox.Show("You are registered");
             }
             else if (rdSuple.Checked)
             {
+                stdType= "Suplemenrtary";
                 MessageBox.Show("You are registered");
             }
             helpMethodOfRegies();

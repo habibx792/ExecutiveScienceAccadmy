@@ -11,6 +11,7 @@ namespace ExecutiveSceinceAccadmy.classes
         private string classLevel;
         private string domainName;
         private string reqisterType;
+      
         public Student() { }
         public Student(string name, int age, string personPhoneNumber, string cnic, string gender,string classLevel,string domain,string registerType)
             : base(name, age, personPhoneNumber, cnic, gender) {

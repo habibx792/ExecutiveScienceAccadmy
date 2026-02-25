@@ -3,7 +3,8 @@ using System.Data;
 using Microsoft.Data.SqlClient;  // Ensure this NuGet package is installed
 using System.Windows.Forms;
 using System.Runtime.CompilerServices;
-using System.Numerics;      // For showing error messages temporarily
+using System.Numerics;
+using System.Web;      // For showing error messages temporarily
 
 namespace ExecutiveSceinceAccadmy.classes
 {
@@ -109,12 +110,50 @@ namespace ExecutiveSceinceAccadmy.classes
             }
             return domains;
         }
-        //public static void registerAStudent(Student std)
+        //very importatnt method for registering a student, it will take a student object and insert all the data into the database, including the address, academic history, and father information. this method will be called from the student registration form when the user clicks the register button.
+        //public static void registerStudent(Student std, string registrationNo)
         //{
-        //    Address ad=std.Address;
-        //    accadmicHistory accadmic = std.AcademicHistories;
-        //    Father fth=std.Father;
-             
+        //    Address addr = std.Address;
+        //    Father father = std.Father;
+        //    accadmicHistory academicHistory = std.AcademicHistories;
+        //    string stdName = std.Name;
+        //    int stdAge = std.Age;
+        //    string stdGender = std.Gender;
+        //    string stdCNIC = std.Cnic;
+        //    string stdPhoneNumber = std.PersonPhoneNumber;
+        //    string batchYear = dataHandle.getCurrentYear().ToString();
+        //    //father info
+        //    string fatherName = father.Name;
+        //    string fatherCNIC = father.Cnic;
+        //    string fatherPhoneNumber = father.PersonPhoneNumber;
+        //    string fatherJob = father.Job;
+        //    //address info
+        //    string cityName = addr.City;
+        //    string addressLine = addr.AddressLine;
+        //    string country = addr.Country;
+        //    //academic history info
+        //    string passingYear = academicHistory.PassingYear.ToString();
+        //    string PreviousDegree = academicHistory.Degree;
+        //    string PreviousSchoolName = academicHistory.SchoolName;
+        //    string previousRegiestor = academicHistory.RegistrationNumber;
+        //    string board = academicHistory.Board;
+        //    int totalMarks = academicHistory.TotalMarks;
+        //    int gainMarks = academicHistory.ObtainedMarks;
+
+        //    //db logic
+        //    using (SqlConnection con = new SqlConnection(str))
+        //    {
+        //        con.Open();
+        //        string query = "INSERT INTO studentTb (stdRegisNo, student_name, domainId, classId, gender, date_of_birth, cnic, father_name, father_cnic, father_occupation, father_mobile_no, student_type, batchYear)" +
+        //                       "VALUES (@stdRegisNo, @student_name, @domainId, @classId, @gender, @date_of_birth, @cnic, @father_name, @father_cnic, @father_occupation, @father_mobile_no, @student_type, @batchYear)";
+
+
+
+
+
+
+
+        //    }
         //}
     }
 }

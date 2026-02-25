@@ -11,15 +11,18 @@ namespace ExecutiveSceinceAccadmy.classes
         private string cityName;
         private string address;
         private string country;
-        private string city;
         public Address
-            () { }
-        public Address(string cityName, string address, string country, string city)
+            () {
+            this.cityName = "Faisalabad";
+            this.country = "Pakistan";
+            this.address = "Manawala";
+        }
+        public Address(string cityName, string address, string country)
         {
             this.cityName = cityName;
             this.address = address;
             this.country = country;
-            this.city = city;
+           
 
         }
         public string City
@@ -36,11 +39,7 @@ namespace ExecutiveSceinceAccadmy.classes
             get { return this.country; }
             set { this.country = value; }
         }
-        public string CityName
-        {
-            get { return this.city; }
-            set { this.city = value; }
-        }
+       
         public override string ToString()
         {
             return $"{this.address}, {this.cityName}, {this.country}";
