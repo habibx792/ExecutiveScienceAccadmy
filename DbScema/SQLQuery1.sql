@@ -49,8 +49,6 @@ CREATE TABLE StudentTb (
     gender VARCHAR(10) NOT NULL,
     date_of_birth DATE NOT NULL,
     cnic VARCHAR(15) UNIQUE,
-    address TEXT NOT NULL,
-    mark_of_identification VARCHAR(255),
     father_name VARCHAR(100) NOT NULL,
     father_cnic VARCHAR(15) NOT NULL,
     father_occupation VARCHAR(100),
