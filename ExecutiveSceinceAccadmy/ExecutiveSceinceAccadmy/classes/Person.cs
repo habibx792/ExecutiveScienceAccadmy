@@ -14,18 +14,21 @@ namespace ExecutiveSceinceAccadmy.classes
         protected string PersonNumber;
         protected string cnic;
         protected string gender;
+        private string Dob;
         public  Person()
         {
 
         }
-        public Person(string name, int age,  string personPhoneNumber, string cnic, string gender)
+        public Person(string name, int age,string dob,  string personPhoneNumber, string cnic, string gender)
         {
             this.name = name;
             this.age = age;
             this.PersonNumber = personPhoneNumber;
             this.cnic = cnic;
             this.gender = gender;   
+            this.Dob = dob;
         }
+        public string DOB { get => Dob; set => Dob = value; }
         public string Name { get => name; set => name = value; }
         public int Age { get => age; set => age = value; }
        

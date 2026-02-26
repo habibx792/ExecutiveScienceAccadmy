@@ -18,6 +18,7 @@ namespace ExecutiveSceinceAccadmy.classes
         public Teacher(
             string name,
             int age,
+            string dob,
             string fatherName,
             string personPhoneNumber,
             
@@ -26,7 +27,7 @@ namespace ExecutiveSceinceAccadmy.classes
             gender,
             string specialization,
             List<string> subjects
-        ) : base(name, age, personPhoneNumber, cnic,gender)
+        ) : base(name, age, dob, personPhoneNumber, cnic,gender)
         {
             this.specialization = specialization;
             this.subjects = subjects;

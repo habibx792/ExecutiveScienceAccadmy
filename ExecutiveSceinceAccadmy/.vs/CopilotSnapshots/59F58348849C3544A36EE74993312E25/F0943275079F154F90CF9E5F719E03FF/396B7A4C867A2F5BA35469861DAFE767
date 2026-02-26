@@ -111,7 +111,7 @@ namespace ExecutiveSceinceAccadmy.classes
             return domains;
         }
         //very importatnt method for registering a student, it will take a student object and insert all the data into the database, including the address, academic history, and father information.this method will be called from the student registration form when the user clicks the register button.
-        internal static void registerAStudent(Student std, string registrationNo)
+        public static void registerAStudent(Student std, string registrationNo)
         {
             Address addr = std.Address;
             Father father = std.Father;

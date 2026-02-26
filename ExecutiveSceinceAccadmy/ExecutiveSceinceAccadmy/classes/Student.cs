@@ -12,9 +12,10 @@ namespace ExecutiveSceinceAccadmy.classes
         private string domainName;
         private string reqisterType;
       
+      
         public Student() { }
-        public Student(string name, int age, string personPhoneNumber, string cnic, string gender,string classLevel,string domain,string registerType)
-            : base(name, age, personPhoneNumber, cnic, gender) {
+        public Student(string name, int age,string dob, string personPhoneNumber, string cnic, string gender,string classLevel,string domain,string registerType)
+            : base(name, age,dob, personPhoneNumber, cnic, gender) {
             this.classLevel = classLevel;
             this.domainName = domain;
             this.reqisterType = registerType;
