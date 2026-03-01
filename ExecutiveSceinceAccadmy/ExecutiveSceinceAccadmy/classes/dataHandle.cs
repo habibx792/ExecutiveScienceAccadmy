@@ -53,7 +53,7 @@ namespace ExecutiveSceinceAccadmy.classes
             int currStd=DB.getCurrentStdNumber() + 1;
             string year = currentYearLastTwoDigits();
             DB.updateCurrentStdNumber(currStd);
-            return year + "-" + classLevel + "-" + domain + "-"+gender + currStd.ToString();
+            return year + "-" + classLevel + "-" + domain + "-"+gender +"-"+ currStd.ToString();
 
         }
         public static int calculateAge(DateTime birthDate)
