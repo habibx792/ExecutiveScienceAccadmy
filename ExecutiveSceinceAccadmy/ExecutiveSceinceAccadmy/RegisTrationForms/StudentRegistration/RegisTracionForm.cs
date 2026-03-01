@@ -313,15 +313,6 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
 
         }
 
-        //private void btnRegistation_KeyPress(object sender, KeyPressEventArgs e)
-        //{
-        //    if(KeyPreview)
-        //    {
-        //        if(e.KeyChar == (char)Keys.Enter)
-        //        {
-        //            btnRegistation.PerformClick();
-        //        }
-        //    }
-        //}
+       
     }
 }
