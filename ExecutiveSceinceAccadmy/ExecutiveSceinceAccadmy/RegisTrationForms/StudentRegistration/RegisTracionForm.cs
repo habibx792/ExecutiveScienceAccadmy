@@ -180,10 +180,11 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
             //academic info
             string previousInstitute = txtSchool.Text;
             string previousDegree = cmbPrvDeg.SelectedItem.ToString();
+            int passingYearInt = int.Parse(cmbPassingYear.SelectedItem.ToString());
             string board = cmbBoard.SelectedItem.ToString();
             string prevRegistrationNumber = txtPrevReg.Text;
-            string totalMarks = txtObtainedMarks.Text;
-            string obtainedMarks = txtObtainedMarks.Text;
+            int totalMarks =int.Parse( txtObtainedMarks.Text);
+            int obtainedMarks = int.Parse(txtObtainedMarks.Text);
             string gen = "";
             if (studentGender == "Male")
             {
@@ -204,6 +205,7 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
             admissinType.Add("Suplemenrtary", "Suplemenrtary");
             Student student = new Student(studentName, studentAge, studentDOB, studentContact, studentCnic, studentGender, studentClassLevel, studentDomain, studentType);
             student.Father = new Father(studentFatherName,50,"", studentFatherContact, studentFatherCnic,"Male", fatherJob);
+            student.AcademicHistories = new accadmicHistory(previousInstitute,previousDegree,passingYearInt,totalMarks,obtainedMarks,prevRegistrationNumber,board);
             student.Address = new Address(studentCity, studentcountry, studetnAddress);
             if(rdReg.Checked)
             {
