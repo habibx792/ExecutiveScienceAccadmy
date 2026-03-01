@@ -8,9 +8,11 @@ using System.Diagnostics.Eventing.Reader;
 using System.DirectoryServices.ActiveDirectory;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Windows.Forms;
 
 namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
@@ -113,7 +115,7 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
 
 
         }
-        private void helpMethodOfRegies()
+        private void helpMethodOfRegies(Student student,string registraionNumber)
         {
             pnHide.Visible = true;
             pnMainPn.Visible = false;
@@ -137,6 +139,7 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
                 (pnHide.Width - lblMessage.Width) / 2,
                 80
             );
+            
 
             // fully qualify Button to avoid ambiguity with VisualStyleElement.Button
             System.Windows.Forms.Button btnRegister = new System.Windows.Forms.Button();
@@ -147,11 +150,49 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
                 (pnHide.Width - btnRegister.Width) / 2,
                 160
             );
+            btnRegister.Click += (s, e) =>
+            {
+              print.printStudentRegistration(student, registraionNumber);
+                MessageBox.Show("Print functionality is not implemented yet.");
+            };
+            Button btnSaveFile=new Button();
+            btnSaveFile.Text = "Save Form";
+            btnSaveFile.Width = 160;
+            btnSaveFile.Height = 40;
+            btnSaveFile.BackColor = Color.RoyalBlue;
+            btnSaveFile.Location = new Point(
+                (pnHide.Width - btnSaveFile.Width) / 2,
+                200
+            );
+            btnSaveFile.Click += (s, e) =>
+            {
+                print.SaveStudentDocument(print.GenerateStudentDocument( student, registraionNumber),registraionNumber);
+            };
+            Button hide = new Button();
+            hide.Text = "Register New Student ";
+            hide.AutoSize = false;
+            hide.Width = 160;
+            hide.Height = 50;
+            hide.Location = new Point(
+                (pnHide.Width - hide.Width) / 2,
+                240
+            );
+            hide.Click += (s, e) =>
+            {
+                pnHide.Visible = false;
+                pnMainPn.Visible = true;
+                pnHide.Controls.Clear();
+            };
+            hide.BackColor = Color.RoyalBlue;
+            hide.ForeColor = Color.Black;
+
 
             pnHide.BringToFront();
             pnHide.Controls.Clear();
             pnHide.Controls.Add(lblMessage);
             pnHide.Controls.Add(btnRegister);
+            pnHide.Controls.Add(hide);
+            pnHide.Controls.Add(btnSaveFile);
         }
 
         private void btnRegistation_Click(object sender, EventArgs e)
@@ -195,6 +236,7 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
             {
                 gen = "G";
             }
+            bool successFlag = false;
             string registrationNumber = dataHandle.createRegistrationNumber(studentDomain, gen, studentClassLevel);
             MessageBox.Show("Your registration number is: " + registrationNumber);
             string passingYear = cmbPassingYear.SelectedItem.ToString();
@@ -211,24 +253,34 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
             if (rdReg.Checked)
             {
                 student.ReqisterType = admissinType["Regular"];
-                DB.registerAStudent(student, registrationNumber);
+                successFlag = DB.registerAStudent(student, registrationNumber);
             }
             else if (rdPrim.Checked)
             {
                 student.ReqisterType = admissinType["Primary"];
-                DB.registerAStudent(student, registrationNumber);
+                successFlag = DB.registerAStudent(student, registrationNumber);
+                
             }
             else if (rdRTS.Checked)
             {
                 student.ReqisterType = admissinType["RTS"];
-                DB.registerAStudent(student, registrationNumber);
+                successFlag = DB.registerAStudent(student, registrationNumber);
+              
             }
             else if (rdSuple.Checked)
             {
                 student.ReqisterType = admissinType["Suplemenrtary"];
-                DB.registerAStudent(student, registrationNumber);
+              successFlag= DB.registerAStudent(student, registrationNumber);
+                
             }
-            helpMethodOfRegies();
+            if(successFlag)
+            {
+                MessageBox.Show("Student registered successfully!");
+                helpMethodOfRegies(student,registrationNumber);
+                //return;
+            }
+
+
         }
 
         private void pnMainPn_Paint(object sender, PaintEventArgs e)

@@ -35,7 +35,6 @@
             btnSearchFee = new Button();
             btnRts = new Button();
             btnDefault = new Button();
-            btnPrimary = new Button();
             btnSupp = new Button();
             btnRegularFee = new Button();
             pnLogo.SuspendLayout();
@@ -67,7 +66,6 @@
             pnMain.Controls.Add(btnSearchFee);
             pnMain.Controls.Add(btnRts);
             pnMain.Controls.Add(btnDefault);
-            pnMain.Controls.Add(btnPrimary);
             pnMain.Controls.Add(btnSupp);
             pnMain.Controls.Add(btnRegularFee);
             pnMain.Location = new Point(67, 151);
@@ -87,7 +85,7 @@
             // 
             // btnSearchFee
             // 
-            btnSearchFee.Location = new Point(515, 235);
+            btnSearchFee.Location = new Point(762, 134);
             btnSearchFee.Name = "btnSearchFee";
             btnSearchFee.Size = new Size(233, 83);
             btnSearchFee.TabIndex = 16;
@@ -107,23 +105,13 @@
             // 
             // btnDefault
             // 
-            btnDefault.Location = new Point(820, 235);
+            btnDefault.Location = new Point(515, 235);
             btnDefault.Name = "btnDefault";
             btnDefault.Size = new Size(226, 83);
             btnDefault.TabIndex = 14;
             btnDefault.Text = "Defualter Student";
             btnDefault.UseVisualStyleBackColor = true;
             btnDefault.Click += btnDefault_Click;
-            // 
-            // btnPrimary
-            // 
-            btnPrimary.Location = new Point(820, 137);
-            btnPrimary.Name = "btnPrimary";
-            btnPrimary.Size = new Size(226, 80);
-            btnPrimary.TabIndex = 13;
-            btnPrimary.Text = "Primary Fee Submission";
-            btnPrimary.UseVisualStyleBackColor = true;
-            btnPrimary.Click += btnPrimary_Click;
             // 
             // btnSupp
             // 
@@ -170,7 +158,6 @@
         private Button btnSearchFee;
         private Button btnRts;
         private Button btnDefault;
-        private Button btnPrimary;
         private Button btnSupp;
         private Button btnRegularFee;
         private Label label1;

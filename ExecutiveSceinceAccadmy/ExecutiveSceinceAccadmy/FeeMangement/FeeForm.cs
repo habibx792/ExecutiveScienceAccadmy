@@ -40,7 +40,7 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
                 borderRadius: 20,
                 borderThickness: 2);
             UI.Instance.StyleButton(btnDefault, borderRadius: 20);
-            UI.Instance.StyleButton(btnPrimary, borderRadius: 20);
+            //UI.Instance.StyleButton(btnPrimary, borderRadius: 20);
             UI.Instance.StyleButton(btnRegularFee, borderRadius: 20);
             UI.Instance.StyleButton(btnSupp, borderRadius: 20);
             UI.Instance.StyleButton(btnSearchFee, borderRadius: 20);

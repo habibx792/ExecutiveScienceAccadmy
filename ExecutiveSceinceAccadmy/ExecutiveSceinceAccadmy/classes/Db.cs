@@ -111,7 +111,7 @@ namespace ExecutiveSceinceAccadmy.classes
             return domains;
         }
         //very importatnt method for registering a student, it will take a student object and insert all the data into the database, including the address, academic history, and father information.this method will be called from the student registration form when the user clicks the register button.
-        internal static void registerAStudent(Student std, string registrationNo)
+        internal static bool registerAStudent(Student std, string registrationNo)
         {
             Address addr = std.Address;
             Father father = std.Father;
@@ -249,16 +249,19 @@ namespace ExecutiveSceinceAccadmy.classes
                     }
                     transaction.Commit();
                     MessageBox.Show("Student registered successfully! Registration No: " + registrationNo, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return true;
                 }
                 catch (SqlException ex)
                 {
                     transaction.Rollback();
                     MessageBox.Show("Database error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
                 }
                 catch (Exception ex)
                 {
                     transaction.Rollback();
                     MessageBox.Show("Unexpected error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
                 }
             }
         }
