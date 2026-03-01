@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.DirectoryServices.ActiveDirectory;
 using System.Drawing;
 using System.Linq;
@@ -207,9 +208,24 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
             student.Father = new Father(studentFatherName,50,"", studentFatherContact, studentFatherCnic,"Male", fatherJob);
             student.AcademicHistories = new accadmicHistory(previousInstitute,previousDegree,passingYearInt,totalMarks,obtainedMarks,prevRegistrationNumber,board);
             student.Address = new Address(studentCity, studentcountry, studetnAddress);
-            if(rdReg.Checked)
+            if (rdReg.Checked)
             {
-                student.ReqisterType= admissinType["Regular"];
+                student.ReqisterType = admissinType["Regular"];
+                DB.registerAStudent(student, registrationNumber);
+            }
+            else if (rdPrim.Checked)
+            {
+                student.ReqisterType = admissinType["Primary"];
+                DB.registerAStudent(student, registrationNumber);
+            }
+            else if(rdRTS.Checked)
+            {
+                student.ReqisterType = admissinType["RTS"];
+                DB.registerAStudent(student, registrationNumber);
+            }
+            else if (rdSuple.Checked)
+            {
+                student.ReqisterType = admissinType["Suplemenrtary"];
                 DB.registerAStudent(student, registrationNumber);
             }
             helpMethodOfRegies();
