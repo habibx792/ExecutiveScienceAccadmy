@@ -194,6 +194,7 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
                 gen = "G";
             }
             string registrationNumber = dataHandle.createRegistrationNumber(studentDomain, gen, studentClassLevel);
+            MessageBox.Show("Your registration number is: " + registrationNumber);
             string passingYear = cmbPassingYear.SelectedItem.ToString();
             string studentType= "Regular";
             Dictionary<string,string>admissinType=new Dictionary<string, string>();
@@ -204,6 +205,11 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
             Student student = new Student(studentName, studentAge, studentDOB, studentContact, studentCnic, studentGender, studentClassLevel, studentDomain, studentType);
             student.Father = new Father(studentFatherName,50,"", studentFatherContact, studentFatherCnic,"Male", fatherJob);
             student.Address = new Address(studentCity, studentcountry, studetnAddress);
+            if(rdReg.Checked)
+            {
+                student.ReqisterType= admissinType["Regular"];
+                DB.registerAStudent(student, registrationNumber);
+            }
             helpMethodOfRegies();
         }
 
