@@ -103,8 +103,7 @@
               "RelativeToolTip": "ExecutiveSceinceAccadmy\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-04T13:18:16.652Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -131,8 +130,7 @@
               "ViewState": "AgIAABcAAAAAAAAAAAAIwAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-21T06:36:33.977Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -145,8 +143,7 @@
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAB4AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-22T10:27:47.918Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -158,8 +155,7 @@
               "RelativeToolTip": "ExecutiveSceinceAccadmy\\RegisTrationForms\\StudentRegistration\\RegisTracionForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-22T11:24:38.352Z",
-              "IsPinned": true,
-              "EditorCaption": " [Design]"
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -172,8 +168,7 @@
               "ViewState": "AgIAAJgAAAAAAAAAAAAqwNAAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-22T11:14:22.976Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -197,12 +192,7 @@
               "RelativeToolTip": "ExecutiveSceinceAccadmy\\classes\\Student.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-22T10:24:30.966Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+              "WhenOpened": "2026-02-22T10:24:30.966Z"
             },
             {
               "$type": "Document",
@@ -214,8 +204,7 @@
               "RelativeToolTip": "ExecutiveSceinceAccadmy\\classes\\Father.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-22T10:27:31.861Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-22T10:27:31.861Z"
             },
             {
               "$type": "Document",
@@ -227,8 +216,7 @@
               "RelativeToolTip": "ExecutiveSceinceAccadmy\\classes\\Teacher.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAxwB0AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-22T10:33:44.103Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-22T10:33:44.103Z"
             },
             {
               "$type": "Document",
@@ -252,8 +240,7 @@
               "RelativeToolTip": "ExecutiveSceinceAccadmy\\RegisTrationForms\\StudentRegistration\\RegisTracionForm.Designer.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAArwBYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-22T11:51:05.636Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-22T11:51:05.636Z"
             },
             {
               "$type": "Document",
@@ -290,6 +277,10 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-20T11:18:26.701Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
             },
             {
               "$type": "Document",

@@ -158,68 +158,52 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
             //prepate data to be inserted into database
 
 
-            string classLevel = cmbClass.SelectedItem.ToString();
-            string domain = cmbDomain.SelectedItem.ToString();
-            string customFormattedString = dtpRegis.Value.ToString("yyyy-MM-dd");
-            string stdName = txtStdName.Text;
-            string stdFatherName = txtStdFatherName.Text;
-            string stdCNIC = txtStdCNIC.Text;
-            string fatherCNIC = txtFatherCNIC.Text;
-            string stdContact = txtStdContact.Text;
-            string faterhContact = txtFatherContact.Text;
-            string gender = cmbGender.SelectedItem.ToString();
-            string stdDob = dtpDOB.Value.ToString("yyyy-MM-dd");
-            string fatherPhoneNumber = txtFatherContact.Text;
-            string watsAppNumber = txtWatsApp.Text;
+            string studentClassLevel = cmbClass.SelectedItem.ToString();
+            string studentDomain = cmbDomain.SelectedItem.ToString();
+            string dateOfRegistraion = dtpRegis.Value.ToString("yyyy-MM-dd");
+            DateTime dob = dtpDOB.Value;
+            int studentAge = dataHandle.calculateAge(dob);
+            string studentName = txtStdName.Text;
+            string studentFatherName = txtStdFatherName.Text;
+            string studentCnic = txtStdCNIC.Text;
+            string studentFatherCnic = txtFatherCNIC.Text;
+            string studentContact = txtStdContact.Text;
+            string studentFatherContact = txtFatherContact.Text;
+            string studentGender = cmbGender.SelectedItem.ToString();
+            string studentDOB = dtpDOB.Value.ToString("yyyy-MM-dd");
+            //string studentFatherContact = txtFatherContact.Text;
+            string studentWatappNumber = txtWatsApp.Text;
             string fatherJob = cmbFatherJob.SelectedItem.ToString();
-            string city = txtCity.Text;
-            string address = txtStdAddress.Text;
-            string country = "Pakistan";
+            string studentCity = txtCity.Text;
+            string studetnAddress = txtStdAddress.Text;
+            string studentcountry = "Pakistan";
             //academic info
-            string institute = txtSchool.Text;
+            string previousInstitute = txtSchool.Text;
             string previousDegree = cmbPrvDeg.SelectedItem.ToString();
             string board = cmbBoard.SelectedItem.ToString();
             string prevRegistrationNumber = txtPrevReg.Text;
             string totalMarks = txtObtainedMarks.Text;
             string obtainedMarks = txtObtainedMarks.Text;
             string gen = "";
-            if (gender == "Male")
+            if (studentGender == "Male")
             {
-                gen = "M";
+                gen = "B";
             }
             else
             {
-                gen = "F";
+                gen = "G";
             }
-            string registrationNumber = dataHandle.createRegistrationNumber(domain, gen, classLevel);
+            string registrationNumber = dataHandle.createRegistrationNumber(studentDomain, gen, studentClassLevel);
             string passingYear = cmbPassingYear.SelectedItem.ToString();
-            string stdType= "Regular";
-         
-          
-
-
-
-
-            if (rdReg.Checked)
-            {
-               stdType= "Regular";
-                MessageBox.Show("You are registered");
-            }
-            else if (rdPrim.Checked)
-            {
-                stdType= "Primary";
-                MessageBox.Show("You are registered");
-            }
-            else if (rdRTS.Checked)
-            {
-                stdType= "RTS";
-                MessageBox.Show("You are registered");
-            }
-            else if (rdSuple.Checked)
-            {
-                stdType= "Suplemenrtary";
-                MessageBox.Show("You are registered");
-            }
+            string studentType= "Regular";
+            Dictionary<string,string>admissinType=new Dictionary<string, string>();
+            admissinType.Add("Regular", "Regular");
+            admissinType.Add("Primary", "Primary");
+            admissinType.Add("RTS", "RTS"); 
+            admissinType.Add("Suplemenrtary", "Suplemenrtary");
+            Student student = new Student(studentName, studentAge, studentDOB, studentContact, studentCnic, studentGender, studentClassLevel, studentDomain, studentType);
+            student.Father = new Father(studentFatherName,50,"", studentFatherContact, studentFatherCnic,"Male", fatherJob);
+            student.Address = new Address(studentCity, studentcountry, studetnAddress);
             helpMethodOfRegies();
         }
 
