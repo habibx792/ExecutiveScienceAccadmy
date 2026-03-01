@@ -22,7 +22,7 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
             InitializeComponent();
 
             UI.Instance.StyleForm(this,
-                backgroundColor: Color.FromArgb(245, 245, 245),
+                backgroundColor: Color.RoyalBlue,
                 borderRadius: 25,
                 showCustomTitleBar: true,
                 title: "Executive Science Academy");
@@ -37,11 +37,11 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
             for (int i = 0; i < domains.Count; i++)
             {
                 flag = true;
-                
+
                 cmbDomain.Items.Add(domains[i]);
             }
-            List<int>years=dataHandle.laodPrevisous_10Years();
-            for(int i=0;i<years.Count;i++)
+            List<int> years = dataHandle.laodPrevisous_10Years();
+            for (int i = 0; i < years.Count; i++)
             {
                 cmbPassingYear.Items.Add(years[i].ToString());
             }
@@ -54,30 +54,30 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
         {
 
             UI.Instance.StylePanel(pnLogo,
-                backColor: Color.White,
+                backColor: Color.IndianRed,
                 borderColor: Color.FromArgb(0, 120, 215),
                 borderRadius: 20,
                 borderThickness: 2);
-            UI.Instance.StylePanel(pnAccadminc, backColor: Color.White,
+            UI.Instance.StylePanel(pnAccadminc, backColor: Color.RoyalBlue,
               borderColor: Color.FromArgb(0, 120, 215),
               borderRadius: 20,
-              borderThickness: 2);
-            UI.Instance.StylePanel(pnMainPn, backColor: Color.White,
+              borderThickness: 0);
+            UI.Instance.StylePanel(pnMainPn, backColor: Color.RoyalBlue,
               borderColor: Color.FromArgb(0, 120, 215),
               borderRadius: 20,
-              borderThickness: 2);
-            UI.Instance.StylePanel(pnPerMain, backColor: Color.White,
+              borderThickness: 0);
+            UI.Instance.StylePanel(pnPerMain, backColor: Color.RoyalBlue,
               borderColor: Color.FromArgb(0, 120, 215),
               borderRadius: 20,
-              borderThickness: 2);
-            UI.Instance.StylePanel(pnPreq, backColor: Color.White,
+              borderThickness: 0);
+            UI.Instance.StylePanel(pnPreq, backColor: Color.RoyalBlue,
               borderColor: Color.FromArgb(0, 120, 215),
               borderRadius: 20,
-              borderThickness: 2);
-            UI.Instance.StylePanel(pnPerMain, backColor: Color.White,
+              borderThickness: 0);
+            UI.Instance.StylePanel(pnPerMain, backColor: Color.RoyalBlue,
               borderColor: Color.FromArgb(0, 120, 215),
               borderRadius: 20,
-              borderThickness: 2);
+              borderThickness: 0);
 
 
             //lbLogo.Font = new Font(lbLogo.Font, FontStyle.Bold);
@@ -184,7 +184,7 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
             int passingYearInt = int.Parse(cmbPassingYear.SelectedItem.ToString());
             string board = cmbBoard.SelectedItem.ToString();
             string prevRegistrationNumber = txtPrevReg.Text;
-            int totalMarks =int.Parse( txtObtainedMarks.Text);
+            int totalMarks = int.Parse(txtObtainedMarks.Text);
             int obtainedMarks = int.Parse(txtObtainedMarks.Text);
             string gen = "";
             if (studentGender == "Male")
@@ -198,15 +198,15 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
             string registrationNumber = dataHandle.createRegistrationNumber(studentDomain, gen, studentClassLevel);
             MessageBox.Show("Your registration number is: " + registrationNumber);
             string passingYear = cmbPassingYear.SelectedItem.ToString();
-            string studentType= "Regular";
-            Dictionary<string,string>admissinType=new Dictionary<string, string>();
+            string studentType = "Regular";
+            Dictionary<string, string> admissinType = new Dictionary<string, string>();
             admissinType.Add("Regular", "Regular");
             admissinType.Add("Primary", "Primary");
-            admissinType.Add("RTS", "RTS"); 
+            admissinType.Add("RTS", "RTS");
             admissinType.Add("Suplemenrtary", "Suplemenrtary");
             Student student = new Student(studentName, studentAge, studentDOB, studentContact, studentCnic, studentGender, studentClassLevel, studentDomain, studentType);
-            student.Father = new Father(studentFatherName,50,"", studentFatherContact, studentFatherCnic,"Male", fatherJob);
-            student.AcademicHistories = new accadmicHistory(previousInstitute,previousDegree,passingYearInt,totalMarks,obtainedMarks,prevRegistrationNumber,board);
+            student.Father = new Father(studentFatherName, 50, "", studentFatherContact, studentFatherCnic, "Male", fatherJob);
+            student.AcademicHistories = new accadmicHistory(previousInstitute, previousDegree, passingYearInt, totalMarks, obtainedMarks, prevRegistrationNumber, board);
             student.Address = new Address(studentCity, studentcountry, studetnAddress);
             if (rdReg.Checked)
             {
@@ -218,7 +218,7 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
                 student.ReqisterType = admissinType["Primary"];
                 DB.registerAStudent(student, registrationNumber);
             }
-            else if(rdRTS.Checked)
+            else if (rdRTS.Checked)
             {
                 student.ReqisterType = admissinType["RTS"];
                 DB.registerAStudent(student, registrationNumber);
@@ -260,5 +260,16 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
         {
 
         }
+
+        //private void btnRegistation_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    if(KeyPreview)
+        //    {
+        //        if(e.KeyChar == (char)Keys.Enter)
+        //        {
+        //            btnRegistation.PerformClick();
+        //        }
+        //    }
+        //}
     }
 }

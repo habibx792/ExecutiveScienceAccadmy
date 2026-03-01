@@ -20,7 +20,7 @@ namespace ExecutiveSceinceAccadmy
             InitializeComponent();
             UI.Instance.StyleForm(this,
 
-             backgroundColor: Color.FromArgb(245, 245, 245),
+             backgroundColor: Color.RoyalBlue,
              borderRadius: 25,
              showCustomTitleBar: true,
              title: "Executive Science Academy");
@@ -62,27 +62,26 @@ namespace ExecutiveSceinceAccadmy
         {
             if (string.IsNullOrWhiteSpace(txtUser.Text) || string.IsNullOrWhiteSpace(txtPass.Text))
             {
+
                 MessageBox.Show("Please enter both username and password.", "Input Error",
                                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-          
             string username = txtUser.Text.Trim();
             string password = txtPass.Text.Trim();
 
-            
+
             bool loginSuccess = DB.Login(username, password);
 
             if (loginSuccess)
             {
                 this.Hide();
-                using (Form1 mainFom=new Form1() )
+                using (Form1 mainFom = new Form1())
                 {
-                    
+
                     Form1 mainForm = new Form1();
                     mainForm.ShowDialog();
-                   
+
                 }
                 this.Show();
 
@@ -93,8 +92,13 @@ namespace ExecutiveSceinceAccadmy
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void pnMain_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 
 
-    
+
 }

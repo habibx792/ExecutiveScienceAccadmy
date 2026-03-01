@@ -97,12 +97,15 @@
             // 
             // btnRegistation
             // 
+            btnRegistation.BackColor = Color.Black;
+            btnRegistation.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRegistation.ForeColor = Color.White;
             btnRegistation.Location = new Point(1051, 661);
             btnRegistation.Name = "btnRegistation";
             btnRegistation.Size = new Size(154, 59);
             btnRegistation.TabIndex = 0;
             btnRegistation.Text = "Register";
-            btnRegistation.UseVisualStyleBackColor = true;
+            btnRegistation.UseVisualStyleBackColor = false;
             btnRegistation.Click += btnRegistation_Click;
             // 
             // pnPreq
@@ -126,15 +129,16 @@
             // lblRegiDate
             // 
             lblRegiDate.AutoSize = true;
-            lblRegiDate.Location = new Point(795, 92);
+            lblRegiDate.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblRegiDate.Location = new Point(793, 81);
             lblRegiDate.Name = "lblRegiDate";
-            lblRegiDate.Size = new Size(97, 15);
+            lblRegiDate.Size = new Size(116, 17);
             lblRegiDate.TabIndex = 26;
             lblRegiDate.Text = "Registration Date";
             // 
             // dtpRegis
             // 
-            dtpRegis.Location = new Point(922, 87);
+            dtpRegis.Location = new Point(915, 75);
             dtpRegis.Name = "dtpRegis";
             dtpRegis.Size = new Size(200, 23);
             dtpRegis.TabIndex = 25;
@@ -142,35 +146,40 @@
             // lblClass
             // 
             lblClass.AutoSize = true;
-            lblClass.Location = new Point(72, 87);
+            lblClass.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblClass.Location = new Point(26, 82);
             lblClass.Name = "lblClass";
-            lblClass.Size = new Size(34, 15);
+            lblClass.Size = new Size(39, 17);
             lblClass.TabIndex = 24;
             lblClass.Text = "Class";
             // 
             // lblDomain
             // 
             lblDomain.AutoSize = true;
-            lblDomain.Location = new Point(463, 87);
+            lblDomain.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDomain.Location = new Point(447, 81);
             lblDomain.Name = "lblDomain";
-            lblDomain.Size = new Size(49, 15);
+            lblDomain.Size = new Size(57, 17);
             lblDomain.TabIndex = 23;
             lblDomain.Text = "Domain";
             // 
             // cmbDomain
             // 
+            cmbDomain.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cmbDomain.AutoCompleteSource = AutoCompleteSource.HistoryList;
             cmbDomain.FormattingEnabled = true;
-            cmbDomain.Location = new Point(525, 84);
+            cmbDomain.Location = new Point(561, 81);
             cmbDomain.Name = "cmbDomain";
-            cmbDomain.Size = new Size(156, 23);
+            cmbDomain.Size = new Size(230, 23);
             cmbDomain.TabIndex = 1;
             // 
             // rdSuple
             // 
             rdSuple.AutoSize = true;
-            rdSuple.Location = new Point(957, 32);
+            rdSuple.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rdSuple.Location = new Point(793, 32);
             rdSuple.Name = "rdSuple";
-            rdSuple.Size = new Size(105, 19);
+            rdSuple.Size = new Size(120, 21);
             rdSuple.TabIndex = 4;
             rdSuple.TabStop = true;
             rdSuple.Text = "Supplementary";
@@ -179,9 +188,10 @@
             // rdPrim
             // 
             rdPrim.AutoSize = true;
-            rdPrim.Location = new Point(547, 32);
+            rdPrim.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rdPrim.Location = new Point(447, 32);
             rdPrim.Name = "rdPrim";
-            rdPrim.Size = new Size(110, 19);
+            rdPrim.Size = new Size(127, 21);
             rdPrim.TabIndex = 5;
             rdPrim.TabStop = true;
             rdPrim.Text = "Primary Student";
@@ -191,9 +201,10 @@
             // rdRTS
             // 
             rdRTS.AutoSize = true;
-            rdRTS.Location = new Point(296, 32);
+            rdRTS.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rdRTS.Location = new Point(277, 32);
             rdRTS.Name = "rdRTS";
-            rdRTS.Size = new Size(88, 19);
+            rdRTS.Size = new Size(101, 21);
             rdRTS.TabIndex = 6;
             rdRTS.TabStop = true;
             rdRTS.Text = "RTS Student";
@@ -202,9 +213,10 @@
             // rdReg
             // 
             rdReg.AutoSize = true;
-            rdReg.Location = new Point(72, 32);
+            rdReg.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rdReg.Location = new Point(16, 32);
             rdReg.Name = "rdReg";
-            rdReg.Size = new Size(109, 19);
+            rdReg.Size = new Size(125, 21);
             rdReg.TabIndex = 7;
             rdReg.TabStop = true;
             rdReg.Text = "Regular Student";
@@ -212,18 +224,21 @@
             // 
             // cmbClass
             // 
+            cmbClass.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cmbClass.AutoCompleteSource = AutoCompleteSource.ListItems;
             cmbClass.FormattingEnabled = true;
             cmbClass.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" });
-            cmbClass.Location = new Point(125, 84);
+            cmbClass.Location = new Point(132, 84);
             cmbClass.Name = "cmbClass";
-            cmbClass.Size = new Size(154, 23);
+            cmbClass.Size = new Size(265, 23);
             cmbClass.TabIndex = 11;
             // 
             // txtStdFatherName
             // 
-            txtStdFatherName.Location = new Point(571, 22);
+            txtStdFatherName.Location = new Point(561, 22);
             txtStdFatherName.Name = "txtStdFatherName";
-            txtStdFatherName.Size = new Size(206, 23);
+            txtStdFatherName.PlaceholderText = "Student Father Name";
+            txtStdFatherName.Size = new Size(230, 23);
             txtStdFatherName.TabIndex = 0;
             txtStdFatherName.TextChanged += textBox1_TextChanged;
             // 
@@ -231,28 +246,31 @@
             // 
             txtStdCNIC.Location = new Point(139, 92);
             txtStdCNIC.Name = "txtStdCNIC";
-            txtStdCNIC.Size = new Size(250, 23);
+            txtStdCNIC.PlaceholderText = "Enter Studetn CNIC";
+            txtStdCNIC.Size = new Size(258, 23);
             txtStdCNIC.TabIndex = 16;
             // 
             // txtStdName
             // 
-            txtStdName.Location = new Point(130, 22);
+            txtStdName.Location = new Point(139, 22);
             txtStdName.Name = "txtStdName";
-            txtStdName.Size = new Size(250, 23);
+            txtStdName.PlaceholderText = "Enter Student Name";
+            txtStdName.Size = new Size(258, 23);
             txtStdName.TabIndex = 17;
-            txtStdName.TextAlign = HorizontalAlignment.Center;
             txtStdName.TextChanged += textBox3_TextChanged;
             // 
             // txtFatherCNIC
             // 
-            txtFatherCNIC.Location = new Point(921, 22);
+            txtFatherCNIC.Location = new Point(922, 22);
             txtFatherCNIC.Name = "txtFatherCNIC";
-            txtFatherCNIC.Size = new Size(209, 23);
+            txtFatherCNIC.PlaceholderText = "Enter Father CNIC";
+            txtFatherCNIC.Size = new Size(217, 23);
             txtFatherCNIC.TabIndex = 19;
             txtFatherCNIC.TextChanged += textBox5_TextChanged;
             // 
             // pnLogo
             // 
+            pnLogo.BackColor = Color.IndianRed;
             pnLogo.Controls.Add(lbLogo);
             pnLogo.Location = new Point(89, 12);
             pnLogo.Name = "pnLogo";
@@ -271,6 +289,7 @@
             // 
             // pnMainPn
             // 
+            pnMainPn.BackColor = Color.RoyalBlue;
             pnMainPn.Controls.Add(pnAccadminc);
             pnMainPn.Controls.Add(pnPreq);
             pnMainPn.Controls.Add(pnPerMain);
@@ -306,39 +325,43 @@
             // 
             // cmbBoard
             // 
+            cmbBoard.AutoCompleteMode = AutoCompleteMode.Suggest;
             cmbBoard.FormattingEnabled = true;
             cmbBoard.Items.AddRange(new object[] { "Primary ", "FSD Board", "Lahore Board", "Islamabad Board" });
-            cmbBoard.Location = new Point(511, 158);
+            cmbBoard.Location = new Point(522, 158);
             cmbBoard.Name = "cmbBoard";
-            cmbBoard.Size = new Size(167, 23);
+            cmbBoard.Size = new Size(171, 23);
             cmbBoard.TabIndex = 57;
             // 
             // cmbPrvDeg
             // 
+            cmbPrvDeg.AutoCompleteMode = AutoCompleteMode.Suggest;
             cmbPrvDeg.FormattingEnabled = true;
             cmbPrvDeg.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" });
-            cmbPrvDeg.Location = new Point(116, 77);
+            cmbPrvDeg.Location = new Point(139, 74);
             cmbPrvDeg.Name = "cmbPrvDeg";
             cmbPrvDeg.Size = new Size(187, 23);
             cmbPrvDeg.TabIndex = 56;
             // 
             // cmbPassingYear
             // 
+            cmbPassingYear.AutoCompleteMode = AutoCompleteMode.Suggest;
             cmbPassingYear.FormattingEnabled = true;
             cmbPassingYear.Items.AddRange(new object[] { "" });
-            cmbPassingYear.Location = new Point(112, 155);
+            cmbPassingYear.Location = new Point(135, 152);
             cmbPassingYear.Name = "cmbPassingYear";
-            cmbPassingYear.Size = new Size(167, 23);
+            cmbPassingYear.Size = new Size(191, 23);
             cmbPassingYear.TabIndex = 55;
             // 
             // lblDegYear
             // 
             lblDegYear.AutoSize = true;
-            lblDegYear.Location = new Point(54, 155);
+            lblDegYear.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDegYear.Location = new Point(15, 153);
             lblDegYear.Name = "lblDegYear";
-            lblDegYear.Size = new Size(29, 15);
+            lblDegYear.Size = new Size(85, 17);
             lblDegYear.TabIndex = 54;
-            lblDegYear.Text = "Year";
+            lblDegYear.Text = "Passing Year";
             // 
             // label20
             // 
@@ -353,32 +376,36 @@
             // lblSchool
             // 
             lblSchool.AutoSize = true;
-            lblSchool.Location = new Point(699, 155);
+            lblSchool.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSchool.Location = new Point(699, 164);
             lblSchool.Name = "lblSchool";
-            lblSchool.Size = new Size(43, 15);
+            lblSchool.Size = new Size(64, 17);
             lblSchool.TabIndex = 52;
-            lblSchool.Text = "School";
+            lblSchool.Text = "Institute ";
             // 
             // txtTotalMark
             // 
-            txtTotalMark.Location = new Point(969, 64);
+            txtTotalMark.Location = new Point(996, 67);
             txtTotalMark.Name = "txtTotalMark";
-            txtTotalMark.Size = new Size(190, 23);
+            txtTotalMark.PlaceholderText = "Enter Total Marks";
+            txtTotalMark.Size = new Size(163, 23);
             txtTotalMark.TabIndex = 26;
             // 
             // txtSchool
             // 
-            txtSchool.Location = new Point(766, 147);
+            txtSchool.Location = new Point(766, 163);
             txtSchool.Name = "txtSchool";
+            txtSchool.PlaceholderText = "Enter Institue Name";
             txtSchool.Size = new Size(393, 23);
             txtSchool.TabIndex = 51;
             // 
             // lblObtainMark
             // 
             lblObtainMark.AutoSize = true;
+            lblObtainMark.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblObtainMark.Location = new Point(699, 77);
             lblObtainMark.Name = "lblObtainMark";
-            lblObtainMark.Size = new Size(39, 15);
+            lblObtainMark.Size = new Size(45, 17);
             lblObtainMark.TabIndex = 27;
             lblObtainMark.Text = "Marks";
             lblObtainMark.Click += label3_Click;
@@ -386,43 +413,49 @@
             // lblRollNo
             // 
             lblRollNo.AutoSize = true;
-            lblRollNo.Location = new Point(467, 77);
+            lblRollNo.BackColor = Color.RoyalBlue;
+            lblRollNo.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblRollNo.Location = new Point(362, 80);
             lblRollNo.Name = "lblRollNo";
-            lblRollNo.Size = new Size(52, 15);
+            lblRollNo.Size = new Size(137, 17);
             lblRollNo.TabIndex = 28;
-            lblRollNo.Text = "Roll No :";
+            lblRollNo.Text = "Registration Number";
             // 
             // lblBoard
             // 
             lblBoard.AutoSize = true;
-            lblBoard.Location = new Point(467, 161);
+            lblBoard.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblBoard.Location = new Point(368, 164);
             lblBoard.Name = "lblBoard";
-            lblBoard.Size = new Size(38, 15);
+            lblBoard.Size = new Size(109, 17);
             lblBoard.TabIndex = 49;
-            lblBoard.Text = "Board";
+            lblBoard.Text = "Education Board";
             // 
             // lblDeg
             // 
             lblDeg.AutoSize = true;
-            lblDeg.Location = new Point(39, 77);
+            lblDeg.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDeg.Location = new Point(16, 75);
             lblDeg.Name = "lblDeg";
-            lblDeg.Size = new Size(44, 15);
+            lblDeg.Size = new Size(96, 17);
             lblDeg.TabIndex = 29;
-            lblDeg.Text = "Degree";
+            lblDeg.Text = "Previous Class";
             // 
             // txtObtainedMarks
             // 
-            txtObtainedMarks.Location = new Point(744, 70);
+            txtObtainedMarks.Location = new Point(766, 70);
             txtObtainedMarks.Name = "txtObtainedMarks";
-            txtObtainedMarks.Size = new Size(180, 23);
+            txtObtainedMarks.PlaceholderText = "Enter Obtain Marks";
+            txtObtainedMarks.Size = new Size(179, 23);
             txtObtainedMarks.TabIndex = 45;
             // 
             // lblTotalMarks
             // 
             lblTotalMarks.AutoSize = true;
-            lblTotalMarks.Location = new Point(930, 73);
+            lblTotalMarks.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTotalMarks.Location = new Point(951, 71);
             lblTotalMarks.Name = "lblTotalMarks";
-            lblTotalMarks.Size = new Size(33, 15);
+            lblTotalMarks.Size = new Size(39, 17);
             lblTotalMarks.TabIndex = 37;
             lblTotalMarks.Text = "Total";
             // 
@@ -430,6 +463,7 @@
             // 
             txtPrevReg.Location = new Point(522, 74);
             txtPrevReg.Name = "txtPrevReg";
+            txtPrevReg.PlaceholderText = "Prvious Registraion Number";
             txtPrevReg.Size = new Size(171, 23);
             txtPrevReg.TabIndex = 44;
             // 
@@ -466,182 +500,202 @@
             // 
             // txtStdContact
             // 
-            txtStdContact.Location = new Point(933, 150);
+            txtStdContact.Location = new Point(922, 150);
             txtStdContact.Name = "txtStdContact";
-            txtStdContact.Size = new Size(206, 23);
+            txtStdContact.PlaceholderText = "Enter Student Contact";
+            txtStdContact.Size = new Size(217, 23);
             txtStdContact.TabIndex = 49;
             txtStdContact.TextChanged += textBox1_TextChanged_2;
             // 
             // lblStdContact
             // 
             lblStdContact.AutoSize = true;
-            lblStdContact.Location = new Point(832, 158);
+            lblStdContact.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblStdContact.Location = new Point(807, 156);
             lblStdContact.Name = "lblStdContact";
-            lblStdContact.Size = new Size(92, 15);
+            lblStdContact.Size = new Size(106, 17);
             lblStdContact.TabIndex = 50;
             lblStdContact.Text = "student Contact";
             // 
             // cmbFatherJob
             // 
+            cmbFatherJob.AutoCompleteMode = AutoCompleteMode.Suggest;
             cmbFatherJob.FormattingEnabled = true;
             cmbFatherJob.Items.AddRange(new object[] { "Labour", "Doctor", "Teacher", "Army", "Other" });
-            cmbFatherJob.Location = new Point(147, 219);
+            cmbFatherJob.Location = new Point(139, 204);
             cmbFatherJob.Name = "cmbFatherJob";
-            cmbFatherJob.Size = new Size(209, 23);
+            cmbFatherJob.Size = new Size(258, 23);
             cmbFatherJob.TabIndex = 48;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(479, 209);
+            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(447, 206);
             label2.Name = "label2";
-            label2.Size = new Size(28, 15);
+            label2.Size = new Size(84, 17);
             label2.TabIndex = 47;
-            label2.Text = "City";
+            label2.Text = "Student City";
             label2.Click += label2_Click;
             // 
             // txtCity
             // 
-            txtCity.Location = new Point(569, 205);
+            txtCity.Location = new Point(561, 205);
             txtCity.Margin = new Padding(2);
             txtCity.Name = "txtCity";
-            txtCity.Size = new Size(209, 23);
+            txtCity.PlaceholderText = "Residential City";
+            txtCity.Size = new Size(230, 23);
             txtCity.TabIndex = 46;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(832, 205);
+            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(808, 210);
             label1.Name = "label1";
-            label1.Size = new Size(49, 15);
+            label1.Size = new Size(109, 17);
             label1.TabIndex = 45;
-            label1.Text = "Address";
+            label1.Text = "Student Address";
             // 
             // txtStdAddress
             // 
-            txtStdAddress.Location = new Point(930, 205);
+            txtStdAddress.Location = new Point(922, 205);
             txtStdAddress.Margin = new Padding(2);
             txtStdAddress.Name = "txtStdAddress";
-            txtStdAddress.Size = new Size(209, 23);
+            txtStdAddress.PlaceholderText = "Enter Student Address";
+            txtStdAddress.Size = new Size(217, 23);
             txtStdAddress.TabIndex = 29;
             // 
             // lblGend
             // 
             lblGend.AutoSize = true;
-            lblGend.Location = new Point(478, 92);
+            lblGend.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblGend.Location = new Point(447, 92);
             lblGend.Name = "lblGend";
-            lblGend.Size = new Size(45, 15);
+            lblGend.Size = new Size(52, 17);
             lblGend.TabIndex = 44;
             lblGend.Text = "Gender";
             // 
             // cmbGender
             // 
+            cmbGender.AutoCompleteMode = AutoCompleteMode.Suggest;
             cmbGender.FormattingEnabled = true;
             cmbGender.Items.AddRange(new object[] { "Female", "Male" });
-            cmbGender.Location = new Point(571, 92);
+            cmbGender.Location = new Point(561, 92);
             cmbGender.Name = "cmbGender";
-            cmbGender.Size = new Size(206, 23);
+            cmbGender.Size = new Size(230, 23);
             cmbGender.TabIndex = 43;
             // 
             // txtFatherContact
             // 
-            txtFatherContact.Location = new Point(130, 150);
+            txtFatherContact.Location = new Point(139, 150);
             txtFatherContact.Name = "txtFatherContact";
-            txtFatherContact.Size = new Size(250, 23);
+            txtFatherContact.PlaceholderText = "Enter Father Mobile Number";
+            txtFatherContact.Size = new Size(258, 23);
             txtFatherContact.TabIndex = 23;
             // 
             // txtWatsApp
             // 
-            txtWatsApp.Location = new Point(571, 163);
+            txtWatsApp.Location = new Point(561, 150);
             txtWatsApp.Name = "txtWatsApp";
-            txtWatsApp.Size = new Size(206, 23);
+            txtWatsApp.PlaceholderText = "Enter Watsapp Number";
+            txtWatsApp.Size = new Size(230, 23);
             txtWatsApp.TabIndex = 21;
             // 
             // dtpDOB
             // 
-            dtpDOB.Location = new Point(921, 92);
+            dtpDOB.Location = new Point(922, 92);
             dtpDOB.Name = "dtpDOB";
-            dtpDOB.Size = new Size(209, 23);
+            dtpDOB.Size = new Size(217, 23);
             dtpDOB.TabIndex = 42;
             // 
             // lblFatherMob
             // 
             lblFatherMob.AutoSize = true;
+            lblFatherMob.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblFatherMob.Location = new Point(7, 158);
             lblFatherMob.Name = "lblFatherMob";
-            lblFatherMob.Size = new Size(105, 15);
+            lblFatherMob.Size = new Size(124, 17);
             lblFatherMob.TabIndex = 30;
             lblFatherMob.Text = "Father Mobile No :";
             // 
             // lblStdCNIC
             // 
             lblStdCNIC.AutoSize = true;
-            lblStdCNIC.Location = new Point(42, 100);
+            lblStdCNIC.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblStdCNIC.Location = new Point(15, 92);
             lblStdCNIC.Name = "lblStdCNIC";
-            lblStdCNIC.Size = new Size(79, 15);
+            lblStdCNIC.Size = new Size(90, 17);
             lblStdCNIC.TabIndex = 31;
             lblStdCNIC.Text = "Student CNIC";
             // 
             // lblFathCnic
             // 
             lblFathCnic.AutoSize = true;
-            lblFathCnic.Location = new Point(832, 30);
+            lblFathCnic.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblFathCnic.Location = new Point(807, 23);
             lblFathCnic.Name = "lblFathCnic";
-            lblFathCnic.Size = new Size(71, 15);
+            lblFathCnic.Size = new Size(81, 17);
             lblFathCnic.TabIndex = 40;
             lblFathCnic.Text = "Father CNIC";
             // 
             // lblStdName
             // 
             lblStdName.AutoSize = true;
-            lblStdName.Location = new Point(29, 30);
+            lblStdName.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblStdName.Location = new Point(15, 30);
             lblStdName.Name = "lblStdName";
-            lblStdName.Size = new Size(83, 15);
+            lblStdName.Size = new Size(96, 17);
             lblStdName.TabIndex = 32;
             lblStdName.Text = "Student Name";
             // 
             // lblDob
             // 
             lblDob.AutoSize = true;
-            lblDob.Location = new Point(841, 100);
+            lblDob.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDob.Location = new Point(807, 96);
             lblDob.Name = "lblDob";
-            lblDob.Size = new Size(31, 15);
+            lblDob.Size = new Size(90, 17);
             lblDob.TabIndex = 39;
-            lblDob.Text = "DOB";
+            lblDob.Text = "Date Of Birth";
             // 
             // lblFatherName
             // 
             lblFatherName.AutoSize = true;
-            lblFatherName.Location = new Point(468, 30);
+            lblFatherName.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblFatherName.Location = new Point(447, 30);
             lblFatherName.Name = "lblFatherName";
-            lblFatherName.Size = new Size(75, 15);
+            lblFatherName.Size = new Size(87, 17);
             lblFatherName.TabIndex = 33;
             lblFatherName.Text = "Father Name";
             // 
             // lblWatsap
             // 
             lblWatsap.AutoSize = true;
-            lblWatsap.Location = new Point(447, 158);
+            lblWatsap.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblWatsap.Location = new Point(447, 150);
             lblWatsap.Name = "lblWatsap";
-            lblWatsap.Size = new Size(55, 15);
+            lblWatsap.Size = new Size(117, 17);
             lblWatsap.TabIndex = 34;
-            lblWatsap.Text = "WatsApp";
+            lblWatsap.Text = "WatsApp Number";
             // 
             // lblFathOcc
             // 
             lblFathOcc.AutoSize = true;
-            lblFathOcc.Location = new Point(16, 219);
+            lblFathOcc.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblFathOcc.Location = new Point(3, 206);
             lblFathOcc.Name = "lblFathOcc";
-            lblFathOcc.Size = new Size(105, 15);
+            lblFathOcc.Size = new Size(121, 17);
             lblFathOcc.TabIndex = 35;
             lblFathOcc.Text = "Father Occupation";
             // 
             // pnPerson
             // 
+            pnPerson.BackColor = Color.LightGreen;
             pnPerson.Controls.Add(label19);
-            pnPerson.Location = new Point(29, 3);
+            pnPerson.Location = new Point(0, 3);
             pnPerson.Name = "pnPerson";
-            pnPerson.Size = new Size(1176, 43);
+            pnPerson.Size = new Size(1225, 43);
             pnPerson.TabIndex = 41;
             // 
             // label19
@@ -650,9 +704,9 @@
             label19.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label19.Location = new Point(443, 9);
             label19.Name = "label19";
-            label19.Size = new Size(322, 25);
+            label19.Size = new Size(327, 25);
             label19.TabIndex = 1;
-            label19.Text = "Person Information And Education";
+            label19.Text = "Person And Education  Information";
             // 
             // pnHide
             // 
@@ -665,6 +719,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.RoyalBlue;
             ClientSize = new Size(1385, 847);
             Controls.Add(pnHide);
             Controls.Add(pnMainPn);

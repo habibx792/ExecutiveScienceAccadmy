@@ -52,6 +52,7 @@
             pnMain.Name = "pnMain";
             pnMain.Size = new Size(400, 300);
             pnMain.TabIndex = 0;
+            pnMain.Paint += pnMain_Paint;
             // 
             // btnLogin
             // 
@@ -140,6 +141,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.RoyalBlue;
             ClientSize = new Size(1300, 700);
             Controls.Add(pnLogo);
             Controls.Add(pnMain);
