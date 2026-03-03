@@ -37,6 +37,7 @@
             lbLogo = new Label();
             lblDeg = new Label();
             label1 = new Label();
+            label2 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             pnLogo.SuspendLayout();
@@ -93,10 +94,10 @@
             // pnLogo
             // 
             pnLogo.BackColor = Color.IndianRed;
-            pnLogo.Controls.Add(lbLogo);
+            pnLogo.Controls.Add(label2);
             pnLogo.Controls.Add(dataGridView1);
             pnLogo.Controls.Add(panel1);
-            pnLogo.Location = new Point(94, 12);
+            pnLogo.Location = new Point(348, 138);
             pnLogo.Name = "pnLogo";
             pnLogo.Size = new Size(727, 596);
             pnLogo.TabIndex = 26;
@@ -105,7 +106,7 @@
             // 
             lbLogo.AutoSize = true;
             lbLogo.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbLogo.Location = new Point(100, 25);
+            lbLogo.Location = new Point(435, 39);
             lbLogo.Name = "lbLogo";
             lbLogo.Size = new Size(529, 37);
             lbLogo.TabIndex = 0;
@@ -131,12 +132,23 @@
             label1.TabIndex = 31;
             label1.Text = "Date :";
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(259, 14);
+            label2.Name = "label2";
+            label2.Size = new Size(214, 37);
+            label2.TabIndex = 3;
+            label2.Text = "Fee Submission";
+            // 
             // FeeSubMission
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
             ClientSize = new Size(1441, 794);
+            Controls.Add(lbLogo);
             Controls.Add(pnLogo);
             Name = "FeeSubMission";
             Text = "FeeSubMission";
@@ -147,6 +159,7 @@
             pnLogo.ResumeLayout(false);
             pnLogo.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -159,5 +172,6 @@
         private Label lbLogo;
         private Label lblDeg;
         private Label label1;
+        private Label label2;
     }
 }
