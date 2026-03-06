@@ -1,4 +1,5 @@
-﻿using ExecutiveScienceAcademy.classes;
+﻿using ExecutiveSceinceAccadmy.classes;
+using ExecutiveScienceAcademy.classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -70,6 +71,12 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void Search_Click(object sender, EventArgs e)
+        {
+            string registreationNo = dataHandle.stringTrim(txtRegis.Text);
 
         }
     }

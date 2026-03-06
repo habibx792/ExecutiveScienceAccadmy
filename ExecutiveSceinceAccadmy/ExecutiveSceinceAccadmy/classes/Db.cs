@@ -265,5 +265,12 @@ namespace ExecutiveSceinceAccadmy.classes
                 }
             }
         }
+        public static void displayStudentDetailForFeeSubmission(string  registrationNo)
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                //string query= "select "
+            }
+        }
     }
 }

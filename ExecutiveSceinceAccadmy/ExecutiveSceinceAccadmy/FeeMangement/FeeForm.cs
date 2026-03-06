@@ -42,10 +42,10 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
             UI.Instance.StyleButton(btnDefault, borderRadius: 20);
             //UI.Instance.StyleButton(btnPrimary, borderRadius: 20);
             UI.Instance.StyleButton(btnRegularFee, borderRadius: 20);
-            UI.Instance.StyleButton(btnSupp, borderRadius: 20);
+            //UI.Instance.StyleButton(btnSupp, borderRadius: 20);
             UI.Instance.StyleButton(btnSearchFee, borderRadius: 20);
             UI.Instance.StyleButton(btnDefault, borderRadius: 20);
-            UI.Instance.StyleButton(btnRts, borderRadius: 20);
+            //UI.Instance.StyleButton(btnRts, borderRadius: 20);
             UI.Instance.AddFormShadow(this);
             UI.Instance.setFormSize(this, 1373, 687);
 
@@ -113,7 +113,7 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
             this.Show();
         }
 
-        
+
 
         private void btnDefault_Click(object sender, EventArgs e)
         {
@@ -123,6 +123,11 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
                 defulter.ShowDialog();
             }
             this.Show();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
 
         }
     }
