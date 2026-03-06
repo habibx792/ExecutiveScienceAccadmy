@@ -53,14 +53,14 @@
             panel1.Controls.Add(txtRegis);
             panel1.Location = new Point(0, 65);
             panel1.Name = "panel1";
-            panel1.Size = new Size(727, 190);
+            panel1.Size = new Size(945, 190);
             panel1.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(87, 39);
+            label1.Location = new Point(261, 45);
             label1.Name = "label1";
             label1.Size = new Size(45, 17);
             label1.TabIndex = 31;
@@ -70,7 +70,7 @@
             // 
             lblDeg.AutoSize = true;
             lblDeg.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblDeg.Location = new Point(87, 84);
+            lblDeg.Location = new Point(261, 90);
             lblDeg.Name = "lblDeg";
             lblDeg.Size = new Size(108, 17);
             lblDeg.TabIndex = 30;
@@ -79,7 +79,7 @@
             // Search
             // 
             Search.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Search.Location = new Point(441, 112);
+            Search.Location = new Point(615, 118);
             Search.Name = "Search";
             Search.Size = new Size(109, 41);
             Search.TabIndex = 2;
@@ -89,7 +89,7 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(217, 33);
+            dateTimePicker1.Location = new Point(391, 39);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(333, 23);
             dateTimePicker1.TabIndex = 3;
@@ -97,7 +97,7 @@
             // 
             // txtRegis
             // 
-            txtRegis.Location = new Point(217, 83);
+            txtRegis.Location = new Point(391, 89);
             txtRegis.Name = "txtRegis";
             txtRegis.Size = new Size(333, 23);
             txtRegis.TabIndex = 4;
@@ -105,11 +105,12 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToOrderColumns = true;
             dataGridView1.BackgroundColor = Color.Salmon;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(0, 250);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(727, 349);
+            dataGridView1.Size = new Size(948, 349);
             dataGridView1.TabIndex = 2;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -121,14 +122,14 @@
             pnLogo.Controls.Add(panel1);
             pnLogo.Location = new Point(348, 138);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(727, 596);
+            pnLogo.Size = new Size(948, 596);
             pnLogo.TabIndex = 26;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(259, 14);
+            label2.Location = new Point(459, 12);
             label2.Name = "label2";
             label2.Size = new Size(214, 37);
             label2.TabIndex = 3;

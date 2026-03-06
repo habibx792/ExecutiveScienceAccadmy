@@ -265,11 +265,57 @@ namespace ExecutiveSceinceAccadmy.classes
                 }
             }
         }
-        public static void displayStudentDetailForFeeSubmission(string  registrationNo)
+        public static void DisplayStudentDetailForFeeSubmission(string registrationNo, DataGridView dt)
         {
-            using (SqlCommand cmd = new SqlCommand())
+            // Replace with your actual connection string
+            //string str = "your_connection_string_here";
+
+            using (SqlConnection con = new SqlConnection(str))
             {
-                //string query= "select "
+                string query = @"
+            SELECT 
+                s.stdRegisNo,
+                s.student_name,
+                d.domainName,
+                c.className,
+                f.amount
+            FROM StudentTb s
+            JOIN domainTb d
+                ON s.domainId = d.domainId
+            JOIN classTb c
+                ON c.domainId = s.domainId
+                AND c.className =
+                    CASE 
+                        WHEN s.classId <= 8 THEN CAST(s.classId AS VARCHAR)
+                        ELSE CONCAT(s.classId,'th')
+                    END
+            LEFT JOIN setStdFeeTb f
+                ON f.domainId = c.domainId
+                AND f.classId = c.classId
+            WHERE s.stdRegisNo = @RegNo;
+        ";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    // Add parameter to prevent SQL injection
+                    cmd.Parameters.AddWithValue("@RegNo", registrationNo);
+
+                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dtTable = new DataTable();
+                        da.Fill(dtTable);  // Fill DataTable with query results
+
+                        // Bind DataTable to DataGridView
+                        dt.DataSource = dtTable;
+
+                        // Optional: Set column headers
+                        if (dt.Columns.Contains("stdRegisNo")) dt.Columns["stdRegisNo"].HeaderText = "Registration No";
+                        if (dt.Columns.Contains("student_name")) dt.Columns["student_name"].HeaderText = "Name";
+                        if (dt.Columns.Contains("domainName")) dt.Columns["domainName"].HeaderText = "Domain";
+                        if (dt.Columns.Contains("className")) dt.Columns["className"].HeaderText = "Class";
+                        if (dt.Columns.Contains("amount")) dt.Columns["amount"].HeaderText = "Fee Amount";
+                    }
+                }
             }
         }
     }

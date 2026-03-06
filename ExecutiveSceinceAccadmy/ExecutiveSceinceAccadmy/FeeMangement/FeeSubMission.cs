@@ -77,6 +77,8 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
         private void Search_Click(object sender, EventArgs e)
         {
             string registreationNo = dataHandle.stringTrim(txtRegis.Text);
+            DB.DisplayStudentDetailForFeeSubmission(registreationNo, dataGridView1);
+
 
         }
     }

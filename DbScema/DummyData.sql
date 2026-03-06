@@ -40,3 +40,5 @@ select * from stdCountTB;
 update stdCountTB
 SET stdCount = 2
 WHERE stdCountId = 1; 
+insert into setStdFeeTb(amount,domainId,classId)
+values(5000,'Bio',9);
