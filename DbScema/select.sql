@@ -7,6 +7,7 @@ select * from StudentTb;
 select * from stdAdress;
 select * from academicTb;
 select * from setStdFeeTb;
+select * from feeTb;
 SELECT 
     s.stdRegisNo,
     s.student_name,

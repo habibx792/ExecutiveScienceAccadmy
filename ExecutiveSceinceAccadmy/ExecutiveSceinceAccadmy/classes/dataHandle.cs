@@ -73,5 +73,17 @@ namespace ExecutiveSceinceAccadmy.classes
             }
             return years;
         }
+        public static string generateUniqueId()
+        {
+            return Guid.NewGuid().ToString();
+        }
+        public static void  LoadMonths(ComboBox comboBox)
+        {
+            comboBox.Items.Clear();
+            for (int month = 1; month <= 12; month++)
+            {
+                comboBox.Items.Add(new DateTime(1, month, 1).ToString("MMMM"));
+            }
+        }   
     }
 }

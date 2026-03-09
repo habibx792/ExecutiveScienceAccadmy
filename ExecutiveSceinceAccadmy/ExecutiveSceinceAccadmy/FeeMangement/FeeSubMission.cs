@@ -56,7 +56,7 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
 
         private void FeeSubMission_Load(object sender, EventArgs e)
         {
-
+            dataHandle.LoadMonths(cmbMonth);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -77,9 +77,54 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
         private void Search_Click(object sender, EventArgs e)
         {
             string registreationNo = dataHandle.stringTrim(txtRegis.Text);
-            DB.DisplayStudentDetailForFeeSubmission(registreationNo, dataGridView1);
+            bool success = DB.DisplayStudentDetailForFeeSubmission(registreationNo, dataGridView1);
+            bool feeCondition = (txtAmount.Text != "" && txtDicount.Text != "" && txtSubBy.Text != "");
+            if (success &&feeCondition)
+            {
+                btnSearch.Text = "Pay Now";
+                string feeId = dataHandle.generateUniqueId();
+                string feeMonth = cmbMonth.SelectedItem.ToString();
+                double FeeAmount = double.Parse(txtAmount.Text);
+                double dicountAmount = double.Parse(txtDicount.Text);
+                string sumittedBy = txtSubBy.Text;
+
+                bool paymentSuccess = DB.submitFee(
+                        registreationNo,
+                        FeeAmount,
+                        dicountAmount,
+                        sumittedBy,
+                        feeMonth
+                );
+                if(paymentSuccess)
+                {
+                    MessageBox.Show("Fee submitted successfully!");
+                }
+                else
+                {
+                    MessageBox.Show("Failed to submit fee. Please try again.");
+                }
+            }
 
 
+        }
+
+        private void pnLogo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cmbMonth_SelectedIndexChanged(object sender, EventArgs e)
+        {
         }
     }
 }

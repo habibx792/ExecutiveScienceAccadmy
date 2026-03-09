@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Web;      // For showing error messages temporarily
 using System.Windows.Forms;
 using ExecutiveSceinceAccadmy.classes;
+using Microsoft.Identity.Client;
 namespace ExecutiveSceinceAccadmy.classes
 {
     public static class DB
@@ -265,7 +266,7 @@ namespace ExecutiveSceinceAccadmy.classes
                 }
             }
         }
-        public static void DisplayStudentDetailForFeeSubmission(string registrationNo, DataGridView dt)
+        public static bool DisplayStudentDetailForFeeSubmission(string registrationNo, DataGridView dt)
         {
             // Replace with your actual connection string
             //string str = "your_connection_string_here";
@@ -294,7 +295,7 @@ namespace ExecutiveSceinceAccadmy.classes
                 AND f.classId = c.classId
             WHERE s.stdRegisNo = @RegNo;
         ";
-
+                bool success = false;
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     // Add parameter to prevent SQL injection
@@ -314,7 +315,51 @@ namespace ExecutiveSceinceAccadmy.classes
                         if (dt.Columns.Contains("domainName")) dt.Columns["domainName"].HeaderText = "Domain";
                         if (dt.Columns.Contains("className")) dt.Columns["className"].HeaderText = "Class";
                         if (dt.Columns.Contains("amount")) dt.Columns["amount"].HeaderText = "Fee Amount";
+                        success = true;
                     }
+                }
+                if (success)
+                {
+                    MessageBox.Show("Student details loaded successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Failed to load student details.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+            
+        }
+        public static bool submitFee(string registrationNo,
+                              double amount,
+                              double dicountAmount,
+                              string submittedBy,
+                              string month)
+        {
+            using (SqlConnection con = new SqlConnection(str))
+            {
+                string feeId = dataHandle.generateUniqueId();
+
+                string query = @"INSERT INTO feeTb
+                        (feeId, stdRegisNo, paymentMonth, amount, discount, paidAmount, receivedBy)
+                        VALUES
+                        (@feeId, @regNo, @month, @amount, @discount, @paidAmount, @receivedBy)";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@feeId", feeId);
+                    cmd.Parameters.AddWithValue("@regNo", registrationNo);
+                    cmd.Parameters.AddWithValue("@month", month);
+                    cmd.Parameters.AddWithValue("@amount", amount);
+                    cmd.Parameters.AddWithValue("@discount", dicountAmount);
+                    cmd.Parameters.AddWithValue("@paidAmount", amount - dicountAmount);
+                    cmd.Parameters.AddWithValue("@receivedBy", submittedBy);
+
+                    con.Open();
+                    int rows = cmd.ExecuteNonQuery();
+
+                    return rows > 0;
                 }
             }
         }
