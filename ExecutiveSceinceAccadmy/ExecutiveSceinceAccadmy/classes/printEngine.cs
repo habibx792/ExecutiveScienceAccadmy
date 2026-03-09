@@ -7,7 +7,7 @@ using System.Drawing.Printing;
 using System.Web;
 namespace ExecutiveSceinceAccadmy.classes
 {
-    public static class print
+    public static class printEngine
     {
             public static void printDocument(string document)
             {
@@ -121,15 +121,15 @@ Obtained    : {academicHistory.ObtainedMarks}
         }
         internal static bool printFeeReceipt(
      string registrationNumber,
-     string month,
-     double amount,
+     string monthFee,
+     double feeAmount,
      double discountAmount,
      string percentage,
      string feeMonth,
      string currDate)
         {
 
-            double finalAmount = amount - discountAmount;
+            double finalFeeAmount = feeAmount - discountAmount;
 
             string document = $@"
 ========== EXECUTIVE SCIENCE ACADEMY ==========
@@ -140,11 +140,11 @@ Month           : {feeMonth}
 Payment Date    : {currDate}
 
 -----------------------------------------------
-Original Fee    : {amount}
+Original Fee    : {feeAmount}
 Discount        : {discountAmount}
 Discount %      : {percentage}
 -----------------------------------------------
-Paid Amount     : {finalAmount}
+Paid Amount     : {finalFeeAmount}
 
 -----------------------------------------------
 Received By     : Admin

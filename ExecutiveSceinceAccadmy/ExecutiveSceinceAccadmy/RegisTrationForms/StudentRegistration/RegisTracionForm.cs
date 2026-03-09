@@ -152,7 +152,7 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
             );
             btnRegister.Click += (s, e) =>
             {
-              print.printStudentRegistration(student, registraionNumber);
+              printEngine.printStudentRegistration(student, registraionNumber);
                 MessageBox.Show("Print functionality is not implemented yet.");
             };
             Button btnSaveFile=new Button();
@@ -166,7 +166,7 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
             );
             btnSaveFile.Click += (s, e) =>
             {
-                print.SaveStudentDocument(print.GenerateStudentDocument( student, registraionNumber),registraionNumber);
+                printEngine.SaveStudentDocument(printEngine.GenerateStudentDocument( student, registraionNumber),registraionNumber);
             };
             Button hide = new Button();
             hide.Text = "Register New Student ";

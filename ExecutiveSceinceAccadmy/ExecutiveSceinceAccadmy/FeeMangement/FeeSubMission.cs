@@ -146,13 +146,13 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
 
                     btnSave.Click += (s, ev) =>
                     {
-                        print.printFeeReceipt(registreationNo, feeMonth, FeeAmount,
+                        printEngine.printFeeReceipt(registreationNo, feeMonth, FeeAmount,
                                               dicountAmount, percentage, feeMonth, currDate);
                     };
 
                     btnPrint.Click += (s, ev) =>
                     {
-                        print.printFeeReceipt(registreationNo, feeMonth, FeeAmount,
+                        printEngine.printFeeReceipt(registreationNo, feeMonth, FeeAmount,
                                               dicountAmount, percentage, feeMonth, currDate);
                     };
 
