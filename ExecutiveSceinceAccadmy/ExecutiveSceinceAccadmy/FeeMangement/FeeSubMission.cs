@@ -103,35 +103,46 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
 
                     pnLogo.Controls.Clear();
 
+                    int buttonWidth = 160;
+                    int buttonHeight = 45;
+                    int spacing = 20;
+
+                    int totalWidth = (buttonWidth * 3) + (spacing * 2);
+
+                    int startX = (pnLogo.Width - totalWidth) / 2;
+                    int y = (pnLogo.Height - buttonHeight) / 2;
+
                     Button btnSave = new Button();
                     btnSave.Text = "Save Receipt";
-                    btnSave.Width = 150;
-                    btnSave.Height = 40;
-                    btnSave.Location = new Point(40, 40);
+                    btnSave.Size = new Size(buttonWidth, buttonHeight);
+                    btnSave.Location = new Point(startX, y);
 
                     Button btnPrint = new Button();
                     btnPrint.Text = "Print Receipt";
-                    btnPrint.Width = 150;
-                    btnPrint.Height = 40;
-                    btnPrint.Location = new Point(220, 40);
+                    btnPrint.Size = new Size(buttonWidth, buttonHeight);
+                    btnPrint.Location = new Point(startX + buttonWidth + spacing, y);
 
                     Button btnBack = new Button();
                     btnBack.Text = "Back";
-                    btnBack.Width = 150;
-                    btnBack.Height = 40;
-                    btnBack.Location = new Point(400, 40);
+                    btnBack.Size = new Size(buttonWidth, buttonHeight);
+                    btnBack.Location = new Point(startX + (buttonWidth + spacing) * 2, y);
+
+                    // Styling (makes UI better)
+                    Button[] buttons = { btnSave, btnPrint, btnBack };
+
+                    foreach (Button btn in buttons)
+                    {
+                        btn.Font = new Font("Segoe UI", 11, FontStyle.Bold);
+                        btn.BackColor = Color.FromArgb(0, 120, 215);
+                        btn.ForeColor = Color.White;
+                        btn.FlatStyle = FlatStyle.Flat;
+                        btn.FlatAppearance.BorderSize = 0;
+                        btn.Cursor = Cursors.Hand;
+                    }
 
                     pnLogo.Controls.Add(btnSave);
                     pnLogo.Controls.Add(btnPrint);
                     pnLogo.Controls.Add(btnBack);
-
-                    //string registreationNo = dataHandle.stringTrim(txtRegis.Text);
-                    //string feeMonth = cmbMonth.SelectedItem.ToString();
-                    //double FeeAmount = double.Parse(txtAmount.Text);
-                    //double dicountAmount = double.Parse(txtDicount.Text);
-                    //double percentageDicount = (dicountAmount / FeeAmount) * 100;
-                    //string percentage = percentageDicount.ToString("F2") + "%";
-                    //string currDate = DateTime.Now.ToShortDateString();
 
                     btnSave.Click += (s, ev) =>
                     {
@@ -147,13 +158,11 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
 
                     btnBack.Click += (s, ev) =>
                     {
-                        pnLogo.Controls.Clear();
-                        txtRegis.Clear();
-                        txtAmount.Clear();
-                        txtDicount.Clear();
-                        txtSubBy.Clear();
-                        cmbMonth.SelectedIndex = -1;
-                        dataGridView1.DataSource = null;
+                        this.Close();
+                        using (FeeSubMission feeSubMission = new FeeSubMission())
+                        {
+                            feeSubMission.ShowDialog();
+                        }
                     };
                 }
                 else
