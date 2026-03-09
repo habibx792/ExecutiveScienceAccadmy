@@ -87,6 +87,8 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
                 double FeeAmount = double.Parse(txtAmount.Text);
                 double dicountAmount = double.Parse(txtDicount.Text);
                 string sumittedBy = txtSubBy.Text;
+                string percentage = ((dicountAmount / FeeAmount) * 100).ToString("F2") + "%";
+                string currDate = DateTime.Now.ToShortDateString();
 
                 bool paymentSuccess = DB.submitFee(
                         registreationNo,
@@ -95,9 +97,64 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
                         sumittedBy,
                         feeMonth
                 );
-                if(paymentSuccess)
+                if (paymentSuccess)
                 {
                     MessageBox.Show("Fee submitted successfully!");
+
+                    pnLogo.Controls.Clear();
+
+                    Button btnSave = new Button();
+                    btnSave.Text = "Save Receipt";
+                    btnSave.Width = 150;
+                    btnSave.Height = 40;
+                    btnSave.Location = new Point(40, 40);
+
+                    Button btnPrint = new Button();
+                    btnPrint.Text = "Print Receipt";
+                    btnPrint.Width = 150;
+                    btnPrint.Height = 40;
+                    btnPrint.Location = new Point(220, 40);
+
+                    Button btnBack = new Button();
+                    btnBack.Text = "Back";
+                    btnBack.Width = 150;
+                    btnBack.Height = 40;
+                    btnBack.Location = new Point(400, 40);
+
+                    pnLogo.Controls.Add(btnSave);
+                    pnLogo.Controls.Add(btnPrint);
+                    pnLogo.Controls.Add(btnBack);
+
+                    //string registreationNo = dataHandle.stringTrim(txtRegis.Text);
+                    //string feeMonth = cmbMonth.SelectedItem.ToString();
+                    //double FeeAmount = double.Parse(txtAmount.Text);
+                    //double dicountAmount = double.Parse(txtDicount.Text);
+                    //double percentageDicount = (dicountAmount / FeeAmount) * 100;
+                    //string percentage = percentageDicount.ToString("F2") + "%";
+                    //string currDate = DateTime.Now.ToShortDateString();
+
+                    btnSave.Click += (s, ev) =>
+                    {
+                        print.printFeeReceipt(registreationNo, feeMonth, FeeAmount,
+                                              dicountAmount, percentage, feeMonth, currDate);
+                    };
+
+                    btnPrint.Click += (s, ev) =>
+                    {
+                        print.printFeeReceipt(registreationNo, feeMonth, FeeAmount,
+                                              dicountAmount, percentage, feeMonth, currDate);
+                    };
+
+                    btnBack.Click += (s, ev) =>
+                    {
+                        pnLogo.Controls.Clear();
+                        txtRegis.Clear();
+                        txtAmount.Clear();
+                        txtDicount.Clear();
+                        txtSubBy.Clear();
+                        cmbMonth.SelectedIndex = -1;
+                        dataGridView1.DataSource = null;
+                    };
                 }
                 else
                 {

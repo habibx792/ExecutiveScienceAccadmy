@@ -119,5 +119,50 @@ Obtained    : {academicHistory.ObtainedMarks}
 
             return true;
         }
+        internal static bool printFeeReceipt(
+     string registrationNumber,
+     string month,
+     double amount,
+     double discountAmount,
+     string percentage,
+     string feeMonth,
+     string currDate)
+        {
+
+            double finalAmount = amount - discountAmount;
+
+            string document = $@"
+========== EXECUTIVE SCIENCE ACADEMY ==========
+               FEE RECEIPT
+
+Registration No : {registrationNumber}
+Month           : {feeMonth}
+Payment Date    : {currDate}
+
+-----------------------------------------------
+Original Fee    : {amount}
+Discount        : {discountAmount}
+Discount %      : {percentage}
+-----------------------------------------------
+Paid Amount     : {finalAmount}
+
+-----------------------------------------------
+Received By     : Admin
+-----------------------------------------------
+
+        Thank you for your payment!
+===============================================
+";
+
+            string filePath = SaveStudentDocument(document, registrationNumber);
+
+            if (filePath != null)
+            {
+                PrintFile(filePath);
+                return true;
+            }
+
+            return false;
+        }
     }
 }
