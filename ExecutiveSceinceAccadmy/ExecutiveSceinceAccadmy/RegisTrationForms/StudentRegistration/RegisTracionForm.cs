@@ -42,7 +42,7 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
 
                 cmbDomain.Items.Add(domains[i]);
             }
-            List<int> years = dataHandle.laodPrevisous_10Years();
+            List<int> years = dataHandler.laodPrevisous_10Years();
             for (int i = 0; i < years.Count; i++)
             {
                 cmbPassingYear.Items.Add(years[i].ToString());
@@ -204,7 +204,7 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
             string studentDomain = cmbDomain.SelectedItem.ToString();
             string dateOfRegistraion = dtpRegis.Value.ToString("yyyy-MM-dd");
             DateTime dob = dtpDOB.Value;
-            int studentAge = dataHandle.calculateAge(dob);
+            int studentAge = dataHandler.calculateAge(dob);
             string studentName = txtStdName.Text;
             string studentFatherName = txtStdFatherName.Text;
             string studentCnic = txtStdCNIC.Text;
@@ -237,7 +237,7 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
                 gen = "G";
             }
             bool successFlag = false;
-            string registrationNumber = dataHandle.createRegistrationNumber(studentDomain, gen, studentClassLevel);
+            string registrationNumber = dataHandler.createRegistrationNumber(studentDomain, gen, studentClassLevel);
             MessageBox.Show("Your registration number is: " + registrationNumber);
             string passingYear = cmbPassingYear.SelectedItem.ToString();
             string studentType = "Regular";

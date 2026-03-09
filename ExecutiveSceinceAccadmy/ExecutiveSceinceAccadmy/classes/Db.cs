@@ -125,7 +125,7 @@ namespace ExecutiveSceinceAccadmy.classes
             string stdDomainID = std.DomainName;
             string calssId = std.ClassLevel;
             string stdDob = std.DOB;
-            string batchYear = dataHandle.getCurrentYear().ToString();
+            string batchYear = dataHandler.getCurrentYear().ToString();
             string studentType = std.ReqisterType;
             //father info
             string fatherName = father.Name;
@@ -339,7 +339,7 @@ namespace ExecutiveSceinceAccadmy.classes
         {
             using (SqlConnection con = new SqlConnection(str))
             {
-                string feeId = dataHandle.generateUniqueId();
+                string feeId = dataHandler.generateUniqueId();
 
                 string query = @"INSERT INTO feeTb
                         (feeId, stdRegisNo, paymentMonth, amount, discount, paidAmount, receivedBy)
