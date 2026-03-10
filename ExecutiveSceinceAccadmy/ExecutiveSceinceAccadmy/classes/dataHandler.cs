@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExecutiveSceinceAccadmy.classes
 {
-    internal static class dataHandle
+    internal static class dataHandler
     {
         public static string stringTrim(string data)
         {
@@ -73,9 +73,12 @@ namespace ExecutiveSceinceAccadmy.classes
             }
             return years;
         }
-        public static string generateUniqueId()
+        public static string GenerateShortId(int length = 6)
         {
-            return Guid.NewGuid().ToString();
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            Random random = new Random();
+            return new string(Enumerable.Repeat(chars, length)
+                .Select(s => s[random.Next(s.Length)]).ToArray());
         }
         public static void  LoadMonths(ComboBox comboBox)
         {
@@ -84,6 +87,30 @@ namespace ExecutiveSceinceAccadmy.classes
             {
                 comboBox.Items.Add(new DateTime(1, month, 1).ToString("MMMM"));
             }
-        }   
+        }
+        public static string getRandomeTimeStr()
+        { 
+            string timestamp = DateTime.Now.ToString("yyyyMMddHHmmssfff");
+            const string digits = "0123456789";
+            const string letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+            Random rand = new Random();
+            StringBuilder result = new StringBuilder();
+
+            foreach (char c in timestamp)
+            {
+
+                if (rand.Next(2) == 0)
+                {
+                    result.Append(c);
+                }
+                else
+                {
+                    int digit = int.Parse(c.ToString());
+               
+                    result.Append(letters[rand.Next(letters.Length)]);
+                }
+            }
+            return result.ToString();
+        }
     }
 }

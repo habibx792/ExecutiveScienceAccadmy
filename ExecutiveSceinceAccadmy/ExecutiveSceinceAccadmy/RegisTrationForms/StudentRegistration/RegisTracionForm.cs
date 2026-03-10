@@ -166,7 +166,7 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
             );
             btnSaveFile.Click += (s, e) =>
             {
-                printEngine.SaveStudentDocument(printEngine.GenerateStudentDocument( student, registraionNumber),registraionNumber);
+                printEngine.SaveStudentDocument(printEngine.GenerateStudentDocument( student, registraionNumber),student.Name, registraionNumber);
             };
             Button hide = new Button();
             hide.Text = "Register New Student ";

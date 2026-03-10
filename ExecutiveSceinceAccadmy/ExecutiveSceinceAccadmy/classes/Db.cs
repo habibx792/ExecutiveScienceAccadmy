@@ -82,7 +82,7 @@ namespace ExecutiveSceinceAccadmy.classes
             using (SqlConnection con = new SqlConnection(str))
             {
                 con.Open();
-               string query = "update stdCountTB set stdCount = @newStdNumber";
+                string query = "update stdCountTB set stdCount = @newStdNumber";
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
                     cmd.Parameters.Add("@newStdNumber", SqlDbType.Int).Value = newStdNumber;
@@ -91,7 +91,7 @@ namespace ExecutiveSceinceAccadmy.classes
                 }
             }
         }
-     public static List<string>  loadALlDomain()
+        public static List<string> loadALlDomain()
         {
             List<string> domains = new List<string>();
             using (SqlConnection con = new SqlConnection(str))
@@ -268,68 +268,52 @@ namespace ExecutiveSceinceAccadmy.classes
         }
         public static bool DisplayStudentDetailForFeeSubmission(string registrationNo, DataGridView dt)
         {
-            // Replace with your actual connection string
-            //string str = "your_connection_string_here";
-
-            using (SqlConnection con = new SqlConnection(str))
+            try
             {
-                string query = @"
-            SELECT 
-                s.stdRegisNo,
-                s.student_name,
-                d.domainName,
-                c.className,
-                f.amount
-            FROM StudentTb s
-            JOIN domainTb d
-                ON s.domainId = d.domainId
-            JOIN classTb c
-                ON c.domainId = s.domainId
-                AND c.className =
-                    CASE 
-                        WHEN s.classId <= 8 THEN CAST(s.classId AS VARCHAR)
-                        ELSE CONCAT(s.classId,'th')
-                    END
-            LEFT JOIN setStdFeeTb f
-                ON f.domainId = c.domainId
-                AND f.classId = c.classId
-            WHERE s.stdRegisNo = @RegNo;
-        ";
-                bool success = false;
-                using (SqlCommand cmd = new SqlCommand(query, con))
+                using (SqlConnection con = new SqlConnection(str))
                 {
-                    // Add parameter to prevent SQL injection
-                    cmd.Parameters.AddWithValue("@RegNo", registrationNo);
+                    string query = @"SELECT s.stdRegisNo, s.student_name, d.domainName, c.className, f.amount
+                             FROM StudentTb s
+                             JOIN domainTb d ON s.domainId = d.domainId
+                             JOIN classTb c ON c.domainId = s.domainId
+                                 AND c.className = 
+                                     CASE 
+                                         WHEN s.classId <= 8 THEN CAST(s.classId AS VARCHAR)
+                                         ELSE CONCAT(s.classId,'th')
+                                     END
+                             LEFT JOIN setStdFeeTb f ON f.domainId = c.domainId AND f.classId = c.classId
+                             WHERE s.stdRegisNo = @RegNo;";
 
-                    using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                    using (SqlCommand cmd = new SqlCommand(query, con))
                     {
-                        DataTable dtTable = new DataTable();
-                        da.Fill(dtTable);  // Fill DataTable with query results
+                        cmd.Parameters.AddWithValue("@RegNo", registrationNo);
+                        using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+                        {
+                            DataTable dtTable = new DataTable();
+                            da.Fill(dtTable);
+                            dt.DataSource = dtTable;
 
-                        // Bind DataTable to DataGridView
-                        dt.DataSource = dtTable;
-
-                        // Optional: Set column headers
-                        if (dt.Columns.Contains("stdRegisNo")) dt.Columns["stdRegisNo"].HeaderText = "Registration No";
-                        if (dt.Columns.Contains("student_name")) dt.Columns["student_name"].HeaderText = "Name";
-                        if (dt.Columns.Contains("domainName")) dt.Columns["domainName"].HeaderText = "Domain";
-                        if (dt.Columns.Contains("className")) dt.Columns["className"].HeaderText = "Class";
-                        if (dt.Columns.Contains("amount")) dt.Columns["amount"].HeaderText = "Fee Amount";
-                        success = true;
+                            // Optional column header renaming (this affects the DataGridView, not the DataTable)
+                            if (dt.Columns.Contains("stdRegisNo"))
+                                dt.Columns["stdRegisNo"].HeaderText = "Registration No";
+                            if (dt.Columns.Contains("student_name"))
+                                dt.Columns["student_name"].HeaderText = "Name";
+                            if (dt.Columns.Contains("domainName"))
+                                dt.Columns["domainName"].HeaderText = "Domain";
+                            if (dt.Columns.Contains("className"))
+                                dt.Columns["className"].HeaderText = "Class";
+                            if (dt.Columns.Contains("amount"))
+                                dt.Columns["amount"].HeaderText = "Fee Amount";
+                        }
                     }
                 }
-                if (success)
-                {
-                    MessageBox.Show("Student details loaded successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return true;
-                }
-                else
-                {
-                    MessageBox.Show("Failed to load student details.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return false;
-                }
+                return true; // Query executed successfully
             }
-            
+            catch (Exception ex)
+            {
+                MessageBox.Show("Database error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false; // Indicate failure
+            }
         }
         public static bool submitFee(string registrationNo,
                               double amount,
@@ -337,31 +321,49 @@ namespace ExecutiveSceinceAccadmy.classes
                               string submittedBy,
                               string month)
         {
-            using (SqlConnection con = new SqlConnection(str))
+            try
             {
-                string feeId = dataHandler.generateUniqueId();
-
-                string query = @"INSERT INTO feeTb
-                        (feeId, stdRegisNo, paymentMonth, amount, discount, paidAmount, receivedBy)
-                        VALUES
-                        (@feeId, @regNo, @month, @amount, @discount, @paidAmount, @receivedBy)";
-
-                using (SqlCommand cmd = new SqlCommand(query, con))
+                using (SqlConnection con = new SqlConnection(str))
                 {
-                    cmd.Parameters.AddWithValue("@feeId", feeId);
-                    cmd.Parameters.AddWithValue("@regNo", registrationNo);
-                    cmd.Parameters.AddWithValue("@month", month);
-                    cmd.Parameters.AddWithValue("@amount", amount);
-                    cmd.Parameters.AddWithValue("@discount", dicountAmount);
-                    cmd.Parameters.AddWithValue("@paidAmount", amount - dicountAmount);
-                    cmd.Parameters.AddWithValue("@receivedBy", submittedBy);
+                    string feeId = dataHandler.GenerateShortId(); // ensure this method exists
 
-                    con.Open();
-                    int rows = cmd.ExecuteNonQuery();
+                    string query = @"INSERT INTO feeTb
+                             (feeId, stdRegisNo, paymentMonth, amount, discount, paidAmount, receivedBy)
+                             VALUES
+                             (@feeId, @regNo, @month, @amount, @discount, @paidAmount, @receivedBy)";
 
-                    return rows > 0;
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@feeId", feeId);
+                        cmd.Parameters.AddWithValue("@regNo", registrationNo);
+                        cmd.Parameters.AddWithValue("@month", month);
+                        cmd.Parameters.AddWithValue("@amount", amount);
+                        cmd.Parameters.AddWithValue("@discount", dicountAmount);
+                        cmd.Parameters.AddWithValue("@paidAmount", amount - dicountAmount);
+                        cmd.Parameters.AddWithValue("@receivedBy", submittedBy);
+
+                        con.Open();
+                        int rows = cmd.ExecuteNonQuery();
+                        return rows > 0;
+                    }
                 }
+            }
+            catch (SqlException ex)
+            {
+                // Foreign key violation error number is 547
+                if (ex.Number == 547)
+                {
+                    MessageBox.Show("The student registration number does not exist in the database.",
+                                    "Invalid Registration", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Database error: " + ex.Message,
+                                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                return false;
             }
         }
     }
+
 }

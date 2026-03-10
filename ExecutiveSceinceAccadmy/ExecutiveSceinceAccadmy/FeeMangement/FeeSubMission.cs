@@ -56,7 +56,7 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
 
         private void FeeSubMission_Load(object sender, EventArgs e)
         {
-            dataHandle.LoadMonths(cmbMonth);
+            dataHandler.LoadMonths(cmbMonth);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -73,105 +73,128 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
         {
 
         }
-
         private void Search_Click(object sender, EventArgs e)
         {
-            string registreationNo = dataHandle.stringTrim(txtRegis.Text);
-            bool success = DB.DisplayStudentDetailForFeeSubmission(registreationNo, dataGridView1);
-            bool feeCondition = (txtAmount.Text != "" && txtDicount.Text != "" && txtSubBy.Text != "");
-            if (success &&feeCondition)
+            string registrationNo = dataHandler.stringTrim(txtRegis.Text);
+
+            // 1. Load student details into DataGridView
+            bool querySuccess = DB.DisplayStudentDetailForFeeSubmission(registrationNo, dataGridView1);
+            if (!querySuccess)
             {
-                btnSearch.Text = "Pay Now";
-                string feeId = dataHandle.generateUniqueId();
-                string feeMonth = cmbMonth.SelectedItem.ToString();
-                double FeeAmount = double.Parse(txtAmount.Text);
-                double dicountAmount = double.Parse(txtDicount.Text);
-                string sumittedBy = txtSubBy.Text;
-                string percentage = ((dicountAmount / FeeAmount) * 100).ToString("F2") + "%";
-                string currDate = DateTime.Now.ToShortDateString();
-
-                bool paymentSuccess = DB.submitFee(
-                        registreationNo,
-                        FeeAmount,
-                        dicountAmount,
-                        sumittedBy,
-                        feeMonth
-                );
-                if (paymentSuccess)
-                {
-                    MessageBox.Show("Fee submitted successfully!");
-
-                    pnLogo.Controls.Clear();
-
-                    int buttonWidth = 160;
-                    int buttonHeight = 45;
-                    int spacing = 20;
-
-                    int totalWidth = (buttonWidth * 3) + (spacing * 2);
-
-                    int startX = (pnLogo.Width - totalWidth) / 2;
-                    int y = (pnLogo.Height - buttonHeight) / 2;
-
-                    Button btnSave = new Button();
-                    btnSave.Text = "Save Receipt";
-                    btnSave.Size = new Size(buttonWidth, buttonHeight);
-                    btnSave.Location = new Point(startX, y);
-
-                    Button btnPrint = new Button();
-                    btnPrint.Text = "Print Receipt";
-                    btnPrint.Size = new Size(buttonWidth, buttonHeight);
-                    btnPrint.Location = new Point(startX + buttonWidth + spacing, y);
-
-                    Button btnBack = new Button();
-                    btnBack.Text = "Back";
-                    btnBack.Size = new Size(buttonWidth, buttonHeight);
-                    btnBack.Location = new Point(startX + (buttonWidth + spacing) * 2, y);
-
-                    // Styling (makes UI better)
-                    Button[] buttons = { btnSave, btnPrint, btnBack };
-
-                    foreach (Button btn in buttons)
-                    {
-                        btn.Font = new Font("Segoe UI", 11, FontStyle.Bold);
-                        btn.BackColor = Color.FromArgb(0, 120, 215);
-                        btn.ForeColor = Color.White;
-                        btn.FlatStyle = FlatStyle.Flat;
-                        btn.FlatAppearance.BorderSize = 0;
-                        btn.Cursor = Cursors.Hand;
-                    }
-
-                    pnLogo.Controls.Add(btnSave);
-                    pnLogo.Controls.Add(btnPrint);
-                    pnLogo.Controls.Add(btnBack);
-
-                    btnSave.Click += (s, ev) =>
-                    {
-                        printEngine.printFeeReceipt(registreationNo, feeMonth, FeeAmount,
-                                              dicountAmount, percentage, feeMonth, currDate);
-                    };
-
-                    btnPrint.Click += (s, ev) =>
-                    {
-                        printEngine.printFeeReceipt(registreationNo, feeMonth, FeeAmount,
-                                              dicountAmount, percentage, feeMonth, currDate);
-                    };
-
-                    btnBack.Click += (s, ev) =>
-                    {
-                        this.Close();
-                        using (FeeSubMission feeSubMission = new FeeSubMission())
-                        {
-                            feeSubMission.ShowDialog();
-                        }
-                    };
-                }
-                else
-                {
-                    MessageBox.Show("Failed to submit fee. Please try again.");
-                }
+                // Database error already shown; just return
+                return;
             }
 
+            // 2. Check if any rows were returned (student exists)
+            if (dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("No student found with the provided registration number.",
+                                "Not Found", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
+            // 3. Student exists – now validate fee input fields
+            if (string.IsNullOrWhiteSpace(txtAmount.Text) ||
+                string.IsNullOrWhiteSpace(txtDicount.Text) ||
+                string.IsNullOrWhiteSpace(txtSubBy.Text))
+            {
+                MessageBox.Show("Please fill all fee details (Amount, Discount, Submitted By).",
+                                "Incomplete Data", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // 4. Get student name safely (there is at least one row)
+            string studentName = dataGridView1.Rows[0].Cells["student_name"].Value?.ToString() ?? "";
+
+            // 5. Proceed with fee submission
+            btnSearch.Text = "Pay Now";
+            string feeMonth = cmbMonth.SelectedItem.ToString();
+            double FeeAmount = double.Parse(txtAmount.Text);
+            double dicountAmount = double.Parse(txtDicount.Text);
+            string submittedBy = txtSubBy.Text;
+            string percentage = ((dicountAmount / FeeAmount) * 100).ToString("F2") + "%";
+            string currDate = DateTime.Now.ToShortDateString();
+
+            bool paymentSuccess = DB.submitFee(
+                registrationNo,
+                FeeAmount,
+                dicountAmount,
+                submittedBy,
+                feeMonth
+            );
+
+            if (paymentSuccess)
+            {
+                MessageBox.Show("Fee submitted successfully!");
+
+                // --- Create the three buttons (Save Receipt, Print Receipt, Back) ---
+                pnLogo.Controls.Clear();
+
+                int buttonWidth = 160;
+                int buttonHeight = 45;
+                int spacing = 20;
+
+                int totalWidth = (buttonWidth * 3) + (spacing * 2);
+                int startX = (pnLogo.Width - totalWidth) / 2;
+                int y = (pnLogo.Height - buttonHeight) / 2;
+
+                Button btnSave = new Button();
+                btnSave.Text = "Save Receipt";
+                btnSave.Size = new Size(buttonWidth, buttonHeight);
+                btnSave.Location = new Point(startX, y);
+
+                Button btnPrint = new Button();
+                btnPrint.Text = "Print Receipt";
+                btnPrint.Size = new Size(buttonWidth, buttonHeight);
+                btnPrint.Location = new Point(startX + buttonWidth + spacing, y);
+
+                Button btnBack = new Button();
+                btnBack.Text = "Back";
+                btnBack.Size = new Size(buttonWidth, buttonHeight);
+                btnBack.Location = new Point(startX + (buttonWidth + spacing) * 2, y);
+
+                // Styling
+                Button[] buttons = { btnSave, btnPrint, btnBack };
+                foreach (Button btn in buttons)
+                {
+                    btn.Font = new Font("Segoe UI", 11, FontStyle.Bold);
+                    btn.BackColor = Color.FromArgb(0, 120, 215);
+                    btn.ForeColor = Color.White;
+                    btn.FlatStyle = FlatStyle.Flat;
+                    btn.FlatAppearance.BorderSize = 0;
+                    btn.Cursor = Cursors.Hand;
+                }
+
+                pnLogo.Controls.Add(btnSave);
+                pnLogo.Controls.Add(btnPrint);
+                pnLogo.Controls.Add(btnBack);
+
+                // Attach click events
+                btnSave.Click += (s, ev) =>
+                {
+                    printEngine.printFeeReceipt(studentName, registrationNo, feeMonth, FeeAmount,
+                                                dicountAmount, percentage, feeMonth, currDate);
+                };
+
+                btnPrint.Click += (s, ev) =>
+                {
+                    printEngine.printFeeReceipt(studentName, registrationNo, feeMonth, FeeAmount,
+                                                dicountAmount, percentage, feeMonth, currDate);
+                };
+
+                btnBack.Click += (s, ev) =>
+                {
+                    this.Close();
+                    using (FeeSubMission feeSubMission = new FeeSubMission())
+                    {
+                        feeSubMission.ShowDialog();
+                    }
+                };
+            }
+            else
+            {
+                MessageBox.Show("Failed to submit fee. Please try again.");
+            }
         }
 
         private void pnLogo_Paint(object sender, PaintEventArgs e)

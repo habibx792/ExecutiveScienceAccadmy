@@ -60,13 +60,13 @@ Obtained    : {academicHistory.ObtainedMarks}
 
             return document;
         }
-        internal static string SaveStudentDocument(string content,string registraionNo)
+        internal static string SaveStudentDocument(string content,string studentName,string registraionNo)
         {
             SaveFileDialog saveDialog = new SaveFileDialog();
 
             saveDialog.Title = "Save Student Registration";
             saveDialog.Filter = "Text File (*.txt)|*.txt";
-            saveDialog.FileName = $"{registraionNo}+{DateTime.Now}.txt";
+            saveDialog.FileName = $"{studentName}{registraionNo}{dataHandler.getRandomeTimeStr()}.txt";
 
             if (saveDialog.ShowDialog() == DialogResult.OK)
             {
@@ -113,13 +113,13 @@ Obtained    : {academicHistory.ObtainedMarks}
                 GenerateStudentDocument(std, registrationNumber);
 
             string filePath =
-                SaveStudentDocument(document,registrationNumber);
+                SaveStudentDocument(document,std.Name,registrationNumber);
 
             PrintFile(filePath);
 
             return true;
         }
-        internal static bool printFeeReceipt(
+        internal static bool printFeeReceipt(string studentName,
      string registrationNumber,
      string monthFee,
      double feeAmount,
@@ -135,6 +135,7 @@ Obtained    : {academicHistory.ObtainedMarks}
 ========== EXECUTIVE SCIENCE ACADEMY ==========
                FEE RECEIPT
 
+Student Name    : {studentName}
 Registration No : {registrationNumber}
 Month           : {feeMonth}
 Payment Date    : {currDate}
@@ -154,7 +155,7 @@ Received By     : Admin
 ===============================================
 ";
 
-            string filePath = SaveStudentDocument(document, registrationNumber);
+            string filePath = SaveStudentDocument(document, studentName, registrationNumber);
 
             if (filePath != null)
             {
