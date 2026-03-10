@@ -8,6 +8,11 @@ select * from stdAdress;
 select * from academicTb;
 select * from setStdFeeTb;
 select * from feeTb;
+truncate table feeTb;
+
+
+
+
 SELECT 
     s.stdRegisNo,
     s.student_name,

@@ -7,3 +7,4 @@ ALTER TABLE StudentTb
 DROP COLUMN mark_of_identification;
 
 select * from StudentTb;
+truncate table studentTb;
