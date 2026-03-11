@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ExecutiveSceinceAccadmy
+namespace ExecutiveSceinceAccadmy.FeeMangement
 {
-    public partial class tempDataLoader : Form
+    public partial class toDayFeeCollfrm : Form
     {
-        public tempDataLoader()
+        public toDayFeeCollfrm()
         {
             InitializeComponent();
         }

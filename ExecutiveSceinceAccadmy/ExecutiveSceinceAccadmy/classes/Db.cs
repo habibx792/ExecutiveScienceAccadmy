@@ -365,7 +365,7 @@ namespace ExecutiveSceinceAccadmy.classes
                 return false;
             }
         }
-        public static bool checkStudentFeeStatus(string registrationNumber,string month,string feeId,bool searchFlag,DataGridView feeGrid)
+        public static bool checkStudentFeeStatus(string registrationNumber, string month, string feeId, bool searchFlag, DataGridView feeGrid)
         {
             try
             {
@@ -422,6 +422,39 @@ namespace ExecutiveSceinceAccadmy.classes
                 return false;
             }
         }
-    }
+        public static void showTotalCollectionOfToday(Label lbl, string month)
+        {
+            string query = @"SELECT SUM(paidAmount) 
+                     FROM feeTb 
+                     WHERE CAST(paymentDate AS DATE) = @today 
+                     AND paymentMonth = @month 
+                     AND isPaid = 1";
 
+            using (SqlConnection con = new SqlConnection(str))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@today", DateTime.Today);
+                    cmd.Parameters.AddWithValue("@month", month);
+
+                    con.Open();
+
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != DBNull.Value)
+                    {
+                        lbl.Text = Convert.ToDouble(result).ToString("0.00");
+                    }
+                    else
+                    {
+                        lbl.Text = "0";
+                    }
+                }
+            }
+        }
+        public static void showTotalCollectionOfThisMonth(Label lbl, string month)
+        {
+
+        }
+    }
 }

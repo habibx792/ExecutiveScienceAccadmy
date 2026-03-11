@@ -1,4 +1,5 @@
-﻿using ExecutiveScienceAcademy.classes;
+﻿using ExecutiveSceinceAccadmy.classes;
+using ExecutiveScienceAcademy.classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -53,7 +54,7 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
 
         private void FeeForm_Load(object sender, EventArgs e)
         {
-
+            DB.showTotalCollectionOfToday(lblDay,dataHandler.getCurrentMonthStr());
 
         }
 
@@ -128,7 +129,12 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            this.Hide();
+            using (var collectionOfDay = new toDayFeeCollfrm())
+            {
+                collectionOfDay.ShowDialog();
+            }
+            this.Show();
         }
     }
 }
