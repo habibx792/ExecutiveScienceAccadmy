@@ -317,19 +317,19 @@ namespace ExecutiveSceinceAccadmy.classes
         }
         public static bool submitFee(string feeId, string registrationNo,
                               double amount,
-                              double dicountAmount,
+                              double discountAmount,
                               string submittedBy,
-                              string month)
+                              string month,
+                              int isPaid)
         {
             try
             {
                 using (SqlConnection con = new SqlConnection(str))
                 {
-
                     string query = @"INSERT INTO feeTb
-                             (feeId, stdRegisNo, paymentMonth, amount, discount, paidAmount, receivedBy)
+                            (feeId, stdRegisNo, paymentMonth, amount, discount, paidAmount, receivedBy, isPaid)
                              VALUES
-                             (@feeId, @regNo, @month, @amount, @discount, @paidAmount, @receivedBy)";
+                            (@feeId, @regNo, @month, @amount, @discount, @paidAmount, @receivedBy, @isPaid)";
 
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
@@ -337,19 +337,20 @@ namespace ExecutiveSceinceAccadmy.classes
                         cmd.Parameters.AddWithValue("@regNo", registrationNo);
                         cmd.Parameters.AddWithValue("@month", month);
                         cmd.Parameters.AddWithValue("@amount", amount);
-                        cmd.Parameters.AddWithValue("@discount", dicountAmount);
-                        cmd.Parameters.AddWithValue("@paidAmount", amount - dicountAmount);
+                        cmd.Parameters.AddWithValue("@discount", discountAmount);
+                        cmd.Parameters.AddWithValue("@paidAmount", amount - discountAmount);
                         cmd.Parameters.AddWithValue("@receivedBy", submittedBy);
+                        cmd.Parameters.AddWithValue("@isPaid", isPaid);
 
                         con.Open();
                         int rows = cmd.ExecuteNonQuery();
+
                         return rows > 0;
                     }
                 }
             }
             catch (SqlException ex)
             {
-                // Foreign key violation error number is 547
                 if (ex.Number == 547)
                 {
                     MessageBox.Show("The student registration number does not exist in the database.",
@@ -360,6 +361,7 @@ namespace ExecutiveSceinceAccadmy.classes
                     MessageBox.Show("Database error: " + ex.Message,
                                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
                 return false;
             }
         }

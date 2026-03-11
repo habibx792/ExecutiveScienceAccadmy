@@ -88,6 +88,17 @@ namespace ExecutiveSceinceAccadmy.classes
                 comboBox.Items.Add(new DateTime(1, month, 1).ToString("MMMM"));
             }
         }
+        public static string generateRandomeNumber(int length=5)
+        {
+            const string digits = "0123456789";
+            Random rand = new Random();
+            StringBuilder result = new StringBuilder();
+            for (int i = 0; i < length; i++)
+            {
+                result.Append(digits[rand.Next(digits.Length)]);
+            }
+            return result.ToString();
+        }
         public static string getRandomeTimeStr()
         { 
             string timestamp = DateTime.Now.ToString("yyyyMMddHHmmssfff");

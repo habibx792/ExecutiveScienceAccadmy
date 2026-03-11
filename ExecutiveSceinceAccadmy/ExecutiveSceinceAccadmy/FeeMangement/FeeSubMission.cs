@@ -105,19 +105,20 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
             // 5. Proceed with fee submission
             btnSearch.Text = "Pay Now";
             string feeMonth = cmbMonth.SelectedItem.ToString();
-            string feeId = dataHandler.GenerateShortId(); // ensure this method exists
+            string feeId = dataHandler.GenerateShortId()+dataHandler.generateRandomeNumber(3)+ dataHandler.GenerateShortId(); // ensure this method exists
             double FeeAmount = double.Parse(txtAmount.Text);
             double dicountAmount = double.Parse(txtDicount.Text);
             string submittedBy = txtSubBy.Text;
             string percentage = ((dicountAmount / FeeAmount) * 100).ToString("F2") + "%";
             string currDate = DateTime.Now.ToShortDateString();
-
+            int isPaid = 1;
             bool paymentSuccess = DB.submitFee(feeId,
                 registrationNo,
                 FeeAmount,
                 dicountAmount,
                 submittedBy,
-                feeMonth
+                feeMonth,
+                isPaid
             );
 
             if (paymentSuccess)
