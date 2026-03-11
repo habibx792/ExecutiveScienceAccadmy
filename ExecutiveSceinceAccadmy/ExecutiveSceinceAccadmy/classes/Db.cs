@@ -454,7 +454,33 @@ namespace ExecutiveSceinceAccadmy.classes
         }
         public static void showTotalCollectionOfThisMonth(Label lbl, string month)
         {
+            string query = @"SELECT SUM(paidAmount) 
+                     FROM feeTb 
+                     WHERE MONTH(paymentDate) = MONTH(GETDATE()) 
+                     AND YEAR(paymentDate) = YEAR(GETDATE()) 
+                     AND paymentMonth = @month
+                     AND isPaid = 1";
 
+            using (SqlConnection con = new SqlConnection(str))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@month", month);
+
+                    con.Open();
+
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != DBNull.Value)
+                    {
+                        lbl.Text = Convert.ToDouble(result).ToString("0.00");
+                    }
+                    else
+                    {
+                        lbl.Text = "0";
+                    }
+                }
+            }
         }
     }
 }

@@ -55,6 +55,7 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
         private void FeeForm_Load(object sender, EventArgs e)
         {
             DB.showTotalCollectionOfToday(lblDay,dataHandler.getCurrentMonthStr());
+            DB.showTotalCollectionOfThisMonth(lblMonth, dataHandler.getCurrentMonthStr());
 
         }
 
