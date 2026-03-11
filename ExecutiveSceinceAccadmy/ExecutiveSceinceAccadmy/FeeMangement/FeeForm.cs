@@ -106,9 +106,9 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
         private void btnSearchFee_Click(object sender, EventArgs e)
         {
             this.Hide();
-            using (var feeSubMissionSearch = new searchFeeRecord())
+            using (var searchFeeRecord = new feeRecordSearch())
             {
-                feeSubMissionSearch.ShowDialog();
+                searchFeeRecord.ShowDialog();
             }
             this.Show();
         }

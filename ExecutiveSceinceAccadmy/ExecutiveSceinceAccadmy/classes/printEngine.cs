@@ -127,7 +127,7 @@ Obtained    : {academicHistory.ObtainedMarks}
      double discountAmount,
      string percentage,
      string feeMonth,
-     string currDate)
+     string currDate,string isPaid)
         {
 
             double finalFeeAmount = feeAmount - discountAmount;
@@ -141,7 +141,7 @@ Registration No : {registrationNumber}
 Fee ID         : {feeId}
 Month           : {feeMonth}
 Payment Date    : {currDate}
-
+Paid Status     : {isPaid}
 -----------------------------------------------
 Original Fee    : {feeAmount}
 Discount        : {discountAmount}

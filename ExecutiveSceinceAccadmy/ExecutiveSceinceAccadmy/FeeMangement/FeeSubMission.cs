@@ -168,16 +168,17 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
                 pnLogo.Controls.Add(btnBack);
 
                 // Attach click events
+                string isPaidStatus = "Paid";
                 btnSave.Click += (s, ev) =>
                 {
                     printEngine.printFeeReceipt(feeId,studentName, registrationNo, feeMonth, FeeAmount,
-                                                dicountAmount, percentage, feeMonth, currDate);
+                                                dicountAmount, percentage, feeMonth, currDate, isPaidStatus);
                 };
 
                 btnPrint.Click += (s, ev) =>
                 {
                     printEngine.printFeeReceipt(feeId,studentName, registrationNo, feeMonth, FeeAmount,
-                                                dicountAmount, percentage, feeMonth, currDate);
+                                                dicountAmount, percentage, feeMonth, currDate, isPaidStatus);
                 };
 
                 btnBack.Click += (s, ev) =>
