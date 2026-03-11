@@ -1,4 +1,4 @@
-
+use accadmyDb;
 CREATE DATABASE accadmyDb;
 GO
 
@@ -163,6 +163,9 @@ CREATE TABLE feeTb (
     updated_at DATETIME DEFAULT GETDATE(),
     FOREIGN KEY (stdRegisNo) REFERENCES StudentTb(stdRegisNo) ON DELETE CASCADE
 );
+ALTER TABLE feeTb
+ADD isPaid BIT NOT NULL DEFAULT 0;
+
 
 CREATE TABLE teacherProfitTb (
     teachProfitId INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
