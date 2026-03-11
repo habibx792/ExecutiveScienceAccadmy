@@ -58,9 +58,13 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
                 if (result == DialogResult.Yes)
                 {
                     // open fee payment screen
-                    this.Close();
-                    FeeSubMission frm = new FeeSubMission();
-                    frm.Show();
+                    this.Hide();
+
+                    FeeSubMission subMission = new FeeSubMission();
+                    subMission.StartPosition = FormStartPosition.CenterScreen;
+                    subMission.TopMost = true;   // puts it above other windows
+                    subMission.Show();
+                    subMission.Activate();
                 }
 
                 return;
