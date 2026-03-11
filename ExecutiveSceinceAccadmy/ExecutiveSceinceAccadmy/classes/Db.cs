@@ -365,6 +365,63 @@ namespace ExecutiveSceinceAccadmy.classes
                 return false;
             }
         }
+        public static bool checkStudentFeeStatus(string registrationNumber,string month,string feeId,bool searchFlag,DataGridView feeGrid)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(str))
+                {
+                    string query = @"SELECT 
+                                s.student_name AS StudentName,
+                                s.stdRegisNo AS RegistrationNo,
+                                f.paymentMonth AS Month,
+                                f.paymentDate AS PaymentDate,
+                                f.paidAmount As NetPaidAmount,
+                                CASE 
+                                    WHEN f.isPaid = 1 THEN 'Paid'
+                                    ELSE 'Not Paid'
+                                END AS Status
+                             FROM feeTb f
+                             INNER JOIN StudentTb s
+                                ON f.stdRegisNo = s.stdRegisNo ";
+
+                    if (searchFlag)
+                    {
+                        query += "WHERE s.stdRegisNo = @regNo AND f.paymentMonth = @month";
+                    }
+                    else
+                    {
+                        query += "WHERE f.feeId = @feeId";
+                    }
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+
+                    if (searchFlag)
+                    {
+                        cmd.Parameters.AddWithValue("@regNo", registrationNumber);
+                        cmd.Parameters.AddWithValue("@month", month);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@feeId", feeId);
+                    }
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+
+                    da.Fill(dt);
+
+                    feeGrid.DataSource = dt;
+
+                    return dt.Rows.Count > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
     }
 
 }

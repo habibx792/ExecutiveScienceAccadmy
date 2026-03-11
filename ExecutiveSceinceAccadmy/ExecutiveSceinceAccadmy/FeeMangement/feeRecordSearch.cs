@@ -25,7 +25,53 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
 
         private void button1_Click(object sender, EventArgs e)
         {
+            bool checkCond = (!rdStdId.Checked &&(!rdFeeId.Checked));
+            if (checkCond)
+            {
+                return;
+            }
+            bool searchFlag = true;
+            string feeId = "";
+            if (rdFeeId.Checked)
+            {
+                searchFlag = false;
+                feeId=dataHandler.stringTrim(txtId.Text);
+            }
+            
+            string studentRegistrationNumber=dataHandler.stringTrim(txtId.Text);
+            string searchMonth = cmbMonth.Text;
+            if(searchMonth==""||txtId.Text=="")
+            {
+                MessageBox.Show("Fill Both Fields Properly");
+                return;
+            }
+            bool dataLaodSuccess = DB.checkStudentFeeStatus(studentRegistrationNumber, searchMonth, feeId, searchFlag, dtGirdPaidStatus);
+            if (!dataLaodSuccess || dtGirdPaidStatus.Rows.Count == 0)
+            {
+                DialogResult result = MessageBox.Show(
+                    "Student has not paid fee for this month.\nDo you want to pay the fee now?",
+                    "Fee Not Paid",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
 
+                if (result == DialogResult.Yes)
+                {
+                    // open fee payment screen
+                    this.Close();
+                    FeeSubMission frm = new FeeSubMission();
+                    frm.Show();
+                }
+
+                return;
+            }
+            if (!dataLaodSuccess)
+            {
+                MessageBox.Show("student Not Found laoded data");
+            }
+            
+                
+            
         }
 
         private void feeRecordSearch_Load(object sender, EventArgs e)

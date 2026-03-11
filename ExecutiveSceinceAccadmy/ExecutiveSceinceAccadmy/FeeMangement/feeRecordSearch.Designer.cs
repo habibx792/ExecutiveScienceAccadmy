@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             button1 = new Button();
-            dataGridView1 = new DataGridView();
+            dtGirdPaidStatus = new DataGridView();
             rdFeeId = new RadioButton();
             panel1 = new Panel();
             lblMonth = new Label();
@@ -37,31 +37,34 @@
             label1 = new Label();
             rdStdId = new RadioButton();
             cmbMonth = new ComboBox();
-            textBox1 = new TextBox();
+            txtId = new TextBox();
             lbLogo = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtGirdPaidStatus).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(543, 288);
+            button1.BackColor = Color.Black;
+            button1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(516, 269);
             button1.Name = "button1";
-            button1.Size = new Size(94, 29);
+            button1.Size = new Size(121, 53);
             button1.TabIndex = 1;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            button1.Text = "Search";
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // dataGridView1
+            // dtGirdPaidStatus
             // 
-            dataGridView1.BackgroundColor = Color.FromArgb(255, 128, 128);
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(279, 471);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(811, 188);
-            dataGridView1.TabIndex = 3;
+            dtGirdPaidStatus.BackgroundColor = Color.FromArgb(255, 128, 128);
+            dtGirdPaidStatus.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtGirdPaidStatus.Location = new Point(279, 471);
+            dtGirdPaidStatus.Name = "dtGirdPaidStatus";
+            dtGirdPaidStatus.RowHeadersWidth = 51;
+            dtGirdPaidStatus.Size = new Size(811, 188);
+            dtGirdPaidStatus.TabIndex = 3;
             // 
             // rdFeeId
             // 
@@ -84,7 +87,7 @@
             panel1.Controls.Add(rdStdId);
             panel1.Controls.Add(cmbMonth);
             panel1.Controls.Add(rdFeeId);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(txtId);
             panel1.Controls.Add(button1);
             panel1.Location = new Point(279, 124);
             panel1.Name = "panel1";
@@ -142,12 +145,12 @@
             cmbMonth.Size = new Size(413, 31);
             cmbMonth.TabIndex = 3;
             // 
-            // textBox1
+            // txtId
             // 
-            textBox1.Location = new Point(224, 162);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(413, 30);
-            textBox1.TabIndex = 2;
+            txtId.Location = new Point(224, 162);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(413, 30);
+            txtId.TabIndex = 2;
             // 
             // lbLogo
             // 
@@ -168,11 +171,11 @@
             ClientSize = new Size(1432, 732);
             Controls.Add(lbLogo);
             Controls.Add(panel1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dtGirdPaidStatus);
             Name = "feeRecordSearch";
             Text = "feeRecordSearch";
             Load += feeRecordSearch_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtGirdPaidStatus).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -181,11 +184,11 @@
 
         #endregion
         private Button button1;
-        private DataGridView dataGridView1;
+        private DataGridView dtGirdPaidStatus;
         private RadioButton rdFeeId;
         private Panel panel1;
         private ComboBox cmbMonth;
-        private TextBox textBox1;
+        private TextBox txtId;
         private RadioButton rdStdId;
         private Label lblSearchby;
         private Label label1;
