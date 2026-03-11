@@ -77,15 +77,12 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
         {
             string registrationNo = dataHandler.stringTrim(txtRegis.Text);
 
-            // 1. Load student details into DataGridView
             bool querySuccess = DB.DisplayStudentDetailForFeeSubmission(registrationNo, dataGridView1);
             if (!querySuccess)
             {
-                // Database error already shown; just return
                 return;
             }
 
-            // 2. Check if any rows were returned (student exists)
             if (dataGridView1.Rows.Count == 0)
             {
                 MessageBox.Show("No student found with the provided registration number.",
@@ -93,7 +90,6 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
                 return;
             }
 
-            // 3. Student exists – now validate fee input fields
             if (string.IsNullOrWhiteSpace(txtAmount.Text) ||
                 string.IsNullOrWhiteSpace(txtDicount.Text) ||
                 string.IsNullOrWhiteSpace(txtSubBy.Text))
@@ -109,13 +105,14 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
             // 5. Proceed with fee submission
             btnSearch.Text = "Pay Now";
             string feeMonth = cmbMonth.SelectedItem.ToString();
+            string feeId = dataHandler.GenerateShortId(); // ensure this method exists
             double FeeAmount = double.Parse(txtAmount.Text);
             double dicountAmount = double.Parse(txtDicount.Text);
             string submittedBy = txtSubBy.Text;
             string percentage = ((dicountAmount / FeeAmount) * 100).ToString("F2") + "%";
             string currDate = DateTime.Now.ToShortDateString();
 
-            bool paymentSuccess = DB.submitFee(
+            bool paymentSuccess = DB.submitFee(feeId,
                 registrationNo,
                 FeeAmount,
                 dicountAmount,
@@ -172,13 +169,13 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
                 // Attach click events
                 btnSave.Click += (s, ev) =>
                 {
-                    printEngine.printFeeReceipt(studentName, registrationNo, feeMonth, FeeAmount,
+                    printEngine.printFeeReceipt(feeId,studentName, registrationNo, feeMonth, FeeAmount,
                                                 dicountAmount, percentage, feeMonth, currDate);
                 };
 
                 btnPrint.Click += (s, ev) =>
                 {
-                    printEngine.printFeeReceipt(studentName, registrationNo, feeMonth, FeeAmount,
+                    printEngine.printFeeReceipt(feeId,studentName, registrationNo, feeMonth, FeeAmount,
                                                 dicountAmount, percentage, feeMonth, currDate);
                 };
 

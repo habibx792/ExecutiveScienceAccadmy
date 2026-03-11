@@ -315,7 +315,7 @@ namespace ExecutiveSceinceAccadmy.classes
                 return false; // Indicate failure
             }
         }
-        public static bool submitFee(string registrationNo,
+        public static bool submitFee(string feeId, string registrationNo,
                               double amount,
                               double dicountAmount,
                               string submittedBy,
@@ -325,7 +325,6 @@ namespace ExecutiveSceinceAccadmy.classes
             {
                 using (SqlConnection con = new SqlConnection(str))
                 {
-                    string feeId = dataHandler.GenerateShortId(); // ensure this method exists
 
                     string query = @"INSERT INTO feeTb
                              (feeId, stdRegisNo, paymentMonth, amount, discount, paidAmount, receivedBy)

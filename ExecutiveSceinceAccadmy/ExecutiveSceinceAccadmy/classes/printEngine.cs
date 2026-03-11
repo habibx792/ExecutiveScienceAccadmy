@@ -119,7 +119,8 @@ Obtained    : {academicHistory.ObtainedMarks}
 
             return true;
         }
-        internal static bool printFeeReceipt(string studentName,
+        
+        internal static bool printFeeReceipt(string feeId,string studentName,
      string registrationNumber,
      string monthFee,
      double feeAmount,
@@ -137,6 +138,7 @@ Obtained    : {academicHistory.ObtainedMarks}
 
 Student Name    : {studentName}
 Registration No : {registrationNumber}
+Fee ID         : {feeId}
 Month           : {feeMonth}
 Payment Date    : {currDate}
 
