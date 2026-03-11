@@ -482,5 +482,34 @@ namespace ExecutiveSceinceAccadmy.classes
                 }
             }
         }
+        public static string showTotalCollectionOfThisYear(Label lbl,string month)
+        {
+            string query = @"SELECT SUM(paidAmount) 
+                     FROM feeTb 
+                     WHERE YEAR(paymentDate) = YEAR(GETDATE()) 
+                     AND paymentMonth = @month
+                     AND isPaid = 1";
+            using (SqlConnection con = new SqlConnection(str))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@month", month);
+                    con.Open();
+                    string ans = "";
+                    object result = cmd.ExecuteScalar();
+                    if (result != DBNull.Value)
+                    {
+                        ans=Convert.ToDouble(result).ToString("0.00");
+                        lbl.Text = Convert.ToDouble(result).ToString("0.00");
+                        return ans;
+                    }
+                    else
+                    {
+                        lbl.Text = "0";
+                    }
+                }
+            }
+            return "";
+        }
     }
 }

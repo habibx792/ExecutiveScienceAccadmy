@@ -56,6 +56,8 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
         {
             DB.showTotalCollectionOfToday(lblDay,dataHandler.getCurrentMonthStr());
             DB.showTotalCollectionOfThisMonth(lblMonth, dataHandler.getCurrentMonthStr());
+            MessageBox.Show(DB.showTotalCollectionOfThisYear(lblYear, dataHandler.getCurrentMonthStr()));
+
 
         }
 
