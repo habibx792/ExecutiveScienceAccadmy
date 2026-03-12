@@ -179,7 +179,7 @@
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(907, 732);
+            ClientSize = new Size(947, 732);
             Controls.Add(lbLogo);
             Controls.Add(panel1);
             Controls.Add(dtGirdPaidStatus);

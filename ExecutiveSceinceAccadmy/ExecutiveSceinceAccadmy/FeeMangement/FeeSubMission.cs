@@ -105,7 +105,7 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
             // 5. Proceed with fee submission
             btnSearch.Text = "Pay Now";
             string feeMonth = cmbMonth.SelectedItem.ToString();
-            string feeId = dataHandler.GenerateShortId()+dataHandler.generateRandomeNumber(3)+ dataHandler.GenerateShortId(); // ensure this method exists
+            string feeId = dataHandler.GenerateShortId() + dataHandler.generateRandomeNumber(3) + dataHandler.GenerateShortId(); // ensure this method exists
             double FeeAmount = double.Parse(txtAmount.Text);
             double dicountAmount = double.Parse(txtDicount.Text);
             string submittedBy = txtSubBy.Text;
@@ -171,13 +171,13 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
                 string isPaidStatus = "Paid";
                 btnSave.Click += (s, ev) =>
                 {
-                    printEngine.printFeeReceipt(feeId,studentName, registrationNo, feeMonth, FeeAmount,
+                    printEngine.printFeeReceipt(feeId, studentName, registrationNo, feeMonth, FeeAmount,
                                                 dicountAmount, percentage, feeMonth, currDate, isPaidStatus);
                 };
 
                 btnPrint.Click += (s, ev) =>
                 {
-                    printEngine.printFeeReceipt(feeId,studentName, registrationNo, feeMonth, FeeAmount,
+                    printEngine.printFeeReceipt(feeId, studentName, registrationNo, feeMonth, FeeAmount,
                                                 dicountAmount, percentage, feeMonth, currDate, isPaidStatus);
                 };
 
@@ -213,6 +213,16 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
 
         private void cmbMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbLogo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

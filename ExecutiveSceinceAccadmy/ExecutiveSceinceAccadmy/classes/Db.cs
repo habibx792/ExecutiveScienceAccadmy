@@ -273,46 +273,86 @@ namespace ExecutiveSceinceAccadmy.classes
                 using (SqlConnection con = new SqlConnection(str))
                 {
                     string query = @"SELECT s.stdRegisNo, s.student_name, d.domainName, c.className, f.amount
-                             FROM StudentTb s
-                             JOIN domainTb d ON s.domainId = d.domainId
-                             JOIN classTb c ON c.domainId = s.domainId
-                                 AND c.className = 
-                                     CASE 
-                                         WHEN s.classId <= 8 THEN CAST(s.classId AS VARCHAR)
-                                         ELSE CONCAT(s.classId,'th')
-                                     END
-                             LEFT JOIN setStdFeeTb f ON f.domainId = c.domainId AND f.classId = c.classId
-                             WHERE s.stdRegisNo = @RegNo;";
+                     FROM StudentTb s
+                     JOIN domainTb d ON s.domainId = d.domainId
+                     JOIN classTb c ON c.domainId = s.domainId
+                         AND c.className = 
+                             CASE 
+                                 WHEN s.classId <= 8 THEN CAST(s.classId AS VARCHAR)
+                                 ELSE CONCAT(s.classId,'th')
+                             END
+                     LEFT JOIN setStdFeeTb f ON f.domainId = c.domainId AND f.classId = c.classId
+                     WHERE s.stdRegisNo = @RegNo;";
 
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
                         cmd.Parameters.AddWithValue("@RegNo", registrationNo);
+
                         using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                         {
                             DataTable dtTable = new DataTable();
                             da.Fill(dtTable);
+
                             dt.DataSource = dtTable;
 
-                            // Optional column header renaming (this affects the DataGridView, not the DataTable)
+                            // Header Renaming
                             if (dt.Columns.Contains("stdRegisNo"))
                                 dt.Columns["stdRegisNo"].HeaderText = "Registration No";
+
                             if (dt.Columns.Contains("student_name"))
                                 dt.Columns["student_name"].HeaderText = "Name";
+
                             if (dt.Columns.Contains("domainName"))
                                 dt.Columns["domainName"].HeaderText = "Domain";
+
                             if (dt.Columns.Contains("className"))
                                 dt.Columns["className"].HeaderText = "Class";
+
                             if (dt.Columns.Contains("amount"))
                                 dt.Columns["amount"].HeaderText = "Fee Amount";
+
+                            // ----------- UI Styling -----------
+
+                            dt.BorderStyle = BorderStyle.None;
+                            dt.RowHeadersVisible = false;
+                            dt.EnableHeadersVisualStyles = false;
+
+                            // Header style
+                            dt.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(52, 73, 94);
+                            dt.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                            dt.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 11, FontStyle.Bold);
+                            dt.ColumnHeadersHeight = 40;
+
+                            // Row style
+                            dt.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+                            dt.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                            dt.RowTemplate.Height = 35;
+
+                            // Zebra rows
+                            dt.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(245, 245, 245);
+
+                            // Fill grid width evenly
+                            dt.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+                            // Selection color
+                            dt.DefaultCellStyle.SelectionBackColor = Color.FromArgb(41, 128, 185);
+                            dt.DefaultCellStyle.SelectionForeColor = Color.White;
+
+                            // Prevent messy resizing
+                            dt.AllowUserToResizeRows = false;
+                            dt.AllowUserToResizeColumns = false;
                         }
                     }
                 }
-                return true; // Query executed successfully
+
+                return true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Database error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false; // Indicate failure
+                MessageBox.Show("Database error: " + ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
         }
         public static bool submitFee(string feeId, string registrationNo,
