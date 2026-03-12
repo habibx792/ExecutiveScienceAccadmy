@@ -48,17 +48,17 @@
             // 
             pnLogo.BackColor = Color.IndianRed;
             pnLogo.Controls.Add(lbLogo);
-            pnLogo.Location = new Point(384, 14);
+            pnLogo.Location = new Point(171, 14);
             pnLogo.Margin = new Padding(4, 5, 4, 5);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(800, 130);
+            pnLogo.Size = new Size(737, 130);
             pnLogo.TabIndex = 9;
             // 
             // lbLogo
             // 
             lbLogo.AutoSize = true;
             lbLogo.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbLogo.Location = new Point(104, 34);
+            lbLogo.Location = new Point(46, 41);
             lbLogo.Margin = new Padding(4, 0, 4, 0);
             lbLogo.Name = "lbLogo";
             lbLogo.Size = new Size(653, 46);
@@ -77,10 +77,10 @@
             pnMain.Controls.Add(btnSearchFee);
             pnMain.Controls.Add(btnDefault);
             pnMain.Controls.Add(btnRegularFee);
-            pnMain.Location = new Point(384, 135);
+            pnMain.Location = new Point(171, 135);
             pnMain.Margin = new Padding(4, 5, 4, 5);
             pnMain.Name = "pnMain";
-            pnMain.Size = new Size(800, 583);
+            pnMain.Size = new Size(737, 583);
             pnMain.TabIndex = 10;
             // 
             // lblYear
@@ -95,36 +95,42 @@
             // lblMonth
             // 
             lblMonth.AutoSize = true;
+            lblMonth.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblMonth.ForeColor = Color.White;
             lblMonth.Location = new Point(519, 151);
             lblMonth.Name = "lblMonth";
-            lblMonth.Size = new Size(43, 23);
+            lblMonth.Size = new Size(61, 31);
             lblMonth.TabIndex = 22;
             lblMonth.Text = "0 RS";
             // 
             // label4
             // 
             label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.Location = new Point(168, 151);
             label4.Name = "label4";
-            label4.Size = new Size(184, 23);
+            label4.Size = new Size(232, 28);
             label4.TabIndex = 21;
             label4.Text = "Total Collection Of Day";
             // 
             // lblDay
             // 
             lblDay.AutoSize = true;
+            lblDay.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDay.ForeColor = Color.White;
             lblDay.Location = new Point(519, 88);
             lblDay.Name = "lblDay";
-            lblDay.Size = new Size(43, 23);
+            lblDay.Size = new Size(61, 31);
             lblDay.TabIndex = 20;
             lblDay.Text = "0 RS";
             // 
             // label5
             // 
             label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.Location = new Point(168, 88);
             label5.Name = "label5";
-            label5.Size = new Size(184, 23);
+            label5.Size = new Size(232, 28);
             label5.TabIndex = 19;
             label5.Text = "Total Collection Of Day";
             // 
@@ -180,7 +186,7 @@
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(1475, 858);
+            ClientSize = new Size(1075, 726);
             Controls.Add(pnMain);
             Controls.Add(pnLogo);
             Margin = new Padding(4, 5, 4, 5);
