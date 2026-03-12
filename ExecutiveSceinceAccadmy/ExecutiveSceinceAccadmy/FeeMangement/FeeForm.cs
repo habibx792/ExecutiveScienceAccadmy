@@ -130,12 +130,7 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            using (var collectionOfDay = new toDayFeeCollfrm())
-            {
-                collectionOfDay.ShowDialog();
-            }
-            this.Show();
+           
         }
     }
 }

@@ -40,12 +40,6 @@
     <Compile Update="FeeMangement\FeeSubMission.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FeeMangement\searchFeeRecord.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="FeeMangement\toDayFeeCollfrm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

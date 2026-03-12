@@ -24,7 +24,7 @@ namespace ExecutiveSceinceAccadmy.studentRegistrationForms
 
             StyleControls();
             StartPosition = FormStartPosition.CenterScreen;
-            UI.Instance.setFormSize(this, 1713, 1024);
+            //UI.Instance.setFormSize(this, 1713, 1024);
 
         }
 
@@ -48,7 +48,7 @@ namespace ExecutiveSceinceAccadmy.studentRegistrationForms
                borderRadius: 20,
                borderThickness: 2);
                 UI.Instance.AddFormShadow(this);
-                UI.Instance.setFormSize(this, 1713, 1024);
+                //UI.Instance.setFormSize(this, 1713, 1024);
                 UI.Instance.AddFormShadow(this);
                 UI.Instance.AddFormShadow(this);
 
@@ -118,6 +118,11 @@ namespace ExecutiveSceinceAccadmy.studentRegistrationForms
         }
 
         private void pnLogo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lbLogo_Click(object sender, EventArgs e)
         {
 
         }
