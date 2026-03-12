@@ -49,10 +49,7 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
             cmbAttendanceType.Items.Add("RTS");
             cmbAttendanceType.Items.Add("Primary");
             cmbAttendanceType.SelectedIndex = 0;
-            foreach (DataGridViewRow row in dtGridAttence.Rows)
-            {
-                row.Cells["colIsPresent"].Value = true;
-            }
+
         }
         private void setClassOnBaseOfAttendanceType(int start = 1, int end = 12)
         {
