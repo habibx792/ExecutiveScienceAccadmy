@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 
 namespace ExecutiveSceinceAccadmy.FeeMangement
 {
@@ -16,6 +17,7 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
         public feeRecordSearch()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -80,6 +82,8 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
         private void feeRecordSearch_Load(object sender, EventArgs e)
         {
             dataHandler.LoadMonths(cmbMonth);
+            this.StartPosition = FormStartPosition.CenterScreen;
+
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
