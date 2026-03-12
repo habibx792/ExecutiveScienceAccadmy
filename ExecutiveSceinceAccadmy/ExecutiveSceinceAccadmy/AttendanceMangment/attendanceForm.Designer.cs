@@ -42,8 +42,9 @@
             // 
             // pnLogo
             // 
+            pnLogo.BackColor = Color.IndianRed;
             pnLogo.Controls.Add(lbLogo);
-            pnLogo.Location = new Point(94, 18);
+            pnLogo.Location = new Point(13, 30);
             pnLogo.Margin = new Padding(4, 5, 4, 5);
             pnLogo.Name = "pnLogo";
             pnLogo.Size = new Size(760, 135);
@@ -83,12 +84,13 @@
             // 
             // pnMain
             // 
+            pnMain.BackColor = Color.IndianRed;
             pnMain.Controls.Add(btnMark);
             pnMain.Controls.Add(btnSum);
             pnMain.Controls.Add(btnUpAtt);
             pnMain.Controls.Add(btnSujectWise);
             pnMain.Controls.Add(btnDashBoad);
-            pnMain.Location = new Point(94, 163);
+            pnMain.Location = new Point(13, 175);
             pnMain.Margin = new Padding(4, 5, 4, 5);
             pnMain.Name = "pnMain";
             pnMain.Size = new Size(760, 427);
@@ -129,7 +131,8 @@
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(913, 748);
+            BackColor = Color.RoyalBlue;
+            ClientSize = new Size(790, 636);
             Controls.Add(pnMain);
             Controls.Add(pnLogo);
             Margin = new Padding(4, 5, 4, 5);
