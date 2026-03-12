@@ -48,6 +48,18 @@ namespace ExecutiveSceinceAccadmy.classes
         {
             return DateTime.Now.ToString("yy");
         }
+        public static string getCurrentDayOfMonth()
+        {
+            return DateTime.Now.ToString("dd");
+        }
+        public static string getCurrentMonthTwoDigits()
+        {
+            return DateTime.Now.ToString("MM");
+        }
+        public static string getStringDayOfWeek()
+        {
+            return DateTime.Now.DayOfWeek.ToString();
+        }
         public static string createRegistrationNumber(string domain, string gender, string classLevel)
         {
             int currStd=DB.getCurrentStdNumber() + 1;

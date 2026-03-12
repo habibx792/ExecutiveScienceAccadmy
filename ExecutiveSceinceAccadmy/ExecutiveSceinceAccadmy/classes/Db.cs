@@ -639,7 +639,7 @@ namespace ExecutiveSceinceAccadmy.classes
 
                     dtAttenddance.Rows.Clear();
 
-                    string today = DateTime.Now.ToString("dddd");
+                    string today = DateTime.Now.ToString("dddd - dd/MM");
 
                     foreach (DataRow row in dt.Rows)
                     {
@@ -647,7 +647,8 @@ namespace ExecutiveSceinceAccadmy.classes
                             row["stdRegisNo"].ToString(),
                             row["student_name"].ToString(),
                             today,
-                            false // default absent until teacher marks present
+                            true    // default absent until teacher marks present
+
                         );
                     }
                 }

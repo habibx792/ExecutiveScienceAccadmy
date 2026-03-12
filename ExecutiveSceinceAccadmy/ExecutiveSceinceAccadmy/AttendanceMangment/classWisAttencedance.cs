@@ -6,8 +6,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace ExecutiveSceinceAccadmy.AttendanceMangment
 {
@@ -46,8 +48,11 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
             cmbAttendanceType.Items.Add("Regular");
             cmbAttendanceType.Items.Add("RTS");
             cmbAttendanceType.Items.Add("Primary");
-
             cmbAttendanceType.SelectedIndex = 0;
+            foreach (DataGridViewRow row in dtGridAttence.Rows)
+            {
+                row.Cells["colIsPresent"].Value = true;
+            }
         }
         private void setClassOnBaseOfAttendanceType(int start = 1, int end = 12)
         {
@@ -81,6 +86,8 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
             DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
             chk.Name = "colIsPresent";
             chk.HeaderText = "Is Present";
+            chk.DefaultCellStyle.NullValue = true; // default checked
+
 
             dtGridAttence.Columns.Add(chk);
             // remove ugly borders
@@ -151,10 +158,11 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
             string currDay= DateTime.Now.Day.ToString();
             //MessageBox.Show($"Searching attendance for {attendanceTypeSelected} class {classSelected} for month {currentMonth} and day {currDay}");
                 bool dataLaodSuccess = DB.loadClassAttendance(classSelected, attendanceTypeSelected,dtGridAttence);
-                if (!dataLaodSuccess || dtGridAttence.Rows.Count == 0)
-                {
-                    MessageBox.Show("No attendance data found for the selected class and month.");
+            if (!dataLaodSuccess || dtGridAttence.Rows.Count == 0)
+            {
+                MessageBox.Show("No attendance data found for the selected class and month.");
             }
+            
         }
     }
 }
