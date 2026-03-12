@@ -19,7 +19,7 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
             InitializeComponent();
             UI.Instance.StyleForm(this,
 
-              backgroundColor: Color.FromArgb(245, 245, 245),
+              backgroundColor: Color.RoyalBlue,
               borderRadius: 25,
               showCustomTitleBar: true,
               title: "Executive Science Academy");
@@ -28,7 +28,6 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
             UI.Instance.StyleButton(btnDashBoad, borderRadius: 20);
             UI.Instance.StyleButton(btnSujectWise, borderRadius: 20);
             UI.Instance.StyleButton(btnSum, borderRadius: 20);
-            UI.Instance.StyleButton(btnRts, borderRadius: 20);
             UI.Instance.StyleButton(btnUpAtt, borderRadius: 20);
             UI.Instance.StyleButton(btnMark, borderRadius: 20);
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -38,12 +37,12 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
         {
 
             UI.Instance.StylePanel(pnLogo,
-                backColor: Color.White,
+                backColor: Color.IndianRed,
                 borderColor: Color.FromArgb(0, 120, 215),
                 borderRadius: 20,
                 borderThickness: 2);
             UI.Instance.AddFormShadow(this);
-            UI.Instance.StylePanel(pnMain, backColor: Color.White,
+            UI.Instance.StylePanel(pnMain, backColor: Color.IndianRed,
                 borderColor: Color.FromArgb(0, 120, 215),
                 borderRadius: 20,
                 borderThickness: 2);

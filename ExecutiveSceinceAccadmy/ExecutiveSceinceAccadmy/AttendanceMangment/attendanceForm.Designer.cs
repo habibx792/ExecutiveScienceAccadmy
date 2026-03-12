@@ -30,7 +30,6 @@
         {
             pnLogo = new Panel();
             lbLogo = new Label();
-            btnRts = new Button();
             btnMark = new Button();
             btnSujectWise = new Button();
             pnMain = new Panel();
@@ -44,35 +43,29 @@
             // pnLogo
             // 
             pnLogo.Controls.Add(lbLogo);
-            pnLogo.Location = new Point(73, 12);
+            pnLogo.Location = new Point(94, 18);
+            pnLogo.Margin = new Padding(4, 5, 4, 5);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(1178, 88);
+            pnLogo.Size = new Size(760, 135);
             pnLogo.TabIndex = 11;
             // 
             // lbLogo
             // 
             lbLogo.AutoSize = true;
             lbLogo.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbLogo.Location = new Point(356, 22);
+            lbLogo.Location = new Point(65, 42);
+            lbLogo.Margin = new Padding(4, 0, 4, 0);
             lbLogo.Name = "lbLogo";
-            lbLogo.Size = new Size(529, 37);
+            lbLogo.Size = new Size(653, 46);
             lbLogo.TabIndex = 0;
             lbLogo.Text = "Welcome To Executive Sceince Accadmy";
             // 
-            // btnRts
-            // 
-            btnRts.Location = new Point(587, 41);
-            btnRts.Name = "btnRts";
-            btnRts.Size = new Size(237, 130);
-            btnRts.TabIndex = 25;
-            btnRts.Text = "RTC Class Wise";
-            btnRts.UseVisualStyleBackColor = true;
-            // 
             // btnMark
             // 
-            btnMark.Location = new Point(44, 41);
+            btnMark.Location = new Point(57, 63);
+            btnMark.Margin = new Padding(4, 5, 4, 5);
             btnMark.Name = "btnMark";
-            btnMark.Size = new Size(229, 130);
+            btnMark.Size = new Size(294, 74);
             btnMark.TabIndex = 24;
             btnMark.Text = "Class Wise";
             btnMark.UseVisualStyleBackColor = true;
@@ -80,9 +73,10 @@
             // 
             // btnSujectWise
             // 
-            btnSujectWise.Location = new Point(324, 41);
+            btnSujectWise.Location = new Point(417, 63);
+            btnSujectWise.Margin = new Padding(4, 5, 4, 5);
             btnSujectWise.Name = "btnSujectWise";
-            btnSujectWise.Size = new Size(221, 130);
+            btnSujectWise.Size = new Size(301, 74);
             btnSujectWise.TabIndex = 20;
             btnSujectWise.Text = "Suject Wise";
             btnSujectWise.UseVisualStyleBackColor = true;
@@ -90,30 +84,32 @@
             // pnMain
             // 
             pnMain.Controls.Add(btnMark);
-            pnMain.Controls.Add(btnRts);
             pnMain.Controls.Add(btnSum);
             pnMain.Controls.Add(btnUpAtt);
             pnMain.Controls.Add(btnSujectWise);
             pnMain.Controls.Add(btnDashBoad);
-            pnMain.Location = new Point(239, 173);
+            pnMain.Location = new Point(94, 163);
+            pnMain.Margin = new Padding(4, 5, 4, 5);
             pnMain.Name = "pnMain";
-            pnMain.Size = new Size(873, 408);
+            pnMain.Size = new Size(760, 427);
             pnMain.TabIndex = 26;
             // 
             // btnSum
             // 
-            btnSum.Location = new Point(324, 234);
+            btnSum.Location = new Point(60, 270);
+            btnSum.Margin = new Padding(4, 5, 4, 5);
             btnSum.Name = "btnSum";
-            btnSum.Size = new Size(229, 130);
+            btnSum.Size = new Size(294, 75);
             btnSum.TabIndex = 21;
             btnSum.Text = "Show Summary";
             btnSum.UseVisualStyleBackColor = true;
             // 
             // btnUpAtt
             // 
-            btnUpAtt.Location = new Point(42, 234);
+            btnUpAtt.Location = new Point(57, 169);
+            btnUpAtt.Margin = new Padding(4, 5, 4, 5);
             btnUpAtt.Name = "btnUpAtt";
-            btnUpAtt.Size = new Size(231, 130);
+            btnUpAtt.Size = new Size(297, 75);
             btnUpAtt.TabIndex = 23;
             btnUpAtt.Text = "Teacher Attendance";
             btnUpAtt.UseVisualStyleBackColor = true;
@@ -121,20 +117,22 @@
             // 
             // btnDashBoad
             // 
-            btnDashBoad.Location = new Point(587, 234);
+            btnDashBoad.Location = new Point(413, 169);
+            btnDashBoad.Margin = new Padding(4, 5, 4, 5);
             btnDashBoad.Name = "btnDashBoad";
-            btnDashBoad.Size = new Size(237, 130);
+            btnDashBoad.Size = new Size(305, 81);
             btnDashBoad.TabIndex = 22;
             btnDashBoad.Text = "Attendance DashBoard";
             btnDashBoad.UseVisualStyleBackColor = true;
             // 
             // attendanceForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1357, 648);
+            ClientSize = new Size(913, 748);
             Controls.Add(pnMain);
             Controls.Add(pnLogo);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "attendanceForm";
             Text = "attendanceForm";
             Load += attendanceForm_Load;
@@ -149,7 +147,6 @@
 
         private Panel pnLogo;
         private Label lbLogo;
-        private Button btnRts;
         private Button btnMark;
         private Button btnSujectWise;
         private Panel pnMain;
