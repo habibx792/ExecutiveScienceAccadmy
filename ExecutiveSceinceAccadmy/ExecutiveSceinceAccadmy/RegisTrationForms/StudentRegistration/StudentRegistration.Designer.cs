@@ -30,7 +30,7 @@
             btnSupReg.BackColor = Color.Black;
             btnSupReg.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSupReg.ForeColor = Color.Blue;
-            btnSupReg.Location = new Point(461, 365);
+            btnSupReg.Location = new Point(416, 234);
             btnSupReg.Margin = new Padding(4, 5, 4, 5);
             btnSupReg.Name = "btnSupReg";
             btnSupReg.Size = new Size(272, 82);
@@ -44,7 +44,7 @@
             btnStdReg.BackColor = Color.Black;
             btnStdReg.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnStdReg.ForeColor = Color.Blue;
-            btnStdReg.Location = new Point(125, 207);
+            btnStdReg.Location = new Point(80, 76);
             btnStdReg.Margin = new Padding(4, 5, 4, 5);
             btnStdReg.Name = "btnStdReg";
             btnStdReg.Size = new Size(281, 95);
@@ -58,7 +58,7 @@
             BtnFeeSub.BackColor = Color.Black;
             BtnFeeSub.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             BtnFeeSub.ForeColor = Color.Blue;
-            BtnFeeSub.Location = new Point(461, 207);
+            BtnFeeSub.Location = new Point(416, 76);
             BtnFeeSub.Margin = new Padding(4, 5, 4, 5);
             BtnFeeSub.Name = "BtnFeeSub";
             BtnFeeSub.Size = new Size(272, 97);
@@ -70,10 +70,10 @@
             // pnLogo
             // 
             pnLogo.Controls.Add(lbLogo);
-            pnLogo.Location = new Point(104, 75);
+            pnLogo.Location = new Point(104, 108);
             pnLogo.Margin = new Padding(4, 5, 4, 5);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(798, 135);
+            pnLogo.Size = new Size(798, 102);
             pnLogo.TabIndex = 10;
             pnLogo.Paint += pnLogo_Paint;
             // 
@@ -94,7 +94,7 @@
             btnPrimaryReg.BackColor = Color.Black;
             btnPrimaryReg.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnPrimaryReg.ForeColor = Color.Blue;
-            btnPrimaryReg.Location = new Point(125, 365);
+            btnPrimaryReg.Location = new Point(80, 234);
             btnPrimaryReg.Margin = new Padding(4, 5, 4, 5);
             btnPrimaryReg.Name = "btnPrimaryReg";
             btnPrimaryReg.Size = new Size(271, 82);
@@ -109,10 +109,10 @@
             pnMain.Controls.Add(btnPrimaryReg);
             pnMain.Controls.Add(btnStdReg);
             pnMain.Controls.Add(btnSupReg);
-            pnMain.Location = new Point(104, 211);
+            pnMain.Location = new Point(104, 213);
             pnMain.Margin = new Padding(4, 5, 4, 5);
             pnMain.Name = "pnMain";
-            pnMain.Size = new Size(798, 539);
+            pnMain.Size = new Size(798, 405);
             pnMain.TabIndex = 14;
             pnMain.Paint += panel1_Paint;
             // 
@@ -120,8 +120,8 @@
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.OrangeRed;
-            ClientSize = new Size(985, 799);
+            BackColor = Color.RoyalBlue;
+            ClientSize = new Size(985, 663);
             Controls.Add(pnMain);
             Controls.Add(pnLogo);
             Margin = new Padding(4, 5, 4, 5);

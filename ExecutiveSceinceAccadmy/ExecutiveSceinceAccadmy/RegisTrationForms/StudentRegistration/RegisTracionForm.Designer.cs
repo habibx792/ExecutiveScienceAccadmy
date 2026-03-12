@@ -288,10 +288,10 @@
             // 
             pnLogo.BackColor = Color.IndianRed;
             pnLogo.Controls.Add(lbLogo);
-            pnLogo.Location = new Point(114, 18);
+            pnLogo.Location = new Point(28, 73);
             pnLogo.Margin = new Padding(4, 5, 4, 5);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(1579, 148);
+            pnLogo.Size = new Size(1579, 72);
             pnLogo.TabIndex = 25;
             pnLogo.Paint += pnLogo_Paint;
             // 
@@ -299,7 +299,7 @@
             // 
             lbLogo.AutoSize = true;
             lbLogo.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbLogo.Location = new Point(510, 35);
+            lbLogo.Location = new Point(502, 17);
             lbLogo.Margin = new Padding(4, 0, 4, 0);
             lbLogo.Name = "lbLogo";
             lbLogo.Size = new Size(653, 46);
@@ -308,13 +308,13 @@
             // 
             // pnMainPn
             // 
-            pnMainPn.BackColor = Color.RoyalBlue;
+            pnMainPn.BackColor = Color.White;
             pnMainPn.Controls.Add(pnAccadminc);
             pnMainPn.Controls.Add(pnPreq);
             pnMainPn.Controls.Add(pnPerMain);
             pnMainPn.Controls.Add(pnPerson);
             pnMainPn.Controls.Add(btnRegistation);
-            pnMainPn.Location = new Point(114, 150);
+            pnMainPn.Location = new Point(28, 146);
             pnMainPn.Margin = new Padding(4, 5, 4, 5);
             pnMainPn.Name = "pnMainPn";
             pnMainPn.Size = new Size(1579, 1140);
@@ -766,7 +766,7 @@
             // 
             // pnHide
             // 
-            pnHide.Location = new Point(57, 1014);
+            pnHide.Location = new Point(4, 888);
             pnHide.Margin = new Padding(4, 5, 4, 5);
             pnHide.Name = "pnHide";
             pnHide.Size = new Size(32, 153);
@@ -777,7 +777,7 @@
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(1781, 1055);
+            ClientSize = new Size(1635, 1055);
             Controls.Add(pnHide);
             Controls.Add(pnMainPn);
             Controls.Add(pnLogo);

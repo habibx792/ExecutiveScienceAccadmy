@@ -60,23 +60,23 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
                 borderColor: Color.FromArgb(0, 120, 215),
                 borderRadius: 1,
                 borderThickness: 2);
-            UI.Instance.StylePanel(pnAccadminc, backColor: Color.RoyalBlue,
+            UI.Instance.StylePanel(pnAccadminc, backColor: Color.White,
               borderColor: Color.FromArgb(0, 120, 215),
               borderRadius: 10,
               borderThickness: 0);
-            UI.Instance.StylePanel(pnMainPn, backColor: Color.RoyalBlue,
+            UI.Instance.StylePanel(pnMainPn, backColor: Color.White,
               borderColor: Color.FromArgb(0, 120, 215),
               borderRadius: 10,
               borderThickness: 0);
-            UI.Instance.StylePanel(pnPerMain, backColor: Color.RoyalBlue,
+            UI.Instance.StylePanel(pnPerMain, backColor: Color.White,
               borderColor: Color.FromArgb(0, 120, 215),
               borderRadius: 10,
               borderThickness: 0);
-            UI.Instance.StylePanel(pnPreq, backColor: Color.RoyalBlue,
+            UI.Instance.StylePanel(pnPreq, backColor: Color.White,
               borderColor: Color.FromArgb(0, 120, 215),
               borderRadius: 10,
               borderThickness: 0);
-            UI.Instance.StylePanel(pnPerMain, backColor: Color.RoyalBlue,
+            UI.Instance.StylePanel(pnPerMain, backColor: Color.White,
               borderColor: Color.FromArgb(0, 120, 215),
               borderRadius: 10,
               borderThickness: 0);
