@@ -291,8 +291,9 @@
             pnLogo.Location = new Point(114, 18);
             pnLogo.Margin = new Padding(4, 5, 4, 5);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(1579, 135);
+            pnLogo.Size = new Size(1579, 148);
             pnLogo.TabIndex = 25;
+            pnLogo.Paint += pnLogo_Paint;
             // 
             // lbLogo
             // 
@@ -743,13 +744,14 @@
             // 
             // pnPerson
             // 
-            pnPerson.BackColor = Color.LightGreen;
+            pnPerson.BackColor = Color.IndianRed;
             pnPerson.Controls.Add(label19);
             pnPerson.Location = new Point(0, 0);
             pnPerson.Margin = new Padding(4, 5, 4, 5);
             pnPerson.Name = "pnPerson";
             pnPerson.Size = new Size(1579, 70);
             pnPerson.TabIndex = 41;
+            pnPerson.Paint += pnPerson_Paint;
             // 
             // label19
             // 
