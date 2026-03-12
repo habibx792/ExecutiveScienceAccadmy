@@ -68,6 +68,11 @@ namespace ExecutiveSceinceAccadmy.classes
             return year + "-" + classLevel + "-" + domain + "-"+gender +"-"+ currStd.ToString();
 
         }
+        public static string getStringOfCurrentDate()
+        {
+            return DateTime.Now.ToString("yyyyMd");
+        }
+
         public static int calculateAge(DateTime birthDate)
         {
             DateTime today = DateTime.Today;
