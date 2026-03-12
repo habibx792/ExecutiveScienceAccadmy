@@ -83,7 +83,7 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
         {
             dataHandler.LoadMonths(cmbMonth);
             this.StartPosition = FormStartPosition.CenterScreen;
-
+            this.TopMost = true;
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
