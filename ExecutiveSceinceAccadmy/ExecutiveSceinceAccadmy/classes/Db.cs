@@ -422,8 +422,9 @@ namespace ExecutiveSceinceAccadmy.classes
                 return false;
             }
         }
-        public static void showTotalCollectionOfToday(Label lbl, string month)
+        public static string showTotalCollectionOfToday(string month)
         {
+            string resultStr = "";
             string query = @"SELECT SUM(paidAmount) 
                      FROM feeTb 
                      WHERE CAST(paymentDate AS DATE) = @today 
@@ -443,17 +444,19 @@ namespace ExecutiveSceinceAccadmy.classes
 
                     if (result != DBNull.Value)
                     {
-                        lbl.Text = Convert.ToDouble(result).ToString("0.00");
+                        resultStr = Convert.ToDouble(result).ToString("0.00");
                     }
                     else
                     {
-                        lbl.Text = "0";
+                        resultStr = "0";
                     }
                 }
             }
+            return resultStr;
         }
-        public static void showTotalCollectionOfThisMonth(Label lbl, string month)
+        public static string showTotalCollectionOfThisMonth( string month)
         {
+            string resultStr = "";
             string query = @"SELECT SUM(paidAmount) 
                      FROM feeTb 
                      WHERE MONTH(paymentDate) = MONTH(GETDATE()) 
@@ -473,17 +476,20 @@ namespace ExecutiveSceinceAccadmy.classes
 
                     if (result != DBNull.Value)
                     {
-                        lbl.Text = Convert.ToDouble(result).ToString("0.00");
+                        resultStr = Convert.ToDouble(result).ToString("0.00");
                     }
                     else
                     {
-                        lbl.Text = "0";
+                        resultStr = "0";
                     }
                 }
+
             }
+            return resultStr;
         }
-        public static string showTotalCollectionOfThisYear(Label lbl,string month)
+        public static string showTotalCollectionOfThisYear(string month)
         {
+            string resultStr= "";
             string query = @"SELECT SUM(paidAmount) 
                      FROM feeTb 
                      WHERE YEAR(paymentDate) = YEAR(GETDATE()) 
@@ -495,21 +501,19 @@ namespace ExecutiveSceinceAccadmy.classes
                 {
                     cmd.Parameters.AddWithValue("@month", month);
                     con.Open();
-                    string ans = "";
                     object result = cmd.ExecuteScalar();
                     if (result != DBNull.Value)
                     {
-                        ans=Convert.ToDouble(result).ToString("0.00");
-                        lbl.Text = Convert.ToDouble(result).ToString("0.00");
-                        return ans;
+                        resultStr = Convert.ToDouble(result).ToString("0.00");
+                        return resultStr;
                     }
                     else
                     {
-                        lbl.Text = "0";
+                        resultStr = "0";
                     }
                 }
             }
-            return "";
+            return resultStr;
         }
     }
 }
