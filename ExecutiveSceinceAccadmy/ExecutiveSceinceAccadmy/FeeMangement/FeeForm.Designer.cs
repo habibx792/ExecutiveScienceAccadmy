@@ -48,7 +48,7 @@
             // 
             pnLogo.BackColor = Color.IndianRed;
             pnLogo.Controls.Add(lbLogo);
-            pnLogo.Location = new Point(171, 14);
+            pnLogo.Location = new Point(70, 14);
             pnLogo.Margin = new Padding(4, 5, 4, 5);
             pnLogo.Name = "pnLogo";
             pnLogo.Size = new Size(737, 130);
@@ -77,7 +77,7 @@
             pnMain.Controls.Add(btnSearchFee);
             pnMain.Controls.Add(btnDefault);
             pnMain.Controls.Add(btnRegularFee);
-            pnMain.Location = new Point(171, 135);
+            pnMain.Location = new Point(70, 135);
             pnMain.Margin = new Padding(4, 5, 4, 5);
             pnMain.Name = "pnMain";
             pnMain.Size = new Size(737, 583);
@@ -186,7 +186,7 @@
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(1075, 726);
+            ClientSize = new Size(850, 726);
             Controls.Add(pnMain);
             Controls.Add(pnLogo);
             Margin = new Padding(4, 5, 4, 5);

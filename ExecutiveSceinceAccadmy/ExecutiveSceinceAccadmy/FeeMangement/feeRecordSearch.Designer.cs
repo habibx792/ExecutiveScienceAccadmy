@@ -32,15 +32,17 @@
             dtGirdPaidStatus = new DataGridView();
             rdFeeId = new RadioButton();
             panel1 = new Panel();
+            panel2 = new Panel();
+            label1 = new Label();
             lblMonth = new Label();
             lblSearchby = new Label();
-            label1 = new Label();
             rdStdId = new RadioButton();
             cmbMonth = new ComboBox();
             txtId = new TextBox();
             lbLogo = new Label();
             ((System.ComponentModel.ISupportInitialize)dtGirdPaidStatus).BeginInit();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // button1
@@ -60,10 +62,10 @@
             // 
             dtGirdPaidStatus.BackgroundColor = Color.FromArgb(255, 128, 128);
             dtGirdPaidStatus.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtGirdPaidStatus.Location = new Point(279, 471);
+            dtGirdPaidStatus.Location = new Point(45, 471);
             dtGirdPaidStatus.Name = "dtGirdPaidStatus";
             dtGirdPaidStatus.RowHeadersWidth = 51;
-            dtGirdPaidStatus.Size = new Size(811, 188);
+            dtGirdPaidStatus.Size = new Size(850, 188);
             dtGirdPaidStatus.TabIndex = 3;
             // 
             // rdFeeId
@@ -81,18 +83,38 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(255, 128, 128);
+            panel1.Controls.Add(panel2);
             panel1.Controls.Add(lblMonth);
             panel1.Controls.Add(lblSearchby);
-            panel1.Controls.Add(label1);
             panel1.Controls.Add(rdStdId);
             panel1.Controls.Add(cmbMonth);
             panel1.Controls.Add(rdFeeId);
             panel1.Controls.Add(txtId);
             panel1.Controls.Add(button1);
-            panel1.Location = new Point(279, 124);
+            panel1.Location = new Point(45, 124);
             panel1.Name = "panel1";
-            panel1.Size = new Size(811, 352);
+            panel1.Size = new Size(850, 352);
             panel1.TabIndex = 5;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.SteelBlue;
+            panel2.Controls.Add(label1);
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(850, 84);
+            panel2.TabIndex = 7;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(251, 17);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(308, 46);
+            label1.TabIndex = 7;
+            label1.Text = "Search Fee Record";
             // 
             // lblMonth
             // 
@@ -113,17 +135,6 @@
             lblSearchby.Size = new Size(110, 28);
             lblSearchby.TabIndex = 8;
             lblSearchby.Text = "Student Id";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(224, 27);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(308, 46);
-            label1.TabIndex = 7;
-            label1.Text = "Search Fee Record";
             // 
             // rdStdId
             // 
@@ -156,7 +167,7 @@
             // 
             lbLogo.AutoSize = true;
             lbLogo.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbLogo.Location = new Point(364, 41);
+            lbLogo.Location = new Point(173, 42);
             lbLogo.Margin = new Padding(4, 0, 4, 0);
             lbLogo.Name = "lbLogo";
             lbLogo.Size = new Size(653, 46);
@@ -168,7 +179,7 @@
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(1432, 732);
+            ClientSize = new Size(907, 732);
             Controls.Add(lbLogo);
             Controls.Add(panel1);
             Controls.Add(dtGirdPaidStatus);
@@ -178,6 +189,8 @@
             ((System.ComponentModel.ISupportInitialize)dtGirdPaidStatus).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -194,5 +207,6 @@
         private Label label1;
         private Label lbLogo;
         private Label lblMonth;
+        private Panel panel2;
     }
 }
