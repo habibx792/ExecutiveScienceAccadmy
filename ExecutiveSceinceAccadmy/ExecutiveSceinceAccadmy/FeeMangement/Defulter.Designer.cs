@@ -34,8 +34,9 @@
             lbLogo = new Label();
             label1 = new Label();
             panel1 = new Panel();
-            cmbMonth = new ComboBox();
             label2 = new Label();
+            cmbMonth = new ComboBox();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dtDefaulter).BeginInit();
             pnLogo.SuspendLayout();
             panel1.SuspendLayout();
@@ -54,7 +55,7 @@
             // dtDefaulter
             // 
             dtDefaulter.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtDefaulter.Location = new Point(39, 226);
+            dtDefaulter.Location = new Point(39, 235);
             dtDefaulter.Margin = new Padding(4, 5, 4, 5);
             dtDefaulter.Name = "dtDefaulter";
             dtDefaulter.RowHeadersWidth = 51;
@@ -98,20 +99,13 @@
             // panel1
             // 
             panel1.BackColor = Color.DeepSkyBlue;
+            panel1.Controls.Add(button2);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(cmbMonth);
             panel1.Location = new Point(39, 178);
             panel1.Name = "panel1";
-            panel1.Size = new Size(975, 49);
+            panel1.Size = new Size(975, 57);
             panel1.TabIndex = 10;
-            // 
-            // cmbMonth
-            // 
-            cmbMonth.FormattingEnabled = true;
-            cmbMonth.Location = new Point(196, 8);
-            cmbMonth.Name = "cmbMonth";
-            cmbMonth.Size = new Size(409, 31);
-            cmbMonth.TabIndex = 0;
             // 
             // label2
             // 
@@ -123,6 +117,25 @@
             label2.Size = new Size(75, 28);
             label2.TabIndex = 1;
             label2.Text = "Month";
+            // 
+            // cmbMonth
+            // 
+            cmbMonth.FormattingEnabled = true;
+            cmbMonth.Location = new Point(196, 8);
+            cmbMonth.Name = "cmbMonth";
+            cmbMonth.Size = new Size(409, 31);
+            cmbMonth.TabIndex = 0;
+            // 
+            // button2
+            // 
+            button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.Location = new Point(670, 3);
+            button2.Name = "button2";
+            button2.Size = new Size(159, 46);
+            button2.TabIndex = 11;
+            button2.Text = "Search";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // Defulter
             // 
@@ -158,5 +171,6 @@
         private Panel panel1;
         private ComboBox cmbMonth;
         private Label label2;
+        private Button button2;
     }
 }

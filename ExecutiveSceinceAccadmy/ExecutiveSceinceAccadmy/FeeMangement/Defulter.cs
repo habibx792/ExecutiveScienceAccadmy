@@ -62,9 +62,9 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
             dataHandler.LoadMonths(cmbMonth);
             dtDefaulter.Rows.Clear();
             string currenterMonth = dataHandler.getCurrentMonthStr();
-            if(cmbMonth.SelectedItem!=null)
+            if (cmbMonth.SelectedItem != null)
             {
-                currenterMonth= cmbMonth.SelectedItem.ToString();
+                currenterMonth = cmbMonth.SelectedItem.ToString();
             }
             DB.showDefaulterStudent(dtDefaulter, currenterMonth);
         }
@@ -72,6 +72,16 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
         private void lbLogo_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string currMonth = dataHandler.getCurrentMonthStr();
+            if (cmbMonth.SelectedItem != null)
+            {
+                currMonth = cmbMonth.SelectedItem.ToString();
+            }
+            DB.showDefaulterStudent(dtDefaulter,currMonth);
         }
     }
 }
