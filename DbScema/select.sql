@@ -8,7 +8,7 @@ select * from stdAdress;
 select * from academicTb;
 select * from setStdFeeTb;
 select * from feeTb;
-
+select * from studentAttendance;
 
 
 
