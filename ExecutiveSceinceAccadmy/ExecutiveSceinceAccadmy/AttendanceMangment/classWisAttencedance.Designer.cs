@@ -18,42 +18,48 @@
         private void InitializeComponent()
         {
             btnSearch = new Button();
-            dataGridView1 = new DataGridView();
+            dtGridAttence = new DataGridView();
             colDate = new DataGridViewTextBoxColumn();
             colStudentName = new DataGridViewTextBoxColumn();
             colGrade = new DataGridViewTextBoxColumn();
             colPresent = new DataGridViewCheckBoxColumn();
             cmbClass = new ComboBox();
             pnLogo = new Panel();
-            cmbAttendance = new ComboBox();
+            button1 = new Button();
+            panel2 = new Panel();
+            cmbAttendanceType = new ComboBox();
             lbLogo = new Label();
             panel1 = new Panel();
             label1 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtGridAttence).BeginInit();
             pnLogo.SuspendLayout();
+            panel2.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(751, 230);
+            btnSearch.BackColor = Color.RoyalBlue;
+            btnSearch.Location = new Point(800, 5);
             btnSearch.Margin = new Padding(4, 5, 4, 5);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(159, 52);
             btnSearch.TabIndex = 0;
             btnSearch.Text = "Search Class";
-            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.UseVisualStyleBackColor = false;
+            btnSearch.Click += btnSearch_Click;
             // 
-            // dataGridView1
+            // dtGridAttence
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { colDate, colStudentName, colGrade, colPresent });
-            dataGridView1.Location = new Point(-1, 480);
-            dataGridView1.Margin = new Padding(4, 5, 4, 5);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1206, 230);
-            dataGridView1.TabIndex = 1;
+            dtGridAttence.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtGridAttence.Columns.AddRange(new DataGridViewColumn[] { colDate, colStudentName, colGrade, colPresent });
+            dtGridAttence.Location = new Point(4, 278);
+            dtGridAttence.Margin = new Padding(4, 5, 4, 5);
+            dtGridAttence.Name = "dtGridAttence";
+            dtGridAttence.RowHeadersWidth = 51;
+            dtGridAttence.Size = new Size(1202, 405);
+            dtGridAttence.TabIndex = 1;
+            dtGridAttence.CellContentClick += dataGridView1_CellContentClick;
             // 
             // colDate
             // 
@@ -89,40 +95,63 @@
             // 
             cmbClass.FormattingEnabled = true;
             cmbClass.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" });
-            cmbClass.Location = new Point(103, 230);
+            cmbClass.Location = new Point(23, 21);
             cmbClass.Margin = new Padding(4, 5, 4, 5);
             cmbClass.Name = "cmbClass";
-            cmbClass.Size = new Size(297, 31);
+            cmbClass.Size = new Size(373, 31);
             cmbClass.TabIndex = 2;
             // 
             // pnLogo
             // 
-            pnLogo.Controls.Add(cmbAttendance);
+            pnLogo.Controls.Add(button1);
+            pnLogo.Controls.Add(panel2);
             pnLogo.Controls.Add(lbLogo);
-            pnLogo.Controls.Add(btnSearch);
-            pnLogo.Controls.Add(cmbClass);
-            pnLogo.Controls.Add(dataGridView1);
-            pnLogo.Location = new Point(76, 14);
+            pnLogo.Controls.Add(dtGridAttence);
+            pnLogo.Location = new Point(13, 10);
             pnLogo.Margin = new Padding(4, 5, 4, 5);
             pnLogo.Name = "pnLogo";
             pnLogo.Size = new Size(1206, 766);
             pnLogo.TabIndex = 8;
             pnLogo.Paint += pnLogo_Paint;
             // 
-            // cmbAttendance
+            // button1
             // 
-            cmbAttendance.FormattingEnabled = true;
-            cmbAttendance.Location = new Point(103, 288);
-            cmbAttendance.Name = "cmbAttendance";
-            cmbAttendance.Size = new Size(297, 31);
-            cmbAttendance.TabIndex = 3;
-            cmbAttendance.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
+            button1.BackColor = Color.Red;
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(1005, 693);
+            button1.Margin = new Padding(4, 5, 4, 5);
+            button1.Name = "button1";
+            button1.Size = new Size(159, 52);
+            button1.TabIndex = 5;
+            button1.Text = "Mark";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.IndianRed;
+            panel2.Controls.Add(cmbAttendanceType);
+            panel2.Controls.Add(cmbClass);
+            panel2.Controls.Add(btnSearch);
+            panel2.Location = new Point(-1, 151);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1207, 62);
+            panel2.TabIndex = 4;
+            panel2.Paint += panel2_Paint;
+            // 
+            // cmbAttendanceType
+            // 
+            cmbAttendanceType.FormattingEnabled = true;
+            cmbAttendanceType.Location = new Point(413, 21);
+            cmbAttendanceType.Name = "cmbAttendanceType";
+            cmbAttendanceType.Size = new Size(357, 31);
+            cmbAttendanceType.TabIndex = 3;
+            cmbAttendanceType.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
             // lbLogo
             // 
             lbLogo.AutoSize = true;
             lbLogo.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold);
-            lbLogo.Location = new Point(489, 154);
+            lbLogo.Location = new Point(486, 74);
             lbLogo.Margin = new Padding(4, 0, 4, 0);
             lbLogo.Name = "lbLogo";
             lbLogo.Size = new Size(202, 46);
@@ -133,10 +162,10 @@
             // 
             panel1.BackColor = Color.IndianRed;
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(76, 14);
+            panel1.Location = new Point(18, 10);
             panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1206, 135);
+            panel1.Size = new Size(1201, 69);
             panel1.TabIndex = 12;
             panel1.Paint += panel1_Paint;
             // 
@@ -144,7 +173,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(307, 35);
+            label1.Location = new Point(300, 13);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(653, 46);
@@ -156,16 +185,18 @@
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1782, 1055);
+            BackColor = Color.RoyalBlue;
+            ClientSize = new Size(1261, 790);
             Controls.Add(panel1);
             Controls.Add(pnLogo);
             Margin = new Padding(4, 5, 4, 5);
             Name = "classWisAttencedance";
             Text = "classWisAttencedance";
             Load += classWisAttencedance_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtGridAttence).EndInit();
             pnLogo.ResumeLayout(false);
             pnLogo.PerformLayout();
+            panel2.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -174,7 +205,7 @@
         #endregion
 
         private Button btnSearch;
-        private DataGridView dataGridView1;
+        private DataGridView dtGridAttence;
         private ComboBox cmbClass;
         private Panel pnLogo;
         private Label lbLogo;
@@ -185,6 +216,8 @@
         private DataGridViewCheckBoxColumn colPresent;
         private Panel panel1;
         private Label label1;
-        private ComboBox cmbAttendance;
+        private ComboBox cmbAttendanceType;
+        private Panel panel2;
+        private Button button1;
     }
 }

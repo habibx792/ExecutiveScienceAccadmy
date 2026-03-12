@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExecutiveSceinceAccadmy.classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +16,9 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
         public classWisAttencedance()
         {
             InitializeComponent();
-            cmbAttendance.SelectedIndexChanged += cmbAttendance_SelectedIndexChanged;
+            cmbAttendanceType.SelectedIndexChanged += cmbAttendance_SelectedIndexChanged;
+            btnSearch.BackColor = Color.AliceBlue;
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -39,11 +42,12 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
         }
         private void setAttendanceTypes()
         {
-            cmbAttendance.Items.Clear();
-            cmbAttendance.Items.Add("Regular");
-            cmbAttendance.Items.Add("RTS");
+            cmbAttendanceType.Items.Clear();
+            cmbAttendanceType.Items.Add("Regular");
+            cmbAttendanceType.Items.Add("RTS");
+            cmbAttendanceType.Items.Add("Primary");
 
-            cmbAttendance.SelectedIndex = 0;
+            cmbAttendanceType.SelectedIndex = 0;
         }
         private void setClassOnBaseOfAttendanceType(int start = 1, int end = 12)
         {
@@ -63,21 +67,94 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
         private void classWisAttencedance_Load(object sender, EventArgs e)
         {
             setAttendanceTypes();
+            styleAttendanceGrid();
+        }
+        private void styleAttendanceGrid()
+        {
+            dtGridAttence.Rows.Clear();
+            dtGridAttence.Columns.Clear();
+
+            dtGridAttence.Columns.Add("colRegis", "Registration No");
+            dtGridAttence.Columns.Add("colName", "Name");
+            dtGridAttence.Columns.Add("colDay", "Day");
+
+            DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
+            chk.Name = "colIsPresent";
+            chk.HeaderText = "Is Present";
+
+            dtGridAttence.Columns.Add(chk);
+            // remove ugly borders
+            dtGridAttence.BorderStyle = BorderStyle.None;
+            dtGridAttence.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+
+            // hide row header (empty grey column)
+            dtGridAttence.RowHeadersVisible = false;
+
+            // header style
+            dtGridAttence.EnableHeadersVisualStyles = false;
+            dtGridAttence.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 62, 80);
+            dtGridAttence.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dtGridAttence.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 11, FontStyle.Bold);
+            dtGridAttence.ColumnHeadersHeight = 42;
+
+            // row style
+            dtGridAttence.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+            dtGridAttence.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dtGridAttence.RowTemplate.Height = 36;
+
+            // zebra rows (better readability)
+            dtGridAttence.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(245, 245, 245);
+
+            // selection colors
+            dtGridAttence.DefaultCellStyle.SelectionBackColor = Color.FromArgb(52, 152, 219);
+            dtGridAttence.DefaultCellStyle.SelectionForeColor = Color.White;
+
+            // fill entire grid width
+            dtGridAttence.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            // prevent ugly resizing
+            dtGridAttence.AllowUserToResizeRows = false;
+            dtGridAttence.AllowUserToResizeColumns = false;
         }
         private void cmbAttendance_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbAttendance.SelectedItem == null)
+            if (cmbAttendanceType.SelectedItem == null)
                 return;
 
-            if (cmbAttendance.SelectedItem.ToString() == "Regular")
+            if (cmbAttendanceType.SelectedItem.ToString() == "Regular")
             {
                 setClassOnBaseOfAttendanceType(1, 12);
             }
-            else if (cmbAttendance.SelectedItem.ToString() == "RTS")
+            else if (cmbAttendanceType.SelectedItem.ToString() == "RTS")
             {
                 setClassOnBaseOfAttendanceType(9, 12);
             }
         }
 
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (cmbAttendanceType.SelectedItem == null || cmbClass.SelectedItem == null)
+                return;
+            string classSelected = cmbClass.SelectedItem.ToString();
+            string attendanceTypeSelected = cmbAttendanceType.SelectedItem.ToString();
+            string currentMonth = DateTime.Now.ToString("MMMM");
+            string currDay= DateTime.Now.Day.ToString();
+            //MessageBox.Show($"Searching attendance for {attendanceTypeSelected} class {classSelected} for month {currentMonth} and day {currDay}");
+                bool dataLaodSuccess = DB.loadClassAttendance(classSelected, attendanceTypeSelected,dtGridAttence);
+                if (!dataLaodSuccess || dtGridAttence.Rows.Count == 0)
+                {
+                    MessageBox.Show("No attendance data found for the selected class and month.");
+            }
+        }
     }
 }

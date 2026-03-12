@@ -615,5 +615,50 @@ namespace ExecutiveSceinceAccadmy.classes
                 }
             }
         }
+        public static bool loadClassAttendance(string classSelected,
+                                       string attendanceTypeSelected,
+                                       DataGridView dtAttenddance)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(str))
+                {
+                    string query = @"SELECT stdRegisNo, student_name
+                             FROM StudentTb
+                             WHERE classId = @classId
+                             AND student_type = @type
+                             AND is_active = 1";
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@classId", classSelected);
+                    cmd.Parameters.AddWithValue("@type", attendanceTypeSelected);
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    dtAttenddance.Rows.Clear();
+
+                    string today = DateTime.Now.ToString("dddd");
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        dtAttenddance.Rows.Add(
+                            row["stdRegisNo"].ToString(),
+                            row["student_name"].ToString(),
+                            today,
+                            false // default absent until teacher marks present
+                        );
+                    }
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading attendance: " + ex.Message);
+                return false;
+            }
+        }
     }
 }
