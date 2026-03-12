@@ -31,6 +31,7 @@
             pnLogo = new Panel();
             lbLogo = new Label();
             pnMain = new Panel();
+            lblYear = new Label();
             lblMonth = new Label();
             label4 = new Label();
             lblDay = new Label();
@@ -39,7 +40,6 @@
             btnSearchFee = new Button();
             btnDefault = new Button();
             btnRegularFee = new Button();
-            lblYear = new Label();
             pnLogo.SuspendLayout();
             pnMain.SuspendLayout();
             SuspendLayout();
@@ -82,6 +82,15 @@
             pnMain.Name = "pnMain";
             pnMain.Size = new Size(800, 583);
             pnMain.TabIndex = 10;
+            // 
+            // lblYear
+            // 
+            lblYear.AutoSize = true;
+            lblYear.Location = new Point(519, 190);
+            lblYear.Name = "lblYear";
+            lblYear.Size = new Size(43, 23);
+            lblYear.TabIndex = 23;
+            lblYear.Text = "0 RS";
             // 
             // lblMonth
             // 
@@ -133,7 +142,7 @@
             // btnSearchFee
             // 
             btnSearchFee.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnSearchFee.Location = new Point(223, 308);
+            btnSearchFee.Location = new Point(223, 325);
             btnSearchFee.Margin = new Padding(4, 5, 4, 5);
             btnSearchFee.Name = "btnSearchFee";
             btnSearchFee.Size = new Size(320, 86);
@@ -165,15 +174,6 @@
             btnRegularFee.Text = "Submit Fee";
             btnRegularFee.UseVisualStyleBackColor = true;
             btnRegularFee.Click += btnRegularFee_Click;
-            // 
-            // lblYear
-            // 
-            lblYear.AutoSize = true;
-            lblYear.Location = new Point(519, 190);
-            lblYear.Name = "lblYear";
-            lblYear.Size = new Size(43, 23);
-            lblYear.TabIndex = 23;
-            lblYear.Text = "0 RS";
             // 
             // FeeForm
             // 

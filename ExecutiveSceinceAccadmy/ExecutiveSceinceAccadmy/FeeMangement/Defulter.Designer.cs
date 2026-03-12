@@ -29,71 +29,134 @@
         private void InitializeComponent()
         {
             button1 = new Button();
-            dataGridView1 = new DataGridView();
+            dtDefaulter = new DataGridView();
             pnLogo = new Panel();
             lbLogo = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            label1 = new Label();
+            panel1 = new Panel();
+            cmbMonth = new ComboBox();
+            label2 = new Label();
+            ((System.ComponentModel.ISupportInitialize)dtDefaulter).BeginInit();
             pnLogo.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(1263, 762);
+            button1.Location = new Point(1624, 1168);
+            button1.Margin = new Padding(4, 5, 4, 5);
             button1.Name = "button1";
-            button1.Size = new Size(123, 64);
+            button1.Size = new Size(158, 98);
             button1.TabIndex = 3;
             button1.Text = "button1";
             button1.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dtDefaulter
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(8, 126);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(1378, 550);
-            dataGridView1.TabIndex = 2;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dtDefaulter.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtDefaulter.Location = new Point(39, 226);
+            dtDefaulter.Margin = new Padding(4, 5, 4, 5);
+            dtDefaulter.Name = "dtDefaulter";
+            dtDefaulter.RowHeadersWidth = 51;
+            dtDefaulter.Size = new Size(975, 453);
+            dtDefaulter.TabIndex = 2;
+            dtDefaulter.CellContentClick += dataGridView1_CellContentClick;
             // 
             // pnLogo
             // 
+            pnLogo.BackColor = Color.FromArgb(255, 128, 128);
             pnLogo.Controls.Add(lbLogo);
-            pnLogo.Location = new Point(88, 12);
+            pnLogo.Location = new Point(39, 81);
+            pnLogo.Margin = new Padding(4, 5, 4, 5);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(1155, 88);
+            pnLogo.Size = new Size(975, 97);
             pnLogo.TabIndex = 8;
             // 
             // lbLogo
             // 
             lbLogo.AutoSize = true;
             lbLogo.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbLogo.Location = new Point(481, 21);
+            lbLogo.Location = new Point(306, 17);
+            lbLogo.Margin = new Padding(4, 0, 4, 0);
             lbLogo.Name = "lbLogo";
-            lbLogo.Size = new Size(297, 37);
+            lbLogo.Size = new Size(368, 46);
             lbLogo.TabIndex = 0;
             lbLogo.Text = "Defaulter Student List";
+            lbLogo.Click += lbLogo_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(203, 30);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(653, 46);
+            label1.TabIndex = 9;
+            label1.Text = "Welcome To Executive Sceince Accadmy";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.DeepSkyBlue;
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(cmbMonth);
+            panel1.Location = new Point(39, 178);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(975, 49);
+            panel1.TabIndex = 10;
+            // 
+            // cmbMonth
+            // 
+            cmbMonth.FormattingEnabled = true;
+            cmbMonth.Location = new Point(196, 8);
+            cmbMonth.Name = "cmbMonth";
+            cmbMonth.Size = new Size(409, 31);
+            cmbMonth.TabIndex = 0;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(82, 11);
+            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(75, 28);
+            label2.TabIndex = 1;
+            label2.Text = "Month";
             // 
             // Defulter
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1408, 838);
+            BackColor = Color.RoyalBlue;
+            ClientSize = new Size(1074, 656);
+            Controls.Add(panel1);
+            Controls.Add(label1);
             Controls.Add(pnLogo);
             Controls.Add(button1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dtDefaulter);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "Defulter";
             Text = "Defulter";
             Load += Defulter_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtDefaulter).EndInit();
             pnLogo.ResumeLayout(false);
             pnLogo.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Button button1;
-        private DataGridView dataGridView1;
+        private DataGridView dtDefaulter;
         private Panel pnLogo;
         private Label lbLogo;
+        private Label label1;
+        private Panel panel1;
+        private ComboBox cmbMonth;
+        private Label label2;
     }
 }

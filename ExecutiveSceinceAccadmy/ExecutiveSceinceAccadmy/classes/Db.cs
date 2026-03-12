@@ -454,7 +454,7 @@ namespace ExecutiveSceinceAccadmy.classes
             }
             return resultStr;
         }
-        public static string showTotalCollectionOfThisMonth( string month)
+        public static string showTotalCollectionOfThisMonth(string month)
         {
             string resultStr = "";
             string query = @"SELECT SUM(paidAmount) 
@@ -489,7 +489,7 @@ namespace ExecutiveSceinceAccadmy.classes
         }
         public static string showTotalCollectionOfThisYear(string month)
         {
-            string resultStr= "";
+            string resultStr = "";
             string query = @"SELECT SUM(paidAmount) 
                      FROM feeTb 
                      WHERE YEAR(paymentDate) = YEAR(GETDATE()) 
@@ -514,6 +514,66 @@ namespace ExecutiveSceinceAccadmy.classes
                 }
             }
             return resultStr;
+        }
+        public static void showDefaulterStudent(DataGridView dtDefaulter, string month)
+        {
+            using (SqlConnection con = new SqlConnection(str))
+            {
+                string query = @"SELECT 
+                    s.student_name AS StudentName,
+                    s.stdRegisNo AS RegistrationNo,
+                    @month AS Month,
+                    CASE 
+                        WHEN f.isPaid = 1 THEN 'Paid'
+                        ELSE 'Not Paid'
+                    END AS Status
+                 FROM StudentTb s
+                 LEFT JOIN feeTb f 
+                    ON s.stdRegisNo = f.stdRegisNo 
+                    AND f.paymentMonth = @month
+                 WHERE f.isPaid = 0 OR f.isPaid IS NULL";
+
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.Parameters.AddWithValue("@month", month);
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                dtDefaulter.DataSource = dt;
+
+                // ---------- Grid Styling ----------
+                dtDefaulter.BorderStyle = BorderStyle.None;
+                dtDefaulter.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+                dtDefaulter.EnableHeadersVisualStyles = false;
+                dtDefaulter.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 144, 255);
+                dtDefaulter.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+                dtDefaulter.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 11, FontStyle.Bold);
+                dtDefaulter.ColumnHeadersHeight = 40;
+                dtDefaulter.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+                dtDefaulter.DefaultCellStyle.SelectionBackColor = Color.FromArgb(50, 150, 255);
+                dtDefaulter.DefaultCellStyle.SelectionForeColor = Color.White;
+                dtDefaulter.RowTemplate.Height = 35;
+                dtDefaulter.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(240, 248, 255);
+                dtDefaulter.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dtDefaulter.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dtDefaulter.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                foreach (DataGridViewRow row in dtDefaulter.Rows)
+                {
+                    if (row.Cells["Status"].Value != null)
+                    {
+                        if (row.Cells["Status"].Value.ToString() == "Not Paid")
+                        {
+                            row.Cells["Status"].Style.ForeColor = Color.Red;
+                            row.Cells["Status"].Style.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+                        }
+                        else
+                        {
+                            row.Cells["Status"].Style.ForeColor = Color.Green;
+                        }
+                    }
+                }
+            }
         }
     }
 }

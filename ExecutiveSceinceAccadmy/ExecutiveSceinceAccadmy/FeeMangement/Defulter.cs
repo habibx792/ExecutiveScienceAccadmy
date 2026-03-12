@@ -1,4 +1,5 @@
-﻿using ExecutiveScienceAcademy.classes;
+﻿using ExecutiveSceinceAccadmy.classes;
+using ExecutiveScienceAcademy.classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,6 +58,18 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
         }
 
         private void Defulter_Load(object sender, EventArgs e)
+        {
+            dataHandler.LoadMonths(cmbMonth);
+            dtDefaulter.Rows.Clear();
+            string currenterMonth = dataHandler.getCurrentMonthStr();
+            if(cmbMonth.SelectedItem!=null)
+            {
+                currenterMonth= cmbMonth.SelectedItem.ToString();
+            }
+            DB.showDefaulterStudent(dtDefaulter, currenterMonth);
+        }
+
+        private void lbLogo_Click(object sender, EventArgs e)
         {
 
         }
