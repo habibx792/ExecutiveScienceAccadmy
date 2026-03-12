@@ -31,16 +31,17 @@ namespace ExecutiveSceinceAccadmy
 
             StyleControls();
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.BackColor = Color.DodgerBlue;
         }
         private void StyleControls()
         {
 
             UI.Instance.StylePanel(pnLogo,
-                backColor: Color.White,
+                backColor: Color.IndianRed,
                 borderColor: Color.FromArgb(0, 120, 215),
                 borderRadius: 20,
                 borderThickness: 2);
-            UI.Instance.StylePanel(pnMain, backColor: Color.White,
+            UI.Instance.StylePanel(pnMain, backColor: Color.IndianRed,
               borderColor: Color.FromArgb(0, 120, 215),
               borderRadius: 20,
               borderThickness: 2);
@@ -54,8 +55,8 @@ namespace ExecutiveSceinceAccadmy
             UI.Instance.StyleButton(stdBoard, borderRadius: 20);
             UI.Instance.StyleButton(btnTeacherBoard, borderRadius: 20);
             UI.Instance.AddFormShadow(this);
-            UI.Instance.StyleLabel(lblMain);
-            lblMain.Font = new Font(lblMain.Font, FontStyle.Bold);
+            //UI.Instance.StyleLabel(lblMain);
+            //lblMain.Font = new Font(lblMain.Font, FontStyle.Bold);
         }
 
 
