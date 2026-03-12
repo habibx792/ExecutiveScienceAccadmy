@@ -48,17 +48,17 @@
             // 
             pnLogo.BackColor = Color.IndianRed;
             pnLogo.Controls.Add(lbLogo);
-            pnLogo.Location = new Point(70, 14);
+            pnLogo.Location = new Point(70, 54);
             pnLogo.Margin = new Padding(4, 5, 4, 5);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(737, 130);
+            pnLogo.Size = new Size(737, 71);
             pnLogo.TabIndex = 9;
             // 
             // lbLogo
             // 
             lbLogo.AutoSize = true;
             lbLogo.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbLogo.Location = new Point(46, 41);
+            lbLogo.Location = new Point(44, 9);
             lbLogo.Margin = new Padding(4, 0, 4, 0);
             lbLogo.Name = "lbLogo";
             lbLogo.Size = new Size(653, 46);
@@ -186,7 +186,7 @@
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(850, 726);
+            ClientSize = new Size(850, 765);
             Controls.Add(pnMain);
             Controls.Add(pnLogo);
             Margin = new Padding(4, 5, 4, 5);
