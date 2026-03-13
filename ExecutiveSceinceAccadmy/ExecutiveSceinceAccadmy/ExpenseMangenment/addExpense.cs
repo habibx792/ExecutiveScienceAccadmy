@@ -71,23 +71,49 @@ namespace ExecutiveSceinceAccadmy.ExpenseMangenment
 
         private void btnExpenseAdd_Click(object sender, EventArgs e)
         {
-            if(txtExenseAmount.Text=="")
+            // Validate amount
+            if (string.IsNullOrWhiteSpace(txtExenseAmount.Text))
             {
+                MessageBox.Show("Please enter expense amount.");
                 return;
             }
-            string date = dtExpense.Value.ToString("yyyy-MM-dd");
-            string month=dtExpense.Value.ToString("MMMM");
-            string ExpenseType = cmbExpense.SelectedItem.ToString();
-            double amount = double.Parse(txtExenseAmount.Text);
-            string expenseId=ExpenseType.Trim()+dataHandler.generateRandomeNumber(3)+dataHandler.getStringOfDate();
-            MessageBox.Show($"Expense ID: {expenseId}\nExpense Type: {ExpenseType}\nAmount: {amount}\nDate: {date}\nMonth: {month}");
 
-            expenses expense=new expenses(expenseId, ExpenseType, amount, date, month);
-            bool addEpenseSuccess = DB.addExpense(expenseId, ExpenseType, amount, date, month);
-            if(addEpenseSuccess)
+            if (cmbExpense.SelectedItem == null)
+            {
+                MessageBox.Show("Please select expense type.");
+                return;
+            }
+
+            if (!double.TryParse(txtExenseAmount.Text, out double amount))
+            {
+                MessageBox.Show("Invalid amount entered.");
+                return;
+            }
+
+            string date = dtExpense.Value.ToString("yyyy-MM-dd");
+            string month = dtExpense.Value.ToString("MMMM");
+            string expenseType = cmbExpense.SelectedItem.ToString();
+
+            string expenseId =
+                expenseType.Trim() +
+                dataHandler.generateRandomeNumber(3) +
+                dataHandler.getStringOfDate();
+
+            MessageBox.Show(
+                $"Expense ID: {expenseId}\n" +
+                $"Expense Type: {expenseType}\n" +
+                $"Amount: {amount}\n" +
+                $"Date: {date}\n" +
+                $"Month: {month}"
+            );
+
+            bool addExpenseSuccess = DB.addExpense(expenseId, expenseType, amount, date, month);
+
+            if (addExpenseSuccess)
             {
                 MessageBox.Show("Expense added successfully!");
-                txtExenseAmount.Text = "";
+
+                txtExenseAmount.Clear();
                 cmbExpense.SelectedIndex = 0;
                 dtExpense.Value = DateTime.Now;
             }
@@ -95,8 +121,6 @@ namespace ExecutiveSceinceAccadmy.ExpenseMangenment
             {
                 MessageBox.Show("Failed to add expense. Please try again.");
             }
-
-
         }
     }
 }
