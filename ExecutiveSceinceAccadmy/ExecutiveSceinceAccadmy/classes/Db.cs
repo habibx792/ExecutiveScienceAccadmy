@@ -669,6 +669,7 @@ namespace ExecutiveSceinceAccadmy.classes
                     {
                         using (SqlCommand cmd = new SqlCommand(query, con, transaction))
                         {
+                            //string AttendanceID=
                             cmd.Parameters.AddWithValue("@attendanceID", record.AttendanceID);
                             cmd.Parameters.AddWithValue("@stdRegisNo", record.RegistrationNo);
                             //cmd.Parameters.AddWithValue("@date", record.Date);

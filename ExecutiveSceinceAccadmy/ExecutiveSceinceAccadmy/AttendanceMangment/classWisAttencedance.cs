@@ -72,6 +72,11 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
             styleAttendanceGrid();
             cmbClass.SelectedIndex = 0;
             cmbAttendanceType.SelectedIndex = 0;
+            List<string> domainType = DB.loadALlDomain();
+            foreach (string domainTypeItem in domainType) 
+                {
+                    cmbAttendanceType.Items.Add($"{domainTypeItem}");
+                }
             
         }
         private void styleAttendanceGrid()
@@ -184,7 +189,7 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
                     string strId = regNo;
 
                     strId = strId.Substring(4);
-                    string attendaceId = strId + dataHandler.getStringOfDate();
+                    string attendaceId = strId + dataHandler.getStringOfDate()+dataHandler.generateRandomeNumber(2);
                     attendanceRecords.Add(new AttendanceRecord(attendaceId, regNo, attendanceDate, isPresent, attendanceType, day));
                     isGetData = true;
                     //MessageBox.Show(attendaceId);
