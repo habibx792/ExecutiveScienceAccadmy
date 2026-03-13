@@ -1,4 +1,5 @@
-﻿using ExecutiveScienceAcademy.classes;
+﻿using ExecutiveSceinceAccadmy.FeeMangement;
+using ExecutiveScienceAcademy.classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,6 +39,16 @@ namespace ExecutiveSceinceAccadmy.DashBoadMangement
             using (var feeSetForm = new feeSet())
             {
                 feeSetForm.ShowDialog();
+            }
+            this.Show();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (FeeForm feeFormControl = new FeeForm())
+            {
+                feeFormControl.ShowDialog();
             }
             this.Show();
         }

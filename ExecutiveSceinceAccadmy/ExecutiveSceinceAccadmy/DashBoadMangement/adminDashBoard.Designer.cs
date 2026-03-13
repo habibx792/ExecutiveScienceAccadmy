@@ -158,8 +158,9 @@
             button12.Name = "button12";
             button12.Size = new Size(289, 92);
             button12.TabIndex = 12;
-            button12.Text = "button12";
+            button12.Text = "Fee Management";
             button12.UseVisualStyleBackColor = true;
+            button12.Click += button12_Click;
             // 
             // button7
             // 
