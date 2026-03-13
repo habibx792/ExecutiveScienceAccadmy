@@ -1,5 +1,6 @@
 ﻿using ExecutiveSceinceAccadmy.AttendanceMangment;
 using ExecutiveSceinceAccadmy.FeeMangement;
+using ExecutiveSceinceAccadmy.studentRegistrationForms;
 using ExecutiveScienceAcademy.classes;
 using System;
 using System.Collections.Generic;
@@ -57,9 +58,19 @@ namespace ExecutiveSceinceAccadmy.DashBoadMangement
         private void button8_Click(object sender, EventArgs e)
         {
             this.Hide();
-            using(attendanceForm attendForm=new attendanceForm())
+            using (attendanceForm attendForm = new attendanceForm())
             {
                 attendForm.ShowDialog();
+            }
+            this.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (var stdRegForm = new StudentRegistration())
+            {
+                stdRegForm.ShowDialog();
             }
             this.Show();
         }
