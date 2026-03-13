@@ -198,7 +198,7 @@ namespace ExecutiveSceinceAccadmy
         private void btnAdmin_Click(object sender, EventArgs e)
         {
             this.Hide();
-            using (DashBoardForm DashBoard = new DashBoardForm())
+            using (adminDashBoard DashBoard = new adminDashBoard())
             {
                 DashBoard.ShowDialog();
             }
