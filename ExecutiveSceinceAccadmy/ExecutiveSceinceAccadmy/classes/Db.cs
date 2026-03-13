@@ -654,7 +654,7 @@ namespace ExecutiveSceinceAccadmy.classes
             }
         }
         //implementing method for attendance
-        public static bool MarkAttendanceByClassWise(List<AttendanceRecord> attendanceRecords,string givenClass,string givenAttendanceType)
+        public static bool MarkAttendanceByClassWise(List<AttendanceRecord> attendanceRecords, string givenClass, string givenAttendanceType)
         {
             try
             {
@@ -766,6 +766,48 @@ namespace ExecutiveSceinceAccadmy.classes
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+        public static bool addFeeOfClassDomain(int classId, string domainId, int feeAmount)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(str))
+                {
+                    string query = @"
+            IF NOT EXISTS (
+                SELECT 1 FROM setStdFeeTb 
+                WHERE classId = @classId AND domainId = @domainId
+            )
+            INSERT INTO setStdFeeTb (classId, domainId, amount)
+            VALUES (@classId, @domainId, @amount)";
+
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@classId", classId);
+                        cmd.Parameters.AddWithValue("@domainId", domainId);
+                        cmd.Parameters.AddWithValue("@amount", feeAmount);
+
+                        con.Open();
+                        int rows = cmd.ExecuteNonQuery();
+
+                        if (rows > 0)
+                        {
+                            MessageBox.Show("Fee set successfully.");
+                            return true;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Fee already exists for this class and domain.");
+                            return false;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error adding fee: " + ex.Message);
                 return false;
             }
         }

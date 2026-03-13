@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExecutiveScienceAcademy.classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,15 @@ namespace ExecutiveSceinceAccadmy.DashBoadMangement
         public adminDashBoard()
         {
             InitializeComponent();
+            UI.Instance.StyleForm(this,
+              backgroundColor: Color.FromArgb(245, 245, 245),
+              borderRadius: 25,
+              showCustomTitleBar: true,
+              title: "Executive Science Academy");
+
+
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.BackColor = Color.DodgerBlue;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

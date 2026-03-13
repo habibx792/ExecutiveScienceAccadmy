@@ -1,4 +1,5 @@
 ﻿using ExecutiveSceinceAccadmy.classes;
+using ExecutiveScienceAcademy.classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,14 @@ namespace ExecutiveSceinceAccadmy.DashBoadMangement
         public feeSet()
         {
             InitializeComponent();
+            UI.Instance.StyleForm(this,
+              backgroundColor: Color.FromArgb(245, 245, 245),
+              borderRadius: 25,
+              showCustomTitleBar: true,
+              title: "Executive Science Academy");
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.BackColor = Color.DodgerBlue;
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -30,7 +39,7 @@ namespace ExecutiveSceinceAccadmy.DashBoadMangement
 
         private void feeSet_Load(object sender, EventArgs e)
         {
-            for(int i = 1; i <= 12; i++)
+            for (int i = 1; i <= 12; i++)
             {
                 cmbClass.Items.Add(i);
             }
@@ -41,6 +50,25 @@ namespace ExecutiveSceinceAccadmy.DashBoadMangement
                 flag = true;
 
                 cmbDomain.Items.Add(domains[i]);
+            }
+           cmbClass.SelectedIndex = 0;
+            cmbDomain.SelectedIndex = 4;
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(cmbClass.SelectedItem!=null && cmbDomain.SelectedItem!=null)
+            {
+                int classNum = (int)cmbClass.SelectedItem;
+                string domain = cmbDomain.SelectedItem.ToString();
+                int feeAmount=int.Parse(txtAmount.Text);
+                DB.addFeeOfClassDomain(classNum, domain, feeAmount);
+                MessageBox.Show("Fee added successfully!");
+            }
+            else
+            {
+                MessageBox.Show("Please select both class and domain.");
             }
         }
     }
