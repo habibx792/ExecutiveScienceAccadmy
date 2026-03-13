@@ -41,6 +41,7 @@
             // 
             // panel1
             // 
+            panel1.BackColor = Color.IndianRed;
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label1);
