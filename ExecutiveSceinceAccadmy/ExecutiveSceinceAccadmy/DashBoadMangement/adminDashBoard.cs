@@ -28,6 +28,7 @@ namespace ExecutiveSceinceAccadmy.DashBoadMangement
 
             this.StartPosition = FormStartPosition.CenterScreen;
             this.BackColor = Color.DodgerBlue;
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -73,6 +74,18 @@ namespace ExecutiveSceinceAccadmy.DashBoadMangement
                 stdRegForm.ShowDialog();
             }
             this.Show();
+        }
+
+        private void adminDashBoard_Load(object sender, EventArgs e)
+        {
+            UI.Instance.StyleButton(btnAttendMange, borderRadius: 20);
+            UI.Instance.StyleButton(btnFeeMange, borderRadius: 20);
+            UI.Instance.StyleButton(btnRegisMange, borderRadius: 20);
+            UI.Instance.StyleButton(btnFeeSet, borderRadius: 20);
+
+
+
+
         }
     }
 }

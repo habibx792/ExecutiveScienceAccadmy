@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button2 = new Button();
+            btnRegisMange = new Button();
             button3 = new Button();
             button4 = new Button();
             panel1 = new Panel();
@@ -36,10 +36,10 @@
             button14 = new Button();
             button15 = new Button();
             button10 = new Button();
-            button11 = new Button();
-            button12 = new Button();
+            btnFeeSet = new Button();
+            btnFeeMange = new Button();
             button7 = new Button();
-            button8 = new Button();
+            btnAttendMange = new Button();
             button9 = new Button();
             button1 = new Button();
             button5 = new Button();
@@ -47,16 +47,16 @@
             panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // button2
+            // btnRegisMange
             // 
-            button2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            button2.Location = new Point(651, 80);
-            button2.Name = "button2";
-            button2.Size = new Size(289, 92);
-            button2.TabIndex = 1;
-            button2.Text = "Registration Mangement";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            btnRegisMange.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            btnRegisMange.Location = new Point(651, 80);
+            btnRegisMange.Name = "btnRegisMange";
+            btnRegisMange.Size = new Size(289, 92);
+            btnRegisMange.TabIndex = 1;
+            btnRegisMange.Text = "Registration Mangement";
+            btnRegisMange.UseVisualStyleBackColor = true;
+            btnRegisMange.Click += button2_Click;
             // 
             // button3
             // 
@@ -84,15 +84,15 @@
             panel1.Controls.Add(button14);
             panel1.Controls.Add(button15);
             panel1.Controls.Add(button10);
-            panel1.Controls.Add(button11);
-            panel1.Controls.Add(button12);
+            panel1.Controls.Add(btnFeeSet);
+            panel1.Controls.Add(btnFeeMange);
             panel1.Controls.Add(button7);
-            panel1.Controls.Add(button8);
+            panel1.Controls.Add(btnAttendMange);
             panel1.Controls.Add(button9);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(button5);
             panel1.Controls.Add(button6);
-            panel1.Controls.Add(button2);
+            panel1.Controls.Add(btnRegisMange);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button4);
             panel1.Location = new Point(12, 12);
@@ -141,27 +141,27 @@
             button10.Text = "button10";
             button10.UseVisualStyleBackColor = true;
             // 
-            // button11
+            // btnFeeSet
             // 
-            button11.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            button11.Location = new Point(651, 506);
-            button11.Name = "button11";
-            button11.Size = new Size(289, 92);
-            button11.TabIndex = 11;
-            button11.Text = "Set Fee ";
-            button11.UseVisualStyleBackColor = true;
-            button11.Click += button11_Click;
+            btnFeeSet.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            btnFeeSet.Location = new Point(651, 506);
+            btnFeeSet.Name = "btnFeeSet";
+            btnFeeSet.Size = new Size(289, 92);
+            btnFeeSet.TabIndex = 11;
+            btnFeeSet.Text = "Set Fee ";
+            btnFeeSet.UseVisualStyleBackColor = true;
+            btnFeeSet.Click += button11_Click;
             // 
-            // button12
+            // btnFeeMange
             // 
-            button12.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            button12.Location = new Point(26, 80);
-            button12.Name = "button12";
-            button12.Size = new Size(289, 92);
-            button12.TabIndex = 12;
-            button12.Text = "Fee Management";
-            button12.UseVisualStyleBackColor = true;
-            button12.Click += button12_Click;
+            btnFeeMange.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            btnFeeMange.Location = new Point(26, 80);
+            btnFeeMange.Name = "btnFeeMange";
+            btnFeeMange.Size = new Size(289, 92);
+            btnFeeMange.TabIndex = 12;
+            btnFeeMange.Text = "Fee Management";
+            btnFeeMange.UseVisualStyleBackColor = true;
+            btnFeeMange.Click += button12_Click;
             // 
             // button7
             // 
@@ -173,16 +173,16 @@
             button7.Text = "button7";
             button7.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // btnAttendMange
             // 
-            button8.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            button8.Location = new Point(338, 80);
-            button8.Name = "button8";
-            button8.Size = new Size(289, 92);
-            button8.TabIndex = 8;
-            button8.Text = "Attendance Magangement";
-            button8.UseVisualStyleBackColor = true;
-            button8.Click += button8_Click;
+            btnAttendMange.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            btnAttendMange.Location = new Point(338, 80);
+            btnAttendMange.Name = "btnAttendMange";
+            btnAttendMange.Size = new Size(289, 92);
+            btnAttendMange.TabIndex = 8;
+            btnAttendMange.Text = "Attendance Magangement";
+            btnAttendMange.UseVisualStyleBackColor = true;
+            btnAttendMange.Click += button8_Click;
             // 
             // button9
             // 
@@ -232,13 +232,14 @@
             Controls.Add(panel1);
             Name = "adminDashBoard";
             Text = "adminDashBoard";
+            Load += adminDashBoard_Load;
             panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Button button2;
+        private Button btnRegisMange;
         private Button button3;
         private Button button4;
         private Panel panel1;
@@ -246,10 +247,10 @@
         private Button button14;
         private Button button15;
         private Button button10;
-        private Button button11;
-        private Button button12;
+        private Button btnFeeSet;
+        private Button btnFeeMange;
         private Button button7;
-        private Button button8;
+        private Button btnAttendMange;
         private Button button9;
         private Button button1;
         private Button button5;
