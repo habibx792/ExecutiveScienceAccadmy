@@ -70,6 +70,9 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
         {
             setAttendanceTypes();
             styleAttendanceGrid();
+            cmbClass.SelectedIndex = 0;
+            cmbAttendanceType.SelectedIndex = 0;
+            
         }
         private void styleAttendanceGrid()
         {

@@ -84,6 +84,18 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
             dataHandler.LoadMonths(cmbMonth);
             this.StartPosition = FormStartPosition.CenterScreen;
             this.TopMost = true;
+            rdStdId.Checked = true;
+            string currentMonthName = DateTime.Now.ToString("MMMM");
+
+            // Find the index of the month in the ComboBox
+            int monthIndex = cmbMonth.Items.IndexOf(currentMonthName);
+
+            // Set the selected index if found
+            if (monthIndex >= 0)
+            {
+                cmbMonth.SelectedIndex = monthIndex;
+            }
+            //cmbMonth.SelectedIndex = ;
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
