@@ -10,8 +10,6 @@ select * from setStdFeeTb;
 select * from feeTb;
 select * from studentAttendance;
 
-
-
 SELECT 
     s.stdRegisNo,
     s.student_name,
