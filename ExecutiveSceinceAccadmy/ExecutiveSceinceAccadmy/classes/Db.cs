@@ -661,5 +661,41 @@ namespace ExecutiveSceinceAccadmy.classes
                 return false;
             }
         }
+        //implementing method for attendance
+        public static bool MarkAttendanceByClassWise(List<AttendanceRecord> attendanceRecords)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(str))
+                {
+                    con.Open();
+                    SqlTransaction transaction = con.BeginTransaction();
+                    string query = @"INSERT INTO studentAttendance (attendId, stdRegisNo,  isPresent, attenceType, day)
+                                     VALUES (@attendanceID, @stdRegisNo, @isPresent, @attendanceType, @day)";
+                    foreach (var record in attendanceRecords)
+                    {
+                        using (SqlCommand cmd = new SqlCommand(query, con, transaction))
+                        {
+                            cmd.Parameters.AddWithValue("@attendanceID", record.AttendanceID);
+                            cmd.Parameters.AddWithValue("@stdRegisNo", record.RegistrationNo);
+                            //cmd.Parameters.AddWithValue("@date", record.Date);
+                            cmd.Parameters.AddWithValue("@isPresent", record.IsPresent);
+                            cmd.Parameters.AddWithValue("@attendanceType", record.AttendanceType);
+                            cmd.Parameters.AddWithValue("@day", record.Day);
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+                    transaction.Commit();
+                }
+                MessageBox.Show("Attendance marked successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error marking attendance: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            //return false;
+        }
     }
 }

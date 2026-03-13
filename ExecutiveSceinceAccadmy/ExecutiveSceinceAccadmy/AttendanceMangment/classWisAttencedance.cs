@@ -166,6 +166,8 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
         {
             if (cmbAttendanceType.SelectedItem != null && cmbClass.SelectedItem != null)
             {
+                List<AttendanceRecord> attendanceRecords = new List<AttendanceRecord>();
+                bool isGetData = false;
                 foreach (DataGridViewRow row in dtGridAttence.Rows)
                 {
                     if (row.IsNewRow) continue; // ignore last empty row
@@ -176,19 +178,27 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
                     string day = row.Cells["colDay"].Value.ToString();
                     string attendanceType = cmbAttendanceType.SelectedItem.ToString();
                     string attendanceDate = DateTime.Now.ToString("yyyy-MM-dd");
-                    string attendaceId = regNo + dataHandler.getStringOfDate();
-                    MessageBox.Show(attendaceId);
-                    dtGridAttence.Columns.Add("colRegis", "Registration No");
-                    dtGridAttence.Columns.Add("colName", "Name");
-                    dtGridAttence.Columns.Add("colDay", "Day");
-
-                    DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
-                    chk.Name = "colIsPresent";
-                    chk.HeaderText = "Is Present";
-                    chk.DefaultCellStyle.NullValue = true; // default checked
-
-                    MessageBox.Show(regNo + " " + name + " " + isPresent);
+                    string strId = regNo;
+                    strId=strId.Substring(4);
+                    string attendaceId = strId + dataHandler.getStringOfDate();
+                    attendanceRecords.Add(new AttendanceRecord(attendaceId, regNo, attendanceDate, isPresent, attendanceType, day));
+                    isGetData = true;
+                    //MessageBox.Show(attendaceId);
                 }
+                if(isGetData)
+                {
+                    bool updateSuccess = DB.MarkAttendanceByClassWise(attendanceRecords);
+                    if(updateSuccess)
+                    {
+                        MessageBox.Show("Attendance marked successfully!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to mark attendance. Please try again.");
+                    }
+
+                }
+
             }
         }
     }

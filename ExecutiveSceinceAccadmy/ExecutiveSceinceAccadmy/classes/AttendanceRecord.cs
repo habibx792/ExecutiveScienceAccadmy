@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExecutiveSceinceAccadmy.classes
 {
-    internal class AttendanceRecord
+    public class AttendanceRecord
     {
         private string attendanceID;
         private string registrationNo;
