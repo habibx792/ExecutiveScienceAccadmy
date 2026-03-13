@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             button2 = new Button();
-            dataGridView1 = new DataGridView();
+            dtDashAttend = new DataGridView();
             dtDate = new DateTimePicker();
             lblMonth = new Label();
-            textBox1 = new TextBox();
+            txtReginstraion = new TextBox();
             panel1 = new Panel();
             lblDate = new Label();
             label2 = new Label();
             rdMonth = new RadioButton();
             rdDay = new RadioButton();
             cmbMonth = new ComboBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtDashAttend).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -51,16 +51,17 @@
             button2.TabIndex = 1;
             button2.Text = "Search";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
-            // dataGridView1
+            // dtDashAttend
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(3, 343);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1186, 408);
-            dataGridView1.TabIndex = 2;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dtDashAttend.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtDashAttend.Location = new Point(3, 343);
+            dtDashAttend.Name = "dtDashAttend";
+            dtDashAttend.RowHeadersWidth = 51;
+            dtDashAttend.Size = new Size(1186, 408);
+            dtDashAttend.TabIndex = 2;
+            dtDashAttend.CellContentClick += dataGridView1_CellContentClick;
             // 
             // dtDate
             // 
@@ -80,12 +81,12 @@
             lblMonth.TabIndex = 4;
             lblMonth.Text = "Month";
             // 
-            // textBox1
+            // txtReginstraion
             // 
-            textBox1.Location = new Point(223, 174);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(330, 30);
-            textBox1.TabIndex = 6;
+            txtReginstraion.Location = new Point(223, 174);
+            txtReginstraion.Name = "txtReginstraion";
+            txtReginstraion.Size = new Size(330, 30);
+            txtReginstraion.TabIndex = 6;
             // 
             // panel1
             // 
@@ -94,8 +95,8 @@
             panel1.Controls.Add(rdMonth);
             panel1.Controls.Add(rdDay);
             panel1.Controls.Add(cmbMonth);
-            panel1.Controls.Add(dataGridView1);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(dtDashAttend);
+            panel1.Controls.Add(txtReginstraion);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(lblMonth);
             panel1.Controls.Add(dtDate);
@@ -167,7 +168,7 @@
             Name = "AttendanceDashBoard";
             Text = "markAttedance";
             Load += AttendanceDashBoard_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtDashAttend).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -175,10 +176,10 @@
 
         #endregion
         private Button button2;
-        private DataGridView dataGridView1;
+        private DataGridView dtDashAttend;
         private DateTimePicker dtDate;
         private Label lblMonth;
-        private TextBox textBox1;
+        private TextBox txtReginstraion;
         private Panel panel1;
         private ComboBox cmbMonth;
         private Label lblDate;

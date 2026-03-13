@@ -697,5 +697,85 @@ namespace ExecutiveSceinceAccadmy.classes
             }
             //return false;
         }
+        public static bool showAttendacnceRecordOfDate(string studentRegistraionNo, string date, DataGridView dtDashAttend)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(str))
+                {
+                    con.Open();
+
+                    string query = @"SELECT 
+                                s.student_name,
+                                a.stdRegisNo,
+                                a.isPresent,
+                                a.attenceType,
+                                a.day,
+                                a.attendDate
+                             FROM studentAttendance a
+                             INNER JOIN StudentTb s
+                             ON a.stdRegisNo = s.stdRegisNo
+                             WHERE a.stdRegisNo = @regNo
+                             AND a.attendDate = @date";
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@regNo", studentRegistraionNo);
+                    cmd.Parameters.AddWithValue("@date", date);
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    dtDashAttend.DataSource = dt;
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+        public static bool ShowAttendanceOfStudentOfMonth(string studentRegistraionNo, int month, DataGridView dtDashAttenddtDash)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(str))
+                {
+                    con.Open();
+
+                    string query = @"SELECT 
+                                s.student_name,
+                                a.stdRegisNo,
+                                a.isPresent,
+                                a.attenceType,
+                                a.day,
+                                a.attendDate
+                             FROM studentAttendance a
+                             INNER JOIN StudentTb s
+                             ON a.stdRegisNo = s.stdRegisNo
+                             WHERE a.stdRegisNo = @regNo
+                             AND MONTH(a.attendDate) = @month";
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@regNo", studentRegistraionNo);
+                    cmd.Parameters.AddWithValue("@month", month);
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    dtDashAttenddtDash.DataSource = dt;
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
     }
 }
