@@ -1,4 +1,5 @@
 ﻿using ExecutiveSceinceAccadmy.classes;
+using ExecutiveScienceAcademy.classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,13 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
         public AttendanceDashBoard()
         {
             InitializeComponent();
+            UI.Instance.StyleForm(this,
+
+              backgroundColor: Color.RoyalBlue,
+              borderRadius: 25,
+              showCustomTitleBar: true,
+              title: "Executive Science Academy");
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void AttendanceDashBoard_Load(object sender, EventArgs e)
@@ -120,21 +128,21 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
             string studentRegistratoionNo = txtReginstraion.Text;
             string selectedDate = "";
             string searchMonth = "";
-            if (studentRegistratoionNo=="")
+            if (studentRegistratoionNo == "")
             {
                 MessageBox.Show("Please enter a registration number.");
                 return;
             }
-            if(rdDay.Checked)
+            if (rdDay.Checked)
             {
                 selectedDate = dtDate.Value.ToString("yyyy-MM-dd");
-                bool success=DB.showAttendacnceRecordOfDate(studentRegistratoionNo,selectedDate,dtDashAttend);
+                bool success = DB.showAttendacnceRecordOfDate(studentRegistratoionNo, selectedDate, dtDashAttend);
                 makeDashBoardUiGood();
             }
-            else if(rdMonth.Checked)
+            else if (rdMonth.Checked)
             {
 
-                 searchMonth = cmbMonth.SelectedItem.ToString();
+                searchMonth = cmbMonth.SelectedItem.ToString();
 
                 // Convert "January" → 1, "February" → 2
                 int monthNumber = DateTime.ParseExact(
@@ -146,12 +154,17 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
 
 
             }
-            
 
 
 
 
 
+
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

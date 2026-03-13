@@ -28,45 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button2 = new Button();
+            btnSearch = new Button();
             dtDashAttend = new DataGridView();
             dtDate = new DateTimePicker();
             lblMonth = new Label();
             txtReginstraion = new TextBox();
             panel1 = new Panel();
+            panel2 = new Panel();
+            lbLogo = new Label();
+            cmbMonth = new ComboBox();
             lblDate = new Label();
             label2 = new Label();
             rdMonth = new RadioButton();
             rdDay = new RadioButton();
-            cmbMonth = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dtDashAttend).BeginInit();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
-            // button2
+            // btnSearch
             // 
-            button2.Location = new Point(414, 228);
-            button2.Name = "button2";
-            button2.Size = new Size(139, 59);
-            button2.TabIndex = 1;
-            button2.Text = "Search";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            btnSearch.BackColor = Color.Black;
+            btnSearch.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSearch.ForeColor = Color.White;
+            btnSearch.Location = new Point(681, 269);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(139, 59);
+            btnSearch.TabIndex = 1;
+            btnSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = false;
+            btnSearch.Click += button2_Click;
             // 
             // dtDashAttend
             // 
             dtDashAttend.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtDashAttend.Location = new Point(3, 343);
+            dtDashAttend.Location = new Point(0, 343);
             dtDashAttend.Name = "dtDashAttend";
             dtDashAttend.RowHeadersWidth = 51;
-            dtDashAttend.Size = new Size(1186, 408);
+            dtDashAttend.Size = new Size(1189, 408);
             dtDashAttend.TabIndex = 2;
             dtDashAttend.CellContentClick += dataGridView1_CellContentClick;
             // 
             // dtDate
             // 
             dtDate.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dtDate.Location = new Point(223, 111);
+            dtDate.Location = new Point(490, 152);
             dtDate.Name = "dtDate";
             dtDate.Size = new Size(330, 31);
             dtDate.TabIndex = 3;
@@ -75,7 +81,7 @@
             // 
             lblMonth.AutoSize = true;
             lblMonth.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            lblMonth.Location = new Point(112, 114);
+            lblMonth.Location = new Point(379, 155);
             lblMonth.Name = "lblMonth";
             lblMonth.Size = new Size(75, 28);
             lblMonth.TabIndex = 4;
@@ -83,34 +89,67 @@
             // 
             // txtReginstraion
             // 
-            txtReginstraion.Location = new Point(223, 174);
+            txtReginstraion.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtReginstraion.Location = new Point(490, 215);
             txtReginstraion.Name = "txtReginstraion";
-            txtReginstraion.Size = new Size(330, 30);
+            txtReginstraion.PlaceholderText = "Enter Registration Number";
+            txtReginstraion.Size = new Size(330, 34);
             txtReginstraion.TabIndex = 6;
             // 
             // panel1
             // 
-            panel1.Controls.Add(lblDate);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(rdMonth);
-            panel1.Controls.Add(rdDay);
-            panel1.Controls.Add(cmbMonth);
+            panel1.Controls.Add(panel2);
             panel1.Controls.Add(dtDashAttend);
-            panel1.Controls.Add(txtReginstraion);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(lblMonth);
-            panel1.Controls.Add(dtDate);
             panel1.Location = new Point(21, 12);
             panel1.Name = "panel1";
             panel1.Size = new Size(1192, 753);
             panel1.TabIndex = 7;
             panel1.Paint += panel1_Paint;
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.IndianRed;
+            panel2.Controls.Add(lbLogo);
+            panel2.Controls.Add(cmbMonth);
+            panel2.Controls.Add(lblDate);
+            panel2.Controls.Add(dtDate);
+            panel2.Controls.Add(label2);
+            panel2.Controls.Add(lblMonth);
+            panel2.Controls.Add(rdMonth);
+            panel2.Controls.Add(btnSearch);
+            panel2.Controls.Add(rdDay);
+            panel2.Controls.Add(txtReginstraion);
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1189, 346);
+            panel2.TabIndex = 13;
+            panel2.Paint += panel2_Paint;
+            // 
+            // lbLogo
+            // 
+            lbLogo.AutoSize = true;
+            lbLogo.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbLogo.Location = new Point(284, 10);
+            lbLogo.Margin = new Padding(4, 0, 4, 0);
+            lbLogo.Name = "lbLogo";
+            lbLogo.Size = new Size(653, 46);
+            lbLogo.TabIndex = 13;
+            lbLogo.Text = "Welcome To Executive Sceince Accadmy";
+            // 
+            // cmbMonth
+            // 
+            cmbMonth.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cmbMonth.FormattingEnabled = true;
+            cmbMonth.Location = new Point(490, 151);
+            cmbMonth.Name = "cmbMonth";
+            cmbMonth.Size = new Size(330, 36);
+            cmbMonth.TabIndex = 7;
+            // 
             // lblDate
             // 
             lblDate.AutoSize = true;
             lblDate.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            lblDate.Location = new Point(124, 110);
+            lblDate.Location = new Point(391, 151);
             lblDate.Name = "lblDate";
             lblDate.Size = new Size(57, 28);
             lblDate.TabIndex = 12;
@@ -120,7 +159,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label2.Location = new Point(25, 176);
+            label2.Location = new Point(292, 217);
             label2.Name = "label2";
             label2.Size = new Size(162, 28);
             label2.TabIndex = 11;
@@ -129,9 +168,10 @@
             // rdMonth
             // 
             rdMonth.AutoSize = true;
-            rdMonth.Location = new Point(392, 15);
+            rdMonth.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rdMonth.Location = new Point(659, 101);
             rdMonth.Name = "rdMonth";
-            rdMonth.Size = new Size(161, 27);
+            rdMonth.Size = new Size(195, 32);
             rdMonth.TabIndex = 10;
             rdMonth.TabStop = true;
             rdMonth.Text = "Search By Month";
@@ -141,22 +181,15 @@
             // rdDay
             // 
             rdDay.AutoSize = true;
-            rdDay.Location = new Point(213, 15);
+            rdDay.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rdDay.Location = new Point(479, 101);
             rdDay.Name = "rdDay";
-            rdDay.Size = new Size(146, 27);
+            rdDay.Size = new Size(176, 32);
             rdDay.TabIndex = 9;
             rdDay.TabStop = true;
             rdDay.Text = "Search by Date";
             rdDay.UseVisualStyleBackColor = true;
             rdDay.CheckedChanged += rdDay_CheckedChanged;
-            // 
-            // cmbMonth
-            // 
-            cmbMonth.FormattingEnabled = true;
-            cmbMonth.Location = new Point(223, 110);
-            cmbMonth.Name = "cmbMonth";
-            cmbMonth.Size = new Size(330, 31);
-            cmbMonth.TabIndex = 7;
             // 
             // AttendanceDashBoard
             // 
@@ -170,12 +203,13 @@
             Load += AttendanceDashBoard_Load;
             ((System.ComponentModel.ISupportInitialize)dtDashAttend).EndInit();
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-        private Button button2;
+        private Button btnSearch;
         private DataGridView dtDashAttend;
         private DateTimePicker dtDate;
         private Label lblMonth;
@@ -186,5 +220,7 @@
         private Label label2;
         private RadioButton rdMonth;
         private RadioButton rdDay;
+        private Panel panel2;
+        private Label lbLogo;
     }
 }

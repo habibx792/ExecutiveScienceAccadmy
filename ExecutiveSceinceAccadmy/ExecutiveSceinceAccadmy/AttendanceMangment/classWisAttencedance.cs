@@ -19,7 +19,7 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
         {
             InitializeComponent();
             cmbAttendanceType.SelectedIndexChanged += cmbAttendance_SelectedIndexChanged;
-            btnSearch.BackColor = Color.AliceBlue;
+            //btnSearch.BackColor = Color.AliceBlue;
 
         }
 
@@ -179,19 +179,19 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
                     string attendanceType = cmbAttendanceType.SelectedItem.ToString();
                     string attendanceDate = DateTime.Now.ToString("yyyy-MM-dd");
                     string strId = regNo;
-                   
-                    strId=strId.Substring(4);
+
+                    strId = strId.Substring(4);
                     string attendaceId = strId + dataHandler.getStringOfDate();
                     attendanceRecords.Add(new AttendanceRecord(attendaceId, regNo, attendanceDate, isPresent, attendanceType, day));
                     isGetData = true;
                     //MessageBox.Show(attendaceId);
                 }
-                if(isGetData)
+                if (isGetData)
                 {
-                    string givenClass=cmbClass.SelectedItem.ToString();
-                    string givenAttendanceType=cmbAttendanceType.SelectedItem.ToString();
-                    bool updateSuccess = DB.MarkAttendanceByClassWise(attendanceRecords,givenClass,givenAttendanceType);
-                    if(updateSuccess)
+                    string givenClass = cmbClass.SelectedItem.ToString();
+                    string givenAttendanceType = cmbAttendanceType.SelectedItem.ToString();
+                    bool updateSuccess = DB.MarkAttendanceByClassWise(attendanceRecords, givenClass, givenAttendanceType);
+                    if (updateSuccess)
                     {
                         MessageBox.Show("Attendance marked successfully!");
                     }
@@ -203,6 +203,11 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
                 }
 
             }
+        }
+
+        private void cmbClass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

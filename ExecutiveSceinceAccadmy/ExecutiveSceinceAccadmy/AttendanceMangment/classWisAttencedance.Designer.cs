@@ -39,7 +39,9 @@
             // 
             // btnSearch
             // 
-            btnSearch.BackColor = Color.RoyalBlue;
+            btnSearch.BackColor = Color.Black;
+            btnSearch.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSearch.ForeColor = Color.White;
             btnSearch.Location = new Point(800, 5);
             btnSearch.Margin = new Padding(4, 5, 4, 5);
             btnSearch.Name = "btnSearch";
@@ -93,13 +95,15 @@
             // 
             // cmbClass
             // 
+            cmbClass.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cmbClass.FormattingEnabled = true;
             cmbClass.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" });
             cmbClass.Location = new Point(23, 21);
             cmbClass.Margin = new Padding(4, 5, 4, 5);
             cmbClass.Name = "cmbClass";
-            cmbClass.Size = new Size(373, 31);
+            cmbClass.Size = new Size(373, 36);
             cmbClass.TabIndex = 2;
+            cmbClass.SelectedIndexChanged += cmbClass_SelectedIndexChanged;
             // 
             // pnLogo
             // 
@@ -141,10 +145,11 @@
             // 
             // cmbAttendanceType
             // 
+            cmbAttendanceType.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cmbAttendanceType.FormattingEnabled = true;
             cmbAttendanceType.Location = new Point(413, 21);
             cmbAttendanceType.Name = "cmbAttendanceType";
-            cmbAttendanceType.Size = new Size(357, 31);
+            cmbAttendanceType.Size = new Size(357, 36);
             cmbAttendanceType.TabIndex = 3;
             cmbAttendanceType.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
