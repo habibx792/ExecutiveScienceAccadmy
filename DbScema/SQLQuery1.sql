@@ -39,6 +39,8 @@ CREATE TABLE subjectTb (
     FOREIGN KEY (classId) REFERENCES classTb(classId) ON DELETE CASCADE,
     FOREIGN KEY (domainId) REFERENCES domainTb(domainId) ON DELETE NO ACTION
 );
+ALTER TABLE subjectTb
+DROP COLUMN subjectsName;
 
 ---======================================= Student Tables ======================================
 CREATE TABLE StudentTb (
@@ -212,7 +214,30 @@ CREATE TABLE StdResult
     CONSTRAINT FK_StdResult_Domain FOREIGN KEY (domainId) REFERENCES domainTb(domainId) ON DELETE NO ACTION,
     CONSTRAINT FK_StdResult_Class FOREIGN KEY (classId) REFERENCES classTb(classId) ON DELETE NO ACTION
 );
+CREATE TABLE subjectWiseResultTb
+(
+    stdRegisNo VARCHAR(50) NOT NULL,
+    subjectId INT NOT NULL,
+    classId INT NOT NULL,
+    resultDate DATE NOT NULL,
+    gainedMark INT NOT NULL,
+    totalMark INT DEFAULT 100,
 
+    CONSTRAINT PK_subjectWiseResult 
+        PRIMARY KEY (stdRegisNo, subjectId, resultDate),
+
+    CONSTRAINT FK_subjectWiseResult_student 
+        FOREIGN KEY (stdRegisNo) 
+        REFERENCES StudentTb(stdRegisNo) ON DELETE CASCADE,
+
+    CONSTRAINT FK_subjectWiseResult_subject 
+        FOREIGN KEY (subjectId) 
+        REFERENCES subjectTb(subjectId) ON DELETE CASCADE,
+
+    CONSTRAINT FK_subjectWiseResult_class 
+        FOREIGN KEY (classId) 
+        REFERENCES classTb(classId) ON DELETE NO ACTION
+);
 CREATE TABLE setMark
 (
     setMarkId INT IDENTITY(1,1) NOT NULL PRIMARY KEY,

@@ -8,6 +8,8 @@ select * from stdAdress;
 select * from academicTb;
 select * from setStdFeeTb;
 select * from feeTb;
+select * from subjectTb;
+select * from setStdFeeTb;
 select * from studentAttendance;
 
 SELECT 
