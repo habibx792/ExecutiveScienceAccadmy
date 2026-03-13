@@ -72,6 +72,10 @@ namespace ExecutiveSceinceAccadmy.classes
         {
             return DateTime.Now.ToString("yyyyMd");
         }
+        public static string getStringOfDate()
+        {
+            return DateTime.Now.ToString("yyyyMMdd");
+        }
 
         public static int calculateAge(DateTime birthDate)
         {

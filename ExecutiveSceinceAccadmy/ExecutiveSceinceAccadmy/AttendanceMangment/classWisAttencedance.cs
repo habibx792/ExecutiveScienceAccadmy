@@ -152,14 +152,44 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
             string classSelected = cmbClass.SelectedItem.ToString();
             string attendanceTypeSelected = cmbAttendanceType.SelectedItem.ToString();
             string currentMonth = DateTime.Now.ToString("MMMM");
-            string currDay= DateTime.Now.Day.ToString();
+            string currDay = DateTime.Now.Day.ToString();
             //MessageBox.Show($"Searching attendance for {attendanceTypeSelected} class {classSelected} for month {currentMonth} and day {currDay}");
-                bool dataLaodSuccess = DB.loadClassAttendance(classSelected, attendanceTypeSelected,dtGridAttence);
+            bool dataLaodSuccess = DB.loadClassAttendance(classSelected, attendanceTypeSelected, dtGridAttence);
             if (!dataLaodSuccess || dtGridAttence.Rows.Count == 0)
             {
                 MessageBox.Show("No attendance data found for the selected class and month.");
             }
-            
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (cmbAttendanceType.SelectedItem != null && cmbClass.SelectedItem != null)
+            {
+                foreach (DataGridViewRow row in dtGridAttence.Rows)
+                {
+                    if (row.IsNewRow) continue; // ignore last empty row
+
+                    string regNo = row.Cells["colRegis"].Value.ToString();
+                    string name = row.Cells["colName"].Value.ToString();
+                    bool isPresent = Convert.ToBoolean(row.Cells["colIsPresent"].Value);
+                    string day = row.Cells["colDay"].Value.ToString();
+                    string attendanceType = cmbAttendanceType.SelectedItem.ToString();
+                    string attendanceDate = DateTime.Now.ToString("yyyy-MM-dd");
+                    string attendaceId = regNo + dataHandler.getStringOfDate();
+                    MessageBox.Show(attendaceId);
+                    dtGridAttence.Columns.Add("colRegis", "Registration No");
+                    dtGridAttence.Columns.Add("colName", "Name");
+                    dtGridAttence.Columns.Add("colDay", "Day");
+
+                    DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
+                    chk.Name = "colIsPresent";
+                    chk.HeaderText = "Is Present";
+                    chk.DefaultCellStyle.NullValue = true; // default checked
+
+                    MessageBox.Show(regNo + " " + name + " " + isPresent);
+                }
+            }
         }
     }
 }
