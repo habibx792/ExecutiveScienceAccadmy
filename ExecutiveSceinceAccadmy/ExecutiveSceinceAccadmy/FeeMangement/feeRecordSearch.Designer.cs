@@ -71,9 +71,10 @@
             // rdFeeId
             // 
             rdFeeId.AutoSize = true;
+            rdFeeId.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             rdFeeId.Location = new Point(224, 109);
             rdFeeId.Name = "rdFeeId";
-            rdFeeId.Size = new Size(158, 27);
+            rdFeeId.Size = new Size(191, 32);
             rdFeeId.TabIndex = 4;
             rdFeeId.TabStop = true;
             rdFeeId.Text = "Search By Fee ID";
@@ -139,9 +140,10 @@
             // rdStdId
             // 
             rdStdId.AutoSize = true;
+            rdStdId.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             rdStdId.Location = new Point(430, 109);
             rdStdId.Name = "rdStdId";
-            rdStdId.Size = new Size(191, 27);
+            rdStdId.Size = new Size(233, 32);
             rdStdId.TabIndex = 5;
             rdStdId.TabStop = true;
             rdStdId.Text = "Search By Student ID";
@@ -150,17 +152,20 @@
             // 
             // cmbMonth
             // 
+            cmbMonth.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cmbMonth.FormattingEnabled = true;
             cmbMonth.Location = new Point(224, 219);
             cmbMonth.Name = "cmbMonth";
-            cmbMonth.Size = new Size(413, 31);
+            cmbMonth.Size = new Size(413, 36);
             cmbMonth.TabIndex = 3;
             // 
             // txtId
             // 
+            txtId.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtId.Location = new Point(224, 162);
             txtId.Name = "txtId";
-            txtId.Size = new Size(413, 30);
+            txtId.PlaceholderText = "Enter Registeratrion Number";
+            txtId.Size = new Size(413, 34);
             txtId.TabIndex = 2;
             // 
             // lbLogo

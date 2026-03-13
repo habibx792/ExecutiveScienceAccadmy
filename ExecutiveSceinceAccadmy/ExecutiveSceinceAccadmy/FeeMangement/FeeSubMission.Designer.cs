@@ -88,10 +88,11 @@
             // 
             // cmbMonth
             // 
+            cmbMonth.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cmbMonth.FormattingEnabled = true;
             cmbMonth.Location = new Point(420, 260);
             cmbMonth.Name = "cmbMonth";
-            cmbMonth.Size = new Size(427, 31);
+            cmbMonth.Size = new Size(427, 36);
             cmbMonth.TabIndex = 39;
             cmbMonth.SelectedIndexChanged += cmbMonth_SelectedIndexChanged;
             // 
@@ -110,6 +111,7 @@
             // 
             txtSubBy.AutoCompleteCustomSource.AddRange(new string[] { "0" });
             txtSubBy.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtSubBy.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtSubBy.Location = new Point(420, 383);
             txtSubBy.Margin = new Padding(4, 5, 4, 5);
             txtSubBy.Name = "txtSubBy";
@@ -142,11 +144,12 @@
             // 
             // txtPercentage
             // 
+            txtPercentage.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtPercentage.Location = new Point(606, 315);
             txtPercentage.Margin = new Padding(4, 5, 4, 5);
             txtPercentage.Name = "txtPercentage";
             txtPercentage.ReadOnly = true;
-            txtPercentage.Size = new Size(241, 30);
+            txtPercentage.Size = new Size(241, 34);
             txtPercentage.TabIndex = 34;
             txtPercentage.Text = "0";
             // 
@@ -154,22 +157,24 @@
             // 
             txtDicount.AutoCompleteCustomSource.AddRange(new string[] { "0" });
             txtDicount.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtDicount.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtDicount.Location = new Point(420, 315);
             txtDicount.Margin = new Padding(4, 5, 4, 5);
             txtDicount.Name = "txtDicount";
             txtDicount.PlaceholderText = "Enter Discount";
-            txtDicount.Size = new Size(178, 30);
+            txtDicount.Size = new Size(178, 34);
             txtDicount.TabIndex = 33;
             txtDicount.Text = "0";
             txtDicount.TextChanged += textBox2_TextChanged;
             // 
             // txtAmount
             // 
+            txtAmount.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtAmount.Location = new Point(420, 222);
             txtAmount.Margin = new Padding(4, 5, 4, 5);
             txtAmount.Name = "txtAmount";
             txtAmount.PlaceholderText = "Enter Amount";
-            txtAmount.Size = new Size(427, 30);
+            txtAmount.Size = new Size(427, 34);
             txtAmount.TabIndex = 32;
             // 
             // label1
@@ -208,20 +213,22 @@
             // 
             // dtPick
             // 
+            dtPick.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dtPick.Location = new Point(420, 69);
             dtPick.Margin = new Padding(4, 5, 4, 5);
             dtPick.Name = "dtPick";
-            dtPick.Size = new Size(427, 30);
+            dtPick.Size = new Size(427, 34);
             dtPick.TabIndex = 3;
             dtPick.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // txtRegis
             // 
+            txtRegis.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtRegis.Location = new Point(420, 145);
             txtRegis.Margin = new Padding(4, 5, 4, 5);
             txtRegis.Name = "txtRegis";
             txtRegis.PlaceholderText = "26-10-comp-00";
-            txtRegis.Size = new Size(427, 30);
+            txtRegis.Size = new Size(427, 34);
             txtRegis.TabIndex = 4;
             txtRegis.TextChanged += textBox1_TextChanged;
             // 
