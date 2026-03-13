@@ -179,8 +179,9 @@
             button8.Name = "button8";
             button8.Size = new Size(289, 92);
             button8.TabIndex = 8;
-            button8.Text = "button8";
+            button8.Text = "Attendance Magangement";
             button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
             // 
             // button9
             // 
