@@ -179,6 +179,7 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
                     string attendanceType = cmbAttendanceType.SelectedItem.ToString();
                     string attendanceDate = DateTime.Now.ToString("yyyy-MM-dd");
                     string strId = regNo;
+                   
                     strId=strId.Substring(4);
                     string attendaceId = strId + dataHandler.getStringOfDate();
                     attendanceRecords.Add(new AttendanceRecord(attendaceId, regNo, attendanceDate, isPresent, attendanceType, day));
@@ -187,7 +188,9 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
                 }
                 if(isGetData)
                 {
-                    bool updateSuccess = DB.MarkAttendanceByClassWise(attendanceRecords);
+                    string givenClass=cmbClass.SelectedItem.ToString();
+                    string givenAttendanceType=cmbAttendanceType.SelectedItem.ToString();
+                    bool updateSuccess = DB.MarkAttendanceByClassWise(attendanceRecords,givenClass,givenAttendanceType);
                     if(updateSuccess)
                     {
                         MessageBox.Show("Attendance marked successfully!");

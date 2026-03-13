@@ -662,7 +662,7 @@ namespace ExecutiveSceinceAccadmy.classes
             }
         }
         //implementing method for attendance
-        public static bool MarkAttendanceByClassWise(List<AttendanceRecord> attendanceRecords)
+        public static bool MarkAttendanceByClassWise(List<AttendanceRecord> attendanceRecords,string givenClass,string givenAttendanceType)
         {
             try
             {
@@ -692,7 +692,7 @@ namespace ExecutiveSceinceAccadmy.classes
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error marking attendance: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"You Have already Mark Attendce for {givenClass} Type {givenAttendanceType}");
                 return false;
             }
             //return false;
