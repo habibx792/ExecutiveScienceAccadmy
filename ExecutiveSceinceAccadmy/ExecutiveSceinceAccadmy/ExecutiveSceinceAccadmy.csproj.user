@@ -28,7 +28,7 @@
     <Compile Update="ExpenseMangenment\checkCurrentYear.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ExpenseMangenment\checkCurrMonth.cs">
+    <Compile Update="ExpenseMangenment\checkExpense.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ExpenseMangenment\ExpenseForm.cs">

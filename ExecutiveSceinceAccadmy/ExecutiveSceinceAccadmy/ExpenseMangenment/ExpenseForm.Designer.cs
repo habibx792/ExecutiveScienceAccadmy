@@ -79,7 +79,7 @@
             btnYear.Name = "btnYear";
             btnYear.Size = new Size(305, 76);
             btnYear.TabIndex = 21;
-            btnYear.Text = "Current Year Expense";
+            btnYear.Text = "Yearly Expense";
             btnYear.UseVisualStyleBackColor = true;
             // 
             // btnCurrMonth
@@ -89,8 +89,9 @@
             btnCurrMonth.Name = "btnCurrMonth";
             btnCurrMonth.Size = new Size(284, 76);
             btnCurrMonth.TabIndex = 20;
-            btnCurrMonth.Text = "Current Month Expense";
+            btnCurrMonth.Text = "Montly Expense";
             btnCurrMonth.UseVisualStyleBackColor = true;
+            btnCurrMonth.Click += btnCurrMonth_Click;
             // 
             // pnLogo
             // 

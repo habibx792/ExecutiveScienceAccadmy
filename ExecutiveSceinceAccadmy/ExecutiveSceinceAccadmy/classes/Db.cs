@@ -895,5 +895,73 @@ namespace ExecutiveSceinceAccadmy.classes
                 return false;
             }
         }
+        public static bool expenseOfCurrentYearMonth(string year, string month, DataGridView dtExpense)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(str))
+                {
+                    string query = @"
+                    SELECT expenseId, expenseType, expenseAmount, expenseDate, expenseMonth
+                    FROM expenseTb
+                    WHERE YEAR(expenseDate) = @year AND expenseMonth = @month
+                    ORDER BY expenseDate";
+
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@year", int.Parse(year));
+                        cmd.Parameters.AddWithValue("@month", month);
+
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+
+                        dtExpense.DataSource = dt;
+                    }
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading expenses: " + ex.Message);
+                return false;
+            }
+        }
+
+        public static bool LoadExpenseOfYear(string year, DataGridView dtExpense)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(str))
+                {
+                    string query = @"
+                    SELECT expenseId, expenseType, expenseAmount, expenseDate, expenseMonth
+                    FROM expenseTb
+                    WHERE YEAR(expenseDate) = @year
+                    ORDER BY expenseDate";
+
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@year", int.Parse(year));
+
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+
+                        dtExpense.DataSource = dt;
+                    }
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading expenses: " + ex.Message);
+                return false;
+            }
+        }
+
+      
+
+       
     }
 }

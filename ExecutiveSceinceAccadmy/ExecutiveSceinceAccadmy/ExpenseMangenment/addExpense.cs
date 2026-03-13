@@ -99,13 +99,13 @@ namespace ExecutiveSceinceAccadmy.ExpenseMangenment
                 dataHandler.generateRandomeNumber(3) +
                 dataHandler.getStringOfDate();
 
-            MessageBox.Show(
-                $"Expense ID: {expenseId}\n" +
-                $"Expense Type: {expenseType}\n" +
-                $"Amount: {amount}\n" +
-                $"Date: {date}\n" +
-                $"Month: {month}"
-            );
+            //MessageBox.Show(
+            //    $"Expense ID: {expenseId}\n" +
+            //    $"Expense Type: {expenseType}\n" +
+            //    $"Amount: {amount}\n" +
+            //    $"Date: {date}\n" +
+            //    $"Month: {month}"
+            //);
 
             bool addExpenseSuccess = DB.addExpense(expenseId, expenseType, amount, date, month);
 

@@ -144,5 +144,16 @@ namespace ExecutiveSceinceAccadmy.classes
             }
             return result.ToString();
         }
+        public static List<int> loadPreviouseAndNextFiveYears()
+        {
+            int currentYear = getCurrentYear();
+            List<int> years = new List<int>();
+            for (int i = currentYear - 5; i <= currentYear + 5; i++)
+            {
+                years.Add(i);
+            }
+            return years;
+
+        }
     }
 }
