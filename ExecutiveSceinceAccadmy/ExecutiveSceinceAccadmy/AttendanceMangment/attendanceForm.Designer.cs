@@ -33,7 +33,6 @@
             btnMark = new Button();
             btnSujectWise = new Button();
             pnMain = new Panel();
-            btnSum = new Button();
             btnUpAtt = new Button();
             btnDashBoad = new Button();
             pnLogo.SuspendLayout();
@@ -86,7 +85,6 @@
             // 
             pnMain.BackColor = Color.IndianRed;
             pnMain.Controls.Add(btnMark);
-            pnMain.Controls.Add(btnSum);
             pnMain.Controls.Add(btnUpAtt);
             pnMain.Controls.Add(btnSujectWise);
             pnMain.Controls.Add(btnDashBoad);
@@ -95,16 +93,6 @@
             pnMain.Name = "pnMain";
             pnMain.Size = new Size(760, 427);
             pnMain.TabIndex = 26;
-            // 
-            // btnSum
-            // 
-            btnSum.Location = new Point(60, 270);
-            btnSum.Margin = new Padding(4, 5, 4, 5);
-            btnSum.Name = "btnSum";
-            btnSum.Size = new Size(294, 75);
-            btnSum.TabIndex = 21;
-            btnSum.Text = "Show Summary";
-            btnSum.UseVisualStyleBackColor = true;
             // 
             // btnUpAtt
             // 
@@ -126,6 +114,7 @@
             btnDashBoad.TabIndex = 22;
             btnDashBoad.Text = "Attendance DashBoard";
             btnDashBoad.UseVisualStyleBackColor = true;
+            btnDashBoad.Click += btnDashBoad_Click;
             // 
             // attendanceForm
             // 
@@ -153,7 +142,6 @@
         private Button btnMark;
         private Button btnSujectWise;
         private Panel pnMain;
-        private Button btnSum;
         private Button btnUpAtt;
         private Button btnDashBoad;
     }

@@ -7,7 +7,7 @@
     <Compile Update="AttendanceMangment\classWisAttencedance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="AttendanceMangment\markAttedance.cs">
+    <Compile Update="AttendanceMangment\AttendanceDashBoard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="AttendanceMangment\TeacheraAttendance.cs">
