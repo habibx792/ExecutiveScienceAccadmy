@@ -775,32 +775,72 @@ namespace ExecutiveSceinceAccadmy.classes
             {
                 using (SqlConnection con = new SqlConnection(str))
                 {
-                    string query = @"
-            IF NOT EXISTS (
-                SELECT 1 FROM setStdFeeTb 
-                WHERE classId = @classId AND domainId = @domainId
-            )
-            INSERT INTO setStdFeeTb (classId, domainId, amount)
-            VALUES (@classId, @domainId, @amount)";
+                    con.Open();
 
-                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    // 1️⃣ Check if fee already exists
+                    string checkQuery = @"SELECT COUNT(*) 
+                                  FROM setStdFeeTb 
+                                  WHERE classId = @classId AND domainId = @domainId";
+
+                    using (SqlCommand checkCmd = new SqlCommand(checkQuery, con))
                     {
-                        cmd.Parameters.AddWithValue("@classId", classId);
-                        cmd.Parameters.AddWithValue("@domainId", domainId);
-                        cmd.Parameters.AddWithValue("@amount", feeAmount);
+                        checkCmd.Parameters.AddWithValue("@classId", classId);
+                        checkCmd.Parameters.AddWithValue("@domainId", domainId);
 
-                        con.Open();
-                        int rows = cmd.ExecuteNonQuery();
+                        int count = (int)checkCmd.ExecuteScalar();
 
-                        if (rows > 0)
+                        if (count > 0)
                         {
-                            MessageBox.Show("Fee set successfully.");
-                            return true;
+                            // Fee already exists → ask admin
+                            DialogResult result = MessageBox.Show(
+                                "Fee already exists for this class and domain.\nDo you want to update it?",
+                                "Update Fee",
+                                MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Question);
+
+                            if (result == DialogResult.Yes)
+                            {
+                                // 2️⃣ Update fee
+                                string updateQuery = @"UPDATE setStdFeeTb
+                                               SET amount = @amount
+                                               WHERE classId = @classId 
+                                               AND domainId = @domainId";
+
+                                using (SqlCommand updateCmd = new SqlCommand(updateQuery, con))
+                                {
+                                    updateCmd.Parameters.AddWithValue("@amount", feeAmount);
+                                    updateCmd.Parameters.AddWithValue("@classId", classId);
+                                    updateCmd.Parameters.AddWithValue("@domainId", domainId);
+
+                                    updateCmd.ExecuteNonQuery();
+                                }
+
+                                MessageBox.Show("Fee updated successfully.");
+                                return true;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Fee already added. No changes made.");
+                                return false;
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("Fee already exists for this class and domain.");
-                            return false;
+                            // 3️⃣ Insert new fee
+                            string insertQuery = @"INSERT INTO setStdFeeTb (classId, domainId, amount)
+                                           VALUES (@classId, @domainId, @amount)";
+
+                            using (SqlCommand insertCmd = new SqlCommand(insertQuery, con))
+                            {
+                                insertCmd.Parameters.AddWithValue("@classId", classId);
+                                insertCmd.Parameters.AddWithValue("@domainId", domainId);
+                                insertCmd.Parameters.AddWithValue("@amount", feeAmount);
+
+                                insertCmd.ExecuteNonQuery();
+                            }
+
+                            MessageBox.Show("Fee set successfully.");
+                            return true;
                         }
                     }
                 }
