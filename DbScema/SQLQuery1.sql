@@ -281,16 +281,12 @@ CREATE TABLE academySubjectProfitTb (
     created_at DATETIME DEFAULT GETDATE(),
     FOREIGN KEY (subjectId) REFERENCES subjectTb(subjectId) ON DELETE NO ACTION
 );
-
 CREATE TABLE expenseTb (
-    expenseId INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    expenseId VARCHAR(30) NOT NULL PRIMARY KEY,
     expenseType VARCHAR(50) NOT NULL,
     expenseAmount DECIMAL(10,2) NOT NULL DEFAULT 0.00,
     expenseDate DATE DEFAULT GETDATE(),
     expenseMonth VARCHAR(15) NOT NULL,
-    expenseDescription TEXT NULL,
-    paidTo VARCHAR(100) NULL,
-    paymentMethod VARCHAR(20) DEFAULT 'CASH',
     created_at DATETIME DEFAULT GETDATE()
 );
 

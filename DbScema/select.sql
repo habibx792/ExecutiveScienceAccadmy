@@ -11,6 +11,7 @@ select * from feeTb;
 select * from subjectTb;
 select * from setStdFeeTb;
 select * from studentAttendance;
+select * from expenseTb;
 
 SELECT 
     s.stdRegisNo,
