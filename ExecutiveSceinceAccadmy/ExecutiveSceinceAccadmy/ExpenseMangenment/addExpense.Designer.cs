@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             pnMain = new Panel();
+            label3 = new Label();
+            lblDate = new Label();
+            label1 = new Label();
             lblAdd = new Label();
-            comboBox1 = new ComboBox();
-            button1 = new Button();
-            textBox1 = new TextBox();
-            dateTimePicker1 = new DateTimePicker();
+            cmbExpense = new ComboBox();
+            btnExpenseAdd = new Button();
+            txtExenseAmount = new TextBox();
+            dtExpense = new DateTimePicker();
             pnLogo = new Panel();
             lbLogo = new Label();
-            label1 = new Label();
-            lblDate = new Label();
-            label3 = new Label();
             pnMain.SuspendLayout();
             pnLogo.SuspendLayout();
             SuspendLayout();
@@ -49,16 +49,46 @@
             pnMain.Controls.Add(lblDate);
             pnMain.Controls.Add(label1);
             pnMain.Controls.Add(lblAdd);
-            pnMain.Controls.Add(comboBox1);
-            pnMain.Controls.Add(button1);
-            pnMain.Controls.Add(textBox1);
-            pnMain.Controls.Add(dateTimePicker1);
+            pnMain.Controls.Add(cmbExpense);
+            pnMain.Controls.Add(btnExpenseAdd);
+            pnMain.Controls.Add(txtExenseAmount);
+            pnMain.Controls.Add(dtExpense);
             pnMain.Location = new Point(13, 98);
             pnMain.Margin = new Padding(4, 5, 4, 5);
             pnMain.Name = "pnMain";
             pnMain.Size = new Size(789, 428);
             pnMain.TabIndex = 0;
             pnMain.Paint += panel1_Paint;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label3.Location = new Point(17, 209);
+            label3.Name = "label3";
+            label3.Size = new Size(171, 28);
+            label3.TabIndex = 29;
+            label3.Text = "Expense Amount";
+            // 
+            // lblDate
+            // 
+            lblDate.AutoSize = true;
+            lblDate.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblDate.Location = new Point(131, 73);
+            lblDate.Name = "lblDate";
+            lblDate.Size = new Size(57, 28);
+            lblDate.TabIndex = 36;
+            lblDate.Text = "Date";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label1.Location = new Point(48, 150);
+            label1.Name = "label1";
+            label1.Size = new Size(140, 28);
+            label1.TabIndex = 35;
+            label1.Text = "Expense Type";
             // 
             // lblAdd
             // 
@@ -71,44 +101,45 @@
             lblAdd.TabIndex = 34;
             lblAdd.Text = "Add Expense";
             // 
-            // comboBox1
+            // cmbExpense
             // 
-            comboBox1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(195, 147);
-            comboBox1.Margin = new Padding(4, 5, 4, 5);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(348, 36);
-            comboBox1.TabIndex = 33;
+            cmbExpense.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            cmbExpense.FormattingEnabled = true;
+            cmbExpense.Location = new Point(195, 147);
+            cmbExpense.Margin = new Padding(4, 5, 4, 5);
+            cmbExpense.Name = "cmbExpense";
+            cmbExpense.Size = new Size(348, 36);
+            cmbExpense.TabIndex = 33;
             // 
-            // button1
+            // btnExpenseAdd
             // 
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button1.Location = new Point(387, 260);
-            button1.Margin = new Padding(4, 5, 4, 5);
-            button1.Name = "button1";
-            button1.Size = new Size(156, 58);
-            button1.TabIndex = 29;
-            button1.Text = "Add Expense";
-            button1.UseVisualStyleBackColor = true;
+            btnExpenseAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnExpenseAdd.Location = new Point(387, 260);
+            btnExpenseAdd.Margin = new Padding(4, 5, 4, 5);
+            btnExpenseAdd.Name = "btnExpenseAdd";
+            btnExpenseAdd.Size = new Size(156, 58);
+            btnExpenseAdd.TabIndex = 29;
+            btnExpenseAdd.Text = "Add Expense";
+            btnExpenseAdd.UseVisualStyleBackColor = true;
+            btnExpenseAdd.Click += btnExpenseAdd_Click;
             // 
-            // textBox1
+            // txtExenseAmount
             // 
-            textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            textBox1.Location = new Point(195, 206);
-            textBox1.Margin = new Padding(4, 5, 4, 5);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(348, 34);
-            textBox1.TabIndex = 31;
+            txtExenseAmount.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            txtExenseAmount.Location = new Point(195, 206);
+            txtExenseAmount.Margin = new Padding(4, 5, 4, 5);
+            txtExenseAmount.Name = "txtExenseAmount";
+            txtExenseAmount.Size = new Size(348, 34);
+            txtExenseAmount.TabIndex = 31;
             // 
-            // dateTimePicker1
+            // dtExpense
             // 
-            dateTimePicker1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            dateTimePicker1.Location = new Point(195, 68);
-            dateTimePicker1.Margin = new Padding(4, 5, 4, 5);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(348, 34);
-            dateTimePicker1.TabIndex = 32;
+            dtExpense.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            dtExpense.Location = new Point(195, 68);
+            dtExpense.Margin = new Padding(4, 5, 4, 5);
+            dtExpense.Name = "dtExpense";
+            dtExpense.Size = new Size(348, 34);
+            dtExpense.TabIndex = 32;
             // 
             // pnLogo
             // 
@@ -130,36 +161,6 @@
             lbLogo.TabIndex = 0;
             lbLogo.Text = "Welcome To Executive Sceince Accadmy";
             lbLogo.Click += lbLogo_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label1.Location = new Point(48, 150);
-            label1.Name = "label1";
-            label1.Size = new Size(140, 28);
-            label1.TabIndex = 35;
-            label1.Text = "Expense Type";
-            // 
-            // lblDate
-            // 
-            lblDate.AutoSize = true;
-            lblDate.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            lblDate.Location = new Point(131, 73);
-            lblDate.Name = "lblDate";
-            lblDate.Size = new Size(57, 28);
-            lblDate.TabIndex = 36;
-            lblDate.Text = "Date";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label3.Location = new Point(17, 209);
-            label3.Name = "label3";
-            label3.Size = new Size(171, 28);
-            label3.TabIndex = 29;
-            label3.Text = "Expense Amount";
             // 
             // addExpense
             // 
@@ -183,10 +184,10 @@
 
         private Panel pnMain;
         private Label lblAdd;
-        private ComboBox comboBox1;
-        private Button button1;
-        private TextBox textBox1;
-        private DateTimePicker dateTimePicker1;
+        private ComboBox cmbExpense;
+        private Button btnExpenseAdd;
+        private TextBox txtExenseAmount;
+        private DateTimePicker dtExpense;
         private Panel pnLogo;
         private Label lbLogo;
         private Label label3;

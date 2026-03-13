@@ -1,12 +1,13 @@
-﻿using Microsoft.Data.SqlClient;  // Ensure this NuGet package is installed
+﻿using ExecutiveSceinceAccadmy.classes;
+using Microsoft.Data.SqlClient;  // Ensure this NuGet package is installed
+using Microsoft.Identity.Client;
 using System;
 using System.Data;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Web;      // For showing error messages temporarily
 using System.Windows.Forms;
-using ExecutiveSceinceAccadmy.classes;
-using Microsoft.Identity.Client;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace ExecutiveSceinceAccadmy.classes
 {
     public static class DB
@@ -848,6 +849,49 @@ namespace ExecutiveSceinceAccadmy.classes
             catch (Exception ex)
             {
                 MessageBox.Show("Error adding fee: " + ex.Message);
+                return false;
+            }
+        }
+
+        public static bool addExpense(string expenseId, string expenseType, double expenseAmount, string date, string expenseMonth)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(str))
+                {
+                    string query = @"INSERT INTO expenseTb 
+                             (expenseId, expenseType, expenseAmount, expenseDate, expenseMonth)
+                             VALUES 
+                             (@expenseId, @expenseType, @expenseAmount, @expenseDate, @expenseMonth)";
+
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@expenseId", expenseId);
+                        cmd.Parameters.AddWithValue("@expenseType", expenseType);
+                        cmd.Parameters.AddWithValue("@expenseAmount", expenseAmount);
+                        cmd.Parameters.AddWithValue("@expenseDate", Convert.ToDateTime(date));
+                        cmd.Parameters.AddWithValue("@expenseMonth", expenseMonth);
+
+                        con.Open();
+                        int rows = cmd.ExecuteNonQuery();
+
+                        if (rows > 0)
+                        {
+                            //MessageBox.Show("Expense added successfully!", "Success",
+                            //    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return true;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Expense could not be added.");
+                            return false;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error adding expense: " + ex.Message);
                 return false;
             }
         }
