@@ -57,6 +57,16 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
         private void FeeSubMission_Load(object sender, EventArgs e)
         {
             dataHandler.LoadMonths(cmbMonth);
+            string currentMonthName = DateTime.Now.ToString("MMMM");
+
+            // Find the index of the month in the ComboBox
+            int monthIndex = cmbMonth.Items.IndexOf(currentMonthName);
+
+            // Set the selected index if found
+            if (monthIndex >= 0)
+            {
+                cmbMonth.SelectedIndex = monthIndex;
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

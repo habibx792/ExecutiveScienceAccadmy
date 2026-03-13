@@ -112,6 +112,14 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
         private void RegisTracionForm_Load(object sender, EventArgs e)
         {
             AutoScroll = true;
+            rdReg.Checked = true;
+            cmbClass.SelectedIndex = 0;
+            cmbDomain.SelectedIndex = 0;
+            if(cmbClass.SelectedIndex<=8)
+            {
+               
+                cmbDomain.Items.Add("Prim");
+            }
 
 
         }
@@ -310,6 +318,19 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
 
         private void rdPrim_CheckedChanged(object sender, EventArgs e)
         {
+           if(rdPrim.Checked)
+            {
+                cmbDomain.SelectedIndex = cmbDomain.Items.Count - 1;
+            }
+            //else
+            //{
+            //    cmbDomain.Items.Clear();
+            //    List<string>domain=   DB.loadALlDomain();
+            //    foreach (string s in domain)
+            //    {
+            //        cmbDomain.Items.Add((string)s);
+            //    }
+            //}
 
         }
 

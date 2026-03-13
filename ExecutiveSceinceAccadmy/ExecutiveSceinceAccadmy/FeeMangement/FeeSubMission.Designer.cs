@@ -46,6 +46,7 @@
             dataGridView1 = new DataGridView();
             lbLogo = new Label();
             pnLogo = new Panel();
+            lblMont = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -53,6 +54,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Salmon;
+            panel1.Controls.Add(lblMont);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(cmbMonth);
             panel1.Controls.Add(label5);
@@ -267,6 +269,17 @@
             pnLogo.TabIndex = 26;
             pnLogo.Paint += pnLogo_Paint;
             // 
+            // lblMont
+            // 
+            lblMont.AutoSize = true;
+            lblMont.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblMont.Location = new Point(258, 260);
+            lblMont.Margin = new Padding(4, 0, 4, 0);
+            lblMont.Name = "lblMont";
+            lblMont.Size = new Size(63, 23);
+            lblMont.TabIndex = 40;
+            lblMont.Text = "Month";
+            // 
             // FeeSubMission
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
@@ -307,5 +320,6 @@
         private TextBox txtSubBy;
         private ComboBox cmbMonth;
         private Panel pnLogo;
+        private Label lblMont;
     }
 }
