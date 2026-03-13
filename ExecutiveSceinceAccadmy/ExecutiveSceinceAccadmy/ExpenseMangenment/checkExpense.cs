@@ -47,8 +47,18 @@ namespace ExecutiveSceinceAccadmy.ExpenseMangenment
                 lblMonth.Text = "Month";
                 cmbMonth.Items.Clear();
                 dataHandler.LoadMonths(cmbMonth);
-                if (cmbMonth.Items.Count > 0)
-                    cmbMonth.SelectedIndex = 0;
+                // Get current month name, e.g., "March"
+                string currentMonthName = DateTime.Now.ToString("MMMM");
+
+                // Find the index of the month in the ComboBox
+                int monthIndex = cmbMonth.Items.IndexOf(currentMonthName);
+
+                // Set the selected index if found
+                if (monthIndex >= 0)
+                {
+                    cmbMonth.SelectedIndex = monthIndex;
+                }
+              
             }
         }
 
@@ -58,11 +68,18 @@ namespace ExecutiveSceinceAccadmy.ExpenseMangenment
             {
                 lblMonth.Text = "Year";
                 cmbMonth.Items.Clear();
+
                 List<int> years = dataHandler.loadPreviouseAndNextFiveYears();
                 foreach (int year in years)
+                {
                     cmbMonth.Items.Add(year);
-                if (cmbMonth.Items.Count > 0)
-                    cmbMonth.SelectedIndex = 0;
+                }
+                int currentYear = DateTime.Now.Year;
+                int yearIndex = cmbMonth.Items.IndexOf(currentYear);
+                if (yearIndex >= 0)
+                {
+                    cmbMonth.SelectedIndex = yearIndex;
+                }
             }
         }
 
