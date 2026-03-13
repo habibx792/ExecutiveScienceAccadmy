@@ -527,32 +527,24 @@ namespace ExecutiveSceinceAccadmy.classes
             }
             return resultStr;
         }
-        public static string showTotalCollectionOfThisYear(string month)
+        public static string showTotalCollectionOfThisYear()
         {
-            string resultStr = "";
-            string query = @"SELECT SUM(paidAmount) 
+            string resultStr = "0.00";
+
+            string query = @"SELECT ISNULL(SUM(paidAmount),0) 
                      FROM feeTb 
                      WHERE YEAR(paymentDate) = YEAR(GETDATE()) 
-                     AND paymentMonth = @month
                      AND isPaid = 1";
+
             using (SqlConnection con = new SqlConnection(str))
+            using (SqlCommand cmd = new SqlCommand(query, con))
             {
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    cmd.Parameters.AddWithValue("@month", month);
-                    con.Open();
-                    object result = cmd.ExecuteScalar();
-                    if (result != DBNull.Value)
-                    {
-                        resultStr = Convert.ToDouble(result).ToString("0.00");
-                        return resultStr;
-                    }
-                    else
-                    {
-                        resultStr = "0";
-                    }
-                }
+                con.Open();
+
+                double result = Convert.ToDouble(cmd.ExecuteScalar());
+                resultStr = result.ToString("0.00");
             }
+
             return resultStr;
         }
         public static void showDefaulterStudent(DataGridView dtDefaulter, string month)

@@ -70,7 +70,7 @@ namespace ExecutiveSceinceAccadmy.classes
         }
         public static string getStringOfCurrentDate()
         {
-            return DateTime.Now.ToString("yyyyMd");
+            return DateTime.Now.ToString("yyyyMM");
         }
         public static string getStringOfDate()
         {

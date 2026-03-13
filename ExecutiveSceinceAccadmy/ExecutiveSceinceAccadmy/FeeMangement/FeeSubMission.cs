@@ -105,7 +105,9 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
             // 5. Proceed with fee submission
             btnSearch.Text = "Pay Now";
             string feeMonth = cmbMonth.SelectedItem.ToString();
-            string feeId = dataHandler.GenerateShortId() + dataHandler.generateRandomeNumber(3) + dataHandler.GenerateShortId(); // ensure this method exists
+            string feeId = registrationNo + dataHandler.getStringOfCurrentDate();// ensure this method exists
+            MessageBox.Show(feeId);
+
             double FeeAmount = double.Parse(txtAmount.Text);
             double dicountAmount = double.Parse(txtDicount.Text);
             string submittedBy = txtSubBy.Text;

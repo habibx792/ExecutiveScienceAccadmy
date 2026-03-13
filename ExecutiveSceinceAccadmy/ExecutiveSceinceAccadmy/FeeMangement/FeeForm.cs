@@ -56,7 +56,7 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
         {
            lblDay.Text= DB.showTotalCollectionOfToday(dataHandler.getCurrentMonthStr());
            lblMonth.Text= DB.showTotalCollectionOfThisMonth( dataHandler.getCurrentMonthStr());
-           lblYear.Text=DB.showTotalCollectionOfThisYear(dataHandler.getCurrentMonthStr());
+           lblYear.Text=DB.showTotalCollectionOfThisYear();
         }
 
         private void lbLogo_Click(object sender, EventArgs e)
