@@ -30,7 +30,7 @@
         {
             btnRegisMange = new Button();
             button3 = new Button();
-            button4 = new Button();
+            btnExpenseMange = new Button();
             panel1 = new Panel();
             button13 = new Button();
             button14 = new Button();
@@ -68,15 +68,16 @@
             button3.Text = "button3";
             button3.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnExpenseMange
             // 
-            button4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            button4.Location = new Point(338, 506);
-            button4.Name = "button4";
-            button4.Size = new Size(289, 92);
-            button4.TabIndex = 3;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
+            btnExpenseMange.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            btnExpenseMange.Location = new Point(338, 506);
+            btnExpenseMange.Name = "btnExpenseMange";
+            btnExpenseMange.Size = new Size(289, 92);
+            btnExpenseMange.TabIndex = 3;
+            btnExpenseMange.Text = "Expense Mangement";
+            btnExpenseMange.UseVisualStyleBackColor = true;
+            btnExpenseMange.Click += button4_Click;
             // 
             // panel1
             // 
@@ -94,7 +95,7 @@
             panel1.Controls.Add(button6);
             panel1.Controls.Add(btnRegisMange);
             panel1.Controls.Add(button3);
-            panel1.Controls.Add(button4);
+            panel1.Controls.Add(btnExpenseMange);
             panel1.Location = new Point(12, 12);
             panel1.Name = "panel1";
             panel1.Size = new Size(1276, 721);
@@ -241,7 +242,7 @@
 
         private Button btnRegisMange;
         private Button button3;
-        private Button button4;
+        private Button btnExpenseMange;
         private Panel panel1;
         private Button button13;
         private Button button14;

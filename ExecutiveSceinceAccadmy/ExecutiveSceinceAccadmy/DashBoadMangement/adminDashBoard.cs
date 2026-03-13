@@ -1,4 +1,5 @@
 ﻿using ExecutiveSceinceAccadmy.AttendanceMangment;
+using ExecutiveSceinceAccadmy.ExpenseMangenment;
 using ExecutiveSceinceAccadmy.FeeMangement;
 using ExecutiveSceinceAccadmy.studentRegistrationForms;
 using ExecutiveScienceAcademy.classes;
@@ -82,10 +83,21 @@ namespace ExecutiveSceinceAccadmy.DashBoadMangement
             UI.Instance.StyleButton(btnFeeMange, borderRadius: 20);
             UI.Instance.StyleButton(btnRegisMange, borderRadius: 20);
             UI.Instance.StyleButton(btnFeeSet, borderRadius: 20);
+            UI.Instance.StyleButton(btnExpenseMange, borderRadius: 20); 
 
 
 
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using(ExpenseForm expenseMange = new ExpenseForm())
+            {
+                expenseMange.ShowDialog();
+            }
+            this.Show();
         }
     }
 }

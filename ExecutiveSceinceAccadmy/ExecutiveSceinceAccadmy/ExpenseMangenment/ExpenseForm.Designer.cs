@@ -45,16 +45,18 @@
             pnMain.Controls.Add(bntReport);
             pnMain.Controls.Add(btnYear);
             pnMain.Controls.Add(btnCurrMonth);
-            pnMain.Location = new Point(406, 205);
+            pnMain.Location = new Point(24, 115);
+            pnMain.Margin = new Padding(4, 5, 4, 5);
             pnMain.Name = "pnMain";
-            pnMain.Size = new Size(642, 391);
+            pnMain.Size = new Size(718, 318);
             pnMain.TabIndex = 28;
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(60, 21);
+            btnAdd.Location = new Point(26, 43);
+            btnAdd.Margin = new Padding(4, 5, 4, 5);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(221, 130);
+            btnAdd.Size = new Size(284, 75);
             btnAdd.TabIndex = 24;
             btnAdd.Text = "add Expense";
             btnAdd.UseVisualStyleBackColor = true;
@@ -62,27 +64,30 @@
             // 
             // bntReport
             // 
-            bntReport.Location = new Point(362, 21);
+            bntReport.Location = new Point(395, 43);
+            bntReport.Margin = new Padding(4, 5, 4, 5);
             bntReport.Name = "bntReport";
-            bntReport.Size = new Size(237, 130);
+            bntReport.Size = new Size(305, 75);
             bntReport.TabIndex = 25;
             bntReport.Text = "Expense Report";
             bntReport.UseVisualStyleBackColor = true;
             // 
             // btnYear
             // 
-            btnYear.Location = new Point(362, 212);
+            btnYear.Location = new Point(395, 153);
+            btnYear.Margin = new Padding(4, 5, 4, 5);
             btnYear.Name = "btnYear";
-            btnYear.Size = new Size(237, 130);
+            btnYear.Size = new Size(305, 76);
             btnYear.TabIndex = 21;
             btnYear.Text = "Current Year Expense";
             btnYear.UseVisualStyleBackColor = true;
             // 
             // btnCurrMonth
             // 
-            btnCurrMonth.Location = new Point(60, 212);
+            btnCurrMonth.Location = new Point(26, 153);
+            btnCurrMonth.Margin = new Padding(4, 5, 4, 5);
             btnCurrMonth.Name = "btnCurrMonth";
-            btnCurrMonth.Size = new Size(221, 130);
+            btnCurrMonth.Size = new Size(284, 76);
             btnCurrMonth.TabIndex = 20;
             btnCurrMonth.Text = "Current Month Expense";
             btnCurrMonth.UseVisualStyleBackColor = true;
@@ -90,29 +95,30 @@
             // pnLogo
             // 
             pnLogo.Controls.Add(lbLogo);
-            pnLogo.Location = new Point(136, 33);
+            pnLogo.Location = new Point(24, 27);
+            pnLogo.Margin = new Padding(4, 5, 4, 5);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(1178, 88);
+            pnLogo.Size = new Size(718, 78);
             pnLogo.TabIndex = 27;
             // 
             // lbLogo
             // 
             lbLogo.AutoSize = true;
             lbLogo.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbLogo.Location = new Point(356, 22);
+            lbLogo.Location = new Point(26, 16);
+            lbLogo.Margin = new Padding(4, 0, 4, 0);
             lbLogo.Name = "lbLogo";
-            lbLogo.Size = new Size(529, 37);
+            lbLogo.Size = new Size(653, 46);
             lbLogo.TabIndex = 0;
             lbLogo.Text = "Welcome To Executive Sceince Accadmy";
             // 
             // ExpenseForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1451, 617);
+            ClientSize = new Size(771, 488);
             Controls.Add(pnMain);
             Controls.Add(pnLogo);
-            Margin = new Padding(2);
             Name = "ExpenseForm";
             Text = "ExpenseForm";
             Load += ExpenseForm_Load;

@@ -18,7 +18,7 @@ namespace ExecutiveSceinceAccadmy.ExpenseMangenment
         {
             InitializeComponent();
             UI.Instance.StyleForm(this,
-                backgroundColor: Color.FromArgb(245, 245, 245),
+                backgroundColor: Color.RoyalBlue,
                 borderRadius: 25,
                 showCustomTitleBar: true,
                 title: "Executive Science Academy");
@@ -34,12 +34,12 @@ namespace ExecutiveSceinceAccadmy.ExpenseMangenment
         {
 
             UI.Instance.StylePanel(pnLogo,
-                backColor: Color.White,
-                borderColor: Color.FromArgb(0, 120, 215),
+                backColor: Color.IndianRed,
+                borderColor: Color.RoyalBlue,
                 borderRadius: 20,
                 borderThickness: 2);
-            UI.Instance.StylePanel(pnMain, backColor: Color.White,
-              borderColor: Color.FromArgb(0, 120, 215),
+            UI.Instance.StylePanel(pnMain, backColor: Color.IndianRed,
+              borderColor: Color.RoyalBlue,
               borderRadius: 20,
               borderThickness: 2);
             
