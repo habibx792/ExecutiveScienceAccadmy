@@ -31,7 +31,6 @@
             pnMain = new Panel();
             btnAdd = new Button();
             bntReport = new Button();
-            btnYear = new Button();
             btnCurrMonth = new Button();
             pnLogo = new Panel();
             lbLogo = new Label();
@@ -43,7 +42,6 @@
             // 
             pnMain.Controls.Add(btnAdd);
             pnMain.Controls.Add(bntReport);
-            pnMain.Controls.Add(btnYear);
             pnMain.Controls.Add(btnCurrMonth);
             pnMain.Location = new Point(24, 115);
             pnMain.Margin = new Padding(4, 5, 4, 5);
@@ -53,6 +51,7 @@
             // 
             // btnAdd
             // 
+            btnAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnAdd.Location = new Point(26, 43);
             btnAdd.Margin = new Padding(4, 5, 4, 5);
             btnAdd.Name = "btnAdd";
@@ -64,6 +63,7 @@
             // 
             // bntReport
             // 
+            bntReport.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             bntReport.Location = new Point(395, 43);
             bntReport.Margin = new Padding(4, 5, 4, 5);
             bntReport.Name = "bntReport";
@@ -72,24 +72,15 @@
             bntReport.Text = "Expense Report";
             bntReport.UseVisualStyleBackColor = true;
             // 
-            // btnYear
-            // 
-            btnYear.Location = new Point(395, 153);
-            btnYear.Margin = new Padding(4, 5, 4, 5);
-            btnYear.Name = "btnYear";
-            btnYear.Size = new Size(305, 76);
-            btnYear.TabIndex = 21;
-            btnYear.Text = "Yearly Expense";
-            btnYear.UseVisualStyleBackColor = true;
-            // 
             // btnCurrMonth
             // 
+            btnCurrMonth.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnCurrMonth.Location = new Point(26, 153);
             btnCurrMonth.Margin = new Padding(4, 5, 4, 5);
             btnCurrMonth.Name = "btnCurrMonth";
             btnCurrMonth.Size = new Size(284, 76);
             btnCurrMonth.TabIndex = 20;
-            btnCurrMonth.Text = "Montly Expense";
+            btnCurrMonth.Text = "Check Expenses";
             btnCurrMonth.UseVisualStyleBackColor = true;
             btnCurrMonth.Click += btnCurrMonth_Click;
             // 
@@ -134,7 +125,6 @@
         private Panel pnMain;
         private Button btnAdd;
         private Button bntReport;
-        private Button btnYear;
         private Button btnCurrMonth;
         private Panel pnLogo;
         private Label lbLogo;

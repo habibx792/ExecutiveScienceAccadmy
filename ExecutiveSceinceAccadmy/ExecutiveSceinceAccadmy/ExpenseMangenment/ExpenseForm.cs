@@ -27,7 +27,6 @@ namespace ExecutiveSceinceAccadmy.ExpenseMangenment
 
             StyleControls();
             UI.Instance.StyleButton(btnCurrMonth, borderRadius: 20);
-            UI.Instance.StyleButton(btnYear, borderRadius: 20);
             UI.Instance.StyleButton(bntReport, borderRadius: 20);
             UI.Instance.StyleButton(btnAdd, borderRadius: 20);
             this.StartPosition = FormStartPosition.CenterScreen;
