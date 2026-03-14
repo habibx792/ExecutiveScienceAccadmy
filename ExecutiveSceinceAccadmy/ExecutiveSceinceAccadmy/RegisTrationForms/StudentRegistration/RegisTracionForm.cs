@@ -120,7 +120,12 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
                
                 cmbDomain.Items.Add("Prim");
             }
-
+            cmbGender.SelectedIndex = 0;
+            cmbFatherJob.SelectedIndex = 0;
+            cmbPassingYear.SelectedIndex = 0;
+            cmbPrvDeg.SelectedIndex = 0;
+            cmbPassingYear.SelectedIndex = cmbPassingYear.Items.Count - 2;
+            cmbBoard.SelectedIndex = 0;
 
         }
         private void helpMethodOfRegies(Student student, string registraionNumber)
