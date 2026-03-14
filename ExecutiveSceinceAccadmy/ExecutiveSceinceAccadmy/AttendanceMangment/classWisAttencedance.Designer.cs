@@ -61,7 +61,7 @@
             dtGridAttence.RowHeadersWidth = 51;
             dtGridAttence.Size = new Size(1202, 405);
             dtGridAttence.TabIndex = 1;
-            dtGridAttence.CellContentClick += dataGridView1_CellContentClick;
+            //dtGridAttence.CellContentClick += dataGridView1_CellContentClick;
             // 
             // colDate
             // 

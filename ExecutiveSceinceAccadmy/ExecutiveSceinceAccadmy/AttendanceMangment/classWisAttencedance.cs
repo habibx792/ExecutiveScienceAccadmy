@@ -147,72 +147,66 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
         {
 
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void btnSearch_Click(object sender, EventArgs e)
         {
             if (cmbAttendanceType.SelectedItem == null || cmbClass.SelectedItem == null)
                 return;
-            string classSelected = cmbClass.SelectedItem.ToString();
+
+            string classSelectedNumber = cmbClass.SelectedItem.ToString();
             string attendanceTypeSelected = cmbAttendanceType.SelectedItem.ToString();
-            string currentMonth = DateTime.Now.ToString("MMMM");
-            string currDay = DateTime.Now.Day.ToString();
-            //MessageBox.Show($"Searching attendance for {attendanceTypeSelected} class {classSelected} for month {currentMonth} and day {currDay}");
-            bool dataLaodSuccess = DB.loadClassAttendance(classSelected, attendanceTypeSelected, dtGridAttence);
-            if (!dataLaodSuccess || dtGridAttence.Rows.Count == 0)
+
+            bool dataLoadSuccess = DB.loadClassAttendance(classSelectedNumber, attendanceTypeSelected, dtGridAttence);
+
+            if (!dataLoadSuccess || dtGridAttence.Rows.Count == 0)
             {
                 MessageBox.Show("No attendance data found for the selected class and month.");
             }
-
         }
 
+        // ===================== Button Mark Attendance =====================
         private void button1_Click(object sender, EventArgs e)
         {
-            if (cmbAttendanceType.SelectedItem != null && cmbClass.SelectedItem != null)
+            if (cmbAttendanceType.SelectedItem == null || cmbClass.SelectedItem == null)
+                return;
+
+            List<AttendanceRecord> attendanceRecords = new List<AttendanceRecord>();
+            bool hasData = false;
+
+            foreach (DataGridViewRow row in dtGridAttence.Rows)
             {
-                List<AttendanceRecord> attendanceRecords = new List<AttendanceRecord>();
-                bool isGetData = false;
-                foreach (DataGridViewRow row in dtGridAttence.Rows)
-                {
-                    if (row.IsNewRow) continue; // ignore last empty row
+                if (row.IsNewRow) continue;
 
-                    string regNo = row.Cells["colRegis"].Value.ToString();
-                    string name = row.Cells["colName"].Value.ToString();
-                    bool isPresent = Convert.ToBoolean(row.Cells["colIsPresent"].Value);
-                    string day = row.Cells["colDay"].Value.ToString();
-                    string attendanceType = cmbAttendanceType.SelectedItem.ToString();
-                    string attendanceDate = DateTime.Now.ToString("yyyy-MM-dd");
-                    string strId = regNo;
+                string regNo = row.Cells["colRegis"].Value.ToString();
+                bool isPresent = Convert.ToBoolean(row.Cells["colIsPresent"].Value);
+                string day = row.Cells["colDay"].Value.ToString();
+                string attendanceType = cmbAttendanceType.SelectedItem.ToString();
+                string attendanceDate = DateTime.Now.ToString("yyyy-MM-dd");
 
-                    strId = strId.Substring(4);
-                    string attendaceId = strId + dataHandler.getStringOfDate()+dataHandler.generateRandomeNumber(2);
-                    attendanceRecords.Add(new AttendanceRecord(attendaceId, regNo, attendanceDate, isPresent, attendanceType, day));
-                    isGetData = true;
-                    //MessageBox.Show(attendaceId);
-                }
-                if (isGetData)
-                {
-                    string givenClass = cmbClass.SelectedItem.ToString();
-                    string givenAttendanceType = cmbAttendanceType.SelectedItem.ToString();
-                    bool updateSuccess = DB.MarkAttendanceByClassWise(attendanceRecords, givenClass, givenAttendanceType);
-                    if (updateSuccess)
-                    {
-                        MessageBox.Show("Attendance marked successfully!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Failed to mark attendance. Please try again.");
-                    }
+                attendanceRecords.Add(new AttendanceRecord(
+                    Guid.NewGuid().ToString("N"), // unique attendance ID
+                    regNo,
+                    attendanceDate,
+                    isPresent,
+                    attendanceType,
+                    day
+                ));
 
-                }
+                hasData = true;
+            }
 
+            if (hasData)
+            {
+                string givenClassNumber = cmbClass.SelectedItem.ToString();
+                string givenAttendanceType = cmbAttendanceType.SelectedItem.ToString();
+
+                bool updateSuccess = DB.MarkAttendanceByClassWise(attendanceRecords, givenClassNumber, givenAttendanceType);
+
+                if (updateSuccess)
+                    MessageBox.Show("Attendance marked successfully!");
+                else
+                    MessageBox.Show("Failed to mark attendance. Please try again.");
             }
         }
-
         private void cmbClass_SelectedIndexChanged(object sender, EventArgs e)
         {
 

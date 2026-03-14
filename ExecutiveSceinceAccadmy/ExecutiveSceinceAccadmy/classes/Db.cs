@@ -614,54 +614,65 @@ string stdName = std.Name;
                 }
             }
         }
-        public static bool loadClassAttendance(string classSelected,
-                                       string attendanceTypeSelected,
-                                       DataGridView dtAttenddance)
+        public static string MapClassNumberToName(string classNumber)
+        {
+            int classNum;
+            if (!int.TryParse(classNumber, out classNum))
+                throw new Exception("Invalid class number.");
+
+            if (classNum >= 1 && classNum <= 8)
+                return classNum.ToString();
+            else if (classNum >= 9 && classNum <= 12)
+                return classNum + "th";
+            else
+                throw new Exception("Class number out of range (1-12).");
+        }
+
+        // ===================== Load Attendance =====================
+        public static bool loadClassAttendance(string classSelectedNumber,
+                                               string attendanceTypeSelected,
+                                               DataGridView dtAttenddance)
         {
             try
             {
+                string classSelected = MapClassNumberToName(classSelectedNumber);
+
                 using (SqlConnection con = new SqlConnection(str))
                 {
                     con.Open();
 
                     string query = @"SELECT s.stdRegisNo, s.student_name
                              FROM StudentTb s
-                             JOIN classTb c 
-                                ON c.domainId = s.domainId
-                                AND c.className =
-                                    CASE 
-                                        WHEN TRY_CAST(s.classId AS INT) <= 8 
-                                            THEN CAST(s.classId AS VARCHAR)
-                                        ELSE CONCAT(CAST(s.classId AS VARCHAR),'th')
-                                    END
+                             JOIN classTb c ON c.domainId = s.domainId
                              WHERE c.className = @className
                              AND s.student_type = @type
                              AND s.is_active = 1";
 
-                    SqlCommand cmd = new SqlCommand(query, con);
-                    cmd.Parameters.AddWithValue("@className", classSelected);
-                    cmd.Parameters.AddWithValue("@type", attendanceTypeSelected);
-
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-
-                    dtAttenddance.Rows.Clear();
-
-                    string today = DateTime.Now.ToString("dddd - dd/MM");
-
-                    foreach (DataRow row in dt.Rows)
+                    using (SqlCommand cmd = new SqlCommand(query, con))
                     {
-                        dtAttenddance.Rows.Add(
-                            row["stdRegisNo"].ToString(),
-                            row["student_name"].ToString(),
-                            today,
-                            true   // default present
-                        );
-                    }
+                        cmd.Parameters.AddWithValue("@className", classSelected);
+                        cmd.Parameters.AddWithValue("@type", attendanceTypeSelected);
 
-                    return true;
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+
+                        dtAttenddance.Rows.Clear();
+                        string today = DateTime.Now.ToString("dddd - dd/MM");
+
+                        foreach (DataRow row in dt.Rows)
+                        {
+                            dtAttenddance.Rows.Add(
+                                row["stdRegisNo"].ToString(),
+                                row["student_name"].ToString(),
+                                today,
+                                true // default present
+                            );
+                        }
+                    }
                 }
+
+                return true;
             }
             catch (Exception ex)
             {
@@ -669,43 +680,47 @@ string stdName = std.Name;
                 return false;
             }
         }
-        //implementing method for attendance
-        public static bool MarkAttendanceByClassWise(List<AttendanceRecord> attendanceRecords, string givenClass, string givenAttendanceType)
+
+        // ===================== Mark Attendance =====================
+        public static bool MarkAttendanceByClassWise(List<AttendanceRecord> attendanceRecords, string givenClassNumber, string givenAttendanceType)
         {
             try
             {
+                string givenClass = MapClassNumberToName(givenClassNumber);
+
                 using (SqlConnection con = new SqlConnection(str))
                 {
                     con.Open();
                     SqlTransaction transaction = con.BeginTransaction();
-                    string query = @"INSERT INTO studentAttendance (attendId, stdRegisNo,  isPresent, attenceType, day)
-                                     VALUES (@attendanceID, @stdRegisNo, @isPresent, @attendanceType, @day)";
+
+                    string query = @"INSERT INTO studentAttendance (attendId, stdRegisNo, isPresent, attenceType, day)
+                             VALUES (@attendanceID, @stdRegisNo, @isPresent, @attendanceType, @day)";
+
                     foreach (var record in attendanceRecords)
                     {
                         using (SqlCommand cmd = new SqlCommand(query, con, transaction))
                         {
-                            //string AttendanceID=
-                            cmd.Parameters.AddWithValue("@attendanceID", record.AttendanceID);
+                            cmd.Parameters.AddWithValue("@attendanceID", Guid.NewGuid().ToString("N")); // unique ID
                             cmd.Parameters.AddWithValue("@stdRegisNo", record.RegistrationNo);
-                            //cmd.Parameters.AddWithValue("@date", record.Date);
                             cmd.Parameters.AddWithValue("@isPresent", record.IsPresent);
                             cmd.Parameters.AddWithValue("@attendanceType", record.AttendanceType);
                             cmd.Parameters.AddWithValue("@day", record.Day);
                             cmd.ExecuteNonQuery();
                         }
                     }
+
                     transaction.Commit();
                 }
-                MessageBox.Show("Attendance marked successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 return true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"You Have already Mark Attendce for {givenClass} Type {givenAttendanceType}");
+                MessageBox.Show($"Failed to mark attendance for {givenClassNumber} type {givenAttendanceType}.\nError: {ex.Message}");
                 return false;
             }
-            //return false;
         }
+
         public static bool showAttendacnceRecordOfDate(string studentRegistraionNo, string date, DataGridView dtDashAttend)
         {
             try
