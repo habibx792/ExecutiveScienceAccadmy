@@ -72,11 +72,11 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
             styleAttendanceGrid();
             cmbClass.SelectedIndex = 0;
             cmbAttendanceType.SelectedIndex = 0;
-            List<string> domainType = DB.loadALlDomain();
-            foreach (string domainTypeItem in domainType) 
-                {
-                    cmbAttendanceType.Items.Add($"{domainTypeItem}");
-                }
+            //List<string> domainType = DB.loadALlDomain();
+            //foreach (string domainTypeItem in domainType) 
+            //    {
+            //        cmbAttendanceType.Items.Add($"{domainTypeItem}");
+            //    }
             
         }
         private void styleAttendanceGrid()

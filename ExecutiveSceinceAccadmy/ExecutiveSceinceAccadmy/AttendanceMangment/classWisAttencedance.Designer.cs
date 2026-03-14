@@ -42,7 +42,7 @@
             btnSearch.BackColor = Color.Black;
             btnSearch.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSearch.ForeColor = Color.White;
-            btnSearch.Location = new Point(800, 5);
+            btnSearch.Location = new Point(1006, 0);
             btnSearch.Margin = new Padding(4, 5, 4, 5);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(159, 52);
@@ -61,7 +61,6 @@
             dtGridAttence.RowHeadersWidth = 51;
             dtGridAttence.Size = new Size(1202, 405);
             dtGridAttence.TabIndex = 1;
-            //dtGridAttence.CellContentClick += dataGridView1_CellContentClick;
             // 
             // colDate
             // 
@@ -137,9 +136,9 @@
             panel2.Controls.Add(cmbAttendanceType);
             panel2.Controls.Add(cmbClass);
             panel2.Controls.Add(btnSearch);
-            panel2.Location = new Point(-1, 151);
+            panel2.Location = new Point(-1, 135);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1207, 62);
+            panel2.Size = new Size(1207, 78);
             panel2.TabIndex = 4;
             panel2.Paint += panel2_Paint;
             // 
@@ -147,9 +146,9 @@
             // 
             cmbAttendanceType.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cmbAttendanceType.FormattingEnabled = true;
-            cmbAttendanceType.Location = new Point(413, 21);
+            cmbAttendanceType.Location = new Point(431, 21);
             cmbAttendanceType.Name = "cmbAttendanceType";
-            cmbAttendanceType.Size = new Size(357, 36);
+            cmbAttendanceType.Size = new Size(298, 36);
             cmbAttendanceType.TabIndex = 3;
             cmbAttendanceType.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 

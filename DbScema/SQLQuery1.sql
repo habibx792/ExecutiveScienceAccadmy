@@ -12,12 +12,12 @@ CREATE TABLE adminTb
     userName VARCHAR(20) NOT NULL,
     password VARCHAR(20) NOT NULL
 );
-create table stdCountTB
+DROP TABLE IF EXISTS stdCountTB;
+CREATE TABLE stdCountTB
 (
-    stdCountId int not null primary key,
-    stdCount int not null
+    stdCountId INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    stdCount INT NOT NULL DEFAULT 0
 );
-
 CREATE TABLE domainTb (
     domainId VARCHAR(50) NOT NULL PRIMARY KEY,
     domainName VARCHAR(50) NOT NULL
@@ -77,14 +77,20 @@ CREATE TABLE academicTb (
     percentage AS (gainMarks * 100.0 / TotalMarks) PERSISTED,
     FOREIGN KEY (stdRegisNo) REFERENCES StudentTb(stdRegisNo) ON DELETE CASCADE
 );
-
+drop table stdAdress;
 CREATE TABLE stdAdress
 (
-    stdRegisNo VARCHAR(50) NOT NULL,
     stdAddressId INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    stdRegisNo VARCHAR(50) NOT NULL,
+
     address TEXT,
     city VARCHAR(20) DEFAULT 'Faisalabad',
-    country VARCHAR(30) DEFAULT 'Pakistan'
+    country VARCHAR(30) DEFAULT 'Pakistan',
+
+    CONSTRAINT FK_stdAdress_student
+        FOREIGN KEY (stdRegisNo)
+        REFERENCES StudentTb(stdRegisNo)
+        ON DELETE CASCADE
 );
 
 ---========================================= Teacher Tables =======================================
