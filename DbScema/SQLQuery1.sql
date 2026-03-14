@@ -109,10 +109,10 @@ ADD
     fatherCnic VARCHAR(20) NULL,
     teacherCnic VARCHAR(20) NULL;
 
-
+drop table teacherAddTb;
 CREATE TABLE teacherAddTb
 (
-    teacherAddId INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    teacherAddId INT IDENTITY(1,1)  PRIMARY KEY,
     teacherId VARCHAR(40) NOT NULL,
     address TEXT,
     city VARCHAR(20) DEFAULT 'Faisalabad',

@@ -44,7 +44,7 @@ namespace ExecutiveSceinceAccadmy.TeacherMangement
 
         private void HireingForm_Load(object sender, EventArgs e)
         {
-           bool sucess= DB.laodSujectAndClassToTeacherHiring(dtTeacherSubject);
+            bool sucess = DB.laodSujectAndClassToTeacherHiring(dtTeacherSubject);
             if (!sucess)
             {
                 return;
@@ -60,7 +60,7 @@ namespace ExecutiveSceinceAccadmy.TeacherMangement
             {
                 cmbCountry.Items.Add(country);
             }
-            List<string> qualifications= dataHandler.GetQualifications();
+            List<string> qualifications = dataHandler.GetQualifications();
             foreach (string qualification in qualifications)
             {
                 cmbQualification.Items.Add(qualification);
@@ -119,12 +119,86 @@ namespace ExecutiveSceinceAccadmy.TeacherMangement
 
         private void rdSal_CheckedChanged(object sender, EventArgs e)
         {
-            if(rdSal.Checked)
+            if (rdSal.Checked)
             {
                 rdPercent.Checked = false;
-                txtType.Text = "0";
+                //txtType.Text = "0";
                 lblsalType.Text = "Salary";
             }
         }
+
+        private void btnHire_Click(object sender, EventArgs e)
+        {
+            // Collect form data
+            string teacherName = txtTeachName.Text.Trim();
+            string teacherCNIC = txtTeachCnic.Text.Trim();
+            string fatherName = txtFaterName.Text.Trim();
+            string fatherCNIC = txtFatherCnic.Text.Trim();
+            string city = cmbCity.SelectedItem?.ToString() ?? "";
+            string country = cmbCountry.SelectedItem?.ToString() ?? "";
+            string address = txtAddress.Text.Trim();
+            string qualification = cmbQualification.SelectedItem?.ToString() ?? "";
+            string typeInput = txtType.Text.Trim(); // Can be salary or percentage value
+
+            // Basic validation
+            if (string.IsNullOrEmpty(teacherName) ||
+                string.IsNullOrEmpty(teacherCNIC) ||
+                string.IsNullOrEmpty(fatherName) ||
+                string.IsNullOrEmpty(fatherCNIC) ||
+                string.IsNullOrEmpty(address) ||
+                string.IsNullOrEmpty(typeInput) ||
+                string.IsNullOrEmpty(qualification) ||
+                string.IsNullOrEmpty(city) ||
+                string.IsNullOrEmpty(country))
+            {
+                MessageBox.Show("Fill all the fields");
+                return;
+            }
+
+            // Determine teacher type (example: salaried if txtType contains a number, percentage otherwise)
+            string teacherType = "Salaried";
+            string salary = "0";
+            string percentage = "0";
+
+            if (decimal.TryParse(typeInput, out decimal value))
+            {
+                teacherType = "Salaried";
+                salary = value.ToString();
+            }
+            else
+            {
+                teacherType = "Percentage";
+                percentage = typeInput; // If user writes 10% etc.
+            }
+
+            string teacherId = dataHandler.generateRandomeNumber(4) + dataHandler.getRandomeTimeStr();
+
+            // Create TeacherData object with correct parameter order
+            TeacherData data = new TeacherData(
+                teacherName,      // TeacherName
+                teacherId,        // TeacherId
+                teacherType,      // TeacherType
+                fatherName,       // FatherName
+                fatherCNIC,       // FatherCNIC
+                teacherCNIC,      // TeacherCnic
+                city,             // AddressCity
+                country,          // AddressCountry
+                address,          // Address
+                qualification,    // Qualification
+                salary,           // Salary
+                percentage        // Percentage
+            );
+
+            // Optional: show confirmation
+            MessageBox.Show($"Teacher {data.TeacherName} ({data.TeacherType}) ready to hire!");
+
+            bool success = DB.HireTeacher(data, dtTeacherSubject);
+            if (success)
+            {
+                MessageBox.Show($"You are hired Mr/Mrs {data.TeacherName}");
+                return;
+            }
+        }
     }
-}
+
+    }

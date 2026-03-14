@@ -8,13 +8,13 @@ namespace ExecutiveSceinceAccadmy.classes
         protected string specialization;
         protected List<string> subjects;
 
-        // Default Constructor
+
         public Teacher()
         {
             subjects = new List<string>();
         }
 
-        // Parameterized Constructor
+        
         public Teacher(
             string name,
             int age,
@@ -32,8 +32,6 @@ namespace ExecutiveSceinceAccadmy.classes
             this.specialization = specialization;
             this.subjects = subjects;
         }
-
-        // Properties
         public string Specialization
         {
             get { return specialization; }

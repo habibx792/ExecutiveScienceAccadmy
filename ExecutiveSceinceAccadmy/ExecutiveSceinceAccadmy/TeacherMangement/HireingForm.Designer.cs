@@ -43,6 +43,7 @@
             txtAddress = new TextBox();
             label14 = new Label();
             panel1 = new Panel();
+            chkSenior = new CheckBox();
             lblsalType = new Label();
             txtType = new TextBox();
             label2 = new Label();
@@ -52,7 +53,6 @@
             btnHire = new Button();
             dtTeacherSubject = new DataGridView();
             label1 = new Label();
-            chkSenior = new CheckBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dtTeacherSubject).BeginInit();
             SuspendLayout();
@@ -206,14 +206,24 @@
             panel1.TabIndex = 5;
             panel1.Paint += panel1_Paint;
             // 
+            // chkSenior
+            // 
+            chkSenior.AutoSize = true;
+            chkSenior.Location = new Point(171, 197);
+            chkSenior.Name = "chkSenior";
+            chkSenior.Size = new Size(173, 32);
+            chkSenior.TabIndex = 41;
+            chkSenior.Text = "Senior Teacher";
+            chkSenior.UseVisualStyleBackColor = true;
+            // 
             // lblsalType
             // 
             lblsalType.AutoSize = true;
             lblsalType.Location = new Point(526, 505);
             lblsalType.Name = "lblsalType";
-            lblsalType.Size = new Size(135, 28);
+            lblsalType.Size = new Size(69, 28);
             lblsalType.TabIndex = 40;
-            lblsalType.Text = "Qualification";
+            lblsalType.Text = "salary";
             // 
             // txtType
             // 
@@ -234,7 +244,7 @@
             // rdPercent
             // 
             rdPercent.AutoSize = true;
-            rdPercent.Location = new Point(523, 206);
+            rdPercent.Location = new Point(526, 196);
             rdPercent.Name = "rdPercent";
             rdPercent.Size = new Size(138, 32);
             rdPercent.TabIndex = 37;
@@ -246,7 +256,7 @@
             // rdSal
             // 
             rdSal.AutoSize = true;
-            rdSal.Location = new Point(710, 206);
+            rdSal.Location = new Point(863, 196);
             rdSal.Name = "rdSal";
             rdSal.Size = new Size(109, 32);
             rdSal.TabIndex = 36;
@@ -272,6 +282,7 @@
             btnHire.TabIndex = 30;
             btnHire.Text = "Hire";
             btnHire.UseVisualStyleBackColor = true;
+            btnHire.Click += btnHire_Click;
             // 
             // dtTeacherSubject
             // 
@@ -291,16 +302,6 @@
             label1.Size = new Size(68, 28);
             label1.TabIndex = 4;
             label1.Text = "Name";
-            // 
-            // chkSenior
-            // 
-            chkSenior.AutoSize = true;
-            chkSenior.Location = new Point(171, 197);
-            chkSenior.Name = "chkSenior";
-            chkSenior.Size = new Size(173, 32);
-            chkSenior.TabIndex = 41;
-            chkSenior.Text = "Senior Teacher";
-            chkSenior.UseVisualStyleBackColor = true;
             // 
             // HireingForm
             // 

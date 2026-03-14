@@ -12,6 +12,7 @@ namespace ExecutiveSceinceAccadmy.classes
         protected int age;
         protected string peronName;
         protected string PersonNumber;
+        protected string fatherName;
         protected string cnic;
         protected string gender;
         private string Dob;
@@ -35,5 +36,6 @@ namespace ExecutiveSceinceAccadmy.classes
         public string PersonPhoneNumber { get => PersonNumber; set => PersonNumber = value; }
         public string Cnic { get => cnic; set => cnic = value; }
         public string Gender { get => gender; set => gender = value; }
+        public string FatherName { get => fatherName; set => fatherName = value; }
     }
 }

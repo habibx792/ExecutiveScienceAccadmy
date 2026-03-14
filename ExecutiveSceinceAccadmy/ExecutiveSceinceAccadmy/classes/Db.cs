@@ -13,21 +13,21 @@ namespace ExecutiveSceinceAccadmy.classes
     public static class DB
     {
 
-        private static string str = "Server=CODEX\\SQLEXPRESS;Database=accadmyDb;Integrated Security=True;TrustServerCertificate=true;";
+        private static string connectionString = "Server=CODEX\\SQLEXPRESS;Database=accadmyDb;Integrated Security=True;TrustServerCertificate=true;";
         public static SqlConnection getConnection()
         {
-            SqlConnection con = new SqlConnection(str);
+            SqlConnection con = new SqlConnection(connectionString);
             con.Open();
             return con;
 
         }
         public static void setConnectionStr(string conStr)
         {
-            str = conStr;
+            connectionString = conStr;
         }
         public static string getStr()
         {
-            return str;
+            return connectionString;
         }
         // admin related functions and db operations
         public static bool Login(string username, string password)
@@ -35,7 +35,7 @@ namespace ExecutiveSceinceAccadmy.classes
 
 
 
-            using (SqlConnection con = new SqlConnection(str))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 try
                 {
@@ -68,12 +68,12 @@ namespace ExecutiveSceinceAccadmy.classes
         {
             int currStd = 0;
 
-            using (SqlConnection con = new SqlConnection(str))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
 
                 // Insert a dummy row to get the next identity value
-                // stdCountTB now must be IDENTITY-based
+                // stdCountTB now must be IDENTITY-based    
                 string query = "INSERT INTO stdCountTB DEFAULT VALUES; SELECT SCOPE_IDENTITY();";
 
                 using (SqlCommand cmd = new SqlCommand(query, con))
@@ -90,7 +90,7 @@ namespace ExecutiveSceinceAccadmy.classes
         public static List<string> loadALlDomain()
         {
             List<string> domains = new List<string>();
-            using (SqlConnection con = new SqlConnection(str))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
                 string query = "select domainId from domainTb";
@@ -141,7 +141,7 @@ string stdName = std.Name;
             int totalMarks = academicHistory.TotalMarks;
             int gainMarks = academicHistory.ObtainedMarks;
 
-            using (SqlConnection con = new SqlConnection(str))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
                 SqlTransaction transaction = con.BeginTransaction();
@@ -277,7 +277,7 @@ string stdName = std.Name;
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(str))
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     string query = @"SELECT s.stdRegisNo, s.student_name, d.domainName, c.className, f.amount
                      FROM StudentTb s
@@ -371,7 +371,7 @@ string stdName = std.Name;
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(str))
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     string query = @"INSERT INTO feeTb
                             (feeId, stdRegisNo, paymentMonth, amount, discount, paidAmount, receivedBy, isPaid)
@@ -416,7 +416,7 @@ string stdName = std.Name;
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(str))
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     string query = @"SELECT 
                                 s.student_name AS StudentName,
@@ -478,7 +478,7 @@ string stdName = std.Name;
                      AND paymentMonth = @month 
                      AND isPaid = 1";
 
-            using (SqlConnection con = new SqlConnection(str))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
@@ -511,7 +511,7 @@ string stdName = std.Name;
                      AND paymentMonth = @month
                      AND isPaid = 1";
 
-            using (SqlConnection con = new SqlConnection(str))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
@@ -543,7 +543,7 @@ string stdName = std.Name;
                      WHERE YEAR(paymentDate) = YEAR(GETDATE()) 
                      AND isPaid = 1";
 
-            using (SqlConnection con = new SqlConnection(str))
+            using (SqlConnection con = new SqlConnection(connectionString))
             using (SqlCommand cmd = new SqlCommand(query, con))
             {
                 con.Open();
@@ -556,7 +556,7 @@ string stdName = std.Name;
         }
         public static void showDefaulterStudent(DataGridView dtDefaulter, string month)
         {
-            using (SqlConnection con = new SqlConnection(str))
+            using (SqlConnection con = new SqlConnection(connectionString))
             {
                 string query = @"SELECT 
                     s.student_name AS StudentName,
@@ -636,7 +636,7 @@ string stdName = std.Name;
             {
                 string classSelected = MapClassNumberToName(classSelectedNumber);
 
-                using (SqlConnection con = new SqlConnection(str))
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
 
@@ -687,7 +687,7 @@ string stdName = std.Name;
             {
                 string givenClass = MapClassNumberToName(givenClassNumber);
 
-                using (SqlConnection con = new SqlConnection(str))
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
                     SqlTransaction transaction = con.BeginTransaction();
@@ -724,7 +724,7 @@ string stdName = std.Name;
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(str))
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
 
@@ -764,7 +764,7 @@ string stdName = std.Name;
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(str))
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
 
@@ -804,7 +804,7 @@ string stdName = std.Name;
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(str))
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
 
@@ -887,7 +887,7 @@ string stdName = std.Name;
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(str))
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     string query = @"INSERT INTO expenseTb 
                              (expenseId, expenseType, expenseAmount, expenseDate, expenseMonth)
@@ -929,7 +929,7 @@ string stdName = std.Name;
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(str))
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     string query = @"
                     SELECT expenseId, expenseType, expenseAmount, expenseDate, expenseMonth
@@ -962,7 +962,7 @@ string stdName = std.Name;
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(str))
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     string query = @"
                     SELECT expenseId, expenseType, expenseAmount, expenseDate, expenseMonth
@@ -995,7 +995,7 @@ string stdName = std.Name;
             {
                 //string connectionString = @"Your_Connection_String_Here";
 
-                using (SqlConnection con = new SqlConnection(str))
+                using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
 
@@ -1040,6 +1040,102 @@ string stdName = std.Name;
             catch (Exception ex)
             {
                 MessageBox.Show("Error loading data: " + ex.Message);
+                return false;
+            }
+        }
+        public static bool HireTeacher(TeacherData data, DataGridView dtSubjects)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    using (SqlTransaction tran = con.BeginTransaction())
+                    {
+                        try
+                        {
+                            // 1️⃣ Insert teacher info
+                            string insertTeacher = @"
+                        INSERT INTO teacherTb
+                        (teacherId, teacherName, teacherQualification, fatherName, fatherCnic, teacherCnic)
+                        VALUES
+                        (@teacherId, @teacherName, @qualification, @fatherName, @fatherCNIC, @teacherCnic)";
+                            using (SqlCommand cmd = new SqlCommand(insertTeacher, con, tran))
+                            {
+                                cmd.Parameters.AddWithValue("@teacherId", data.TeacherId);
+                                cmd.Parameters.AddWithValue("@teacherName", data.TeacherName);
+                                cmd.Parameters.AddWithValue("@qualification", data.Qualification);
+                                cmd.Parameters.AddWithValue("@fatherName", data.FatherName);
+                                cmd.Parameters.AddWithValue("@fatherCNIC", data.FatherCNIC);
+                                cmd.Parameters.AddWithValue("@teacherCnic", data.TeacherCnic);
+                                cmd.ExecuteNonQuery();
+                            }
+
+                            // 2️⃣ Insert teacher address
+                            string insertAddress = @"
+                        INSERT INTO teacherAddTb
+                        (teacherId, address, city, country)
+                        VALUES
+                        (@teacherId, @address, @city, @country)";
+                            using (SqlCommand cmd = new SqlCommand(insertAddress, con, tran))
+                            {
+                                cmd.Parameters.AddWithValue("@teacherId", data.TeacherId);
+                                cmd.Parameters.AddWithValue("@address", data.Address);
+                                cmd.Parameters.AddWithValue("@city", data.AddressCity);
+                                cmd.Parameters.AddWithValue("@country", data.AddressCountry);
+                                cmd.ExecuteNonQuery();
+                            }
+
+                            // 3️⃣ Insert payment info
+                            string insertPayment = @"
+                        INSERT INTO teacherPaymentTb
+                        (teacherId, teacherType, salary, percentage)
+                        VALUES
+                        (@teacherId, @teacherType, @salary, @percentage)";
+                            using (SqlCommand cmd = new SqlCommand(insertPayment, con, tran))
+                            {
+                                cmd.Parameters.AddWithValue("@teacherId", data.TeacherId);
+                                cmd.Parameters.AddWithValue("@teacherType", data.TeacherType);
+                                cmd.Parameters.AddWithValue("@salary", string.IsNullOrEmpty(data.Salary) ? 0 : decimal.Parse(data.Salary));
+                                cmd.Parameters.AddWithValue("@percentage", string.IsNullOrEmpty(data.Percentage) ? 0 : decimal.Parse(data.Percentage));
+                                cmd.ExecuteNonQuery();
+                            }
+
+                            // 4️⃣ Assign subjects from DataGridView
+                            string insertSubject = @"
+                        INSERT INTO teacherClassSubjectTb
+                        (teacherId, classId, subjectId, domainId)
+                        VALUES (@teacherId, @classId, @subjectId, @domainId)";
+                            using (SqlCommand cmd = new SqlCommand(insertSubject, con, tran))
+                            {
+                                foreach (DataGridViewRow row in dtSubjects.Rows)
+                                {
+                                    if (row.Cells["Select"].Value != null && (bool)row.Cells["Select"].Value)
+                                    {
+                                        cmd.Parameters.Clear();
+                                        cmd.Parameters.AddWithValue("@teacherId", data.TeacherId);
+                                        cmd.Parameters.AddWithValue("@classId", Convert.ToInt32(row.Cells["classId"].Value));
+                                        cmd.Parameters.AddWithValue("@subjectId", Convert.ToInt32(row.Cells["subjectId"].Value));
+                                        cmd.Parameters.AddWithValue("@domainId", row.Cells["domainId"].Value.ToString());
+                                        cmd.ExecuteNonQuery();
+                                    }
+                                }
+                            }
+
+                            tran.Commit();
+                            return true;
+                        }
+                        catch
+                        {
+                            tran.Rollback();
+                            throw;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error hiring teacher: " + ex.Message);
                 return false;
             }
         }
