@@ -45,13 +45,7 @@ namespace ExecutiveSceinceAccadmy
               borderColor: Color.FromArgb(0, 120, 215),
               borderRadius: 20,
               borderThickness: 2);
-            UI.Instance.StyleButton(btnStdReg, borderRadius: 20);
-            UI.Instance.StyleButton(BtnFeeSub, borderRadius: 20);
-            UI.Instance.StyleButton(BtnAttend, borderRadius: 20);
-            UI.Instance.StyleButton(btnResult, borderRadius: 20);
-            UI.Instance.StyleButton(btnReport, borderRadius: 20);
-            UI.Instance.StyleButton(btnAdmin, borderRadius: 20);
-            UI.Instance.StyleButton(btnExpense, borderRadius: 20);
+           
             UI.Instance.StyleButton(stdBoard, borderRadius: 20);
             UI.Instance.StyleButton(btnTeacherBoard, borderRadius: 20);
             UI.Instance.AddFormShadow(this);

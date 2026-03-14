@@ -1,6 +1,6 @@
 ﻿namespace ExecutiveSceinceAccadmy.TeacherMangement
 {
-    partial class TeacherMangement
+    partial class TeacherMangementForm
     {
         /// <summary>
         /// Required designer variable.
@@ -70,7 +70,6 @@
             button3.TabIndex = 2;
             button3.Text = "button3";
             button3.UseVisualStyleBackColor = true;
-            //button3.Click += this.button3_Click;
             // 
             // button4
             // 
@@ -81,7 +80,6 @@
             button4.TabIndex = 3;
             button4.Text = "button4";
             button4.UseVisualStyleBackColor = true;
-            //button4.Click += this.button4_Click;
             // 
             // button5
             // 
@@ -92,7 +90,6 @@
             button5.TabIndex = 4;
             button5.Text = "button5";
             button5.UseVisualStyleBackColor = true;
-            //button5.Click += this.button5_Click;
             // 
             // button7
             // 
@@ -103,7 +100,6 @@
             button7.TabIndex = 6;
             button7.Text = "button7";
             button7.UseVisualStyleBackColor = true;
-            //button7.Click += this.button7_Click;
             // 
             // button8
             // 
@@ -114,7 +110,6 @@
             button8.TabIndex = 7;
             button8.Text = "button8";
             button8.UseVisualStyleBackColor = true;
-            //button8.Click += this.button8_Click;
             // 
             // button9
             // 
@@ -125,7 +120,6 @@
             button9.TabIndex = 8;
             button9.Text = "button9";
             button9.UseVisualStyleBackColor = true;
-            //button9.Click += this.button9_Click;
             // 
             // btnHiring
             // 
@@ -136,7 +130,7 @@
             btnHiring.TabIndex = 10;
             btnHiring.Text = "Hiring";
             btnHiring.UseVisualStyleBackColor = true;
-            //btnHiring.Click += this.button11_Click;
+            btnHiring.Click += btnHiring_Click;
             // 
             // TeacherMangement
             // 

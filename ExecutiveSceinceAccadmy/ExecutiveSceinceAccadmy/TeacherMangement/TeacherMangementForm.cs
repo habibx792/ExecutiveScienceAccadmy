@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ExecutiveSceinceAccadmy.TeacherMangement
 {
-    public partial class TeacherMangement : Form
+    public partial class TeacherMangementForm : Form
     {
-        public TeacherMangement()
+        public TeacherMangementForm()
         {
             InitializeComponent();
         }
@@ -21,7 +21,7 @@ namespace ExecutiveSceinceAccadmy.TeacherMangement
         {
 
         }
-       
+
         private void TeacherMangement_Load(object sender, EventArgs e)
         {
 
@@ -30,6 +30,16 @@ namespace ExecutiveSceinceAccadmy.TeacherMangement
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnHiring_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using(HireingForm hireForm=new HireingForm())
+            {
+                hireForm.ShowDialog();
+            }
+            this.Show();
         }
     }
 }

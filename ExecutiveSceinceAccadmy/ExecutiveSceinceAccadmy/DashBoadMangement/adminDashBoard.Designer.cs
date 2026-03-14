@@ -65,8 +65,9 @@
             button3.Name = "button3";
             button3.Size = new Size(289, 92);
             button3.TabIndex = 2;
-            button3.Text = "button3";
+            button3.Text = "Teacher Manangement";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // btnExpenseMange
             // 

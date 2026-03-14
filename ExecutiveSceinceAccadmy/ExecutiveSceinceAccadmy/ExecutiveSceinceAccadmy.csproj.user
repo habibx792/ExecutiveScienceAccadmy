@@ -64,7 +64,7 @@
     <Compile Update="TeacherMangement\HireingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="TeacherMangement\TeacherMangement.cs">
+    <Compile Update="TeacherMangement\TeacherMangementForm.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
