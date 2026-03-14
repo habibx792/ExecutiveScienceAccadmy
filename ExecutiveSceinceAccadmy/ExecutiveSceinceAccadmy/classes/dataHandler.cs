@@ -62,11 +62,13 @@ namespace ExecutiveSceinceAccadmy.classes
         }
         public static string createRegistrationNumber(string domain, string gender, string classLevel)
         {
-            int currStd=DB.getCurrentStdNumber() + 1;
-            string year = currentYearLastTwoDigits();
-            DB.updateCurrentStdNumber(currStd);
-            return year + "-" + classLevel + "-" + domain + "-"+gender +"-"+ currStd.ToString();
+            return
+                DB.createRegistrationNumber(domain, gender, classLevel);    
 
+        }
+        public static string getLastTwoDigitOfYear()
+        {
+            return DateTime.Now.Year.ToString().Substring(2, 2);
         }
         public static string getStringOfCurrentDate()
         {

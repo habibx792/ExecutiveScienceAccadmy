@@ -64,33 +64,28 @@ namespace ExecutiveSceinceAccadmy.classes
             }
         }
         // strudent methods here, such as methods for adding students, retrieving data, etc.
-        public static int getCurrentStdNumber()
+        public static string createRegistrationNumber(string domain, string gender, string classLevel)
         {
+            int currStd = 0;
+
             using (SqlConnection con = new SqlConnection(str))
             {
                 con.Open();
-                string query = "select stdCount from stdCountTB";
+
+                // Insert a dummy row to get the next identity value
+                // stdCountTB now must be IDENTITY-based
+                string query = "INSERT INTO stdCountTB DEFAULT VALUES; SELECT SCOPE_IDENTITY();";
+
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
-                    int currentStd = (int)cmd.ExecuteScalar();
-                    MessageBox.Show("Current Student Number: " + currentStd);
-                    return currentStd;
+                    currStd = Convert.ToInt32(cmd.ExecuteScalar());
                 }
             }
-        }
-        public static void updateCurrentStdNumber(int newStdNumber)
-        {
-            using (SqlConnection con = new SqlConnection(str))
-            {
-                con.Open();
-                string query = "update stdCountTB set stdCount = @newStdNumber";
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    cmd.Parameters.Add("@newStdNumber", SqlDbType.Int).Value = newStdNumber;
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Student Number Updated to: " + newStdNumber);
-                }
-            }
+
+            string year = dataHandler.getLastTwoDigitOfYear(); // e.g., "26" for 2026
+
+            // Registration format: YY-Class-Domain-Gender-Number
+            return $"{year}-{classLevel}-{domain}-{gender}-{currStd}";
         }
         public static List<string> loadALlDomain()
         {
