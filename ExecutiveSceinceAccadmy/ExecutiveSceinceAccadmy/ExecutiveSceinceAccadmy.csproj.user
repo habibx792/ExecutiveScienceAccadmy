@@ -61,5 +61,11 @@
     <Compile Update="ResultManagement\resultFrom.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="TeacherMangement\HireingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TeacherMangement\TeacherMangement.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
