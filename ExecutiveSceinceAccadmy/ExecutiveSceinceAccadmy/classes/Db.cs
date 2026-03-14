@@ -118,8 +118,8 @@ namespace ExecutiveSceinceAccadmy.classes
             Address addr = std.Address;
             Father father = std.Father;
             accadmicHistory academicHistory = std.AcademicHistories;
-            string stdName = std.Name;
-            int stdAge = std.Age;
+
+string stdName = std.Name;
             string stdGender = std.Gender;
             string stdCNIC = std.Cnic;
             string stdPhoneNumber = std.PersonPhoneNumber;
@@ -128,16 +128,16 @@ namespace ExecutiveSceinceAccadmy.classes
             string stdDob = std.DOB;
             string batchYear = dataHandler.getCurrentYear().ToString();
             string studentType = std.ReqisterType;
-            //father info
+
             string fatherName = father.Name;
             string fatherCNIC = father.Cnic;
             string fatherPhoneNumber = father.PersonPhoneNumber;
             string fatherJob = father.Job;
-            //address info
+
             string cityName = addr.City;
             string addressLine = addr.AddressLine;
             string country = addr.Country;
-            //academic history info
+
             string passingYear = academicHistory.PassingYear.ToString();
             string PreviousDegree = academicHistory.Degree;
             string PreviousSchoolName = academicHistory.SchoolName;
@@ -146,74 +146,77 @@ namespace ExecutiveSceinceAccadmy.classes
             int totalMarks = academicHistory.TotalMarks;
             int gainMarks = academicHistory.ObtainedMarks;
 
-            //we have to put data in three table StudentTb academicTb stdAdress 
-            using
-                (SqlConnection con = new SqlConnection(str))
+            using (SqlConnection con = new SqlConnection(str))
             {
                 con.Open();
                 SqlTransaction transaction = con.BeginTransaction();
+
                 try
                 {
-                    // FIX: Convert classId to int since database expects INT
-                    int classIdInt;
-                    if (!int.TryParse(calssId, out classIdInt))
+                    // Convert class number
+                    int classNum;
+                    if (!int.TryParse(calssId, out classNum))
+                        throw new Exception("Invalid class value.");
+
+                    string className;
+
+                    if (classNum <= 8)
+                        className = classNum.ToString();
+                    else
+                        className = classNum + "th";
+
+                    // Get REAL classId from classTb
+                    int realClassId;
+
+                    string classQuery = @"SELECT classId 
+                              FROM classTb 
+                              WHERE domainId = @domainId 
+                              AND className = @className";
+
+                    using (SqlCommand cmd = new SqlCommand(classQuery, con, transaction))
                     {
-                        throw new Exception("Invalid Class Level format. Please enter a valid number.");
+                        cmd.Parameters.AddWithValue("@domainId", stdDomainID);
+                        cmd.Parameters.AddWithValue("@className", className);
+
+                        object result = cmd.ExecuteScalar();
+
+                        if (result == null)
+                            throw new Exception("Invalid class/domain combination.");
+
+                        realClassId = Convert.ToInt32(result);
                     }
 
-                    // FIX: Convert date string to DateTime for proper SQL DATE format
+                    // Convert DOB
                     DateTime dateOfBirth;
                     if (!DateTime.TryParse(stdDob, out dateOfBirth))
-                    {
-                        throw new Exception("Invalid Date of Birth format. Please use yyyy-MM-dd.");
-                    }
+                        throw new Exception("Invalid Date of Birth format.");
 
-                    // FIX: Ensure student type has a default value
                     if (string.IsNullOrWhiteSpace(studentType))
                         studentType = "Regular";
 
-                    string studentQuery = @"INSERT INTO StudentTb (
-                                            stdRegisNo,
-                                            student_name,
-                                            domainId,
-                                            classId,
-                                            gender,
-                                            date_of_birth,
-                                            cnic,
-                                            father_name,
-                                            father_cnic,
-                                            father_occupation,
-                                            father_mobile_no,
-                                            student_type,
-                                            batchYear
-                                        )
-                                        VALUES (
-                                            @registrationNo,
-                                            @stdName,
-                                            @domainId,
-                                            @classId,
-                                            @gender,
-                                            @date_of_birth,
-                                            @cnic,
-                                            @father_name,
-                                            @father_cnic,
-                                            @father_occupation,
-                                            @father_mobile_no,
-                                            @student_type,
-                                            @batchYear
-                                        );";
+                    // Insert student
+                    string studentQuery = @"INSERT INTO StudentTb
+                (stdRegisNo, student_name, domainId, classId, gender,
+                 date_of_birth, cnic, father_name, father_cnic,
+                 father_occupation, father_mobile_no, student_type, batchYear)
+                VALUES
+                (@registrationNo, @stdName, @domainId, @classId, @gender,
+                 @date_of_birth, @cnic, @father_name, @father_cnic,
+                 @father_occupation, @father_mobile_no, @student_type, @batchYear)";
+
                     using (SqlCommand cmd = new SqlCommand(studentQuery, con, transaction))
                     {
                         cmd.Parameters.AddWithValue("@registrationNo", registrationNo);
                         cmd.Parameters.AddWithValue("@stdName", stdName);
                         cmd.Parameters.AddWithValue("@domainId", stdDomainID);
-                        cmd.Parameters.AddWithValue("@classId", classIdInt); // FIX: Using converted int value
+                        cmd.Parameters.AddWithValue("@classId", realClassId);
                         cmd.Parameters.AddWithValue("@gender", stdGender);
-                        cmd.Parameters.AddWithValue("@date_of_birth", dateOfBirth); // FIX: Using DateTime object
+                        cmd.Parameters.AddWithValue("@date_of_birth", dateOfBirth);
                         cmd.Parameters.AddWithValue("@cnic", stdCNIC);
                         cmd.Parameters.AddWithValue("@father_name", fatherName);
                         cmd.Parameters.AddWithValue("@father_cnic", fatherCNIC);
-                        cmd.Parameters.AddWithValue("@father_occupation", string.IsNullOrEmpty(fatherJob) ? (object)DBNull.Value : fatherJob);
+                        cmd.Parameters.AddWithValue("@father_occupation",
+                            string.IsNullOrEmpty(fatherJob) ? (object)DBNull.Value : fatherJob);
                         cmd.Parameters.AddWithValue("@father_mobile_no", fatherPhoneNumber);
                         cmd.Parameters.AddWithValue("@student_type", studentType);
                         cmd.Parameters.AddWithValue("@batchYear", batchYear);
@@ -221,9 +224,14 @@ namespace ExecutiveSceinceAccadmy.classes
                         cmd.ExecuteNonQuery();
                     }
 
-                    // FIX: Fixed column order in query - parameters must match VALUES order
-                    string query = @"Insert into academicTb(stdRegisNo, previous_qualification, passingYear, registrationNo, previous_school_name, TotalMarks, gainMarks, board)
-                        VALUES(@stdRegisNo, @previous_qualification, @passingYear, @registrationNo, @previous_school_name, @TotalMarks, @gainMarks, @board);";
+                    // Insert academic history
+                    string query = @"INSERT INTO academicTb
+            (stdRegisNo, previous_qualification, passingYear, registrationNo,
+             previous_school_name, TotalMarks, gainMarks, board)
+            VALUES
+            (@stdRegisNo, @previous_qualification, @passingYear, @registrationNo,
+             @previous_school_name, @TotalMarks, @gainMarks, @board)";
+
                     using (SqlCommand cmd = new SqlCommand(query, con, transaction))
                     {
                         cmd.Parameters.AddWithValue("@stdRegisNo", registrationNo);
@@ -234,39 +242,42 @@ namespace ExecutiveSceinceAccadmy.classes
                         cmd.Parameters.AddWithValue("@TotalMarks", totalMarks);
                         cmd.Parameters.AddWithValue("@gainMarks", gainMarks);
                         cmd.Parameters.AddWithValue("@board", board);
-                        cmd.ExecuteNonQuery();
 
+                        cmd.ExecuteNonQuery();
                     }
 
-                    // FIX: Fixed parameter order - @city and @address were swapped in VALUES
-                    string query2 = @"Insert into stdAdress(stdRegisNo, address, city, country)
-                        VALUES(@stdRegisNo, @address, @city, @country);";
+                    // Insert address
+                    string query2 = @"INSERT INTO stdAdress
+            (stdRegisNo, address, city, country)
+            VALUES
+            (@stdRegisNo, @address, @city, @country)";
+
                     using (SqlCommand cmd = new SqlCommand(query2, con, transaction))
                     {
                         cmd.Parameters.AddWithValue("@stdRegisNo", registrationNo);
                         cmd.Parameters.AddWithValue("@address", addressLine);
                         cmd.Parameters.AddWithValue("@city", cityName);
                         cmd.Parameters.AddWithValue("@country", country);
+
                         cmd.ExecuteNonQuery();
                     }
+
                     transaction.Commit();
-                    MessageBox.Show("Student registered successfully! Registration No: " + registrationNo, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    MessageBox.Show("Student registered successfully! Registration No: " + registrationNo);
                     return true;
-                }
-                catch (SqlException ex)
-                {
-                    transaction.Rollback();
-                    MessageBox.Show("Database error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return false;
                 }
                 catch (Exception ex)
                 {
                     transaction.Rollback();
-                    MessageBox.Show("Unexpected error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Registration error: " + ex.Message);
                     return false;
                 }
             }
-        }
+
+
+}
+
         public static bool DisplayStudentDetailForFeeSubmission(string registrationNo, DataGridView dt)
         {
             try
