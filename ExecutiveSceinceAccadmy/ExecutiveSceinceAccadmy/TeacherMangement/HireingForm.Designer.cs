@@ -43,12 +43,15 @@
             txtAddress = new TextBox();
             label14 = new Label();
             panel1 = new Panel();
-            label1 = new Label();
-            dataGridView1 = new DataGridView();
-            button1 = new Button();
-            comboBox1 = new ComboBox();
-            rdSal = new RadioButton();
+            lblsalType = new Label();
+            txtType = new TextBox();
+            label2 = new Label();
             rdPercent = new RadioButton();
+            rdSal = new RadioButton();
+            cmbCountry = new ComboBox();
+            btnHire = new Button();
+            dataGridView1 = new DataGridView();
+            label1 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -64,14 +67,14 @@
             // 
             // txtTeachName
             // 
-            txtTeachName.Location = new Point(189, 307);
+            txtTeachName.Location = new Point(171, 252);
             txtTeachName.Name = "txtTeachName";
             txtTeachName.Size = new Size(272, 34);
             txtTeachName.TabIndex = 1;
             // 
             // txtTeachCnic
             // 
-            txtTeachCnic.Location = new Point(189, 368);
+            txtTeachCnic.Location = new Point(171, 313);
             txtTeachCnic.Name = "txtTeachCnic";
             txtTeachCnic.Size = new Size(272, 34);
             txtTeachCnic.TabIndex = 13;
@@ -80,7 +83,7 @@
             // cmbCity
             // 
             cmbCity.FormattingEnabled = true;
-            cmbCity.Location = new Point(730, 307);
+            cmbCity.Location = new Point(700, 315);
             cmbCity.Name = "cmbCity";
             cmbCity.Size = new Size(272, 36);
             cmbCity.TabIndex = 20;
@@ -88,7 +91,7 @@
             // cmbQualification
             // 
             cmbQualification.FormattingEnabled = true;
-            cmbQualification.Location = new Point(730, 487);
+            cmbQualification.Location = new Point(700, 436);
             cmbQualification.Name = "cmbQualification";
             cmbQualification.Size = new Size(272, 36);
             cmbQualification.TabIndex = 21;
@@ -96,7 +99,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(536, 498);
+            label5.Location = new Point(526, 456);
             label5.Name = "label5";
             label5.Size = new Size(135, 28);
             label5.TabIndex = 23;
@@ -105,7 +108,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(536, 360);
+            label9.Location = new Point(526, 318);
             label9.Name = "label9";
             label9.Size = new Size(49, 28);
             label9.TabIndex = 28;
@@ -113,14 +116,14 @@
             // 
             // txtFatherCnic
             // 
-            txtFatherCnic.Location = new Point(189, 492);
+            txtFatherCnic.Location = new Point(171, 437);
             txtFatherCnic.Name = "txtFatherCnic";
             txtFatherCnic.Size = new Size(272, 34);
             txtFatherCnic.TabIndex = 26;
             // 
             // txtFaterName
             // 
-            txtFaterName.Location = new Point(191, 425);
+            txtFaterName.Location = new Point(173, 370);
             txtFaterName.Name = "txtFaterName";
             txtFaterName.Size = new Size(270, 34);
             txtFaterName.TabIndex = 27;
@@ -128,7 +131,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(37, 420);
+            label11.Location = new Point(19, 365);
             label11.Name = "label11";
             label11.Size = new Size(133, 28);
             label11.TabIndex = 30;
@@ -137,7 +140,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(60, 360);
+            label12.Location = new Point(42, 305);
             label12.Name = "label12";
             label12.Size = new Size(52, 28);
             label12.TabIndex = 31;
@@ -146,7 +149,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(37, 495);
+            label13.Location = new Point(19, 440);
             label13.Name = "label13";
             label13.Size = new Size(123, 28);
             label13.TabIndex = 32;
@@ -154,7 +157,7 @@
             // 
             // txtAddress
             // 
-            txtAddress.Location = new Point(730, 425);
+            txtAddress.Location = new Point(700, 383);
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(272, 34);
             txtAddress.TabIndex = 33;
@@ -163,7 +166,7 @@
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(536, 300);
+            label14.Location = new Point(526, 258);
             label14.Name = "label14";
             label14.Size = new Size(88, 28);
             label14.TabIndex = 34;
@@ -171,10 +174,14 @@
             // 
             // panel1
             // 
+            panel1.BackColor = Color.IndianRed;
+            panel1.Controls.Add(lblsalType);
+            panel1.Controls.Add(txtType);
+            panel1.Controls.Add(label2);
             panel1.Controls.Add(rdPercent);
             panel1.Controls.Add(rdSal);
-            panel1.Controls.Add(comboBox1);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(cmbCountry);
+            panel1.Controls.Add(btnHire);
             panel1.Controls.Add(label14);
             panel1.Controls.Add(txtAddress);
             panel1.Controls.Add(label13);
@@ -197,68 +204,97 @@
             panel1.TabIndex = 5;
             panel1.Paint += panel1_Paint;
             // 
-            // label1
+            // lblsalType
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(60, 300);
-            label1.Name = "label1";
-            label1.Size = new Size(68, 28);
-            label1.TabIndex = 4;
-            label1.Text = "Name";
+            lblsalType.AutoSize = true;
+            lblsalType.Location = new Point(526, 505);
+            lblsalType.Name = "lblsalType";
+            lblsalType.Size = new Size(135, 28);
+            lblsalType.TabIndex = 40;
+            lblsalType.Text = "Qualification";
             // 
-            // dataGridView1
+            // txtType
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(3, 3);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1060, 188);
-            dataGridView1.TabIndex = 3;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            txtType.Location = new Point(700, 499);
+            txtType.Name = "txtType";
+            txtType.Size = new Size(272, 34);
+            txtType.TabIndex = 39;
             // 
-            // button1
+            // label2
             // 
-            button1.Location = new Point(867, 542);
-            button1.Name = "button1";
-            button1.Size = new Size(135, 71);
-            button1.TabIndex = 30;
-            button1.Text = "Hire";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(730, 360);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(272, 36);
-            comboBox1.TabIndex = 35;
-            // 
-            // rdSal
-            // 
-            rdSal.AutoSize = true;
-            rdSal.Location = new Point(710, 240);
-            rdSal.Name = "rdSal";
-            rdSal.Size = new Size(109, 32);
-            rdSal.TabIndex = 36;
-            rdSal.TabStop = true;
-            rdSal.Text = "Salaried";
-            rdSal.UseVisualStyleBackColor = true;
+            label2.AutoSize = true;
+            label2.Location = new Point(526, 376);
+            label2.Name = "label2";
+            label2.Size = new Size(87, 28);
+            label2.TabIndex = 38;
+            label2.Text = "Address";
             // 
             // rdPercent
             // 
             rdPercent.AutoSize = true;
-            rdPercent.Location = new Point(222, 240);
+            rdPercent.Location = new Point(189, 206);
             rdPercent.Name = "rdPercent";
             rdPercent.Size = new Size(138, 32);
             rdPercent.TabIndex = 37;
             rdPercent.TabStop = true;
             rdPercent.Text = "Percentage";
             rdPercent.UseVisualStyleBackColor = true;
+            rdPercent.CheckedChanged += rdPercent_CheckedChanged;
+            // 
+            // rdSal
+            // 
+            rdSal.AutoSize = true;
+            rdSal.Location = new Point(710, 206);
+            rdSal.Name = "rdSal";
+            rdSal.Size = new Size(109, 32);
+            rdSal.TabIndex = 36;
+            rdSal.TabStop = true;
+            rdSal.Text = "Salaried";
+            rdSal.UseVisualStyleBackColor = true;
+            rdSal.CheckedChanged += rdSal_CheckedChanged;
+            // 
+            // cmbCountry
+            // 
+            cmbCountry.FormattingEnabled = true;
+            cmbCountry.Location = new Point(700, 250);
+            cmbCountry.Name = "cmbCountry";
+            cmbCountry.Size = new Size(272, 36);
+            cmbCountry.TabIndex = 35;
+            cmbCountry.SelectedIndexChanged += cmbCountry_SelectedIndexChanged;
+            // 
+            // btnHire
+            // 
+            btnHire.Location = new Point(867, 558);
+            btnHire.Name = "btnHire";
+            btnHire.Size = new Size(135, 71);
+            btnHire.TabIndex = 30;
+            btnHire.Text = "Hire";
+            btnHire.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(0, 0);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(1066, 191);
+            dataGridView1.TabIndex = 3;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(42, 245);
+            label1.Name = "label1";
+            label1.Size = new Size(68, 28);
+            label1.TabIndex = 4;
+            label1.Text = "Name";
             // 
             // HireingForm
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.RoyalBlue;
             ClientSize = new Size(1130, 701);
             Controls.Add(label4);
             Controls.Add(panel1);
@@ -290,9 +326,12 @@
         private Panel panel1;
         private DataGridView dataGridView1;
         private Label label1;
-        private ComboBox comboBox1;
-        private Button button1;
+        private ComboBox cmbCountry;
+        private Button btnHire;
         private RadioButton rdPercent;
         private RadioButton rdSal;
+        private Label lblsalType;
+        private TextBox txtType;
+        private Label label2;
     }
 }

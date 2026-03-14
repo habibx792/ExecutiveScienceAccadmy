@@ -79,6 +79,7 @@ namespace ExecutiveSceinceAccadmy.classes
             return DateTime.Now.ToString("yyyyMMdd");
         }
 
+
         public static int calculateAge(DateTime birthDate)
         {
             DateTime today = DateTime.Today;
@@ -156,6 +157,77 @@ namespace ExecutiveSceinceAccadmy.classes
             }
             return years;
 
+        }
+        public static List<string> GetPakistanCities()
+        {
+            return new List<string>
+        {
+            "Faisalabad",
+            "Karachi",
+            "Lahore",
+            "Islamabad",
+            "Rawalpindi",
+            "Multan",
+            "Peshawar",
+            "Quetta",
+            "Sialkot",
+            "Gujranwala",
+            "Hyderabad",
+            "Bahawalpur",
+            "Sukkur",
+            "Mardan",
+            "Abbottabad"
+        };
+        }
+        public static List<string> GetQualifications()
+        {
+            return new List<string>
+    {
+        "BSSE",
+        "BSCS",
+        "BSIT",
+        "BBA",
+        "BCom",
+        "BE",
+        "MBBS",
+        "BSc Physics",
+        "BSc Chemistry",
+        "BSc Biology",
+        "BSc Mathematics",
+        "BA English",
+        "BA Urdu",
+        "BA Islamiat",
+        "BEd",
+        "MSc Physics",
+        "MSc Chemistry",
+        "MSc Biology",
+        "MSc Mathematics",
+        "MSc Computer Science",
+        "MSSE",
+        "MBA",
+        "MA English",
+        "MA Urdu",
+        "MA Islamiat",
+        "MEd",
+        "BFA",
+        "BArch",
+        "BS Economics",
+        "BS Statistics"
+    };
+}
+
+
+
+        // Method to return a list of countries
+        public static List<string> GetCountries()
+        {
+            return new List<string>
+        {
+            "Pakistan",
+            "America",
+            "China",
+            "Britain"
+        };
         }
     }
 }
