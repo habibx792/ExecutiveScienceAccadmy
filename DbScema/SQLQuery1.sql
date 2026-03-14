@@ -139,38 +139,30 @@ CREATE TABLE teacherAttendance (
     FOREIGN KEY (teacherId) REFERENCES teacherTb(teacherId) ON DELETE CASCADE
 );
 
-CREATE TABLE studentAttendance (
-    attendId INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+CREATE TABLE studentAttendance
+(
+    attendId VARCHAR(40) NOT NULL PRIMARY KEY,
     stdRegisNo VARCHAR(50) NOT NULL,
     isPresent BIT DEFAULT 0,
     attenceType VARCHAR(15) NOT NULL,
-    day VARCHAR(15),
-    attendDate DATE DEFAULT GETDATE(),
+
+    -- for UI display only
+    day VARCHAR(20),
+
+    -- real date used for logic
+    attendDate DATE NOT NULL DEFAULT GETDATE(),
+
     created_at DATETIME DEFAULT GETDATE(),
-    FOREIGN KEY (stdRegisNo) REFERENCES StudentTb(stdRegisNo) ON DELETE CASCADE
+
+    CONSTRAINT FK_studentAttendance_student
+        FOREIGN KEY (stdRegisNo)
+        REFERENCES StudentTb(stdRegisNo)
+        ON DELETE CASCADE,
+
+    -- prevents duplicate attendance on the same day
+    CONSTRAINT UQ_studentAttendance_unique
+        UNIQUE(stdRegisNo, attenceType, attendDate)
 );
--- 1. Create a new table with the desired schema
-CREATE TABLE studentAttendanceNew (
-    attendId VARCHAR(20) NOT NULL PRIMARY KEY,
-    stdRegisNo VARCHAR(50) NOT NULL,
-    isPresent BIT DEFAULT 0,
-    attenceType VARCHAR(15) NOT NULL,
-    day VARCHAR(15),
-    attendDate DATE DEFAULT GETDATE(),
-    created_at DATETIME DEFAULT GETDATE(),
-    FOREIGN KEY (stdRegisNo) REFERENCES StudentTb(stdRegisNo) ON DELETE CASCADE
-);
-
--- 2. Copy all data from the old table
-INSERT INTO studentAttendanceNew (attendId, stdRegisNo, isPresent, attenceType, day, attendDate, created_at)
-SELECT CAST(attendId AS VARCHAR(20)), stdRegisNo, isPresent, attenceType, day, attendDate, created_at
-FROM studentAttendance;
-
--- 3. Drop the old table
-DROP TABLE studentAttendance;
-
--- 4. Rename the new table to the original name
-EXEC sp_rename 'studentAttendanceNew', 'studentAttendance';
 ---========================================= Fee & Profit Tables ================================
 CREATE TABLE feeTb (
     feeId VARCHAR(40) NOT NULL PRIMARY KEY,

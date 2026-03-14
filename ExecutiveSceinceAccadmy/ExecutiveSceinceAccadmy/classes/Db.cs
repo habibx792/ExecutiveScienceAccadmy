@@ -616,14 +616,24 @@ namespace ExecutiveSceinceAccadmy.classes
             {
                 using (SqlConnection con = new SqlConnection(str))
                 {
-                    string query = @"SELECT stdRegisNo, student_name
-                             FROM StudentTb
-                             WHERE classId = @classId
-                             AND student_type = @type
-                             AND is_active = 1";
+                    con.Open();
+
+                    string query = @"SELECT s.stdRegisNo, s.student_name
+                             FROM StudentTb s
+                             JOIN classTb c 
+                                ON c.domainId = s.domainId
+                                AND c.className =
+                                    CASE 
+                                        WHEN TRY_CAST(s.classId AS INT) <= 8 
+                                            THEN CAST(s.classId AS VARCHAR)
+                                        ELSE CONCAT(CAST(s.classId AS VARCHAR),'th')
+                                    END
+                             WHERE c.className = @className
+                             AND s.student_type = @type
+                             AND s.is_active = 1";
 
                     SqlCommand cmd = new SqlCommand(query, con);
-                    cmd.Parameters.AddWithValue("@classId", classSelected);
+                    cmd.Parameters.AddWithValue("@className", classSelected);
                     cmd.Parameters.AddWithValue("@type", attendanceTypeSelected);
 
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -640,13 +650,12 @@ namespace ExecutiveSceinceAccadmy.classes
                             row["stdRegisNo"].ToString(),
                             row["student_name"].ToString(),
                             today,
-                            true    // default absent until teacher marks present
-
+                            true   // default present
                         );
                     }
-                }
 
-                return true;
+                    return true;
+                }
             }
             catch (Exception ex)
             {
