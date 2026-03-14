@@ -137,7 +137,7 @@ namespace ExecutiveSceinceAccadmy
         private void stdBoard_Click(object sender, EventArgs e)
         {
             this.Hide();
-            using (DashBoardForm DashBoard = new DashBoardForm())
+            using (studentDashBoard DashBoard = new studentDashBoard())
             {
                 DashBoard.ShowDialog();
             }
@@ -159,7 +159,7 @@ namespace ExecutiveSceinceAccadmy
         private void btnTeacherBoard_Click(object sender, EventArgs e)
         {
             this.Hide();
-            using (DashBoardForm DashBoard = new DashBoardForm())
+            using (teacherDashBoard DashBoard = new teacherDashBoard())
             {
                 DashBoard.ShowDialog();
             }

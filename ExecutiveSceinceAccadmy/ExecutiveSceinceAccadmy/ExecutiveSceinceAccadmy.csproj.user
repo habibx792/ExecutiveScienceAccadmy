@@ -16,10 +16,13 @@
     <Compile Update="DashBoadMangement\adminDashBoard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="DashBoadMangement\DashBoardForm.cs">
+    <Compile Update="DashBoadMangement\studentDashBoard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="DashBoadMangement\feeSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="DashBoadMangement\teacherDashBoard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ExpenseMangenment\addExpense.cs">

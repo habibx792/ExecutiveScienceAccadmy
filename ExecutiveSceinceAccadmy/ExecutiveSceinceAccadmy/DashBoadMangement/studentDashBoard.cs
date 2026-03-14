@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace ExecutiveSceinceAccadmy.DashBoadMangement
 {
-    public partial class DashBoardForm : Form
+    public partial class studentDashBoard : Form
     {
 
-        public DashBoardForm()
+        public studentDashBoard()
         {
 
             InitializeComponent();
@@ -25,33 +25,10 @@ namespace ExecutiveSceinceAccadmy.DashBoadMangement
                 showCustomTitleBar: true,
                 title: "Executive Science Academy");
 
-            StyleControls();
+            UI.Instance.AddFormShadow(this);
             this.StartPosition = FormStartPosition.CenterScreen;
         }
-        private void StyleControls()
-        {
-
-
-            //UI.Instance.MakeTextBoxModern(tbRollNo);
-
-            //UI.Instance.StylePanel(pnLogo,
-            //    backColor: Color.White,
-            //    borderColor: Color.FromArgb(0, 120, 215),
-            //    borderRadius: 20,
-            //    borderThickness: 2);
-            // UI.Instance.StyleButton(btnStdReg, borderRadius: 20);
-            // UI.Instance.StyleButton(BtnFeeSub, borderRadius: 20);
-            // UI.Instance.StyleButton(btnPrimaryReg, borderRadius: 20);
-            // UI.Instance.StyleButton(btnSupReg, borderRadius: 20);
-            // UI.Instance.StylePanel(pnMain,
-            //backColor: Color.White,
-            //borderColor: Color.FromArgb(0, 120, 215),
-            //borderRadius: 20,
-            //borderThickness: 2);
-            UI.Instance.AddFormShadow(this);
-           
-            UI.Instance.setFormSize(this, 1373, 687);
-        }
+       
 
         private void DashBoardForm_Load(object sender, EventArgs e)
         {
@@ -66,7 +43,7 @@ namespace ExecutiveSceinceAccadmy.DashBoadMangement
 
         private void tbRollNo_TextChanged(object sender, EventArgs e)
         {
-            tbRollNo.Height = 40;
+            //tbRollNo.Height = 40;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
