@@ -7,34 +7,13 @@ select * from teacherTb;
 select * from teacherAttendance;
 select * from teacherProfitTb;
 select * from teacherAddTb;
-select * from teacherPaymentTb;
+select * from teacherPaymentTb
 select * from teacherClassSubjectTb ;
-SELECT 
-    s.subjectId,
-    sp.subjectName,
-    c.className,
-    s.domainId
-FROM 
-    subjectTb s
-INNER JOIN 
-    SubjectPack sp
-    ON s.subjectId = sp.subjectId
-INNER JOIN
-    classTb c
-    ON s.classId = c.classId
-ORDER BY
-    s.domainId,
-    s.classId,
-    s.subjectId;
-    
-    select * from setStdFeeTb;
-
-
+select * from setStdFeeTb;
 select * from StudentTb;
 select * from stdAdress;
 select * from academicTb;
 select * from feeTb;
-select * from subjectTb;
 select * from studentAttendance;
 
 
@@ -97,3 +76,24 @@ select * from setStdFeeTb;
 select * from classTb;
 select * from StudentTb;
 TRUNCATE TABLE setStdFeeTb;
+
+
+
+select * from subjectTb;
+SELECT 
+    s.subjectId,
+    sp.subjectName,
+    c.className,
+    s.domainId
+FROM 
+    subjectTb s
+INNER JOIN 
+    SubjectPack sp
+    ON s.subjectId = sp.subjectId
+INNER JOIN
+    classTb c
+    ON s.classId = c.classId
+ORDER BY
+    s.domainId,
+    s.classId,
+    s.subjectId;

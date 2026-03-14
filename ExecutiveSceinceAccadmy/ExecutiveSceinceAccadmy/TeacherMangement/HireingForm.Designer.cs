@@ -50,10 +50,11 @@
             rdSal = new RadioButton();
             cmbCountry = new ComboBox();
             btnHire = new Button();
-            dataGridView1 = new DataGridView();
+            dtTeacherSubject = new DataGridView();
             label1 = new Label();
+            chkSenior = new CheckBox();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtTeacherSubject).BeginInit();
             SuspendLayout();
             // 
             // label4
@@ -175,6 +176,7 @@
             // panel1
             // 
             panel1.BackColor = Color.IndianRed;
+            panel1.Controls.Add(chkSenior);
             panel1.Controls.Add(lblsalType);
             panel1.Controls.Add(txtType);
             panel1.Controls.Add(label2);
@@ -185,7 +187,7 @@
             panel1.Controls.Add(label14);
             panel1.Controls.Add(txtAddress);
             panel1.Controls.Add(label13);
-            panel1.Controls.Add(dataGridView1);
+            panel1.Controls.Add(dtTeacherSubject);
             panel1.Controls.Add(label12);
             panel1.Controls.Add(label11);
             panel1.Controls.Add(txtFaterName);
@@ -232,7 +234,7 @@
             // rdPercent
             // 
             rdPercent.AutoSize = true;
-            rdPercent.Location = new Point(189, 206);
+            rdPercent.Location = new Point(523, 206);
             rdPercent.Name = "rdPercent";
             rdPercent.Size = new Size(138, 32);
             rdPercent.TabIndex = 37;
@@ -264,22 +266,22 @@
             // 
             // btnHire
             // 
-            btnHire.Location = new Point(867, 558);
+            btnHire.Location = new Point(837, 558);
             btnHire.Name = "btnHire";
             btnHire.Size = new Size(135, 71);
             btnHire.TabIndex = 30;
             btnHire.Text = "Hire";
             btnHire.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dtTeacherSubject
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(0, 0);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1066, 191);
-            dataGridView1.TabIndex = 3;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dtTeacherSubject.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtTeacherSubject.Location = new Point(0, 0);
+            dtTeacherSubject.Name = "dtTeacherSubject";
+            dtTeacherSubject.RowHeadersWidth = 51;
+            dtTeacherSubject.Size = new Size(1066, 191);
+            dtTeacherSubject.TabIndex = 3;
+            dtTeacherSubject.CellContentClick += dataGridView1_CellContentClick;
             // 
             // label1
             // 
@@ -289,6 +291,16 @@
             label1.Size = new Size(68, 28);
             label1.TabIndex = 4;
             label1.Text = "Name";
+            // 
+            // chkSenior
+            // 
+            chkSenior.AutoSize = true;
+            chkSenior.Location = new Point(171, 197);
+            chkSenior.Name = "chkSenior";
+            chkSenior.Size = new Size(173, 32);
+            chkSenior.TabIndex = 41;
+            chkSenior.Text = "Senior Teacher";
+            chkSenior.UseVisualStyleBackColor = true;
             // 
             // HireingForm
             // 
@@ -303,7 +315,7 @@
             Load += HireingForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtTeacherSubject).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -324,7 +336,7 @@
         private TextBox txtAddress;
         private Label label14;
         private Panel panel1;
-        private DataGridView dataGridView1;
+        private DataGridView dtTeacherSubject;
         private Label label1;
         private ComboBox cmbCountry;
         private Button btnHire;
@@ -333,5 +345,6 @@
         private Label lblsalType;
         private TextBox txtType;
         private Label label2;
+        private CheckBox chkSenior;
     }
 }

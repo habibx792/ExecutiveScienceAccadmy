@@ -86,6 +86,8 @@ namespace ExecutiveSceinceAccadmy.DashBoadMangement
             UI.Instance.StyleButton(btnRegisMange, borderRadius: 20);
             UI.Instance.StyleButton(btnFeeSet, borderRadius: 20);
             UI.Instance.StyleButton(btnExpenseMange, borderRadius: 20);
+            UI.Instance.StyleButton(btnTeachMang, borderRadius: 20);
+
 
 
 

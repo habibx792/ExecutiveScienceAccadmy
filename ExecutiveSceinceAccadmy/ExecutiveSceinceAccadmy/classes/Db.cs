@@ -581,7 +581,6 @@ string stdName = std.Name;
 
                 dtDefaulter.DataSource = dt;
 
-                // ---------- Grid Styling ----------
                 dtDefaulter.BorderStyle = BorderStyle.None;
                 dtDefaulter.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
                 dtDefaulter.EnableHeadersVisualStyles = false;
@@ -990,9 +989,63 @@ string stdName = std.Name;
                 return false;
             }
         }
+        public static bool laodSujectAndClassToTeacherHiring(DataGridView dt)
+        {
+            try
+            {
+                //string connectionString = @"Your_Connection_String_Here";
 
-      
+                using (SqlConnection con = new SqlConnection(str))
+                {
+                    con.Open();
 
-       
+                    // Corrected query using SubjectPack for subject names
+                    string query = @"
+                SELECT 
+                    c.className,
+                    sp.subjectName,
+                    s.classId,
+                    s.subjectId,
+                    s.domainId
+                FROM subjectTb s
+                INNER JOIN SubjectPack sp ON s.subjectId = sp.subjectId
+                INNER JOIN classTb c ON s.classId = c.classId
+                ORDER BY s.domainId, s.classId, s.subjectId
+            ";
+
+                    SqlDataAdapter da = new SqlDataAdapter(query, con);
+                    DataTable dtbl = new DataTable();
+                    da.Fill(dtbl);
+
+                    dt.DataSource = dtbl;
+
+                    // Add a checkbox column for selection
+                    if (!dt.Columns.Contains("Select"))
+                    {
+                        DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
+                        chk.HeaderText = "Select";
+                        chk.Name = "Select";
+                        dt.Columns.Insert(0, chk); // Insert checkbox as first column
+                    }
+
+                    // Move classId and subjectId to the end
+                    dt.Columns["classId"].DisplayIndex = dt.Columns.Count - 2;
+                    dt.Columns["subjectId"].DisplayIndex = dt.Columns.Count - 1;
+
+                    dt.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading data: " + ex.Message);
+                return false;
+            }
+        }
+
+
+
+
     }
 }

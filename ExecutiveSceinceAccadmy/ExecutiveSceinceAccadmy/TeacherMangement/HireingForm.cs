@@ -44,6 +44,12 @@ namespace ExecutiveSceinceAccadmy.TeacherMangement
 
         private void HireingForm_Load(object sender, EventArgs e)
         {
+           bool sucess= DB.laodSujectAndClassToTeacherHiring(dtTeacherSubject);
+            if (!sucess)
+            {
+                return;
+            }
+
             List<string> cityList = dataHandler.GetPakistanCities();
             foreach (string city in cityList)
             {

@@ -30,7 +30,7 @@ CREATE TABLE classTb (
     FOREIGN KEY (domainId) REFERENCES domainTb(domainId) ON DELETE CASCADE
 );
 
-
+drop table subjectTb;
 CREATE TABLE subjectTb (
     subjectId INT  NOT NULL ,
     classId INT NOT NULL,
@@ -39,8 +39,6 @@ CREATE TABLE subjectTb (
     FOREIGN KEY (classId) REFERENCES classTb(classId) ON DELETE CASCADE,
     FOREIGN KEY (domainId) REFERENCES domainTb(domainId) ON DELETE NO ACTION
 );
-ALTER TABLE subjectTb
-DROP COLUMN subjectsName;
 
 ---======================================= Student Tables ======================================
 CREATE TABLE StudentTb (
@@ -105,6 +103,12 @@ CREATE TABLE teacherTb (
     updated_at DATETIME DEFAULT GETDATE(),
     is_active BIT DEFAULT 1
 );
+ALTER TABLE teacherTb
+ADD 
+    fatherName VARCHAR(100) NULL,
+    fatherCnic VARCHAR(20) NULL,
+    teacherCnic VARCHAR(20) NULL;
+
 
 CREATE TABLE teacherAddTb
 (
@@ -115,23 +119,42 @@ CREATE TABLE teacherAddTb
     country VARCHAR(30) DEFAULT 'Pakistan',
     FOREIGN KEY (teacherId) REFERENCES teacherTb(teacherId) ON DELETE CASCADE
 );
-
-CREATE TABLE teacherClassTb (
+DROP TABLE IF EXISTS teacherPaymentTb;
+CREATE TABLE teacherPaymentTb
+(
+    teacherPaymentId INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     teacherId VARCHAR(40) NOT NULL,
-    classId INT NOT NULL,
-    assigned_date DATE DEFAULT GETDATE(),
-    PRIMARY KEY (teacherId, classId),
-    FOREIGN KEY (teacherId) REFERENCES teacherTb(teacherId) ON DELETE CASCADE,
-    FOREIGN KEY (classId) REFERENCES classTb(classId) ON DELETE NO ACTION
+    teacherType VARCHAR(20) NOT NULL, -- 'Salary' or 'Percentage'
+    salary DECIMAL(10,2) NULL,
+    percentage DECIMAL(10,2) NULL,
+    paymentDate DATE NOT NULL DEFAULT GETDATE(),
+
+    CONSTRAINT FK_teacherPayment_teacher
+        FOREIGN KEY (teacherId) REFERENCES teacherTb(teacherId) ON DELETE CASCADE
 );
 
-CREATE TABLE teacherSubjectTb (
+DROP TABLE IF EXISTS teacherClassSubjectTb;
+
+CREATE TABLE teacherClassSubjectTb (
     teacherId VARCHAR(40) NOT NULL,
+    classId INT NOT NULL,
     subjectId INT NOT NULL,
+    domainId VARCHAR(50) NOT NULL,
     assigned_date DATE DEFAULT GETDATE(),
-    PRIMARY KEY (teacherId, subjectId),
-    FOREIGN KEY (teacherId) REFERENCES teacherTb(teacherId) ON DELETE CASCADE,
-    FOREIGN KEY (subjectId) REFERENCES subjectTb(subjectId) ON DELETE NO ACTION
+
+    PRIMARY KEY (teacherId, classId, subjectId),
+
+    CONSTRAINT FK_teacherClassSubject_teacher
+        FOREIGN KEY (teacherId) REFERENCES teacherTb(teacherId) ON DELETE CASCADE,
+
+    CONSTRAINT FK_teacherClassSubject_class
+        FOREIGN KEY (classId) REFERENCES classTb(classId) ON DELETE NO ACTION,
+
+    CONSTRAINT FK_teacherClassSubject_subject
+        FOREIGN KEY (subjectId, classId) REFERENCES subjectTb(subjectId, classId) ON DELETE NO ACTION,
+
+    CONSTRAINT FK_teacherClassSubject_domain
+        FOREIGN KEY (domainId) REFERENCES domainTb(domainId) ON DELETE NO ACTION
 );
 
 ---============================ Student & Teacher Attendance ===================================
@@ -253,23 +276,8 @@ CREATE TABLE setStdFeeTb (
     FOREIGN KEY (classId) REFERENCES classTb(classId) ON DELETE NO ACTION
 );
 
-CREATE TABLE teacherSalaySetTb
-(
-    teacherSalarySetId INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
-    teacherId VARCHAR(40) NOT NULL,
-    salary DECIMAL(10,2) NOT NULL,
-    salaryDate DATE NOT NULL DEFAULT GETDATE(),
-    FOREIGN KEY (teacherId) REFERENCES teacherTb(teacherId) ON DELETE CASCADE
-);
 
-CREATE TABLE setTeacherPercentageTB
-(
-    teacherSalarySetId INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
-    teacherId VARCHAR(40) NOT NULL,
-    percentag DECIMAL(10,2) NOT NULL,
-    percenDate DATE NOT NULL DEFAULT GETDATE(),
-    FOREIGN KEY (teacherId) REFERENCES teacherTb(teacherId) ON DELETE CASCADE
-);
+
 
 CREATE TABLE academySubjectProfitTb (
     academyProfitId INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
@@ -298,4 +306,122 @@ CREATE TABLE academyReportTb (
     profitAmount AS (totalRevenue - totalExpense - teacherProfit) PERSISTED,
     created_at DATETIME DEFAULT GETDATE(),
     updated_at DATETIME DEFAULT GETDATE()
+);
+
+CREATE TABLE SubjectPack
+(
+    subjectId INT IDENTITY(1,1) PRIMARY KEY,
+    subjectName VARCHAR(100) NOT NULL
+);
+
+
+INSERT INTO SubjectPack(subjectName) VALUES
+('Urdu'),
+('English'),
+('Biology'),
+('Chemistry'),
+('Physics'),
+('Mathematics'),
+('Computer Science'),
+('Islamiat'),
+('Pakistan Studies');
+
+
+
+USE accadmyDb;
+GO
+
+/* ============================
+   1. DROP FOREIGN KEYS THAT
+   REFERENCE subjectTb
+============================ */
+
+DECLARE @sql NVARCHAR(MAX) = '';
+
+SELECT @sql += 
+'ALTER TABLE ' + OBJECT_NAME(parent_object_id) +
+' DROP CONSTRAINT ' + name + ';' + CHAR(10)
+FROM sys.foreign_keys
+WHERE referenced_object_id = OBJECT_ID('subjectTb');
+
+EXEC sp_executesql @sql;
+
+
+/* ============================
+   2. DROP AND RECREATE TABLE
+============================ */
+
+IF OBJECT_ID('subjectTb','U') IS NOT NULL
+DROP TABLE subjectTb;
+
+CREATE TABLE subjectTb (
+    subjectId INT NOT NULL,
+    classId INT NOT NULL,
+    domainId VARCHAR(50) NOT NULL,
+
+    CONSTRAINT PK_subjectTb
+        PRIMARY KEY (subjectId, classId),
+
+    CONSTRAINT FK_subjectTb_subjectPack
+        FOREIGN KEY (subjectId)
+        REFERENCES SubjectPack(subjectId),
+
+    CONSTRAINT FK_subjectTb_class
+        FOREIGN KEY (classId)
+        REFERENCES classTb(classId)
+        ON DELETE CASCADE,
+
+    CONSTRAINT FK_subjectTb_domain
+        FOREIGN KEY (domainId)
+        REFERENCES domainTb(domainId)
+);
+
+
+/* ============================
+   3. RESTORE FOREIGN KEYS
+============================ */
+
+ALTER TABLE teacherSubjectTb
+ADD CONSTRAINT FK_teacherSubjectTb_subject
+FOREIGN KEY (subjectId)
+REFERENCES subjectTb(subjectId);
+
+ALTER TABLE teacherProfitTb
+ADD CONSTRAINT FK_teacherProfit_subject
+FOREIGN KEY (subjectId)
+REFERENCES subjectTb(subjectId);
+
+ALTER TABLE subjectWiseResultTb
+ADD CONSTRAINT FK_subjectWiseResult_subject
+FOREIGN KEY (subjectId)
+REFERENCES subjectTb(subjectId);
+
+ALTER TABLE academySubjectProfitTb
+ADD CONSTRAINT FK_academyProfit_subject
+FOREIGN KEY (subjectId)
+REFERENCES subjectTb(subjectId);
+
+GO
+
+DROP TABLE IF EXISTS subjectTb;
+
+CREATE TABLE subjectTb (
+    subjectId INT NOT NULL,
+    classId INT NOT NULL,
+    domainId VARCHAR(50) NOT NULL,
+
+    CONSTRAINT PK_subjectTb PRIMARY KEY (subjectId, classId),
+
+    CONSTRAINT FK_subjectTb_subjectPack
+        FOREIGN KEY (subjectId)
+        REFERENCES SubjectPack(subjectId),
+
+    CONSTRAINT FK_subjectTb_class
+        FOREIGN KEY (classId)
+        REFERENCES classTb(classId)
+        ON DELETE CASCADE,
+
+    CONSTRAINT FK_subjectTb_domain
+        FOREIGN KEY (domainId)
+        REFERENCES domainTb(domainId)
 );
