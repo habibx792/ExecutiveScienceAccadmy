@@ -39,10 +39,12 @@
             rdStdId = new RadioButton();
             cmbMonth = new ComboBox();
             txtId = new TextBox();
-            lbLogo = new Label();
+            pnLogo = new Panel();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)dtGirdPaidStatus).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            pnLogo.SuspendLayout();
             SuspendLayout();
             // 
             // btnSearch
@@ -60,7 +62,7 @@
             // 
             // dtGirdPaidStatus
             // 
-            dtGirdPaidStatus.BackgroundColor = Color.FromArgb(255, 128, 128);
+            dtGirdPaidStatus.BackgroundColor = Color.IndianRed;
             dtGirdPaidStatus.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtGirdPaidStatus.Location = new Point(45, 471);
             dtGirdPaidStatus.Name = "dtGirdPaidStatus";
@@ -83,7 +85,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(255, 128, 128);
+            panel1.BackColor = Color.IndianRed;
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(lblMonth);
             panel1.Controls.Add(lblSearchby);
@@ -99,7 +101,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.SteelBlue;
+            panel2.BackColor = Color.IndianRed;
             panel2.Controls.Add(label1);
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
@@ -168,16 +170,28 @@
             txtId.Size = new Size(413, 34);
             txtId.TabIndex = 2;
             // 
-            // lbLogo
+            // pnLogo
             // 
-            lbLogo.AutoSize = true;
-            lbLogo.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbLogo.Location = new Point(173, 42);
-            lbLogo.Margin = new Padding(4, 0, 4, 0);
-            lbLogo.Name = "lbLogo";
-            lbLogo.Size = new Size(653, 46);
-            lbLogo.TabIndex = 6;
-            lbLogo.Text = "Welcome To Executive Sceince Accadmy";
+            pnLogo.BackColor = Color.IndianRed;
+            pnLogo.Controls.Add(label2);
+            pnLogo.Location = new Point(45, 46);
+            pnLogo.Margin = new Padding(4, 5, 4, 5);
+            pnLogo.Name = "pnLogo";
+            pnLogo.Size = new Size(850, 81);
+            pnLogo.TabIndex = 9;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.FromArgb(0, 70, 140);
+            label2.Location = new Point(139, 21);
+            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(537, 54);
+            label2.TabIndex = 0;
+            label2.Text = "Executive Science Academy";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // feeRecordSearch
             // 
@@ -185,7 +199,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
             ClientSize = new Size(947, 732);
-            Controls.Add(lbLogo);
+            Controls.Add(pnLogo);
             Controls.Add(panel1);
             Controls.Add(dtGirdPaidStatus);
             Name = "feeRecordSearch";
@@ -196,8 +210,9 @@
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            pnLogo.ResumeLayout(false);
+            pnLogo.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -210,8 +225,9 @@
         private RadioButton rdStdId;
         private Label lblSearchby;
         private Label label1;
-        private Label lbLogo;
         private Label lblMonth;
         private Panel panel2;
+        private Panel pnLogo;
+        private Label label2;
     }
 }
