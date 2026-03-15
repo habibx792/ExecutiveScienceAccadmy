@@ -26,7 +26,7 @@
             stdBoard = new Button();
             btnTeacherBoard = new Button();
             pnLogo = new Panel();
-            lbLogo = new Label();
+            label6 = new Label();
             pnMain.SuspendLayout();
             pnLogo.SuspendLayout();
             SuspendLayout();
@@ -53,7 +53,7 @@
             pnMain.Controls.Add(stdBoard);
             pnMain.Controls.Add(btnTeacherBoard);
             pnMain.Controls.Add(btnAdmin);
-            pnMain.Location = new Point(42, 168);
+            pnMain.Location = new Point(42, 118);
             pnMain.Margin = new Padding(4, 5, 4, 5);
             pnMain.Name = "pnMain";
             pnMain.Size = new Size(631, 565);
@@ -94,33 +94,33 @@
             // pnLogo
             // 
             pnLogo.BackColor = Color.FromArgb(255, 128, 128);
-            pnLogo.Controls.Add(lbLogo);
-            pnLogo.Location = new Point(42, 64);
+            pnLogo.Controls.Add(label6);
+            pnLogo.Location = new Point(42, 14);
             pnLogo.Margin = new Padding(4, 5, 4, 5);
             pnLogo.Name = "pnLogo";
             pnLogo.Size = new Size(631, 103);
             pnLogo.TabIndex = 7;
             pnLogo.Paint += panel2_Paint;
             // 
-            // lbLogo
+            // label6
             // 
-            lbLogo.AutoSize = true;
-            lbLogo.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbLogo.ForeColor = Color.FromArgb(0, 70, 140);
-            lbLogo.Location = new Point(38, 21);
-            lbLogo.Margin = new Padding(4, 0, 4, 0);
-            lbLogo.Name = "lbLogo";
-            lbLogo.Size = new Size(578, 41);
-            lbLogo.TabIndex = 0;
-            lbLogo.Text = "Welcome To Executive Science Academy";
-            lbLogo.TextAlign = ContentAlignment.MiddleCenter;
-            lbLogo.Click += label1_Click;
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.Black;
+            label6.Location = new Point(47, 24);
+            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(537, 54);
+            label6.TabIndex = 31;
+            label6.Text = "Executive Science Academy";
+            label6.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(777, 802);
+            BackColor = Color.RoyalBlue;
+            ClientSize = new Size(777, 704);
             Controls.Add(pnLogo);
             Controls.Add(pnMain);
             Margin = new Padding(4, 5, 4, 5);
@@ -135,8 +135,8 @@
         private Button btnAdmin;
         private Panel pnMain;
         private Panel pnLogo;
-        private Label lbLogo;
         private Button stdBoard;
         private Button btnTeacherBoard;
+        private Label label6;
     }
 }
