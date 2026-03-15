@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             pnLogo = new Panel();
+            label1 = new Label();
             btnMark = new Button();
             btnSujectWise = new Button();
             pnMain = new Panel();
             btnUpAtt = new Button();
             btnDashBoad = new Button();
-            label1 = new Label();
             pnLogo.SuspendLayout();
             pnMain.SuspendLayout();
             SuspendLayout();
@@ -43,11 +43,24 @@
             // 
             pnLogo.BackColor = Color.IndianRed;
             pnLogo.Controls.Add(label1);
-            pnLogo.Location = new Point(13, 47);
+            pnLogo.Location = new Point(13, 14);
             pnLogo.Margin = new Padding(4, 5, 4, 5);
             pnLogo.Name = "pnLogo";
             pnLogo.Size = new Size(760, 135);
             pnLogo.TabIndex = 11;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(112, 40);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(537, 54);
+            label1.TabIndex = 14;
+            label1.Text = "Executive Science Academy";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnMark
             // 
@@ -77,7 +90,7 @@
             pnMain.Controls.Add(btnUpAtt);
             pnMain.Controls.Add(btnSujectWise);
             pnMain.Controls.Add(btnDashBoad);
-            pnMain.Location = new Point(13, 175);
+            pnMain.Location = new Point(13, 142);
             pnMain.Margin = new Padding(4, 5, 4, 5);
             pnMain.Name = "pnMain";
             pnMain.Size = new Size(760, 427);
@@ -105,25 +118,12 @@
             btnDashBoad.UseVisualStyleBackColor = true;
             btnDashBoad.Click += btnDashBoad_Click;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(112, 40);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(537, 54);
-            label1.TabIndex = 14;
-            label1.Text = "Executive Science Academy";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // attendanceForm
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(790, 636);
+            ClientSize = new Size(790, 589);
             Controls.Add(pnMain);
             Controls.Add(pnLogo);
             Margin = new Padding(4, 5, 4, 5);

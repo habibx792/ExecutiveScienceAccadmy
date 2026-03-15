@@ -105,7 +105,7 @@
             panel1.Controls.Add(cmbTeaches);
             panel1.Controls.Add(rdArrival);
             panel1.Controls.Add(btnTeachAttence);
-            panel1.Location = new Point(54, 167);
+            panel1.Location = new Point(27, 128);
             panel1.Name = "panel1";
             panel1.Size = new Size(717, 397);
             panel1.TabIndex = 5;
@@ -114,7 +114,7 @@
             // 
             pnLogo.BackColor = Color.IndianRed;
             pnLogo.Controls.Add(label1);
-            pnLogo.Location = new Point(54, 65);
+            pnLogo.Location = new Point(27, 26);
             pnLogo.Margin = new Padding(4, 5, 4, 5);
             pnLogo.Name = "pnLogo";
             pnLogo.Size = new Size(717, 103);
@@ -138,7 +138,7 @@
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(816, 602);
+            ClientSize = new Size(772, 546);
             Controls.Add(pnLogo);
             Controls.Add(panel1);
             Margin = new Padding(4, 5, 4, 5);
