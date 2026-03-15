@@ -1,4 +1,5 @@
 ﻿using ExecutiveSceinceAccadmy.classes;
+using ExecutiveScienceAcademy.classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +18,23 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
         public feeRecordSearch()
         {
             InitializeComponent();
+            UI.Instance.StyleForm(this,
+                backgroundColor: Color.FromArgb(245, 245, 245),
+                borderRadius: 25,
+                showCustomTitleBar: true,
+                title: "Executive Science Academy");
+
+
+            StyleControls();
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.BackColor = Color.DodgerBlue;
+        }
+        private void StyleControls()
+        {
+
+
+            UI.Instance.StyleButton(btnSearch, borderRadius: 20);
+            UI.Instance.AddFormShadow(this);
         }
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -51,22 +68,9 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
             if (!dataLaodSuccess || dtGirdPaidStatus.Rows.Count == 0)
             {
                 DialogResult result = MessageBox.Show(
-                    "Student has not paid fee for this month.\nDo you want to pay the fee now?",
-                    "Fee Not Paid",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question
-                );
+                    $"Student has not paid fee for .{dataHandler.getCurrentMonthStr()}"
 
-                if (result == DialogResult.Yes)
-                {
-                    // open fee payment screen
-                    this.Hide();
-                    FeeSubMission subMission = new FeeSubMission();
-                    subMission.StartPosition = FormStartPosition.CenterScreen;
-                    subMission.TopMost = true;   
-                    subMission.Show();
-                    subMission.Activate();
-                }
+                );
 
                 return;
             }

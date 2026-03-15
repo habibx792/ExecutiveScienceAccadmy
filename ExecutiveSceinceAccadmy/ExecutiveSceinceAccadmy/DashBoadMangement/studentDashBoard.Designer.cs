@@ -78,6 +78,7 @@
             btnAttendMange.TabIndex = 8;
             btnAttendMange.Text = "Check Attendance";
             btnAttendMange.UseVisualStyleBackColor = true;
+            btnAttendMange.Click += btnAttendMange_Click;
             // 
             // btnRegisMange
             // 
@@ -88,6 +89,7 @@
             btnRegisMange.TabIndex = 1;
             btnRegisMange.Text = "Check Fee Records";
             btnRegisMange.UseVisualStyleBackColor = true;
+            btnRegisMange.Click += btnRegisMange_Click;
             // 
             // studentDashBoard
             // 

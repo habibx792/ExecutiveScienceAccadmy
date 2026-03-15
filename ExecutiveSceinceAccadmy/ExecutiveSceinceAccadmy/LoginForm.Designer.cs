@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             pnMain = new Panel();
+            chkShow = new CheckBox();
             rdStudent = new RadioButton();
             rdTeacher = new RadioButton();
             rdAdmin = new RadioButton();
@@ -46,6 +47,7 @@
             // pnMain
             // 
             pnMain.BackColor = Color.White;
+            pnMain.Controls.Add(chkShow);
             pnMain.Controls.Add(rdStudent);
             pnMain.Controls.Add(rdTeacher);
             pnMain.Controls.Add(rdAdmin);
@@ -60,6 +62,17 @@
             pnMain.Size = new Size(585, 516);
             pnMain.TabIndex = 0;
             pnMain.Paint += pnMain_Paint;
+            // 
+            // chkShow
+            // 
+            chkShow.AutoSize = true;
+            chkShow.Location = new Point(98, 356);
+            chkShow.Name = "chkShow";
+            chkShow.Size = new Size(148, 27);
+            chkShow.TabIndex = 9;
+            chkShow.Text = "Show Password";
+            chkShow.UseVisualStyleBackColor = true;
+            chkShow.CheckedChanged += chkShow_CheckedChanged;
             // 
             // rdStudent
             // 
@@ -149,7 +162,6 @@
             txtPass.Location = new Point(98, 318);
             txtPass.Margin = new Padding(4, 5, 4, 5);
             txtPass.Name = "txtPass";
-            txtPass.PasswordChar = '*';
             txtPass.PlaceholderText = "Enter Password";
             txtPass.Size = new Size(385, 30);
             txtPass.TabIndex = 10;
@@ -221,5 +233,6 @@
         private RadioButton rdStudent;
         private RadioButton rdTeacher;
         private RadioButton rdAdmin;
+        private CheckBox chkShow;
     }
 }

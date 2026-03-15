@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            btnSearch = new Button();
             dtGirdPaidStatus = new DataGridView();
             rdFeeId = new RadioButton();
             panel1 = new Panel();
@@ -45,18 +45,18 @@
             panel2.SuspendLayout();
             SuspendLayout();
             // 
-            // button1
+            // btnSearch
             // 
-            button1.BackColor = Color.Black;
-            button1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(516, 269);
-            button1.Name = "button1";
-            button1.Size = new Size(121, 53);
-            button1.TabIndex = 1;
-            button1.Text = "Search";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btnSearch.BackColor = Color.Black;
+            btnSearch.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSearch.ForeColor = Color.White;
+            btnSearch.Location = new Point(516, 269);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(121, 53);
+            btnSearch.TabIndex = 1;
+            btnSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = false;
+            btnSearch.Click += button1_Click;
             // 
             // dtGirdPaidStatus
             // 
@@ -91,7 +91,7 @@
             panel1.Controls.Add(cmbMonth);
             panel1.Controls.Add(rdFeeId);
             panel1.Controls.Add(txtId);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(btnSearch);
             panel1.Location = new Point(45, 124);
             panel1.Name = "panel1";
             panel1.Size = new Size(850, 352);
@@ -201,7 +201,7 @@
         }
 
         #endregion
-        private Button button1;
+        private Button btnSearch;
         private DataGridView dtGirdPaidStatus;
         private RadioButton rdFeeId;
         private Panel panel1;

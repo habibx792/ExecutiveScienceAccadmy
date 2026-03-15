@@ -17,10 +17,8 @@ namespace ExecutiveSceinceAccadmy
     {
         public LoginForm()
         {
-
             InitializeComponent();
             UI.Instance.StyleForm(this,
-
              backgroundColor: Color.RoyalBlue,
              borderRadius: 25,
              showCustomTitleBar: true,
@@ -28,11 +26,10 @@ namespace ExecutiveSceinceAccadmy
 
             StyleControls();
             this.StartPosition = FormStartPosition.CenterScreen;
-
         }
+
         private void StyleControls()
         {
-
             UI.Instance.StylePanel(pnLogo,
                 backColor: Color.IndianRed,
                 borderColor: Color.FromArgb(0, 120, 215),
@@ -47,46 +44,42 @@ namespace ExecutiveSceinceAccadmy
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
-
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
+            // Set default role
             rdAdmin.Checked = true;
-            rdStudent.Checked = false;
-            rdTeacher.Checked = false;
+            // No need to explicitly set others to false – they are mutually exclusive
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtUser.Text) || string.IsNullOrWhiteSpace(txtPass.Text))
             {
-
                 MessageBox.Show("Please enter both username and password.", "Input Error",
                                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
             string username = txtUser.Text.Trim();
             string password = txtPass.Text.Trim();
+
             if (rdAdmin.Checked)
             {
                 bool loginSuccess = DB.Login(username, password);
-
                 if (loginSuccess)
                 {
                     this.Hide();
                     using (adminDashBoard mainForm = new adminDashBoard())
                     {
-
                         mainForm.ShowDialog();
-
                     }
                     this.Show();
-
                 }
                 else
                 {
@@ -96,7 +89,6 @@ namespace ExecutiveSceinceAccadmy
             }
             else if (rdStudent.Checked)
             {
-
                 bool loginSucc = DB.loginStudent(username, password);
                 if (loginSucc)
                 {
@@ -107,45 +99,50 @@ namespace ExecutiveSceinceAccadmy
                     }
                     this.Show();
                 }
+                else
+                {
+                    MessageBox.Show("Invalid student ID or password.", "Login Failed",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else if (rdTeacher.Checked)
             {
-                this.Hide();
-                using (teacherDashBoard teachDashBoard = new teacherDashBoard())
+                bool loginSucc = DB.loginTeacher(username, password); 
+                if (loginSucc)
                 {
-                    teachDashBoard.ShowDialog();
+                    this.Hide();
+                    using (teacherDashBoard teachDashBoard = new teacherDashBoard())
+                    {
+                        teachDashBoard.ShowDialog();
+                    }
+                    this.Show();
                 }
-                this.Show();
+                else
+                {
+                    MessageBox.Show("Invalid teacher ID or password.", "Login Failed",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-
-
         }
 
         private void pnMain_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void rdTeacher_CheckedChanged(object sender, EventArgs e)
         {
             if (rdTeacher.Checked)
             {
-                rdStudent.Checked = false;
-                rdAdmin.Checked = false;
-                txtUser.PlaceholderText = "Enter Teacher ID ";
-                txtPass.Text = "";
+                txtUser.PlaceholderText = "Enter Teacher ID";
                 txtUser.Text = "";
+                txtPass.Text = "";
             }
-
         }
 
         private void rdStudent_CheckedChanged(object sender, EventArgs e)
         {
             if (rdStudent.Checked)
             {
-                rdStudent.Checked = true;
-                rdAdmin.Checked = false;
-                rdTeacher.Checked = false;
                 txtUser.PlaceholderText = "Enter Register ID";
                 txtUser.Text = "";
                 txtPass.Text = "";
@@ -154,17 +151,29 @@ namespace ExecutiveSceinceAccadmy
 
         private void rdAdmin_CheckedChanged(object sender, EventArgs e)
         {
-            if(rdAdmin.Checked)
+            if (rdAdmin.Checked)
             {
-                rdAdmin.Checked = true;
-                rdStudent.Checked = false;
-                rdTeacher.Checked= false;
-                txtPass.Text = "";
+                txtUser.PlaceholderText = "Enter Admin Username";
                 txtUser.Text = "";
+                txtPass.Text = "";
+            }
+        }
+
+        private void chkShow_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkShow.Checked)
+            {
+                txtPass.UseSystemPasswordChar = false;
+
+                //.PasswordChar = '\0';
+            }
+            else
+            {
+
+                txtPass.UseSystemPasswordChar = true;
+
+                txtPass.PasswordChar = '*';
             }
         }
     }
-
-
-
 }

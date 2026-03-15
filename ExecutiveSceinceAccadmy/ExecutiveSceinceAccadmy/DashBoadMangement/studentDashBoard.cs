@@ -1,4 +1,6 @@
-﻿using ExecutiveScienceAcademy.classes;
+﻿using ExecutiveSceinceAccadmy.AttendanceMangment;
+using ExecutiveSceinceAccadmy.FeeMangement;
+using ExecutiveScienceAcademy.classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,7 +30,7 @@ namespace ExecutiveSceinceAccadmy.DashBoadMangement
             UI.Instance.AddFormShadow(this);
             this.StartPosition = FormStartPosition.CenterScreen;
         }
-       
+
 
         private void DashBoardForm_Load(object sender, EventArgs e)
         {
@@ -49,6 +51,26 @@ namespace ExecutiveSceinceAccadmy.DashBoadMangement
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             picBox.BorderStyle = BorderStyle.Fixed3D;
+        }
+
+        private void btnRegisMange_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (feeRecordSearch feeRec = new feeRecordSearch())
+            {
+                feeRec.ShowDialog();
+            }
+            this.Hide();
+        }
+
+        private void btnAttendMange_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (AttendanceDashBoard checkAttend = new AttendanceDashBoard())
+            {
+                checkAttend.ShowDialog();
+            }
+            this.Show();
         }
     }
 }
