@@ -40,6 +40,7 @@
             btnRegularFee = new Button();
             pnLogo = new Panel();
             label6 = new Label();
+            label2 = new Label();
             pnMain.SuspendLayout();
             pnLogo.SuspendLayout();
             SuspendLayout();
@@ -47,6 +48,7 @@
             // pnMain
             // 
             pnMain.BackColor = Color.IndianRed;
+            pnMain.Controls.Add(label2);
             pnMain.Controls.Add(lblYear);
             pnMain.Controls.Add(lblMonth);
             pnMain.Controls.Add(label4);
@@ -76,7 +78,7 @@
             lblMonth.AutoSize = true;
             lblMonth.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblMonth.ForeColor = Color.White;
-            lblMonth.Location = new Point(519, 151);
+            lblMonth.Location = new Point(519, 137);
             lblMonth.Name = "lblMonth";
             lblMonth.Size = new Size(61, 31);
             lblMonth.TabIndex = 22;
@@ -86,11 +88,11 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(168, 151);
+            label4.Location = new Point(178, 139);
             label4.Name = "label4";
-            label4.Size = new Size(232, 28);
+            label4.Size = new Size(258, 28);
             label4.TabIndex = 21;
-            label4.Text = "Total Collection Of Day";
+            label4.Text = "Total Collection Of Month";
             // 
             // lblDay
             // 
@@ -107,7 +109,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(168, 88);
+            label5.Location = new Point(188, 88);
             label5.Name = "label5";
             label5.Size = new Size(232, 28);
             label5.TabIndex = 19;
@@ -183,6 +185,16 @@
             label6.Text = "Executive Science Academy";
             label6.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(178, 185);
+            label2.Name = "label2";
+            label2.Size = new Size(235, 28);
+            label2.TabIndex = 24;
+            label2.Text = "Total Collection Of Year";
+            // 
             // FeeForm
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
@@ -215,5 +227,6 @@
         private Label lblYear;
         private Panel pnLogo;
         private Label label6;
+        private Label label2;
     }
 }

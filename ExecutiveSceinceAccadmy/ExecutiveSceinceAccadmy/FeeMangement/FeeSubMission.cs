@@ -27,6 +27,7 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
 
             StyleControls();
             this.StartPosition = FormStartPosition.CenterScreen;
+            UI.Instance.StyleButton(btnSearch, borderRadius: 20);
         }
         private void StyleControls()
         {
