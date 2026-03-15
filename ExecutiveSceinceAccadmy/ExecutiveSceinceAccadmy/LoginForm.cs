@@ -36,7 +36,7 @@ namespace ExecutiveSceinceAccadmy
                 borderRadius: 20,
                 borderThickness: 4);
             UI.Instance.AddFormShadow(this);
-            UI.Instance.StylePanel(pnMain, backColor: Color.White,
+            UI.Instance.StylePanel(pnMain, backColor: Color.IndianRed,
                 borderColor: Color.FromArgb(0, 120, 215),
                 borderRadius: 20,
                 borderThickness: 4);

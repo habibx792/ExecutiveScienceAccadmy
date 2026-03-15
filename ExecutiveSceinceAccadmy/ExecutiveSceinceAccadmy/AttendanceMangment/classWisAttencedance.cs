@@ -1,4 +1,5 @@
 ﻿using ExecutiveSceinceAccadmy.classes;
+using ExecutiveScienceAcademy.classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,8 +19,33 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
         public classWisAttencedance()
         {
             InitializeComponent();
-            cmbAttendanceType.SelectedIndexChanged += cmbAttendance_SelectedIndexChanged;
+            UI.Instance.StyleForm(this,
+                backgroundColor: Color.FromArgb(245, 245, 245),
+                    borderRadius: 25,
+                    showCustomTitleBar: true,
+                    title: "Executive Science Academy");
+
+
+            StyleControls();
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.BackColor = Color.DodgerBlue;
+        
+
+
+        cmbAttendanceType.SelectedIndexChanged += cmbAttendance_SelectedIndexChanged;
             //btnSearch.BackColor = Color.AliceBlue;
+
+        }
+
+        
+        private void StyleControls()
+        {
+
+
+
+            //UI.Instance.StyleButton(btnHiring, borderRadius: 20);
+            UI.Instance.StyleButton(btnSearch, borderRadius: 20);
+            UI.Instance.AddFormShadow(this);
 
         }
 

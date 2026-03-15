@@ -56,7 +56,7 @@ namespace ExecutiveSceinceAccadmy
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            lbLogo.Text = "Welcome To Executive Science Academy";
+            //lbLogo.Text = "Welcome To Executive Science Academy";
 
         }
 

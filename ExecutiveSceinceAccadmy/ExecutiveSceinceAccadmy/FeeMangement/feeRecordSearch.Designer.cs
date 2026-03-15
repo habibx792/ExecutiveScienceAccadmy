@@ -64,7 +64,7 @@
             // 
             dtGirdPaidStatus.BackgroundColor = Color.IndianRed;
             dtGirdPaidStatus.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtGirdPaidStatus.Location = new Point(45, 471);
+            dtGirdPaidStatus.Location = new Point(28, 459);
             dtGirdPaidStatus.Name = "dtGirdPaidStatus";
             dtGirdPaidStatus.RowHeadersWidth = 51;
             dtGirdPaidStatus.Size = new Size(850, 188);
@@ -94,7 +94,7 @@
             panel1.Controls.Add(rdFeeId);
             panel1.Controls.Add(txtId);
             panel1.Controls.Add(btnSearch);
-            panel1.Location = new Point(45, 124);
+            panel1.Location = new Point(28, 112);
             panel1.Name = "panel1";
             panel1.Size = new Size(850, 352);
             panel1.TabIndex = 5;
@@ -174,7 +174,7 @@
             // 
             pnLogo.BackColor = Color.IndianRed;
             pnLogo.Controls.Add(label2);
-            pnLogo.Location = new Point(45, 46);
+            pnLogo.Location = new Point(28, 34);
             pnLogo.Margin = new Padding(4, 5, 4, 5);
             pnLogo.Name = "pnLogo";
             pnLogo.Size = new Size(850, 81);
@@ -198,7 +198,7 @@
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(947, 732);
+            ClientSize = new Size(917, 674);
             Controls.Add(pnLogo);
             Controls.Add(panel1);
             Controls.Add(dtGirdPaidStatus);

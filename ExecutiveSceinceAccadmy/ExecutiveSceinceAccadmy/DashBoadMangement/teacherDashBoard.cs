@@ -18,7 +18,7 @@ namespace ExecutiveSceinceAccadmy.DashBoadMangement
         {
             InitializeComponent();
             UI.Instance.StyleForm(this,
-                backgroundColor: Color.FromArgb(245, 245, 245),
+                backgroundColor: Color.RoyalBlue,
                 borderRadius: 25,
                 showCustomTitleBar: true,
                 title: "Executive Science Academy");
