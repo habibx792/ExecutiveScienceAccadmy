@@ -158,14 +158,19 @@ CREATE TABLE teacherClassSubjectTb (
 );
 
 ---============================ Student & Teacher Attendance ===================================
-CREATE TABLE teacherAttendance (
+DROP TABLE IF EXISTS teacherAttendance;
+CREATE TABLE teacherAttendance
+(
     attendId INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     teacherId VARCHAR(40) NOT NULL,
     isPresent BIT DEFAULT 0,
-    day VARCHAR(15),
-    attendDate DATE DEFAULT GETDATE(),
+    arrivalTime DATETIME NULL,
+    departureTime DATETIME NULL,
+    attendDate DATE NOT NULL DEFAULT GETDATE(),
     created_at DATETIME DEFAULT GETDATE(),
-    FOREIGN KEY (teacherId) REFERENCES teacherTb(teacherId) ON DELETE CASCADE
+
+    CONSTRAINT FK_teacherAttendance_teacher
+        FOREIGN KEY (teacherId) REFERENCES teacherTb(teacherId) ON DELETE CASCADE
 );
 
 CREATE TABLE studentAttendance

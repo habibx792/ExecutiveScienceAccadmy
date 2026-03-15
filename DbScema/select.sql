@@ -4,8 +4,15 @@ select * from adminTb;
 select * from domainTb;
 select * from classTb;
 select * from teacherTb;
-delete  from teacherTb;
+delete from teacherAttendance;
 select * from teacherAttendance;
+select * from teacherPassword;
+select * from studentPassword;
+
+SELECT teacherId, attendDate, arrivalTime, departureTime
+FROM teacherAttendance;
+
+
 select * from teacherProfitTb;
 select * from teacherAddTb;
 select * from teacherPaymentTb
