@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            lblMont = new Label();
             label2 = new Label();
             cmbMonth = new ComboBox();
             label5 = new Label();
@@ -44,16 +45,17 @@
             dtPick = new DateTimePicker();
             txtRegis = new TextBox();
             dataGridView1 = new DataGridView();
-            lbLogo = new Label();
             pnLogo = new Panel();
-            lblMont = new Label();
+            label6 = new Label();
+            panel2 = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = Color.Salmon;
+            panel1.BackColor = Color.IndianRed;
             panel1.Controls.Add(lblMont);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(cmbMonth);
@@ -75,6 +77,17 @@
             panel1.Size = new Size(1110, 519);
             panel1.TabIndex = 1;
             panel1.Paint += panel1_Paint;
+            // 
+            // lblMont
+            // 
+            lblMont.AutoSize = true;
+            lblMont.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblMont.Location = new Point(258, 260);
+            lblMont.Margin = new Padding(4, 0, 4, 0);
+            lblMont.Name = "lblMont";
+            lblMont.Size = new Size(63, 23);
+            lblMont.TabIndex = 40;
+            lblMont.Text = "Month";
             // 
             // label2
             // 
@@ -137,7 +150,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(253, 222);
+            label3.Location = new Point(253, 208);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(75, 23);
@@ -172,7 +185,7 @@
             // txtAmount
             // 
             txtAmount.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtAmount.Location = new Point(420, 222);
+            txtAmount.Location = new Point(420, 199);
             txtAmount.Margin = new Padding(4, 5, 4, 5);
             txtAmount.Name = "txtAmount";
             txtAmount.PlaceholderText = "Enter Amount";
@@ -237,7 +250,7 @@
             // dataGridView1
             // 
             dataGridView1.AllowUserToOrderColumns = true;
-            dataGridView1.BackgroundColor = Color.Salmon;
+            dataGridView1.BackgroundColor = Color.IndianRed;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(32, 587);
             dataGridView1.Margin = new Padding(4, 5, 4, 5);
@@ -246,18 +259,6 @@
             dataGridView1.Size = new Size(1110, 180);
             dataGridView1.TabIndex = 2;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // lbLogo
-            // 
-            lbLogo.AutoSize = true;
-            lbLogo.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbLogo.Location = new Point(263, 20);
-            lbLogo.Margin = new Padding(4, 0, 4, 0);
-            lbLogo.Name = "lbLogo";
-            lbLogo.Size = new Size(653, 46);
-            lbLogo.TabIndex = 0;
-            lbLogo.Text = "Welcome To Executive Sceince Accadmy";
-            lbLogo.Click += lbLogo_Click;
             // 
             // pnLogo
             // 
@@ -269,16 +270,27 @@
             pnLogo.TabIndex = 26;
             pnLogo.Paint += pnLogo_Paint;
             // 
-            // lblMont
+            // label6
             // 
-            lblMont.AutoSize = true;
-            lblMont.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblMont.Location = new Point(258, 260);
-            lblMont.Margin = new Padding(4, 0, 4, 0);
-            lblMont.Name = "lblMont";
-            lblMont.Size = new Size(63, 23);
-            lblMont.TabIndex = 40;
-            lblMont.Text = "Month";
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.FromArgb(0, 70, 140);
+            label6.Location = new Point(287, 10);
+            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(537, 54);
+            label6.TabIndex = 27;
+            label6.Text = "Executive Science Academy";
+            label6.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.IndianRed;
+            panel2.Controls.Add(label6);
+            panel2.Location = new Point(32, 10);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1110, 76);
+            panel2.TabIndex = 27;
             // 
             // FeeSubMission
             // 
@@ -286,8 +298,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
             ClientSize = new Size(1184, 782);
+            Controls.Add(panel2);
             Controls.Add(dataGridView1);
-            Controls.Add(lbLogo);
             Controls.Add(panel1);
             Controls.Add(pnLogo);
             Margin = new Padding(4, 5, 4, 5);
@@ -297,8 +309,9 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -307,7 +320,6 @@
         private TextBox txtRegis;
         private Button btnSearch;
         private DataGridView dataGridView1;
-        private Label lbLogo;
         private Label lblDeg;
         private Label label1;
         private Label label2;
@@ -321,5 +333,7 @@
         private ComboBox cmbMonth;
         private Panel pnLogo;
         private Label lblMont;
+        private Label label6;
+        private Panel panel2;
     }
 }
