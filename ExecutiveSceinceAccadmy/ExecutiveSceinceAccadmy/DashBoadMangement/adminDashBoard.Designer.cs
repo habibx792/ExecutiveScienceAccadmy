@@ -44,7 +44,7 @@
             // btnRegisMange
             // 
             btnRegisMange.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            btnRegisMange.Location = new Point(660, 31);
+            btnRegisMange.Location = new Point(431, 255);
             btnRegisMange.Name = "btnRegisMange";
             btnRegisMange.Size = new Size(289, 92);
             btnRegisMange.TabIndex = 1;
@@ -55,7 +55,7 @@
             // btnTeachMang
             // 
             btnTeachMang.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            btnTeachMang.Location = new Point(660, 147);
+            btnTeachMang.Location = new Point(111, 255);
             btnTeachMang.Name = "btnTeachMang";
             btnTeachMang.Size = new Size(289, 92);
             btnTeachMang.TabIndex = 2;
@@ -66,7 +66,7 @@
             // btnExpenseMange
             // 
             btnExpenseMange.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            btnExpenseMange.Location = new Point(24, 147);
+            btnExpenseMange.Location = new Point(111, 147);
             btnExpenseMange.Name = "btnExpenseMange";
             btnExpenseMange.Size = new Size(289, 92);
             btnExpenseMange.TabIndex = 3;
@@ -77,7 +77,7 @@
             // btnFeeSet
             // 
             btnFeeSet.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            btnFeeSet.Location = new Point(344, 147);
+            btnFeeSet.Location = new Point(431, 147);
             btnFeeSet.Name = "btnFeeSet";
             btnFeeSet.Size = new Size(289, 92);
             btnFeeSet.TabIndex = 11;
@@ -88,7 +88,7 @@
             // btnFeeMange
             // 
             btnFeeMange.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            btnFeeMange.Location = new Point(24, 31);
+            btnFeeMange.Location = new Point(111, 31);
             btnFeeMange.Name = "btnFeeMange";
             btnFeeMange.Size = new Size(289, 92);
             btnFeeMange.TabIndex = 12;
@@ -99,7 +99,7 @@
             // btnAttendMange
             // 
             btnAttendMange.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            btnAttendMange.Location = new Point(340, 31);
+            btnAttendMange.Location = new Point(427, 31);
             btnAttendMange.Name = "btnAttendMange";
             btnAttendMange.Size = new Size(289, 92);
             btnAttendMange.TabIndex = 8;
@@ -116,19 +116,19 @@
             panel2.Controls.Add(btnRegisMange);
             panel2.Controls.Add(btnTeachMang);
             panel2.Controls.Add(btnFeeSet);
-            panel2.Location = new Point(8, 145);
+            panel2.Location = new Point(22, 144);
             panel2.Name = "panel2";
-            panel2.Size = new Size(964, 409);
+            panel2.Size = new Size(800, 409);
             panel2.TabIndex = 16;
             // 
             // pnLogo
             // 
             pnLogo.BackColor = Color.IndianRed;
             pnLogo.Controls.Add(lbLogo);
-            pnLogo.Location = new Point(8, 27);
+            pnLogo.Location = new Point(22, 26);
             pnLogo.Margin = new Padding(4, 5, 4, 5);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(964, 123);
+            pnLogo.Size = new Size(800, 123);
             pnLogo.TabIndex = 17;
             // 
             // lbLogo
@@ -136,7 +136,7 @@
             lbLogo.AutoSize = true;
             lbLogo.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbLogo.ForeColor = Color.Black;
-            lbLogo.Location = new Point(216, 35);
+            lbLogo.Location = new Point(111, 51);
             lbLogo.Margin = new Padding(4, 0, 4, 0);
             lbLogo.Name = "lbLogo";
             lbLogo.Size = new Size(537, 54);
@@ -149,7 +149,7 @@
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(984, 610);
+            ClientSize = new Size(860, 573);
             Controls.Add(pnLogo);
             Controls.Add(panel2);
             Name = "adminDashBoard";
