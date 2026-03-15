@@ -121,13 +121,14 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.Black;
-            label6.Location = new Point(91, 12);
+            label6.Location = new Point(190, 15);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
             label6.Size = new Size(537, 54);
             label6.TabIndex = 28;
             label6.Text = "Executive Science Academy";
             label6.TextAlign = ContentAlignment.MiddleCenter;
+            label6.Click += label6_Click;
             // 
             // checkExpense
             // 

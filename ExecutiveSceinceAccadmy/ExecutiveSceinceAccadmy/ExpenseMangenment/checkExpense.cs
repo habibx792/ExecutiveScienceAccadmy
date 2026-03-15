@@ -58,7 +58,7 @@ namespace ExecutiveSceinceAccadmy.ExpenseMangenment
                 {
                     cmbMonth.SelectedIndex = monthIndex;
                 }
-              
+
             }
         }
 
@@ -87,7 +87,7 @@ namespace ExecutiveSceinceAccadmy.ExpenseMangenment
         {
         }
 
-        private  void StyleDataGrid(DataGridView dgv)
+        private void StyleDataGrid(DataGridView dgv)
         {
             dgv.EnableHeadersVisualStyles = false;
             dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 120, 215);
@@ -128,6 +128,11 @@ namespace ExecutiveSceinceAccadmy.ExpenseMangenment
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
