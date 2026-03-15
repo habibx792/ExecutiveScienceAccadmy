@@ -24,6 +24,9 @@ select * from academicTb;
 select * from feeTb;
 select * from studentAttendance;
 
+select * from teacherPassword;
+select * from studentPassword;
+
 
 
 select * from expenseTb;
