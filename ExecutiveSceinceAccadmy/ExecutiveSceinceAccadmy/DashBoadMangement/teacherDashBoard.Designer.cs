@@ -32,7 +32,10 @@
             btnFeeMange = new Button();
             btnAttendMange = new Button();
             btnRegisMange = new Button();
+            pnLogo = new Panel();
+            lbLogo = new Label();
             panel2.SuspendLayout();
+            pnLogo.SuspendLayout();
             SuspendLayout();
             // 
             // panel2
@@ -41,9 +44,9 @@
             panel2.Controls.Add(btnFeeMange);
             panel2.Controls.Add(btnAttendMange);
             panel2.Controls.Add(btnRegisMange);
-            panel2.Location = new Point(12, 12);
+            panel2.Location = new Point(80, 198);
             panel2.Name = "panel2";
-            panel2.Size = new Size(525, 439);
+            panel2.Size = new Size(609, 439);
             panel2.TabIndex = 17;
             // 
             // btnFeeMange
@@ -77,16 +80,43 @@
             btnRegisMange.Text = "View Subject Collection";
             btnRegisMange.UseVisualStyleBackColor = true;
             // 
+            // pnLogo
+            // 
+            pnLogo.BackColor = Color.IndianRed;
+            pnLogo.Controls.Add(lbLogo);
+            pnLogo.Location = new Point(80, 76);
+            pnLogo.Margin = new Padding(4, 5, 4, 5);
+            pnLogo.Name = "pnLogo";
+            pnLogo.Size = new Size(609, 123);
+            pnLogo.TabIndex = 18;
+            // 
+            // lbLogo
+            // 
+            lbLogo.AutoSize = true;
+            lbLogo.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbLogo.ForeColor = Color.Black;
+            lbLogo.Location = new Point(34, 39);
+            lbLogo.Margin = new Padding(4, 0, 4, 0);
+            lbLogo.Name = "lbLogo";
+            lbLogo.Size = new Size(537, 54);
+            lbLogo.TabIndex = 0;
+            lbLogo.Text = "Executive Science Academy";
+            lbLogo.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // teacherDashBoard
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(559, 480);
+            BackColor = Color.RoyalBlue;
+            ClientSize = new Size(743, 682);
+            Controls.Add(pnLogo);
             Controls.Add(panel2);
             Name = "teacherDashBoard";
             Text = "teacherDashBoard";
             Load += teacherDashBoard_Load;
             panel2.ResumeLayout(false);
+            pnLogo.ResumeLayout(false);
+            pnLogo.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -96,5 +126,7 @@
         private Button btnFeeMange;
         private Button btnAttendMange;
         private Button btnRegisMange;
+        private Panel pnLogo;
+        private Label lbLogo;
     }
 }
