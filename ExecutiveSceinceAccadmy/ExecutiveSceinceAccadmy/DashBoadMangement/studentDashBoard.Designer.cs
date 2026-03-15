@@ -57,9 +57,9 @@
             panel2.Controls.Add(btnFeeMange);
             panel2.Controls.Add(btnAttendMange);
             panel2.Controls.Add(btnRegisMange);
-            panel2.Location = new Point(69, 149);
+            panel2.Location = new Point(28, 128);
             panel2.Name = "panel2";
-            panel2.Size = new Size(576, 427);
+            panel2.Size = new Size(609, 427);
             panel2.TabIndex = 17;
             // 
             // btnFeeMange
@@ -98,10 +98,10 @@
             // 
             pnLogo.BackColor = Color.IndianRed;
             pnLogo.Controls.Add(lbLogo);
-            pnLogo.Location = new Point(69, 35);
+            pnLogo.Location = new Point(28, 14);
             pnLogo.Margin = new Padding(4, 5, 4, 5);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(576, 123);
+            pnLogo.Size = new Size(609, 123);
             pnLogo.TabIndex = 19;
             // 
             // lbLogo
@@ -122,7 +122,7 @@
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(732, 615);
+            ClientSize = new Size(672, 575);
             Controls.Add(pnLogo);
             Controls.Add(panel2);
             Controls.Add(picBox);
