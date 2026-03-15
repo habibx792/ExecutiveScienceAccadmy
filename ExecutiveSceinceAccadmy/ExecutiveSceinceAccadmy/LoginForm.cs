@@ -1,4 +1,5 @@
 ﻿using ExecutiveSceinceAccadmy.classes;
+using ExecutiveSceinceAccadmy.DashBoadMangement;
 using ExecutiveScienceAcademy.classes;
 using System;
 using System.Collections.Generic;
@@ -56,7 +57,9 @@ namespace ExecutiveSceinceAccadmy
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-
+            rdAdmin.Checked = true;
+            rdStudent.Checked = false;
+            rdTeacher.Checked = false;
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -69,33 +72,81 @@ namespace ExecutiveSceinceAccadmy
             }
             string username = txtUser.Text.Trim();
             string password = txtPass.Text.Trim();
-
-
-            bool loginSuccess = DB.Login(username, password);
-
-            if (loginSuccess)
+            if(rdAdmin.Checked)
             {
-                this.Hide();
-                using (Form1 mainFom = new Form1())
-                {
+                bool loginSuccess = DB.Login(username, password);
 
-                    Form1 mainForm = new Form1();
-                    mainForm.ShowDialog();
+                if (loginSuccess)
+                {
+                    this.Hide();
+                    using (Form1 mainFom = new Form1())
+                    {
+
+                        Form1 mainForm = new Form1();
+                        mainForm.ShowDialog();
+
+                    }
+                    this.Show();
 
                 }
-                this.Show();
-
+                else
+                {
+                    MessageBox.Show("Invalid username or password.", "Login Failed",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            else if (rdStudent.Checked)
             {
-                MessageBox.Show("Invalid username or password.", "Login Failed",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                bool loginSucc = DB.loginStudent(username, password);
+                if (loginSucc)
+                {
+                    this.Hide();
+                    using (studentDashBoard stdDashBoard = new studentDashBoard())
+                    {
+                        stdDashBoard.ShowDialog();
+                    }
+                    this.Show();
+                }
             }
+            else if (rdTeacher.Checked)
+            {
+                this.Hide();
+                using(teacherDashBoard teachDashBoard=new teacherDashBoard())
+                {
+                    teachDashBoard.ShowDialog();
+                }
+                this.Show();
+            }
+
+           
         }
 
         private void pnMain_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void rdTeacher_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdTeacher.Checked)
+            {
+                rdStudent.Checked = false;
+                rdAdmin.Checked = false;
+                txtUser.PlaceholderText = "Enter Teacher ID ";
+            }
+
+        }
+
+        private void rdStudent_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdStudent.Checked)
+            {
+                rdStudent.Checked = true;
+                rdAdmin.Checked = false;
+                rdTeacher.Checked = false;
+                txtUser.PlaceholderText = "Enter Register ID";
+            }
         }
     }
 

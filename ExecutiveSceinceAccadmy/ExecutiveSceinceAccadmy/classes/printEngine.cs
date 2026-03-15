@@ -15,7 +15,7 @@ namespace ExecutiveSceinceAccadmy.classes
                 // This is a placeholder for the actual printing code
                 Console.WriteLine("Printing document: " + document);
             }
-        internal static string GenerateStudentDocument(Student std, string registrationNumber)
+        internal static string GenerateStudentDocument(Student std,string passWord, string registrationNumber)
         {
             Address addr = std.Address;
             Father father = std.Father;
@@ -24,6 +24,8 @@ namespace ExecutiveSceinceAccadmy.classes
             string document = $@"
 ========== STUDENT REGISTRATION ==========
 Registration No : {registrationNumber}
+User Id         :{registrationNumber}
+Passsword       :{passWord}
 
 ----- Student Information -----
 Name        : {std.Name}
@@ -106,11 +108,11 @@ Obtained    : {academicHistory.ObtainedMarks}
             pd.Print();
         }
     }
-        internal static bool printStudentRegistration(Student std,
+        internal static bool printStudentRegistration(Student std,string passWord,
                                               string registrationNumber)
         {
             string document =
-                GenerateStudentDocument(std, registrationNumber);
+                GenerateStudentDocument(std,passWord, registrationNumber);
 
             string filePath =
                 SaveStudentDocument(document,std.Name,registrationNumber);

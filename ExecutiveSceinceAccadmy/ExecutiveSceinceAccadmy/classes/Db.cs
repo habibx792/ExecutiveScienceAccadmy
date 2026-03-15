@@ -29,7 +29,111 @@ namespace ExecutiveSceinceAccadmy.classes
         {
             return connectionString;
         }
-        // admin related functions and db operations
+        // Systelm login methods
+        public static bool createStudentLogin(string username, string password)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    string query = @"INSERT INTO studentPassword(stdRegisNo, password)
+                             VALUES(@username, @password)";
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@username", username);
+                    cmd.Parameters.AddWithValue("@password", password);
+
+                    con.Open();
+                    int rows = cmd.ExecuteNonQuery();
+
+                    return rows > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error creating student login: " + ex.Message);
+                return false;
+            }
+        }
+        public static bool createTeacherLogin(string username, string password)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    string query = @"INSERT INTO teacherPassword(teacherId, password)
+                             VALUES(@username, @password)";
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@username", username);
+                    cmd.Parameters.AddWithValue("@password", password);
+
+                    con.Open();
+                    int rows = cmd.ExecuteNonQuery();
+
+                    return rows > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error creating teacher login: " + ex.Message);
+                return false;
+            }
+        }
+        public static bool loginStudent(string username, string password)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    string query = @"SELECT COUNT(1) 
+                             FROM studentPassword 
+                             WHERE stdRegisNo = @username 
+                             AND password = @password";
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@username", username);
+                    cmd.Parameters.AddWithValue("@password", password);
+
+                    con.Open();
+                    int count = (int)cmd.ExecuteScalar();
+
+                    return count == 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Login error: " + ex.Message);
+                return false;
+            }
+        }
+        public static bool loginTeacher(string username, string password)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    string query = @"SELECT COUNT(1) 
+                             FROM teacherPassword 
+                             WHERE teacherId = @username 
+                             AND password = @password";
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@username", username);
+                    cmd.Parameters.AddWithValue("@password", password);
+
+                    con.Open();
+                    int count = (int)cmd.ExecuteScalar();
+
+                    return count == 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Login error: " + ex.Message);
+                return false;
+            }
+        }
         public static bool Login(string username, string password)
         {
 
@@ -63,7 +167,7 @@ namespace ExecutiveSceinceAccadmy.classes
                 }
             }
         }
-        // strudent methods here, such as methods for adding students, retrieving data, etc.
+      
         public static string createRegistrationNumber(string domain, string gender, string classLevel)
         {
             int currStd = 0;
@@ -72,8 +176,7 @@ namespace ExecutiveSceinceAccadmy.classes
             {
                 con.Open();
 
-                // Insert a dummy row to get the next identity value
-                // stdCountTB now must be IDENTITY-based    
+                
                 string query = "INSERT INTO stdCountTB DEFAULT VALUES; SELECT SCOPE_IDENTITY();";
 
                 using (SqlCommand cmd = new SqlCommand(query, con))

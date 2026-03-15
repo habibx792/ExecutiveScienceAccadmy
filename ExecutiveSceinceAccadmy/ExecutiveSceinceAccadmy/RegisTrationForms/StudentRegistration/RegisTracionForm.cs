@@ -128,7 +128,7 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
             cmbBoard.SelectedIndex = 0;
 
         }
-        private void helpMethodOfRegies(Student student, string registraionNumber)
+        private void helpMethodOfRegies(Student student,string passWord, string registraionNumber)
         {
             pnHide.Visible = true;
             pnMainPn.Visible = false;
@@ -165,7 +165,7 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
             );
             btnRegister.Click += (s, e) =>
             {
-                printEngine.printStudentRegistration(student, registraionNumber);
+                printEngine.printStudentRegistration(student,passWord, registraionNumber);
                 MessageBox.Show("Print functionality is not implemented yet.");
             };
             Button btnSaveFile = new Button();
@@ -179,7 +179,7 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
             );
             btnSaveFile.Click += (s, e) =>
             {
-                printEngine.SaveStudentDocument(printEngine.GenerateStudentDocument(student, registraionNumber), student.Name, registraionNumber);
+                printEngine.SaveStudentDocument(printEngine.GenerateStudentDocument(student, passWord, registraionNumber), student.Name, registraionNumber);
             };
             Button hide = new Button();
             hide.Text = "Register New Student ";
@@ -285,11 +285,19 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
                 student.ReqisterType = admissinType["Suplemenrtary"];
                 successFlag = DB.registerAStudent(student, registrationNumber);
 
+
             }
             if (successFlag)
             {
                 MessageBox.Show("Student registered successfully!");
-                helpMethodOfRegies(student, registrationNumber);
+                string passWord = dataHandler.generatePassword(5);
+                helpMethodOfRegies(student, passWord, registrationNumber);
+                bool pass=DB.createStudentLogin(registrationNumber, passWord);
+                if(pass)
+                {
+                    MessageBox.Show("Created password ");
+                }
+
                 //return;
             }
 

@@ -229,5 +229,27 @@ namespace ExecutiveSceinceAccadmy.classes
             "Britain"
         };
         }
+        public static string generatePassword(int len = 5)
+        {
+            const string upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            const string lower = "abcdefghijklmnopqrstuvwxyz";
+            const string numbers = "0123456789";
+
+            Random rand = new Random();
+            StringBuilder pass = new StringBuilder();
+
+            for (int i = 0; i < len; i++)
+            {
+                if (i == 0) 
+                    pass.Append(upper[rand.Next(upper.Length)]);
+                else if (i == 1) 
+                    pass.Append(lower[rand.Next(lower.Length)]);
+                else if (i == 2 || i == 3) 
+                    pass.Append(numbers[rand.Next(numbers.Length)]);
+                else 
+                    pass.Append(upper[rand.Next(upper.Length)]);
+            }
+            return pass.ToString();
+        }
     }
 }
