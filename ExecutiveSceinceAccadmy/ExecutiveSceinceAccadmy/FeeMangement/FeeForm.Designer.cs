@@ -58,7 +58,7 @@
             pnMain.Controls.Add(btnSearchFee);
             pnMain.Controls.Add(btnDefault);
             pnMain.Controls.Add(btnRegularFee);
-            pnMain.Location = new Point(70, 135);
+            pnMain.Location = new Point(42, 76);
             pnMain.Margin = new Padding(4, 5, 4, 5);
             pnMain.Name = "pnMain";
             pnMain.Size = new Size(737, 583);
@@ -166,10 +166,10 @@
             // 
             pnLogo.BackColor = Color.IndianRed;
             pnLogo.Controls.Add(label6);
-            pnLogo.Location = new Point(66, 73);
+            pnLogo.Location = new Point(42, 14);
             pnLogo.Margin = new Padding(4, 5, 4, 5);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(741, 71);
+            pnLogo.Size = new Size(737, 71);
             pnLogo.TabIndex = 24;
             // 
             // label6
@@ -200,7 +200,7 @@
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(850, 765);
+            ClientSize = new Size(811, 684);
             Controls.Add(pnLogo);
             Controls.Add(pnMain);
             Margin = new Padding(4, 5, 4, 5);
