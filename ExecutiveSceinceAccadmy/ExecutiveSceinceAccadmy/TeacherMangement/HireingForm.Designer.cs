@@ -68,14 +68,14 @@
             // 
             // txtTeachName
             // 
-            txtTeachName.Location = new Point(171, 252);
+            txtTeachName.Location = new Point(175, 343);
             txtTeachName.Name = "txtTeachName";
             txtTeachName.Size = new Size(272, 34);
             txtTeachName.TabIndex = 1;
             // 
             // txtTeachCnic
             // 
-            txtTeachCnic.Location = new Point(171, 313);
+            txtTeachCnic.Location = new Point(175, 404);
             txtTeachCnic.Name = "txtTeachCnic";
             txtTeachCnic.Size = new Size(272, 34);
             txtTeachCnic.TabIndex = 13;
@@ -84,7 +84,7 @@
             // cmbCity
             // 
             cmbCity.FormattingEnabled = true;
-            cmbCity.Location = new Point(700, 315);
+            cmbCity.Location = new Point(704, 406);
             cmbCity.Name = "cmbCity";
             cmbCity.Size = new Size(272, 36);
             cmbCity.TabIndex = 20;
@@ -92,7 +92,7 @@
             // cmbQualification
             // 
             cmbQualification.FormattingEnabled = true;
-            cmbQualification.Location = new Point(700, 436);
+            cmbQualification.Location = new Point(704, 527);
             cmbQualification.Name = "cmbQualification";
             cmbQualification.Size = new Size(272, 36);
             cmbQualification.TabIndex = 21;
@@ -100,7 +100,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(526, 456);
+            label5.Location = new Point(530, 547);
             label5.Name = "label5";
             label5.Size = new Size(135, 28);
             label5.TabIndex = 23;
@@ -109,7 +109,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(526, 318);
+            label9.Location = new Point(530, 409);
             label9.Name = "label9";
             label9.Size = new Size(49, 28);
             label9.TabIndex = 28;
@@ -117,14 +117,14 @@
             // 
             // txtFatherCnic
             // 
-            txtFatherCnic.Location = new Point(171, 437);
+            txtFatherCnic.Location = new Point(175, 528);
             txtFatherCnic.Name = "txtFatherCnic";
             txtFatherCnic.Size = new Size(272, 34);
             txtFatherCnic.TabIndex = 26;
             // 
             // txtFaterName
             // 
-            txtFaterName.Location = new Point(173, 370);
+            txtFaterName.Location = new Point(177, 461);
             txtFaterName.Name = "txtFaterName";
             txtFaterName.Size = new Size(270, 34);
             txtFaterName.TabIndex = 27;
@@ -132,7 +132,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(19, 365);
+            label11.Location = new Point(23, 456);
             label11.Name = "label11";
             label11.Size = new Size(133, 28);
             label11.TabIndex = 30;
@@ -141,7 +141,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(42, 305);
+            label12.Location = new Point(46, 396);
             label12.Name = "label12";
             label12.Size = new Size(52, 28);
             label12.TabIndex = 31;
@@ -150,7 +150,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(19, 440);
+            label13.Location = new Point(23, 531);
             label13.Name = "label13";
             label13.Size = new Size(123, 28);
             label13.TabIndex = 32;
@@ -158,7 +158,7 @@
             // 
             // txtAddress
             // 
-            txtAddress.Location = new Point(700, 383);
+            txtAddress.Location = new Point(704, 474);
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(272, 34);
             txtAddress.TabIndex = 33;
@@ -167,7 +167,7 @@
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(526, 258);
+            label14.Location = new Point(530, 349);
             label14.Name = "label14";
             label14.Size = new Size(88, 28);
             label14.TabIndex = 34;
@@ -200,16 +200,16 @@
             panel1.Controls.Add(txtTeachCnic);
             panel1.Controls.Add(txtTeachName);
             panel1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            panel1.Location = new Point(24, 25);
+            panel1.Location = new Point(32, 12);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1066, 643);
+            panel1.Size = new Size(1066, 721);
             panel1.TabIndex = 5;
             panel1.Paint += panel1_Paint;
             // 
             // chkSenior
             // 
             chkSenior.AutoSize = true;
-            chkSenior.Location = new Point(171, 197);
+            chkSenior.Location = new Point(175, 288);
             chkSenior.Name = "chkSenior";
             chkSenior.Size = new Size(173, 32);
             chkSenior.TabIndex = 41;
@@ -219,7 +219,7 @@
             // lblsalType
             // 
             lblsalType.AutoSize = true;
-            lblsalType.Location = new Point(526, 505);
+            lblsalType.Location = new Point(530, 596);
             lblsalType.Name = "lblsalType";
             lblsalType.Size = new Size(69, 28);
             lblsalType.TabIndex = 40;
@@ -227,7 +227,7 @@
             // 
             // txtType
             // 
-            txtType.Location = new Point(700, 499);
+            txtType.Location = new Point(704, 590);
             txtType.Name = "txtType";
             txtType.Size = new Size(272, 34);
             txtType.TabIndex = 39;
@@ -235,7 +235,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(526, 376);
+            label2.Location = new Point(530, 467);
             label2.Name = "label2";
             label2.Size = new Size(87, 28);
             label2.TabIndex = 38;
@@ -244,7 +244,7 @@
             // rdPercent
             // 
             rdPercent.AutoSize = true;
-            rdPercent.Location = new Point(526, 196);
+            rdPercent.Location = new Point(530, 287);
             rdPercent.Name = "rdPercent";
             rdPercent.Size = new Size(138, 32);
             rdPercent.TabIndex = 37;
@@ -256,7 +256,7 @@
             // rdSal
             // 
             rdSal.AutoSize = true;
-            rdSal.Location = new Point(863, 196);
+            rdSal.Location = new Point(867, 287);
             rdSal.Name = "rdSal";
             rdSal.Size = new Size(109, 32);
             rdSal.TabIndex = 36;
@@ -268,7 +268,7 @@
             // cmbCountry
             // 
             cmbCountry.FormattingEnabled = true;
-            cmbCountry.Location = new Point(700, 250);
+            cmbCountry.Location = new Point(704, 341);
             cmbCountry.Name = "cmbCountry";
             cmbCountry.Size = new Size(272, 36);
             cmbCountry.TabIndex = 35;
@@ -276,7 +276,7 @@
             // 
             // btnHire
             // 
-            btnHire.Location = new Point(837, 558);
+            btnHire.Location = new Point(841, 649);
             btnHire.Name = "btnHire";
             btnHire.Size = new Size(135, 71);
             btnHire.TabIndex = 30;
@@ -290,14 +290,14 @@
             dtTeacherSubject.Location = new Point(0, 0);
             dtTeacherSubject.Name = "dtTeacherSubject";
             dtTeacherSubject.RowHeadersWidth = 51;
-            dtTeacherSubject.Size = new Size(1066, 191);
+            dtTeacherSubject.Size = new Size(1066, 236);
             dtTeacherSubject.TabIndex = 3;
             dtTeacherSubject.CellContentClick += dataGridView1_CellContentClick;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(42, 245);
+            label1.Location = new Point(46, 336);
             label1.Name = "label1";
             label1.Size = new Size(68, 28);
             label1.TabIndex = 4;
@@ -308,7 +308,7 @@
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(1130, 701);
+            ClientSize = new Size(1130, 745);
             Controls.Add(label4);
             Controls.Add(panel1);
             Name = "HireingForm";

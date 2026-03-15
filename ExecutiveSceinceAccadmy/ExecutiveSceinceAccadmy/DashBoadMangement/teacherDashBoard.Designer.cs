@@ -65,6 +65,7 @@
             btnAttendMange.TabIndex = 8;
             btnAttendMange.Text = "Mark Attendance";
             btnAttendMange.UseVisualStyleBackColor = true;
+            btnAttendMange.Click += btnAttendMange_Click;
             // 
             // btnRegisMange
             // 

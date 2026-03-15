@@ -167,7 +167,7 @@ namespace ExecutiveSceinceAccadmy.classes
                 }
             }
         }
-      
+
         public static string createRegistrationNumber(string domain, string gender, string classLevel)
         {
             int currStd = 0;
@@ -176,7 +176,7 @@ namespace ExecutiveSceinceAccadmy.classes
             {
                 con.Open();
 
-                
+
                 string query = "INSERT INTO stdCountTB DEFAULT VALUES; SELECT SCOPE_IDENTITY();";
 
                 using (SqlCommand cmd = new SqlCommand(query, con))
@@ -217,7 +217,7 @@ namespace ExecutiveSceinceAccadmy.classes
             Father father = std.Father;
             accadmicHistory academicHistory = std.AcademicHistories;
 
-string stdName = std.Name;
+            string stdName = std.Name;
             string stdGender = std.Gender;
             string stdCNIC = std.Cnic;
             string stdPhoneNumber = std.PersonPhoneNumber;
@@ -374,7 +374,7 @@ string stdName = std.Name;
             }
 
 
-}
+        }
 
         public static bool DisplayStudentDetailForFeeSubmission(string registrationNo, DataGridView dt)
         {
@@ -1257,10 +1257,173 @@ string stdName = std.Name;
                 return false;
             }
         }
+
+        // taeacher attendance 
+        public static List<string> GetAllTeacherNames()
+        {
+            List<string> teacherNames = new List<string>();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "SELECT teacherName FROM teacherTb WHERE is_active = 1"; // Optional filter active teachers
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string name = reader["teacherName"].ToString();
+                            teacherNames.Add(name);
+                        }
+                    }
+                }
+            }
+
+            return teacherNames;
+        }
+        public static bool markTeacherAttendance(string teacherId, bool isArrival, DateTime attendDate, DateTime attendTime)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    using (SqlTransaction transaction = conn.BeginTransaction())
+                    {
+                        // Check if a record already exists for today
+                        string checkQuery = @"SELECT arrivalTime, departureTime 
+                                      FROM teacherAttendance 
+                                      WHERE teacherId = @teacherId AND attendDate = @date";
+                        using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn, transaction))
+                        {
+                            checkCmd.Parameters.AddWithValue("@teacherId", teacherId);
+                            checkCmd.Parameters.AddWithValue("@date", attendDate.Date);
+
+                            using (SqlDataReader reader = checkCmd.ExecuteReader())
+                            {
+                                if (reader.Read())
+                                {
+                                    // Row exists for today
+                                    DateTime? existingArrival = reader["arrivalTime"] as DateTime?;
+                                    DateTime? existingDeparture = reader["departureTime"] as DateTime?;
+                                    reader.Close();
+
+                                    if (isArrival)
+                                    {
+                                        // Arrival: only update if not already set
+                                        if (existingArrival == null)
+                                        {
+                                            string updateArrival = @"UPDATE teacherAttendance
+                                                             SET arrivalTime = @time, isPresent = 1
+                                                             WHERE teacherId = @teacherId AND attendDate = @date";
+                                            using (SqlCommand cmd = new SqlCommand(updateArrival, conn, transaction))
+                                            {
+                                                cmd.Parameters.AddWithValue("@teacherId", teacherId);
+                                                cmd.Parameters.AddWithValue("@time", attendTime);
+                                                cmd.Parameters.AddWithValue("@date", attendDate.Date);
+                                                cmd.ExecuteNonQuery();
+                                            }
+                                            transaction.Commit();
+                                            return true;
+                                        }
+                                        else
+                                        {
+                                            // Arrival already marked
+                                            transaction.Rollback();
+                                            return false;
+                                        }
+                                    }
+                                    else // Departure
+                                    {
+                                        // Departure: require arrival to exist, departure not set, and time gap >= 1 hour
+                                        if (existingArrival == null)
+                                        {
+                                            // Cannot mark departure before arrival
+                                            transaction.Rollback();
+                                            return false;
+                                        }
+                                        if (existingDeparture != null)
+                                        {
+                                            // Departure already marked
+                                            transaction.Rollback();
+                                            return false;
+                                        }
+                                        // Check time gap
+                                        if (attendTime < existingArrival.Value.AddHours(1))
+                                        {
+                                            // Departure too early
+                                            transaction.Rollback();
+                                            return false;
+                                        }
+
+                                        string updateDeparture = @"UPDATE teacherAttendance
+                                                           SET departureTime = @time
+                                                           WHERE teacherId = @teacherId AND attendDate = @date";
+                                        using (SqlCommand cmd = new SqlCommand(updateDeparture, conn, transaction))
+                                        {
+                                            cmd.Parameters.AddWithValue("@teacherId", teacherId);
+                                            cmd.Parameters.AddWithValue("@time", attendTime);
+                                            cmd.Parameters.AddWithValue("@date", attendDate.Date);
+                                            cmd.ExecuteNonQuery();
+                                        }
+                                        transaction.Commit();
+                                        return true;
+                                    }
+                                }
+                                else
+                                {
+                                    // No row exists for today
+                                    reader.Close();
+
+                                    // Only allow insertion for arrival
+                                    if (isArrival)
+                                    {
+                                        string insertQuery = @"INSERT INTO teacherAttendance (teacherId, attendDate, arrivalTime, isPresent) 
+                                                       VALUES (@teacherId, @date, @time, 1)";
+                                        using (SqlCommand insertCmd = new SqlCommand(insertQuery, conn, transaction))
+                                        {
+                                            insertCmd.Parameters.AddWithValue("@teacherId", teacherId);
+                                            insertCmd.Parameters.AddWithValue("@date", attendDate.Date);
+                                            insertCmd.Parameters.AddWithValue("@time", attendTime);
+                                            insertCmd.ExecuteNonQuery();
+                                        }
+                                        transaction.Commit();
+                                        return true;
+                                    }
+                                    else
+                                    {
+                                        // Attempt to mark departure without any record → reject
+                                        transaction.Rollback();
+                                        return false;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log exception (optional) and show user-friendly message
+                MessageBox.Show("Database error: " + ex.Message);
+                return false;
+            }
+        }
+        public static string GetTeacherIdByName(string teacherName)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "SELECT teacherId FROM teacherTb WHERE teacherName=@teacherName";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@teacherName", teacherName);
+                    var result = cmd.ExecuteScalar();
+                    return result?.ToString();
+                }
+            }
+        }
     }
-
-
-
-
-    
 }

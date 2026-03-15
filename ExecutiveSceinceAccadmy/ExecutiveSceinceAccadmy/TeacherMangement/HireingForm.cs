@@ -190,15 +190,13 @@ namespace ExecutiveSceinceAccadmy.TeacherMangement
                 percentage        // Percentage
             );
 
-            // Optional: show confirmation
             MessageBox.Show($"Teacher {data.TeacherName} ({data.TeacherType}) ready to hire!");
-            string generatedPassword = dataHandler.generatePassword(5); // generate password
+            string generatedPassword = dataHandler.generatePassword(5); 
 
             bool success = DB.HireTeacherWithPassword(data, generatedPassword, dtTeacherSubject);
             if (success)
             {
 
-                 //success = DB.HireTeacher(data,generatedPassword, dtTeacherSubject);
                 if (success)
                 {
                     MessageBox.Show($"You are hired Mr/Mrs {data.TeacherName}");

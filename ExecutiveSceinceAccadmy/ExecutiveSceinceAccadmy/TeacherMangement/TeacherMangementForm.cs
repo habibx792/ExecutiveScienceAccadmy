@@ -1,4 +1,5 @@
-﻿using ExecutiveScienceAcademy.classes;
+﻿using ExecutiveSceinceAccadmy.AttendanceMangment;
+using ExecutiveScienceAcademy.classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,11 +32,11 @@ namespace ExecutiveSceinceAccadmy.TeacherMangement
         private void StyleControls()
         {
 
-            
+
 
             UI.Instance.StyleButton(btnHiring, borderRadius: 20);
             UI.Instance.AddFormShadow(this);
-            
+
         }
 
 
@@ -57,9 +58,19 @@ namespace ExecutiveSceinceAccadmy.TeacherMangement
         private void btnHiring_Click(object sender, EventArgs e)
         {
             this.Hide();
-            using(HireingForm hireForm=new HireingForm())
+            using (HireingForm hireForm = new HireingForm())
             {
                 hireForm.ShowDialog();
+            }
+            this.Show();
+        }
+
+        private void btnAttend_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using(TeacheraAttendance teachAttend=new TeacheraAttendance())
+            {
+                teachAttend.ShowDialog();
             }
             this.Show();
         }

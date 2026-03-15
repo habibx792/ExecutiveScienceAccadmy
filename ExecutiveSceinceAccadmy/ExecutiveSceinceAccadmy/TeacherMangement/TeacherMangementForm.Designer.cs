@@ -28,103 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
-            button7 = new Button();
-            button8 = new Button();
-            button9 = new Button();
+            btnAttend = new Button();
             btnHiring = new Button();
+            panel1 = new Panel();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // button1
+            // btnAttend
             // 
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button1.Location = new Point(545, 223);
-            button1.Name = "button1";
-            button1.Size = new Size(221, 107);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
-            // button2
-            // 
-            button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button2.Location = new Point(295, 55);
-            button2.Name = "button2";
-            button2.Size = new Size(221, 107);
-            button2.TabIndex = 1;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
-            // 
-            // button3
-            // 
-            button3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button3.Location = new Point(295, 368);
-            button3.Name = "button3";
-            button3.Size = new Size(221, 107);
-            button3.TabIndex = 2;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            button4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button4.Location = new Point(42, 368);
-            button4.Name = "button4";
-            button4.Size = new Size(221, 107);
-            button4.TabIndex = 3;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            button5.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button5.Location = new Point(295, 220);
-            button5.Name = "button5";
-            button5.Size = new Size(221, 107);
-            button5.TabIndex = 4;
-            button5.Text = "button5";
-            button5.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            button7.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button7.Location = new Point(545, 55);
-            button7.Name = "button7";
-            button7.Size = new Size(221, 107);
-            button7.TabIndex = 6;
-            button7.Text = "button7";
-            button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            button8.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button8.Location = new Point(55, 55);
-            button8.Name = "button8";
-            button8.Size = new Size(221, 107);
-            button8.TabIndex = 7;
-            button8.Text = "button8";
-            button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            button9.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button9.Location = new Point(545, 368);
-            button9.Name = "button9";
-            button9.Size = new Size(221, 107);
-            button9.TabIndex = 8;
-            button9.Text = "button9";
-            button9.UseVisualStyleBackColor = true;
+            btnAttend.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnAttend.Location = new Point(311, 12);
+            btnAttend.Name = "btnAttend";
+            btnAttend.Size = new Size(221, 107);
+            btnAttend.TabIndex = 7;
+            btnAttend.Text = "Teacher Attendance";
+            btnAttend.UseVisualStyleBackColor = true;
+            btnAttend.Click += btnAttend_Click;
             // 
             // btnHiring
             // 
             btnHiring.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnHiring.Location = new Point(55, 223);
+            btnHiring.Location = new Point(84, 12);
             btnHiring.Name = "btnHiring";
             btnHiring.Size = new Size(221, 107);
             btnHiring.TabIndex = 10;
@@ -132,36 +56,31 @@
             btnHiring.UseVisualStyleBackColor = true;
             btnHiring.Click += btnHiring_Click;
             // 
-            // TeacherMangement
+            // panel1
+            // 
+            panel1.Controls.Add(btnHiring);
+            panel1.Controls.Add(btnAttend);
+            panel1.Location = new Point(66, 39);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(607, 431);
+            panel1.TabIndex = 15;
+            // 
+            // TeacherMangementForm
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(810, 528);
-            Controls.Add(btnHiring);
-            Controls.Add(button9);
-            Controls.Add(button8);
-            Controls.Add(button7);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Name = "TeacherMangement";
+            Controls.Add(panel1);
+            Name = "TeacherMangementForm";
             Text = "TeacherMangement";
             Load += TeacherMangement_Load;
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button5;
-        private Button button7;
-        private Button button8;
-        private Button button9;
+        private Button btnAttend;
         private Button btnHiring;
+        private Panel panel1;
     }
 }
