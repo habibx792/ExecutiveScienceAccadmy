@@ -46,7 +46,7 @@
             // 
             // pnMain
             // 
-            pnMain.BackColor = Color.White;
+            pnMain.BackColor = Color.IndianRed;
             pnMain.Controls.Add(chkShow);
             pnMain.Controls.Add(rdStudent);
             pnMain.Controls.Add(rdTeacher);

@@ -148,6 +148,7 @@
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.RoyalBlue;
             ClientSize = new Size(984, 610);
             Controls.Add(pnLogo);
             Controls.Add(panel2);

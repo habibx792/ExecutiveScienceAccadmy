@@ -42,7 +42,7 @@
             btnSearch.BackColor = Color.Black;
             btnSearch.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSearch.ForeColor = Color.White;
-            btnSearch.Location = new Point(1006, 0);
+            btnSearch.Location = new Point(876, 12);
             btnSearch.Margin = new Padding(4, 5, 4, 5);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(159, 52);
@@ -106,6 +106,7 @@
             // 
             // pnLogo
             // 
+            pnLogo.BackColor = Color.IndianRed;
             pnLogo.Controls.Add(button1);
             pnLogo.Controls.Add(panel2);
             pnLogo.Controls.Add(lbLogo);
@@ -119,7 +120,7 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.Red;
+            button1.BackColor = Color.Navy;
             button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.Location = new Point(1005, 693);
             button1.Margin = new Padding(4, 5, 4, 5);

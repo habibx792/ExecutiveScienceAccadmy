@@ -46,8 +46,8 @@
             txtRegis = new TextBox();
             dataGridView1 = new DataGridView();
             pnLogo = new Panel();
-            label6 = new Label();
             panel2 = new Panel();
+            label6 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
@@ -270,19 +270,6 @@
             pnLogo.TabIndex = 26;
             pnLogo.Paint += pnLogo_Paint;
             // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.FromArgb(0, 70, 140);
-            label6.Location = new Point(287, 10);
-            label6.Margin = new Padding(4, 0, 4, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(537, 54);
-            label6.TabIndex = 27;
-            label6.Text = "Executive Science Academy";
-            label6.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // panel2
             // 
             panel2.BackColor = Color.IndianRed;
@@ -291,6 +278,19 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1110, 76);
             panel2.TabIndex = 27;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.Black;
+            label6.Location = new Point(287, 11);
+            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(537, 54);
+            label6.TabIndex = 28;
+            label6.Text = "Executive Science Academy";
+            label6.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // FeeSubMission
             // 
@@ -333,7 +333,7 @@
         private ComboBox cmbMonth;
         private Panel pnLogo;
         private Label lblMont;
-        private Label label6;
         private Panel panel2;
+        private Label label6;
     }
 }
