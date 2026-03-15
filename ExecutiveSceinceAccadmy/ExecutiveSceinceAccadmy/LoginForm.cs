@@ -164,6 +164,7 @@ namespace ExecutiveSceinceAccadmy
             if (chkShow.Checked)
             {
                 txtPass.UseSystemPasswordChar = false;
+                chkShow.Text = "Hide Password";
 
                 //.PasswordChar = '\0';
             }
@@ -171,8 +172,10 @@ namespace ExecutiveSceinceAccadmy
             {
 
                 txtPass.UseSystemPasswordChar = true;
+                chkShow.Text = "Show Password";
 
-                txtPass.PasswordChar = '*';
+
+                //txtPass.PasswordChar = '*';
             }
         }
     }
