@@ -1146,7 +1146,7 @@ string stdName = std.Name;
                 return false;
             }
         }
-        public static bool HireTeacher(TeacherData data, DataGridView dtSubjects)
+        public static bool HireTeacherWithPassword(TeacherData data, string password, DataGridView dtSubjects)
         {
             try
             {
@@ -1157,7 +1157,7 @@ string stdName = std.Name;
                     {
                         try
                         {
-                            // 1️⃣ Insert teacher info
+                            // 1️⃣ Insert teacher info (no isSalaried / isPercentage)
                             string insertTeacher = @"
                         INSERT INTO teacherTb
                         (teacherId, teacherName, teacherQualification, fatherName, fatherCnic, teacherCnic)
@@ -1189,7 +1189,7 @@ string stdName = std.Name;
                                 cmd.ExecuteNonQuery();
                             }
 
-                            // 3️⃣ Insert payment info
+                            // 3️⃣ Insert teacher payment info
                             string insertPayment = @"
                         INSERT INTO teacherPaymentTb
                         (teacherId, teacherType, salary, percentage)
@@ -1204,11 +1204,12 @@ string stdName = std.Name;
                                 cmd.ExecuteNonQuery();
                             }
 
-                            // 4️⃣ Assign subjects from DataGridView
+                            // 4️⃣ Insert selected subjects from DataGridView
                             string insertSubject = @"
                         INSERT INTO teacherClassSubjectTb
                         (teacherId, classId, subjectId, domainId)
-                        VALUES (@teacherId, @classId, @subjectId, @domainId)";
+                        VALUES
+                        (@teacherId, @classId, @subjectId, @domainId)";
                             using (SqlCommand cmd = new SqlCommand(insertSubject, con, tran))
                             {
                                 foreach (DataGridViewRow row in dtSubjects.Rows)
@@ -1225,26 +1226,41 @@ string stdName = std.Name;
                                 }
                             }
 
+                            // 5️⃣ Insert password into teacherPassword table
+                            string insertPassword = @"
+                        INSERT INTO teacherPassword
+                        (teacherId, password)
+                        VALUES
+                        (@teacherId, @password)";
+                            using (SqlCommand cmd = new SqlCommand(insertPassword, con, tran))
+                            {
+                                cmd.Parameters.AddWithValue("@teacherId", data.TeacherId);
+                                cmd.Parameters.AddWithValue("@password", password);
+                                cmd.ExecuteNonQuery();
+                            }
+
                             tran.Commit();
                             return true;
                         }
-                        catch
+                        catch (Exception ex)
                         {
                             tran.Rollback();
-                            throw;
+                            MessageBox.Show("Error hiring teacher: " + ex.Message);
+                            return false;
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error hiring teacher: " + ex.Message);
+                MessageBox.Show("Database connection error: " + ex.Message);
                 return false;
             }
         }
-
-
-
-
     }
+
+
+
+
+    
 }

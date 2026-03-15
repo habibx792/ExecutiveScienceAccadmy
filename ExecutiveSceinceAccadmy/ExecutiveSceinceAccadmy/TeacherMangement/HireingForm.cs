@@ -171,7 +171,8 @@ namespace ExecutiveSceinceAccadmy.TeacherMangement
                 percentage = typeInput; // If user writes 10% etc.
             }
 
-            string teacherId = dataHandler.generateRandomeNumber(4) + dataHandler.getRandomeTimeStr();
+            string teacherId = "Tech-" +dataHandler.generateRandomeNumber(5);
+            //string teacherId = Guid.NewGuid().ToString();
 
             // Create TeacherData object with correct parameter order
             TeacherData data = new TeacherData(
@@ -191,12 +192,22 @@ namespace ExecutiveSceinceAccadmy.TeacherMangement
 
             // Optional: show confirmation
             MessageBox.Show($"Teacher {data.TeacherName} ({data.TeacherType}) ready to hire!");
+            string generatedPassword = dataHandler.generatePassword(5); // generate password
 
-            bool success = DB.HireTeacher(data, dtTeacherSubject);
+            bool success = DB.HireTeacherWithPassword(data, generatedPassword, dtTeacherSubject);
             if (success)
             {
-                MessageBox.Show($"You are hired Mr/Mrs {data.TeacherName}");
-                return;
+
+                 //success = DB.HireTeacher(data,generatedPassword, dtTeacherSubject);
+                if (success)
+                {
+                    MessageBox.Show($"You are hired Mr/Mrs {data.TeacherName}");
+
+                    // Save and print teacher document with selected subjects
+                    printEngine.PrintTeacherDocument(data, generatedPassword, dtTeacherSubject);
+                    return;
+                }
+
             }
         }
     }
