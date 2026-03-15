@@ -52,7 +52,7 @@
             panel1.Controls.Add(cmbDomain);
             panel1.Controls.Add(cmbClass);
             panel1.Controls.Add(txtAmount);
-            panel1.Location = new Point(63, 148);
+            panel1.Location = new Point(22, 148);
             panel1.Name = "panel1";
             panel1.Size = new Size(634, 341);
             panel1.TabIndex = 0;
@@ -130,7 +130,7 @@
             // 
             pnLogo.BackColor = Color.IndianRed;
             pnLogo.Controls.Add(lbLogo);
-            pnLogo.Location = new Point(63, 28);
+            pnLogo.Location = new Point(22, 28);
             pnLogo.Margin = new Padding(4, 5, 4, 5);
             pnLogo.Name = "pnLogo";
             pnLogo.Size = new Size(634, 123);
@@ -154,7 +154,7 @@
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(770, 546);
+            ClientSize = new Size(684, 517);
             Controls.Add(pnLogo);
             Controls.Add(panel1);
             Name = "feeSet";
