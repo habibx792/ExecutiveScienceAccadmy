@@ -33,13 +33,14 @@
             bntReport = new Button();
             btnCurrMonth = new Button();
             pnLogo = new Panel();
-            lbLogo = new Label();
+            label6 = new Label();
             pnMain.SuspendLayout();
             pnLogo.SuspendLayout();
             SuspendLayout();
             // 
             // pnMain
             // 
+            pnMain.BackColor = Color.IndianRed;
             pnMain.Controls.Add(btnAdd);
             pnMain.Controls.Add(bntReport);
             pnMain.Controls.Add(btnCurrMonth);
@@ -86,28 +87,32 @@
             // 
             // pnLogo
             // 
-            pnLogo.Controls.Add(lbLogo);
-            pnLogo.Location = new Point(24, 27);
+            pnLogo.BackColor = Color.IndianRed;
+            pnLogo.Controls.Add(label6);
+            pnLogo.Location = new Point(24, 44);
             pnLogo.Margin = new Padding(4, 5, 4, 5);
             pnLogo.Name = "pnLogo";
             pnLogo.Size = new Size(718, 78);
             pnLogo.TabIndex = 27;
             // 
-            // lbLogo
+            // label6
             // 
-            lbLogo.AutoSize = true;
-            lbLogo.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbLogo.Location = new Point(26, 16);
-            lbLogo.Margin = new Padding(4, 0, 4, 0);
-            lbLogo.Name = "lbLogo";
-            lbLogo.Size = new Size(653, 46);
-            lbLogo.TabIndex = 0;
-            lbLogo.Text = "Welcome To Executive Sceince Accadmy";
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.Black;
+            label6.Location = new Point(91, 12);
+            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(537, 54);
+            label6.TabIndex = 28;
+            label6.Text = "Executive Science Academy";
+            label6.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // ExpenseForm
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.RoyalBlue;
             ClientSize = new Size(771, 488);
             Controls.Add(pnMain);
             Controls.Add(pnLogo);
@@ -127,6 +132,6 @@
         private Button bntReport;
         private Button btnCurrMonth;
         private Panel pnLogo;
-        private Label lbLogo;
+        private Label label6;
     }
 }

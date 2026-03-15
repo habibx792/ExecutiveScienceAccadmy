@@ -16,43 +16,33 @@
         private void InitializeComponent()
         {
             pnMain = new Panel();
-            lbLogo = new Label();
             rdYear = new RadioButton();
             rdMonth = new RadioButton();
             dtExpense = new DataGridView();
             button1 = new Button();
             lblMonth = new Label();
             cmbMonth = new ComboBox();
+            pnLogo = new Panel();
+            label6 = new Label();
             pnMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dtExpense).BeginInit();
+            pnLogo.SuspendLayout();
             SuspendLayout();
             // 
             // pnMain
             // 
-            pnMain.Controls.Add(lbLogo);
+            pnMain.BackColor = Color.IndianRed;
             pnMain.Controls.Add(rdYear);
             pnMain.Controls.Add(rdMonth);
             pnMain.Controls.Add(dtExpense);
             pnMain.Controls.Add(button1);
             pnMain.Controls.Add(lblMonth);
             pnMain.Controls.Add(cmbMonth);
-            pnMain.Location = new Point(12, 12);
+            pnMain.Location = new Point(23, 42);
             pnMain.Name = "pnMain";
             pnMain.Size = new Size(925, 535);
             pnMain.TabIndex = 0;
             pnMain.Paint += panel1_Paint;
-            // 
-            // lbLogo
-            // 
-            lbLogo.AutoSize = true;
-            lbLogo.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbLogo.ForeColor = Color.FromArgb(0, 70, 140);
-            lbLogo.Location = new Point(70, 24);
-            lbLogo.Name = "lbLogo";
-            lbLogo.Size = new Size(776, 54);
-            lbLogo.TabIndex = 0;
-            lbLogo.Text = "Welcome To Executive Science Academy";
-            lbLogo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // rdYear
             // 
@@ -116,11 +106,36 @@
             cmbMonth.Size = new Size(360, 36);
             cmbMonth.TabIndex = 7;
             // 
+            // pnLogo
+            // 
+            pnLogo.BackColor = Color.IndianRed;
+            pnLogo.Controls.Add(label6);
+            pnLogo.Location = new Point(23, 42);
+            pnLogo.Margin = new Padding(4, 5, 4, 5);
+            pnLogo.Name = "pnLogo";
+            pnLogo.Size = new Size(922, 78);
+            pnLogo.TabIndex = 28;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.Black;
+            label6.Location = new Point(91, 12);
+            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(537, 54);
+            label6.TabIndex = 28;
+            label6.Text = "Executive Science Academy";
+            label6.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // checkExpense
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(949, 579);
+            BackColor = Color.RoyalBlue;
+            ClientSize = new Size(1024, 643);
+            Controls.Add(pnLogo);
             Controls.Add(pnMain);
             Name = "checkExpense";
             Text = "Check Expense";
@@ -128,16 +143,19 @@
             pnMain.ResumeLayout(false);
             pnMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dtExpense).EndInit();
+            pnLogo.ResumeLayout(false);
+            pnLogo.PerformLayout();
             ResumeLayout(false);
         }
 
         private Panel pnMain;
-        private Label lbLogo;
         private RadioButton rdYear;
         private RadioButton rdMonth;
         private DataGridView dtExpense;
         private Button button1;
         private Label lblMonth;
         private ComboBox cmbMonth;
+        private Panel pnLogo;
+        private Label label6;
     }
 }
