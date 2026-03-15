@@ -35,6 +35,7 @@ namespace ExecutiveSceinceAccadmy.TeacherMangement
 
 
             UI.Instance.StyleButton(btnHiring, borderRadius: 20);
+            UI.Instance.StyleButton(btnAttend, borderRadius: 20);
             UI.Instance.AddFormShadow(this);
 
         }
