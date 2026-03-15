@@ -44,15 +44,15 @@
             panel2.Controls.Add(btnFeeMange);
             panel2.Controls.Add(btnAttendMange);
             panel2.Controls.Add(btnRegisMange);
-            panel2.Location = new Point(80, 198);
+            panel2.Location = new Point(29, 148);
             panel2.Name = "panel2";
-            panel2.Size = new Size(609, 439);
+            panel2.Size = new Size(651, 439);
             panel2.TabIndex = 17;
             // 
             // btnFeeMange
             // 
             btnFeeMange.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            btnFeeMange.Location = new Point(113, 168);
+            btnFeeMange.Location = new Point(217, 163);
             btnFeeMange.Name = "btnFeeMange";
             btnFeeMange.Size = new Size(289, 92);
             btnFeeMange.TabIndex = 12;
@@ -62,7 +62,7 @@
             // btnAttendMange
             // 
             btnAttendMange.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            btnAttendMange.Location = new Point(113, 50);
+            btnAttendMange.Location = new Point(217, 45);
             btnAttendMange.Name = "btnAttendMange";
             btnAttendMange.Size = new Size(289, 92);
             btnAttendMange.TabIndex = 8;
@@ -73,7 +73,7 @@
             // btnRegisMange
             // 
             btnRegisMange.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            btnRegisMange.Location = new Point(113, 287);
+            btnRegisMange.Location = new Point(217, 282);
             btnRegisMange.Name = "btnRegisMange";
             btnRegisMange.Size = new Size(289, 92);
             btnRegisMange.TabIndex = 1;
@@ -84,10 +84,10 @@
             // 
             pnLogo.BackColor = Color.IndianRed;
             pnLogo.Controls.Add(lbLogo);
-            pnLogo.Location = new Point(80, 76);
+            pnLogo.Location = new Point(29, 26);
             pnLogo.Margin = new Padding(4, 5, 4, 5);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(609, 123);
+            pnLogo.Size = new Size(650, 123);
             pnLogo.TabIndex = 18;
             // 
             // lbLogo
@@ -108,7 +108,7 @@
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(743, 682);
+            ClientSize = new Size(708, 604);
             Controls.Add(pnLogo);
             Controls.Add(panel2);
             Name = "teacherDashBoard";

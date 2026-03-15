@@ -29,7 +29,7 @@ namespace ExecutiveSceinceAccadmy.ExpenseMangenment
             StyleControls();
             this.StartPosition = FormStartPosition.CenterScreen;
             UI.Instance.StyleLabel(lblAdd);
-            UI.Instance.StyleLabel(lbLogo);
+            //UI.Instance.StyleLabel(lbLogo);
 
         }
         private void StyleControls()
