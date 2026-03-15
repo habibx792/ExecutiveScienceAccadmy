@@ -33,8 +33,11 @@
             btnFeeMange = new Button();
             btnAttendMange = new Button();
             btnRegisMange = new Button();
+            pnLogo = new Panel();
+            lbLogo = new Label();
             ((System.ComponentModel.ISupportInitialize)picBox).BeginInit();
             panel2.SuspendLayout();
+            pnLogo.SuspendLayout();
             SuspendLayout();
             // 
             // picBox
@@ -54,7 +57,7 @@
             panel2.Controls.Add(btnFeeMange);
             panel2.Controls.Add(btnAttendMange);
             panel2.Controls.Add(btnRegisMange);
-            panel2.Location = new Point(36, 42);
+            panel2.Location = new Point(69, 149);
             panel2.Name = "panel2";
             panel2.Size = new Size(576, 427);
             panel2.TabIndex = 17;
@@ -91,11 +94,36 @@
             btnRegisMange.UseVisualStyleBackColor = true;
             btnRegisMange.Click += btnRegisMange_Click;
             // 
+            // pnLogo
+            // 
+            pnLogo.BackColor = Color.IndianRed;
+            pnLogo.Controls.Add(lbLogo);
+            pnLogo.Location = new Point(69, 35);
+            pnLogo.Margin = new Padding(4, 5, 4, 5);
+            pnLogo.Name = "pnLogo";
+            pnLogo.Size = new Size(576, 123);
+            pnLogo.TabIndex = 19;
+            // 
+            // lbLogo
+            // 
+            lbLogo.AutoSize = true;
+            lbLogo.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbLogo.ForeColor = Color.Black;
+            lbLogo.Location = new Point(34, 39);
+            lbLogo.Margin = new Padding(4, 0, 4, 0);
+            lbLogo.Name = "lbLogo";
+            lbLogo.Size = new Size(537, 54);
+            lbLogo.TabIndex = 0;
+            lbLogo.Text = "Executive Science Academy";
+            lbLogo.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // studentDashBoard
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(651, 504);
+            BackColor = Color.RoyalBlue;
+            ClientSize = new Size(732, 615);
+            Controls.Add(pnLogo);
             Controls.Add(panel2);
             Controls.Add(picBox);
             Margin = new Padding(4, 5, 4, 5);
@@ -104,6 +132,8 @@
             Load += DashBoardForm_Load;
             ((System.ComponentModel.ISupportInitialize)picBox).EndInit();
             panel2.ResumeLayout(false);
+            pnLogo.ResumeLayout(false);
+            pnLogo.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -113,5 +143,7 @@
         private Button btnFeeMange;
         private Button btnAttendMange;
         private Button btnRegisMange;
+        private Panel pnLogo;
+        private Label lbLogo;
     }
 }
