@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             pnLogo = new Panel();
-            lbLogo = new Label();
             btnMark = new Button();
             btnSujectWise = new Button();
             pnMain = new Panel();
             btnUpAtt = new Button();
             btnDashBoad = new Button();
+            label1 = new Label();
             pnLogo.SuspendLayout();
             pnMain.SuspendLayout();
             SuspendLayout();
@@ -42,23 +42,12 @@
             // pnLogo
             // 
             pnLogo.BackColor = Color.IndianRed;
-            pnLogo.Controls.Add(lbLogo);
+            pnLogo.Controls.Add(label1);
             pnLogo.Location = new Point(13, 47);
             pnLogo.Margin = new Padding(4, 5, 4, 5);
             pnLogo.Name = "pnLogo";
             pnLogo.Size = new Size(760, 135);
             pnLogo.TabIndex = 11;
-            // 
-            // lbLogo
-            // 
-            lbLogo.AutoSize = true;
-            lbLogo.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbLogo.Location = new Point(65, 42);
-            lbLogo.Margin = new Padding(4, 0, 4, 0);
-            lbLogo.Name = "lbLogo";
-            lbLogo.Size = new Size(653, 46);
-            lbLogo.TabIndex = 0;
-            lbLogo.Text = "Welcome To Executive Sceince Accadmy";
             // 
             // btnMark
             // 
@@ -116,6 +105,19 @@
             btnDashBoad.UseVisualStyleBackColor = true;
             btnDashBoad.Click += btnDashBoad_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(112, 40);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(537, 54);
+            label1.TabIndex = 14;
+            label1.Text = "Executive Science Academy";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // attendanceForm
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
@@ -138,11 +140,11 @@
         #endregion
 
         private Panel pnLogo;
-        private Label lbLogo;
         private Button btnMark;
         private Button btnSujectWise;
         private Panel pnMain;
         private Button btnUpAtt;
         private Button btnDashBoad;
+        private Label label1;
     }
 }

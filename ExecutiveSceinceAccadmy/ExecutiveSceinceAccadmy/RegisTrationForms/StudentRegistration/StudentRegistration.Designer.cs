@@ -18,9 +18,9 @@
             btnStdReg = new Button();
             BtnFeeSub = new Button();
             pnLogo = new Panel();
-            lbLogo = new Label();
             btnPrimaryReg = new Button();
             pnMain = new Panel();
+            label6 = new Label();
             pnLogo.SuspendLayout();
             pnMain.SuspendLayout();
             SuspendLayout();
@@ -69,25 +69,14 @@
             // 
             // pnLogo
             // 
-            pnLogo.Controls.Add(lbLogo);
-            pnLogo.Location = new Point(104, 108);
+            pnLogo.BackColor = Color.IndianRed;
+            pnLogo.Controls.Add(label6);
+            pnLogo.Location = new Point(35, 29);
             pnLogo.Margin = new Padding(4, 5, 4, 5);
             pnLogo.Name = "pnLogo";
             pnLogo.Size = new Size(798, 102);
             pnLogo.TabIndex = 10;
             pnLogo.Paint += pnLogo_Paint;
-            // 
-            // lbLogo
-            // 
-            lbLogo.AutoSize = true;
-            lbLogo.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbLogo.Location = new Point(80, 40);
-            lbLogo.Margin = new Padding(4, 0, 4, 0);
-            lbLogo.Name = "lbLogo";
-            lbLogo.Size = new Size(653, 46);
-            lbLogo.TabIndex = 0;
-            lbLogo.Text = "Welcome To Executive Sceince Accadmy";
-            lbLogo.Click += lbLogo_Click;
             // 
             // btnPrimaryReg
             // 
@@ -105,23 +94,37 @@
             // 
             // pnMain
             // 
+            pnMain.BackColor = Color.IndianRed;
             pnMain.Controls.Add(BtnFeeSub);
             pnMain.Controls.Add(btnPrimaryReg);
             pnMain.Controls.Add(btnStdReg);
             pnMain.Controls.Add(btnSupReg);
-            pnMain.Location = new Point(104, 213);
+            pnMain.Location = new Point(35, 109);
             pnMain.Margin = new Padding(4, 5, 4, 5);
             pnMain.Name = "pnMain";
             pnMain.Size = new Size(798, 405);
             pnMain.TabIndex = 14;
             pnMain.Paint += panel1_Paint;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.Black;
+            label6.Location = new Point(122, 29);
+            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(537, 54);
+            label6.TabIndex = 30;
+            label6.Text = "Executive Science Academy";
+            label6.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // StudentRegistration
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(985, 663);
+            ClientSize = new Size(880, 556);
             Controls.Add(pnMain);
             Controls.Add(pnLogo);
             Margin = new Padding(4, 5, 4, 5);
@@ -138,8 +141,8 @@
         private Button btnStdReg;
         private Button BtnFeeSub;
         private Panel pnLogo;
-        private Label lbLogo;
         private Button btnPrimaryReg;
         private Panel pnMain;
+        private Label label6;
     }
 }

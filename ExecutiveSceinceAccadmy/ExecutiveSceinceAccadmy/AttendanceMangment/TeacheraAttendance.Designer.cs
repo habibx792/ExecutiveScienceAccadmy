@@ -35,7 +35,7 @@
             dtTime = new DateTimePicker();
             panel1 = new Panel();
             pnLogo = new Panel();
-            lbLogo = new Label();
+            label1 = new Label();
             panel1.SuspendLayout();
             pnLogo.SuspendLayout();
             SuspendLayout();
@@ -105,7 +105,7 @@
             panel1.Controls.Add(cmbTeaches);
             panel1.Controls.Add(rdArrival);
             panel1.Controls.Add(btnTeachAttence);
-            panel1.Location = new Point(45, 125);
+            panel1.Location = new Point(54, 167);
             panel1.Name = "panel1";
             panel1.Size = new Size(717, 397);
             panel1.TabIndex = 5;
@@ -113,31 +113,31 @@
             // pnLogo
             // 
             pnLogo.BackColor = Color.IndianRed;
-            pnLogo.Controls.Add(lbLogo);
-            pnLogo.Location = new Point(45, 23);
+            pnLogo.Controls.Add(label1);
+            pnLogo.Location = new Point(54, 65);
             pnLogo.Margin = new Padding(4, 5, 4, 5);
             pnLogo.Name = "pnLogo";
             pnLogo.Size = new Size(717, 103);
             pnLogo.TabIndex = 8;
             // 
-            // lbLogo
+            // label1
             // 
-            lbLogo.AutoSize = true;
-            lbLogo.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbLogo.ForeColor = Color.FromArgb(0, 70, 140);
-            lbLogo.Location = new Point(72, 33);
-            lbLogo.Margin = new Padding(4, 0, 4, 0);
-            lbLogo.Name = "lbLogo";
-            lbLogo.Size = new Size(578, 41);
-            lbLogo.TabIndex = 0;
-            lbLogo.Text = "Welcome To Executive Science Academy";
-            lbLogo.TextAlign = ContentAlignment.MiddleCenter;
-            lbLogo.Click += lbLogo_Click;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(90, 24);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(537, 54);
+            label1.TabIndex = 15;
+            label1.Text = "Executive Science Academy";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // TeacheraAttendance
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.RoyalBlue;
             ClientSize = new Size(816, 602);
             Controls.Add(pnLogo);
             Controls.Add(panel1);
@@ -161,6 +161,6 @@
         private DateTimePicker dtTime;
         private Panel panel1;
         private Panel pnLogo;
-        private Label lbLogo;
+        private Label label1;
     }
 }

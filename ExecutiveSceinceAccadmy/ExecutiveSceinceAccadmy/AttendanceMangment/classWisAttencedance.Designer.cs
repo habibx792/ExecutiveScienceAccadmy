@@ -122,6 +122,7 @@
             // 
             button1.BackColor = Color.Navy;
             button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.White;
             button1.Location = new Point(1005, 693);
             button1.Margin = new Padding(4, 5, 4, 5);
             button1.Name = "button1";
@@ -178,14 +179,15 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(300, 13);
+            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(332, 7);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(653, 46);
-            label1.TabIndex = 0;
-            label1.Text = "Welcome To Executive Sceince Accadmy";
-            label1.Click += label1_Click;
+            label1.Size = new Size(537, 54);
+            label1.TabIndex = 15;
+            label1.Text = "Executive Science Academy";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // classWisAttencedance
             // 
@@ -221,9 +223,9 @@
         private DataGridViewTextBoxColumn colGrade;
         private DataGridViewCheckBoxColumn colPresent;
         private Panel panel1;
-        private Label label1;
         private ComboBox cmbAttendanceType;
         private Panel panel2;
         private Button button1;
+        private Label label1;
     }
 }

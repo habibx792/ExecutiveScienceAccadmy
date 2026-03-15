@@ -184,7 +184,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.FromArgb(0, 70, 140);
+            label2.ForeColor = Color.Black;
             label2.Location = new Point(139, 21);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
