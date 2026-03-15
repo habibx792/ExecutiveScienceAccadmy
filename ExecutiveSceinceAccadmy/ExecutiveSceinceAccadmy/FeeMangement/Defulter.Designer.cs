@@ -32,14 +32,16 @@
             dtDefaulter = new DataGridView();
             pnLogo = new Panel();
             lbLogo = new Label();
-            label1 = new Label();
             panel1 = new Panel();
             button2 = new Button();
             label2 = new Label();
             cmbMonth = new ComboBox();
+            panel2 = new Panel();
+            label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)dtDefaulter).BeginInit();
             pnLogo.SuspendLayout();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // button1
@@ -65,7 +67,7 @@
             // 
             // pnLogo
             // 
-            pnLogo.BackColor = Color.FromArgb(255, 128, 128);
+            pnLogo.BackColor = Color.IndianRed;
             pnLogo.Controls.Add(lbLogo);
             pnLogo.Location = new Point(39, 81);
             pnLogo.Margin = new Padding(4, 5, 4, 5);
@@ -77,7 +79,7 @@
             // 
             lbLogo.AutoSize = true;
             lbLogo.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbLogo.Location = new Point(306, 17);
+            lbLogo.Location = new Point(305, 34);
             lbLogo.Margin = new Padding(4, 0, 4, 0);
             lbLogo.Name = "lbLogo";
             lbLogo.Size = new Size(368, 46);
@@ -85,20 +87,9 @@
             lbLogo.Text = "Defaulter Student List";
             lbLogo.Click += lbLogo_Click;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(188, 9);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(653, 46);
-            label1.TabIndex = 9;
-            label1.Text = "Welcome To Executive Sceince Accadmy";
-            // 
             // panel1
             // 
-            panel1.BackColor = Color.DeepSkyBlue;
+            panel1.BackColor = Color.IndianRed;
             panel1.Controls.Add(button2);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(cmbMonth);
@@ -138,14 +129,37 @@
             cmbMonth.Size = new Size(409, 36);
             cmbMonth.TabIndex = 0;
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.IndianRed;
+            panel2.Controls.Add(label6);
+            panel2.Location = new Point(39, 22);
+            panel2.Margin = new Padding(4, 5, 4, 5);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(975, 71);
+            panel2.TabIndex = 25;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.Black;
+            label6.Location = new Point(238, 0);
+            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(537, 54);
+            label6.TabIndex = 28;
+            label6.Text = "Executive Science Academy";
+            label6.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // Defulter
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
             ClientSize = new Size(1074, 755);
+            Controls.Add(panel2);
             Controls.Add(panel1);
-            Controls.Add(label1);
             Controls.Add(pnLogo);
             Controls.Add(button1);
             Controls.Add(dtDefaulter);
@@ -158,8 +172,9 @@
             pnLogo.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -168,10 +183,11 @@
         private DataGridView dtDefaulter;
         private Panel pnLogo;
         private Label lbLogo;
-        private Label label1;
         private Panel panel1;
         private ComboBox cmbMonth;
         private Label label2;
         private Button button2;
+        private Panel panel2;
+        private Label label6;
     }
 }
