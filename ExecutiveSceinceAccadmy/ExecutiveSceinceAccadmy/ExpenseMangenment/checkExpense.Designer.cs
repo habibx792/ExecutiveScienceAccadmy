@@ -135,7 +135,7 @@
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(1024, 643);
+            ClientSize = new Size(971, 603);
             Controls.Add(pnLogo);
             Controls.Add(pnMain);
             Name = "checkExpense";
