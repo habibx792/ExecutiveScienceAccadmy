@@ -43,7 +43,7 @@
             // 
             pnLogo.BackColor = Color.IndianRed;
             pnLogo.Controls.Add(lbLogo);
-            pnLogo.Location = new Point(13, 30);
+            pnLogo.Location = new Point(13, 47);
             pnLogo.Margin = new Padding(4, 5, 4, 5);
             pnLogo.Name = "pnLogo";
             pnLogo.Size = new Size(760, 135);
