@@ -4,6 +4,7 @@ select * from adminTb;
 select * from domainTb;
 select * from classTb;
 select * from teacherTb;
+delete  from teacherTb;
 select * from teacherAttendance;
 select * from teacherProfitTb;
 select * from teacherAddTb;

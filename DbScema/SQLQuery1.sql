@@ -425,3 +425,26 @@ CREATE TABLE subjectTb (
         FOREIGN KEY (domainId)
         REFERENCES domainTb(domainId)
 );
+
+
+CREATE TABLE studentPassword
+(
+    stdRegisNo VARCHAR(50) NOT NULL PRIMARY KEY,
+    password VARCHAR(10) NOT NULL,
+
+    CONSTRAINT FK_studentPassword_student
+        FOREIGN KEY (stdRegisNo)
+        REFERENCES StudentTb(stdRegisNo)
+        ON DELETE CASCADE
+);
+select * from studentPassword;
+CREATE TABLE teacherPassword
+(
+    teacherId VARCHAR(40) NOT NULL PRIMARY KEY,
+    password VARCHAR(10) NOT NULL,
+
+    CONSTRAINT FK_teacherPassword_teacher
+        FOREIGN KEY (teacherId)
+        REFERENCES teacherTb(teacherId)
+        ON DELETE CASCADE
+);
