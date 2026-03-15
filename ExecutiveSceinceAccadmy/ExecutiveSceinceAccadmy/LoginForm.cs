@@ -72,17 +72,16 @@ namespace ExecutiveSceinceAccadmy
             }
             string username = txtUser.Text.Trim();
             string password = txtPass.Text.Trim();
-            if(rdAdmin.Checked)
+            if (rdAdmin.Checked)
             {
                 bool loginSuccess = DB.Login(username, password);
 
                 if (loginSuccess)
                 {
                     this.Hide();
-                    using (Form1 mainFom = new Form1())
+                    using (adminDashBoard mainForm = new adminDashBoard())
                     {
 
-                        Form1 mainForm = new Form1();
                         mainForm.ShowDialog();
 
                     }
@@ -112,14 +111,14 @@ namespace ExecutiveSceinceAccadmy
             else if (rdTeacher.Checked)
             {
                 this.Hide();
-                using(teacherDashBoard teachDashBoard=new teacherDashBoard())
+                using (teacherDashBoard teachDashBoard = new teacherDashBoard())
                 {
                     teachDashBoard.ShowDialog();
                 }
                 this.Show();
             }
 
-           
+
         }
 
         private void pnMain_Paint(object sender, PaintEventArgs e)
@@ -134,6 +133,8 @@ namespace ExecutiveSceinceAccadmy
                 rdStudent.Checked = false;
                 rdAdmin.Checked = false;
                 txtUser.PlaceholderText = "Enter Teacher ID ";
+                txtPass.Text = "";
+                txtUser.Text = "";
             }
 
         }
@@ -146,6 +147,20 @@ namespace ExecutiveSceinceAccadmy
                 rdAdmin.Checked = false;
                 rdTeacher.Checked = false;
                 txtUser.PlaceholderText = "Enter Register ID";
+                txtUser.Text = "";
+                txtPass.Text = "";
+            }
+        }
+
+        private void rdAdmin_CheckedChanged(object sender, EventArgs e)
+        {
+            if(rdAdmin.Checked)
+            {
+                rdAdmin.Checked = true;
+                rdStudent.Checked = false;
+                rdTeacher.Checked= false;
+                txtPass.Text = "";
+                txtUser.Text = "";
             }
         }
     }

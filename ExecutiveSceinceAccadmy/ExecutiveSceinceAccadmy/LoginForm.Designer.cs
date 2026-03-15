@@ -98,6 +98,7 @@
             rdAdmin.TabStop = true;
             rdAdmin.Text = "Admin";
             rdAdmin.UseVisualStyleBackColor = true;
+            rdAdmin.CheckedChanged += rdAdmin_CheckedChanged;
             // 
             // btnLogin
             // 
