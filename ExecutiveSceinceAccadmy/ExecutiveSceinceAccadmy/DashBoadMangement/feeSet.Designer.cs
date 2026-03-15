@@ -36,7 +36,10 @@
             cmbDomain = new ComboBox();
             cmbClass = new ComboBox();
             txtAmount = new TextBox();
+            pnLogo = new Panel();
+            lbLogo = new Label();
             panel1.SuspendLayout();
+            pnLogo.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -49,7 +52,7 @@
             panel1.Controls.Add(cmbDomain);
             panel1.Controls.Add(cmbClass);
             panel1.Controls.Add(txtAmount);
-            panel1.Location = new Point(39, 33);
+            panel1.Location = new Point(63, 148);
             panel1.Name = "panel1";
             panel1.Size = new Size(634, 341);
             panel1.TabIndex = 0;
@@ -123,17 +126,44 @@
             txtAmount.Size = new Size(323, 34);
             txtAmount.TabIndex = 3;
             // 
+            // pnLogo
+            // 
+            pnLogo.BackColor = Color.IndianRed;
+            pnLogo.Controls.Add(lbLogo);
+            pnLogo.Location = new Point(63, 28);
+            pnLogo.Margin = new Padding(4, 5, 4, 5);
+            pnLogo.Name = "pnLogo";
+            pnLogo.Size = new Size(634, 123);
+            pnLogo.TabIndex = 19;
+            // 
+            // lbLogo
+            // 
+            lbLogo.AutoSize = true;
+            lbLogo.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbLogo.ForeColor = Color.Black;
+            lbLogo.Location = new Point(34, 39);
+            lbLogo.Margin = new Padding(4, 0, 4, 0);
+            lbLogo.Name = "lbLogo";
+            lbLogo.Size = new Size(537, 54);
+            lbLogo.TabIndex = 0;
+            lbLogo.Text = "Executive Science Academy";
+            lbLogo.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // feeSet
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(710, 406);
+            BackColor = Color.RoyalBlue;
+            ClientSize = new Size(770, 546);
+            Controls.Add(pnLogo);
             Controls.Add(panel1);
             Name = "feeSet";
             Text = "feeSet";
             Load += feeSet_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            pnLogo.ResumeLayout(false);
+            pnLogo.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -147,5 +177,7 @@
         private Label label5;
         private Label label4;
         private ComboBox cmbDomain;
+        private Panel pnLogo;
+        private Label lbLogo;
     }
 }
