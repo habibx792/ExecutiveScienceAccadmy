@@ -122,5 +122,10 @@ namespace ExecutiveSceinceAccadmy.ExpenseMangenment
                 MessageBox.Show("Failed to add expense. Please try again.");
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

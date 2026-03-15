@@ -57,7 +57,7 @@
             pnMain.Location = new Point(13, 98);
             pnMain.Margin = new Padding(4, 5, 4, 5);
             pnMain.Name = "pnMain";
-            pnMain.Size = new Size(789, 428);
+            pnMain.Size = new Size(789, 461);
             pnMain.TabIndex = 0;
             pnMain.Paint += panel1_Paint;
             // 
@@ -65,7 +65,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label3.Location = new Point(17, 209);
+            label3.Location = new Point(85, 251);
             label3.Name = "label3";
             label3.Size = new Size(171, 28);
             label3.TabIndex = 29;
@@ -75,27 +75,28 @@
             // 
             lblDate.AutoSize = true;
             lblDate.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            lblDate.Location = new Point(131, 73);
+            lblDate.Location = new Point(85, 110);
             lblDate.Name = "lblDate";
-            lblDate.Size = new Size(57, 28);
+            lblDate.Size = new Size(140, 28);
             lblDate.TabIndex = 36;
-            lblDate.Text = "Date";
+            lblDate.Text = "Expense Date";
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label1.Location = new Point(48, 150);
+            label1.Location = new Point(85, 189);
             label1.Name = "label1";
             label1.Size = new Size(140, 28);
             label1.TabIndex = 35;
             label1.Text = "Expense Type";
+            label1.Click += label1_Click;
             // 
             // lblAdd
             // 
             lblAdd.AutoSize = true;
             lblAdd.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAdd.Location = new Point(288, 15);
+            lblAdd.Location = new Point(310, 15);
             lblAdd.Margin = new Padding(4, 0, 4, 0);
             lblAdd.Name = "lblAdd";
             lblAdd.Size = new Size(200, 41);
@@ -106,7 +107,7 @@
             // 
             cmbExpense.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             cmbExpense.FormattingEnabled = true;
-            cmbExpense.Location = new Point(195, 147);
+            cmbExpense.Location = new Point(263, 189);
             cmbExpense.Margin = new Padding(4, 5, 4, 5);
             cmbExpense.Name = "cmbExpense";
             cmbExpense.Size = new Size(348, 36);
@@ -115,7 +116,7 @@
             // btnExpenseAdd
             // 
             btnExpenseAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnExpenseAdd.Location = new Point(387, 260);
+            btnExpenseAdd.Location = new Point(455, 302);
             btnExpenseAdd.Margin = new Padding(4, 5, 4, 5);
             btnExpenseAdd.Name = "btnExpenseAdd";
             btnExpenseAdd.Size = new Size(156, 58);
@@ -127,7 +128,7 @@
             // txtExenseAmount
             // 
             txtExenseAmount.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            txtExenseAmount.Location = new Point(195, 206);
+            txtExenseAmount.Location = new Point(263, 248);
             txtExenseAmount.Margin = new Padding(4, 5, 4, 5);
             txtExenseAmount.Name = "txtExenseAmount";
             txtExenseAmount.Size = new Size(348, 34);
@@ -136,7 +137,7 @@
             // dtExpense
             // 
             dtExpense.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            dtExpense.Location = new Point(195, 68);
+            dtExpense.Location = new Point(263, 110);
             dtExpense.Margin = new Padding(4, 5, 4, 5);
             dtExpense.Name = "dtExpense";
             dtExpense.Size = new Size(348, 34);
