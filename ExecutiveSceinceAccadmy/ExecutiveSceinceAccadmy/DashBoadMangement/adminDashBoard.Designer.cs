@@ -35,7 +35,10 @@
             btnFeeMange = new Button();
             btnAttendMange = new Button();
             panel2 = new Panel();
+            pnLogo = new Panel();
+            lbLogo = new Label();
             panel2.SuspendLayout();
+            pnLogo.SuspendLayout();
             SuspendLayout();
             // 
             // btnRegisMange
@@ -113,21 +116,47 @@
             panel2.Controls.Add(btnRegisMange);
             panel2.Controls.Add(btnTeachMang);
             panel2.Controls.Add(btnFeeSet);
-            panel2.Location = new Point(8, 163);
+            panel2.Location = new Point(8, 145);
             panel2.Name = "panel2";
-            panel2.Size = new Size(964, 318);
+            panel2.Size = new Size(964, 409);
             panel2.TabIndex = 16;
+            // 
+            // pnLogo
+            // 
+            pnLogo.BackColor = Color.IndianRed;
+            pnLogo.Controls.Add(lbLogo);
+            pnLogo.Location = new Point(8, 27);
+            pnLogo.Margin = new Padding(4, 5, 4, 5);
+            pnLogo.Name = "pnLogo";
+            pnLogo.Size = new Size(964, 123);
+            pnLogo.TabIndex = 17;
+            // 
+            // lbLogo
+            // 
+            lbLogo.AutoSize = true;
+            lbLogo.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbLogo.ForeColor = Color.Black;
+            lbLogo.Location = new Point(216, 35);
+            lbLogo.Margin = new Padding(4, 0, 4, 0);
+            lbLogo.Name = "lbLogo";
+            lbLogo.Size = new Size(537, 54);
+            lbLogo.TabIndex = 0;
+            lbLogo.Text = "Executive Science Academy";
+            lbLogo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // adminDashBoard
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(984, 610);
+            Controls.Add(pnLogo);
             Controls.Add(panel2);
             Name = "adminDashBoard";
             Text = "adminDashBoard";
             Load += adminDashBoard_Load;
             panel2.ResumeLayout(false);
+            pnLogo.ResumeLayout(false);
+            pnLogo.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -140,5 +169,7 @@
         private Button btnFeeMange;
         private Button btnAttendMange;
         private Panel panel2;
+        private Panel pnLogo;
+        private Label lbLogo;
     }
 }

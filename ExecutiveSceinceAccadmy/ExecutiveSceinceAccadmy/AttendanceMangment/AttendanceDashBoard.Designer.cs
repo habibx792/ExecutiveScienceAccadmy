@@ -35,12 +35,12 @@
             txtReginstraion = new TextBox();
             panel1 = new Panel();
             panel2 = new Panel();
-            lbLogo = new Label();
             cmbMonth = new ComboBox();
             lblDate = new Label();
             label2 = new Label();
             rdMonth = new RadioButton();
             rdDay = new RadioButton();
+            lbLogo = new Label();
             ((System.ComponentModel.ISupportInitialize)dtDashAttend).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -125,17 +125,6 @@
             panel2.TabIndex = 13;
             panel2.Paint += panel2_Paint;
             // 
-            // lbLogo
-            // 
-            lbLogo.AutoSize = true;
-            lbLogo.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbLogo.Location = new Point(284, 10);
-            lbLogo.Margin = new Padding(4, 0, 4, 0);
-            lbLogo.Name = "lbLogo";
-            lbLogo.Size = new Size(653, 46);
-            lbLogo.TabIndex = 13;
-            lbLogo.Text = "Welcome To Executive Sceince Accadmy";
-            // 
             // cmbMonth
             // 
             cmbMonth.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -191,10 +180,24 @@
             rdDay.UseVisualStyleBackColor = true;
             rdDay.CheckedChanged += rdDay_CheckedChanged;
             // 
+            // lbLogo
+            // 
+            lbLogo.AutoSize = true;
+            lbLogo.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbLogo.ForeColor = Color.Black;
+            lbLogo.Location = new Point(292, 0);
+            lbLogo.Margin = new Padding(4, 0, 4, 0);
+            lbLogo.Name = "lbLogo";
+            lbLogo.Size = new Size(537, 54);
+            lbLogo.TabIndex = 13;
+            lbLogo.Text = "Executive Science Academy";
+            lbLogo.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // AttendanceDashBoard
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.RoyalBlue;
             ClientSize = new Size(1182, 705);
             Controls.Add(panel1);
             Margin = new Padding(4, 5, 4, 5);
