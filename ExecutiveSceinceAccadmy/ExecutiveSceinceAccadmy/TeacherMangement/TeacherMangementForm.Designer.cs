@@ -37,7 +37,7 @@
             // btnAttend
             // 
             btnAttend.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnAttend.Location = new Point(311, 12);
+            btnAttend.Location = new Point(47, 48);
             btnAttend.Name = "btnAttend";
             btnAttend.Size = new Size(221, 107);
             btnAttend.TabIndex = 7;
@@ -48,7 +48,7 @@
             // btnHiring
             // 
             btnHiring.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnHiring.Location = new Point(84, 12);
+            btnHiring.Location = new Point(47, 179);
             btnHiring.Name = "btnHiring";
             btnHiring.Size = new Size(221, 107);
             btnHiring.TabIndex = 10;
@@ -60,16 +60,16 @@
             // 
             panel1.Controls.Add(btnHiring);
             panel1.Controls.Add(btnAttend);
-            panel1.Location = new Point(66, 39);
+            panel1.Location = new Point(39, 38);
             panel1.Name = "panel1";
-            panel1.Size = new Size(607, 431);
+            panel1.Size = new Size(316, 331);
             panel1.TabIndex = 15;
             // 
             // TeacherMangementForm
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(810, 528);
+            ClientSize = new Size(393, 401);
             Controls.Add(panel1);
             Name = "TeacherMangementForm";
             Text = "TeacherMangement";
