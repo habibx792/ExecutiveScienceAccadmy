@@ -53,10 +53,10 @@
             pnMain.Controls.Add(stdBoard);
             pnMain.Controls.Add(btnTeacherBoard);
             pnMain.Controls.Add(btnAdmin);
-            pnMain.Location = new Point(42, 118);
+            pnMain.Location = new Point(23, 118);
             pnMain.Margin = new Padding(4, 5, 4, 5);
             pnMain.Name = "pnMain";
-            pnMain.Size = new Size(631, 565);
+            pnMain.Size = new Size(659, 565);
             pnMain.TabIndex = 6;
             // 
             // stdBoard
@@ -95,10 +95,10 @@
             // 
             pnLogo.BackColor = Color.FromArgb(255, 128, 128);
             pnLogo.Controls.Add(label6);
-            pnLogo.Location = new Point(42, 14);
+            pnLogo.Location = new Point(23, 14);
             pnLogo.Margin = new Padding(4, 5, 4, 5);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(631, 103);
+            pnLogo.Size = new Size(659, 103);
             pnLogo.TabIndex = 7;
             pnLogo.Paint += panel2_Paint;
             // 
@@ -107,7 +107,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.Black;
-            label6.Location = new Point(47, 24);
+            label6.Location = new Point(48, 21);
             label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
             label6.Size = new Size(537, 54);
@@ -120,7 +120,7 @@
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(777, 704);
+            ClientSize = new Size(705, 704);
             Controls.Add(pnLogo);
             Controls.Add(pnMain);
             Margin = new Padding(4, 5, 4, 5);
