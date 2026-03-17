@@ -37,6 +37,7 @@
             panel2 = new Panel();
             pnLogo = new Panel();
             lbLogo = new Label();
+            button1 = new Button();
             panel2.SuspendLayout();
             pnLogo.SuspendLayout();
             SuspendLayout();
@@ -110,6 +111,7 @@
             // panel2
             // 
             panel2.BackColor = Color.IndianRed;
+            panel2.Controls.Add(button1);
             panel2.Controls.Add(btnExpenseMange);
             panel2.Controls.Add(btnFeeMange);
             panel2.Controls.Add(btnAttendMange);
@@ -118,7 +120,7 @@
             panel2.Controls.Add(btnFeeSet);
             panel2.Location = new Point(22, 144);
             panel2.Name = "panel2";
-            panel2.Size = new Size(800, 409);
+            panel2.Size = new Size(800, 487);
             panel2.TabIndex = 16;
             // 
             // pnLogo
@@ -144,12 +146,21 @@
             lbLogo.Text = "Executive Science Academy";
             lbLogo.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // button1
+            // 
+            button1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            button1.Location = new Point(111, 363);
+            button1.Name = "button1";
+            button1.Size = new Size(289, 92);
+            button1.TabIndex = 13;
+            button1.UseVisualStyleBackColor = true;
+            // 
             // adminDashBoard
             // 
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(860, 573);
+            ClientSize = new Size(907, 643);
             Controls.Add(pnLogo);
             Controls.Add(panel2);
             Name = "adminDashBoard";
@@ -172,5 +183,6 @@
         private Panel panel2;
         private Panel pnLogo;
         private Label lbLogo;
+        private Button button1;
     }
 }

@@ -60,8 +60,9 @@
             btnCurrMon.Name = "btnCurrMon";
             btnCurrMon.Size = new Size(284, 104);
             btnCurrMon.TabIndex = 26;
-            btnCurrMon.Text = "Current Month";
+            btnCurrMon.Text = "Expense Report";
             btnCurrMon.UseVisualStyleBackColor = true;
+            btnCurrMon.Click += btnCurrMon_Click;
             // 
             // btnAddExp
             // 

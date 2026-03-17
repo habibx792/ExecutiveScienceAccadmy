@@ -1,4 +1,5 @@
-﻿using ExecutiveScienceAcademy.classes;
+﻿using ExecutiveSceinceAccadmy.ReportManagement;
+using ExecutiveScienceAcademy.classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -67,12 +68,18 @@ namespace ExecutiveSceinceAccadmy.ExpenseMangenment
 
         private void btnCurrMonth_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void bntReport_Click(object sender, EventArgs e)
+        {
             this.Hide();
-            using (checkExpense currentMonthExpense = new checkExpense())
-            {
-                currentMonthExpense.ShowDialog();
+            using(expenseReport expenseReport = new expenseReport())
+            { 
+                expenseReport.ShowDialog(); 
             }
             this.Show();
+
         }
     }
 }

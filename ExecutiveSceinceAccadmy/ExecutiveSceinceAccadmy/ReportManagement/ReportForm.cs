@@ -69,5 +69,15 @@ namespace ExecutiveSceinceAccadmy.ReportManagement
         {
 
         }
+
+        private void btnCurrMon_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using(expenseReport expenseReport = new expenseReport()) 
+                {
+                    expenseReport.ShowDialog();
+                }
+                this.Show();
+        }
     }
 }

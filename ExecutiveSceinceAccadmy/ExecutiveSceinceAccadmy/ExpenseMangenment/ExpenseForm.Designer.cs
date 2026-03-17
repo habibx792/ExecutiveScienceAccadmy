@@ -72,6 +72,7 @@
             bntReport.TabIndex = 25;
             bntReport.Text = "Expense Report";
             bntReport.UseVisualStyleBackColor = true;
+            bntReport.Click += bntReport_Click;
             // 
             // btnCurrMonth
             // 
