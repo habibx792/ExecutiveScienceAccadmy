@@ -58,9 +58,9 @@ namespace ExecutiveSceinceAccadmy.ReportManagement
         private void btnAddExp_Click(object sender, EventArgs e)
         {
             this.Hide();
-            using (addExpense addExpense = new addExpense())
+            using (feeReports feeReportForm = new feeReports())
             {
-                addExpense.ShowDialog();
+                feeReportForm.ShowDialog();
             }
             this.Show();
         }

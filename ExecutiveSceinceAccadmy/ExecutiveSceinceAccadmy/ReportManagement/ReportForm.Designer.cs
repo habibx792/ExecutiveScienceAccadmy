@@ -50,7 +50,7 @@
             pnMain.Location = new Point(33, 156);
             pnMain.Margin = new Padding(4, 5, 4, 5);
             pnMain.Name = "pnMain";
-            pnMain.Size = new Size(766, 307);
+            pnMain.Size = new Size(766, 484);
             pnMain.TabIndex = 28;
             // 
             // btnCurrMon
@@ -71,7 +71,7 @@
             btnAddExp.Name = "btnAddExp";
             btnAddExp.Size = new Size(294, 104);
             btnAddExp.TabIndex = 24;
-            btnAddExp.Text = "Add Expense";
+            btnAddExp.Text = "Fee Reports";
             btnAddExp.UseVisualStyleBackColor = true;
             btnAddExp.Click += btnAddExp_Click;
             // 
@@ -123,7 +123,7 @@
             AutoScaleDimensions = new SizeF(9F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(854, 502);
+            ClientSize = new Size(854, 686);
             Controls.Add(pnMain);
             Controls.Add(pnLogo);
             Name = "ReportForm";
