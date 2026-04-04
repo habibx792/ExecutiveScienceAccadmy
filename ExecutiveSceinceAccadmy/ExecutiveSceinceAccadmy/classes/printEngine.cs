@@ -360,13 +360,15 @@ Percentage      : {teacher.Percentage}
 
             return printStudentAttence(dt, studentName, regNo, month);
         }
-        internal static bool printTeacherAttence(DataGridView dt, string teacherName, string teacherId)
+        // Add this method inside printEngine class
+        internal static bool printTeacherAttendance(DataGridView dt, string teacherName, string teacherId)
         {
             if (dt == null || dt.Rows.Count == 0)
             {
-                Console.WriteLine("No attendance data to print.");
+                MessageBox.Show("No attendance data to print.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
+
             StringBuilder document = new StringBuilder();
             document.AppendLine("========== EXECUTIVE SCIENCE ACADEMY ==========");
             document.AppendLine("             TEACHER ATTENDANCE REPORT");
@@ -375,23 +377,41 @@ Percentage      : {teacher.Percentage}
             document.AppendLine($"Teacher ID       : {teacherId}");
             document.AppendLine();
             document.AppendLine("------------------------------------------------");
-            document.AppendLine("Date        | Status     | Type");
+            document.AppendLine("Date        | Status     | Arrival      | Departure");
             document.AppendLine("------------------------------------------------");
+
+            int recordCount = 0;
             foreach (DataGridViewRow row in dt.Rows)
             {
                 if (row.IsNewRow) continue;
+
                 string date = row.Cells["attendDate"]?.Value?.ToString() ?? "";
-                string isPresent = row.Cells["isPresent"]?.Value?.ToString() ?? "";
-                string attType = row.Cells["attenceType"]?.Value?.ToString() ?? "";
-                string status = isPresent == "1" ? "Present" : "Absent";
-                document.AppendLine($"{date,-12} | {status,-10} | {attType}");
+                // isPresent is BIT: 1 = Present, 0 = Absent
+                object isPresentObj = row.Cells["isPresent"]?.Value;
+                bool isPresent = (isPresentObj != DBNull.Value && Convert.ToBoolean(isPresentObj));
+                string status = isPresent ? "Present" : "Absent";
+
+                string arrival = "";
+                if (row.Cells["arrivalTime"]?.Value != DBNull.Value && row.Cells["arrivalTime"]?.Value != null)
+                    arrival = Convert.ToDateTime(row.Cells["arrivalTime"].Value).ToString("hh:mm tt");
+
+                string departure = "";
+                if (row.Cells["departureTime"]?.Value != DBNull.Value && row.Cells["departureTime"]?.Value != null)
+                    departure = Convert.ToDateTime(row.Cells["departureTime"].Value).ToString("hh:mm tt");
+
+                document.AppendLine($"{date,-12} | {status,-10} | {arrival,-12} | {departure}");
+                recordCount++;
             }
+
             document.AppendLine("------------------------------------------------");
-            document.AppendLine($"Total Records     : {dt.Rows.Count}");
+            document.AppendLine($"Total Records     : {recordCount}");
             document.AppendLine("================================================");
+
+            // Reuse the existing SaveAttendanceDocument (you may need to adjust file naming)
             string filePath = SaveAttendanceDocument(document.ToString(), teacherName, teacherId);
             if (string.IsNullOrEmpty(filePath))
                 return false;
+
             PrintFile(filePath);
             return true;
         }

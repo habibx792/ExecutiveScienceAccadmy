@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             panel2 = new Panel();
+            label1 = new Label();
+            cmbTeacher = new ComboBox();
             lbLogo = new Label();
             cmbMonth = new ComboBox();
             lblDate = new Label();
@@ -49,6 +51,8 @@
             // panel2
             // 
             panel2.BackColor = Color.IndianRed;
+            panel2.Controls.Add(label1);
+            panel2.Controls.Add(cmbTeacher);
             panel2.Controls.Add(lbLogo);
             panel2.Controls.Add(cmbMonth);
             panel2.Controls.Add(lblDate);
@@ -62,8 +66,29 @@
             panel2.Location = new Point(0, 0);
             panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(887, 226);
+            panel2.Size = new Size(887, 273);
             panel2.TabIndex = 13;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label1.Location = new Point(176, 129);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(115, 21);
+            label1.TabIndex = 15;
+            label1.Text = "TeacherName";
+            // 
+            // cmbTeacher
+            // 
+            cmbTeacher.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cmbTeacher.FormattingEnabled = true;
+            cmbTeacher.Location = new Point(320, 129);
+            cmbTeacher.Margin = new Padding(2);
+            cmbTeacher.Name = "cmbTeacher";
+            cmbTeacher.Size = new Size(258, 29);
+            cmbTeacher.TabIndex = 14;
             // 
             // lbLogo
             // 
@@ -111,7 +136,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label2.Location = new Point(166, 130);
+            label2.Location = new Point(165, 181);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(130, 21);
@@ -148,13 +173,14 @@
             btnSearch.BackColor = Color.Black;
             btnSearch.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSearch.ForeColor = Color.White;
-            btnSearch.Location = new Point(469, 164);
+            btnSearch.Location = new Point(470, 212);
             btnSearch.Margin = new Padding(2);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(108, 38);
             btnSearch.TabIndex = 1;
             btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = false;
+            btnSearch.Click += btnSearch_Click;
             // 
             // rdDay
             // 
@@ -173,7 +199,7 @@
             // txtReginstraion
             // 
             txtReginstraion.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtReginstraion.Location = new Point(320, 128);
+            txtReginstraion.Location = new Point(320, 173);
             txtReginstraion.Margin = new Padding(2);
             txtReginstraion.Name = "txtReginstraion";
             txtReginstraion.PlaceholderText = "Enter Registration Number";
@@ -183,7 +209,7 @@
             // dtDashAttend
             // 
             dtDashAttend.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtDashAttend.Location = new Point(0, 224);
+            dtDashAttend.Location = new Point(0, 268);
             dtDashAttend.Margin = new Padding(2);
             dtDashAttend.Name = "dtDashAttend";
             dtDashAttend.RowHeadersWidth = 51;
@@ -197,7 +223,7 @@
             panel1.Location = new Point(11, 11);
             panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(888, 448);
+            panel1.Size = new Size(888, 492);
             panel1.TabIndex = 8;
             // 
             // teacherAttendReport
@@ -205,7 +231,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(914, 473);
+            ClientSize = new Size(914, 534);
             Controls.Add(panel1);
             Name = "teacherAttendReport";
             Text = "teacherAttendReport";
@@ -232,5 +258,8 @@
         private TextBox txtReginstraion;
         private DataGridView dtDashAttend;
         private Panel panel1;
+        private Label label1;
+        public ComboBox cmbTeacher;
+        private ComboBox comboBox1;
     }
 }

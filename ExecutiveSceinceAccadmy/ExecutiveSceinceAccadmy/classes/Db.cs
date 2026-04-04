@@ -1124,7 +1124,8 @@ namespace ExecutiveSceinceAccadmy.classes
                 return false;
             }
         }
-        public static bool loadTeacherAttendanceRecord(string teacherId, string month, DataGridView dtAttend)
+        // Add/modify this method in your DB class
+        public static bool loadTeacherAttendanceRecord(string teacherId, int month, DataGridView dtAttend)
         {
             try
             {
@@ -1132,23 +1133,36 @@ namespace ExecutiveSceinceAccadmy.classes
                 {
                     con.Open();
                     string query = @"SELECT 
-                                t.teacherName,
-                                a.attendDate,
-                                a.arrivalTime,
-                                a.departureTime,
-                                a.isPresent
-                             FROM teacherAttendance a
-                             INNER JOIN teacherTb t
-                             ON a.teacherId = t.teacherId
-                             WHERE a.teacherId = @teacherId
-                             AND MONTH(a.attendDate) = @month";
+                        t.teacherName,
+                        a.attendDate,
+                        a.arrivalTime,
+                        a.departureTime,
+                        a.isPresent
+                     FROM teacherAttendance a
+                     INNER JOIN teacherTb t ON a.teacherId = t.teacherId
+                     WHERE a.teacherId = @teacherId
+                     AND MONTH(a.attendDate) = @month
+                     ORDER BY a.attendDate";
+
                     SqlCommand cmd = new SqlCommand(query, con);
                     cmd.Parameters.AddWithValue("@teacherId", teacherId);
                     cmd.Parameters.AddWithValue("@month", month);
+
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
+
                     dtAttend.DataSource = dt;
+
+                    // Optional: format columns
+                    if (dtAttend.Columns.Contains("attendDate"))
+                        dtAttend.Columns["attendDate"].HeaderText = "Date";
+                    if (dtAttend.Columns.Contains("arrivalTime"))
+                        dtAttend.Columns["arrivalTime"].HeaderText = "Arrival";
+                    if (dtAttend.Columns.Contains("departureTime"))
+                        dtAttend.Columns["departureTime"].HeaderText = "Departure";
+                    if (dtAttend.Columns.Contains("isPresent"))
+                        dtAttend.Columns["isPresent"].HeaderText = "Present";
                 }
                 return true;
             }
