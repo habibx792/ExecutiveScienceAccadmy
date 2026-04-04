@@ -169,11 +169,11 @@ Received By     : Admin
 
             return false;
         }
-    
 
 
 
-      internal static string GenerateTeacherDocument(TeacherData teacher, string password, DataGridView dtTeacherSubject)
+
+        internal static string GenerateTeacherDocument(TeacherData teacher, string password, DataGridView dtTeacherSubject)
         {
             string document = $@"
 ========== TEACHER REGISTRATION ==========
@@ -346,7 +346,7 @@ Percentage      : {teacher.Percentage}
 
             string studentName = "";
             string regNo = "";
-            int month = DateTime.Now.Month; 
+            int month = DateTime.Now.Month;
 
             if (dt.Columns.Contains("student_name") && dt.Rows[0].Cells["student_name"].Value != null)
                 studentName = dt.Rows[0].Cells["student_name"].Value.ToString();
@@ -359,6 +359,41 @@ Percentage      : {teacher.Percentage}
             }
 
             return printStudentAttence(dt, studentName, regNo, month);
+        }
+        internal static bool printTeacherAttence(DataGridView dt, string teacherName, string teacherId)
+        {
+            if (dt == null || dt.Rows.Count == 0)
+            {
+                Console.WriteLine("No attendance data to print.");
+                return false;
+            }
+            StringBuilder document = new StringBuilder();
+            document.AppendLine("========== EXECUTIVE SCIENCE ACADEMY ==========");
+            document.AppendLine("             TEACHER ATTENDANCE REPORT");
+            document.AppendLine();
+            document.AppendLine($"Teacher Name     : {teacherName}");
+            document.AppendLine($"Teacher ID       : {teacherId}");
+            document.AppendLine();
+            document.AppendLine("------------------------------------------------");
+            document.AppendLine("Date        | Status     | Type");
+            document.AppendLine("------------------------------------------------");
+            foreach (DataGridViewRow row in dt.Rows)
+            {
+                if (row.IsNewRow) continue;
+                string date = row.Cells["attendDate"]?.Value?.ToString() ?? "";
+                string isPresent = row.Cells["isPresent"]?.Value?.ToString() ?? "";
+                string attType = row.Cells["attenceType"]?.Value?.ToString() ?? "";
+                string status = isPresent == "1" ? "Present" : "Absent";
+                document.AppendLine($"{date,-12} | {status,-10} | {attType}");
+            }
+            document.AppendLine("------------------------------------------------");
+            document.AppendLine($"Total Records     : {dt.Rows.Count}");
+            document.AppendLine("================================================");
+            string filePath = SaveAttendanceDocument(document.ToString(), teacherName, teacherId);
+            if (string.IsNullOrEmpty(filePath))
+                return false;
+            PrintFile(filePath);
+            return true;
         }
     }
 }

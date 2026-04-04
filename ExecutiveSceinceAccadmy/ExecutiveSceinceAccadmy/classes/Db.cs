@@ -1124,7 +1124,40 @@ namespace ExecutiveSceinceAccadmy.classes
                 return false;
             }
         }
-
+        public static bool loadTeacherAttendanceRecord(string teacherId, string month, DataGridView dtAttend)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    string query = @"SELECT 
+                                t.teacherName,
+                                a.attendDate,
+                                a.arrivalTime,
+                                a.departureTime,
+                                a.isPresent
+                             FROM teacherAttendance a
+                             INNER JOIN teacherTb t
+                             ON a.teacherId = t.teacherId
+                             WHERE a.teacherId = @teacherId
+                             AND MONTH(a.attendDate) = @month";
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@teacherId", teacherId);
+                    cmd.Parameters.AddWithValue("@month", month);
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    dtAttend.DataSource = dt;
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
         public static string GetTeacherIdByName(string teacherName)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
