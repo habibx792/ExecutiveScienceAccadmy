@@ -30,6 +30,7 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
             //UI.Instance.StyleButton(btnSum, borderRadius: 20);
             UI.Instance.StyleButton(btnUpAtt, borderRadius: 20);
             UI.Instance.StyleButton(btnMark, borderRadius: 20);
+            UI.Instance.StyleButton(btnTeacherAttendRep, borderRadius: 20);
             this.StartPosition = FormStartPosition.CenterScreen;
 
         }
@@ -81,6 +82,11 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
                 dashBoard.ShowDialog();
             }
             this.Show();
+        }
+
+        private void btnTeacherAttendRep_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
