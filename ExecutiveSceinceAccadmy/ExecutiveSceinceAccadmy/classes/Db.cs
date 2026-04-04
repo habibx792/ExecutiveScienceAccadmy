@@ -1,35 +1,39 @@
 ﻿using ExecutiveSceinceAccadmy.classes;
-using Microsoft.Data.SqlClient;  // Ensure this NuGet package is installed
+using Microsoft.Data.SqlClient;
 using Microsoft.Identity.Client;
 using System;
 using System.Data;
 using System.Numerics;
 using System.Runtime.CompilerServices;
-using System.Web;      // For showing error messages temporarily
+using System.Web;
 using System.Windows.Forms;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+
 namespace ExecutiveSceinceAccadmy.classes
 {
     public static class DB
     {
-
         private static string connectionString = "Server=CODEX\\SQLEXPRESS;Database=accadmyDb;Integrated Security=True;TrustServerCertificate=true;";
+
+        // ========================== 1. CONNECTION & UTILITY ==========================
         public static SqlConnection getConnection()
         {
             SqlConnection con = new SqlConnection(connectionString);
             con.Open();
             return con;
-
         }
+
         public static void setConnectionStr(string conStr)
         {
             connectionString = conStr;
         }
+
         public static string getStr()
         {
             return connectionString;
         }
-        // Systelm login methods
+
+        // ========================== 2. LOGIN / AUTHENTICATION ==========================
         public static bool createStudentLogin(string username, string password)
         {
             try
@@ -55,6 +59,7 @@ namespace ExecutiveSceinceAccadmy.classes
                 return false;
             }
         }
+
         public static bool createTeacherLogin(string username, string password)
         {
             try
@@ -80,6 +85,7 @@ namespace ExecutiveSceinceAccadmy.classes
                 return false;
             }
         }
+
         public static bool loginStudent(string username, string password)
         {
             try
@@ -107,6 +113,7 @@ namespace ExecutiveSceinceAccadmy.classes
                 return false;
             }
         }
+
         public static bool loginTeacher(string username, string password)
         {
             try
@@ -134,11 +141,9 @@ namespace ExecutiveSceinceAccadmy.classes
                 return false;
             }
         }
+
         public static bool Login(string username, string password)
         {
-
-
-
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 try
@@ -147,7 +152,6 @@ namespace ExecutiveSceinceAccadmy.classes
                     string query = "SELECT COUNT(*) FROM adminTb WHERE userName = @u AND password = @p";
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
-
                         cmd.Parameters.Add("@u", SqlDbType.VarChar, 20).Value = username;
                         cmd.Parameters.Add("@p", SqlDbType.VarChar, 20).Value = password;
 
@@ -168,6 +172,7 @@ namespace ExecutiveSceinceAccadmy.classes
             }
         }
 
+        // ========================== 3. STUDENT REGISTRATION ==========================
         public static string createRegistrationNumber(string domain, string gender, string classLevel)
         {
             int currStd = 0;
@@ -175,7 +180,6 @@ namespace ExecutiveSceinceAccadmy.classes
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 con.Open();
-
 
                 string query = "INSERT INTO stdCountTB DEFAULT VALUES; SELECT SCOPE_IDENTITY();";
 
@@ -190,6 +194,7 @@ namespace ExecutiveSceinceAccadmy.classes
             // Registration format: YY-Class-Domain-Gender-Number
             return $"{year}-{classLevel}-{domain}-{gender}-{currStd}";
         }
+
         public static List<string> loadALlDomain()
         {
             List<string> domains = new List<string>();
@@ -210,7 +215,7 @@ namespace ExecutiveSceinceAccadmy.classes
             }
             return domains;
         }
-        //very importatnt method for registering a student, it will take a student object and insert all the data into the database, including the address, academic history, and father information.this method will be called from the student registration form when the user clicks the register button.
+
         internal static bool registerAStudent(Student std, string registrationNo)
         {
             Address addr = std.Address;
@@ -372,10 +377,23 @@ namespace ExecutiveSceinceAccadmy.classes
                     return false;
                 }
             }
-
-
         }
 
+        public static string MapClassNumberToName(string classNumber)
+        {
+            int classNum;
+            if (!int.TryParse(classNumber, out classNum))
+                throw new Exception("Invalid class number.");
+
+            if (classNum >= 1 && classNum <= 8)
+                return classNum.ToString();
+            else if (classNum >= 9 && classNum <= 12)
+                return classNum + "th";
+            else
+                throw new Exception("Class number out of range (1-12).");
+        }
+
+        // ========================== 4. FEE MANAGEMENT ==========================
         public static bool DisplayStudentDetailForFeeSubmission(string registrationNo, DataGridView dt)
         {
             try
@@ -421,50 +439,37 @@ namespace ExecutiveSceinceAccadmy.classes
                             if (dt.Columns.Contains("amount"))
                                 dt.Columns["amount"].HeaderText = "Fee Amount";
 
-                            // ----------- UI Styling -----------
-
+                            // UI Styling
                             dt.BorderStyle = BorderStyle.None;
                             dt.RowHeadersVisible = false;
                             dt.EnableHeadersVisualStyles = false;
 
-                            // Header style
                             dt.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(52, 73, 94);
                             dt.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
                             dt.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 11, FontStyle.Bold);
                             dt.ColumnHeadersHeight = 40;
 
-                            // Row style
                             dt.DefaultCellStyle.Font = new Font("Segoe UI", 10);
                             dt.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
                             dt.RowTemplate.Height = 35;
-
-                            // Zebra rows
                             dt.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(245, 245, 245);
-
-                            // Fill grid width evenly
                             dt.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-                            // Selection color
                             dt.DefaultCellStyle.SelectionBackColor = Color.FromArgb(41, 128, 185);
                             dt.DefaultCellStyle.SelectionForeColor = Color.White;
-
-                            // Prevent messy resizing
                             dt.AllowUserToResizeRows = false;
                             dt.AllowUserToResizeColumns = false;
                         }
                     }
                 }
-
                 return true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Database error: " + ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Database error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
+
         public static bool submitFee(string feeId, string registrationNo,
                               double amount,
                               double discountAmount,
@@ -511,10 +516,10 @@ namespace ExecutiveSceinceAccadmy.classes
                     MessageBox.Show("Database error: " + ex.Message,
                                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
                 return false;
             }
         }
+
         public static bool checkStudentFeeStatus(string registrationNumber, string month, string feeId, bool searchFlag, DataGridView feeGrid)
         {
             try
@@ -572,6 +577,7 @@ namespace ExecutiveSceinceAccadmy.classes
                 return false;
             }
         }
+
         public static string showTotalCollectionOfToday(string month)
         {
             string resultStr = "";
@@ -604,6 +610,7 @@ namespace ExecutiveSceinceAccadmy.classes
             }
             return resultStr;
         }
+
         public static string showTotalCollectionOfThisMonth(string month)
         {
             string resultStr = "";
@@ -633,10 +640,10 @@ namespace ExecutiveSceinceAccadmy.classes
                         resultStr = "0";
                     }
                 }
-
             }
             return resultStr;
         }
+
         public static string showTotalCollectionOfThisYear()
         {
             string resultStr = "0.00";
@@ -657,6 +664,7 @@ namespace ExecutiveSceinceAccadmy.classes
 
             return resultStr;
         }
+
         public static void showDefaulterStudent(DataGridView dtDefaulter, string month)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
@@ -699,6 +707,7 @@ namespace ExecutiveSceinceAccadmy.classes
                 dtDefaulter.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 dtDefaulter.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 dtDefaulter.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
                 foreach (DataGridViewRow row in dtDefaulter.Rows)
                 {
                     if (row.Cells["Status"].Value != null)
@@ -716,193 +725,7 @@ namespace ExecutiveSceinceAccadmy.classes
                 }
             }
         }
-        public static string MapClassNumberToName(string classNumber)
-        {
-            int classNum;
-            if (!int.TryParse(classNumber, out classNum))
-                throw new Exception("Invalid class number.");
 
-            if (classNum >= 1 && classNum <= 8)
-                return classNum.ToString();
-            else if (classNum >= 9 && classNum <= 12)
-                return classNum + "th";
-            else
-                throw new Exception("Class number out of range (1-12).");
-        }
-
-        // ===================== Load Attendance =====================
-        public static bool loadClassAttendance(string classSelectedNumber,
-                                               string attendanceTypeSelected,
-                                               DataGridView dtAttenddance)
-        {
-            try
-            {
-                string classSelected = MapClassNumberToName(classSelectedNumber);
-
-                using (SqlConnection con = new SqlConnection(connectionString))
-                {
-                    con.Open();
-
-                    string query = @"SELECT s.stdRegisNo, s.student_name
-                             FROM StudentTb s
-                             JOIN classTb c ON c.domainId = s.domainId
-                             WHERE c.className = @className
-                             AND s.student_type = @type
-                             AND s.is_active = 1";
-
-                    using (SqlCommand cmd = new SqlCommand(query, con))
-                    {
-                        cmd.Parameters.AddWithValue("@className", classSelected);
-                        cmd.Parameters.AddWithValue("@type", attendanceTypeSelected);
-
-                        SqlDataAdapter da = new SqlDataAdapter(cmd);
-                        DataTable dt = new DataTable();
-                        da.Fill(dt);
-
-                        dtAttenddance.Rows.Clear();
-                        string today = DateTime.Now.ToString("dddd - dd/MM");
-
-                        foreach (DataRow row in dt.Rows)
-                        {
-                            dtAttenddance.Rows.Add(
-                                row["stdRegisNo"].ToString(),
-                                row["student_name"].ToString(),
-                                today,
-                                true // default present
-                            );
-                        }
-                    }
-                }
-
-                return true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error loading attendance: " + ex.Message);
-                return false;
-            }
-        }
-
-        // ===================== Mark Attendance =====================
-        public static bool MarkAttendanceByClassWise(List<AttendanceRecord> attendanceRecords, string givenClassNumber, string givenAttendanceType)
-        {
-            try
-            {
-                string givenClass = MapClassNumberToName(givenClassNumber);
-
-                using (SqlConnection con = new SqlConnection(connectionString))
-                {
-                    con.Open();
-                    SqlTransaction transaction = con.BeginTransaction();
-
-                    string query = @"INSERT INTO studentAttendance (attendId, stdRegisNo, isPresent, attenceType, day)
-                             VALUES (@attendanceID, @stdRegisNo, @isPresent, @attendanceType, @day)";
-
-                    foreach (var record in attendanceRecords)
-                    {
-                        using (SqlCommand cmd = new SqlCommand(query, con, transaction))
-                        {
-                            cmd.Parameters.AddWithValue("@attendanceID", Guid.NewGuid().ToString("N")); // unique ID
-                            cmd.Parameters.AddWithValue("@stdRegisNo", record.RegistrationNo);
-                            cmd.Parameters.AddWithValue("@isPresent", record.IsPresent);
-                            cmd.Parameters.AddWithValue("@attendanceType", record.AttendanceType);
-                            cmd.Parameters.AddWithValue("@day", record.Day);
-                            cmd.ExecuteNonQuery();
-                        }
-                    }
-
-                    transaction.Commit();
-                }
-
-                return true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Failed to mark attendance for {givenClassNumber} type {givenAttendanceType}.\nError: {ex.Message}");
-                return false;
-            }
-        }
-
-        public static bool showAttendacnceRecordOfDate(string studentRegistraionNo, string date, DataGridView dtDashAttend)
-        {
-            try
-            {
-                using (SqlConnection con = new SqlConnection(connectionString))
-                {
-                    con.Open();
-
-                    string query = @"SELECT 
-                                s.student_name,
-                                a.stdRegisNo,
-                                a.isPresent,
-                                a.attenceType,
-                                a.day,
-                                a.attendDate
-                             FROM studentAttendance a
-                             INNER JOIN StudentTb s
-                             ON a.stdRegisNo = s.stdRegisNo
-                             WHERE a.stdRegisNo = @regNo
-                             AND a.attendDate = @date";
-
-                    SqlCommand cmd = new SqlCommand(query, con);
-                    cmd.Parameters.AddWithValue("@regNo", studentRegistraionNo);
-                    cmd.Parameters.AddWithValue("@date", date);
-
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-
-                    dtDashAttend.DataSource = dt;
-                }
-
-                return true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                return false;
-            }
-        }
-        public static bool ShowAttendanceOfStudentOfMonth(string studentRegistraionNo, int month, DataGridView dtDashAttenddtDash)
-        {
-            try
-            {
-                using (SqlConnection con = new SqlConnection(connectionString))
-                {
-                    con.Open();
-
-                    string query = @"SELECT 
-                                s.student_name,
-                                a.stdRegisNo,
-                                a.isPresent,
-                                a.attenceType,
-                                a.day,
-                                a.attendDate
-                             FROM studentAttendance a
-                             INNER JOIN StudentTb s
-                             ON a.stdRegisNo = s.stdRegisNo
-                             WHERE a.stdRegisNo = @regNo
-                             AND MONTH(a.attendDate) = @month";
-
-                    SqlCommand cmd = new SqlCommand(query, con);
-                    cmd.Parameters.AddWithValue("@regNo", studentRegistraionNo);
-                    cmd.Parameters.AddWithValue("@month", month);
-
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-
-                    dtDashAttenddtDash.DataSource = dt;
-                }
-
-                return true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                return false;
-            }
-        }
         public static bool addFeeOfClassDomain(int classId, string domainId, int feeAmount)
         {
             try
@@ -986,6 +809,501 @@ namespace ExecutiveSceinceAccadmy.classes
             }
         }
 
+        // ========================== 5. ATTENDANCE (STUDENT & TEACHER) ==========================
+        public static bool loadClassAttendance(string classSelectedNumber,
+                                               string attendanceTypeSelected,
+                                               DataGridView dtAttenddance)
+        {
+            try
+            {
+                string classSelected = MapClassNumberToName(classSelectedNumber);
+
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+
+                    string query = @"SELECT s.stdRegisNo, s.student_name
+                             FROM StudentTb s
+                             JOIN classTb c ON c.domainId = s.domainId
+                             WHERE c.className = @className
+                             AND s.student_type = @type
+                             AND s.is_active = 1";
+
+                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@className", classSelected);
+                        cmd.Parameters.AddWithValue("@type", attendanceTypeSelected);
+
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+
+                        dtAttenddance.Rows.Clear();
+                        string today = DateTime.Now.ToString("dddd - dd/MM");
+
+                        foreach (DataRow row in dt.Rows)
+                        {
+                            dtAttenddance.Rows.Add(
+                                row["stdRegisNo"].ToString(),
+                                row["student_name"].ToString(),
+                                today,
+                                true // default present
+                            );
+                        }
+                    }
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading attendance: " + ex.Message);
+                return false;
+            }
+        }
+
+        public static bool MarkAttendanceByClassWise(List<AttendanceRecord> attendanceRecords, string givenClassNumber, string givenAttendanceType)
+        {
+            try
+            {
+                string givenClass = MapClassNumberToName(givenClassNumber);
+
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    SqlTransaction transaction = con.BeginTransaction();
+
+                    string query = @"INSERT INTO studentAttendance (attendId, stdRegisNo, isPresent, attenceType, day)
+                             VALUES (@attendanceID, @stdRegisNo, @isPresent, @attendanceType, @day)";
+
+                    foreach (var record in attendanceRecords)
+                    {
+                        using (SqlCommand cmd = new SqlCommand(query, con, transaction))
+                        {
+                            cmd.Parameters.AddWithValue("@attendanceID", Guid.NewGuid().ToString("N"));
+                            cmd.Parameters.AddWithValue("@stdRegisNo", record.RegistrationNo);
+                            cmd.Parameters.AddWithValue("@isPresent", record.IsPresent);
+                            cmd.Parameters.AddWithValue("@attendanceType", record.AttendanceType);
+                            cmd.Parameters.AddWithValue("@day", record.Day);
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+
+                    transaction.Commit();
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to mark attendance for {givenClassNumber} type {givenAttendanceType}.\nError: {ex.Message}");
+                return false;
+            }
+        }
+
+        public static bool showAttendacnceRecordOfDate(string studentRegistraionNo, string date, DataGridView dtDashAttend)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+
+                    string query = @"SELECT 
+                                s.student_name,
+                                a.stdRegisNo,
+                                a.isPresent,
+                                a.attenceType,
+                                a.day,
+                                a.attendDate
+                             FROM studentAttendance a
+                             INNER JOIN StudentTb s
+                             ON a.stdRegisNo = s.stdRegisNo
+                             WHERE a.stdRegisNo = @regNo
+                             AND a.attendDate = @date";
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@regNo", studentRegistraionNo);
+                    cmd.Parameters.AddWithValue("@date", date);
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    dtDashAttend.DataSource = dt;
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
+        public static bool ShowAttendanceOfStudentOfMonth(string studentRegistraionNo, int month, DataGridView dtDashAttenddtDash)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+
+                    string query = @"SELECT 
+                                s.student_name,
+                                a.stdRegisNo,
+                                a.isPresent,
+                                a.attenceType,
+                                a.day,
+                                a.attendDate
+                             FROM studentAttendance a
+                             INNER JOIN StudentTb s
+                             ON a.stdRegisNo = s.stdRegisNo
+                             WHERE a.stdRegisNo = @regNo
+                             AND MONTH(a.attendDate) = @month";
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@regNo", studentRegistraionNo);
+                    cmd.Parameters.AddWithValue("@month", month);
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    dtDashAttenddtDash.DataSource = dt;
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
+        // Teacher Attendance
+        public static List<string> GetAllTeacherNames()
+        {
+            List<string> teacherNames = new List<string>();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "SELECT teacherName FROM teacherTb WHERE is_active = 1";
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string name = reader["teacherName"].ToString();
+                            teacherNames.Add(name);
+                        }
+                    }
+                }
+            }
+
+            return teacherNames;
+        }
+
+        public static bool markTeacherAttendance(string teacherId, bool isArrival, DateTime attendDate, DateTime attendTime)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    using (SqlTransaction transaction = conn.BeginTransaction())
+                    {
+                        string checkQuery = @"SELECT arrivalTime, departureTime 
+                                      FROM teacherAttendance 
+                                      WHERE teacherId = @teacherId AND attendDate = @date";
+                        using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn, transaction))
+                        {
+                            checkCmd.Parameters.AddWithValue("@teacherId", teacherId);
+                            checkCmd.Parameters.AddWithValue("@date", attendDate.Date);
+
+                            using (SqlDataReader reader = checkCmd.ExecuteReader())
+                            {
+                                if (reader.Read())
+                                {
+                                    DateTime? existingArrival = reader["arrivalTime"] as DateTime?;
+                                    DateTime? existingDeparture = reader["departureTime"] as DateTime?;
+                                    reader.Close();
+
+                                    if (isArrival)
+                                    {
+                                        if (existingArrival == null)
+                                        {
+                                            string updateArrival = @"UPDATE teacherAttendance
+                                                             SET arrivalTime = @time, isPresent = 1
+                                                             WHERE teacherId = @teacherId AND attendDate = @date";
+                                            using (SqlCommand cmd = new SqlCommand(updateArrival, conn, transaction))
+                                            {
+                                                cmd.Parameters.AddWithValue("@teacherId", teacherId);
+                                                cmd.Parameters.AddWithValue("@time", attendTime);
+                                                cmd.Parameters.AddWithValue("@date", attendDate.Date);
+                                                cmd.ExecuteNonQuery();
+                                            }
+                                            transaction.Commit();
+                                            return true;
+                                        }
+                                        else
+                                        {
+                                            transaction.Rollback();
+                                            return false;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (existingArrival == null)
+                                        {
+                                            transaction.Rollback();
+                                            return false;
+                                        }
+                                        if (existingDeparture != null)
+                                        {
+                                            transaction.Rollback();
+                                            return false;
+                                        }
+                                        if (attendTime < existingArrival.Value.AddHours(1))
+                                        {
+                                            transaction.Rollback();
+                                            return false;
+                                        }
+
+                                        string updateDeparture = @"UPDATE teacherAttendance
+                                                           SET departureTime = @time
+                                                           WHERE teacherId = @teacherId AND attendDate = @date";
+                                        using (SqlCommand cmd = new SqlCommand(updateDeparture, conn, transaction))
+                                        {
+                                            cmd.Parameters.AddWithValue("@teacherId", teacherId);
+                                            cmd.Parameters.AddWithValue("@time", attendTime);
+                                            cmd.Parameters.AddWithValue("@date", attendDate.Date);
+                                            cmd.ExecuteNonQuery();
+                                        }
+                                        transaction.Commit();
+                                        return true;
+                                    }
+                                }
+                                else
+                                {
+                                    reader.Close();
+
+                                    if (isArrival)
+                                    {
+                                        string insertQuery = @"INSERT INTO teacherAttendance (teacherId, attendDate, arrivalTime, isPresent) 
+                                                       VALUES (@teacherId, @date, @time, 1)";
+                                        using (SqlCommand insertCmd = new SqlCommand(insertQuery, conn, transaction))
+                                        {
+                                            insertCmd.Parameters.AddWithValue("@teacherId", teacherId);
+                                            insertCmd.Parameters.AddWithValue("@date", attendDate.Date);
+                                            insertCmd.Parameters.AddWithValue("@time", attendTime);
+                                            insertCmd.ExecuteNonQuery();
+                                        }
+                                        transaction.Commit();
+                                        return true;
+                                    }
+                                    else
+                                    {
+                                        transaction.Rollback();
+                                        return false;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Database error: " + ex.Message);
+                return false;
+            }
+        }
+
+        public static string GetTeacherIdByName(string teacherName)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "SELECT teacherId FROM teacherTb WHERE teacherName=@teacherName";
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@teacherName", teacherName);
+                    var result = cmd.ExecuteScalar();
+                    return result?.ToString();
+                }
+            }
+        }
+
+        // ========================== 6. TEACHER HIRING & SUBJECTS ==========================
+        public static bool laodSujectAndClassToTeacherHiring(DataGridView dt)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+
+                    string query = @"
+                SELECT 
+                    c.className,
+                    sp.subjectName,
+                    s.classId,
+                    s.subjectId,
+                    s.domainId
+                FROM subjectTb s
+                INNER JOIN SubjectPack sp ON s.subjectId = sp.subjectId
+                INNER JOIN classTb c ON s.classId = c.classId
+                ORDER BY s.domainId, s.classId, s.subjectId
+            ";
+
+                    SqlDataAdapter da = new SqlDataAdapter(query, con);
+                    DataTable dtbl = new DataTable();
+                    da.Fill(dtbl);
+
+                    dt.DataSource = dtbl;
+
+                    if (!dt.Columns.Contains("Select"))
+                    {
+                        DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
+                        chk.HeaderText = "Select";
+                        chk.Name = "Select";
+                        dt.Columns.Insert(0, chk);
+                    }
+
+                    dt.Columns["classId"].DisplayIndex = dt.Columns.Count - 2;
+                    dt.Columns["subjectId"].DisplayIndex = dt.Columns.Count - 1;
+
+                    dt.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading data: " + ex.Message);
+                return false;
+            }
+        }
+
+        public static bool HireTeacherWithPassword(TeacherData data, string password, DataGridView dtSubjects)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    con.Open();
+                    using (SqlTransaction tran = con.BeginTransaction())
+                    {
+                        try
+                        {
+                            // 1️⃣ Insert teacher info
+                            string insertTeacher = @"
+                        INSERT INTO teacherTb
+                        (teacherId, teacherName, teacherQualification, fatherName, fatherCnic, teacherCnic)
+                        VALUES
+                        (@teacherId, @teacherName, @qualification, @fatherName, @fatherCNIC, @teacherCnic)";
+                            using (SqlCommand cmd = new SqlCommand(insertTeacher, con, tran))
+                            {
+                                cmd.Parameters.AddWithValue("@teacherId", data.TeacherId);
+                                cmd.Parameters.AddWithValue("@teacherName", data.TeacherName);
+                                cmd.Parameters.AddWithValue("@qualification", data.Qualification);
+                                cmd.Parameters.AddWithValue("@fatherName", data.FatherName);
+                                cmd.Parameters.AddWithValue("@fatherCNIC", data.FatherCNIC);
+                                cmd.Parameters.AddWithValue("@teacherCnic", data.TeacherCnic);
+                                cmd.ExecuteNonQuery();
+                            }
+
+                            // 2️⃣ Insert teacher address
+                            string insertAddress = @"
+                        INSERT INTO teacherAddTb
+                        (teacherId, address, city, country)
+                        VALUES
+                        (@teacherId, @address, @city, @country)";
+                            using (SqlCommand cmd = new SqlCommand(insertAddress, con, tran))
+                            {
+                                cmd.Parameters.AddWithValue("@teacherId", data.TeacherId);
+                                cmd.Parameters.AddWithValue("@address", data.Address);
+                                cmd.Parameters.AddWithValue("@city", data.AddressCity);
+                                cmd.Parameters.AddWithValue("@country", data.AddressCountry);
+                                cmd.ExecuteNonQuery();
+                            }
+
+                            // 3️⃣ Insert teacher payment info
+                            string insertPayment = @"
+                        INSERT INTO teacherPaymentTb
+                        (teacherId, teacherType, salary, percentage)
+                        VALUES
+                        (@teacherId, @teacherType, @salary, @percentage)";
+                            using (SqlCommand cmd = new SqlCommand(insertPayment, con, tran))
+                            {
+                                cmd.Parameters.AddWithValue("@teacherId", data.TeacherId);
+                                cmd.Parameters.AddWithValue("@teacherType", data.TeacherType);
+                                cmd.Parameters.AddWithValue("@salary", string.IsNullOrEmpty(data.Salary) ? 0 : decimal.Parse(data.Salary));
+                                cmd.Parameters.AddWithValue("@percentage", string.IsNullOrEmpty(data.Percentage) ? 0 : decimal.Parse(data.Percentage));
+                                cmd.ExecuteNonQuery();
+                            }
+
+                            // 4️⃣ Insert selected subjects
+                            string insertSubject = @"
+                        INSERT INTO teacherClassSubjectTb
+                        (teacherId, classId, subjectId, domainId)
+                        VALUES
+                        (@teacherId, @classId, @subjectId, @domainId)";
+                            using (SqlCommand cmd = new SqlCommand(insertSubject, con, tran))
+                            {
+                                foreach (DataGridViewRow row in dtSubjects.Rows)
+                                {
+                                    if (row.Cells["Select"].Value != null && (bool)row.Cells["Select"].Value)
+                                    {
+                                        cmd.Parameters.Clear();
+                                        cmd.Parameters.AddWithValue("@teacherId", data.TeacherId);
+                                        cmd.Parameters.AddWithValue("@classId", Convert.ToInt32(row.Cells["classId"].Value));
+                                        cmd.Parameters.AddWithValue("@subjectId", Convert.ToInt32(row.Cells["subjectId"].Value));
+                                        cmd.Parameters.AddWithValue("@domainId", row.Cells["domainId"].Value.ToString());
+                                        cmd.ExecuteNonQuery();
+                                    }
+                                }
+                            }
+
+                            // 5️⃣ Insert password
+                            string insertPassword = @"
+                        INSERT INTO teacherPassword
+                        (teacherId, password)
+                        VALUES
+                        (@teacherId, @password)";
+                            using (SqlCommand cmd = new SqlCommand(insertPassword, con, tran))
+                            {
+                                cmd.Parameters.AddWithValue("@teacherId", data.TeacherId);
+                                cmd.Parameters.AddWithValue("@password", password);
+                                cmd.ExecuteNonQuery();
+                            }
+
+                            tran.Commit();
+                            return true;
+                        }
+                        catch (Exception ex)
+                        {
+                            tran.Rollback();
+                            MessageBox.Show("Error hiring teacher: " + ex.Message);
+                            return false;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Database connection error: " + ex.Message);
+                return false;
+            }
+        }
+
+        // ========================== 7. EXPENSE MANAGEMENT ==========================
         public static bool addExpense(string expenseId, string expenseType, double expenseAmount, string date, string expenseMonth)
         {
             try
@@ -1010,8 +1328,6 @@ namespace ExecutiveSceinceAccadmy.classes
 
                         if (rows > 0)
                         {
-                            //MessageBox.Show("Expense added successfully!", "Success",
-                            //    MessageBoxButtons.OK, MessageBoxIcon.Information);
                             return true;
                         }
                         else
@@ -1028,6 +1344,7 @@ namespace ExecutiveSceinceAccadmy.classes
                 return false;
             }
         }
+
         public static bool expenseOfCurrentYearMonth(string year, string month, DataGridView dtExpense)
         {
             try
@@ -1090,339 +1407,6 @@ namespace ExecutiveSceinceAccadmy.classes
             {
                 MessageBox.Show("Error loading expenses: " + ex.Message);
                 return false;
-            }
-        }
-        public static bool laodSujectAndClassToTeacherHiring(DataGridView dt)
-        {
-            try
-            {
-                //string connectionString = @"Your_Connection_String_Here";
-
-                using (SqlConnection con = new SqlConnection(connectionString))
-                {
-                    con.Open();
-
-                    // Corrected query using SubjectPack for subject names
-                    string query = @"
-                SELECT 
-                    c.className,
-                    sp.subjectName,
-                    s.classId,
-                    s.subjectId,
-                    s.domainId
-                FROM subjectTb s
-                INNER JOIN SubjectPack sp ON s.subjectId = sp.subjectId
-                INNER JOIN classTb c ON s.classId = c.classId
-                ORDER BY s.domainId, s.classId, s.subjectId
-            ";
-
-                    SqlDataAdapter da = new SqlDataAdapter(query, con);
-                    DataTable dtbl = new DataTable();
-                    da.Fill(dtbl);
-
-                    dt.DataSource = dtbl;
-
-                    // Add a checkbox column for selection
-                    if (!dt.Columns.Contains("Select"))
-                    {
-                        DataGridViewCheckBoxColumn chk = new DataGridViewCheckBoxColumn();
-                        chk.HeaderText = "Select";
-                        chk.Name = "Select";
-                        dt.Columns.Insert(0, chk); // Insert checkbox as first column
-                    }
-
-                    // Move classId and subjectId to the end
-                    dt.Columns["classId"].DisplayIndex = dt.Columns.Count - 2;
-                    dt.Columns["subjectId"].DisplayIndex = dt.Columns.Count - 1;
-
-                    dt.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                }
-
-                return true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error loading data: " + ex.Message);
-                return false;
-            }
-        }
-        public static bool HireTeacherWithPassword(TeacherData data, string password, DataGridView dtSubjects)
-        {
-            try
-            {
-                using (SqlConnection con = new SqlConnection(connectionString))
-                {
-                    con.Open();
-                    using (SqlTransaction tran = con.BeginTransaction())
-                    {
-                        try
-                        {
-                            // 1️⃣ Insert teacher info (no isSalaried / isPercentage)
-                            string insertTeacher = @"
-                        INSERT INTO teacherTb
-                        (teacherId, teacherName, teacherQualification, fatherName, fatherCnic, teacherCnic)
-                        VALUES
-                        (@teacherId, @teacherName, @qualification, @fatherName, @fatherCNIC, @teacherCnic)";
-                            using (SqlCommand cmd = new SqlCommand(insertTeacher, con, tran))
-                            {
-                                cmd.Parameters.AddWithValue("@teacherId", data.TeacherId);
-                                cmd.Parameters.AddWithValue("@teacherName", data.TeacherName);
-                                cmd.Parameters.AddWithValue("@qualification", data.Qualification);
-                                cmd.Parameters.AddWithValue("@fatherName", data.FatherName);
-                                cmd.Parameters.AddWithValue("@fatherCNIC", data.FatherCNIC);
-                                cmd.Parameters.AddWithValue("@teacherCnic", data.TeacherCnic);
-                                cmd.ExecuteNonQuery();
-                            }
-
-                            // 2️⃣ Insert teacher address
-                            string insertAddress = @"
-                        INSERT INTO teacherAddTb
-                        (teacherId, address, city, country)
-                        VALUES
-                        (@teacherId, @address, @city, @country)";
-                            using (SqlCommand cmd = new SqlCommand(insertAddress, con, tran))
-                            {
-                                cmd.Parameters.AddWithValue("@teacherId", data.TeacherId);
-                                cmd.Parameters.AddWithValue("@address", data.Address);
-                                cmd.Parameters.AddWithValue("@city", data.AddressCity);
-                                cmd.Parameters.AddWithValue("@country", data.AddressCountry);
-                                cmd.ExecuteNonQuery();
-                            }
-
-                            // 3️⃣ Insert teacher payment info
-                            string insertPayment = @"
-                        INSERT INTO teacherPaymentTb
-                        (teacherId, teacherType, salary, percentage)
-                        VALUES
-                        (@teacherId, @teacherType, @salary, @percentage)";
-                            using (SqlCommand cmd = new SqlCommand(insertPayment, con, tran))
-                            {
-                                cmd.Parameters.AddWithValue("@teacherId", data.TeacherId);
-                                cmd.Parameters.AddWithValue("@teacherType", data.TeacherType);
-                                cmd.Parameters.AddWithValue("@salary", string.IsNullOrEmpty(data.Salary) ? 0 : decimal.Parse(data.Salary));
-                                cmd.Parameters.AddWithValue("@percentage", string.IsNullOrEmpty(data.Percentage) ? 0 : decimal.Parse(data.Percentage));
-                                cmd.ExecuteNonQuery();
-                            }
-
-                            // 4️⃣ Insert selected subjects from DataGridView
-                            string insertSubject = @"
-                        INSERT INTO teacherClassSubjectTb
-                        (teacherId, classId, subjectId, domainId)
-                        VALUES
-                        (@teacherId, @classId, @subjectId, @domainId)";
-                            using (SqlCommand cmd = new SqlCommand(insertSubject, con, tran))
-                            {
-                                foreach (DataGridViewRow row in dtSubjects.Rows)
-                                {
-                                    if (row.Cells["Select"].Value != null && (bool)row.Cells["Select"].Value)
-                                    {
-                                        cmd.Parameters.Clear();
-                                        cmd.Parameters.AddWithValue("@teacherId", data.TeacherId);
-                                        cmd.Parameters.AddWithValue("@classId", Convert.ToInt32(row.Cells["classId"].Value));
-                                        cmd.Parameters.AddWithValue("@subjectId", Convert.ToInt32(row.Cells["subjectId"].Value));
-                                        cmd.Parameters.AddWithValue("@domainId", row.Cells["domainId"].Value.ToString());
-                                        cmd.ExecuteNonQuery();
-                                    }
-                                }
-                            }
-
-                            // 5️⃣ Insert password into teacherPassword table
-                            string insertPassword = @"
-                        INSERT INTO teacherPassword
-                        (teacherId, password)
-                        VALUES
-                        (@teacherId, @password)";
-                            using (SqlCommand cmd = new SqlCommand(insertPassword, con, tran))
-                            {
-                                cmd.Parameters.AddWithValue("@teacherId", data.TeacherId);
-                                cmd.Parameters.AddWithValue("@password", password);
-                                cmd.ExecuteNonQuery();
-                            }
-
-                            tran.Commit();
-                            return true;
-                        }
-                        catch (Exception ex)
-                        {
-                            tran.Rollback();
-                            MessageBox.Show("Error hiring teacher: " + ex.Message);
-                            return false;
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Database connection error: " + ex.Message);
-                return false;
-            }
-        }
-
-        // taeacher attendance 
-        public static List<string> GetAllTeacherNames()
-        {
-            List<string> teacherNames = new List<string>();
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-                string query = "SELECT teacherName FROM teacherTb WHERE is_active = 1"; // Optional filter active teachers
-
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                {
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            string name = reader["teacherName"].ToString();
-                            teacherNames.Add(name);
-                        }
-                    }
-                }
-            }
-
-            return teacherNames;
-        }
-        public static bool markTeacherAttendance(string teacherId, bool isArrival, DateTime attendDate, DateTime attendTime)
-        {
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    conn.Open();
-                    using (SqlTransaction transaction = conn.BeginTransaction())
-                    {
-                        // Check if a record already exists for today
-                        string checkQuery = @"SELECT arrivalTime, departureTime 
-                                      FROM teacherAttendance 
-                                      WHERE teacherId = @teacherId AND attendDate = @date";
-                        using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn, transaction))
-                        {
-                            checkCmd.Parameters.AddWithValue("@teacherId", teacherId);
-                            checkCmd.Parameters.AddWithValue("@date", attendDate.Date);
-
-                            using (SqlDataReader reader = checkCmd.ExecuteReader())
-                            {
-                                if (reader.Read())
-                                {
-                                    // Row exists for today
-                                    DateTime? existingArrival = reader["arrivalTime"] as DateTime?;
-                                    DateTime? existingDeparture = reader["departureTime"] as DateTime?;
-                                    reader.Close();
-
-                                    if (isArrival)
-                                    {
-                                        // Arrival: only update if not already set
-                                        if (existingArrival == null)
-                                        {
-                                            string updateArrival = @"UPDATE teacherAttendance
-                                                             SET arrivalTime = @time, isPresent = 1
-                                                             WHERE teacherId = @teacherId AND attendDate = @date";
-                                            using (SqlCommand cmd = new SqlCommand(updateArrival, conn, transaction))
-                                            {
-                                                cmd.Parameters.AddWithValue("@teacherId", teacherId);
-                                                cmd.Parameters.AddWithValue("@time", attendTime);
-                                                cmd.Parameters.AddWithValue("@date", attendDate.Date);
-                                                cmd.ExecuteNonQuery();
-                                            }
-                                            transaction.Commit();
-                                            return true;
-                                        }
-                                        else
-                                        {
-                                            // Arrival already marked
-                                            transaction.Rollback();
-                                            return false;
-                                        }
-                                    }
-                                    else // Departure
-                                    {
-                                        // Departure: require arrival to exist, departure not set, and time gap >= 1 hour
-                                        if (existingArrival == null)
-                                        {
-                                            // Cannot mark departure before arrival
-                                            transaction.Rollback();
-                                            return false;
-                                        }
-                                        if (existingDeparture != null)
-                                        {
-                                            // Departure already marked
-                                            transaction.Rollback();
-                                            return false;
-                                        }
-                                        // Check time gap
-                                        if (attendTime < existingArrival.Value.AddHours(1))
-                                        {
-                                            // Departure too early
-                                            transaction.Rollback();
-                                            return false;
-                                        }
-
-                                        string updateDeparture = @"UPDATE teacherAttendance
-                                                           SET departureTime = @time
-                                                           WHERE teacherId = @teacherId AND attendDate = @date";
-                                        using (SqlCommand cmd = new SqlCommand(updateDeparture, conn, transaction))
-                                        {
-                                            cmd.Parameters.AddWithValue("@teacherId", teacherId);
-                                            cmd.Parameters.AddWithValue("@time", attendTime);
-                                            cmd.Parameters.AddWithValue("@date", attendDate.Date);
-                                            cmd.ExecuteNonQuery();
-                                        }
-                                        transaction.Commit();
-                                        return true;
-                                    }
-                                }
-                                else
-                                {
-                                    // No row exists for today
-                                    reader.Close();
-
-                                    // Only allow insertion for arrival
-                                    if (isArrival)
-                                    {
-                                        string insertQuery = @"INSERT INTO teacherAttendance (teacherId, attendDate, arrivalTime, isPresent) 
-                                                       VALUES (@teacherId, @date, @time, 1)";
-                                        using (SqlCommand insertCmd = new SqlCommand(insertQuery, conn, transaction))
-                                        {
-                                            insertCmd.Parameters.AddWithValue("@teacherId", teacherId);
-                                            insertCmd.Parameters.AddWithValue("@date", attendDate.Date);
-                                            insertCmd.Parameters.AddWithValue("@time", attendTime);
-                                            insertCmd.ExecuteNonQuery();
-                                        }
-                                        transaction.Commit();
-                                        return true;
-                                    }
-                                    else
-                                    {
-                                        // Attempt to mark departure without any record → reject
-                                        transaction.Rollback();
-                                        return false;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                // Log exception (optional) and show user-friendly message
-                MessageBox.Show("Database error: " + ex.Message);
-                return false;
-            }
-        }
-        public static string GetTeacherIdByName(string teacherName)
-        {
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                conn.Open();
-                string query = "SELECT teacherId FROM teacherTb WHERE teacherName=@teacherName";
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("@teacherName", teacherName);
-                    var result = cmd.ExecuteScalar();
-                    return result?.ToString();
-                }
             }
         }
     }

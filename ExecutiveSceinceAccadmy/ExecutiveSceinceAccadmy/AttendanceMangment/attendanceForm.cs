@@ -1,4 +1,5 @@
-﻿using ExecutiveScienceAcademy.classes;
+﻿using ExecutiveSceinceAccadmy.ReportManagement;
+using ExecutiveScienceAcademy.classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -86,7 +87,11 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
 
         private void btnTeacherAttendRep_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            using (teacherAttendReport teachAttendRep = new teacherAttendReport())
+            {
+                teachAttendRep.ShowDialog();
+            }
         }
     }
 }

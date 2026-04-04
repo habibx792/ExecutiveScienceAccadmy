@@ -1,4 +1,5 @@
 ﻿using ExecutiveSceinceAccadmy.AttendanceMangment;
+using ExecutiveSceinceAccadmy.ReportManagement;
 using ExecutiveScienceAcademy.classes;
 using System;
 using System.Collections.Generic;
@@ -35,11 +36,20 @@ namespace ExecutiveSceinceAccadmy.DashBoadMangement
         private void btnAttendMange_Click(object sender, EventArgs e)
         {
             this.Hide();
-            using(TeacheraAttendance teachAttend=new TeacheraAttendance())
+            using (TeacheraAttendance teachAttend = new TeacheraAttendance())
             {
                 teachAttend.ShowDialog();
             }
             this.Show();
+        }
+
+        private void btnTeacherAttendRep_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (teacherAttendReport teachAttendRep = new teacherAttendReport())
+            {
+                teachAttendRep.ShowDialog();
+            }
         }
     }
 }
