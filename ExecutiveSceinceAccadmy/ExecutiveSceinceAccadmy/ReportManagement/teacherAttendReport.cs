@@ -47,7 +47,8 @@ namespace ExecutiveSceinceAccadmy.ReportManagement
             lblMonth.Visible = true;
             dataHandler.LoadMonths(cmbMonth);
             cmbMonth.SelectedIndex = 0;
-            rdMonth.Checked = true;
+            rdMonth.Checked = false;
+            rdDay.Checked = true;
             lblMonth.Visible = true;
             lblDate.Visible = false;
             cmbMonth.Visible = true;
@@ -72,7 +73,7 @@ namespace ExecutiveSceinceAccadmy.ReportManagement
             // Header style (bolder)
             dtDashAttend.EnableHeadersVisualStyles = false;
             dtDashAttend.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            //dtDashAttend.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 62, 80);
+            dtDashAttend.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(45, 62, 80);
             dtDashAttend.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dtDashAttend.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10.5f, FontStyle.Bold);
             dtDashAttend.ColumnHeadersHeight = 40;
@@ -80,11 +81,11 @@ namespace ExecutiveSceinceAccadmy.ReportManagement
             // Row style (slightly bolder)
             dtDashAttend.DefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold); // Made bold
             dtDashAttend.DefaultCellStyle.ForeColor = Color.Black;
-            //dtDashAttend.DefaultCellStyle.SelectionBackColor = Color.FromArgb(0, 120, 215);
+            dtDashAttend.DefaultCellStyle.SelectionBackColor = Color.FromArgb(0, 120, 215);
             dtDashAttend.DefaultCellStyle.SelectionForeColor = Color.White;
 
             // Alternating rows (striped look)
-            //dtDashAttend.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(245, 245, 245);
+            dtDashAttend.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(245, 245, 245);
 
             // Row height
             dtDashAttend.RowTemplate.Height = 35;
