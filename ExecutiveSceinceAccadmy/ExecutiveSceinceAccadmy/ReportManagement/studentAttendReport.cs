@@ -14,9 +14,9 @@ using System.Windows.Forms;
 
 namespace ExecutiveSceinceAccadmy.AttendanceMangment
 {
-    public partial class AttendanceDashBoard : Form
+    public partial class studentAttendReport : Form
     {
-        public AttendanceDashBoard()
+        public studentAttendReport()
         {
             InitializeComponent();
             UI.Instance.StyleForm(this,
@@ -121,7 +121,37 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
 
             }
         }
+        /// <summary>
+        /// Checks if the DataGridView contains at least one valid attendance row.
+        /// A valid row is not the "new row" placeholder and has a non‑null attendDate value.
+        /// </summary>
+        /// <param name="dt">The DataGridView to validate.</param>
+        /// <returns>True if at least one valid row exists; otherwise false.</returns>
+        private bool CheckValidityOfDataGrid(DataGridView dt)
+        {
+            if (dt == null || dt.Rows.Count == 0)
+                return false;
 
+            // If the DataGridView is bound to a DataTable
+            if (dt.DataSource is DataTable table)
+            {
+                return table.AsEnumerable().Any(row => row["attendDate"] != DBNull.Value);
+            }
+            else
+            {
+                // Fallback: iterate over rows directly
+                foreach (DataGridViewRow row in dt.Rows)
+                {
+                    if (!row.IsNewRow &&
+                        row.Cells["attendDate"].Value != null &&
+                        !string.IsNullOrWhiteSpace(row.Cells["attendDate"].Value.ToString()))
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -149,7 +179,47 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
                     searchMonth,
                     "MMMM",
                     CultureInfo.InvariantCulture
-                ).Month; bool success = DB.ShowAttendanceOfStudentOfMonth(studentRegistratoionNo, monthNumber, dtDashAttend);
+                ).Month;
+                bool success = DB.ShowAttendanceOfStudentOfMonth(studentRegistratoionNo, monthNumber, dtDashAttend);
+                if (success && dtDashAttend.Rows.Count > 0)
+                {
+                    bool hasValidRows = false;
+                    if (dtDashAttend.DataSource is DataTable table)
+                    {
+                        hasValidRows = table.AsEnumerable().Any(row => row["attendDate"] != DBNull.Value);
+                    }
+                    else
+                    {
+                        // Fallback: check if any row has a non-null attendDate cell
+                        foreach (DataGridViewRow row in dtDashAttend.Rows)
+                        {
+                            if (!row.IsNewRow && row.Cells["attendDate"].Value != null)
+                            {
+                                hasValidRows = true;
+                                break;
+                            }
+                        }
+                    }
+
+                    if (success && CheckValidityOfDataGrid(dtDashAttend))
+                    {
+                        DialogResult result = MessageBox.Show(
+                     "Do you want to print the attendance report?",
+                     "Print Confirmation",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+   );
+
+                        if (result == DialogResult.Yes)
+                        {
+                            printEngine.printStudentAttence(dtDashAttend);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No attendance records found for this month.");
+                    }
+                }
                 makeDashBoardUiGood();
 
 

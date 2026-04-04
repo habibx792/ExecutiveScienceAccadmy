@@ -1,6 +1,6 @@
 ﻿namespace ExecutiveSceinceAccadmy.AttendanceMangment
 {
-    partial class AttendanceDashBoard
+    partial class studentAttendReport
     {
         /// <summary>
         /// Required designer variable.

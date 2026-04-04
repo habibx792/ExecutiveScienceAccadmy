@@ -66,7 +66,7 @@ namespace ExecutiveSceinceAccadmy.DashBoadMangement
         private void btnAttendMange_Click(object sender, EventArgs e)
         {
             this.Hide();
-            using (AttendanceDashBoard checkAttend = new AttendanceDashBoard())
+            using (studentAttendReport checkAttend = new studentAttendReport())
             {
                 checkAttend.ShowDialog();
             }

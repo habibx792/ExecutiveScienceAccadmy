@@ -271,5 +271,94 @@ Percentage      : {teacher.Percentage}
 
             return false;
         }
+        //METHOD TO GENERATE ATTENDANCE DOCUMENT
+        internal static string GenerateAttendanceDocument(DataGridView dtAttendance, string studentName, string registrationNo, int month)
+        {
+            if (dtAttendance == null || dtAttendance.Rows.Count == 0)
+                return "No attendance records found.";
+
+            string monthName = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(month);
+
+            StringBuilder document = new StringBuilder();
+            document.AppendLine("========== EXECUTIVE SCIENCE ACADEMY ==========");
+            document.AppendLine("             STUDENT ATTENDANCE REPORT");
+            document.AppendLine();
+            document.AppendLine($"Student Name     : {studentName}");
+            document.AppendLine($"Registration No  : {registrationNo}");
+            document.AppendLine($"Month            : {monthName}");
+            document.AppendLine();
+            document.AppendLine("------------------------------------------------");
+            document.AppendLine("Date        | Status     | Type");
+            document.AppendLine("------------------------------------------------");
+
+            foreach (DataGridViewRow row in dtAttendance.Rows)
+            {
+                if (row.IsNewRow) continue;
+
+                string date = row.Cells["attendDate"]?.Value?.ToString() ?? "";
+                string isPresent = row.Cells["isPresent"]?.Value?.ToString() ?? "";
+                string attType = row.Cells["attenceType"]?.Value?.ToString() ?? "";
+
+                // Format present/absent nicely
+                string status = isPresent == "1" ? "Present" : "Absent";
+
+                document.AppendLine($"{date,-12} | {status,-10} | {attType}");
+            }
+
+            document.AppendLine("------------------------------------------------");
+            document.AppendLine($"Total Records     : {dtAttendance.Rows.Count}");
+            document.AppendLine("================================================");
+
+            return document.ToString();
+        }
+        internal static string SaveAttendanceDocument(string content, string studentName, string registrationNo)
+        {
+            SaveFileDialog saveDialog = new SaveFileDialog();
+            saveDialog.Title = "Save Attendance Report";
+            saveDialog.Filter = "Text File (*.txt)|*.txt";
+            saveDialog.FileName = $"{studentName}_{registrationNo}_Attendance_{dataHandler.getRandomeTimeStr()}.txt";
+
+            if (saveDialog.ShowDialog() == DialogResult.OK)
+            {
+                File.WriteAllText(saveDialog.FileName, content);
+                return saveDialog.FileName;
+            }
+            return null;
+        }
+        internal static bool printStudentAttence(DataGridView dt, string studentName, string registrationNo, int month)
+        {
+            if (dt == null || dt.Rows.Count == 0)
+            {
+                Console.WriteLine("No attendance data to print.");
+                return false;
+            }
+
+            string document = GenerateAttendanceDocument(dt, studentName, registrationNo, month);
+            string filePath = SaveAttendanceDocument(document, studentName, registrationNo);
+            if (string.IsNullOrEmpty(filePath))
+                return false;
+            PrintFile(filePath);
+            return true;
+        }
+        internal static bool printStudentAttence(DataGridView dt)
+        {
+            if (dt.Rows.Count == 0) return false;
+
+            string studentName = "";
+            string regNo = "";
+            int month = DateTime.Now.Month; 
+
+            if (dt.Columns.Contains("student_name") && dt.Rows[0].Cells["student_name"].Value != null)
+                studentName = dt.Rows[0].Cells["student_name"].Value.ToString();
+            if (dt.Columns.Contains("stdRegisNo") && dt.Rows[0].Cells["stdRegisNo"].Value != null)
+                regNo = dt.Rows[0].Cells["stdRegisNo"].Value.ToString();
+            if (dt.Columns.Contains("attendDate") && dt.Rows[0].Cells["attendDate"].Value != null)
+            {
+                if (DateTime.TryParse(dt.Rows[0].Cells["attendDate"].Value.ToString(), out DateTime firstDate))
+                    month = firstDate.Month;
+            }
+
+            return printStudentAttence(dt, studentName, regNo, month);
+        }
     }
 }

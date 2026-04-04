@@ -7,7 +7,7 @@
     <Compile Update="AttendanceMangment\classWisAttencedance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ReportManagement\AttendanceDashBoard.cs">
+    <Compile Update="ReportManagement\studentAttendReport.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="AttendanceMangment\TeacheraAttendance.cs">
@@ -65,6 +65,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ReportManagement\ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ReportManagement\teacherAttendReport.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ResultManagement\resultFrom.cs">
