@@ -74,9 +74,9 @@ namespace ExecutiveSceinceAccadmy.ExpenseMangenment
         private void bntReport_Click(object sender, EventArgs e)
         {
             this.Hide();
-            using(expenseReport ExpenseForm = new ExpenseForm())
-            { 
-                expenseReport.ShowDialog(); 
+            using(expenseReport ExpenseForm = new expenseReport())
+            {
+                ExpenseForm.ShowDialog(); 
             }
             this.Show();
 
