@@ -44,10 +44,9 @@
             // 
             rdDept.AutoSize = true;
             rdDept.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            rdDept.Location = new Point(471, 37);
-            rdDept.Margin = new Padding(4, 5, 4, 5);
+            rdDept.Location = new Point(366, 24);
             rdDept.Name = "rdDept";
-            rdDept.Size = new Size(130, 32);
+            rdDept.Size = new Size(105, 25);
             rdDept.TabIndex = 0;
             rdDept.TabStop = true;
             rdDept.Text = "Departure";
@@ -57,10 +56,9 @@
             // 
             rdArrival.AutoSize = true;
             rdArrival.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            rdArrival.Location = new Point(149, 49);
-            rdArrival.Margin = new Padding(4, 5, 4, 5);
+            rdArrival.Location = new Point(116, 32);
             rdArrival.Name = "rdArrival";
-            rdArrival.Size = new Size(150, 32);
+            rdArrival.Size = new Size(121, 25);
             rdArrival.TabIndex = 1;
             rdArrival.TabStop = true;
             rdArrival.Text = "Arrival Time";
@@ -69,10 +67,9 @@
             // btnTeachAttence
             // 
             btnTeachAttence.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnTeachAttence.Location = new Point(483, 223);
-            btnTeachAttence.Margin = new Padding(4, 5, 4, 5);
+            btnTeachAttence.Location = new Point(376, 145);
             btnTeachAttence.Name = "btnTeachAttence";
-            btnTeachAttence.Size = new Size(96, 48);
+            btnTeachAttence.Size = new Size(75, 45);
             btnTeachAttence.TabIndex = 2;
             btnTeachAttence.Text = "Mark";
             btnTeachAttence.UseVisualStyleBackColor = true;
@@ -82,19 +79,17 @@
             // 
             cmbTeaches.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             cmbTeaches.FormattingEnabled = true;
-            cmbTeaches.Location = new Point(149, 150);
-            cmbTeaches.Margin = new Padding(4, 5, 4, 5);
+            cmbTeaches.Location = new Point(116, 98);
             cmbTeaches.Name = "cmbTeaches";
-            cmbTeaches.Size = new Size(430, 36);
+            cmbTeaches.Size = new Size(335, 29);
             cmbTeaches.TabIndex = 3;
             // 
             // dtTime
             // 
             dtTime.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            dtTime.Location = new Point(149, 86);
-            dtTime.Margin = new Padding(4, 5, 4, 5);
+            dtTime.Location = new Point(116, 56);
             dtTime.Name = "dtTime";
-            dtTime.Size = new Size(430, 34);
+            dtTime.Size = new Size(335, 29);
             dtTime.TabIndex = 4;
             // 
             // panel1
@@ -105,19 +100,19 @@
             panel1.Controls.Add(cmbTeaches);
             panel1.Controls.Add(rdArrival);
             panel1.Controls.Add(btnTeachAttence);
-            panel1.Location = new Point(27, 128);
+            panel1.Location = new Point(21, 83);
+            panel1.Margin = new Padding(2, 2, 2, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(717, 397);
+            panel1.Size = new Size(558, 259);
             panel1.TabIndex = 5;
             // 
             // pnLogo
             // 
             pnLogo.BackColor = Color.IndianRed;
             pnLogo.Controls.Add(label1);
-            pnLogo.Location = new Point(27, 26);
-            pnLogo.Margin = new Padding(4, 5, 4, 5);
+            pnLogo.Location = new Point(21, 17);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(717, 103);
+            pnLogo.Size = new Size(558, 67);
             pnLogo.TabIndex = 8;
             // 
             // label1
@@ -125,23 +120,21 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(90, 24);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(70, 16);
             label1.Name = "label1";
-            label1.Size = new Size(537, 54);
+            label1.Size = new Size(426, 45);
             label1.TabIndex = 15;
             label1.Text = "Executive Science Academy";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // TeacheraAttendance
             // 
-            AutoScaleDimensions = new SizeF(9F, 23F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(772, 546);
+            ClientSize = new Size(600, 356);
             Controls.Add(pnLogo);
             Controls.Add(panel1);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "TeacheraAttendance";
             Text = "TeacheraAttendance";
             Load += TeacheraAttendance_Load;
