@@ -1,9 +1,10 @@
 ﻿using ExecutiveSceinceAccadmy.ReportManagement;
-using ExecutiveScienceAcademy.classes;
+            using ExecutiveScienceAcademy.classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -74,12 +75,11 @@ namespace ExecutiveSceinceAccadmy.ExpenseMangenment
         private void bntReport_Click(object sender, EventArgs e)
         {
             this.Hide();
-            using(expenseReport expenseReport = new expenseReport())
-            { 
-                expenseReport.ShowDialog(); 
+            using(ReportForm reportForm = new ReportForm())
+            {
+                reportForm.ShowDialog();
             }
             this.Show();
-
         }
     }
 }

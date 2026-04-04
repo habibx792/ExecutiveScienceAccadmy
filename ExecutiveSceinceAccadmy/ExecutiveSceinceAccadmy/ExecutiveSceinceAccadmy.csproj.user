@@ -58,6 +58,9 @@
     <Compile Update="RegisTrationForms\StudentRegistration\StudentRegistration.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ReportManagement\expenseReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ReportManagement\feeReports.cs">
       <SubType>Form</SubType>
     </Compile>

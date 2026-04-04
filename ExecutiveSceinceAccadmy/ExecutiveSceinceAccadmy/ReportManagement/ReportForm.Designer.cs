@@ -47,18 +47,16 @@
             pnMain.Controls.Add(btnCurrYearReport);
             pnMain.Controls.Add(btnFromDate);
             pnMain.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            pnMain.Location = new Point(33, 156);
-            pnMain.Margin = new Padding(4, 5, 4, 5);
+            pnMain.Location = new Point(26, 102);
             pnMain.Name = "pnMain";
-            pnMain.Size = new Size(766, 484);
+            pnMain.Size = new Size(596, 316);
             pnMain.TabIndex = 28;
             // 
             // btnCurrMon
             // 
-            btnCurrMon.Location = new Point(418, 38);
-            btnCurrMon.Margin = new Padding(4, 5, 4, 5);
+            btnCurrMon.Location = new Point(325, 25);
             btnCurrMon.Name = "btnCurrMon";
-            btnCurrMon.Size = new Size(284, 104);
+            btnCurrMon.Size = new Size(221, 68);
             btnCurrMon.TabIndex = 26;
             btnCurrMon.Text = "Expense Report";
             btnCurrMon.UseVisualStyleBackColor = true;
@@ -66,10 +64,9 @@
             // 
             // btnAddExp
             // 
-            btnAddExp.Location = new Point(70, 38);
-            btnAddExp.Margin = new Padding(4, 5, 4, 5);
+            btnAddExp.Location = new Point(54, 25);
             btnAddExp.Name = "btnAddExp";
-            btnAddExp.Size = new Size(294, 104);
+            btnAddExp.Size = new Size(229, 68);
             btnAddExp.TabIndex = 24;
             btnAddExp.Text = "Fee Reports";
             btnAddExp.UseVisualStyleBackColor = true;
@@ -77,20 +74,18 @@
             // 
             // btnCurrYearReport
             // 
-            btnCurrYearReport.Location = new Point(70, 164);
-            btnCurrYearReport.Margin = new Padding(4, 5, 4, 5);
+            btnCurrYearReport.Location = new Point(54, 107);
             btnCurrYearReport.Name = "btnCurrYearReport";
-            btnCurrYearReport.Size = new Size(294, 100);
+            btnCurrYearReport.Size = new Size(229, 65);
             btnCurrYearReport.TabIndex = 25;
             btnCurrYearReport.Text = "Current Year";
             btnCurrYearReport.UseVisualStyleBackColor = true;
             // 
             // btnFromDate
             // 
-            btnFromDate.Location = new Point(418, 164);
-            btnFromDate.Margin = new Padding(4, 5, 4, 5);
+            btnFromDate.Location = new Point(325, 107);
             btnFromDate.Name = "btnFromDate";
-            btnFromDate.Size = new Size(284, 100);
+            btnFromDate.Size = new Size(221, 65);
             btnFromDate.TabIndex = 20;
             btnFromDate.Text = "From ToDay";
             btnFromDate.UseVisualStyleBackColor = true;
@@ -99,10 +94,9 @@
             // 
             pnLogo.BackColor = Color.IndianRed;
             pnLogo.Controls.Add(label6);
-            pnLogo.Location = new Point(33, 25);
-            pnLogo.Margin = new Padding(4, 5, 4, 5);
+            pnLogo.Location = new Point(26, 16);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(766, 135);
+            pnLogo.Size = new Size(596, 88);
             pnLogo.TabIndex = 27;
             // 
             // label6
@@ -110,22 +104,22 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.Black;
-            label6.Location = new Point(115, 40);
-            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Location = new Point(89, 26);
             label6.Name = "label6";
-            label6.Size = new Size(537, 54);
+            label6.Size = new Size(426, 45);
             label6.TabIndex = 31;
             label6.Text = "Executive Science Academy";
             label6.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // ReportForm
             // 
-            AutoScaleDimensions = new SizeF(9F, 23F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(854, 686);
+            ClientSize = new Size(664, 447);
             Controls.Add(pnMain);
             Controls.Add(pnLogo);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "ReportForm";
             Text = "ReportForm";
             Load += ReportForm_Load;

@@ -1,4 +1,5 @@
 ﻿using ExecutiveSceinceAccadmy.ExpenseMangenment;
+using ExecutiveSceinceAccadmy.ReportManagement;
 using ExecutiveScienceAcademy.classes;
 using System;
 using System.Collections.Generic;
@@ -73,11 +74,11 @@ namespace ExecutiveSceinceAccadmy.ReportManagement
         private void btnCurrMon_Click(object sender, EventArgs e)
         {
             this.Hide();
-            using(expenseReport expenseReport = new expenseReport()) 
-                {
-                    expenseReport.ShowDialog();
-                }
-                this.Show();
+            using (ReportForm reportForm = new ReportForm())
+            {
+                reportForm.ShowDialog();
+            }
+            this.Show();
         }
     }
 }
