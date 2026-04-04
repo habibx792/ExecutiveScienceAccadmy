@@ -35,12 +35,12 @@
             txtReginstraion = new TextBox();
             panel1 = new Panel();
             panel2 = new Panel();
+            lbLogo = new Label();
             cmbMonth = new ComboBox();
             lblDate = new Label();
             label2 = new Label();
             rdMonth = new RadioButton();
             rdDay = new RadioButton();
-            lbLogo = new Label();
             ((System.ComponentModel.ISupportInitialize)dtDashAttend).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -51,9 +51,10 @@
             btnSearch.BackColor = Color.Black;
             btnSearch.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSearch.ForeColor = Color.White;
-            btnSearch.Location = new Point(603, 251);
+            btnSearch.Location = new Point(469, 164);
+            btnSearch.Margin = new Padding(2, 2, 2, 2);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(139, 59);
+            btnSearch.Size = new Size(108, 38);
             btnSearch.TabIndex = 1;
             btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = false;
@@ -62,47 +63,52 @@
             // dtDashAttend
             // 
             dtDashAttend.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtDashAttend.Location = new Point(0, 343);
+            dtDashAttend.Location = new Point(0, 224);
+            dtDashAttend.Margin = new Padding(2, 2, 2, 2);
             dtDashAttend.Name = "dtDashAttend";
             dtDashAttend.RowHeadersWidth = 51;
-            dtDashAttend.Size = new Size(1141, 340);
+            dtDashAttend.Size = new Size(887, 222);
             dtDashAttend.TabIndex = 2;
             dtDashAttend.CellContentClick += dataGridView1_CellContentClick;
             // 
             // dtDate
             // 
             dtDate.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dtDate.Location = new Point(412, 134);
+            dtDate.Location = new Point(320, 87);
+            dtDate.Margin = new Padding(2, 2, 2, 2);
             dtDate.Name = "dtDate";
-            dtDate.Size = new Size(330, 31);
+            dtDate.Size = new Size(258, 27);
             dtDate.TabIndex = 3;
             // 
             // lblMonth
             // 
             lblMonth.AutoSize = true;
             lblMonth.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            lblMonth.Location = new Point(301, 137);
+            lblMonth.Location = new Point(234, 89);
+            lblMonth.Margin = new Padding(2, 0, 2, 0);
             lblMonth.Name = "lblMonth";
-            lblMonth.Size = new Size(75, 28);
+            lblMonth.Size = new Size(61, 21);
             lblMonth.TabIndex = 4;
             lblMonth.Text = "Month";
             // 
             // txtReginstraion
             // 
             txtReginstraion.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtReginstraion.Location = new Point(412, 197);
+            txtReginstraion.Location = new Point(320, 128);
+            txtReginstraion.Margin = new Padding(2, 2, 2, 2);
             txtReginstraion.Name = "txtReginstraion";
             txtReginstraion.PlaceholderText = "Enter Registration Number";
-            txtReginstraion.Size = new Size(330, 34);
+            txtReginstraion.Size = new Size(258, 29);
             txtReginstraion.TabIndex = 6;
             // 
             // panel1
             // 
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(dtDashAttend);
-            panel1.Location = new Point(21, 12);
+            panel1.Location = new Point(11, 11);
+            panel1.Margin = new Padding(2, 2, 2, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1142, 687);
+            panel1.Size = new Size(888, 448);
             panel1.TabIndex = 7;
             panel1.Paint += panel1_Paint;
             // 
@@ -120,27 +126,42 @@
             panel2.Controls.Add(rdDay);
             panel2.Controls.Add(txtReginstraion);
             panel2.Location = new Point(0, 0);
+            panel2.Margin = new Padding(2, 2, 2, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1141, 346);
+            panel2.Size = new Size(887, 226);
             panel2.TabIndex = 13;
             panel2.Paint += panel2_Paint;
+            // 
+            // lbLogo
+            // 
+            lbLogo.AutoSize = true;
+            lbLogo.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbLogo.ForeColor = Color.Black;
+            lbLogo.Location = new Point(227, 0);
+            lbLogo.Name = "lbLogo";
+            lbLogo.Size = new Size(426, 45);
+            lbLogo.TabIndex = 13;
+            lbLogo.Text = "Executive Science Academy";
+            lbLogo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // cmbMonth
             // 
             cmbMonth.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cmbMonth.FormattingEnabled = true;
-            cmbMonth.Location = new Point(412, 133);
+            cmbMonth.Location = new Point(320, 87);
+            cmbMonth.Margin = new Padding(2, 2, 2, 2);
             cmbMonth.Name = "cmbMonth";
-            cmbMonth.Size = new Size(330, 36);
+            cmbMonth.Size = new Size(258, 29);
             cmbMonth.TabIndex = 7;
             // 
             // lblDate
             // 
             lblDate.AutoSize = true;
             lblDate.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            lblDate.Location = new Point(313, 133);
+            lblDate.Location = new Point(243, 87);
+            lblDate.Margin = new Padding(2, 0, 2, 0);
             lblDate.Name = "lblDate";
-            lblDate.Size = new Size(57, 28);
+            lblDate.Size = new Size(46, 21);
             lblDate.TabIndex = 12;
             lblDate.Text = "Date";
             // 
@@ -148,9 +169,10 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label2.Location = new Point(214, 199);
+            label2.Location = new Point(166, 130);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(162, 28);
+            label2.Size = new Size(130, 21);
             label2.TabIndex = 11;
             label2.Text = "Registration No";
             // 
@@ -158,9 +180,10 @@
             // 
             rdMonth.AutoSize = true;
             rdMonth.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rdMonth.Location = new Point(581, 83);
+            rdMonth.Location = new Point(452, 54);
+            rdMonth.Margin = new Padding(2, 2, 2, 2);
             rdMonth.Name = "rdMonth";
-            rdMonth.Size = new Size(195, 32);
+            rdMonth.Size = new Size(157, 25);
             rdMonth.TabIndex = 10;
             rdMonth.TabStop = true;
             rdMonth.Text = "Search By Month";
@@ -171,37 +194,24 @@
             // 
             rdDay.AutoSize = true;
             rdDay.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rdDay.Location = new Point(401, 83);
+            rdDay.Location = new Point(312, 54);
+            rdDay.Margin = new Padding(2, 2, 2, 2);
             rdDay.Name = "rdDay";
-            rdDay.Size = new Size(176, 32);
+            rdDay.Size = new Size(142, 25);
             rdDay.TabIndex = 9;
             rdDay.TabStop = true;
             rdDay.Text = "Search by Date";
             rdDay.UseVisualStyleBackColor = true;
             rdDay.CheckedChanged += rdDay_CheckedChanged;
             // 
-            // lbLogo
+            // studentAttendReport
             // 
-            lbLogo.AutoSize = true;
-            lbLogo.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbLogo.ForeColor = Color.Black;
-            lbLogo.Location = new Point(292, 0);
-            lbLogo.Margin = new Padding(4, 0, 4, 0);
-            lbLogo.Name = "lbLogo";
-            lbLogo.Size = new Size(537, 54);
-            lbLogo.TabIndex = 13;
-            lbLogo.Text = "Executive Science Academy";
-            lbLogo.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // AttendanceDashBoard
-            // 
-            AutoScaleDimensions = new SizeF(9F, 23F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(1182, 705);
+            ClientSize = new Size(910, 468);
             Controls.Add(panel1);
-            Margin = new Padding(4, 5, 4, 5);
-            Name = "AttendanceDashBoard";
+            Name = "studentAttendReport";
             Text = "markAttedance";
             Load += AttendanceDashBoard_Load;
             ((System.ComponentModel.ISupportInitialize)dtDashAttend).EndInit();

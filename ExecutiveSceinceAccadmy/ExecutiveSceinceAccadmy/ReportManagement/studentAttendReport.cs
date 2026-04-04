@@ -34,7 +34,8 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
             lblMonth.Visible = true;
             dataHandler.LoadMonths(cmbMonth);
             cmbMonth.SelectedIndex = 0;
-            rdMonth.Checked = true;
+            rdMonth.Checked = false;
+            rdDay.Checked = true;
             lblMonth.Visible = true;
             lblDate.Visible = false;
             cmbMonth.Visible = true;

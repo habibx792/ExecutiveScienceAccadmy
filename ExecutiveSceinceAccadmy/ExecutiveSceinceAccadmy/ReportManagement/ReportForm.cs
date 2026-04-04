@@ -1,5 +1,4 @@
 ﻿using ExecutiveSceinceAccadmy.ExpenseMangenment;
-using ExecutiveSceinceAccadmy.ReportManagement;
 using ExecutiveScienceAcademy.classes;
 using System;
 using System.Collections.Generic;
@@ -74,9 +73,10 @@ namespace ExecutiveSceinceAccadmy.ReportManagement
         private void btnCurrMon_Click(object sender, EventArgs e)
         {
             this.Hide();
-            using (ReportForm reportForm = new ReportForm())
+            // Open the expense report form. The project provides `checkExpense` for expense reports.
+            using (var expenseForm = new ExecutiveSceinceAccadmy.ExpenseMangenment.checkExpense())
             {
-                reportForm.ShowDialog();
+                expenseForm.ShowDialog();
             }
             this.Show();
         }

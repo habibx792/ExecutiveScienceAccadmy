@@ -231,7 +231,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(914, 534);
+            ClientSize = new Size(910, 515);
             Controls.Add(panel1);
             Name = "teacherAttendReport";
             Text = "teacherAttendReport";
