@@ -177,26 +177,12 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
                 bool success = DB.ShowAttendanceOfStudentOfMonth(studentRegistratoionNo, monthNumber, dtDashAttend);
                 if (success && dtDashAttend.Rows.Count > 0)
                 {
-                    bool hasValidRows = false;
-                    if (dtDashAttend.DataSource is DataTable table)
-                    {
-                        hasValidRows = table.AsEnumerable().Any(row => row["attendDate"] != DBNull.Value);
-                    }
-                    else
-                    {
-                        // Fallback: check if any row has a non-null attendDate cell
-                        foreach (DataGridViewRow row in dtDashAttend.Rows)
-                        {
-                            if (!row.IsNewRow && row.Cells["attendDate"].Value != null)
-                            {
-                                hasValidRows = true;
-                                break;
-                            }
-                        }
-                    }
+                   
+                    
 
                     if (success && CheckValidityOfDataGrid(dtDashAttend))
                     {
+                        btnSearch.Text = "Print Report";
                         DialogResult result = MessageBox.Show(
                      "Do you want to print the attendance report?",
                      "Print Confirmation",
