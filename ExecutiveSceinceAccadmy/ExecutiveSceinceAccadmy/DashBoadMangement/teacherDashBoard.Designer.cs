@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             panel2 = new Panel();
+            btnTeacherAttendRep = new Button();
             btnFeeMange = new Button();
             btnAttendMange = new Button();
             btnRegisMange = new Button();
             pnLogo = new Panel();
             lbLogo = new Label();
-            btnTeacherAttendRep = new Button();
             panel2.SuspendLayout();
             pnLogo.SuspendLayout();
             SuspendLayout();
@@ -47,44 +47,59 @@
             panel2.Controls.Add(btnAttendMange);
             panel2.Controls.Add(btnRegisMange);
             panel2.Location = new Point(23, 97);
-            panel2.Margin = new Padding(2, 2, 2, 2);
+            panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
             panel2.Size = new Size(506, 345);
             panel2.TabIndex = 17;
             // 
+            // btnTeacherAttendRep
+            // 
+            btnTeacherAttendRep.BackColor = SystemColors.Highlight;
+            btnTeacherAttendRep.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnTeacherAttendRep.Location = new Point(144, 265);
+            btnTeacherAttendRep.Name = "btnTeacherAttendRep";
+            btnTeacherAttendRep.Size = new Size(225, 65);
+            btnTeacherAttendRep.TabIndex = 26;
+            btnTeacherAttendRep.Text = "Teacher Attendce Report";
+            btnTeacherAttendRep.UseVisualStyleBackColor = false;
+            btnTeacherAttendRep.Click += btnTeacherAttendRep_Click;
+            // 
             // btnFeeMange
             // 
+            btnFeeMange.BackColor = SystemColors.Highlight;
             btnFeeMange.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
             btnFeeMange.Location = new Point(144, 122);
-            btnFeeMange.Margin = new Padding(2, 2, 2, 2);
+            btnFeeMange.Margin = new Padding(2);
             btnFeeMange.Name = "btnFeeMange";
             btnFeeMange.Size = new Size(225, 60);
             btnFeeMange.TabIndex = 12;
             btnFeeMange.Text = "View Fee/Salary Collection";
-            btnFeeMange.UseVisualStyleBackColor = true;
+            btnFeeMange.UseVisualStyleBackColor = false;
             // 
             // btnAttendMange
             // 
+            btnAttendMange.BackColor = SystemColors.Highlight;
             btnAttendMange.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
             btnAttendMange.Location = new Point(144, 45);
-            btnAttendMange.Margin = new Padding(2, 2, 2, 2);
+            btnAttendMange.Margin = new Padding(2);
             btnAttendMange.Name = "btnAttendMange";
             btnAttendMange.Size = new Size(225, 60);
             btnAttendMange.TabIndex = 8;
             btnAttendMange.Text = "Mark Attendance";
-            btnAttendMange.UseVisualStyleBackColor = true;
+            btnAttendMange.UseVisualStyleBackColor = false;
             btnAttendMange.Click += btnAttendMange_Click;
             // 
             // btnRegisMange
             // 
+            btnRegisMange.BackColor = SystemColors.Highlight;
             btnRegisMange.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
             btnRegisMange.Location = new Point(144, 200);
-            btnRegisMange.Margin = new Padding(2, 2, 2, 2);
+            btnRegisMange.Margin = new Padding(2);
             btnRegisMange.Name = "btnRegisMange";
             btnRegisMange.Size = new Size(225, 60);
             btnRegisMange.TabIndex = 1;
             btnRegisMange.Text = "View Subject Collection";
-            btnRegisMange.UseVisualStyleBackColor = true;
+            btnRegisMange.UseVisualStyleBackColor = false;
             // 
             // pnLogo
             // 
@@ -107,17 +122,6 @@
             lbLogo.Text = "Executive Science Academy";
             lbLogo.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // btnTeacherAttendRep
-            // 
-            btnTeacherAttendRep.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnTeacherAttendRep.Location = new Point(144, 265);
-            btnTeacherAttendRep.Name = "btnTeacherAttendRep";
-            btnTeacherAttendRep.Size = new Size(225, 65);
-            btnTeacherAttendRep.TabIndex = 26;
-            btnTeacherAttendRep.Text = "Teacher Attendce Report";
-            btnTeacherAttendRep.UseVisualStyleBackColor = true;
-            btnTeacherAttendRep.Click += btnTeacherAttendRep_Click;
-            // 
             // teacherDashBoard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -126,7 +130,7 @@
             ClientSize = new Size(551, 469);
             Controls.Add(pnLogo);
             Controls.Add(panel2);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "teacherDashBoard";
             Text = "teacherDashBoard";
             Load += teacherDashBoard_Load;

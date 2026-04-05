@@ -42,10 +42,9 @@
             btnSearch.BackColor = Color.Black;
             btnSearch.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSearch.ForeColor = Color.White;
-            btnSearch.Location = new Point(876, 12);
-            btnSearch.Margin = new Padding(4, 5, 4, 5);
+            btnSearch.Location = new Point(681, 8);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(159, 52);
+            btnSearch.Size = new Size(124, 34);
             btnSearch.TabIndex = 0;
             btnSearch.Text = "Search Class";
             btnSearch.UseVisualStyleBackColor = false;
@@ -55,11 +54,10 @@
             // 
             dtGridAttence.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtGridAttence.Columns.AddRange(new DataGridViewColumn[] { colDate, colStudentName, colGrade, colPresent });
-            dtGridAttence.Location = new Point(4, 278);
-            dtGridAttence.Margin = new Padding(4, 5, 4, 5);
+            dtGridAttence.Location = new Point(3, 181);
             dtGridAttence.Name = "dtGridAttence";
             dtGridAttence.RowHeadersWidth = 51;
-            dtGridAttence.Size = new Size(1202, 405);
+            dtGridAttence.Size = new Size(935, 264);
             dtGridAttence.TabIndex = 1;
             // 
             // colDate
@@ -97,10 +95,9 @@
             cmbClass.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cmbClass.FormattingEnabled = true;
             cmbClass.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" });
-            cmbClass.Location = new Point(23, 21);
-            cmbClass.Margin = new Padding(4, 5, 4, 5);
+            cmbClass.Location = new Point(18, 14);
             cmbClass.Name = "cmbClass";
-            cmbClass.Size = new Size(373, 36);
+            cmbClass.Size = new Size(291, 29);
             cmbClass.TabIndex = 2;
             cmbClass.SelectedIndexChanged += cmbClass_SelectedIndexChanged;
             // 
@@ -111,10 +108,9 @@
             pnLogo.Controls.Add(panel2);
             pnLogo.Controls.Add(lbLogo);
             pnLogo.Controls.Add(dtGridAttence);
-            pnLogo.Location = new Point(13, 10);
-            pnLogo.Margin = new Padding(4, 5, 4, 5);
+            pnLogo.Location = new Point(10, 7);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(1206, 766);
+            pnLogo.Size = new Size(938, 500);
             pnLogo.TabIndex = 8;
             pnLogo.Paint += pnLogo_Paint;
             // 
@@ -123,10 +119,9 @@
             button1.BackColor = Color.Navy;
             button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(1005, 693);
-            button1.Margin = new Padding(4, 5, 4, 5);
+            button1.Location = new Point(782, 452);
             button1.Name = "button1";
-            button1.Size = new Size(159, 52);
+            button1.Size = new Size(124, 44);
             button1.TabIndex = 5;
             button1.Text = "Mark";
             button1.UseVisualStyleBackColor = false;
@@ -138,9 +133,10 @@
             panel2.Controls.Add(cmbAttendanceType);
             panel2.Controls.Add(cmbClass);
             panel2.Controls.Add(btnSearch);
-            panel2.Location = new Point(-1, 135);
+            panel2.Location = new Point(-1, 88);
+            panel2.Margin = new Padding(2, 2, 2, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1207, 78);
+            panel2.Size = new Size(939, 51);
             panel2.TabIndex = 4;
             panel2.Paint += panel2_Paint;
             // 
@@ -148,9 +144,10 @@
             // 
             cmbAttendanceType.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cmbAttendanceType.FormattingEnabled = true;
-            cmbAttendanceType.Location = new Point(431, 21);
+            cmbAttendanceType.Location = new Point(335, 14);
+            cmbAttendanceType.Margin = new Padding(2, 2, 2, 2);
             cmbAttendanceType.Name = "cmbAttendanceType";
-            cmbAttendanceType.Size = new Size(298, 36);
+            cmbAttendanceType.Size = new Size(233, 29);
             cmbAttendanceType.TabIndex = 3;
             cmbAttendanceType.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
@@ -158,10 +155,9 @@
             // 
             lbLogo.AutoSize = true;
             lbLogo.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold);
-            lbLogo.Location = new Point(486, 74);
-            lbLogo.Margin = new Padding(4, 0, 4, 0);
+            lbLogo.Location = new Point(378, 48);
             lbLogo.Name = "lbLogo";
-            lbLogo.Size = new Size(202, 46);
+            lbLogo.Size = new Size(164, 37);
             lbLogo.TabIndex = 0;
             lbLogo.Text = "Attendance";
             // 
@@ -169,10 +165,9 @@
             // 
             panel1.BackColor = Color.IndianRed;
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(18, 10);
-            panel1.Margin = new Padding(4, 5, 4, 5);
+            panel1.Location = new Point(14, 7);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1201, 69);
+            panel1.Size = new Size(934, 45);
             panel1.TabIndex = 12;
             panel1.Paint += panel1_Paint;
             // 
@@ -181,23 +176,21 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(332, 7);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(258, 5);
             label1.Name = "label1";
-            label1.Size = new Size(537, 54);
+            label1.Size = new Size(426, 45);
             label1.TabIndex = 15;
             label1.Text = "Executive Science Academy";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // classWisAttencedance
             // 
-            AutoScaleDimensions = new SizeF(9F, 23F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(1261, 790);
+            ClientSize = new Size(981, 515);
             Controls.Add(panel1);
             Controls.Add(pnLogo);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "classWisAttencedance";
             Text = "classWisAttencedance";
             Load += classWisAttencedance_Load;

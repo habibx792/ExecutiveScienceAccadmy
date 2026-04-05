@@ -54,10 +54,9 @@
             pnMain.Controls.Add(btnExpenseAdd);
             pnMain.Controls.Add(txtExenseAmount);
             pnMain.Controls.Add(dtExpense);
-            pnMain.Location = new Point(13, 98);
-            pnMain.Margin = new Padding(4, 5, 4, 5);
+            pnMain.Location = new Point(10, 64);
             pnMain.Name = "pnMain";
-            pnMain.Size = new Size(789, 461);
+            pnMain.Size = new Size(614, 301);
             pnMain.TabIndex = 0;
             pnMain.Paint += panel1_Paint;
             // 
@@ -65,9 +64,10 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label3.Location = new Point(85, 251);
+            label3.Location = new Point(66, 164);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(171, 28);
+            label3.Size = new Size(139, 21);
             label3.TabIndex = 29;
             label3.Text = "Expense Amount";
             // 
@@ -75,9 +75,10 @@
             // 
             lblDate.AutoSize = true;
             lblDate.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            lblDate.Location = new Point(85, 110);
+            lblDate.Location = new Point(66, 72);
+            lblDate.Margin = new Padding(2, 0, 2, 0);
             lblDate.Name = "lblDate";
-            lblDate.Size = new Size(140, 28);
+            lblDate.Size = new Size(113, 21);
             lblDate.TabIndex = 36;
             lblDate.Text = "Expense Date";
             // 
@@ -85,9 +86,10 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label1.Location = new Point(85, 189);
+            label1.Location = new Point(66, 123);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(140, 28);
+            label1.Size = new Size(113, 21);
             label1.TabIndex = 35;
             label1.Text = "Expense Type";
             label1.Click += label1_Click;
@@ -96,10 +98,9 @@
             // 
             lblAdd.AutoSize = true;
             lblAdd.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAdd.Location = new Point(310, 15);
-            lblAdd.Margin = new Padding(4, 0, 4, 0);
+            lblAdd.Location = new Point(241, 10);
             lblAdd.Name = "lblAdd";
-            lblAdd.Size = new Size(200, 41);
+            lblAdd.Size = new Size(161, 32);
             lblAdd.TabIndex = 34;
             lblAdd.Text = "Add Expense";
             // 
@@ -107,50 +108,46 @@
             // 
             cmbExpense.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             cmbExpense.FormattingEnabled = true;
-            cmbExpense.Location = new Point(263, 189);
-            cmbExpense.Margin = new Padding(4, 5, 4, 5);
+            cmbExpense.Location = new Point(205, 123);
             cmbExpense.Name = "cmbExpense";
-            cmbExpense.Size = new Size(348, 36);
+            cmbExpense.Size = new Size(272, 29);
             cmbExpense.TabIndex = 33;
             // 
             // btnExpenseAdd
             // 
+            btnExpenseAdd.BackColor = Color.Indigo;
             btnExpenseAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnExpenseAdd.Location = new Point(455, 302);
-            btnExpenseAdd.Margin = new Padding(4, 5, 4, 5);
+            btnExpenseAdd.Location = new Point(354, 197);
             btnExpenseAdd.Name = "btnExpenseAdd";
-            btnExpenseAdd.Size = new Size(156, 58);
+            btnExpenseAdd.Size = new Size(121, 38);
             btnExpenseAdd.TabIndex = 29;
             btnExpenseAdd.Text = "Add Expense";
-            btnExpenseAdd.UseVisualStyleBackColor = true;
+            btnExpenseAdd.UseVisualStyleBackColor = false;
             btnExpenseAdd.Click += btnExpenseAdd_Click;
             // 
             // txtExenseAmount
             // 
             txtExenseAmount.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            txtExenseAmount.Location = new Point(263, 248);
-            txtExenseAmount.Margin = new Padding(4, 5, 4, 5);
+            txtExenseAmount.Location = new Point(205, 162);
             txtExenseAmount.Name = "txtExenseAmount";
-            txtExenseAmount.Size = new Size(348, 34);
+            txtExenseAmount.Size = new Size(272, 29);
             txtExenseAmount.TabIndex = 31;
             // 
             // dtExpense
             // 
             dtExpense.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            dtExpense.Location = new Point(263, 110);
-            dtExpense.Margin = new Padding(4, 5, 4, 5);
+            dtExpense.Location = new Point(205, 72);
             dtExpense.Name = "dtExpense";
-            dtExpense.Size = new Size(348, 34);
+            dtExpense.Size = new Size(272, 29);
             dtExpense.TabIndex = 32;
             // 
             // pnLogo
             // 
             pnLogo.BackColor = Color.IndianRed;
             pnLogo.Controls.Add(label6);
-            pnLogo.Location = new Point(13, 34);
-            pnLogo.Margin = new Padding(4, 5, 4, 5);
+            pnLogo.Location = new Point(10, 22);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(789, 74);
+            pnLogo.Size = new Size(614, 48);
             pnLogo.TabIndex = 28;
             // 
             // label6
@@ -158,23 +155,21 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.Black;
-            label6.Location = new Point(126, 10);
-            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Location = new Point(98, 7);
             label6.Name = "label6";
-            label6.Size = new Size(537, 54);
+            label6.Size = new Size(426, 45);
             label6.TabIndex = 29;
             label6.Text = "Executive Science Academy";
             label6.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // addExpense
             // 
-            AutoScaleDimensions = new SizeF(9F, 23F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(824, 573);
+            ClientSize = new Size(641, 374);
             Controls.Add(pnLogo);
             Controls.Add(pnMain);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "addExpense";
             Text = "addExpense";
             Load += addExpense_Load;

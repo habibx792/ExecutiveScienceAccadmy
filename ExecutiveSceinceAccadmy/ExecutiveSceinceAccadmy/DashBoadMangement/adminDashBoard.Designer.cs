@@ -43,74 +43,80 @@
             // 
             // btnRegisMange
             // 
+            btnRegisMange.BackColor = SystemColors.Highlight;
             btnRegisMange.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
             btnRegisMange.Location = new Point(335, 166);
-            btnRegisMange.Margin = new Padding(2, 2, 2, 2);
+            btnRegisMange.Margin = new Padding(2);
             btnRegisMange.Name = "btnRegisMange";
             btnRegisMange.Size = new Size(225, 60);
             btnRegisMange.TabIndex = 1;
             btnRegisMange.Text = "Registration Mangement";
-            btnRegisMange.UseVisualStyleBackColor = true;
+            btnRegisMange.UseVisualStyleBackColor = false;
             btnRegisMange.Click += button2_Click;
             // 
             // btnTeachMang
             // 
+            btnTeachMang.BackColor = SystemColors.HotTrack;
             btnTeachMang.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
             btnTeachMang.Location = new Point(86, 166);
-            btnTeachMang.Margin = new Padding(2, 2, 2, 2);
+            btnTeachMang.Margin = new Padding(2);
             btnTeachMang.Name = "btnTeachMang";
             btnTeachMang.Size = new Size(225, 60);
             btnTeachMang.TabIndex = 2;
             btnTeachMang.Text = "Teacher Manangement";
-            btnTeachMang.UseVisualStyleBackColor = true;
+            btnTeachMang.UseVisualStyleBackColor = false;
             btnTeachMang.Click += button3_Click;
             // 
             // btnExpenseMange
             // 
+            btnExpenseMange.BackColor = SystemColors.Highlight;
             btnExpenseMange.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
             btnExpenseMange.Location = new Point(86, 96);
-            btnExpenseMange.Margin = new Padding(2, 2, 2, 2);
+            btnExpenseMange.Margin = new Padding(2);
             btnExpenseMange.Name = "btnExpenseMange";
             btnExpenseMange.Size = new Size(225, 60);
             btnExpenseMange.TabIndex = 3;
             btnExpenseMange.Text = "Expense Mangement";
-            btnExpenseMange.UseVisualStyleBackColor = true;
+            btnExpenseMange.UseVisualStyleBackColor = false;
             btnExpenseMange.Click += button4_Click;
             // 
             // btnFeeSet
             // 
+            btnFeeSet.BackColor = SystemColors.Highlight;
             btnFeeSet.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
             btnFeeSet.Location = new Point(335, 96);
-            btnFeeSet.Margin = new Padding(2, 2, 2, 2);
+            btnFeeSet.Margin = new Padding(2);
             btnFeeSet.Name = "btnFeeSet";
             btnFeeSet.Size = new Size(225, 60);
             btnFeeSet.TabIndex = 11;
             btnFeeSet.Text = "Set Fee ";
-            btnFeeSet.UseVisualStyleBackColor = true;
+            btnFeeSet.UseVisualStyleBackColor = false;
             btnFeeSet.Click += button11_Click;
             // 
             // btnFeeMange
             // 
+            btnFeeMange.BackColor = SystemColors.Highlight;
             btnFeeMange.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
             btnFeeMange.Location = new Point(86, 20);
-            btnFeeMange.Margin = new Padding(2, 2, 2, 2);
+            btnFeeMange.Margin = new Padding(2);
             btnFeeMange.Name = "btnFeeMange";
             btnFeeMange.Size = new Size(225, 60);
             btnFeeMange.TabIndex = 12;
             btnFeeMange.Text = "Fee Management";
-            btnFeeMange.UseVisualStyleBackColor = true;
+            btnFeeMange.UseVisualStyleBackColor = false;
             btnFeeMange.Click += button12_Click;
             // 
             // btnAttendMange
             // 
+            btnAttendMange.BackColor = SystemColors.Highlight;
             btnAttendMange.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
             btnAttendMange.Location = new Point(332, 20);
-            btnAttendMange.Margin = new Padding(2, 2, 2, 2);
+            btnAttendMange.Margin = new Padding(2);
             btnAttendMange.Name = "btnAttendMange";
             btnAttendMange.Size = new Size(225, 60);
             btnAttendMange.TabIndex = 8;
             btnAttendMange.Text = "Attendance Magangement";
-            btnAttendMange.UseVisualStyleBackColor = true;
+            btnAttendMange.UseVisualStyleBackColor = false;
             btnAttendMange.Click += button8_Click;
             // 
             // panel2
@@ -123,7 +129,7 @@
             panel2.Controls.Add(btnTeachMang);
             panel2.Controls.Add(btnFeeSet);
             panel2.Location = new Point(17, 94);
-            panel2.Margin = new Padding(2, 2, 2, 2);
+            panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
             panel2.Size = new Size(622, 318);
             panel2.TabIndex = 16;
@@ -154,10 +160,10 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(705, 419);
+            ClientSize = new Size(662, 428);
             Controls.Add(pnLogo);
             Controls.Add(panel2);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "adminDashBoard";
             Text = "adminDashBoard";
             Load += adminDashBoard_Load;

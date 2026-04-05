@@ -46,10 +46,9 @@
             // 
             // button1
             // 
-            button1.Location = new Point(1624, 1168);
-            button1.Margin = new Padding(4, 5, 4, 5);
+            button1.Location = new Point(1263, 762);
             button1.Name = "button1";
-            button1.Size = new Size(158, 98);
+            button1.Size = new Size(123, 64);
             button1.TabIndex = 3;
             button1.Text = "button1";
             button1.UseVisualStyleBackColor = true;
@@ -57,11 +56,10 @@
             // dtDefaulter
             // 
             dtDefaulter.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtDefaulter.Location = new Point(39, 235);
-            dtDefaulter.Margin = new Padding(4, 5, 4, 5);
+            dtDefaulter.Location = new Point(30, 153);
             dtDefaulter.Name = "dtDefaulter";
             dtDefaulter.RowHeadersWidth = 51;
-            dtDefaulter.Size = new Size(975, 506);
+            dtDefaulter.Size = new Size(758, 330);
             dtDefaulter.TabIndex = 2;
             dtDefaulter.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -69,20 +67,18 @@
             // 
             pnLogo.BackColor = Color.IndianRed;
             pnLogo.Controls.Add(lbLogo);
-            pnLogo.Location = new Point(39, 81);
-            pnLogo.Margin = new Padding(4, 5, 4, 5);
+            pnLogo.Location = new Point(30, 53);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(975, 97);
+            pnLogo.Size = new Size(758, 63);
             pnLogo.TabIndex = 8;
             // 
             // lbLogo
             // 
             lbLogo.AutoSize = true;
             lbLogo.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbLogo.Location = new Point(305, 34);
-            lbLogo.Margin = new Padding(4, 0, 4, 0);
+            lbLogo.Location = new Point(237, 22);
             lbLogo.Name = "lbLogo";
-            lbLogo.Size = new Size(368, 46);
+            lbLogo.Size = new Size(297, 37);
             lbLogo.TabIndex = 0;
             lbLogo.Text = "Defaulter Student List";
             lbLogo.Click += lbLogo_Click;
@@ -93,30 +89,32 @@
             panel1.Controls.Add(button2);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(cmbMonth);
-            panel1.Location = new Point(39, 178);
+            panel1.Location = new Point(30, 116);
+            panel1.Margin = new Padding(2, 2, 2, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(975, 57);
+            panel1.Size = new Size(758, 37);
             panel1.TabIndex = 10;
             // 
             // button2
             // 
+            button2.BackColor = SystemColors.Highlight;
             button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(670, 3);
+            button2.Location = new Point(521, 2);
+            button2.Margin = new Padding(2, 2, 2, 2);
             button2.Name = "button2";
-            button2.Size = new Size(159, 46);
+            button2.Size = new Size(124, 30);
             button2.TabIndex = 11;
             button2.Text = "Search";
-            button2.UseVisualStyleBackColor = true;
+            button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(82, 11);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(64, 7);
             label2.Name = "label2";
-            label2.Size = new Size(75, 28);
+            label2.Size = new Size(61, 21);
             label2.TabIndex = 1;
             label2.Text = "Month";
             // 
@@ -124,19 +122,19 @@
             // 
             cmbMonth.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cmbMonth.FormattingEnabled = true;
-            cmbMonth.Location = new Point(196, 8);
+            cmbMonth.Location = new Point(152, 5);
+            cmbMonth.Margin = new Padding(2, 2, 2, 2);
             cmbMonth.Name = "cmbMonth";
-            cmbMonth.Size = new Size(409, 36);
+            cmbMonth.Size = new Size(319, 29);
             cmbMonth.TabIndex = 0;
             // 
             // panel2
             // 
             panel2.BackColor = Color.IndianRed;
             panel2.Controls.Add(label6);
-            panel2.Location = new Point(39, 22);
-            panel2.Margin = new Padding(4, 5, 4, 5);
+            panel2.Location = new Point(30, 14);
             panel2.Name = "panel2";
-            panel2.Size = new Size(975, 71);
+            panel2.Size = new Size(758, 46);
             panel2.TabIndex = 25;
             // 
             // label6
@@ -144,26 +142,24 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.Black;
-            label6.Location = new Point(238, 0);
-            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Location = new Point(185, 0);
             label6.Name = "label6";
-            label6.Size = new Size(537, 54);
+            label6.Size = new Size(426, 45);
             label6.TabIndex = 28;
             label6.Text = "Executive Science Academy";
             label6.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Defulter
             // 
-            AutoScaleDimensions = new SizeF(9F, 23F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(1074, 755);
+            ClientSize = new Size(835, 492);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(pnLogo);
             Controls.Add(button1);
             Controls.Add(dtDefaulter);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "Defulter";
             Text = "Defulter";
             Load += Defulter_Load;

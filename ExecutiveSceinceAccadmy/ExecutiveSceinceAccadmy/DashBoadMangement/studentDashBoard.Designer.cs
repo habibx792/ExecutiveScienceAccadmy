@@ -43,10 +43,9 @@
             // picBox
             // 
             picBox.BackColor = SystemColors.ActiveCaption;
-            picBox.Location = new Point(1567, 69);
-            picBox.Margin = new Padding(4, 5, 4, 5);
+            picBox.Location = new Point(1219, 45);
             picBox.Name = "picBox";
-            picBox.Size = new Size(163, 204);
+            picBox.Size = new Size(127, 133);
             picBox.TabIndex = 1;
             picBox.TabStop = false;
             picBox.Click += pictureBox1_Click;
@@ -57,51 +56,57 @@
             panel2.Controls.Add(btnFeeMange);
             panel2.Controls.Add(btnAttendMange);
             panel2.Controls.Add(btnRegisMange);
-            panel2.Location = new Point(28, 128);
+            panel2.Location = new Point(22, 83);
+            panel2.Margin = new Padding(2, 2, 2, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(609, 427);
+            panel2.Size = new Size(474, 278);
             panel2.TabIndex = 17;
             // 
             // btnFeeMange
             // 
+            btnFeeMange.BackColor = SystemColors.Highlight;
             btnFeeMange.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            btnFeeMange.Location = new Point(154, 34);
+            btnFeeMange.Location = new Point(120, 22);
+            btnFeeMange.Margin = new Padding(2, 2, 2, 2);
             btnFeeMange.Name = "btnFeeMange";
-            btnFeeMange.Size = new Size(289, 92);
+            btnFeeMange.Size = new Size(225, 60);
             btnFeeMange.TabIndex = 12;
             btnFeeMange.Text = "Check Result";
-            btnFeeMange.UseVisualStyleBackColor = true;
+            btnFeeMange.UseVisualStyleBackColor = false;
             // 
             // btnAttendMange
             // 
+            btnAttendMange.BackColor = SystemColors.Highlight;
             btnAttendMange.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            btnAttendMange.Location = new Point(154, 295);
+            btnAttendMange.Location = new Point(120, 192);
+            btnAttendMange.Margin = new Padding(2, 2, 2, 2);
             btnAttendMange.Name = "btnAttendMange";
-            btnAttendMange.Size = new Size(289, 92);
+            btnAttendMange.Size = new Size(225, 60);
             btnAttendMange.TabIndex = 8;
             btnAttendMange.Text = "Check Attendance";
-            btnAttendMange.UseVisualStyleBackColor = true;
+            btnAttendMange.UseVisualStyleBackColor = false;
             btnAttendMange.Click += btnAttendMange_Click;
             // 
             // btnRegisMange
             // 
+            btnRegisMange.BackColor = SystemColors.Highlight;
             btnRegisMange.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            btnRegisMange.Location = new Point(154, 164);
+            btnRegisMange.Location = new Point(120, 107);
+            btnRegisMange.Margin = new Padding(2, 2, 2, 2);
             btnRegisMange.Name = "btnRegisMange";
-            btnRegisMange.Size = new Size(289, 92);
+            btnRegisMange.Size = new Size(225, 60);
             btnRegisMange.TabIndex = 1;
             btnRegisMange.Text = "Check Fee Records";
-            btnRegisMange.UseVisualStyleBackColor = true;
+            btnRegisMange.UseVisualStyleBackColor = false;
             btnRegisMange.Click += btnRegisMange_Click;
             // 
             // pnLogo
             // 
             pnLogo.BackColor = Color.IndianRed;
             pnLogo.Controls.Add(lbLogo);
-            pnLogo.Location = new Point(28, 14);
-            pnLogo.Margin = new Padding(4, 5, 4, 5);
+            pnLogo.Location = new Point(22, 9);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(609, 123);
+            pnLogo.Size = new Size(474, 80);
             pnLogo.TabIndex = 19;
             // 
             // lbLogo
@@ -109,24 +114,22 @@
             lbLogo.AutoSize = true;
             lbLogo.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbLogo.ForeColor = Color.Black;
-            lbLogo.Location = new Point(34, 39);
-            lbLogo.Margin = new Padding(4, 0, 4, 0);
+            lbLogo.Location = new Point(26, 25);
             lbLogo.Name = "lbLogo";
-            lbLogo.Size = new Size(537, 54);
+            lbLogo.Size = new Size(426, 45);
             lbLogo.TabIndex = 0;
             lbLogo.Text = "Executive Science Academy";
             lbLogo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // studentDashBoard
             // 
-            AutoScaleDimensions = new SizeF(9F, 23F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(672, 575);
+            ClientSize = new Size(523, 375);
             Controls.Add(pnLogo);
             Controls.Add(panel2);
             Controls.Add(picBox);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "studentDashBoard";
             Text = "DashBoardForm";
             Load += DashBoardForm_Load;

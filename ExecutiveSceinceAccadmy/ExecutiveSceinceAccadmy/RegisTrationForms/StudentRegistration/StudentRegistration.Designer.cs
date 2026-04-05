@@ -18,22 +18,21 @@
             btnStdReg = new Button();
             BtnFeeSub = new Button();
             pnLogo = new Panel();
+            label6 = new Label();
             btnPrimaryReg = new Button();
             pnMain = new Panel();
-            label6 = new Label();
             pnLogo.SuspendLayout();
             pnMain.SuspendLayout();
             SuspendLayout();
             // 
             // btnSupReg
             // 
-            btnSupReg.BackColor = Color.Black;
+            btnSupReg.BackColor = SystemColors.Highlight;
             btnSupReg.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSupReg.ForeColor = Color.Blue;
-            btnSupReg.Location = new Point(416, 234);
-            btnSupReg.Margin = new Padding(4, 5, 4, 5);
+            btnSupReg.ForeColor = SystemColors.HighlightText;
+            btnSupReg.Location = new Point(324, 152);
             btnSupReg.Name = "btnSupReg";
-            btnSupReg.Size = new Size(272, 82);
+            btnSupReg.Size = new Size(212, 67);
             btnSupReg.TabIndex = 9;
             btnSupReg.Text = "Supplementary";
             btnSupReg.UseVisualStyleBackColor = false;
@@ -41,13 +40,12 @@
             // 
             // btnStdReg
             // 
-            btnStdReg.BackColor = Color.Black;
+            btnStdReg.BackColor = SystemColors.Highlight;
             btnStdReg.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnStdReg.ForeColor = Color.Blue;
-            btnStdReg.Location = new Point(80, 76);
-            btnStdReg.Margin = new Padding(4, 5, 4, 5);
+            btnStdReg.ForeColor = SystemColors.HighlightText;
+            btnStdReg.Location = new Point(62, 49);
             btnStdReg.Name = "btnStdReg";
-            btnStdReg.Size = new Size(281, 95);
+            btnStdReg.Size = new Size(219, 71);
             btnStdReg.TabIndex = 7;
             btnStdReg.Text = "Regular Student ";
             btnStdReg.UseVisualStyleBackColor = false;
@@ -55,13 +53,12 @@
             // 
             // BtnFeeSub
             // 
-            BtnFeeSub.BackColor = Color.Black;
+            BtnFeeSub.BackColor = SystemColors.Highlight;
             BtnFeeSub.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            BtnFeeSub.ForeColor = Color.Blue;
-            BtnFeeSub.Location = new Point(416, 76);
-            BtnFeeSub.Margin = new Padding(4, 5, 4, 5);
+            BtnFeeSub.ForeColor = SystemColors.HighlightText;
+            BtnFeeSub.Location = new Point(324, 49);
             BtnFeeSub.Name = "BtnFeeSub";
-            BtnFeeSub.Size = new Size(272, 97);
+            BtnFeeSub.Size = new Size(212, 71);
             BtnFeeSub.TabIndex = 8;
             BtnFeeSub.Text = "RTS Student";
             BtnFeeSub.UseVisualStyleBackColor = false;
@@ -71,22 +68,32 @@
             // 
             pnLogo.BackColor = Color.IndianRed;
             pnLogo.Controls.Add(label6);
-            pnLogo.Location = new Point(35, 29);
-            pnLogo.Margin = new Padding(4, 5, 4, 5);
+            pnLogo.Location = new Point(27, 19);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(798, 102);
+            pnLogo.Size = new Size(621, 67);
             pnLogo.TabIndex = 10;
             pnLogo.Paint += pnLogo_Paint;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.Black;
+            label6.Location = new Point(95, 19);
+            label6.Name = "label6";
+            label6.Size = new Size(426, 45);
+            label6.TabIndex = 30;
+            label6.Text = "Executive Science Academy";
+            label6.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // btnPrimaryReg
             // 
-            btnPrimaryReg.BackColor = Color.Black;
+            btnPrimaryReg.BackColor = SystemColors.Highlight;
             btnPrimaryReg.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPrimaryReg.ForeColor = Color.Blue;
-            btnPrimaryReg.Location = new Point(80, 234);
-            btnPrimaryReg.Margin = new Padding(4, 5, 4, 5);
+            btnPrimaryReg.ForeColor = SystemColors.HighlightText;
+            btnPrimaryReg.Location = new Point(62, 152);
             btnPrimaryReg.Name = "btnPrimaryReg";
-            btnPrimaryReg.Size = new Size(271, 82);
+            btnPrimaryReg.Size = new Size(211, 67);
             btnPrimaryReg.TabIndex = 13;
             btnPrimaryReg.Text = "Primary Student";
             btnPrimaryReg.UseVisualStyleBackColor = false;
@@ -99,35 +106,20 @@
             pnMain.Controls.Add(btnPrimaryReg);
             pnMain.Controls.Add(btnStdReg);
             pnMain.Controls.Add(btnSupReg);
-            pnMain.Location = new Point(35, 109);
-            pnMain.Margin = new Padding(4, 5, 4, 5);
+            pnMain.Location = new Point(27, 71);
             pnMain.Name = "pnMain";
-            pnMain.Size = new Size(798, 405);
+            pnMain.Size = new Size(621, 264);
             pnMain.TabIndex = 14;
             pnMain.Paint += panel1_Paint;
             // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.Black;
-            label6.Location = new Point(122, 29);
-            label6.Margin = new Padding(4, 0, 4, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(537, 54);
-            label6.TabIndex = 30;
-            label6.Text = "Executive Science Academy";
-            label6.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // StudentRegistration
             // 
-            AutoScaleDimensions = new SizeF(9F, 23F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(880, 556);
+            ClientSize = new Size(684, 363);
             Controls.Add(pnMain);
             Controls.Add(pnLogo);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "StudentRegistration";
             Text = "stdRegForm";
             Load += StudentRegistration_Load_1;

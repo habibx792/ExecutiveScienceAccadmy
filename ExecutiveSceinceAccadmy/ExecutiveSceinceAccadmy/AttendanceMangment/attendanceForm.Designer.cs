@@ -33,9 +33,9 @@
             btnMark = new Button();
             btnSujectWise = new Button();
             pnMain = new Panel();
+            btnTeacherAttendRep = new Button();
             btnUpAtt = new Button();
             btnDashBoad = new Button();
-            btnTeacherAttendRep = new Button();
             pnLogo.SuspendLayout();
             pnMain.SuspendLayout();
             SuspendLayout();
@@ -63,22 +63,24 @@
             // 
             // btnMark
             // 
+            btnMark.BackColor = SystemColors.Highlight;
             btnMark.Location = new Point(44, 41);
             btnMark.Name = "btnMark";
             btnMark.Size = new Size(229, 48);
             btnMark.TabIndex = 24;
             btnMark.Text = "Class Wise";
-            btnMark.UseVisualStyleBackColor = true;
+            btnMark.UseVisualStyleBackColor = false;
             btnMark.Click += btnMark_Click;
             // 
             // btnSujectWise
             // 
+            btnSujectWise.BackColor = SystemColors.Highlight;
             btnSujectWise.Location = new Point(324, 41);
             btnSujectWise.Name = "btnSujectWise";
             btnSujectWise.Size = new Size(234, 48);
             btnSujectWise.TabIndex = 20;
             btnSujectWise.Text = "Suject Wise";
-            btnSujectWise.UseVisualStyleBackColor = true;
+            btnSujectWise.UseVisualStyleBackColor = false;
             // 
             // pnMain
             // 
@@ -93,35 +95,38 @@
             pnMain.Size = new Size(591, 278);
             pnMain.TabIndex = 26;
             // 
-            // btnUpAtt
-            // 
-            btnUpAtt.Location = new Point(44, 110);
-            btnUpAtt.Name = "btnUpAtt";
-            btnUpAtt.Size = new Size(231, 49);
-            btnUpAtt.TabIndex = 23;
-            btnUpAtt.Text = "Teacher Attendance";
-            btnUpAtt.UseVisualStyleBackColor = true;
-            btnUpAtt.Click += btnUpAtt_Click;
-            // 
-            // btnDashBoad
-            // 
-            btnDashBoad.Location = new Point(321, 110);
-            btnDashBoad.Name = "btnDashBoad";
-            btnDashBoad.Size = new Size(237, 53);
-            btnDashBoad.TabIndex = 22;
-            btnDashBoad.Text = "Attendance DashBoard";
-            btnDashBoad.UseVisualStyleBackColor = true;
-            btnDashBoad.Click += btnDashBoad_Click;
-            // 
             // btnTeacherAttendRep
             // 
+            btnTeacherAttendRep.BackColor = SystemColors.Highlight;
             btnTeacherAttendRep.Location = new Point(44, 186);
             btnTeacherAttendRep.Name = "btnTeacherAttendRep";
             btnTeacherAttendRep.Size = new Size(231, 49);
             btnTeacherAttendRep.TabIndex = 25;
             btnTeacherAttendRep.Text = "Teacher Attendce Report";
-            btnTeacherAttendRep.UseVisualStyleBackColor = true;
+            btnTeacherAttendRep.UseVisualStyleBackColor = false;
             btnTeacherAttendRep.Click += btnTeacherAttendRep_Click;
+            // 
+            // btnUpAtt
+            // 
+            btnUpAtt.BackColor = SystemColors.Highlight;
+            btnUpAtt.Location = new Point(44, 110);
+            btnUpAtt.Name = "btnUpAtt";
+            btnUpAtt.Size = new Size(231, 49);
+            btnUpAtt.TabIndex = 23;
+            btnUpAtt.Text = "Teacher Attendance";
+            btnUpAtt.UseVisualStyleBackColor = false;
+            btnUpAtt.Click += btnUpAtt_Click;
+            // 
+            // btnDashBoad
+            // 
+            btnDashBoad.BackColor = SystemColors.Highlight;
+            btnDashBoad.Location = new Point(321, 110);
+            btnDashBoad.Name = "btnDashBoad";
+            btnDashBoad.Size = new Size(237, 53);
+            btnDashBoad.TabIndex = 22;
+            btnDashBoad.Text = "Attendance DashBoard";
+            btnDashBoad.UseVisualStyleBackColor = false;
+            btnDashBoad.Click += btnDashBoad_Click;
             // 
             // attendanceForm
             // 

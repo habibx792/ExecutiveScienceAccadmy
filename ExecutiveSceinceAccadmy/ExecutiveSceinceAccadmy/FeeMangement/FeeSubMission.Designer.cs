@@ -71,10 +71,9 @@
             panel1.Controls.Add(btnSearch);
             panel1.Controls.Add(dtPick);
             panel1.Controls.Add(txtRegis);
-            panel1.Location = new Point(32, 71);
-            panel1.Margin = new Padding(4, 5, 4, 5);
+            panel1.Location = new Point(25, 46);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1110, 519);
+            panel1.Size = new Size(863, 338);
             panel1.TabIndex = 1;
             panel1.Paint += panel1_Paint;
             // 
@@ -82,10 +81,9 @@
             // 
             lblMont.AutoSize = true;
             lblMont.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblMont.Location = new Point(258, 260);
-            lblMont.Margin = new Padding(4, 0, 4, 0);
+            lblMont.Location = new Point(201, 170);
             lblMont.Name = "lblMont";
-            lblMont.Size = new Size(63, 23);
+            lblMont.Size = new Size(49, 17);
             lblMont.TabIndex = 40;
             lblMont.Text = "Month";
             // 
@@ -93,10 +91,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(420, 18);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(327, 12);
             label2.Name = "label2";
-            label2.Size = new Size(267, 46);
+            label2.Size = new Size(214, 37);
             label2.TabIndex = 3;
             label2.Text = "Fee Submission";
             label2.Click += label2_Click;
@@ -105,9 +102,10 @@
             // 
             cmbMonth.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cmbMonth.FormattingEnabled = true;
-            cmbMonth.Location = new Point(420, 260);
+            cmbMonth.Location = new Point(327, 170);
+            cmbMonth.Margin = new Padding(2, 2, 2, 2);
             cmbMonth.Name = "cmbMonth";
-            cmbMonth.Size = new Size(427, 36);
+            cmbMonth.Size = new Size(333, 29);
             cmbMonth.TabIndex = 39;
             cmbMonth.SelectedIndexChanged += cmbMonth_SelectedIndexChanged;
             // 
@@ -115,10 +113,9 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(258, 390);
-            label5.Margin = new Padding(4, 0, 4, 0);
+            label5.Location = new Point(201, 254);
             label5.Name = "label5";
-            label5.Size = new Size(126, 23);
+            label5.Size = new Size(95, 17);
             label5.TabIndex = 38;
             label5.Text = "Submitted By:";
             // 
@@ -127,11 +124,10 @@
             txtSubBy.AutoCompleteCustomSource.AddRange(new string[] { "0" });
             txtSubBy.AutoCompleteMode = AutoCompleteMode.Suggest;
             txtSubBy.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtSubBy.Location = new Point(420, 383);
-            txtSubBy.Margin = new Padding(4, 5, 4, 5);
+            txtSubBy.Location = new Point(327, 250);
             txtSubBy.Name = "txtSubBy";
             txtSubBy.PlaceholderText = "Enter Discount";
-            txtSubBy.Size = new Size(427, 30);
+            txtSubBy.Size = new Size(333, 26);
             txtSubBy.TabIndex = 37;
             txtSubBy.Text = "Muhammd Shahid";
             // 
@@ -139,10 +135,9 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(253, 315);
-            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Location = new Point(197, 205);
             label4.Name = "label4";
-            label4.Size = new Size(70, 23);
+            label4.Size = new Size(55, 17);
             label4.TabIndex = 36;
             label4.Text = "Discont";
             // 
@@ -150,21 +145,19 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(253, 208);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Location = new Point(197, 136);
             label3.Name = "label3";
-            label3.Size = new Size(75, 23);
+            label3.Size = new Size(58, 17);
             label3.TabIndex = 35;
             label3.Text = "Amount";
             // 
             // txtPercentage
             // 
             txtPercentage.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtPercentage.Location = new Point(606, 315);
-            txtPercentage.Margin = new Padding(4, 5, 4, 5);
+            txtPercentage.Location = new Point(471, 205);
             txtPercentage.Name = "txtPercentage";
             txtPercentage.ReadOnly = true;
-            txtPercentage.Size = new Size(241, 34);
+            txtPercentage.Size = new Size(188, 29);
             txtPercentage.TabIndex = 34;
             txtPercentage.Text = "0";
             // 
@@ -173,11 +166,10 @@
             txtDicount.AutoCompleteCustomSource.AddRange(new string[] { "0" });
             txtDicount.AutoCompleteMode = AutoCompleteMode.Suggest;
             txtDicount.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtDicount.Location = new Point(420, 315);
-            txtDicount.Margin = new Padding(4, 5, 4, 5);
+            txtDicount.Location = new Point(327, 205);
             txtDicount.Name = "txtDicount";
             txtDicount.PlaceholderText = "Enter Discount";
-            txtDicount.Size = new Size(178, 34);
+            txtDicount.Size = new Size(139, 29);
             txtDicount.TabIndex = 33;
             txtDicount.Text = "0";
             txtDicount.TextChanged += textBox2_TextChanged;
@@ -185,21 +177,19 @@
             // txtAmount
             // 
             txtAmount.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtAmount.Location = new Point(420, 199);
-            txtAmount.Margin = new Padding(4, 5, 4, 5);
+            txtAmount.Location = new Point(327, 130);
             txtAmount.Name = "txtAmount";
             txtAmount.PlaceholderText = "Enter Amount";
-            txtAmount.Size = new Size(427, 34);
+            txtAmount.Size = new Size(333, 29);
             txtAmount.TabIndex = 32;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(253, 78);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(197, 51);
             label1.Name = "label1";
-            label1.Size = new Size(58, 23);
+            label1.Size = new Size(45, 17);
             label1.TabIndex = 31;
             label1.Text = "Date :";
             // 
@@ -207,43 +197,40 @@
             // 
             lblDeg.AutoSize = true;
             lblDeg.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblDeg.Location = new Point(253, 147);
-            lblDeg.Margin = new Padding(4, 0, 4, 0);
+            lblDeg.Location = new Point(197, 96);
             lblDeg.Name = "lblDeg";
-            lblDeg.Size = new Size(139, 23);
+            lblDeg.Size = new Size(108, 17);
             lblDeg.TabIndex = 30;
             lblDeg.Text = "Registraion No :";
             // 
             // btnSearch
             // 
+            btnSearch.BackColor = SystemColors.Highlight;
             btnSearch.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSearch.Location = new Point(707, 437);
-            btnSearch.Margin = new Padding(4, 5, 4, 5);
+            btnSearch.Location = new Point(550, 285);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(140, 63);
+            btnSearch.Size = new Size(109, 41);
             btnSearch.TabIndex = 2;
             btnSearch.Text = "Search";
-            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.UseVisualStyleBackColor = false;
             btnSearch.Click += Search_Click;
             // 
             // dtPick
             // 
             dtPick.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dtPick.Location = new Point(420, 69);
-            dtPick.Margin = new Padding(4, 5, 4, 5);
+            dtPick.Location = new Point(327, 45);
             dtPick.Name = "dtPick";
-            dtPick.Size = new Size(427, 34);
+            dtPick.Size = new Size(333, 29);
             dtPick.TabIndex = 3;
             dtPick.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // txtRegis
             // 
             txtRegis.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtRegis.Location = new Point(420, 145);
-            txtRegis.Margin = new Padding(4, 5, 4, 5);
+            txtRegis.Location = new Point(327, 95);
             txtRegis.Name = "txtRegis";
             txtRegis.PlaceholderText = "26-10-comp-00";
-            txtRegis.Size = new Size(427, 34);
+            txtRegis.Size = new Size(333, 29);
             txtRegis.TabIndex = 4;
             txtRegis.TextChanged += textBox1_TextChanged;
             // 
@@ -252,21 +239,19 @@
             dataGridView1.AllowUserToOrderColumns = true;
             dataGridView1.BackgroundColor = Color.IndianRed;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(32, 587);
-            dataGridView1.Margin = new Padding(4, 5, 4, 5);
+            dataGridView1.Location = new Point(25, 383);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1110, 180);
+            dataGridView1.Size = new Size(863, 117);
             dataGridView1.TabIndex = 2;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // pnLogo
             // 
             pnLogo.BackColor = Color.IndianRed;
-            pnLogo.Location = new Point(32, 71);
-            pnLogo.Margin = new Padding(4, 5, 4, 5);
+            pnLogo.Location = new Point(25, 46);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(1110, 696);
+            pnLogo.Size = new Size(863, 454);
             pnLogo.TabIndex = 26;
             pnLogo.Paint += pnLogo_Paint;
             // 
@@ -274,9 +259,10 @@
             // 
             panel2.BackColor = Color.IndianRed;
             panel2.Controls.Add(label6);
-            panel2.Location = new Point(32, 10);
+            panel2.Location = new Point(25, 7);
+            panel2.Margin = new Padding(2, 2, 2, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1110, 76);
+            panel2.Size = new Size(863, 50);
             panel2.TabIndex = 27;
             // 
             // label6
@@ -284,25 +270,23 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.Black;
-            label6.Location = new Point(287, 11);
-            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Location = new Point(223, 7);
             label6.Name = "label6";
-            label6.Size = new Size(537, 54);
+            label6.Size = new Size(426, 45);
             label6.TabIndex = 28;
             label6.Text = "Executive Science Academy";
             label6.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // FeeSubMission
             // 
-            AutoScaleDimensions = new SizeF(9F, 23F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(1184, 782);
+            ClientSize = new Size(921, 510);
             Controls.Add(panel2);
             Controls.Add(dataGridView1);
             Controls.Add(panel1);
             Controls.Add(pnLogo);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "FeeSubMission";
             Text = "FeeSubMission";
             Load += FeeSubMission_Load;

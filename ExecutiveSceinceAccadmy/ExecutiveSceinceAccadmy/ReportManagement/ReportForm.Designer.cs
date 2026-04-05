@@ -54,41 +54,45 @@
             // 
             // btnCurrMon
             // 
+            btnCurrMon.BackColor = SystemColors.Highlight;
             btnCurrMon.Location = new Point(325, 25);
             btnCurrMon.Name = "btnCurrMon";
             btnCurrMon.Size = new Size(221, 68);
             btnCurrMon.TabIndex = 26;
             btnCurrMon.Text = "Expense Report";
-            btnCurrMon.UseVisualStyleBackColor = true;
+            btnCurrMon.UseVisualStyleBackColor = false;
             btnCurrMon.Click += btnCurrMon_Click;
             // 
             // btnAddExp
             // 
+            btnAddExp.BackColor = SystemColors.Highlight;
             btnAddExp.Location = new Point(54, 25);
             btnAddExp.Name = "btnAddExp";
             btnAddExp.Size = new Size(229, 68);
             btnAddExp.TabIndex = 24;
             btnAddExp.Text = "Fee Reports";
-            btnAddExp.UseVisualStyleBackColor = true;
+            btnAddExp.UseVisualStyleBackColor = false;
             btnAddExp.Click += btnAddExp_Click;
             // 
             // btnCurrYearReport
             // 
+            btnCurrYearReport.BackColor = SystemColors.Highlight;
             btnCurrYearReport.Location = new Point(54, 107);
             btnCurrYearReport.Name = "btnCurrYearReport";
             btnCurrYearReport.Size = new Size(229, 65);
             btnCurrYearReport.TabIndex = 25;
             btnCurrYearReport.Text = "Current Year";
-            btnCurrYearReport.UseVisualStyleBackColor = true;
+            btnCurrYearReport.UseVisualStyleBackColor = false;
             // 
             // btnFromDate
             // 
+            btnFromDate.BackColor = SystemColors.Highlight;
             btnFromDate.Location = new Point(325, 107);
             btnFromDate.Name = "btnFromDate";
             btnFromDate.Size = new Size(221, 65);
             btnFromDate.TabIndex = 20;
             btnFromDate.Text = "From ToDay";
-            btnFromDate.UseVisualStyleBackColor = true;
+            btnFromDate.UseVisualStyleBackColor = false;
             // 
             // pnLogo
             // 
@@ -119,7 +123,7 @@
             ClientSize = new Size(664, 447);
             Controls.Add(pnMain);
             Controls.Add(pnLogo);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "ReportForm";
             Text = "ReportForm";
             Load += ReportForm_Load;

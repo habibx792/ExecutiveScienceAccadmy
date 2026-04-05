@@ -44,56 +44,54 @@
             pnMain.Controls.Add(btnAdd);
             pnMain.Controls.Add(bntReport);
             pnMain.Controls.Add(btnCurrMonth);
-            pnMain.Location = new Point(24, 115);
-            pnMain.Margin = new Padding(4, 5, 4, 5);
+            pnMain.Location = new Point(19, 75);
             pnMain.Name = "pnMain";
-            pnMain.Size = new Size(718, 318);
+            pnMain.Size = new Size(558, 207);
             pnMain.TabIndex = 28;
             // 
             // btnAdd
             // 
+            btnAdd.BackColor = SystemColors.Highlight;
             btnAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnAdd.Location = new Point(26, 43);
-            btnAdd.Margin = new Padding(4, 5, 4, 5);
+            btnAdd.Location = new Point(20, 28);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(284, 75);
+            btnAdd.Size = new Size(221, 49);
             btnAdd.TabIndex = 24;
             btnAdd.Text = "add Expense";
-            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Click += btnAdd_Click;
             // 
             // bntReport
             // 
+            bntReport.BackColor = SystemColors.Highlight;
             bntReport.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            bntReport.Location = new Point(395, 43);
-            bntReport.Margin = new Padding(4, 5, 4, 5);
+            bntReport.Location = new Point(307, 28);
             bntReport.Name = "bntReport";
-            bntReport.Size = new Size(305, 75);
+            bntReport.Size = new Size(237, 49);
             bntReport.TabIndex = 25;
             bntReport.Text = "Expense Report";
-            bntReport.UseVisualStyleBackColor = true;
+            bntReport.UseVisualStyleBackColor = false;
             bntReport.Click += bntReport_Click;
             // 
             // btnCurrMonth
             // 
+            btnCurrMonth.BackColor = SystemColors.Highlight;
             btnCurrMonth.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnCurrMonth.Location = new Point(26, 153);
-            btnCurrMonth.Margin = new Padding(4, 5, 4, 5);
+            btnCurrMonth.Location = new Point(20, 100);
             btnCurrMonth.Name = "btnCurrMonth";
-            btnCurrMonth.Size = new Size(284, 76);
+            btnCurrMonth.Size = new Size(221, 50);
             btnCurrMonth.TabIndex = 20;
             btnCurrMonth.Text = "Check Expenses";
-            btnCurrMonth.UseVisualStyleBackColor = true;
+            btnCurrMonth.UseVisualStyleBackColor = false;
             btnCurrMonth.Click += btnCurrMonth_Click;
             // 
             // pnLogo
             // 
             pnLogo.BackColor = Color.IndianRed;
             pnLogo.Controls.Add(label6);
-            pnLogo.Location = new Point(24, 44);
-            pnLogo.Margin = new Padding(4, 5, 4, 5);
+            pnLogo.Location = new Point(19, 29);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(718, 78);
+            pnLogo.Size = new Size(558, 51);
             pnLogo.TabIndex = 27;
             // 
             // label6
@@ -101,22 +99,22 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.Black;
-            label6.Location = new Point(91, 12);
-            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Location = new Point(71, 8);
             label6.Name = "label6";
-            label6.Size = new Size(537, 54);
+            label6.Size = new Size(426, 45);
             label6.TabIndex = 28;
             label6.Text = "Executive Science Academy";
             label6.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // ExpenseForm
             // 
-            AutoScaleDimensions = new SizeF(9F, 23F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(771, 488);
+            ClientSize = new Size(600, 318);
             Controls.Add(pnMain);
             Controls.Add(pnLogo);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "ExpenseForm";
             Text = "ExpenseForm";
             Load += ExpenseForm_Load;

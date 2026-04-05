@@ -66,13 +66,14 @@
             // 
             // btnTeachAttence
             // 
+            btnTeachAttence.BackColor = SystemColors.HotTrack;
             btnTeachAttence.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnTeachAttence.Location = new Point(376, 145);
             btnTeachAttence.Name = "btnTeachAttence";
             btnTeachAttence.Size = new Size(75, 45);
             btnTeachAttence.TabIndex = 2;
             btnTeachAttence.Text = "Mark";
-            btnTeachAttence.UseVisualStyleBackColor = true;
+            btnTeachAttence.UseVisualStyleBackColor = false;
             btnTeachAttence.Click += btnTeachAttence_Click;
             // 
             // cmbTeaches
@@ -101,7 +102,7 @@
             panel1.Controls.Add(rdArrival);
             panel1.Controls.Add(btnTeachAttence);
             panel1.Location = new Point(21, 83);
-            panel1.Margin = new Padding(2, 2, 2, 2);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
             panel1.Size = new Size(558, 259);
             panel1.TabIndex = 5;
