@@ -68,7 +68,12 @@ namespace ExecutiveSceinceAccadmy.ExpenseMangenment
 
         private void btnCurrMonth_Click(object sender, EventArgs e)
         {
-            
+            this.Hide();
+            using(checkExpense chkExpense=new checkExpense())
+            {
+                chkExpense.ShowDialog();
+            }
+            this.Show();
         }
 
         private void bntReport_Click(object sender, EventArgs e)
