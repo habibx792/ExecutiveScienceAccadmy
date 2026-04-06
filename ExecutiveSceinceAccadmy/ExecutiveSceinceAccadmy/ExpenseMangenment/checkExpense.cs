@@ -113,17 +113,23 @@ namespace ExecutiveSceinceAccadmy.ExpenseMangenment
                 return;
             }
             StyleDataGrid(dtExpense);
+            bool loadSuccess = false;
             if (rdMonth.Checked)
             {
                 string year = DateTime.Now.Year.ToString();
                 string month = selectedValue;
-                bool loadSuccess = DB.expenseOfCurrentYearMonth(year, month, dtExpense);
+                 loadSuccess = DB.expenseOfCurrentYearMonth(year, month, dtExpense);
             }
             else if (rdYear.Checked)
             {
                 string year = selectedValue;
-                bool loadSuccess = DB.LoadExpenseOfYear(year, dtExpense);
+                 loadSuccess = DB.LoadExpenseOfYear(year, dtExpense);
             }
+            if(loadSuccess)
+            {
+                //create excel file 
+            }
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -131,6 +137,11 @@ namespace ExecutiveSceinceAccadmy.ExpenseMangenment
         }
 
         private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
         {
 
         }

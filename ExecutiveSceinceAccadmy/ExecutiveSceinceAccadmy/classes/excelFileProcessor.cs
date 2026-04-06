@@ -6,7 +6,20 @@ using System.Threading.Tasks;
 
 namespace ExecutiveSceinceAccadmy.classes
 {
-    internal class excelFileProcessor
+    public abstract  class excelFileProcessor
     {
+        public  virtual void generateExcelReport() { }
+    }
+    public  class expenseExfileProcessor: excelFileProcessor
+    {
+
+    }
+    public class feeReportExcelFillProcessor:excelFileProcessor
+    {
+        public override void generateExcelReport() { }
+    }
+    public class salaryExcelFileProcessor:excelFileProcessor
+    {
+        public override void generateExcelReport() { }
     }
 }

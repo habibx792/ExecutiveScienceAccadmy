@@ -39,7 +39,7 @@
             pnMain.Controls.Add(lblMonth);
             pnMain.Controls.Add(cmbMonth);
             pnMain.Location = new Point(18, 27);
-            pnMain.Margin = new Padding(2, 2, 2, 2);
+            pnMain.Margin = new Padding(2);
             pnMain.Name = "pnMain";
             pnMain.Size = new Size(719, 349);
             pnMain.TabIndex = 0;
@@ -50,7 +50,7 @@
             rdYear.AutoSize = true;
             rdYear.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             rdYear.Location = new Point(331, 69);
-            rdYear.Margin = new Padding(2, 2, 2, 2);
+            rdYear.Margin = new Padding(2);
             rdYear.Name = "rdYear";
             rdYear.Size = new Size(192, 25);
             rdYear.TabIndex = 1;
@@ -63,7 +63,7 @@
             rdMonth.AutoSize = true;
             rdMonth.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             rdMonth.Location = new Point(126, 70);
-            rdMonth.Margin = new Padding(2, 2, 2, 2);
+            rdMonth.Margin = new Padding(2);
             rdMonth.Name = "rdMonth";
             rdMonth.Size = new Size(210, 25);
             rdMonth.TabIndex = 2;
@@ -75,7 +75,7 @@
             // 
             dtExpense.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtExpense.Location = new Point(0, 181);
-            dtExpense.Margin = new Padding(2, 2, 2, 2);
+            dtExpense.Margin = new Padding(2);
             dtExpense.Name = "dtExpense";
             dtExpense.RowHeadersWidth = 51;
             dtExpense.Size = new Size(717, 166);
@@ -86,12 +86,13 @@
             button1.BackColor = SystemColors.Highlight;
             button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             button1.Location = new Point(380, 142);
-            button1.Margin = new Padding(2, 2, 2, 2);
+            button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(137, 34);
             button1.TabIndex = 5;
             button1.Text = "Check Expense";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click_1;
             // 
             // lblMonth
             // 
@@ -109,7 +110,7 @@
             cmbMonth.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             cmbMonth.FormattingEnabled = true;
             cmbMonth.Location = new Point(237, 106);
-            cmbMonth.Margin = new Padding(2, 2, 2, 2);
+            cmbMonth.Margin = new Padding(2);
             cmbMonth.Name = "cmbMonth";
             cmbMonth.Size = new Size(281, 29);
             cmbMonth.TabIndex = 7;
@@ -144,7 +145,7 @@
             ClientSize = new Size(755, 393);
             Controls.Add(pnLogo);
             Controls.Add(pnMain);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "checkExpense";
             Text = "Check Expense";
             Load += checkCurrMonth_Load;
