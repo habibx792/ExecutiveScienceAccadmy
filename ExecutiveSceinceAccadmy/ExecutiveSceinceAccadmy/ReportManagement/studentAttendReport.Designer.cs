@@ -48,13 +48,13 @@
             // 
             // btnSearch
             // 
-            btnSearch.BackColor = Color.Black;
+            btnSearch.BackColor = SystemColors.Highlight;
             btnSearch.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSearch.ForeColor = Color.White;
             btnSearch.Location = new Point(469, 164);
-            btnSearch.Margin = new Padding(2, 2, 2, 2);
+            btnSearch.Margin = new Padding(2);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(108, 38);
+            btnSearch.Size = new Size(108, 44);
             btnSearch.TabIndex = 1;
             btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = false;
@@ -64,7 +64,7 @@
             // 
             dtDashAttend.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtDashAttend.Location = new Point(0, 224);
-            dtDashAttend.Margin = new Padding(2, 2, 2, 2);
+            dtDashAttend.Margin = new Padding(2);
             dtDashAttend.Name = "dtDashAttend";
             dtDashAttend.RowHeadersWidth = 51;
             dtDashAttend.Size = new Size(887, 222);
@@ -75,7 +75,7 @@
             // 
             dtDate.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dtDate.Location = new Point(320, 87);
-            dtDate.Margin = new Padding(2, 2, 2, 2);
+            dtDate.Margin = new Padding(2);
             dtDate.Name = "dtDate";
             dtDate.Size = new Size(258, 27);
             dtDate.TabIndex = 3;
@@ -95,7 +95,7 @@
             // 
             txtReginstraion.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtReginstraion.Location = new Point(320, 128);
-            txtReginstraion.Margin = new Padding(2, 2, 2, 2);
+            txtReginstraion.Margin = new Padding(2);
             txtReginstraion.Name = "txtReginstraion";
             txtReginstraion.PlaceholderText = "Enter Registration Number";
             txtReginstraion.Size = new Size(258, 29);
@@ -106,7 +106,7 @@
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(dtDashAttend);
             panel1.Location = new Point(11, 11);
-            panel1.Margin = new Padding(2, 2, 2, 2);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
             panel1.Size = new Size(888, 448);
             panel1.TabIndex = 7;
@@ -126,7 +126,7 @@
             panel2.Controls.Add(rdDay);
             panel2.Controls.Add(txtReginstraion);
             panel2.Location = new Point(0, 0);
-            panel2.Margin = new Padding(2, 2, 2, 2);
+            panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
             panel2.Size = new Size(887, 226);
             panel2.TabIndex = 13;
@@ -136,8 +136,8 @@
             // 
             lbLogo.AutoSize = true;
             lbLogo.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbLogo.ForeColor = Color.Black;
-            lbLogo.Location = new Point(227, 0);
+            lbLogo.ForeColor = Color.FromArgb(0, 70, 140);
+            lbLogo.Location = new Point(206, 7);
             lbLogo.Name = "lbLogo";
             lbLogo.Size = new Size(426, 45);
             lbLogo.TabIndex = 13;
@@ -149,7 +149,7 @@
             cmbMonth.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cmbMonth.FormattingEnabled = true;
             cmbMonth.Location = new Point(320, 87);
-            cmbMonth.Margin = new Padding(2, 2, 2, 2);
+            cmbMonth.Margin = new Padding(2);
             cmbMonth.Name = "cmbMonth";
             cmbMonth.Size = new Size(258, 29);
             cmbMonth.TabIndex = 7;
@@ -181,7 +181,7 @@
             rdMonth.AutoSize = true;
             rdMonth.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             rdMonth.Location = new Point(452, 54);
-            rdMonth.Margin = new Padding(2, 2, 2, 2);
+            rdMonth.Margin = new Padding(2);
             rdMonth.Name = "rdMonth";
             rdMonth.Size = new Size(157, 25);
             rdMonth.TabIndex = 10;
@@ -195,7 +195,7 @@
             rdDay.AutoSize = true;
             rdDay.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             rdDay.Location = new Point(312, 54);
-            rdDay.Margin = new Padding(2, 2, 2, 2);
+            rdDay.Margin = new Padding(2);
             rdDay.Name = "rdDay";
             rdDay.Size = new Size(142, 25);
             rdDay.TabIndex = 9;

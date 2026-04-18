@@ -33,20 +33,20 @@ namespace ExecutiveSceinceAccadmy.studentRegistrationForms
 
             {
 
-                UI.Instance.StylePanel(pnLogo,
-                    backColor: Color.IndianRed,
-                    borderColor: Color.FromArgb(0, 120, 215),
-                    borderRadius: 20,
-                    borderThickness: 2);
+                //UI.Instance.StylePanel(pnLogo,
+                //    backColor: Color.IndianRed,
+                //    borderColor: Color.FromArgb(0, 120, 215),
+                //    borderRadius: 20,
+                //    borderThickness: 2);
                 UI.Instance.StyleButton(btnStdReg, borderRadius: 20);
                 UI.Instance.StyleButton(BtnFeeSub, borderRadius: 20);
                 UI.Instance.StyleButton(btnPrimaryReg, borderRadius: 20);
                 UI.Instance.StyleButton(btnSupReg, borderRadius: 20);
-                UI.Instance.StylePanel(pnMain,
-               backColor: Color.IndianRed,
-               borderColor: Color.FromArgb(0, 120, 215),
-               borderRadius: 20,
-               borderThickness: 2);
+               // UI.Instance.StylePanel(pnMain,
+               //backColor: Color.IndianRed,
+               //borderColor: Color.FromArgb(0, 120, 215),
+               //borderRadius: 20,
+               //borderThickness: 2);
                 UI.Instance.AddFormShadow(this);
                 //UI.Instance.setFormSize(this, 1713, 1024);
                 UI.Instance.AddFormShadow(this);

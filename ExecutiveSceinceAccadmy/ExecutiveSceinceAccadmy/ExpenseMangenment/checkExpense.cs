@@ -19,12 +19,14 @@ namespace ExecutiveSceinceAccadmy.ExpenseMangenment
                 borderRadius: 25,
                 showCustomTitleBar: true,
                 title: "Executive Science Academy");
+            UI.Instance.StyleButton(btnCheck, borderRadius: 20);
+            
 
-            UI.Instance.StylePanel(pnMain,
-                backColor: Color.IndianRed,
-                borderColor: Color.FromArgb(0, 120, 215),
-                borderRadius: 20,
-                borderThickness: 2);
+            //UI.Instance.StylePanel(pnMain,
+            //    backColor: Color.IndianRed,
+            //    borderColor: Color.FromArgb(0, 120, 215),
+            //    borderRadius: 20,
+            //    borderThickness: 2);
 
             this.StartPosition = FormStartPosition.CenterScreen;
             this.BackColor = Color.DodgerBlue;
@@ -32,7 +34,7 @@ namespace ExecutiveSceinceAccadmy.ExpenseMangenment
             rdMonth.CheckedChanged += RdMonth_CheckedChanged;
             rdYear.CheckedChanged += RdYear_CheckedChanged;
             cmbMonth.SelectedIndexChanged += CmbMonth_SelectedIndexChanged;
-            button1.Click += Button1_Click;
+            btnCheck.Click += Button1_Click;
         }
 
         private void checkCurrMonth_Load(object sender, EventArgs e)

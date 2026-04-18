@@ -30,20 +30,22 @@ namespace ExecutiveSceinceAccadmy.ExpenseMangenment
             this.StartPosition = FormStartPosition.CenterScreen;
             UI.Instance.StyleLabel(lblAdd);
             //UI.Instance.StyleLabel(lbLogo);
+            UI.Instance.StyleButton(btnExpenseAdd, borderRadius: 20);
+            //UI.Instance.StyleButton(btnAdd, borderRadius: 20);
 
         }
         private void StyleControls()
         {
 
-            UI.Instance.StylePanel(pnLogo,
-                backColor: Color.IndianRed,
-                borderColor: Color.RoyalBlue,
-                borderRadius: 20,
-                borderThickness: 2);
-            UI.Instance.StylePanel(pnMain, backColor: Color.IndianRed,
-              borderColor: Color.RoyalBlue,
-              borderRadius: 20,
-              borderThickness: 2);
+            //UI.Instance.StylePanel(pnLogo,
+            //    backColor: Color.IndianRed,
+            //    borderColor: Color.RoyalBlue,
+            //    borderRadius: 20,
+            //    borderThickness: 2);
+            //UI.Instance.StylePanel(pnMain, backColor: Color.IndianRed,
+            //  borderColor: Color.RoyalBlue,
+            //  borderRadius: 20,
+            //  borderThickness: 2);
 
 
             UI.Instance.AddFormShadow(this);

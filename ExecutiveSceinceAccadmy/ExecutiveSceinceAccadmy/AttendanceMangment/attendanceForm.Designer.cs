@@ -53,7 +53,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Black;
+            label1.ForeColor = Color.FromArgb(0, 70, 140);
             label1.Location = new Point(87, 26);
             label1.Name = "label1";
             label1.Size = new Size(426, 45);
@@ -64,6 +64,7 @@
             // btnMark
             // 
             btnMark.BackColor = SystemColors.Highlight;
+            btnMark.ForeColor = Color.White;
             btnMark.Location = new Point(44, 41);
             btnMark.Name = "btnMark";
             btnMark.Size = new Size(229, 48);
@@ -75,7 +76,8 @@
             // btnSujectWise
             // 
             btnSujectWise.BackColor = SystemColors.Highlight;
-            btnSujectWise.Location = new Point(324, 41);
+            btnSujectWise.ForeColor = Color.White;
+            btnSujectWise.Location = new Point(44, 187);
             btnSujectWise.Name = "btnSujectWise";
             btnSujectWise.Size = new Size(234, 48);
             btnSujectWise.TabIndex = 20;
@@ -99,7 +101,8 @@
             // btnTeacherAttendRep
             // 
             btnTeacherAttendRep.BackColor = SystemColors.Highlight;
-            btnTeacherAttendRep.Location = new Point(44, 186);
+            btnTeacherAttendRep.ForeColor = Color.White;
+            btnTeacherAttendRep.Location = new Point(44, 110);
             btnTeacherAttendRep.Name = "btnTeacherAttendRep";
             btnTeacherAttendRep.Size = new Size(231, 49);
             btnTeacherAttendRep.TabIndex = 25;
@@ -110,7 +113,8 @@
             // btnUpAtt
             // 
             btnUpAtt.BackColor = SystemColors.Highlight;
-            btnUpAtt.Location = new Point(44, 110);
+            btnUpAtt.ForeColor = Color.White;
+            btnUpAtt.Location = new Point(321, 41);
             btnUpAtt.Name = "btnUpAtt";
             btnUpAtt.Size = new Size(231, 49);
             btnUpAtt.TabIndex = 23;
@@ -121,6 +125,7 @@
             // btnDashBoad
             // 
             btnDashBoad.BackColor = SystemColors.Highlight;
+            btnDashBoad.ForeColor = Color.White;
             btnDashBoad.Location = new Point(321, 110);
             btnDashBoad.Name = "btnDashBoad";
             btnDashBoad.Size = new Size(237, 53);

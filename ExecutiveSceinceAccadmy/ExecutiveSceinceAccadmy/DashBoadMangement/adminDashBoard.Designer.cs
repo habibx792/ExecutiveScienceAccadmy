@@ -34,9 +34,9 @@
             btnFeeMange = new Button();
             btnAttendMange = new Button();
             panel2 = new Panel();
+            btnReports = new Button();
             pnLogo = new Panel();
             lbLogo = new Label();
-            button1 = new Button();
             panel2.SuspendLayout();
             pnLogo.SuspendLayout();
             SuspendLayout();
@@ -45,10 +45,11 @@
             // 
             btnRegisMange.BackColor = SystemColors.Highlight;
             btnRegisMange.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            btnRegisMange.Location = new Point(335, 166);
+            btnRegisMange.ForeColor = Color.White;
+            btnRegisMange.Location = new Point(332, 96);
             btnRegisMange.Margin = new Padding(2);
             btnRegisMange.Name = "btnRegisMange";
-            btnRegisMange.Size = new Size(225, 60);
+            btnRegisMange.Size = new Size(255, 60);
             btnRegisMange.TabIndex = 1;
             btnRegisMange.Text = "Registration Mangement";
             btnRegisMange.UseVisualStyleBackColor = false;
@@ -58,10 +59,11 @@
             // 
             btnTeachMang.BackColor = SystemColors.HotTrack;
             btnTeachMang.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            btnTeachMang.Location = new Point(86, 166);
+            btnTeachMang.ForeColor = Color.White;
+            btnTeachMang.Location = new Point(57, 166);
             btnTeachMang.Margin = new Padding(2);
             btnTeachMang.Name = "btnTeachMang";
-            btnTeachMang.Size = new Size(225, 60);
+            btnTeachMang.Size = new Size(254, 60);
             btnTeachMang.TabIndex = 2;
             btnTeachMang.Text = "Teacher Manangement";
             btnTeachMang.UseVisualStyleBackColor = false;
@@ -71,10 +73,11 @@
             // 
             btnExpenseMange.BackColor = SystemColors.Highlight;
             btnExpenseMange.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            btnExpenseMange.Location = new Point(86, 96);
+            btnExpenseMange.ForeColor = Color.White;
+            btnExpenseMange.Location = new Point(57, 96);
             btnExpenseMange.Margin = new Padding(2);
             btnExpenseMange.Name = "btnExpenseMange";
-            btnExpenseMange.Size = new Size(225, 60);
+            btnExpenseMange.Size = new Size(254, 60);
             btnExpenseMange.TabIndex = 3;
             btnExpenseMange.Text = "Expense Mangement";
             btnExpenseMange.UseVisualStyleBackColor = false;
@@ -84,10 +87,11 @@
             // 
             btnFeeMange.BackColor = SystemColors.Highlight;
             btnFeeMange.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            btnFeeMange.Location = new Point(86, 20);
+            btnFeeMange.ForeColor = Color.White;
+            btnFeeMange.Location = new Point(57, 20);
             btnFeeMange.Margin = new Padding(2);
             btnFeeMange.Name = "btnFeeMange";
-            btnFeeMange.Size = new Size(225, 60);
+            btnFeeMange.Size = new Size(254, 60);
             btnFeeMange.TabIndex = 12;
             btnFeeMange.Text = "Fee Management";
             btnFeeMange.UseVisualStyleBackColor = false;
@@ -97,10 +101,11 @@
             // 
             btnAttendMange.BackColor = SystemColors.Highlight;
             btnAttendMange.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            btnAttendMange.ForeColor = Color.White;
             btnAttendMange.Location = new Point(332, 20);
             btnAttendMange.Margin = new Padding(2);
             btnAttendMange.Name = "btnAttendMange";
-            btnAttendMange.Size = new Size(225, 60);
+            btnAttendMange.Size = new Size(255, 60);
             btnAttendMange.TabIndex = 8;
             btnAttendMange.Text = "Attendance Magangement";
             btnAttendMange.UseVisualStyleBackColor = false;
@@ -109,7 +114,7 @@
             // panel2
             // 
             panel2.BackColor = Color.IndianRed;
-            panel2.Controls.Add(button1);
+            panel2.Controls.Add(btnReports);
             panel2.Controls.Add(btnExpenseMange);
             panel2.Controls.Add(btnFeeMange);
             panel2.Controls.Add(btnAttendMange);
@@ -121,6 +126,20 @@
             panel2.Size = new Size(622, 318);
             panel2.TabIndex = 16;
             panel2.Paint += panel2_Paint;
+            // 
+            // btnReports
+            // 
+            btnReports.BackColor = SystemColors.Highlight;
+            btnReports.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            btnReports.ForeColor = Color.White;
+            btnReports.Location = new Point(332, 166);
+            btnReports.Margin = new Padding(2);
+            btnReports.Name = "btnReports";
+            btnReports.Size = new Size(255, 60);
+            btnReports.TabIndex = 13;
+            btnReports.Text = "Magange Reports";
+            btnReports.UseVisualStyleBackColor = false;
+            btnReports.Click += btnReports_Click;
             // 
             // pnLogo
             // 
@@ -135,25 +154,14 @@
             // 
             lbLogo.AutoSize = true;
             lbLogo.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbLogo.ForeColor = Color.Black;
-            lbLogo.Location = new Point(86, 33);
+            lbLogo.ForeColor = Color.FromArgb(0, 70, 140);
+            lbLogo.Location = new Point(88, 15);
             lbLogo.Name = "lbLogo";
             lbLogo.Size = new Size(426, 45);
             lbLogo.TabIndex = 0;
             lbLogo.Text = "Executive Science Academy";
             lbLogo.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // button1
-            // 
-            button1.BackColor = SystemColors.Highlight;
-            button1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            button1.Location = new Point(86, 245);
-            button1.Margin = new Padding(2);
-            button1.Name = "button1";
-            button1.Size = new Size(225, 60);
-            button1.TabIndex = 13;
-            button1.Text = "Reports";
-            button1.UseVisualStyleBackColor = false;
+            lbLogo.Click += lbLogo_Click;
             // 
             // adminDashBoard
             // 
@@ -183,6 +191,6 @@
         private Panel panel2;
         private Panel pnLogo;
         private Label lbLogo;
-        private Button button1;
+        private Button btnReports;
     }
 }

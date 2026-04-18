@@ -25,16 +25,14 @@
             colPresent = new DataGridViewCheckBoxColumn();
             cmbClass = new ComboBox();
             pnLogo = new Panel();
-            button1 = new Button();
+            lbLogo = new Label();
+            label1 = new Label();
+            btnMark = new Button();
             panel2 = new Panel();
             cmbAttendanceType = new ComboBox();
-            lbLogo = new Label();
-            panel1 = new Panel();
-            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dtGridAttence).BeginInit();
             pnLogo.SuspendLayout();
             panel2.SuspendLayout();
-            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // btnSearch
@@ -104,9 +102,10 @@
             // pnLogo
             // 
             pnLogo.BackColor = Color.IndianRed;
-            pnLogo.Controls.Add(button1);
-            pnLogo.Controls.Add(panel2);
             pnLogo.Controls.Add(lbLogo);
+            pnLogo.Controls.Add(label1);
+            pnLogo.Controls.Add(btnMark);
+            pnLogo.Controls.Add(panel2);
             pnLogo.Controls.Add(dtGridAttence);
             pnLogo.Location = new Point(10, 7);
             pnLogo.Name = "pnLogo";
@@ -114,18 +113,42 @@
             pnLogo.TabIndex = 8;
             pnLogo.Paint += pnLogo_Paint;
             // 
-            // button1
+            // lbLogo
             // 
-            button1.BackColor = SystemColors.Highlight;
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(782, 452);
-            button1.Name = "button1";
-            button1.Size = new Size(124, 44);
-            button1.TabIndex = 5;
-            button1.Text = "Mark";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            lbLogo.AutoSize = true;
+            lbLogo.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold);
+            lbLogo.ForeColor = Color.FromArgb(0, 70, 140);
+            lbLogo.Location = new Point(334, 47);
+            lbLogo.Name = "lbLogo";
+            lbLogo.Size = new Size(164, 37);
+            lbLogo.TabIndex = 16;
+            lbLogo.Text = "Attendance";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(0, 70, 140);
+            label1.Location = new Point(231, 2);
+            label1.Name = "label1";
+            label1.Size = new Size(426, 45);
+            label1.TabIndex = 15;
+            label1.Text = "Executive Science Academy";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.Click += label1_Click_1;
+            // 
+            // btnMark
+            // 
+            btnMark.BackColor = SystemColors.Highlight;
+            btnMark.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnMark.ForeColor = Color.White;
+            btnMark.Location = new Point(782, 452);
+            btnMark.Name = "btnMark";
+            btnMark.Size = new Size(124, 44);
+            btnMark.TabIndex = 5;
+            btnMark.Text = "Mark";
+            btnMark.UseVisualStyleBackColor = false;
+            btnMark.Click += button1_Click;
             // 
             // panel2
             // 
@@ -151,45 +174,12 @@
             cmbAttendanceType.TabIndex = 3;
             cmbAttendanceType.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
             // 
-            // lbLogo
-            // 
-            lbLogo.AutoSize = true;
-            lbLogo.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold);
-            lbLogo.Location = new Point(378, 48);
-            lbLogo.Name = "lbLogo";
-            lbLogo.Size = new Size(164, 37);
-            lbLogo.TabIndex = 0;
-            lbLogo.Text = "Attendance";
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.IndianRed;
-            panel1.Controls.Add(label1);
-            panel1.Location = new Point(14, 7);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(934, 45);
-            panel1.TabIndex = 12;
-            panel1.Paint += panel1_Paint;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(258, 5);
-            label1.Name = "label1";
-            label1.Size = new Size(426, 45);
-            label1.TabIndex = 15;
-            label1.Text = "Executive Science Academy";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // classWisAttencedance
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
             ClientSize = new Size(981, 515);
-            Controls.Add(panel1);
             Controls.Add(pnLogo);
             Name = "classWisAttencedance";
             Text = "classWisAttencedance";
@@ -198,8 +188,6 @@
             pnLogo.ResumeLayout(false);
             pnLogo.PerformLayout();
             panel2.ResumeLayout(false);
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -209,16 +197,15 @@
         private DataGridView dtGridAttence;
         private ComboBox cmbClass;
         private Panel pnLogo;
-        private Label lbLogo;
 
         private DataGridViewTextBoxColumn colDate;
         private DataGridViewTextBoxColumn colStudentName;
         private DataGridViewTextBoxColumn colGrade;
         private DataGridViewCheckBoxColumn colPresent;
-        private Panel panel1;
         private ComboBox cmbAttendanceType;
         private Panel panel2;
-        private Button button1;
+        private Button btnMark;
         private Label label1;
+        private Label lbLogo;
     }
 }

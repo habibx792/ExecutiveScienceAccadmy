@@ -53,6 +53,7 @@
             // 
             btnAdd.BackColor = SystemColors.Highlight;
             btnAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnAdd.ForeColor = Color.White;
             btnAdd.Location = new Point(20, 28);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(221, 49);
@@ -65,6 +66,7 @@
             // 
             bntReport.BackColor = SystemColors.Highlight;
             bntReport.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            bntReport.ForeColor = Color.White;
             bntReport.Location = new Point(307, 28);
             bntReport.Name = "bntReport";
             bntReport.Size = new Size(237, 49);
@@ -77,6 +79,7 @@
             // 
             btnCurrMonth.BackColor = SystemColors.Highlight;
             btnCurrMonth.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnCurrMonth.ForeColor = Color.White;
             btnCurrMonth.Location = new Point(20, 100);
             btnCurrMonth.Name = "btnCurrMonth";
             btnCurrMonth.Size = new Size(221, 50);
@@ -89,16 +92,16 @@
             // 
             pnLogo.BackColor = Color.IndianRed;
             pnLogo.Controls.Add(label6);
-            pnLogo.Location = new Point(19, 29);
+            pnLogo.Location = new Point(19, 12);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(558, 51);
+            pnLogo.Size = new Size(558, 68);
             pnLogo.TabIndex = 27;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.Black;
+            label6.ForeColor = Color.FromArgb(0, 70, 140);
             label6.Location = new Point(71, 8);
             label6.Name = "label6";
             label6.Size = new Size(426, 45);
@@ -114,7 +117,7 @@
             ClientSize = new Size(600, 318);
             Controls.Add(pnMain);
             Controls.Add(pnLogo);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "ExpenseForm";
             Text = "ExpenseForm";
             Load += ExpenseForm_Load;

@@ -19,7 +19,7 @@
             rdYear = new RadioButton();
             rdMonth = new RadioButton();
             dtExpense = new DataGridView();
-            button1 = new Button();
+            btnCheck = new Button();
             lblMonth = new Label();
             cmbMonth = new ComboBox();
             pnLogo = new Panel();
@@ -35,7 +35,7 @@
             pnMain.Controls.Add(rdYear);
             pnMain.Controls.Add(rdMonth);
             pnMain.Controls.Add(dtExpense);
-            pnMain.Controls.Add(button1);
+            pnMain.Controls.Add(btnCheck);
             pnMain.Controls.Add(lblMonth);
             pnMain.Controls.Add(cmbMonth);
             pnMain.Location = new Point(18, 27);
@@ -81,18 +81,19 @@
             dtExpense.Size = new Size(717, 166);
             dtExpense.TabIndex = 4;
             // 
-            // button1
+            // btnCheck
             // 
-            button1.BackColor = SystemColors.Highlight;
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button1.Location = new Point(380, 142);
-            button1.Margin = new Padding(2);
-            button1.Name = "button1";
-            button1.Size = new Size(137, 34);
-            button1.TabIndex = 5;
-            button1.Text = "Check Expense";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click_1;
+            btnCheck.BackColor = SystemColors.Highlight;
+            btnCheck.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnCheck.ForeColor = Color.White;
+            btnCheck.Location = new Point(380, 135);
+            btnCheck.Margin = new Padding(2);
+            btnCheck.Name = "btnCheck";
+            btnCheck.Size = new Size(137, 41);
+            btnCheck.TabIndex = 5;
+            btnCheck.Text = "Check Expense";
+            btnCheck.UseVisualStyleBackColor = false;
+            btnCheck.Click += button1_Click_1;
             // 
             // lblMonth
             // 
@@ -119,16 +120,16 @@
             // 
             pnLogo.BackColor = Color.IndianRed;
             pnLogo.Controls.Add(label6);
-            pnLogo.Location = new Point(18, 27);
+            pnLogo.Location = new Point(18, 12);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(717, 51);
+            pnLogo.Size = new Size(717, 66);
             pnLogo.TabIndex = 28;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.Black;
+            label6.ForeColor = Color.FromArgb(0, 70, 140);
             label6.Location = new Point(148, 10);
             label6.Name = "label6";
             label6.Size = new Size(426, 45);
@@ -161,7 +162,7 @@
         private RadioButton rdYear;
         private RadioButton rdMonth;
         private DataGridView dtExpense;
-        private Button button1;
+        private Button btnCheck;
         private Label lblMonth;
         private ComboBox cmbMonth;
         private Panel pnLogo;

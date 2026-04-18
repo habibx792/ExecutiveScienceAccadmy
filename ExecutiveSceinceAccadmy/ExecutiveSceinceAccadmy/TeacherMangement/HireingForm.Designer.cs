@@ -70,7 +70,7 @@
             // txtTeachName
             // 
             txtTeachName.Location = new Point(136, 224);
-            txtTeachName.Margin = new Padding(2, 2, 2, 2);
+            txtTeachName.Margin = new Padding(2);
             txtTeachName.Name = "txtTeachName";
             txtTeachName.Size = new Size(212, 29);
             txtTeachName.TabIndex = 1;
@@ -78,7 +78,7 @@
             // txtTeachCnic
             // 
             txtTeachCnic.Location = new Point(136, 263);
-            txtTeachCnic.Margin = new Padding(2, 2, 2, 2);
+            txtTeachCnic.Margin = new Padding(2);
             txtTeachCnic.Name = "txtTeachCnic";
             txtTeachCnic.Size = new Size(212, 29);
             txtTeachCnic.TabIndex = 13;
@@ -88,7 +88,7 @@
             // 
             cmbCity.FormattingEnabled = true;
             cmbCity.Location = new Point(548, 265);
-            cmbCity.Margin = new Padding(2, 2, 2, 2);
+            cmbCity.Margin = new Padding(2);
             cmbCity.Name = "cmbCity";
             cmbCity.Size = new Size(212, 29);
             cmbCity.TabIndex = 20;
@@ -97,7 +97,7 @@
             // 
             cmbQualification.FormattingEnabled = true;
             cmbQualification.Location = new Point(548, 344);
-            cmbQualification.Margin = new Padding(2, 2, 2, 2);
+            cmbQualification.Margin = new Padding(2);
             cmbQualification.Name = "cmbQualification";
             cmbQualification.Size = new Size(212, 29);
             cmbQualification.TabIndex = 21;
@@ -125,7 +125,7 @@
             // txtFatherCnic
             // 
             txtFatherCnic.Location = new Point(136, 344);
-            txtFatherCnic.Margin = new Padding(2, 2, 2, 2);
+            txtFatherCnic.Margin = new Padding(2);
             txtFatherCnic.Name = "txtFatherCnic";
             txtFatherCnic.Size = new Size(212, 29);
             txtFatherCnic.TabIndex = 26;
@@ -133,7 +133,7 @@
             // txtFaterName
             // 
             txtFaterName.Location = new Point(138, 301);
-            txtFaterName.Margin = new Padding(2, 2, 2, 2);
+            txtFaterName.Margin = new Padding(2);
             txtFaterName.Name = "txtFaterName";
             txtFaterName.Size = new Size(211, 29);
             txtFaterName.TabIndex = 27;
@@ -171,7 +171,7 @@
             // txtAddress
             // 
             txtAddress.Location = new Point(548, 309);
-            txtAddress.Margin = new Padding(2, 2, 2, 2);
+            txtAddress.Margin = new Padding(2);
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(212, 29);
             txtAddress.TabIndex = 33;
@@ -215,7 +215,7 @@
             panel1.Controls.Add(txtTeachName);
             panel1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             panel1.Location = new Point(25, 8);
-            panel1.Margin = new Padding(2, 2, 2, 2);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
             panel1.Size = new Size(829, 470);
             panel1.TabIndex = 5;
@@ -225,7 +225,7 @@
             // 
             chkSenior.AutoSize = true;
             chkSenior.Location = new Point(136, 188);
-            chkSenior.Margin = new Padding(2, 2, 2, 2);
+            chkSenior.Margin = new Padding(2);
             chkSenior.Name = "chkSenior";
             chkSenior.Size = new Size(141, 25);
             chkSenior.TabIndex = 41;
@@ -245,7 +245,7 @@
             // txtType
             // 
             txtType.Location = new Point(548, 385);
-            txtType.Margin = new Padding(2, 2, 2, 2);
+            txtType.Margin = new Padding(2);
             txtType.Name = "txtType";
             txtType.Size = new Size(212, 29);
             txtType.TabIndex = 39;
@@ -264,7 +264,7 @@
             // 
             rdPercent.AutoSize = true;
             rdPercent.Location = new Point(412, 187);
-            rdPercent.Margin = new Padding(2, 2, 2, 2);
+            rdPercent.Margin = new Padding(2);
             rdPercent.Name = "rdPercent";
             rdPercent.Size = new Size(114, 25);
             rdPercent.TabIndex = 37;
@@ -277,7 +277,7 @@
             // 
             rdSal.AutoSize = true;
             rdSal.Location = new Point(674, 187);
-            rdSal.Margin = new Padding(2, 2, 2, 2);
+            rdSal.Margin = new Padding(2);
             rdSal.Name = "rdSal";
             rdSal.Size = new Size(90, 25);
             rdSal.TabIndex = 36;
@@ -290,7 +290,7 @@
             // 
             cmbCountry.FormattingEnabled = true;
             cmbCountry.Location = new Point(548, 222);
-            cmbCountry.Margin = new Padding(2, 2, 2, 2);
+            cmbCountry.Margin = new Padding(2);
             cmbCountry.Name = "cmbCountry";
             cmbCountry.Size = new Size(212, 29);
             cmbCountry.TabIndex = 35;
@@ -299,8 +299,9 @@
             // btnHire
             // 
             btnHire.BackColor = SystemColors.Highlight;
+            btnHire.ForeColor = Color.White;
             btnHire.Location = new Point(654, 423);
-            btnHire.Margin = new Padding(2, 2, 2, 2);
+            btnHire.Margin = new Padding(2);
             btnHire.Name = "btnHire";
             btnHire.Size = new Size(105, 46);
             btnHire.TabIndex = 30;
@@ -312,7 +313,7 @@
             // 
             dtTeacherSubject.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtTeacherSubject.Location = new Point(0, 0);
-            dtTeacherSubject.Margin = new Padding(2, 2, 2, 2);
+            dtTeacherSubject.Margin = new Padding(2);
             dtTeacherSubject.Name = "dtTeacherSubject";
             dtTeacherSubject.RowHeadersWidth = 51;
             dtTeacherSubject.Size = new Size(829, 154);
@@ -337,7 +338,7 @@
             ClientSize = new Size(879, 486);
             Controls.Add(label4);
             Controls.Add(panel1);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "HireingForm";
             Text = "HireingForm";
             Load += HireingForm_Load;

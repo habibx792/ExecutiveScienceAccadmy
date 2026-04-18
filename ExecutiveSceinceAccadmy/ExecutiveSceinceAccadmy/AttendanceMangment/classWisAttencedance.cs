@@ -29,15 +29,17 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
             StyleControls();
             this.StartPosition = FormStartPosition.CenterScreen;
             this.BackColor = Color.DodgerBlue;
-        
+            UI.Instance.StyleButton(btnSearch, borderRadius: 20);
+            UI.Instance.StyleButton(btnMark, borderRadius: 20);
 
 
-        cmbAttendanceType.SelectedIndexChanged += cmbAttendance_SelectedIndexChanged;
+
+            cmbAttendanceType.SelectedIndexChanged += cmbAttendance_SelectedIndexChanged;
             //btnSearch.BackColor = Color.AliceBlue;
 
         }
 
-        
+
         private void StyleControls()
         {
 
@@ -103,7 +105,7 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
             //    {
             //        cmbAttendanceType.Items.Add($"{domainTypeItem}");
             //    }
-            
+
         }
         private void styleAttendanceGrid()
         {
@@ -234,6 +236,11 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
             }
         }
         private void cmbClass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
         {
 
         }

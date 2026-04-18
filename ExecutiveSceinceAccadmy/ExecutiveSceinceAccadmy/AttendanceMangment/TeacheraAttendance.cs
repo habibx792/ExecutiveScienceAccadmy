@@ -73,9 +73,9 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
                 MessageBox.Show("Attendance marked successfully");
             else
                 if (rdDept.Checked)
-            {
-                MessageBox.Show("Plese mark arrival first");
-            }
+                {
+                    MessageBox.Show("Plese mark arrival first");
+                }
             MessageBox.Show("Arrival already marked today");
         }
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -84,6 +84,11 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
         }
 
         private void lbLogo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

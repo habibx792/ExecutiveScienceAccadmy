@@ -41,8 +41,9 @@
             // 
             btnAttend.BackColor = SystemColors.Highlight;
             btnAttend.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnAttend.ForeColor = Color.White;
             btnAttend.Location = new Point(134, 18);
-            btnAttend.Margin = new Padding(2, 2, 2, 2);
+            btnAttend.Margin = new Padding(2);
             btnAttend.Name = "btnAttend";
             btnAttend.Size = new Size(172, 70);
             btnAttend.TabIndex = 7;
@@ -54,8 +55,9 @@
             // 
             btnHiring.BackColor = SystemColors.Highlight;
             btnHiring.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnHiring.ForeColor = Color.White;
             btnHiring.Location = new Point(134, 127);
-            btnHiring.Margin = new Padding(2, 2, 2, 2);
+            btnHiring.Margin = new Padding(2);
             btnHiring.Name = "btnHiring";
             btnHiring.Size = new Size(172, 70);
             btnHiring.TabIndex = 10;
@@ -69,7 +71,7 @@
             panel1.Controls.Add(btnHiring);
             panel1.Controls.Add(btnAttend);
             panel1.Location = new Point(9, 89);
-            panel1.Margin = new Padding(2, 2, 2, 2);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
             panel1.Size = new Size(455, 247);
             panel1.TabIndex = 15;
@@ -103,7 +105,7 @@
             ClientSize = new Size(481, 361);
             Controls.Add(pnLogo);
             Controls.Add(panel1);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "TeacherMangementForm";
             Text = "TeacherMangement";
             Load += TeacherMangement_Load;

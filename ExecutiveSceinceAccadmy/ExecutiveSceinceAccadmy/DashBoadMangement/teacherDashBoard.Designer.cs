@@ -56,6 +56,7 @@
             // 
             btnTeacherAttendRep.BackColor = SystemColors.Highlight;
             btnTeacherAttendRep.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnTeacherAttendRep.ForeColor = Color.White;
             btnTeacherAttendRep.Location = new Point(144, 265);
             btnTeacherAttendRep.Name = "btnTeacherAttendRep";
             btnTeacherAttendRep.Size = new Size(225, 65);
@@ -68,6 +69,7 @@
             // 
             btnFeeMange.BackColor = SystemColors.Highlight;
             btnFeeMange.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            btnFeeMange.ForeColor = Color.White;
             btnFeeMange.Location = new Point(144, 122);
             btnFeeMange.Margin = new Padding(2);
             btnFeeMange.Name = "btnFeeMange";
@@ -80,6 +82,7 @@
             // 
             btnAttendMange.BackColor = SystemColors.Highlight;
             btnAttendMange.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            btnAttendMange.ForeColor = Color.White;
             btnAttendMange.Location = new Point(144, 45);
             btnAttendMange.Margin = new Padding(2);
             btnAttendMange.Name = "btnAttendMange";
@@ -93,6 +96,7 @@
             // 
             btnRegisMange.BackColor = SystemColors.Highlight;
             btnRegisMange.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            btnRegisMange.ForeColor = Color.White;
             btnRegisMange.Location = new Point(144, 200);
             btnRegisMange.Margin = new Padding(2);
             btnRegisMange.Name = "btnRegisMange";
@@ -114,7 +118,7 @@
             // 
             lbLogo.AutoSize = true;
             lbLogo.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbLogo.ForeColor = Color.Black;
+            lbLogo.ForeColor = Color.FromArgb(0, 70, 140);
             lbLogo.Location = new Point(26, 25);
             lbLogo.Name = "lbLogo";
             lbLogo.Size = new Size(426, 45);

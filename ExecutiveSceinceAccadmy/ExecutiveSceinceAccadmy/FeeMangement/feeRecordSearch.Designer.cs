@@ -53,7 +53,7 @@
             btnSearch.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSearch.ForeColor = Color.White;
             btnSearch.Location = new Point(401, 175);
-            btnSearch.Margin = new Padding(2, 2, 2, 2);
+            btnSearch.Margin = new Padding(2);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(94, 47);
             btnSearch.TabIndex = 1;
@@ -66,7 +66,7 @@
             dtGirdPaidStatus.BackgroundColor = Color.IndianRed;
             dtGirdPaidStatus.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtGirdPaidStatus.Location = new Point(22, 299);
-            dtGirdPaidStatus.Margin = new Padding(2, 2, 2, 2);
+            dtGirdPaidStatus.Margin = new Padding(2);
             dtGirdPaidStatus.Name = "dtGirdPaidStatus";
             dtGirdPaidStatus.RowHeadersWidth = 51;
             dtGirdPaidStatus.Size = new Size(661, 123);
@@ -77,7 +77,7 @@
             rdFeeId.AutoSize = true;
             rdFeeId.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             rdFeeId.Location = new Point(174, 71);
-            rdFeeId.Margin = new Padding(2, 2, 2, 2);
+            rdFeeId.Margin = new Padding(2);
             rdFeeId.Name = "rdFeeId";
             rdFeeId.Size = new Size(153, 25);
             rdFeeId.TabIndex = 4;
@@ -98,7 +98,7 @@
             panel1.Controls.Add(txtId);
             panel1.Controls.Add(btnSearch);
             panel1.Location = new Point(22, 73);
-            panel1.Margin = new Padding(2, 2, 2, 2);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
             panel1.Size = new Size(661, 230);
             panel1.TabIndex = 5;
@@ -108,7 +108,7 @@
             panel2.BackColor = Color.IndianRed;
             panel2.Controls.Add(label1);
             panel2.Location = new Point(0, 0);
-            panel2.Margin = new Padding(2, 2, 2, 2);
+            panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
             panel2.Size = new Size(661, 55);
             panel2.TabIndex = 7;
@@ -117,6 +117,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(0, 70, 140);
             label1.Location = new Point(195, 11);
             label1.Name = "label1";
             label1.Size = new Size(250, 37);
@@ -150,7 +151,7 @@
             rdStdId.AutoSize = true;
             rdStdId.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             rdStdId.Location = new Point(334, 71);
-            rdStdId.Margin = new Padding(2, 2, 2, 2);
+            rdStdId.Margin = new Padding(2);
             rdStdId.Name = "rdStdId";
             rdStdId.Size = new Size(187, 25);
             rdStdId.TabIndex = 5;
@@ -164,7 +165,7 @@
             cmbMonth.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             cmbMonth.FormattingEnabled = true;
             cmbMonth.Location = new Point(174, 143);
-            cmbMonth.Margin = new Padding(2, 2, 2, 2);
+            cmbMonth.Margin = new Padding(2);
             cmbMonth.Name = "cmbMonth";
             cmbMonth.Size = new Size(322, 25);
             cmbMonth.TabIndex = 3;
@@ -173,7 +174,7 @@
             // 
             txtId.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             txtId.Location = new Point(174, 106);
-            txtId.Margin = new Padding(2, 2, 2, 2);
+            txtId.Margin = new Padding(2);
             txtId.Name = "txtId";
             txtId.PlaceholderText = "Enter Registeratrion Number";
             txtId.Size = new Size(322, 25);
@@ -183,16 +184,16 @@
             // 
             pnLogo.BackColor = Color.IndianRed;
             pnLogo.Controls.Add(label2);
-            pnLogo.Location = new Point(22, 22);
+            pnLogo.Location = new Point(22, 12);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(661, 53);
+            pnLogo.Size = new Size(661, 63);
             pnLogo.TabIndex = 9;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.Black;
+            label2.ForeColor = Color.FromArgb(0, 70, 140);
             label2.Location = new Point(108, 14);
             label2.Name = "label2";
             label2.Size = new Size(426, 45);
@@ -209,7 +210,7 @@
             Controls.Add(pnLogo);
             Controls.Add(panel1);
             Controls.Add(dtGirdPaidStatus);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "feeRecordSearch";
             Text = "feeRecordSearch";
             Load += feeRecordSearch_Load;

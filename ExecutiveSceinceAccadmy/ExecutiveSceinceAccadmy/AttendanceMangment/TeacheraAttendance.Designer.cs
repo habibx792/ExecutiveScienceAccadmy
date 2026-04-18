@@ -68,6 +68,7 @@
             // 
             btnTeachAttence.BackColor = SystemColors.HotTrack;
             btnTeachAttence.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnTeachAttence.ForeColor = Color.White;
             btnTeachAttence.Location = new Point(376, 145);
             btnTeachAttence.Name = "btnTeachAttence";
             btnTeachAttence.Size = new Size(75, 45);
@@ -106,6 +107,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(558, 259);
             panel1.TabIndex = 5;
+            panel1.Paint += panel1_Paint;
             // 
             // pnLogo
             // 
@@ -120,7 +122,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.Black;
+            label1.ForeColor = Color.FromArgb(0, 70, 140);
             label1.Location = new Point(70, 16);
             label1.Name = "label1";
             label1.Size = new Size(426, 45);

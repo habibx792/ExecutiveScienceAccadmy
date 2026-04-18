@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             pnMain = new Panel();
+            btnFeeSet = new Button();
             label2 = new Label();
             lblYear = new Label();
             lblMonth = new Label();
@@ -41,7 +42,6 @@
             btnRegularFee = new Button();
             pnLogo = new Panel();
             label6 = new Label();
-            btnFeeSet = new Button();
             pnMain.SuspendLayout();
             pnLogo.SuspendLayout();
             SuspendLayout();
@@ -60,16 +60,30 @@
             pnMain.Controls.Add(btnSearchFee);
             pnMain.Controls.Add(btnDefault);
             pnMain.Controls.Add(btnRegularFee);
-            pnMain.Location = new Point(33, 50);
+            pnMain.Location = new Point(33, 61);
             pnMain.Name = "pnMain";
-            pnMain.Size = new Size(573, 416);
+            pnMain.Size = new Size(573, 423);
             pnMain.TabIndex = 10;
+            // 
+            // btnFeeSet
+            // 
+            btnFeeSet.BackColor = SystemColors.Highlight;
+            btnFeeSet.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            btnFeeSet.ForeColor = Color.White;
+            btnFeeSet.Location = new Point(159, 356);
+            btnFeeSet.Margin = new Padding(2);
+            btnFeeSet.Name = "btnFeeSet";
+            btnFeeSet.Size = new Size(249, 60);
+            btnFeeSet.TabIndex = 25;
+            btnFeeSet.Text = "Set Fee ";
+            btnFeeSet.UseVisualStyleBackColor = false;
+            btnFeeSet.Click += btnFeeSet_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(138, 121);
+            label2.Location = new Point(124, 144);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(189, 21);
@@ -79,7 +93,7 @@
             // lblYear
             // 
             lblYear.AutoSize = true;
-            lblYear.Location = new Point(404, 124);
+            lblYear.Location = new Point(390, 147);
             lblYear.Margin = new Padding(2, 0, 2, 0);
             lblYear.Name = "lblYear";
             lblYear.Size = new Size(29, 15);
@@ -91,7 +105,7 @@
             lblMonth.AutoSize = true;
             lblMonth.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblMonth.ForeColor = Color.White;
-            lblMonth.Location = new Point(404, 89);
+            lblMonth.Location = new Point(390, 112);
             lblMonth.Margin = new Padding(2, 0, 2, 0);
             lblMonth.Name = "lblMonth";
             lblMonth.Size = new Size(51, 25);
@@ -102,7 +116,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(138, 91);
+            label4.Location = new Point(124, 114);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
             label4.Size = new Size(207, 21);
@@ -114,7 +128,7 @@
             lblDay.AutoSize = true;
             lblDay.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDay.ForeColor = Color.White;
-            lblDay.Location = new Point(404, 57);
+            lblDay.Location = new Point(390, 80);
             lblDay.Margin = new Padding(2, 0, 2, 0);
             lblDay.Name = "lblDay";
             lblDay.Size = new Size(51, 25);
@@ -125,7 +139,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(146, 57);
+            label5.Location = new Point(132, 80);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
             label5.Size = new Size(186, 21);
@@ -136,7 +150,8 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(204, 9);
+            label1.ForeColor = Color.FromArgb(0, 70, 140);
+            label1.Location = new Point(186, 26);
             label1.Name = "label1";
             label1.Size = new Size(204, 32);
             label1.TabIndex = 17;
@@ -146,7 +161,8 @@
             // 
             btnSearchFee.BackColor = SystemColors.Highlight;
             btnSearchFee.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnSearchFee.Location = new Point(173, 212);
+            btnSearchFee.ForeColor = Color.White;
+            btnSearchFee.Location = new Point(159, 238);
             btnSearchFee.Name = "btnSearchFee";
             btnSearchFee.Size = new Size(249, 56);
             btnSearchFee.TabIndex = 16;
@@ -158,7 +174,8 @@
             // 
             btnDefault.BackColor = SystemColors.Highlight;
             btnDefault.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnDefault.Location = new Point(173, 274);
+            btnDefault.ForeColor = Color.White;
+            btnDefault.Location = new Point(159, 300);
             btnDefault.Name = "btnDefault";
             btnDefault.Size = new Size(249, 51);
             btnDefault.TabIndex = 14;
@@ -170,7 +187,8 @@
             // 
             btnRegularFee.BackColor = SystemColors.Highlight;
             btnRegularFee.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnRegularFee.Location = new Point(173, 152);
+            btnRegularFee.ForeColor = Color.White;
+            btnRegularFee.Location = new Point(159, 178);
             btnRegularFee.Name = "btnRegularFee";
             btnRegularFee.Size = new Size(249, 53);
             btnRegularFee.TabIndex = 11;
@@ -184,33 +202,20 @@
             pnLogo.Controls.Add(label6);
             pnLogo.Location = new Point(33, 9);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(573, 46);
+            pnLogo.Size = new Size(573, 56);
             pnLogo.TabIndex = 24;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.Black;
+            label6.ForeColor = Color.FromArgb(0, 70, 140);
             label6.Location = new Point(79, 5);
             label6.Name = "label6";
             label6.Size = new Size(426, 45);
             label6.TabIndex = 28;
             label6.Text = "Executive Science Academy";
             label6.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // btnFeeSet
-            // 
-            btnFeeSet.BackColor = SystemColors.Highlight;
-            btnFeeSet.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            btnFeeSet.Location = new Point(173, 330);
-            btnFeeSet.Margin = new Padding(2);
-            btnFeeSet.Name = "btnFeeSet";
-            btnFeeSet.Size = new Size(249, 60);
-            btnFeeSet.TabIndex = 25;
-            btnFeeSet.Text = "Set Fee ";
-            btnFeeSet.UseVisualStyleBackColor = false;
-            btnFeeSet.Click += btnFeeSet_Click;
             // 
             // FeeForm
             // 

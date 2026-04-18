@@ -30,16 +30,18 @@ namespace ExecutiveSceinceAccadmy
 
         private void StyleControls()
         {
-            UI.Instance.StylePanel(pnLogo,
-                backColor: Color.IndianRed,
-                borderColor: Color.FromArgb(0, 120, 215),
-                borderRadius: 20,
-                borderThickness: 4);
+            //UI.Instance.StylePanel(pnLogo,
+            //    backColor: Color.IndianRed,
+            //    borderColor: Color.FromArgb(0, 120, 215),
+            //    borderRadius: 1,
+            //    borderThickness: 4);
             UI.Instance.AddFormShadow(this);
-            UI.Instance.StylePanel(pnMain, backColor: Color.IndianRed,
-                borderColor: Color.FromArgb(0, 120, 215),
-                borderRadius: 20,
-                borderThickness: 4);
+            //UI.Instance.StylePanel(pnMain, backColor: Color.IndianRed,
+            //    borderColor: Color.FromArgb(0, 120, 215),
+            //    borderRadius: 1,
+            //    borderThickness: 4);
+            UI.Instance.StyleButton(btnLogin, borderRadius: 20);
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

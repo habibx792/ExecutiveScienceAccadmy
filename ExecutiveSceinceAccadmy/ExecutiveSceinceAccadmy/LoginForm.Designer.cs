@@ -56,19 +56,19 @@
             pnMain.Controls.Add(label1);
             pnMain.Controls.Add(txtPass);
             pnMain.Controls.Add(txtUser);
-            pnMain.Location = new Point(41, 146);
-            pnMain.Margin = new Padding(4, 5, 4, 5);
+            pnMain.Location = new Point(32, 95);
             pnMain.Name = "pnMain";
-            pnMain.Size = new Size(640, 468);
+            pnMain.Size = new Size(498, 305);
             pnMain.TabIndex = 0;
             pnMain.Paint += pnMain_Paint;
             // 
             // chkShow
             // 
             chkShow.AutoSize = true;
-            chkShow.Location = new Point(129, 264);
+            chkShow.Location = new Point(100, 172);
+            chkShow.Margin = new Padding(2, 2, 2, 2);
             chkShow.Name = "chkShow";
-            chkShow.Size = new Size(148, 27);
+            chkShow.Size = new Size(108, 19);
             chkShow.TabIndex = 9;
             chkShow.Text = "Show Password";
             chkShow.UseVisualStyleBackColor = true;
@@ -78,9 +78,10 @@
             // 
             rdStudent.AutoSize = true;
             rdStudent.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            rdStudent.Location = new Point(424, 48);
+            rdStudent.Location = new Point(330, 31);
+            rdStudent.Margin = new Padding(2, 2, 2, 2);
             rdStudent.Name = "rdStudent";
-            rdStudent.Size = new Size(107, 32);
+            rdStudent.Size = new Size(88, 25);
             rdStudent.TabIndex = 15;
             rdStudent.TabStop = true;
             rdStudent.Text = "Student";
@@ -91,9 +92,10 @@
             // 
             rdTeacher.AutoSize = true;
             rdTeacher.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            rdTeacher.Location = new Point(276, 48);
+            rdTeacher.Location = new Point(215, 31);
+            rdTeacher.Margin = new Padding(2, 2, 2, 2);
             rdTeacher.Name = "rdTeacher";
-            rdTeacher.Size = new Size(106, 32);
+            rdTeacher.Size = new Size(87, 25);
             rdTeacher.TabIndex = 14;
             rdTeacher.TabStop = true;
             rdTeacher.Text = "Teacher";
@@ -104,9 +106,10 @@
             // 
             rdAdmin.AutoSize = true;
             rdAdmin.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            rdAdmin.Location = new Point(135, 48);
+            rdAdmin.Location = new Point(105, 31);
+            rdAdmin.Margin = new Padding(2, 2, 2, 2);
             rdAdmin.Name = "rdAdmin";
-            rdAdmin.Size = new Size(95, 32);
+            rdAdmin.Size = new Size(79, 25);
             rdAdmin.TabIndex = 13;
             rdAdmin.TabStop = true;
             rdAdmin.Text = "Admin";
@@ -120,10 +123,9 @@
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnLogin.ForeColor = Color.White;
-            btnLogin.Location = new Point(129, 326);
-            btnLogin.Margin = new Padding(4, 5, 4, 5);
+            btnLogin.Location = new Point(100, 213);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(386, 69);
+            btnLogin.Size = new Size(300, 45);
             btnLogin.TabIndex = 9;
             btnLogin.Text = "Sign In";
             btnLogin.UseVisualStyleBackColor = false;
@@ -134,10 +136,9 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
             label2.ForeColor = Color.FromArgb(64, 64, 64);
-            label2.Location = new Point(129, 188);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(100, 123);
             label2.Name = "label2";
-            label2.Size = new Size(106, 25);
+            label2.Size = new Size(86, 20);
             label2.TabIndex = 12;
             label2.Text = "Password";
             label2.Click += label2_Click;
@@ -147,10 +148,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(64, 64, 64);
-            label1.Location = new Point(129, 97);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(100, 63);
             label1.Name = "label1";
-            label1.Size = new Size(110, 25);
+            label1.Size = new Size(91, 20);
             label1.TabIndex = 11;
             label1.Text = "Username";
             // 
@@ -159,11 +159,10 @@
             txtPass.AutoCompleteMode = AutoCompleteMode.Suggest;
             txtPass.BorderStyle = BorderStyle.FixedSingle;
             txtPass.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            txtPass.Location = new Point(129, 226);
-            txtPass.Margin = new Padding(4, 5, 4, 5);
+            txtPass.Location = new Point(100, 147);
             txtPass.Name = "txtPass";
             txtPass.PlaceholderText = "Enter Password";
-            txtPass.Size = new Size(385, 30);
+            txtPass.Size = new Size(300, 26);
             txtPass.TabIndex = 10;
             txtPass.UseSystemPasswordChar = true;
             // 
@@ -171,11 +170,10 @@
             // 
             txtUser.BorderStyle = BorderStyle.FixedSingle;
             txtUser.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            txtUser.Location = new Point(129, 142);
-            txtUser.Margin = new Padding(4, 5, 4, 5);
+            txtUser.Location = new Point(100, 93);
             txtUser.Name = "txtUser";
             txtUser.PlaceholderText = "Enter UserName";
-            txtUser.Size = new Size(385, 30);
+            txtUser.Size = new Size(300, 26);
             txtUser.TabIndex = 9;
             txtUser.TextChanged += textBox1_TextChanged;
             // 
@@ -183,10 +181,9 @@
             // 
             pnLogo.BackColor = Color.IndianRed;
             pnLogo.Controls.Add(lbLogo);
-            pnLogo.Location = new Point(41, 26);
-            pnLogo.Margin = new Padding(4, 5, 4, 5);
+            pnLogo.Location = new Point(32, 17);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(640, 123);
+            pnLogo.Size = new Size(498, 93);
             pnLogo.TabIndex = 8;
             // 
             // lbLogo
@@ -194,23 +191,21 @@
             lbLogo.AutoSize = true;
             lbLogo.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbLogo.ForeColor = Color.FromArgb(0, 70, 140);
-            lbLogo.Location = new Point(34, 39);
-            lbLogo.Margin = new Padding(4, 0, 4, 0);
+            lbLogo.Location = new Point(43, 18);
             lbLogo.Name = "lbLogo";
-            lbLogo.Size = new Size(537, 54);
+            lbLogo.Size = new Size(426, 45);
             lbLogo.TabIndex = 0;
             lbLogo.Text = "Executive Science Academy";
             lbLogo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(9F, 23F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(716, 648);
+            ClientSize = new Size(557, 423);
             Controls.Add(pnLogo);
             Controls.Add(pnMain);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "LoginForm";
             Text = "Login";
             Load += LoginForm_Load;

@@ -28,6 +28,8 @@ namespace ExecutiveSceinceAccadmy.TeacherMangement
             StyleControls();
             this.StartPosition = FormStartPosition.CenterScreen;
             this.BackColor = Color.DodgerBlue;
+            UI.Instance.StyleButton(btnHire, borderRadius: 20);
+
         }
         private void StyleControls()
         {

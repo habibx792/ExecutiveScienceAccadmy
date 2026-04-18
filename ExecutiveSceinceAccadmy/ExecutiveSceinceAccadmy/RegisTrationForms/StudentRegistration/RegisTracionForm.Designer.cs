@@ -280,9 +280,9 @@
             // 
             pnLogo.BackColor = Color.IndianRed;
             pnLogo.Controls.Add(label6);
-            pnLogo.Location = new Point(22, 48);
+            pnLogo.Location = new Point(22, 22);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(1228, 47);
+            pnLogo.Size = new Size(1228, 79);
             pnLogo.TabIndex = 25;
             pnLogo.Paint += pnLogo_Paint;
             // 
@@ -290,7 +290,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.Black;
+            label6.ForeColor = Color.FromArgb(0, 70, 140);
             label6.Location = new Point(405, 6);
             label6.Name = "label6";
             label6.Size = new Size(426, 45);
@@ -563,7 +563,7 @@
             // 
             txtCity.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             txtCity.Location = new Point(561, 205);
-            txtCity.Margin = new Padding(2, 2, 2, 2);
+            txtCity.Margin = new Padding(2);
             txtCity.Name = "txtCity";
             txtCity.PlaceholderText = "Residential City";
             txtCity.Size = new Size(230, 23);
@@ -583,7 +583,7 @@
             // 
             txtStdAddress.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             txtStdAddress.Location = new Point(922, 205);
-            txtStdAddress.Margin = new Padding(2, 2, 2, 2);
+            txtStdAddress.Margin = new Padding(2);
             txtStdAddress.Name = "txtStdAddress";
             txtStdAddress.PlaceholderText = "Enter Student Address";
             txtStdAddress.Size = new Size(217, 23);
@@ -730,6 +730,7 @@
             // 
             label19.AutoSize = true;
             label19.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label19.ForeColor = Color.FromArgb(0, 70, 140);
             label19.Location = new Point(443, 9);
             label19.Name = "label19";
             label19.Size = new Size(342, 25);

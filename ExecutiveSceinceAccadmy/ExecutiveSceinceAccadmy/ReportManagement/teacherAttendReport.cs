@@ -24,6 +24,8 @@ namespace ExecutiveSceinceAccadmy.ReportManagement
               showCustomTitleBar: true,
               title: "Executive Science Academy");
             this.StartPosition = FormStartPosition.CenterScreen;
+            UI.Instance.StyleButton(btnSearch, borderRadius: 20);
+
         }
 
         private void rdDay_CheckedChanged(object sender, EventArgs e)

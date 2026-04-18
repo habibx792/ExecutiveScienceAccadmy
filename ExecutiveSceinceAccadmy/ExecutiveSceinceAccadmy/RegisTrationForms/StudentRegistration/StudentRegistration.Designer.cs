@@ -28,7 +28,7 @@
             // btnSupReg
             // 
             btnSupReg.BackColor = SystemColors.Highlight;
-            btnSupReg.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSupReg.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnSupReg.ForeColor = SystemColors.HighlightText;
             btnSupReg.Location = new Point(324, 152);
             btnSupReg.Name = "btnSupReg";
@@ -41,7 +41,7 @@
             // btnStdReg
             // 
             btnStdReg.BackColor = SystemColors.Highlight;
-            btnStdReg.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnStdReg.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnStdReg.ForeColor = SystemColors.HighlightText;
             btnStdReg.Location = new Point(62, 49);
             btnStdReg.Name = "btnStdReg";
@@ -54,7 +54,7 @@
             // BtnFeeSub
             // 
             BtnFeeSub.BackColor = SystemColors.Highlight;
-            BtnFeeSub.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BtnFeeSub.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             BtnFeeSub.ForeColor = SystemColors.HighlightText;
             BtnFeeSub.Location = new Point(324, 49);
             BtnFeeSub.Name = "BtnFeeSub";
@@ -78,7 +78,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.Black;
+            label6.ForeColor = Color.FromArgb(0, 70, 140);
             label6.Location = new Point(95, 19);
             label6.Name = "label6";
             label6.Size = new Size(426, 45);
@@ -89,7 +89,7 @@
             // btnPrimaryReg
             // 
             btnPrimaryReg.BackColor = SystemColors.Highlight;
-            btnPrimaryReg.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPrimaryReg.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnPrimaryReg.ForeColor = SystemColors.HighlightText;
             btnPrimaryReg.Location = new Point(62, 152);
             btnPrimaryReg.Name = "btnPrimaryReg";
@@ -106,9 +106,9 @@
             pnMain.Controls.Add(btnPrimaryReg);
             pnMain.Controls.Add(btnStdReg);
             pnMain.Controls.Add(btnSupReg);
-            pnMain.Location = new Point(27, 71);
+            pnMain.Location = new Point(27, 86);
             pnMain.Name = "pnMain";
-            pnMain.Size = new Size(621, 264);
+            pnMain.Size = new Size(621, 249);
             pnMain.TabIndex = 14;
             pnMain.Paint += panel1_Paint;
             // 

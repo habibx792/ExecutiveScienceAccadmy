@@ -55,31 +55,33 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
         private void StyleControls()
         {
 
-            UI.Instance.StylePanel(pnLogo,
-                backColor: Color.IndianRed,
-                borderColor: Color.FromArgb(0, 120, 215),
-                borderRadius: 1,
-                borderThickness: 2);
-            UI.Instance.StylePanel(pnAccadminc, backColor: Color.White,
-              borderColor: Color.FromArgb(0, 120, 215),
-              borderRadius: 10,
-              borderThickness: 0);
-            UI.Instance.StylePanel(pnMainPn, backColor: Color.White,
-              borderColor: Color.FromArgb(0, 120, 215),
-              borderRadius: 10,
-              borderThickness: 0);
-            UI.Instance.StylePanel(pnPerMain, backColor: Color.White,
-              borderColor: Color.FromArgb(0, 120, 215),
-              borderRadius: 10,
-              borderThickness: 0);
-            UI.Instance.StylePanel(pnPreq, backColor: Color.White,
-              borderColor: Color.FromArgb(0, 120, 215),
-              borderRadius: 10,
-              borderThickness: 0);
-            UI.Instance.StylePanel(pnPerMain, backColor: Color.White,
-              borderColor: Color.FromArgb(0, 120, 215),
-              borderRadius: 10,
-              borderThickness: 0);
+            //UI.Instance.StylePanel(pnLogo,
+            //    backColor: Color.IndianRed,
+            //    borderColor: Color.FromArgb(0, 120, 215),
+            //    borderRadius: 1,
+            //    borderThickness: 2);
+            //UI.Instance.StylePanel(pnAccadminc, backColor: Color.White,
+            //  borderColor: Color.FromArgb(0, 120, 215),
+            //  borderRadius: 10,
+            //  borderThickness: 0);
+            //UI.Instance.StylePanel(pnMainPn, backColor: Color.White,
+            //  borderColor: Color.FromArgb(0, 120, 215),
+            //  borderRadius: 10,
+            //  borderThickness: 0);
+            //UI.Instance.StylePanel(pnPerMain, backColor: Color.White,
+            //  borderColor: Color.FromArgb(0, 120, 215),
+            //  borderRadius: 10,
+            //  borderThickness: 0);
+            //UI.Instance.StylePanel(pnPreq, backColor: Color.White,
+            //  borderColor: Color.FromArgb(0, 120, 215),
+            //  borderRadius: 10,
+            //  borderThickness: 0);
+            //UI.Instance.StylePanel(pnPerMain, backColor: Color.White,
+            //  borderColor: Color.FromArgb(0, 120, 215),
+            //  borderRadius: 10,
+            //  borderThickness: 0);
+            UI.Instance.StyleButton(btnRegistation, borderRadius: 20);
+
 
 
             //lbLogo.Font = new Font(lbLogo.Font, FontStyle.Bold);

@@ -38,16 +38,16 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
         private void StyleControls()
         {
 
-            UI.Instance.StylePanel(pnLogo,
-                backColor: Color.IndianRed,
-                borderColor: Color.FromArgb(0, 120, 215),
-                borderRadius: 20,
-                borderThickness: 2);
+            //UI.Instance.StylePanel(pnLogo,
+            //    backColor: Color.IndianRed,
+            //    borderColor: Color.FromArgb(0, 120, 215),
+            //    borderRadius: 20,
+            //    borderThickness: 2);
             UI.Instance.AddFormShadow(this);
-            UI.Instance.StylePanel(pnMain, backColor: Color.IndianRed,
-                borderColor: Color.FromArgb(0, 120, 215),
-                borderRadius: 20,
-                borderThickness: 2);
+            //UI.Instance.StylePanel(pnMain, backColor: Color.IndianRed,
+            //    borderColor: Color.FromArgb(0, 120, 215),
+            //    borderRadius: 20,
+            //    borderThickness: 2);
         }
         private void attendanceForm_Load(object sender, EventArgs e)
         {

@@ -32,7 +32,7 @@
             label5 = new Label();
             label4 = new Label();
             label1 = new Label();
-            button1 = new Button();
+            btnFeeSet = new Button();
             cmbDomain = new ComboBox();
             cmbClass = new ComboBox();
             txtAmount = new TextBox();
@@ -48,7 +48,7 @@
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(btnFeeSet);
             panel1.Controls.Add(cmbDomain);
             panel1.Controls.Add(cmbClass);
             panel1.Controls.Add(txtAmount);
@@ -92,18 +92,19 @@
             label1.TabIndex = 2;
             label1.Text = "Class";
             // 
-            // button1
+            // btnFeeSet
             // 
-            button1.BackColor = SystemColors.Highlight;
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button1.Location = new Point(328, 154);
-            button1.Margin = new Padding(2);
-            button1.Name = "button1";
-            button1.Size = new Size(125, 45);
-            button1.TabIndex = 1;
-            button1.Text = "Set Fee";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btnFeeSet.BackColor = SystemColors.Highlight;
+            btnFeeSet.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnFeeSet.ForeColor = Color.White;
+            btnFeeSet.Location = new Point(328, 154);
+            btnFeeSet.Margin = new Padding(2);
+            btnFeeSet.Name = "btnFeeSet";
+            btnFeeSet.Size = new Size(125, 45);
+            btnFeeSet.TabIndex = 1;
+            btnFeeSet.Text = "Set Fee";
+            btnFeeSet.UseVisualStyleBackColor = false;
+            btnFeeSet.Click += button1_Click;
             // 
             // cmbDomain
             // 
@@ -148,7 +149,7 @@
             // 
             lbLogo.AutoSize = true;
             lbLogo.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbLogo.ForeColor = Color.Black;
+            lbLogo.ForeColor = Color.FromArgb(0, 70, 140);
             lbLogo.Location = new Point(26, 25);
             lbLogo.Name = "lbLogo";
             lbLogo.Size = new Size(426, 45);
@@ -179,7 +180,7 @@
 
         private Panel panel1;
         private ComboBox cmbClass;
-        private Button button1;
+        private Button btnFeeSet;
         private Label label1;
         private TextBox txtAmount;
         private Label label5;

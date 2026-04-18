@@ -55,6 +55,7 @@
             // btnCurrMon
             // 
             btnCurrMon.BackColor = SystemColors.Highlight;
+            btnCurrMon.ForeColor = Color.White;
             btnCurrMon.Location = new Point(325, 25);
             btnCurrMon.Name = "btnCurrMon";
             btnCurrMon.Size = new Size(221, 68);
@@ -66,6 +67,7 @@
             // btnAddExp
             // 
             btnAddExp.BackColor = SystemColors.Highlight;
+            btnAddExp.ForeColor = Color.White;
             btnAddExp.Location = new Point(54, 25);
             btnAddExp.Name = "btnAddExp";
             btnAddExp.Size = new Size(229, 68);
@@ -77,6 +79,7 @@
             // btnCurrYearReport
             // 
             btnCurrYearReport.BackColor = SystemColors.Highlight;
+            btnCurrYearReport.ForeColor = Color.White;
             btnCurrYearReport.Location = new Point(54, 107);
             btnCurrYearReport.Name = "btnCurrYearReport";
             btnCurrYearReport.Size = new Size(229, 65);
@@ -87,6 +90,7 @@
             // btnFromDate
             // 
             btnFromDate.BackColor = SystemColors.Highlight;
+            btnFromDate.ForeColor = Color.White;
             btnFromDate.Location = new Point(325, 107);
             btnFromDate.Name = "btnFromDate";
             btnFromDate.Size = new Size(221, 65);
@@ -107,7 +111,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.Black;
+            label6.ForeColor = Color.FromArgb(0, 70, 140);
             label6.Location = new Point(89, 26);
             label6.Name = "label6";
             label6.Size = new Size(426, 45);

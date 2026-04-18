@@ -50,6 +50,7 @@
             label6 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            pnLogo.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -73,7 +74,7 @@
             panel1.Controls.Add(txtRegis);
             panel1.Location = new Point(25, 46);
             panel1.Name = "panel1";
-            panel1.Size = new Size(863, 338);
+            panel1.Size = new Size(863, 400);
             panel1.TabIndex = 1;
             panel1.Paint += panel1_Paint;
             // 
@@ -81,7 +82,7 @@
             // 
             lblMont.AutoSize = true;
             lblMont.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblMont.Location = new Point(201, 170);
+            lblMont.Location = new Point(181, 224);
             lblMont.Name = "lblMont";
             lblMont.Size = new Size(49, 17);
             lblMont.TabIndex = 40;
@@ -91,7 +92,8 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(327, 12);
+            label2.ForeColor = Color.FromArgb(0, 70, 140);
+            label2.Location = new Point(316, 42);
             label2.Name = "label2";
             label2.Size = new Size(214, 37);
             label2.TabIndex = 3;
@@ -102,8 +104,8 @@
             // 
             cmbMonth.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cmbMonth.FormattingEnabled = true;
-            cmbMonth.Location = new Point(327, 170);
-            cmbMonth.Margin = new Padding(2, 2, 2, 2);
+            cmbMonth.Location = new Point(307, 224);
+            cmbMonth.Margin = new Padding(2);
             cmbMonth.Name = "cmbMonth";
             cmbMonth.Size = new Size(333, 29);
             cmbMonth.TabIndex = 39;
@@ -113,7 +115,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(201, 254);
+            label5.Location = new Point(181, 308);
             label5.Name = "label5";
             label5.Size = new Size(95, 17);
             label5.TabIndex = 38;
@@ -124,7 +126,7 @@
             txtSubBy.AutoCompleteCustomSource.AddRange(new string[] { "0" });
             txtSubBy.AutoCompleteMode = AutoCompleteMode.Suggest;
             txtSubBy.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtSubBy.Location = new Point(327, 250);
+            txtSubBy.Location = new Point(307, 304);
             txtSubBy.Name = "txtSubBy";
             txtSubBy.PlaceholderText = "Enter Discount";
             txtSubBy.Size = new Size(333, 26);
@@ -135,7 +137,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(197, 205);
+            label4.Location = new Point(177, 259);
             label4.Name = "label4";
             label4.Size = new Size(55, 17);
             label4.TabIndex = 36;
@@ -145,7 +147,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(197, 136);
+            label3.Location = new Point(177, 190);
             label3.Name = "label3";
             label3.Size = new Size(58, 17);
             label3.TabIndex = 35;
@@ -154,7 +156,7 @@
             // txtPercentage
             // 
             txtPercentage.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtPercentage.Location = new Point(471, 205);
+            txtPercentage.Location = new Point(451, 259);
             txtPercentage.Name = "txtPercentage";
             txtPercentage.ReadOnly = true;
             txtPercentage.Size = new Size(188, 29);
@@ -166,7 +168,7 @@
             txtDicount.AutoCompleteCustomSource.AddRange(new string[] { "0" });
             txtDicount.AutoCompleteMode = AutoCompleteMode.Suggest;
             txtDicount.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtDicount.Location = new Point(327, 205);
+            txtDicount.Location = new Point(307, 259);
             txtDicount.Name = "txtDicount";
             txtDicount.PlaceholderText = "Enter Discount";
             txtDicount.Size = new Size(139, 29);
@@ -177,7 +179,7 @@
             // txtAmount
             // 
             txtAmount.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtAmount.Location = new Point(327, 130);
+            txtAmount.Location = new Point(307, 184);
             txtAmount.Name = "txtAmount";
             txtAmount.PlaceholderText = "Enter Amount";
             txtAmount.Size = new Size(333, 29);
@@ -187,7 +189,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(197, 51);
+            label1.Location = new Point(177, 105);
             label1.Name = "label1";
             label1.Size = new Size(45, 17);
             label1.TabIndex = 31;
@@ -197,7 +199,7 @@
             // 
             lblDeg.AutoSize = true;
             lblDeg.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblDeg.Location = new Point(197, 96);
+            lblDeg.Location = new Point(177, 150);
             lblDeg.Name = "lblDeg";
             lblDeg.Size = new Size(108, 17);
             lblDeg.TabIndex = 30;
@@ -207,7 +209,8 @@
             // 
             btnSearch.BackColor = SystemColors.Highlight;
             btnSearch.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSearch.Location = new Point(550, 285);
+            btnSearch.ForeColor = Color.White;
+            btnSearch.Location = new Point(530, 339);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(109, 41);
             btnSearch.TabIndex = 2;
@@ -218,7 +221,7 @@
             // dtPick
             // 
             dtPick.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dtPick.Location = new Point(327, 45);
+            dtPick.Location = new Point(307, 99);
             dtPick.Name = "dtPick";
             dtPick.Size = new Size(333, 29);
             dtPick.TabIndex = 3;
@@ -227,7 +230,7 @@
             // txtRegis
             // 
             txtRegis.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtRegis.Location = new Point(327, 95);
+            txtRegis.Location = new Point(307, 149);
             txtRegis.Name = "txtRegis";
             txtRegis.PlaceholderText = "26-10-comp-00";
             txtRegis.Size = new Size(333, 29);
@@ -239,19 +242,20 @@
             dataGridView1.AllowUserToOrderColumns = true;
             dataGridView1.BackgroundColor = Color.IndianRed;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(25, 383);
+            dataGridView1.Location = new Point(0, 398);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(863, 117);
+            dataGridView1.Size = new Size(863, 150);
             dataGridView1.TabIndex = 2;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // pnLogo
             // 
             pnLogo.BackColor = Color.IndianRed;
+            pnLogo.Controls.Add(dataGridView1);
             pnLogo.Location = new Point(25, 46);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(863, 454);
+            pnLogo.Size = new Size(863, 548);
             pnLogo.TabIndex = 26;
             pnLogo.Paint += pnLogo_Paint;
             // 
@@ -260,16 +264,16 @@
             panel2.BackColor = Color.IndianRed;
             panel2.Controls.Add(label6);
             panel2.Location = new Point(25, 7);
-            panel2.Margin = new Padding(2, 2, 2, 2);
+            panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(863, 50);
+            panel2.Size = new Size(863, 79);
             panel2.TabIndex = 27;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.Black;
+            label6.ForeColor = Color.FromArgb(0, 70, 140);
             label6.Location = new Point(223, 7);
             label6.Name = "label6";
             label6.Size = new Size(426, 45);
@@ -282,9 +286,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(921, 510);
+            ClientSize = new Size(921, 606);
             Controls.Add(panel2);
-            Controls.Add(dataGridView1);
             Controls.Add(panel1);
             Controls.Add(pnLogo);
             Name = "FeeSubMission";
@@ -293,6 +296,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            pnLogo.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);

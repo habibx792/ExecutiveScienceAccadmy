@@ -31,23 +31,23 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
         private void StyleControls()
         {
 
-            UI.Instance.StylePanel(pnLogo,
-                backColor: Color.IndianRed,
-                borderColor: Color.FromArgb(0, 120, 215),
-                borderRadius: 20,
-                borderThickness: 2);
-            UI.Instance.StylePanel(pnMain,
-                backColor: Color.IndianRed,
-                borderColor: Color.FromArgb(0, 120, 215),
-                borderRadius: 20,
-                borderThickness: 2);
+            //UI.Instance.StylePanel(pnLogo,
+            //    backColor: Color.IndianRed,
+            //    borderColor: Color.FromArgb(0, 120, 215),
+            //    borderRadius: 20,
+            //    borderThickness: 2);
+            //UI.Instance.StylePanel(pnMain,
+            //    backColor: Color.IndianRed,
+            //    borderColor: Color.FromArgb(0, 120, 215),
+            //    borderRadius: 20,
+            //    borderThickness: 2);
             UI.Instance.StyleButton(btnDefault, borderRadius: 20);
             //UI.Instance.StyleButton(btnPrimary, borderRadius: 20);
             UI.Instance.StyleButton(btnRegularFee, borderRadius: 20);
             //UI.Instance.StyleButton(btnSupp, borderRadius: 20);
             UI.Instance.StyleButton(btnSearchFee, borderRadius: 20);
             UI.Instance.StyleButton(btnDefault, borderRadius: 20);
-            //UI.Instance.StyleButton(btnRts, borderRadius: 20);
+            UI.Instance.StyleButton(btnFeeSet, borderRadius: 20);
             UI.Instance.AddFormShadow(this);
             //UI.Instance.setFormSize(this, 1373, 687);
 

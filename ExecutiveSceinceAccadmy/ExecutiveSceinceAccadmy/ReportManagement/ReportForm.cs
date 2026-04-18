@@ -19,32 +19,33 @@ namespace ExecutiveSceinceAccadmy.ReportManagement
         {
             InitializeComponent();
             UI.Instance.StyleForm(this,
-                backgroundColor: Color.FromArgb(245, 245, 245),
+                backgroundColor: Color.RoyalBlue,
                 borderRadius: 25,
                 showCustomTitleBar: true,
                 title: "Executive Science Academy");
 
             StyleControls();
             this.StartPosition = FormStartPosition.CenterScreen;
-            UI.Instance.StylePanel(pnLogo,
-                backColor: Color.White,
-                borderColor: Color.FromArgb(0, 120, 215),
-                borderRadius: 20,
-                borderThickness: 2);
-            UI.Instance.StylePanel(pnMain, backColor: Color.White,
-              borderColor: Color.FromArgb(0, 120, 215),
-              borderRadius: 20,
-              borderThickness: 2);
+         
 
         }
         private void StyleControls()
         {
-            UI.Instance.setFormSize(this, 1373, 687);
+            //UI.Instance.setFormSize(this, 680, 486);
 
             UI.Instance.StyleButton(btnAddExp, borderRadius: 20);
             UI.Instance.StyleButton(btnCurrYearReport, borderRadius: 20);
             UI.Instance.StyleButton(btnFromDate, borderRadius: 20);
             UI.Instance.StyleButton(btnCurrMon, borderRadius: 20);
+            //UI.Instance.StylePanel(pnLogo,
+            //    backColor: Color.IndianRed,
+            //    borderColor: Color.FromArgb(0, 120, 215),
+            //    borderRadius: 20,
+            //    borderThickness: 2);
+            //UI.Instance.StylePanel(pnMain, backColor: Color.IndianRed,
+            //  borderColor: Color.FromArgb(0, 120, 215),
+            //  borderRadius: 20,
+            //  borderThickness: 2);
 
             UI.Instance.AddFormShadow(this);
         }

@@ -98,6 +98,7 @@
             // 
             lblAdd.AutoSize = true;
             lblAdd.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAdd.ForeColor = Color.FromArgb(0, 70, 140);
             lblAdd.Location = new Point(241, 10);
             lblAdd.Name = "lblAdd";
             lblAdd.Size = new Size(161, 32);
@@ -117,6 +118,7 @@
             // 
             btnExpenseAdd.BackColor = SystemColors.Highlight;
             btnExpenseAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnExpenseAdd.ForeColor = Color.White;
             btnExpenseAdd.Location = new Point(354, 197);
             btnExpenseAdd.Name = "btnExpenseAdd";
             btnExpenseAdd.Size = new Size(121, 38);
@@ -145,16 +147,16 @@
             // 
             pnLogo.BackColor = Color.IndianRed;
             pnLogo.Controls.Add(label6);
-            pnLogo.Location = new Point(10, 22);
+            pnLogo.Location = new Point(10, 12);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(614, 48);
+            pnLogo.Size = new Size(614, 58);
             pnLogo.TabIndex = 28;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.Black;
+            label6.ForeColor = Color.FromArgb(0, 70, 140);
             label6.Location = new Point(98, 7);
             label6.Name = "label6";
             label6.Size = new Size(426, 45);

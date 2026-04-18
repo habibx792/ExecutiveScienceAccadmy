@@ -26,6 +26,8 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
               showCustomTitleBar: true,
               title: "Executive Science Academy");
             this.StartPosition = FormStartPosition.CenterScreen;
+            UI.Instance.StyleButton(btnSearch, borderRadius: 20);
+
         }
 
         private void AttendanceDashBoard_Load(object sender, EventArgs e)

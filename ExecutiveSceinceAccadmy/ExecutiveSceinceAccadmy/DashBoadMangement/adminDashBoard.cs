@@ -1,6 +1,7 @@
 ﻿using ExecutiveSceinceAccadmy.AttendanceMangment;
 using ExecutiveSceinceAccadmy.ExpenseMangenment;
 using ExecutiveSceinceAccadmy.FeeMangement;
+using ExecutiveSceinceAccadmy.ReportManagement;
 using ExecutiveSceinceAccadmy.studentRegistrationForms;
 using ExecutiveSceinceAccadmy.TeacherMangement;
 
@@ -87,6 +88,7 @@ namespace ExecutiveSceinceAccadmy.DashBoadMangement
             //UI.Instance.StyleButton(btnFeeSet, borderRadius: 20);
             UI.Instance.StyleButton(btnExpenseMange, borderRadius: 20);
             UI.Instance.StyleButton(btnTeachMang, borderRadius: 20);
+            UI.Instance.StyleButton(btnReports, borderRadius: 20);
 
 
 
@@ -115,6 +117,21 @@ namespace ExecutiveSceinceAccadmy.DashBoadMangement
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (ReportForm reportForm = new ReportForm())
+            {
+                reportForm.ShowDialog();
+            }
+            this.Show();
+        }
+
+        private void lbLogo_Click(object sender, EventArgs e)
         {
 
         }

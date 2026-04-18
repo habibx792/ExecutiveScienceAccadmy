@@ -33,7 +33,7 @@
             pnLogo = new Panel();
             lbLogo = new Label();
             panel1 = new Panel();
-            button2 = new Button();
+            btnDef = new Button();
             label2 = new Label();
             cmbMonth = new ComboBox();
             panel2 = new Panel();
@@ -56,10 +56,10 @@
             // dtDefaulter
             // 
             dtDefaulter.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtDefaulter.Location = new Point(30, 153);
+            dtDefaulter.Location = new Point(30, 158);
             dtDefaulter.Name = "dtDefaulter";
             dtDefaulter.RowHeadersWidth = 51;
-            dtDefaulter.Size = new Size(758, 330);
+            dtDefaulter.Size = new Size(758, 325);
             dtDefaulter.TabIndex = 2;
             dtDefaulter.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -76,7 +76,8 @@
             // 
             lbLogo.AutoSize = true;
             lbLogo.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbLogo.Location = new Point(237, 22);
+            lbLogo.ForeColor = Color.FromArgb(0, 70, 140);
+            lbLogo.Location = new Point(213, 10);
             lbLogo.Name = "lbLogo";
             lbLogo.Size = new Size(297, 37);
             lbLogo.TabIndex = 0;
@@ -86,33 +87,34 @@
             // panel1
             // 
             panel1.BackColor = Color.IndianRed;
-            panel1.Controls.Add(button2);
+            panel1.Controls.Add(btnDef);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(cmbMonth);
             panel1.Location = new Point(30, 116);
             panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(758, 37);
+            panel1.Size = new Size(758, 50);
             panel1.TabIndex = 10;
             // 
-            // button2
+            // btnDef
             // 
-            button2.BackColor = SystemColors.Highlight;
-            button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(521, 2);
-            button2.Margin = new Padding(2);
-            button2.Name = "button2";
-            button2.Size = new Size(124, 30);
-            button2.TabIndex = 11;
-            button2.Text = "Search";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            btnDef.BackColor = SystemColors.Highlight;
+            btnDef.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDef.ForeColor = Color.White;
+            btnDef.Location = new Point(521, 2);
+            btnDef.Margin = new Padding(2);
+            btnDef.Name = "btnDef";
+            btnDef.Size = new Size(124, 46);
+            btnDef.TabIndex = 11;
+            btnDef.Text = "Search";
+            btnDef.UseVisualStyleBackColor = false;
+            btnDef.Click += button2_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(64, 7);
+            label2.Location = new Point(64, 11);
             label2.Name = "label2";
             label2.Size = new Size(61, 21);
             label2.TabIndex = 1;
@@ -122,7 +124,7 @@
             // 
             cmbMonth.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cmbMonth.FormattingEnabled = true;
-            cmbMonth.Location = new Point(161, 4);
+            cmbMonth.Location = new Point(160, 12);
             cmbMonth.Margin = new Padding(2);
             cmbMonth.Name = "cmbMonth";
             cmbMonth.Size = new Size(319, 25);
@@ -132,17 +134,17 @@
             // 
             panel2.BackColor = Color.IndianRed;
             panel2.Controls.Add(label6);
-            panel2.Location = new Point(30, 14);
+            panel2.Location = new Point(30, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(758, 46);
+            panel2.Size = new Size(758, 58);
             panel2.TabIndex = 25;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.Black;
-            label6.Location = new Point(185, 0);
+            label6.ForeColor = Color.FromArgb(0, 70, 140);
+            label6.Location = new Point(172, 7);
             label6.Name = "label6";
             label6.Size = new Size(426, 45);
             label6.TabIndex = 28;
@@ -182,7 +184,7 @@
         private Panel panel1;
         private ComboBox cmbMonth;
         private Label label2;
-        private Button button2;
+        private Button btnDef;
         private Panel panel2;
         private Label label6;
     }

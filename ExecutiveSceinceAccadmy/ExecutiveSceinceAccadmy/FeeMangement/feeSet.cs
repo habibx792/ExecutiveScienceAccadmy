@@ -24,7 +24,8 @@ namespace ExecutiveSceinceAccadmy.DashBoadMangement
               title: "Executive Science Academy");
             this.StartPosition = FormStartPosition.CenterScreen;
             this.BackColor = Color.DodgerBlue;
-
+            UI.Instance.StyleButton(btnFeeSet, borderRadius: 20);
+      
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

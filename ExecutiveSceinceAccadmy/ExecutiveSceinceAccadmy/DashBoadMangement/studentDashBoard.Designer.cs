@@ -57,7 +57,7 @@
             panel2.Controls.Add(btnAttendMange);
             panel2.Controls.Add(btnRegisMange);
             panel2.Location = new Point(22, 83);
-            panel2.Margin = new Padding(2, 2, 2, 2);
+            panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
             panel2.Size = new Size(474, 278);
             panel2.TabIndex = 17;
@@ -66,8 +66,9 @@
             // 
             btnFeeMange.BackColor = SystemColors.Highlight;
             btnFeeMange.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            btnFeeMange.ForeColor = Color.White;
             btnFeeMange.Location = new Point(120, 22);
-            btnFeeMange.Margin = new Padding(2, 2, 2, 2);
+            btnFeeMange.Margin = new Padding(2);
             btnFeeMange.Name = "btnFeeMange";
             btnFeeMange.Size = new Size(225, 60);
             btnFeeMange.TabIndex = 12;
@@ -78,8 +79,9 @@
             // 
             btnAttendMange.BackColor = SystemColors.Highlight;
             btnAttendMange.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            btnAttendMange.ForeColor = Color.White;
             btnAttendMange.Location = new Point(120, 192);
-            btnAttendMange.Margin = new Padding(2, 2, 2, 2);
+            btnAttendMange.Margin = new Padding(2);
             btnAttendMange.Name = "btnAttendMange";
             btnAttendMange.Size = new Size(225, 60);
             btnAttendMange.TabIndex = 8;
@@ -91,8 +93,9 @@
             // 
             btnRegisMange.BackColor = SystemColors.Highlight;
             btnRegisMange.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            btnRegisMange.ForeColor = Color.White;
             btnRegisMange.Location = new Point(120, 107);
-            btnRegisMange.Margin = new Padding(2, 2, 2, 2);
+            btnRegisMange.Margin = new Padding(2);
             btnRegisMange.Name = "btnRegisMange";
             btnRegisMange.Size = new Size(225, 60);
             btnRegisMange.TabIndex = 1;
@@ -113,7 +116,7 @@
             // 
             lbLogo.AutoSize = true;
             lbLogo.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbLogo.ForeColor = Color.Black;
+            lbLogo.ForeColor = Color.FromArgb(0, 70, 140);
             lbLogo.Location = new Point(26, 25);
             lbLogo.Name = "lbLogo";
             lbLogo.Size = new Size(426, 45);

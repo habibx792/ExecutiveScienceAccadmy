@@ -94,7 +94,7 @@
             // 
             lbLogo.AutoSize = true;
             lbLogo.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbLogo.ForeColor = Color.Black;
+            lbLogo.ForeColor = Color.FromArgb(0, 70, 140);
             lbLogo.Location = new Point(227, 0);
             lbLogo.Name = "lbLogo";
             lbLogo.Size = new Size(426, 45);
@@ -170,13 +170,13 @@
             // 
             // btnSearch
             // 
-            btnSearch.BackColor = Color.Black;
+            btnSearch.BackColor = SystemColors.Highlight;
             btnSearch.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSearch.ForeColor = Color.White;
             btnSearch.Location = new Point(470, 212);
             btnSearch.Margin = new Padding(2);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(108, 38);
+            btnSearch.Size = new Size(108, 52);
             btnSearch.TabIndex = 1;
             btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = false;
