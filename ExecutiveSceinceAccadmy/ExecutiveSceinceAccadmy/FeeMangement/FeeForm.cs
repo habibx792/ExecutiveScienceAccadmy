@@ -1,4 +1,5 @@
 ﻿using ExecutiveSceinceAccadmy.classes;
+using ExecutiveSceinceAccadmy.DashBoadMangement;
 using ExecutiveScienceAcademy.classes;
 using System;
 using System.Collections.Generic;
@@ -54,9 +55,9 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
 
         private void FeeForm_Load(object sender, EventArgs e)
         {
-           lblDay.Text= DB.showTotalCollectionOfToday(dataHandler.getCurrentMonthStr());
-           lblMonth.Text= DB.showTotalCollectionOfThisMonth( dataHandler.getCurrentMonthStr());
-           lblYear.Text=DB.showTotalCollectionOfThisYear();
+            lblDay.Text = DB.showTotalCollectionOfToday(dataHandler.getCurrentMonthStr());
+            lblMonth.Text = DB.showTotalCollectionOfThisMonth(dataHandler.getCurrentMonthStr());
+            lblYear.Text = DB.showTotalCollectionOfThisYear();
         }
 
         private void lbLogo_Click(object sender, EventArgs e)
@@ -130,7 +131,17 @@ namespace ExecutiveSceinceAccadmy.FeeMangement
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+
+        }
+
+        private void btnFeeSet_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using(feeSet SetForm = new feeSet())
+            {
+                SetForm.ShowDialog();
+            }
+            this.Show();
         }
     }
 }

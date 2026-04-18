@@ -84,7 +84,7 @@ namespace ExecutiveSceinceAccadmy.DashBoadMangement
             UI.Instance.StyleButton(btnAttendMange, borderRadius: 20);
             UI.Instance.StyleButton(btnFeeMange, borderRadius: 20);
             UI.Instance.StyleButton(btnRegisMange, borderRadius: 20);
-            UI.Instance.StyleButton(btnFeeSet, borderRadius: 20);
+            //UI.Instance.StyleButton(btnFeeSet, borderRadius: 20);
             UI.Instance.StyleButton(btnExpenseMange, borderRadius: 20);
             UI.Instance.StyleButton(btnTeachMang, borderRadius: 20);
 
@@ -107,11 +107,16 @@ namespace ExecutiveSceinceAccadmy.DashBoadMangement
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
-            using(TeacherMangementForm teachMangeFor= new TeacherMangementForm())
+            using (TeacherMangementForm teachMangeFor = new TeacherMangementForm())
             {
                 teachMangeFor.ShowDialog();
             }
             this.Show();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

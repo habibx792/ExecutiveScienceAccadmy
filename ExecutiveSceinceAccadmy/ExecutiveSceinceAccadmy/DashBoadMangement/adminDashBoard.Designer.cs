@@ -31,12 +31,12 @@
             btnRegisMange = new Button();
             btnTeachMang = new Button();
             btnExpenseMange = new Button();
-            btnFeeSet = new Button();
             btnFeeMange = new Button();
             btnAttendMange = new Button();
             panel2 = new Panel();
             pnLogo = new Panel();
             lbLogo = new Label();
+            button1 = new Button();
             panel2.SuspendLayout();
             pnLogo.SuspendLayout();
             SuspendLayout();
@@ -80,19 +80,6 @@
             btnExpenseMange.UseVisualStyleBackColor = false;
             btnExpenseMange.Click += button4_Click;
             // 
-            // btnFeeSet
-            // 
-            btnFeeSet.BackColor = SystemColors.Highlight;
-            btnFeeSet.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            btnFeeSet.Location = new Point(335, 96);
-            btnFeeSet.Margin = new Padding(2);
-            btnFeeSet.Name = "btnFeeSet";
-            btnFeeSet.Size = new Size(225, 60);
-            btnFeeSet.TabIndex = 11;
-            btnFeeSet.Text = "Set Fee ";
-            btnFeeSet.UseVisualStyleBackColor = false;
-            btnFeeSet.Click += button11_Click;
-            // 
             // btnFeeMange
             // 
             btnFeeMange.BackColor = SystemColors.Highlight;
@@ -122,17 +109,18 @@
             // panel2
             // 
             panel2.BackColor = Color.IndianRed;
+            panel2.Controls.Add(button1);
             panel2.Controls.Add(btnExpenseMange);
             panel2.Controls.Add(btnFeeMange);
             panel2.Controls.Add(btnAttendMange);
             panel2.Controls.Add(btnRegisMange);
             panel2.Controls.Add(btnTeachMang);
-            panel2.Controls.Add(btnFeeSet);
             panel2.Location = new Point(17, 94);
             panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
             panel2.Size = new Size(622, 318);
             panel2.TabIndex = 16;
+            panel2.Paint += panel2_Paint;
             // 
             // pnLogo
             // 
@@ -154,6 +142,18 @@
             lbLogo.TabIndex = 0;
             lbLogo.Text = "Executive Science Academy";
             lbLogo.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // button1
+            // 
+            button1.BackColor = SystemColors.Highlight;
+            button1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            button1.Location = new Point(86, 245);
+            button1.Margin = new Padding(2);
+            button1.Name = "button1";
+            button1.Size = new Size(225, 60);
+            button1.TabIndex = 13;
+            button1.Text = "Reports";
+            button1.UseVisualStyleBackColor = false;
             // 
             // adminDashBoard
             // 
@@ -178,11 +178,11 @@
         private Button btnRegisMange;
         private Button btnTeachMang;
         private Button btnExpenseMange;
-        private Button btnFeeSet;
         private Button btnFeeMange;
         private Button btnAttendMange;
         private Panel panel2;
         private Panel pnLogo;
         private Label lbLogo;
+        private Button button1;
     }
 }

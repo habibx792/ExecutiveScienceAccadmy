@@ -19,7 +19,7 @@
     <Compile Update="DashBoadMangement\studentDashBoard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="DashBoadMangement\feeSet.cs">
+    <Compile Update="FeeMangement\feeSet.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="DashBoadMangement\teacherDashBoard.cs">

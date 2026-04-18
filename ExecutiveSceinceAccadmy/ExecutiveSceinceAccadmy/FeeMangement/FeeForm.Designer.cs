@@ -41,6 +41,7 @@
             btnRegularFee = new Button();
             pnLogo = new Panel();
             label6 = new Label();
+            btnFeeSet = new Button();
             pnMain.SuspendLayout();
             pnLogo.SuspendLayout();
             SuspendLayout();
@@ -48,6 +49,7 @@
             // pnMain
             // 
             pnMain.BackColor = Color.IndianRed;
+            pnMain.Controls.Add(btnFeeSet);
             pnMain.Controls.Add(label2);
             pnMain.Controls.Add(lblYear);
             pnMain.Controls.Add(lblMonth);
@@ -60,7 +62,7 @@
             pnMain.Controls.Add(btnRegularFee);
             pnMain.Location = new Point(33, 50);
             pnMain.Name = "pnMain";
-            pnMain.Size = new Size(573, 380);
+            pnMain.Size = new Size(573, 416);
             pnMain.TabIndex = 10;
             // 
             // label2
@@ -156,7 +158,7 @@
             // 
             btnDefault.BackColor = SystemColors.Highlight;
             btnDefault.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnDefault.Location = new Point(173, 275);
+            btnDefault.Location = new Point(173, 274);
             btnDefault.Name = "btnDefault";
             btnDefault.Size = new Size(249, 51);
             btnDefault.TabIndex = 14;
@@ -197,12 +199,25 @@
             label6.Text = "Executive Science Academy";
             label6.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // btnFeeSet
+            // 
+            btnFeeSet.BackColor = SystemColors.Highlight;
+            btnFeeSet.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            btnFeeSet.Location = new Point(173, 330);
+            btnFeeSet.Margin = new Padding(2);
+            btnFeeSet.Name = "btnFeeSet";
+            btnFeeSet.Size = new Size(249, 60);
+            btnFeeSet.TabIndex = 25;
+            btnFeeSet.Text = "Set Fee ";
+            btnFeeSet.UseVisualStyleBackColor = false;
+            btnFeeSet.Click += btnFeeSet_Click;
+            // 
             // FeeForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(631, 446);
+            ClientSize = new Size(631, 529);
             Controls.Add(pnLogo);
             Controls.Add(pnMain);
             Name = "FeeForm";
@@ -229,5 +244,6 @@
         private Panel pnLogo;
         private Label label6;
         private Label label2;
+        private Button btnFeeSet;
     }
 }
