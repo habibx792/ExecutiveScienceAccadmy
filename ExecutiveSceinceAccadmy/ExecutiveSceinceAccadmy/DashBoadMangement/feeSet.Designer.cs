@@ -53,7 +53,7 @@
             panel1.Controls.Add(cmbClass);
             panel1.Controls.Add(txtAmount);
             panel1.Location = new Point(17, 97);
-            panel1.Margin = new Padding(2, 2, 2, 2);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
             panel1.Size = new Size(493, 222);
             panel1.TabIndex = 0;
@@ -97,7 +97,7 @@
             button1.BackColor = SystemColors.Highlight;
             button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             button1.Location = new Point(328, 154);
-            button1.Margin = new Padding(2, 2, 2, 2);
+            button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(125, 45);
             button1.TabIndex = 1;
@@ -107,32 +107,32 @@
             // 
             // cmbDomain
             // 
-            cmbDomain.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            cmbDomain.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             cmbDomain.FormattingEnabled = true;
             cmbDomain.Location = new Point(202, 65);
-            cmbDomain.Margin = new Padding(2, 2, 2, 2);
+            cmbDomain.Margin = new Padding(2);
             cmbDomain.Name = "cmbDomain";
-            cmbDomain.Size = new Size(252, 29);
+            cmbDomain.Size = new Size(252, 25);
             cmbDomain.TabIndex = 4;
             // 
             // cmbClass
             // 
-            cmbClass.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            cmbClass.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             cmbClass.FormattingEnabled = true;
             cmbClass.Location = new Point(202, 31);
-            cmbClass.Margin = new Padding(2, 2, 2, 2);
+            cmbClass.Margin = new Padding(2);
             cmbClass.Name = "cmbClass";
-            cmbClass.Size = new Size(252, 29);
+            cmbClass.Size = new Size(252, 25);
             cmbClass.TabIndex = 0;
             cmbClass.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // txtAmount
             // 
-            txtAmount.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            txtAmount.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             txtAmount.Location = new Point(202, 113);
-            txtAmount.Margin = new Padding(2, 2, 2, 2);
+            txtAmount.Margin = new Padding(2);
             txtAmount.Name = "txtAmount";
-            txtAmount.Size = new Size(252, 29);
+            txtAmount.Size = new Size(252, 25);
             txtAmount.TabIndex = 3;
             // 
             // pnLogo
@@ -164,7 +164,7 @@
             ClientSize = new Size(532, 337);
             Controls.Add(pnLogo);
             Controls.Add(panel1);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "feeSet";
             Text = "feeSet";
             Load += feeSet_Load;

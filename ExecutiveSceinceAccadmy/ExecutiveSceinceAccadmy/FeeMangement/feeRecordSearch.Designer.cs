@@ -49,12 +49,13 @@
             // 
             // btnSearch
             // 
-            btnSearch.BackColor = Color.Black;
+            btnSearch.BackColor = SystemColors.Highlight;
             btnSearch.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSearch.ForeColor = Color.White;
-            btnSearch.Location = new Point(516, 269);
+            btnSearch.Location = new Point(401, 175);
+            btnSearch.Margin = new Padding(2, 2, 2, 2);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(121, 53);
+            btnSearch.Size = new Size(94, 47);
             btnSearch.TabIndex = 1;
             btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = false;
@@ -64,19 +65,21 @@
             // 
             dtGirdPaidStatus.BackgroundColor = Color.IndianRed;
             dtGirdPaidStatus.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtGirdPaidStatus.Location = new Point(28, 459);
+            dtGirdPaidStatus.Location = new Point(22, 299);
+            dtGirdPaidStatus.Margin = new Padding(2, 2, 2, 2);
             dtGirdPaidStatus.Name = "dtGirdPaidStatus";
             dtGirdPaidStatus.RowHeadersWidth = 51;
-            dtGirdPaidStatus.Size = new Size(850, 188);
+            dtGirdPaidStatus.Size = new Size(661, 123);
             dtGirdPaidStatus.TabIndex = 3;
             // 
             // rdFeeId
             // 
             rdFeeId.AutoSize = true;
             rdFeeId.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rdFeeId.Location = new Point(224, 109);
+            rdFeeId.Location = new Point(174, 71);
+            rdFeeId.Margin = new Padding(2, 2, 2, 2);
             rdFeeId.Name = "rdFeeId";
-            rdFeeId.Size = new Size(191, 32);
+            rdFeeId.Size = new Size(153, 25);
             rdFeeId.TabIndex = 4;
             rdFeeId.TabStop = true;
             rdFeeId.Text = "Search By Fee ID";
@@ -94,9 +97,10 @@
             panel1.Controls.Add(rdFeeId);
             panel1.Controls.Add(txtId);
             panel1.Controls.Add(btnSearch);
-            panel1.Location = new Point(28, 112);
+            panel1.Location = new Point(22, 73);
+            panel1.Margin = new Padding(2, 2, 2, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(850, 352);
+            panel1.Size = new Size(661, 230);
             panel1.TabIndex = 5;
             // 
             // panel2
@@ -104,18 +108,18 @@
             panel2.BackColor = Color.IndianRed;
             panel2.Controls.Add(label1);
             panel2.Location = new Point(0, 0);
+            panel2.Margin = new Padding(2, 2, 2, 2);
             panel2.Name = "panel2";
-            panel2.Size = new Size(850, 84);
+            panel2.Size = new Size(661, 55);
             panel2.TabIndex = 7;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(251, 17);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(195, 11);
             label1.Name = "label1";
-            label1.Size = new Size(308, 46);
+            label1.Size = new Size(250, 37);
             label1.TabIndex = 7;
             label1.Text = "Search Fee Record";
             // 
@@ -123,9 +127,10 @@
             // 
             lblMonth.AutoSize = true;
             lblMonth.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblMonth.Location = new Point(96, 217);
+            lblMonth.Location = new Point(75, 142);
+            lblMonth.Margin = new Padding(2, 0, 2, 0);
             lblMonth.Name = "lblMonth";
-            lblMonth.Size = new Size(75, 28);
+            lblMonth.Size = new Size(61, 21);
             lblMonth.TabIndex = 9;
             lblMonth.Text = "Month";
             // 
@@ -133,9 +138,10 @@
             // 
             lblSearchby.AutoSize = true;
             lblSearchby.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblSearchby.Location = new Point(61, 164);
+            lblSearchby.Location = new Point(47, 107);
+            lblSearchby.Margin = new Padding(2, 0, 2, 0);
             lblSearchby.Name = "lblSearchby";
-            lblSearchby.Size = new Size(110, 28);
+            lblSearchby.Size = new Size(89, 21);
             lblSearchby.TabIndex = 8;
             lblSearchby.Text = "Student Id";
             // 
@@ -143,9 +149,10 @@
             // 
             rdStdId.AutoSize = true;
             rdStdId.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rdStdId.Location = new Point(430, 109);
+            rdStdId.Location = new Point(334, 71);
+            rdStdId.Margin = new Padding(2, 2, 2, 2);
             rdStdId.Name = "rdStdId";
-            rdStdId.Size = new Size(233, 32);
+            rdStdId.Size = new Size(187, 25);
             rdStdId.TabIndex = 5;
             rdStdId.TabStop = true;
             rdStdId.Text = "Search By Student ID";
@@ -154,30 +161,31 @@
             // 
             // cmbMonth
             // 
-            cmbMonth.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cmbMonth.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             cmbMonth.FormattingEnabled = true;
-            cmbMonth.Location = new Point(224, 219);
+            cmbMonth.Location = new Point(174, 143);
+            cmbMonth.Margin = new Padding(2, 2, 2, 2);
             cmbMonth.Name = "cmbMonth";
-            cmbMonth.Size = new Size(413, 36);
+            cmbMonth.Size = new Size(322, 25);
             cmbMonth.TabIndex = 3;
             // 
             // txtId
             // 
-            txtId.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtId.Location = new Point(224, 162);
+            txtId.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            txtId.Location = new Point(174, 106);
+            txtId.Margin = new Padding(2, 2, 2, 2);
             txtId.Name = "txtId";
             txtId.PlaceholderText = "Enter Registeratrion Number";
-            txtId.Size = new Size(413, 34);
+            txtId.Size = new Size(322, 25);
             txtId.TabIndex = 2;
             // 
             // pnLogo
             // 
             pnLogo.BackColor = Color.IndianRed;
             pnLogo.Controls.Add(label2);
-            pnLogo.Location = new Point(28, 34);
-            pnLogo.Margin = new Padding(4, 5, 4, 5);
+            pnLogo.Location = new Point(22, 22);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(850, 81);
+            pnLogo.Size = new Size(661, 53);
             pnLogo.TabIndex = 9;
             // 
             // label2
@@ -185,23 +193,23 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(139, 21);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(108, 14);
             label2.Name = "label2";
-            label2.Size = new Size(537, 54);
+            label2.Size = new Size(426, 45);
             label2.TabIndex = 0;
             label2.Text = "Executive Science Academy";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // feeRecordSearch
             // 
-            AutoScaleDimensions = new SizeF(9F, 23F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(917, 674);
+            ClientSize = new Size(713, 440);
             Controls.Add(pnLogo);
             Controls.Add(panel1);
             Controls.Add(dtGirdPaidStatus);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "feeRecordSearch";
             Text = "feeRecordSearch";
             Load += feeRecordSearch_Load;

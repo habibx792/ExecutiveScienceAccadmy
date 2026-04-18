@@ -81,6 +81,7 @@
             btnSujectWise.TabIndex = 20;
             btnSujectWise.Text = "Suject Wise";
             btnSujectWise.UseVisualStyleBackColor = false;
+            btnSujectWise.Click += btnSujectWise_Click;
             // 
             // pnMain
             // 

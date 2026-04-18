@@ -115,9 +115,9 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
             rdReg.Checked = true;
             cmbClass.SelectedIndex = 0;
             cmbDomain.SelectedIndex = 0;
-            if(cmbClass.SelectedIndex<=8)
+            if (cmbClass.SelectedIndex <= 8)
             {
-               
+
                 cmbDomain.Items.Add("Prim");
             }
             cmbGender.SelectedIndex = 0;
@@ -128,7 +128,7 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
             cmbBoard.SelectedIndex = 0;
 
         }
-        private void helpMethodOfRegies(Student student,string passWord, string registraionNumber)
+        private void helpMethodOfRegies(Student student, string passWord, string registraionNumber)
         {
             pnHide.Visible = true;
             pnMainPn.Visible = false;
@@ -165,7 +165,7 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
             );
             btnRegister.Click += (s, e) =>
             {
-                printEngine.printStudentRegistration(student,passWord, registraionNumber);
+                printEngine.printStudentRegistration(student, passWord, registraionNumber);
                 MessageBox.Show("Print functionality is not implemented yet.");
             };
             Button btnSaveFile = new Button();
@@ -292,8 +292,8 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
                 MessageBox.Show("Student registered successfully!");
                 string passWord = dataHandler.generatePassword(5);
                 helpMethodOfRegies(student, passWord, registrationNumber);
-                bool pass=DB.createStudentLogin(registrationNumber, passWord);
-                if(pass)
+                bool pass = DB.createStudentLogin(registrationNumber, passWord);
+                if (pass)
                 {
                     MessageBox.Show("Created password ");
                 }
@@ -331,7 +331,7 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
 
         private void rdPrim_CheckedChanged(object sender, EventArgs e)
         {
-           if(rdPrim.Checked)
+            if (rdPrim.Checked)
             {
                 cmbDomain.SelectedIndex = cmbDomain.Items.Count - 1;
             }
@@ -353,6 +353,11 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
         }
 
         private void pnLogo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblRollNo_Click(object sender, EventArgs e)
         {
 
         }

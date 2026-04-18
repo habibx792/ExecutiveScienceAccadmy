@@ -45,6 +45,7 @@
             txtStdName = new TextBox();
             txtFatherCNIC = new TextBox();
             pnLogo = new Panel();
+            label6 = new Label();
             pnMainPn = new Panel();
             pnAccadminc = new Panel();
             cmbBoard = new ComboBox();
@@ -86,7 +87,6 @@
             pnPerson = new Panel();
             label19 = new Label();
             pnHide = new Panel();
-            label6 = new Label();
             pnPreq.SuspendLayout();
             pnLogo.SuspendLayout();
             pnMainPn.SuspendLayout();
@@ -97,13 +97,12 @@
             // 
             // btnRegistation
             // 
-            btnRegistation.BackColor = Color.Black;
+            btnRegistation.BackColor = SystemColors.Highlight;
             btnRegistation.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnRegistation.ForeColor = Color.White;
-            btnRegistation.Location = new Point(1351, 1014);
-            btnRegistation.Margin = new Padding(4, 5, 4, 5);
+            btnRegistation.ForeColor = Color.WhiteSmoke;
+            btnRegistation.Location = new Point(1051, 661);
             btnRegistation.Name = "btnRegistation";
-            btnRegistation.Size = new Size(198, 90);
+            btnRegistation.Size = new Size(154, 59);
             btnRegistation.TabIndex = 0;
             btnRegistation.Text = "Register";
             btnRegistation.UseVisualStyleBackColor = false;
@@ -121,10 +120,10 @@
             pnPreq.Controls.Add(rdRTS);
             pnPreq.Controls.Add(rdReg);
             pnPreq.Controls.Add(cmbClass);
-            pnPreq.Location = new Point(37, 80);
-            pnPreq.Margin = new Padding(4, 5, 4, 5);
+            pnPreq.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            pnPreq.Location = new Point(29, 52);
             pnPreq.Name = "pnPreq";
-            pnPreq.Size = new Size(1512, 201);
+            pnPreq.Size = new Size(1176, 131);
             pnPreq.TabIndex = 1;
             pnPreq.Paint += pnPreq_Paint;
             // 
@@ -132,29 +131,27 @@
             // 
             lblRegiDate.AutoSize = true;
             lblRegiDate.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblRegiDate.Location = new Point(1020, 124);
-            lblRegiDate.Margin = new Padding(4, 0, 4, 0);
+            lblRegiDate.Location = new Point(793, 81);
             lblRegiDate.Name = "lblRegiDate";
-            lblRegiDate.Size = new Size(151, 23);
+            lblRegiDate.Size = new Size(116, 17);
             lblRegiDate.TabIndex = 26;
             lblRegiDate.Text = "Registration Date";
             // 
             // dtpRegis
             // 
-            dtpRegis.Location = new Point(1176, 115);
-            dtpRegis.Margin = new Padding(4, 5, 4, 5);
+            dtpRegis.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dtpRegis.Location = new Point(915, 75);
             dtpRegis.Name = "dtpRegis";
-            dtpRegis.Size = new Size(256, 30);
+            dtpRegis.Size = new Size(224, 23);
             dtpRegis.TabIndex = 25;
             // 
             // lblClass
             // 
             lblClass.AutoSize = true;
             lblClass.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblClass.Location = new Point(33, 126);
-            lblClass.Margin = new Padding(4, 0, 4, 0);
+            lblClass.Location = new Point(26, 82);
             lblClass.Name = "lblClass";
-            lblClass.Size = new Size(49, 23);
+            lblClass.Size = new Size(39, 17);
             lblClass.TabIndex = 24;
             lblClass.Text = "Class";
             // 
@@ -162,10 +159,9 @@
             // 
             lblDomain.AutoSize = true;
             lblDomain.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblDomain.Location = new Point(575, 124);
-            lblDomain.Margin = new Padding(4, 0, 4, 0);
+            lblDomain.Location = new Point(447, 81);
             lblDomain.Name = "lblDomain";
-            lblDomain.Size = new Size(73, 23);
+            lblDomain.Size = new Size(57, 17);
             lblDomain.TabIndex = 23;
             lblDomain.Text = "Domain";
             // 
@@ -173,21 +169,20 @@
             // 
             cmbDomain.AutoCompleteMode = AutoCompleteMode.Suggest;
             cmbDomain.AutoCompleteSource = AutoCompleteSource.HistoryList;
+            cmbDomain.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cmbDomain.FormattingEnabled = true;
-            cmbDomain.Location = new Point(721, 124);
-            cmbDomain.Margin = new Padding(4, 5, 4, 5);
+            cmbDomain.Location = new Point(561, 81);
             cmbDomain.Name = "cmbDomain";
-            cmbDomain.Size = new Size(295, 31);
+            cmbDomain.Size = new Size(230, 23);
             cmbDomain.TabIndex = 1;
             // 
             // rdSuple
             // 
             rdSuple.AutoSize = true;
             rdSuple.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rdSuple.Location = new Point(1020, 49);
-            rdSuple.Margin = new Padding(4, 5, 4, 5);
+            rdSuple.Location = new Point(793, 32);
             rdSuple.Name = "rdSuple";
-            rdSuple.Size = new Size(155, 27);
+            rdSuple.Size = new Size(120, 21);
             rdSuple.TabIndex = 4;
             rdSuple.TabStop = true;
             rdSuple.Text = "Supplementary";
@@ -197,10 +192,9 @@
             // 
             rdPrim.AutoSize = true;
             rdPrim.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rdPrim.Location = new Point(575, 49);
-            rdPrim.Margin = new Padding(4, 5, 4, 5);
+            rdPrim.Location = new Point(447, 32);
             rdPrim.Name = "rdPrim";
-            rdPrim.Size = new Size(164, 27);
+            rdPrim.Size = new Size(127, 21);
             rdPrim.TabIndex = 5;
             rdPrim.TabStop = true;
             rdPrim.Text = "Primary Student";
@@ -211,10 +205,9 @@
             // 
             rdRTS.AutoSize = true;
             rdRTS.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rdRTS.Location = new Point(356, 49);
-            rdRTS.Margin = new Padding(4, 5, 4, 5);
+            rdRTS.Location = new Point(277, 32);
             rdRTS.Name = "rdRTS";
-            rdRTS.Size = new Size(131, 27);
+            rdRTS.Size = new Size(101, 21);
             rdRTS.TabIndex = 6;
             rdRTS.TabStop = true;
             rdRTS.Text = "RTS Student";
@@ -224,10 +217,9 @@
             // 
             rdReg.AutoSize = true;
             rdReg.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rdReg.Location = new Point(21, 49);
-            rdReg.Margin = new Padding(4, 5, 4, 5);
+            rdReg.Location = new Point(16, 32);
             rdReg.Name = "rdReg";
-            rdReg.Size = new Size(162, 27);
+            rdReg.Size = new Size(125, 21);
             rdReg.TabIndex = 7;
             rdReg.TabStop = true;
             rdReg.Text = "Regular Student";
@@ -237,50 +229,50 @@
             // 
             cmbClass.AutoCompleteMode = AutoCompleteMode.Suggest;
             cmbClass.AutoCompleteSource = AutoCompleteSource.ListItems;
+            cmbClass.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cmbClass.FormattingEnabled = true;
             cmbClass.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" });
-            cmbClass.Location = new Point(170, 129);
-            cmbClass.Margin = new Padding(4, 5, 4, 5);
+            cmbClass.Location = new Point(132, 84);
             cmbClass.Name = "cmbClass";
-            cmbClass.Size = new Size(340, 31);
+            cmbClass.Size = new Size(265, 23);
             cmbClass.TabIndex = 11;
             // 
             // txtStdFatherName
             // 
-            txtStdFatherName.Location = new Point(721, 34);
-            txtStdFatherName.Margin = new Padding(4, 5, 4, 5);
+            txtStdFatherName.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            txtStdFatherName.Location = new Point(561, 22);
             txtStdFatherName.Name = "txtStdFatherName";
             txtStdFatherName.PlaceholderText = "Student Father Name";
-            txtStdFatherName.Size = new Size(295, 30);
+            txtStdFatherName.Size = new Size(230, 23);
             txtStdFatherName.TabIndex = 0;
             txtStdFatherName.TextChanged += textBox1_TextChanged;
             // 
             // txtStdCNIC
             // 
-            txtStdCNIC.Location = new Point(179, 141);
-            txtStdCNIC.Margin = new Padding(4, 5, 4, 5);
+            txtStdCNIC.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            txtStdCNIC.Location = new Point(139, 92);
             txtStdCNIC.Name = "txtStdCNIC";
             txtStdCNIC.PlaceholderText = "Enter Studetn CNIC";
-            txtStdCNIC.Size = new Size(331, 30);
+            txtStdCNIC.Size = new Size(258, 23);
             txtStdCNIC.TabIndex = 16;
             // 
             // txtStdName
             // 
-            txtStdName.Location = new Point(179, 34);
-            txtStdName.Margin = new Padding(4, 5, 4, 5);
+            txtStdName.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            txtStdName.Location = new Point(139, 22);
             txtStdName.Name = "txtStdName";
             txtStdName.PlaceholderText = "Enter Student Name";
-            txtStdName.Size = new Size(331, 30);
+            txtStdName.Size = new Size(258, 23);
             txtStdName.TabIndex = 17;
             txtStdName.TextChanged += textBox3_TextChanged;
             // 
             // txtFatherCNIC
             // 
-            txtFatherCNIC.Location = new Point(1185, 34);
-            txtFatherCNIC.Margin = new Padding(4, 5, 4, 5);
+            txtFatherCNIC.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            txtFatherCNIC.Location = new Point(922, 22);
             txtFatherCNIC.Name = "txtFatherCNIC";
             txtFatherCNIC.PlaceholderText = "Enter Father CNIC";
-            txtFatherCNIC.Size = new Size(278, 30);
+            txtFatherCNIC.Size = new Size(217, 23);
             txtFatherCNIC.TabIndex = 19;
             txtFatherCNIC.TextChanged += textBox5_TextChanged;
             // 
@@ -288,12 +280,23 @@
             // 
             pnLogo.BackColor = Color.IndianRed;
             pnLogo.Controls.Add(label6);
-            pnLogo.Location = new Point(28, 73);
-            pnLogo.Margin = new Padding(4, 5, 4, 5);
+            pnLogo.Location = new Point(22, 48);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(1579, 72);
+            pnLogo.Size = new Size(1228, 47);
             pnLogo.TabIndex = 25;
             pnLogo.Paint += pnLogo_Paint;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.Black;
+            label6.Location = new Point(405, 6);
+            label6.Name = "label6";
+            label6.Size = new Size(426, 45);
+            label6.TabIndex = 29;
+            label6.Text = "Executive Science Academy";
+            label6.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pnMainPn
             // 
@@ -303,10 +306,9 @@
             pnMainPn.Controls.Add(pnPerMain);
             pnMainPn.Controls.Add(pnPerson);
             pnMainPn.Controls.Add(btnRegistation);
-            pnMainPn.Location = new Point(28, 146);
-            pnMainPn.Margin = new Padding(4, 5, 4, 5);
+            pnMainPn.Location = new Point(22, 95);
             pnMainPn.Name = "pnMainPn";
-            pnMainPn.Size = new Size(1579, 1140);
+            pnMainPn.Size = new Size(1228, 743);
             pnMainPn.TabIndex = 26;
             pnMainPn.Paint += pnMainPn_Paint;
             // 
@@ -327,53 +329,51 @@
             pnAccadminc.Controls.Add(txtObtainedMarks);
             pnAccadminc.Controls.Add(lblTotalMarks);
             pnAccadminc.Controls.Add(txtPrevReg);
-            pnAccadminc.Location = new Point(37, 688);
-            pnAccadminc.Margin = new Padding(4, 5, 4, 5);
+            pnAccadminc.Location = new Point(29, 449);
             pnAccadminc.Name = "pnAccadminc";
-            pnAccadminc.Size = new Size(1512, 314);
+            pnAccadminc.Size = new Size(1176, 205);
             pnAccadminc.TabIndex = 53;
             // 
             // cmbBoard
             // 
             cmbBoard.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cmbBoard.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cmbBoard.FormattingEnabled = true;
             cmbBoard.Items.AddRange(new object[] { "Primary ", "FSD Board", "Lahore Board", "Islamabad Board" });
-            cmbBoard.Location = new Point(671, 242);
-            cmbBoard.Margin = new Padding(4, 5, 4, 5);
+            cmbBoard.Location = new Point(522, 158);
             cmbBoard.Name = "cmbBoard";
-            cmbBoard.Size = new Size(219, 31);
+            cmbBoard.Size = new Size(171, 23);
             cmbBoard.TabIndex = 57;
             // 
             // cmbPrvDeg
             // 
             cmbPrvDeg.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cmbPrvDeg.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cmbPrvDeg.FormattingEnabled = true;
             cmbPrvDeg.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" });
-            cmbPrvDeg.Location = new Point(179, 113);
-            cmbPrvDeg.Margin = new Padding(4, 5, 4, 5);
+            cmbPrvDeg.Location = new Point(139, 74);
             cmbPrvDeg.Name = "cmbPrvDeg";
-            cmbPrvDeg.Size = new Size(239, 31);
+            cmbPrvDeg.Size = new Size(187, 23);
             cmbPrvDeg.TabIndex = 56;
             // 
             // cmbPassingYear
             // 
             cmbPassingYear.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cmbPassingYear.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cmbPassingYear.FormattingEnabled = true;
             cmbPassingYear.Items.AddRange(new object[] { "" });
-            cmbPassingYear.Location = new Point(174, 233);
-            cmbPassingYear.Margin = new Padding(4, 5, 4, 5);
+            cmbPassingYear.Location = new Point(135, 152);
             cmbPassingYear.Name = "cmbPassingYear";
-            cmbPassingYear.Size = new Size(244, 31);
+            cmbPassingYear.Size = new Size(191, 23);
             cmbPassingYear.TabIndex = 55;
             // 
             // lblDegYear
             // 
             lblDegYear.AutoSize = true;
             lblDegYear.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblDegYear.Location = new Point(19, 235);
-            lblDegYear.Margin = new Padding(4, 0, 4, 0);
+            lblDegYear.Location = new Point(15, 153);
             lblDegYear.Name = "lblDegYear";
-            lblDegYear.Size = new Size(107, 23);
+            lblDegYear.Size = new Size(85, 17);
             lblDegYear.TabIndex = 54;
             lblDegYear.Text = "Passing Year";
             // 
@@ -381,10 +381,9 @@
             // 
             label20.AutoSize = true;
             label20.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label20.Location = new Point(675, 35);
-            label20.Margin = new Padding(4, 0, 4, 0);
+            label20.Location = new Point(525, 23);
             label20.Name = "label20";
-            label20.Size = new Size(124, 32);
+            label20.Size = new Size(96, 25);
             label20.TabIndex = 43;
             label20.Text = "Accadmic";
             // 
@@ -392,39 +391,37 @@
             // 
             lblSchool.AutoSize = true;
             lblSchool.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblSchool.Location = new Point(899, 251);
-            lblSchool.Margin = new Padding(4, 0, 4, 0);
+            lblSchool.Location = new Point(699, 164);
             lblSchool.Name = "lblSchool";
-            lblSchool.Size = new Size(82, 23);
+            lblSchool.Size = new Size(64, 17);
             lblSchool.TabIndex = 52;
             lblSchool.Text = "Institute ";
             // 
             // txtTotalMark
             // 
-            txtTotalMark.Location = new Point(1281, 103);
-            txtTotalMark.Margin = new Padding(4, 5, 4, 5);
+            txtTotalMark.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtTotalMark.Location = new Point(996, 67);
             txtTotalMark.Name = "txtTotalMark";
             txtTotalMark.PlaceholderText = "Enter Total Marks";
-            txtTotalMark.Size = new Size(208, 30);
+            txtTotalMark.Size = new Size(163, 23);
             txtTotalMark.TabIndex = 26;
             // 
             // txtSchool
             // 
-            txtSchool.Location = new Point(985, 250);
-            txtSchool.Margin = new Padding(4, 5, 4, 5);
+            txtSchool.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtSchool.Location = new Point(766, 163);
             txtSchool.Name = "txtSchool";
             txtSchool.PlaceholderText = "Enter Institue Name";
-            txtSchool.Size = new Size(504, 30);
+            txtSchool.Size = new Size(393, 23);
             txtSchool.TabIndex = 51;
             // 
             // lblObtainMark
             // 
             lblObtainMark.AutoSize = true;
             lblObtainMark.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblObtainMark.Location = new Point(899, 118);
-            lblObtainMark.Margin = new Padding(4, 0, 4, 0);
+            lblObtainMark.Location = new Point(699, 77);
             lblObtainMark.Name = "lblObtainMark";
-            lblObtainMark.Size = new Size(59, 23);
+            lblObtainMark.Size = new Size(45, 17);
             lblObtainMark.TabIndex = 27;
             lblObtainMark.Text = "Marks";
             lblObtainMark.Click += label3_Click;
@@ -432,23 +429,22 @@
             // lblRollNo
             // 
             lblRollNo.AutoSize = true;
-            lblRollNo.BackColor = Color.RoyalBlue;
+            lblRollNo.BackColor = Color.White;
             lblRollNo.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblRollNo.Location = new Point(465, 123);
-            lblRollNo.Margin = new Padding(4, 0, 4, 0);
+            lblRollNo.Location = new Point(362, 80);
             lblRollNo.Name = "lblRollNo";
-            lblRollNo.Size = new Size(179, 23);
+            lblRollNo.Size = new Size(137, 17);
             lblRollNo.TabIndex = 28;
             lblRollNo.Text = "Registration Number";
+            lblRollNo.Click += lblRollNo_Click;
             // 
             // lblBoard
             // 
             lblBoard.AutoSize = true;
             lblBoard.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblBoard.Location = new Point(473, 251);
-            lblBoard.Margin = new Padding(4, 0, 4, 0);
+            lblBoard.Location = new Point(368, 164);
             lblBoard.Name = "lblBoard";
-            lblBoard.Size = new Size(142, 23);
+            lblBoard.Size = new Size(109, 17);
             lblBoard.TabIndex = 49;
             lblBoard.Text = "Education Board";
             // 
@@ -456,40 +452,38 @@
             // 
             lblDeg.AutoSize = true;
             lblDeg.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblDeg.Location = new Point(21, 115);
-            lblDeg.Margin = new Padding(4, 0, 4, 0);
+            lblDeg.Location = new Point(16, 75);
             lblDeg.Name = "lblDeg";
-            lblDeg.Size = new Size(121, 23);
+            lblDeg.Size = new Size(96, 17);
             lblDeg.TabIndex = 29;
             lblDeg.Text = "Previous Class";
             // 
             // txtObtainedMarks
             // 
-            txtObtainedMarks.Location = new Point(985, 107);
-            txtObtainedMarks.Margin = new Padding(4, 5, 4, 5);
+            txtObtainedMarks.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtObtainedMarks.Location = new Point(766, 70);
             txtObtainedMarks.Name = "txtObtainedMarks";
             txtObtainedMarks.PlaceholderText = "Enter Obtain Marks";
-            txtObtainedMarks.Size = new Size(229, 30);
+            txtObtainedMarks.Size = new Size(179, 23);
             txtObtainedMarks.TabIndex = 45;
             // 
             // lblTotalMarks
             // 
             lblTotalMarks.AutoSize = true;
             lblTotalMarks.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTotalMarks.Location = new Point(1223, 109);
-            lblTotalMarks.Margin = new Padding(4, 0, 4, 0);
+            lblTotalMarks.Location = new Point(951, 71);
             lblTotalMarks.Name = "lblTotalMarks";
-            lblTotalMarks.Size = new Size(49, 23);
+            lblTotalMarks.Size = new Size(39, 17);
             lblTotalMarks.TabIndex = 37;
             lblTotalMarks.Text = "Total";
             // 
             // txtPrevReg
             // 
-            txtPrevReg.Location = new Point(671, 113);
-            txtPrevReg.Margin = new Padding(4, 5, 4, 5);
+            txtPrevReg.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtPrevReg.Location = new Point(522, 74);
             txtPrevReg.Name = "txtPrevReg";
             txtPrevReg.PlaceholderText = "Prvious Registraion Number";
-            txtPrevReg.Size = new Size(219, 30);
+            txtPrevReg.Size = new Size(171, 23);
             txtPrevReg.TabIndex = 44;
             // 
             // pnPerMain
@@ -518,19 +512,18 @@
             pnPerMain.Controls.Add(lblFatherName);
             pnPerMain.Controls.Add(lblWatsap);
             pnPerMain.Controls.Add(lblFathOcc);
-            pnPerMain.Location = new Point(37, 290);
-            pnPerMain.Margin = new Padding(4, 5, 4, 5);
+            pnPerMain.Location = new Point(29, 189);
             pnPerMain.Name = "pnPerMain";
-            pnPerMain.Size = new Size(1512, 391);
+            pnPerMain.Size = new Size(1176, 255);
             pnPerMain.TabIndex = 42;
             // 
             // txtStdContact
             // 
-            txtStdContact.Location = new Point(1185, 230);
-            txtStdContact.Margin = new Padding(4, 5, 4, 5);
+            txtStdContact.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            txtStdContact.Location = new Point(922, 150);
             txtStdContact.Name = "txtStdContact";
             txtStdContact.PlaceholderText = "Enter Student Contact";
-            txtStdContact.Size = new Size(278, 30);
+            txtStdContact.Size = new Size(217, 23);
             txtStdContact.TabIndex = 49;
             txtStdContact.TextChanged += textBox1_TextChanged_2;
             // 
@@ -538,119 +531,118 @@
             // 
             lblStdContact.AutoSize = true;
             lblStdContact.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblStdContact.Location = new Point(1038, 239);
-            lblStdContact.Margin = new Padding(4, 0, 4, 0);
+            lblStdContact.Location = new Point(807, 156);
             lblStdContact.Name = "lblStdContact";
-            lblStdContact.Size = new Size(138, 23);
+            lblStdContact.Size = new Size(106, 17);
             lblStdContact.TabIndex = 50;
             lblStdContact.Text = "student Contact";
             // 
             // cmbFatherJob
             // 
             cmbFatherJob.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cmbFatherJob.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             cmbFatherJob.FormattingEnabled = true;
             cmbFatherJob.Items.AddRange(new object[] { "Labour", "Doctor", "Teacher", "Army", "Other" });
-            cmbFatherJob.Location = new Point(179, 313);
-            cmbFatherJob.Margin = new Padding(4, 5, 4, 5);
+            cmbFatherJob.Location = new Point(139, 204);
             cmbFatherJob.Name = "cmbFatherJob";
-            cmbFatherJob.Size = new Size(331, 31);
+            cmbFatherJob.Size = new Size(258, 23);
             cmbFatherJob.TabIndex = 48;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(575, 316);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(447, 206);
             label2.Name = "label2";
-            label2.Size = new Size(111, 23);
+            label2.Size = new Size(84, 17);
             label2.TabIndex = 47;
             label2.Text = "Student City";
             label2.Click += label2_Click;
             // 
             // txtCity
             // 
-            txtCity.Location = new Point(721, 314);
+            txtCity.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            txtCity.Location = new Point(561, 205);
+            txtCity.Margin = new Padding(2, 2, 2, 2);
             txtCity.Name = "txtCity";
             txtCity.PlaceholderText = "Residential City";
-            txtCity.Size = new Size(295, 30);
+            txtCity.Size = new Size(230, 23);
             txtCity.TabIndex = 46;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(1039, 322);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(808, 210);
             label1.Name = "label1";
-            label1.Size = new Size(143, 23);
+            label1.Size = new Size(109, 17);
             label1.TabIndex = 45;
             label1.Text = "Student Address";
             // 
             // txtStdAddress
             // 
-            txtStdAddress.Location = new Point(1185, 314);
+            txtStdAddress.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            txtStdAddress.Location = new Point(922, 205);
+            txtStdAddress.Margin = new Padding(2, 2, 2, 2);
             txtStdAddress.Name = "txtStdAddress";
             txtStdAddress.PlaceholderText = "Enter Student Address";
-            txtStdAddress.Size = new Size(278, 30);
+            txtStdAddress.Size = new Size(217, 23);
             txtStdAddress.TabIndex = 29;
             // 
             // lblGend
             // 
             lblGend.AutoSize = true;
             lblGend.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblGend.Location = new Point(575, 141);
-            lblGend.Margin = new Padding(4, 0, 4, 0);
+            lblGend.Location = new Point(447, 92);
             lblGend.Name = "lblGend";
-            lblGend.Size = new Size(68, 23);
+            lblGend.Size = new Size(52, 17);
             lblGend.TabIndex = 44;
             lblGend.Text = "Gender";
             // 
             // cmbGender
             // 
             cmbGender.AutoCompleteMode = AutoCompleteMode.Suggest;
+            cmbGender.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             cmbGender.FormattingEnabled = true;
             cmbGender.Items.AddRange(new object[] { "Female", "Male" });
-            cmbGender.Location = new Point(721, 141);
-            cmbGender.Margin = new Padding(4, 5, 4, 5);
+            cmbGender.Location = new Point(561, 92);
             cmbGender.Name = "cmbGender";
-            cmbGender.Size = new Size(295, 31);
+            cmbGender.Size = new Size(230, 23);
             cmbGender.TabIndex = 43;
             // 
             // txtFatherContact
             // 
-            txtFatherContact.Location = new Point(179, 230);
-            txtFatherContact.Margin = new Padding(4, 5, 4, 5);
+            txtFatherContact.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            txtFatherContact.Location = new Point(139, 150);
             txtFatherContact.Name = "txtFatherContact";
             txtFatherContact.PlaceholderText = "Enter Father Mobile Number";
-            txtFatherContact.Size = new Size(331, 30);
+            txtFatherContact.Size = new Size(258, 23);
             txtFatherContact.TabIndex = 23;
             // 
             // txtWatsApp
             // 
-            txtWatsApp.Location = new Point(721, 230);
-            txtWatsApp.Margin = new Padding(4, 5, 4, 5);
+            txtWatsApp.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            txtWatsApp.Location = new Point(561, 150);
             txtWatsApp.Name = "txtWatsApp";
             txtWatsApp.PlaceholderText = "Enter Watsapp Number";
-            txtWatsApp.Size = new Size(295, 30);
+            txtWatsApp.Size = new Size(230, 23);
             txtWatsApp.TabIndex = 21;
             // 
             // dtpDOB
             // 
-            dtpDOB.Location = new Point(1185, 141);
-            dtpDOB.Margin = new Padding(4, 5, 4, 5);
+            dtpDOB.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            dtpDOB.Location = new Point(922, 92);
             dtpDOB.Name = "dtpDOB";
-            dtpDOB.Size = new Size(278, 30);
+            dtpDOB.Size = new Size(217, 23);
             dtpDOB.TabIndex = 42;
             // 
             // lblFatherMob
             // 
             lblFatherMob.AutoSize = true;
             lblFatherMob.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblFatherMob.Location = new Point(9, 242);
-            lblFatherMob.Margin = new Padding(4, 0, 4, 0);
+            lblFatherMob.Location = new Point(7, 158);
             lblFatherMob.Name = "lblFatherMob";
-            lblFatherMob.Size = new Size(159, 23);
+            lblFatherMob.Size = new Size(124, 17);
             lblFatherMob.TabIndex = 30;
             lblFatherMob.Text = "Father Mobile No :";
             // 
@@ -658,10 +650,9 @@
             // 
             lblStdCNIC.AutoSize = true;
             lblStdCNIC.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblStdCNIC.Location = new Point(19, 141);
-            lblStdCNIC.Margin = new Padding(4, 0, 4, 0);
+            lblStdCNIC.Location = new Point(15, 92);
             lblStdCNIC.Name = "lblStdCNIC";
-            lblStdCNIC.Size = new Size(119, 23);
+            lblStdCNIC.Size = new Size(90, 17);
             lblStdCNIC.TabIndex = 31;
             lblStdCNIC.Text = "Student CNIC";
             // 
@@ -669,10 +660,9 @@
             // 
             lblFathCnic.AutoSize = true;
             lblFathCnic.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblFathCnic.Location = new Point(1038, 35);
-            lblFathCnic.Margin = new Padding(4, 0, 4, 0);
+            lblFathCnic.Location = new Point(807, 23);
             lblFathCnic.Name = "lblFathCnic";
-            lblFathCnic.Size = new Size(105, 23);
+            lblFathCnic.Size = new Size(81, 17);
             lblFathCnic.TabIndex = 40;
             lblFathCnic.Text = "Father CNIC";
             // 
@@ -680,10 +670,9 @@
             // 
             lblStdName.AutoSize = true;
             lblStdName.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblStdName.Location = new Point(19, 46);
-            lblStdName.Margin = new Padding(4, 0, 4, 0);
+            lblStdName.Location = new Point(15, 30);
             lblStdName.Name = "lblStdName";
-            lblStdName.Size = new Size(126, 23);
+            lblStdName.Size = new Size(96, 17);
             lblStdName.TabIndex = 32;
             lblStdName.Text = "Student Name";
             // 
@@ -691,10 +680,9 @@
             // 
             lblDob.AutoSize = true;
             lblDob.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblDob.Location = new Point(1038, 147);
-            lblDob.Margin = new Padding(4, 0, 4, 0);
+            lblDob.Location = new Point(807, 96);
             lblDob.Name = "lblDob";
-            lblDob.Size = new Size(118, 23);
+            lblDob.Size = new Size(90, 17);
             lblDob.TabIndex = 39;
             lblDob.Text = "Date Of Birth";
             // 
@@ -702,10 +690,9 @@
             // 
             lblFatherName.AutoSize = true;
             lblFatherName.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblFatherName.Location = new Point(575, 46);
-            lblFatherName.Margin = new Padding(4, 0, 4, 0);
+            lblFatherName.Location = new Point(447, 30);
             lblFatherName.Name = "lblFatherName";
-            lblFatherName.Size = new Size(112, 23);
+            lblFatherName.Size = new Size(87, 17);
             lblFatherName.TabIndex = 33;
             lblFatherName.Text = "Father Name";
             // 
@@ -713,10 +700,9 @@
             // 
             lblWatsap.AutoSize = true;
             lblWatsap.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblWatsap.Location = new Point(575, 230);
-            lblWatsap.Margin = new Padding(4, 0, 4, 0);
+            lblWatsap.Location = new Point(447, 150);
             lblWatsap.Name = "lblWatsap";
-            lblWatsap.Size = new Size(154, 23);
+            lblWatsap.Size = new Size(117, 17);
             lblWatsap.TabIndex = 34;
             lblWatsap.Text = "WatsApp Number";
             // 
@@ -724,10 +710,9 @@
             // 
             lblFathOcc.AutoSize = true;
             lblFathOcc.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblFathOcc.Location = new Point(4, 316);
-            lblFathOcc.Margin = new Padding(4, 0, 4, 0);
+            lblFathOcc.Location = new Point(3, 206);
             lblFathOcc.Name = "lblFathOcc";
-            lblFathOcc.Size = new Size(156, 23);
+            lblFathOcc.Size = new Size(121, 17);
             lblFathOcc.TabIndex = 35;
             lblFathOcc.Text = "Father Occupation";
             // 
@@ -736,9 +721,8 @@
             pnPerson.BackColor = Color.IndianRed;
             pnPerson.Controls.Add(label19);
             pnPerson.Location = new Point(0, 0);
-            pnPerson.Margin = new Padding(4, 5, 4, 5);
             pnPerson.Name = "pnPerson";
-            pnPerson.Size = new Size(1579, 70);
+            pnPerson.Size = new Size(1228, 46);
             pnPerson.TabIndex = 41;
             pnPerson.Paint += pnPerson_Paint;
             // 
@@ -746,44 +730,28 @@
             // 
             label19.AutoSize = true;
             label19.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label19.Location = new Point(570, 14);
-            label19.Margin = new Padding(4, 0, 4, 0);
+            label19.Location = new Point(443, 9);
             label19.Name = "label19";
-            label19.Size = new Size(439, 32);
+            label19.Size = new Size(342, 25);
             label19.TabIndex = 1;
             label19.Text = "Personal And Education  Information";
             // 
             // pnHide
             // 
-            pnHide.Location = new Point(4, 888);
-            pnHide.Margin = new Padding(4, 5, 4, 5);
+            pnHide.Location = new Point(3, 579);
             pnHide.Name = "pnHide";
-            pnHide.Size = new Size(32, 153);
+            pnHide.Size = new Size(25, 100);
             pnHide.TabIndex = 27;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.Black;
-            label6.Location = new Point(521, 9);
-            label6.Margin = new Padding(4, 0, 4, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(537, 54);
-            label6.TabIndex = 29;
-            label6.Text = "Executive Science Academy";
-            label6.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // RegisTracionForm
             // 
-            AutoScaleDimensions = new SizeF(9F, 23F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(1635, 1055);
+            ClientSize = new Size(1272, 808);
             Controls.Add(pnHide);
             Controls.Add(pnMainPn);
             Controls.Add(pnLogo);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "RegisTracionForm";
             Text = "RegisTracionForm";
             Load += RegisTracionForm_Load;

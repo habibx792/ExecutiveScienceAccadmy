@@ -93,5 +93,10 @@ namespace ExecutiveSceinceAccadmy.AttendanceMangment
                 teachAttendRep.ShowDialog();
             }
         }
+
+        private void btnSujectWise_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

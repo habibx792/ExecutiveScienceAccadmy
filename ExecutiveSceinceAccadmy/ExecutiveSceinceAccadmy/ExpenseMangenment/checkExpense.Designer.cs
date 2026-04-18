@@ -107,12 +107,12 @@
             // 
             // cmbMonth
             // 
-            cmbMonth.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            cmbMonth.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cmbMonth.FormattingEnabled = true;
             cmbMonth.Location = new Point(237, 106);
             cmbMonth.Margin = new Padding(2);
             cmbMonth.Name = "cmbMonth";
-            cmbMonth.Size = new Size(281, 29);
+            cmbMonth.Size = new Size(281, 25);
             cmbMonth.TabIndex = 7;
             // 
             // pnLogo

@@ -39,7 +39,7 @@
             // 
             // btnSearch
             // 
-            btnSearch.BackColor = Color.Black;
+            btnSearch.BackColor = SystemColors.Highlight;
             btnSearch.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSearch.ForeColor = Color.White;
             btnSearch.Location = new Point(681, 8);
@@ -116,7 +116,7 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.Navy;
+            button1.BackColor = SystemColors.Highlight;
             button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
             button1.Location = new Point(782, 452);
@@ -134,7 +134,7 @@
             panel2.Controls.Add(cmbClass);
             panel2.Controls.Add(btnSearch);
             panel2.Location = new Point(-1, 88);
-            panel2.Margin = new Padding(2, 2, 2, 2);
+            panel2.Margin = new Padding(2);
             panel2.Name = "panel2";
             panel2.Size = new Size(939, 51);
             panel2.TabIndex = 4;
@@ -145,7 +145,7 @@
             cmbAttendanceType.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cmbAttendanceType.FormattingEnabled = true;
             cmbAttendanceType.Location = new Point(335, 14);
-            cmbAttendanceType.Margin = new Padding(2, 2, 2, 2);
+            cmbAttendanceType.Margin = new Padding(2);
             cmbAttendanceType.Name = "cmbAttendanceType";
             cmbAttendanceType.Size = new Size(233, 29);
             cmbAttendanceType.TabIndex = 3;

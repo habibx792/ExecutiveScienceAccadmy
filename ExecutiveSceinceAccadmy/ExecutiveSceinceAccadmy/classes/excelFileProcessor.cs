@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace ExecutiveSceinceAccadmy.classes
 {
-    public abstract  class excelFileProcessor
+    public abstract  class ExcelFileEngine
     {
         public  virtual void generateExcelReport() { }
     }
-    public  class expenseExfileProcessor: excelFileProcessor
+    public  class expenseExfileProcessor: ExcelFileEngine
     {
 
     }
-    public class feeReportExcelFillProcessor:excelFileProcessor
+    public class feeReportExcelFillProcessor: ExcelFileEngine
     {
         public override void generateExcelReport() { }
     }
-    public class salaryExcelFileProcessor:excelFileProcessor
+    public class salaryExcelFileProcessor:ExcelFileEngine
     {
         public override void generateExcelReport() { }
     }

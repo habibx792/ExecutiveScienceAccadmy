@@ -106,16 +106,16 @@
             // 
             // cmbExpense
             // 
-            cmbExpense.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            cmbExpense.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             cmbExpense.FormattingEnabled = true;
             cmbExpense.Location = new Point(205, 123);
             cmbExpense.Name = "cmbExpense";
-            cmbExpense.Size = new Size(272, 29);
+            cmbExpense.Size = new Size(272, 25);
             cmbExpense.TabIndex = 33;
             // 
             // btnExpenseAdd
             // 
-            btnExpenseAdd.BackColor = Color.Indigo;
+            btnExpenseAdd.BackColor = SystemColors.Highlight;
             btnExpenseAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnExpenseAdd.Location = new Point(354, 197);
             btnExpenseAdd.Name = "btnExpenseAdd";
@@ -127,18 +127,18 @@
             // 
             // txtExenseAmount
             // 
-            txtExenseAmount.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            txtExenseAmount.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             txtExenseAmount.Location = new Point(205, 162);
             txtExenseAmount.Name = "txtExenseAmount";
-            txtExenseAmount.Size = new Size(272, 29);
+            txtExenseAmount.Size = new Size(272, 25);
             txtExenseAmount.TabIndex = 31;
             // 
             // dtExpense
             // 
-            dtExpense.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            dtExpense.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
             dtExpense.Location = new Point(205, 72);
             dtExpense.Name = "dtExpense";
-            dtExpense.Size = new Size(272, 29);
+            dtExpense.Size = new Size(272, 25);
             dtExpense.TabIndex = 32;
             // 
             // pnLogo

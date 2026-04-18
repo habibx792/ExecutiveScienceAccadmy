@@ -90,7 +90,7 @@
             panel1.Controls.Add(label2);
             panel1.Controls.Add(cmbMonth);
             panel1.Location = new Point(30, 116);
-            panel1.Margin = new Padding(2, 2, 2, 2);
+            panel1.Margin = new Padding(2);
             panel1.Name = "panel1";
             panel1.Size = new Size(758, 37);
             panel1.TabIndex = 10;
@@ -100,7 +100,7 @@
             button2.BackColor = SystemColors.Highlight;
             button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.Location = new Point(521, 2);
-            button2.Margin = new Padding(2, 2, 2, 2);
+            button2.Margin = new Padding(2);
             button2.Name = "button2";
             button2.Size = new Size(124, 30);
             button2.TabIndex = 11;
@@ -120,12 +120,12 @@
             // 
             // cmbMonth
             // 
-            cmbMonth.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cmbMonth.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cmbMonth.FormattingEnabled = true;
-            cmbMonth.Location = new Point(152, 5);
-            cmbMonth.Margin = new Padding(2, 2, 2, 2);
+            cmbMonth.Location = new Point(161, 4);
+            cmbMonth.Margin = new Padding(2);
             cmbMonth.Name = "cmbMonth";
-            cmbMonth.Size = new Size(319, 29);
+            cmbMonth.Size = new Size(319, 25);
             cmbMonth.TabIndex = 0;
             // 
             // panel2
