@@ -1491,5 +1491,62 @@ namespace ExecutiveSceinceAccadmy.classes
                 return false;
             }
         }
+        //================excel file handling methods =========================
+        // Alternative method using month numbers (more efficient)
+        public static bool LoadExpenseByMonthRangeNumbers(DataGridView dgv, int year, int startMonth, int endMonth)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    // Ensure start month is not greater than end month
+                    if (startMonth > endMonth)
+                    {
+                        int temp = startMonth;
+                        startMonth = endMonth;
+                        endMonth = temp;
+                    }
+
+                    string query = @"
+                SELECT expenseId, expenseType, expenseAmount, expenseDate, expenseMonth, created_at
+                FROM expenseTb
+                WHERE YEAR(expenseDate) = @year
+                AND MONTH(expenseDate) BETWEEN @startMonth AND @endMonth
+                ORDER BY expenseDate";
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@year", year);
+                    cmd.Parameters.AddWithValue("@startMonth", startMonth);
+                    cmd.Parameters.AddWithValue("@endMonth", endMonth);
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+                    dgv.DataSource = dt;
+
+                    if (dt.Rows.Count == 0)
+                    {
+                        MessageBox.Show($"No expenses found for months {startMonth} to {endMonth} in {year}");
+                        return false;
+                    }
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+                return false;
+            }
+        }
+
+
+
+
+
+
+
+
+
     }
-}
+  }

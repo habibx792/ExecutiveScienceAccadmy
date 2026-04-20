@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using ExecutiveScienceAcademy.ExpenseMangenment;
+//using ExecutiveScienceAcademy.ExpenseMangenment
 
 namespace ExecutiveSceinceAccadmy.ReportManagement
 {
@@ -75,7 +75,7 @@ namespace ExecutiveSceinceAccadmy.ReportManagement
         {
             this.Hide();
             // Open the expense report form. The project provides `checkExpense` for expense reports.
-            using (var expenseForm = new ExecutiveSceinceAccadmy.ExpenseMangenment.checkExpense())
+            using (var expenseForm = new ExecutiveSceinceAccadmy.ReportManagement.expenseReport())
             {
                 expenseForm.ShowDialog();
             }
