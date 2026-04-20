@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             pnMain = new Panel();
+            btnSalary = new Button();
+            btnMonth = new Button();
             btnCurrMon = new Button();
             btnAddExp = new Button();
             pnLogo = new Panel();
             label6 = new Label();
-            button1 = new Button();
-            button2 = new Button();
             pnMain.SuspendLayout();
             pnLogo.SuspendLayout();
             SuspendLayout();
@@ -42,8 +42,8 @@
             // pnMain
             // 
             pnMain.BackColor = Color.IndianRed;
-            pnMain.Controls.Add(button2);
-            pnMain.Controls.Add(button1);
+            pnMain.Controls.Add(btnSalary);
+            pnMain.Controls.Add(btnMonth);
             pnMain.Controls.Add(btnCurrMon);
             pnMain.Controls.Add(btnAddExp);
             pnMain.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -51,6 +51,30 @@
             pnMain.Name = "pnMain";
             pnMain.Size = new Size(596, 254);
             pnMain.TabIndex = 28;
+            // 
+            // btnSalary
+            // 
+            btnSalary.BackColor = SystemColors.Highlight;
+            btnSalary.ForeColor = Color.White;
+            btnSalary.Location = new Point(325, 132);
+            btnSalary.Name = "btnSalary";
+            btnSalary.Size = new Size(229, 65);
+            btnSalary.TabIndex = 28;
+            btnSalary.Text = "Teach Salary Reports";
+            btnSalary.UseVisualStyleBackColor = false;
+            btnSalary.Click += btnSalary_Click;
+            // 
+            // btnMonth
+            // 
+            btnMonth.BackColor = SystemColors.Highlight;
+            btnMonth.ForeColor = Color.White;
+            btnMonth.Location = new Point(54, 132);
+            btnMonth.Name = "btnMonth";
+            btnMonth.Size = new Size(229, 65);
+            btnMonth.TabIndex = 27;
+            btnMonth.Text = "Current Month Report";
+            btnMonth.UseVisualStyleBackColor = false;
+            btnMonth.Click += button1_Click;
             // 
             // btnCurrMon
             // 
@@ -97,28 +121,6 @@
             label6.Text = "Executive Science Academy";
             label6.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // button1
-            // 
-            button1.BackColor = SystemColors.Highlight;
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(62, 132);
-            button1.Name = "button1";
-            button1.Size = new Size(221, 65);
-            button1.TabIndex = 27;
-            button1.Text = "Current Month Report";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = SystemColors.Highlight;
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(325, 132);
-            button2.Name = "button2";
-            button2.Size = new Size(229, 65);
-            button2.TabIndex = 28;
-            button2.Text = "Teach Salary Reports";
-            button2.UseVisualStyleBackColor = false;
-            // 
             // ReportForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -147,7 +149,7 @@
         private Panel pnLogo;
         private Button btnCurrMon;
         private Label label6;
-        private Button button2;
-        private Button button1;
+        private Button btnSalary;
+        private Button btnMonth;
     }
 }

@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace ExecutiveSceinceAccadmy.ReportManagement
 {
-    public partial class feeReports : Form
+    public partial class ProfitLostForm : Form
     {
-        public feeReports()
+        public ProfitLostForm()
         {
             InitializeComponent();
             InitializeComponent();
@@ -26,12 +26,7 @@ namespace ExecutiveSceinceAccadmy.ReportManagement
             this.StartPosition = FormStartPosition.CenterScreen;
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void feeReports_Load(object sender, EventArgs e)
+        private void ProfitLostForm_Load(object sender, EventArgs e)
         {
 
         }

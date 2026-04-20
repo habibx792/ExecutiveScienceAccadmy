@@ -26,7 +26,7 @@ namespace ExecutiveSceinceAccadmy.ReportManagement
 
             StyleControls();
             this.StartPosition = FormStartPosition.CenterScreen;
-         
+
 
         }
         private void StyleControls()
@@ -34,8 +34,8 @@ namespace ExecutiveSceinceAccadmy.ReportManagement
             //UI.Instance.setFormSize(this, 680, 486);
 
             UI.Instance.StyleButton(btnAddExp, borderRadius: 20);
-            UI.Instance.StyleButton(btnCurrYearReport, borderRadius: 20);
-            UI.Instance.StyleButton(btnFromDate, borderRadius: 20);
+            UI.Instance.StyleButton(btnMonth, borderRadius: 20);
+            UI.Instance.StyleButton(btnSalary, borderRadius: 20);
             UI.Instance.StyleButton(btnCurrMon, borderRadius: 20);
             //UI.Instance.StylePanel(pnLogo,
             //    backColor: Color.IndianRed,
@@ -78,6 +78,26 @@ namespace ExecutiveSceinceAccadmy.ReportManagement
             using (var expenseForm = new ExecutiveSceinceAccadmy.ReportManagement.expenseReport())
             {
                 expenseForm.ShowDialog();
+            }
+            this.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (ProfitLostForm profitLostForm = new ProfitLostForm())
+            {
+                profitLostForm.ShowDialog();
+            }
+            this.Show();
+        }
+
+        private void btnSalary_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using(TeacherSalary teacherSalaryForm = new TeacherSalary())
+            {
+                teacherSalaryForm.ShowDialog();
             }
             this.Show();
         }
