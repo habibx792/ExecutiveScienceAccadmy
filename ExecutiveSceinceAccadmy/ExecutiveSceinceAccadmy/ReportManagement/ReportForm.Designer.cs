@@ -31,10 +31,10 @@
             pnMain = new Panel();
             btnCurrMon = new Button();
             btnAddExp = new Button();
-            btnCurrYearReport = new Button();
-            btnFromDate = new Button();
             pnLogo = new Panel();
             label6 = new Label();
+            button1 = new Button();
+            button2 = new Button();
             pnMain.SuspendLayout();
             pnLogo.SuspendLayout();
             SuspendLayout();
@@ -42,14 +42,14 @@
             // pnMain
             // 
             pnMain.BackColor = Color.IndianRed;
+            pnMain.Controls.Add(button2);
+            pnMain.Controls.Add(button1);
             pnMain.Controls.Add(btnCurrMon);
             pnMain.Controls.Add(btnAddExp);
-            pnMain.Controls.Add(btnCurrYearReport);
-            pnMain.Controls.Add(btnFromDate);
             pnMain.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             pnMain.Location = new Point(26, 102);
             pnMain.Name = "pnMain";
-            pnMain.Size = new Size(596, 316);
+            pnMain.Size = new Size(596, 254);
             pnMain.TabIndex = 28;
             // 
             // btnCurrMon
@@ -58,7 +58,7 @@
             btnCurrMon.ForeColor = Color.White;
             btnCurrMon.Location = new Point(325, 25);
             btnCurrMon.Name = "btnCurrMon";
-            btnCurrMon.Size = new Size(221, 68);
+            btnCurrMon.Size = new Size(229, 68);
             btnCurrMon.TabIndex = 26;
             btnCurrMon.Text = "Expense Report";
             btnCurrMon.UseVisualStyleBackColor = false;
@@ -75,28 +75,6 @@
             btnAddExp.Text = "Fee Reports";
             btnAddExp.UseVisualStyleBackColor = false;
             btnAddExp.Click += btnAddExp_Click;
-            // 
-            // btnCurrYearReport
-            // 
-            btnCurrYearReport.BackColor = SystemColors.Highlight;
-            btnCurrYearReport.ForeColor = Color.White;
-            btnCurrYearReport.Location = new Point(54, 107);
-            btnCurrYearReport.Name = "btnCurrYearReport";
-            btnCurrYearReport.Size = new Size(229, 65);
-            btnCurrYearReport.TabIndex = 25;
-            btnCurrYearReport.Text = "Current Year";
-            btnCurrYearReport.UseVisualStyleBackColor = false;
-            // 
-            // btnFromDate
-            // 
-            btnFromDate.BackColor = SystemColors.Highlight;
-            btnFromDate.ForeColor = Color.White;
-            btnFromDate.Location = new Point(325, 107);
-            btnFromDate.Name = "btnFromDate";
-            btnFromDate.Size = new Size(221, 65);
-            btnFromDate.TabIndex = 20;
-            btnFromDate.Text = "From ToDay";
-            btnFromDate.UseVisualStyleBackColor = false;
             // 
             // pnLogo
             // 
@@ -119,12 +97,34 @@
             label6.Text = "Executive Science Academy";
             label6.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // button1
+            // 
+            button1.BackColor = SystemColors.Highlight;
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(62, 132);
+            button1.Name = "button1";
+            button1.Size = new Size(221, 65);
+            button1.TabIndex = 27;
+            button1.Text = "Current Month Report";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            button2.BackColor = SystemColors.Highlight;
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(325, 132);
+            button2.Name = "button2";
+            button2.Size = new Size(229, 65);
+            button2.TabIndex = 28;
+            button2.Text = "Teach Salary Reports";
+            button2.UseVisualStyleBackColor = false;
+            // 
             // ReportForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(664, 447);
+            ClientSize = new Size(647, 370);
             Controls.Add(pnMain);
             Controls.Add(pnLogo);
             Margin = new Padding(2);
@@ -142,12 +142,12 @@
         private Panel pnMain;
         private Button btnAddExp;
         private Button btnRts;
-        private Button btnCurrYearReport;
         private Button btnUpAtt;
-        private Button btnFromDate;
         private Button btnDashBoad;
         private Panel pnLogo;
         private Button btnCurrMon;
         private Label label6;
+        private Button button2;
+        private Button button1;
     }
 }
