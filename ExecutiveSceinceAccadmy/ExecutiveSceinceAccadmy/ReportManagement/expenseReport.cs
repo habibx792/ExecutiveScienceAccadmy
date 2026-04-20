@@ -31,11 +31,12 @@ namespace ExecutiveSceinceAccadmy.ReportManagement
             dataHandler.LoadMonths(cmbStart);
             UI.StyleDataGrid(dtGrid);
             dataHandler.LoadMonths(cmbEnd);
-            List<int> years =    dataHandler.loadPreviouseAndNextFiveYears();
-            for(int i=0; i < years.Count; i++ ) {
+            List<int> years = dataHandler.loadPreviouseAndNextFiveYears();
+            for (int i = 0; i < years.Count; i++)
+            {
                 cmbYear.Items.Add(years[i]);
             }
-            int currMontIndex= dataHandler.getCurrentMonth() - 1;
+            int currMontIndex = dataHandler.getCurrentMonth() - 1;
             cmbEnd.SelectedIndex = currMontIndex;
             cmbStart.SelectedIndex = 0;
             int currYearIndex = dataHandler.getCurrentYear();
@@ -76,7 +77,7 @@ namespace ExecutiveSceinceAccadmy.ReportManagement
                 DB.LoadExpenseDataRange(dtGrid, year, startMonthNumber, endMonthNumber);
 
                 if (dtGrid.Rows.Count > 0)
-                   
+
                     btnGen.Text = "Generate";
             }
             else if (btnGen.Text == "Generate")
@@ -93,6 +94,11 @@ namespace ExecutiveSceinceAccadmy.ReportManagement
             }
         }
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cmbYear_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
