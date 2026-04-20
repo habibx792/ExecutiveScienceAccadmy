@@ -24,10 +24,18 @@ namespace ExecutiveSceinceAccadmy.ReportManagement
               showCustomTitleBar: true,
               title: "Executive Science Academy");
             this.StartPosition = FormStartPosition.CenterScreen;
+            
         }
 
         private void TeacherSalary_Load(object sender, EventArgs e)
         {
+            Label label1 = new Label();
+            label1.Text = "Teacher Salary Report";
+            label1.BackColor = Color.Coral;
+            label1.ForeColor = Color.Coral;
+
+            //CenterToParent of form
+            label1.Location = new Point((this.ClientSize.Width - label1.Width) / 2, (this.ClientSize.Height - label1.Height) / 2);
 
         }
     }

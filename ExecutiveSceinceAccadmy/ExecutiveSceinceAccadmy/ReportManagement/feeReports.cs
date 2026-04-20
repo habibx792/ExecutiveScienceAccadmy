@@ -24,6 +24,9 @@ namespace ExecutiveSceinceAccadmy.ReportManagement
               showCustomTitleBar: true,
               title: "Executive Science Academy");
             this.StartPosition = FormStartPosition.CenterScreen;
+            label1 = new Label();
+            label1.Text = "Fee Reports";
+            label1.Location = new Point(100, -100);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
