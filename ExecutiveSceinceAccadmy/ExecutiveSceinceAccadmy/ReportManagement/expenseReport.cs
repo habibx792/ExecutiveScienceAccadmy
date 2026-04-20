@@ -29,6 +29,7 @@ namespace ExecutiveSceinceAccadmy.ReportManagement
         private void expenseReport_Load(object sender, EventArgs e)
         {
             dataHandler.LoadMonths(cmbStart);
+            UI.StyleDataGrid(dtGrid);
             dataHandler.LoadMonths(cmbEnd);
             List<int> years =    dataHandler.loadPreviouseAndNextFiveYears();
             for(int i=0; i < years.Count; i++ ) {
@@ -50,44 +51,47 @@ namespace ExecutiveSceinceAccadmy.ReportManagement
         {
             if (btnGen.Text == "search")
             {
-                // Get values safely
-                if (cmbStart.SelectedItem == null || cmbYear.SelectedItem == null)
+                if (cmbStart.SelectedItem == null || cmbEnd.SelectedItem == null || cmbYear.SelectedItem == null)
                 {
-                    MessageBox.Show("Please select month and year");
+                    MessageBox.Show("Please select start month, end month, and year",
+                        "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                string selectedMonth = cmbStart.SelectedItem.ToString();
+                string startMonth = cmbStart.SelectedItem.ToString();
+                string endMonth = cmbEnd.SelectedItem.ToString();
                 int year = int.Parse(cmbYear.SelectedItem.ToString());
 
-                // Convert month name → number
-                int monthNumber = DateTime.ParseExact(selectedMonth, "MMMM", null).Month;
+                int startMonthNumber = DateTime.ParseExact(startMonth, "MMMM", null).Month;
+                int endMonthNumber = DateTime.ParseExact(endMonth, "MMMM", null).Month;
 
-                // DEBUG: Show what we're searching for
-                MessageBox.Show($"Searching for:\nMonth: {selectedMonth} → Number: {monthNumber}\nYear: {year}");
+                // Auto-swap if reversed
+                if (startMonthNumber > endMonthNumber)
+                {
+                    (startMonthNumber, endMonthNumber) = (endMonthNumber, startMonthNumber);
+                    (startMonth, endMonth) = (endMonth, startMonth);
+                    MessageBox.Show($"Range adjusted: {startMonth} → {endMonth}");
+                }
 
-                // Load data using the direct method
-                DB.LoadExpenseDataDirect(dtGrid, year, monthNumber, monthNumber);
+                DB.LoadExpenseDataRange(dtGrid, year, startMonthNumber, endMonthNumber);
 
-                // Switch mode
-                btnGen.Text = "Generate";
+                if (dtGrid.Rows.Count > 0)
+                   
+                    btnGen.Text = "Generate";
             }
             else if (btnGen.Text == "Generate")
             {
                 if (dtGrid.Rows.Count == 0)
                 {
-                    MessageBox.Show("No data to export");
+                    MessageBox.Show("No data to export. Please search first.",
+                        "Export Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                // Export Excel
                 ExcelFileEngine.ExportExpenseToExcel(dtGrid);
-
-                // Reset button
                 btnGen.Text = "search";
             }
         }
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 

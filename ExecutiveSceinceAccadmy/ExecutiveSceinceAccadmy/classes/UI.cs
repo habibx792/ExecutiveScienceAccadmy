@@ -51,6 +51,51 @@ namespace ExecutiveScienceAcademy.classes
         // =======================
         // Style Form with Modern Controls
         // =======================
+        public static void StyleDataGrid(DataGridView dgv)
+        {
+            // Auto size
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+
+            // General appearance
+            dgv.BorderStyle = BorderStyle.None;
+            dgv.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgv.EnableHeadersVisualStyles = false;
+            dgv.RowHeadersVisible = false;
+            dgv.BackgroundColor = Color.White;
+            dgv.GridColor = Color.FromArgb(220, 220, 220);
+
+            // Header style
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.RoyalBlue;
+            dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10f, FontStyle.Bold);
+            dgv.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.ColumnHeadersDefaultCellStyle.Padding = new Padding(5);
+            dgv.ColumnHeadersHeight = 40;
+            dgv.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+
+            // Row style
+            dgv.DefaultCellStyle.Font = new Font("Segoe UI", 9.5f);
+            dgv.DefaultCellStyle.ForeColor = Color.FromArgb(50, 50, 50);
+            dgv.DefaultCellStyle.Padding = new Padding(5);
+            dgv.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv.RowTemplate.Height = 35;
+
+            // Alternating row colors
+            dgv.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(240, 245, 255);
+            dgv.RowsDefaultCellStyle.BackColor = Color.White;
+
+            // Selection style
+            dgv.DefaultCellStyle.SelectionBackColor = Color.FromArgb(100, 149, 237);
+            dgv.DefaultCellStyle.SelectionForeColor = Color.White;
+
+            // Misc
+            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv.ReadOnly = true;
+            dgv.AllowUserToAddRows = false;
+            dgv.AllowUserToDeleteRows = false;
+            dgv.ScrollBars = ScrollBars.Both;
+        }
         public void StyleForm(Form form, Color? backgroundColor = null, int borderRadius = 25,
                             bool showCustomTitleBar = true, string title = null)
         {

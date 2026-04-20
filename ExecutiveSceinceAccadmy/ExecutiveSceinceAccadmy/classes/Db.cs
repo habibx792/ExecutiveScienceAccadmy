@@ -1493,20 +1493,12 @@ namespace ExecutiveSceinceAccadmy.classes
         }
         //================excel file handling methods =========================
         // Alternative method using month numbers (more efficient)
-        public static bool LoadExpenseByMonthRangeNumbers(DataGridView dgv, int year, int startMonth, int endMonth)
+        public static void LoadExpenseDataRange(DataGridView dgv, int year, int startMonth, int endMonth)
         {
             try
             {
-                using (SqlConnection con = new SqlConnection(connectionString))
+                using (SqlConnection con = getConnection())
                 {
-                    // Ensure start month is not greater than end month
-                    if (startMonth > endMonth)
-                    {
-                        int temp = startMonth;
-                        startMonth = endMonth;
-                        endMonth = temp;
-                    }
-
                     string query = @"
                 SELECT expenseId, expenseType, expenseAmount, expenseDate, expenseMonth, created_at
                 FROM expenseTb
@@ -1522,24 +1514,20 @@ namespace ExecutiveSceinceAccadmy.classes
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
-
                     dgv.DataSource = dt;
 
                     if (dt.Rows.Count == 0)
-                    {
-                        MessageBox.Show($"No expenses found for months {startMonth} to {endMonth} in {year}");
-                        return false;
-                    }
-                    return true;
+                        MessageBox.Show($"No expenses found for months {startMonth}–{endMonth} in {year}");
+                    else
+                        MessageBox.Show($"Loaded {dt.Rows.Count} records for months {startMonth}–{endMonth} in {year}");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error: {ex.Message}");
-                return false;
+                MessageBox.Show($"Error: {ex.Message}", "Database Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
 
 
 
