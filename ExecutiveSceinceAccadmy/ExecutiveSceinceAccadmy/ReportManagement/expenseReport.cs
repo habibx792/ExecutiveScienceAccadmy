@@ -23,6 +23,7 @@ namespace ExecutiveSceinceAccadmy.ReportManagement
               borderRadius: 25,
               showCustomTitleBar: true,
               title: "Executive Science Academy");
+            this.StartPosition = FormStartPosition.CenterScreen;
 
         }
 
@@ -30,6 +31,7 @@ namespace ExecutiveSceinceAccadmy.ReportManagement
         {
             dataHandler.LoadMonths(cmbStart);
             UI.StyleDataGrid(dtGrid);
+            UI.Instance.StyleButton(btnGen, borderRadius: 20);
             dataHandler.LoadMonths(cmbEnd);
             List<int> years = dataHandler.loadPreviouseAndNextFiveYears();
             for (int i = 0; i < years.Count; i++)
@@ -42,7 +44,6 @@ namespace ExecutiveSceinceAccadmy.ReportManagement
             int currYearIndex = dataHandler.getCurrentYear();
             cmbYear.SelectedIndex = years.IndexOf(currYearIndex);
         }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
