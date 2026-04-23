@@ -308,7 +308,7 @@
             pnMainPn.Controls.Add(btnRegistation);
             pnMainPn.Location = new Point(22, 95);
             pnMainPn.Name = "pnMainPn";
-            pnMainPn.Size = new Size(1228, 743);
+            pnMainPn.Size = new Size(1228, 783);
             pnMainPn.TabIndex = 26;
             pnMainPn.Paint += pnMainPn_Paint;
             // 
@@ -749,7 +749,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(1272, 808);
+            ClientSize = new Size(1272, 890);
             Controls.Add(pnHide);
             Controls.Add(pnMainPn);
             Controls.Add(pnLogo);
