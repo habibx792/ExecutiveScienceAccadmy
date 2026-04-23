@@ -280,9 +280,9 @@
             // 
             pnLogo.BackColor = Color.IndianRed;
             pnLogo.Controls.Add(label6);
-            pnLogo.Location = new Point(21, 0);
+            pnLogo.Location = new Point(21, 2);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(1228, 10);
+            pnLogo.Size = new Size(1228, 56);
             pnLogo.TabIndex = 25;
             pnLogo.Paint += pnLogo_Paint;
             // 
@@ -291,7 +291,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.FromArgb(0, 70, 140);
-            label6.Location = new Point(405, 6);
+            label6.Location = new Point(397, 11);
             label6.Name = "label6";
             label6.Size = new Size(426, 45);
             label6.TabIndex = 29;
@@ -306,7 +306,7 @@
             pnMainPn.Controls.Add(pnPerMain);
             pnMainPn.Controls.Add(pnPerson);
             pnMainPn.Controls.Add(btnRegistation);
-            pnMainPn.Location = new Point(21, 73);
+            pnMainPn.Location = new Point(21, 52);
             pnMainPn.Name = "pnMainPn";
             pnMainPn.Size = new Size(1228, 683);
             pnMainPn.TabIndex = 26;
