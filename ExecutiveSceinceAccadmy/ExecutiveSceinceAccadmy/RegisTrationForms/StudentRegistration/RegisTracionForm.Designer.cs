@@ -100,7 +100,7 @@
             btnRegistation.BackColor = SystemColors.Highlight;
             btnRegistation.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnRegistation.ForeColor = Color.WhiteSmoke;
-            btnRegistation.Location = new Point(1051, 661);
+            btnRegistation.Location = new Point(1051, 600);
             btnRegistation.Name = "btnRegistation";
             btnRegistation.Size = new Size(154, 59);
             btnRegistation.TabIndex = 0;
@@ -123,7 +123,7 @@
             pnPreq.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             pnPreq.Location = new Point(29, 52);
             pnPreq.Name = "pnPreq";
-            pnPreq.Size = new Size(1176, 131);
+            pnPreq.Size = new Size(1176, 123);
             pnPreq.TabIndex = 1;
             pnPreq.Paint += pnPreq_Paint;
             // 
@@ -131,7 +131,7 @@
             // 
             lblRegiDate.AutoSize = true;
             lblRegiDate.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblRegiDate.Location = new Point(793, 81);
+            lblRegiDate.Location = new Point(793, 79);
             lblRegiDate.Name = "lblRegiDate";
             lblRegiDate.Size = new Size(116, 17);
             lblRegiDate.TabIndex = 26;
@@ -140,7 +140,7 @@
             // dtpRegis
             // 
             dtpRegis.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dtpRegis.Location = new Point(915, 75);
+            dtpRegis.Location = new Point(915, 73);
             dtpRegis.Name = "dtpRegis";
             dtpRegis.Size = new Size(224, 23);
             dtpRegis.TabIndex = 25;
@@ -149,7 +149,7 @@
             // 
             lblClass.AutoSize = true;
             lblClass.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblClass.Location = new Point(26, 82);
+            lblClass.Location = new Point(26, 80);
             lblClass.Name = "lblClass";
             lblClass.Size = new Size(39, 17);
             lblClass.TabIndex = 24;
@@ -159,7 +159,7 @@
             // 
             lblDomain.AutoSize = true;
             lblDomain.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblDomain.Location = new Point(447, 81);
+            lblDomain.Location = new Point(447, 79);
             lblDomain.Name = "lblDomain";
             lblDomain.Size = new Size(57, 17);
             lblDomain.TabIndex = 23;
@@ -171,7 +171,7 @@
             cmbDomain.AutoCompleteSource = AutoCompleteSource.HistoryList;
             cmbDomain.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cmbDomain.FormattingEnabled = true;
-            cmbDomain.Location = new Point(561, 81);
+            cmbDomain.Location = new Point(561, 79);
             cmbDomain.Name = "cmbDomain";
             cmbDomain.Size = new Size(230, 23);
             cmbDomain.TabIndex = 1;
@@ -180,7 +180,7 @@
             // 
             rdSuple.AutoSize = true;
             rdSuple.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rdSuple.Location = new Point(793, 32);
+            rdSuple.Location = new Point(793, 30);
             rdSuple.Name = "rdSuple";
             rdSuple.Size = new Size(120, 21);
             rdSuple.TabIndex = 4;
@@ -192,7 +192,7 @@
             // 
             rdPrim.AutoSize = true;
             rdPrim.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rdPrim.Location = new Point(447, 32);
+            rdPrim.Location = new Point(447, 30);
             rdPrim.Name = "rdPrim";
             rdPrim.Size = new Size(127, 21);
             rdPrim.TabIndex = 5;
@@ -205,7 +205,7 @@
             // 
             rdRTS.AutoSize = true;
             rdRTS.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rdRTS.Location = new Point(277, 32);
+            rdRTS.Location = new Point(277, 30);
             rdRTS.Name = "rdRTS";
             rdRTS.Size = new Size(101, 21);
             rdRTS.TabIndex = 6;
@@ -217,7 +217,7 @@
             // 
             rdReg.AutoSize = true;
             rdReg.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rdReg.Location = new Point(16, 32);
+            rdReg.Location = new Point(16, 30);
             rdReg.Name = "rdReg";
             rdReg.Size = new Size(125, 21);
             rdReg.TabIndex = 7;
@@ -232,7 +232,7 @@
             cmbClass.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cmbClass.FormattingEnabled = true;
             cmbClass.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" });
-            cmbClass.Location = new Point(132, 84);
+            cmbClass.Location = new Point(132, 82);
             cmbClass.Name = "cmbClass";
             cmbClass.Size = new Size(265, 23);
             cmbClass.TabIndex = 11;
@@ -329,9 +329,9 @@
             pnAccadminc.Controls.Add(txtObtainedMarks);
             pnAccadminc.Controls.Add(lblTotalMarks);
             pnAccadminc.Controls.Add(txtPrevReg);
-            pnAccadminc.Location = new Point(29, 449);
+            pnAccadminc.Location = new Point(29, 413);
             pnAccadminc.Name = "pnAccadminc";
-            pnAccadminc.Size = new Size(1176, 205);
+            pnAccadminc.Size = new Size(1176, 181);
             pnAccadminc.TabIndex = 53;
             // 
             // cmbBoard
@@ -340,7 +340,7 @@
             cmbBoard.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cmbBoard.FormattingEnabled = true;
             cmbBoard.Items.AddRange(new object[] { "Primary ", "FSD Board", "Lahore Board", "Islamabad Board" });
-            cmbBoard.Location = new Point(522, 158);
+            cmbBoard.Location = new Point(522, 138);
             cmbBoard.Name = "cmbBoard";
             cmbBoard.Size = new Size(171, 23);
             cmbBoard.TabIndex = 57;
@@ -351,7 +351,7 @@
             cmbPrvDeg.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cmbPrvDeg.FormattingEnabled = true;
             cmbPrvDeg.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" });
-            cmbPrvDeg.Location = new Point(139, 74);
+            cmbPrvDeg.Location = new Point(139, 54);
             cmbPrvDeg.Name = "cmbPrvDeg";
             cmbPrvDeg.Size = new Size(187, 23);
             cmbPrvDeg.TabIndex = 56;
@@ -362,7 +362,7 @@
             cmbPassingYear.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cmbPassingYear.FormattingEnabled = true;
             cmbPassingYear.Items.AddRange(new object[] { "" });
-            cmbPassingYear.Location = new Point(135, 152);
+            cmbPassingYear.Location = new Point(135, 132);
             cmbPassingYear.Name = "cmbPassingYear";
             cmbPassingYear.Size = new Size(191, 23);
             cmbPassingYear.TabIndex = 55;
@@ -381,7 +381,7 @@
             // 
             label20.AutoSize = true;
             label20.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label20.Location = new Point(525, 23);
+            label20.Location = new Point(525, 3);
             label20.Name = "label20";
             label20.Size = new Size(96, 25);
             label20.TabIndex = 43;
@@ -391,7 +391,7 @@
             // 
             lblSchool.AutoSize = true;
             lblSchool.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblSchool.Location = new Point(699, 164);
+            lblSchool.Location = new Point(699, 144);
             lblSchool.Name = "lblSchool";
             lblSchool.Size = new Size(64, 17);
             lblSchool.TabIndex = 52;
@@ -409,7 +409,7 @@
             // txtSchool
             // 
             txtSchool.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtSchool.Location = new Point(766, 163);
+            txtSchool.Location = new Point(766, 143);
             txtSchool.Name = "txtSchool";
             txtSchool.PlaceholderText = "Enter Institue Name";
             txtSchool.Size = new Size(393, 23);
@@ -419,7 +419,7 @@
             // 
             lblObtainMark.AutoSize = true;
             lblObtainMark.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblObtainMark.Location = new Point(699, 77);
+            lblObtainMark.Location = new Point(699, 57);
             lblObtainMark.Name = "lblObtainMark";
             lblObtainMark.Size = new Size(45, 17);
             lblObtainMark.TabIndex = 27;
@@ -431,7 +431,7 @@
             lblRollNo.AutoSize = true;
             lblRollNo.BackColor = Color.White;
             lblRollNo.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblRollNo.Location = new Point(362, 80);
+            lblRollNo.Location = new Point(362, 60);
             lblRollNo.Name = "lblRollNo";
             lblRollNo.Size = new Size(137, 17);
             lblRollNo.TabIndex = 28;
@@ -442,7 +442,7 @@
             // 
             lblBoard.AutoSize = true;
             lblBoard.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblBoard.Location = new Point(368, 164);
+            lblBoard.Location = new Point(368, 144);
             lblBoard.Name = "lblBoard";
             lblBoard.Size = new Size(109, 17);
             lblBoard.TabIndex = 49;
@@ -461,7 +461,7 @@
             // txtObtainedMarks
             // 
             txtObtainedMarks.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtObtainedMarks.Location = new Point(766, 70);
+            txtObtainedMarks.Location = new Point(766, 50);
             txtObtainedMarks.Name = "txtObtainedMarks";
             txtObtainedMarks.PlaceholderText = "Enter Obtain Marks";
             txtObtainedMarks.Size = new Size(179, 23);
@@ -480,7 +480,7 @@
             // txtPrevReg
             // 
             txtPrevReg.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtPrevReg.Location = new Point(522, 74);
+            txtPrevReg.Location = new Point(522, 54);
             txtPrevReg.Name = "txtPrevReg";
             txtPrevReg.PlaceholderText = "Prvious Registraion Number";
             txtPrevReg.Size = new Size(171, 23);
@@ -512,9 +512,9 @@
             pnPerMain.Controls.Add(lblFatherName);
             pnPerMain.Controls.Add(lblWatsap);
             pnPerMain.Controls.Add(lblFathOcc);
-            pnPerMain.Location = new Point(29, 189);
+            pnPerMain.Location = new Point(29, 171);
             pnPerMain.Name = "pnPerMain";
-            pnPerMain.Size = new Size(1176, 255);
+            pnPerMain.Size = new Size(1176, 236);
             pnPerMain.TabIndex = 42;
             // 
             // txtStdContact
