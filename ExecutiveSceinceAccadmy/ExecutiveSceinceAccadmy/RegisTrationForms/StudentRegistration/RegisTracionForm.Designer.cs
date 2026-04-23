@@ -280,9 +280,9 @@
             // 
             pnLogo.BackColor = Color.IndianRed;
             pnLogo.Controls.Add(label6);
-            pnLogo.Location = new Point(22, 22);
+            pnLogo.Location = new Point(21, 0);
             pnLogo.Name = "pnLogo";
-            pnLogo.Size = new Size(1228, 79);
+            pnLogo.Size = new Size(1228, 10);
             pnLogo.TabIndex = 25;
             pnLogo.Paint += pnLogo_Paint;
             // 
@@ -306,9 +306,9 @@
             pnMainPn.Controls.Add(pnPerMain);
             pnMainPn.Controls.Add(pnPerson);
             pnMainPn.Controls.Add(btnRegistation);
-            pnMainPn.Location = new Point(22, 95);
+            pnMainPn.Location = new Point(21, 73);
             pnMainPn.Name = "pnMainPn";
-            pnMainPn.Size = new Size(1228, 783);
+            pnMainPn.Size = new Size(1228, 683);
             pnMainPn.TabIndex = 26;
             pnMainPn.Paint += pnMainPn_Paint;
             // 
@@ -739,9 +739,9 @@
             // 
             // pnHide
             // 
-            pnHide.Location = new Point(3, 579);
+            pnHide.Location = new Point(2, 557);
             pnHide.Name = "pnHide";
-            pnHide.Size = new Size(25, 100);
+            pnHide.Size = new Size(25, 10);
             pnHide.TabIndex = 27;
             // 
             // RegisTracionForm
@@ -749,7 +749,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.RoyalBlue;
-            ClientSize = new Size(1272, 890);
+            ClientSize = new Size(1272, 773);
             Controls.Add(pnHide);
             Controls.Add(pnMainPn);
             Controls.Add(pnLogo);
