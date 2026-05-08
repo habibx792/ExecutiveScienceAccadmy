@@ -76,7 +76,13 @@
     <Compile Update="ReportManagement\TeacherSalary.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ResultManagement\Monthly.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ResultManagement\resultFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ResultManagement\RtsResul.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="TeacherMangement\HireingForm.cs">
