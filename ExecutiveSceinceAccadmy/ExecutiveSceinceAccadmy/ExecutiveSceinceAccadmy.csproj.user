@@ -7,6 +7,9 @@
     <Compile Update="AttendanceMangment\classWisAttencedance.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="DashBoadMangement\ChangeStudentInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="ReportManagement\ProfitLostForm.cs">
       <SubType>Form</SubType>
     </Compile>

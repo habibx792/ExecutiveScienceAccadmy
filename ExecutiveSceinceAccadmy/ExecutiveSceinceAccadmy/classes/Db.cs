@@ -13,7 +13,7 @@ namespace ExecutiveSceinceAccadmy.classes
 {
     public static class DB
     {
-        private static string connectionString = "Server=CODEX\\SQLEXPRESS;Database=accadmyDb;Integrated Security=True;TrustServerCertificate=true;";
+        private static string connectionString = "Data Source=DESKTOP-N9RRF7S;Initial Catalog=accadmyDb;Integrated Security=True;TrustServerCertificate=True";
 
         // ========================== 1. CONNECTION & UTILITY ==========================
         public static SqlConnection getConnection()
@@ -216,7 +216,7 @@ namespace ExecutiveSceinceAccadmy.classes
             return domains;
         }
 
-        internal static bool registerAStudent(Student std, string registrationNo)
+        internal static bool registerAStudent(Student std, string registrationNo, string whatsAppNumber = "")
         {
             Address addr = std.Address;
             Father father = std.Father;
@@ -256,6 +256,8 @@ namespace ExecutiveSceinceAccadmy.classes
 
                 try
                 {
+                    EnsureSsTableExists(con, transaction);
+
                     // Convert class number
                     int classNum;
                     if (!int.TryParse(calssId, out classNum))
@@ -365,6 +367,22 @@ namespace ExecutiveSceinceAccadmy.classes
                         cmd.ExecuteNonQuery();
                     }
 
+                    string supportQuery = @"INSERT INTO ssTable
+            (stdRegisNo, student_contact, whatsapp_number, update_date, updated_at)
+            VALUES
+            (@stdRegisNo, @student_contact, @whatsapp_number, GETDATE(), GETDATE())";
+
+                    using (SqlCommand cmd = new SqlCommand(supportQuery, con, transaction))
+                    {
+                        cmd.Parameters.AddWithValue("@stdRegisNo", registrationNo);
+                        cmd.Parameters.AddWithValue("@student_contact",
+                            string.IsNullOrWhiteSpace(stdPhoneNumber) ? (object)DBNull.Value : stdPhoneNumber);
+                        cmd.Parameters.AddWithValue("@whatsapp_number",
+                            string.IsNullOrWhiteSpace(whatsAppNumber) ? (object)DBNull.Value : whatsAppNumber);
+
+                        cmd.ExecuteNonQuery();
+                    }
+
                     transaction.Commit();
 
                     MessageBox.Show("Student registered successfully! Registration No: " + registrationNo);
@@ -377,6 +395,52 @@ namespace ExecutiveSceinceAccadmy.classes
                     return false;
                 }
             }
+        }
+
+        private static void EnsureSsTableExists(SqlConnection con, SqlTransaction transaction)
+        {
+            string query = @"
+                IF OBJECT_ID('dbo.ssTable', 'U') IS NULL
+                BEGIN
+                    CREATE TABLE dbo.ssTable
+                    (
+                        ssId INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+                        stdRegisNo VARCHAR(50) NOT NULL UNIQUE,
+                        student_contact VARCHAR(20) NULL,
+                        whatsapp_number VARCHAR(20) NULL,
+                        updated_by VARCHAR(100) NULL,
+                        change_reason VARCHAR(500) NULL,
+                        update_date DATETIME NULL,
+                        created_at DATETIME NULL CONSTRAINT DF_ssTable_created_at DEFAULT GETDATE(),
+                        updated_at DATETIME NULL,
+                        CONSTRAINT FK_ssTable_StudentTb
+                            FOREIGN KEY (stdRegisNo) REFERENCES dbo.StudentTb(stdRegisNo)
+                    );
+                END;
+
+                IF COL_LENGTH('dbo.ssTable', 'student_contact') IS NULL
+                    ALTER TABLE dbo.ssTable ADD student_contact VARCHAR(20) NULL;
+
+                IF COL_LENGTH('dbo.ssTable', 'whatsapp_number') IS NULL
+                    ALTER TABLE dbo.ssTable ADD whatsapp_number VARCHAR(20) NULL;
+
+                IF COL_LENGTH('dbo.ssTable', 'updated_by') IS NULL
+                    ALTER TABLE dbo.ssTable ADD updated_by VARCHAR(100) NULL;
+
+                IF COL_LENGTH('dbo.ssTable', 'change_reason') IS NULL
+                    ALTER TABLE dbo.ssTable ADD change_reason VARCHAR(500) NULL;
+
+                IF COL_LENGTH('dbo.ssTable', 'update_date') IS NULL
+                    ALTER TABLE dbo.ssTable ADD update_date DATETIME NULL;
+
+                IF COL_LENGTH('dbo.ssTable', 'created_at') IS NULL
+                    ALTER TABLE dbo.ssTable ADD created_at DATETIME NULL CONSTRAINT DF_ssTable_created_at DEFAULT GETDATE();
+
+                IF COL_LENGTH('dbo.ssTable', 'updated_at') IS NULL
+                    ALTER TABLE dbo.ssTable ADD updated_at DATETIME NULL;";
+
+            using SqlCommand cmd = new SqlCommand(query, con, transaction);
+            cmd.ExecuteNonQuery();
         }
 
         public static string MapClassNumberToName(string classNumber)

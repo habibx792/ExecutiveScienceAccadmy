@@ -268,24 +268,24 @@ namespace ExecutiveSceinceAccadmy.RegisTrationForms.StudentRegistration
             if (rdReg.Checked)
             {
                 student.ReqisterType = admissinType["Regular"];
-                successFlag = DB.registerAStudent(student, registrationNumber);
+                successFlag = DB.registerAStudent(student, registrationNumber, studentWatappNumber);
             }
             else if (rdPrim.Checked)
             {
                 student.ReqisterType = admissinType["Primary"];
-                successFlag = DB.registerAStudent(student, registrationNumber);
+                successFlag = DB.registerAStudent(student, registrationNumber, studentWatappNumber);
 
             }
             else if (rdRTS.Checked)
             {
                 student.ReqisterType = admissinType["RTS"];
-                successFlag = DB.registerAStudent(student, registrationNumber);
+                successFlag = DB.registerAStudent(student, registrationNumber, studentWatappNumber);
 
             }
             else if (rdSuple.Checked)
             {
                 student.ReqisterType = admissinType["Suplemenrtary"];
-                successFlag = DB.registerAStudent(student, registrationNumber);
+                successFlag = DB.registerAStudent(student, registrationNumber, studentWatappNumber);
 
 
             }
