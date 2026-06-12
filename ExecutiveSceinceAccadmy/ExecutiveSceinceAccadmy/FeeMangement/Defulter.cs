@@ -1,0 +1,85 @@
+﻿using ExecutiveSceinceAccadmy.classes;
+using ExecutiveScienceAcademy.classes;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace ExecutiveSceinceAccadmy.FeeMangement
+{
+    public partial class Defulter : Form
+    {
+        public Defulter()
+        {
+            InitializeComponent();
+            UI.Instance.StyleForm(this,
+                backgroundColor: Color.RoyalBlue,
+                borderRadius: 25,
+                showCustomTitleBar: true,
+                title: "Executive Science Academy");
+
+            StyleControls();
+            this.StartPosition = FormStartPosition.CenterScreen;
+        }
+        private void StyleControls()
+        {
+
+            //UI.Instance.StylePanel(pnLogo,
+            //    backColor: Color.IndianRed,
+            //    borderColor: Color.FromArgb(0, 120, 215),
+            //    borderRadius: 20,
+            //    borderThickness: 2);
+            
+            UI.Instance.StyleButton(btnDef, borderRadius: 20);
+          
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Defulter_Load(object sender, EventArgs e)
+        {
+            dataHandler.LoadMonths(cmbMonth);
+            dtDefaulter.Rows.Clear();
+            string currenterMonth = dataHandler.getCurrentMonthStr();
+            if (cmbMonth.SelectedItem != null)
+            {
+                currenterMonth = cmbMonth.SelectedItem.ToString();
+            }
+            string currentMonthName = DateTime.Now.ToString("MMMM");
+
+            // Find the index of the month in the ComboBox
+            int monthIndex = cmbMonth.Items.IndexOf(currentMonthName);
+
+            // Set the selected index if found
+            if (monthIndex >= 0)
+            {
+                cmbMonth.SelectedIndex = monthIndex;
+            }
+            //cmbMonth.SelectedIndex = 0;
+            DB.showDefaulterStudent(dtDefaulter, currenterMonth);
+        }
+
+        private void lbLogo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string currMonth = dataHandler.getCurrentMonthStr();
+            if (cmbMonth.SelectedItem != null)
+            {
+                currMonth = cmbMonth.SelectedItem.ToString();
+            }
+            DB.showDefaulterStudent(dtDefaulter,currMonth);
+        }
+    }
+}

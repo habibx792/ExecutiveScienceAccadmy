@@ -1,0 +1,151 @@
+﻿using ExecutiveSceinceAccadmy.classes;
+using ExecutiveScienceAcademy.classes;
+using Microsoft.VisualBasic;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace ExecutiveSceinceAccadmy.ExpenseMangenment
+{
+    public partial class checkExpense : Form
+    {
+        public checkExpense()
+        {
+            InitializeComponent();
+
+            UI.Instance.StyleForm(this,
+                backgroundColor: Color.FromArgb(245, 245, 245),
+                borderRadius: 25,
+                showCustomTitleBar: true,
+                title: "Executive Science Academy");
+            UI.Instance.StyleButton(btnCheck, borderRadius: 20);
+            
+
+            //UI.Instance.StylePanel(pnMain,
+            //    backColor: Color.IndianRed,
+            //    borderColor: Color.FromArgb(0, 120, 215),
+            //    borderRadius: 20,
+            //    borderThickness: 2);
+
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.BackColor = Color.DodgerBlue;
+
+            rdMonth.CheckedChanged += RdMonth_CheckedChanged;
+            rdYear.CheckedChanged += RdYear_CheckedChanged;
+            cmbMonth.SelectedIndexChanged += CmbMonth_SelectedIndexChanged;
+            btnCheck.Click += Button1_Click;
+        }
+
+        private void checkCurrMonth_Load(object sender, EventArgs e)
+        {
+            rdMonth.Checked = true;
+        }
+
+        private void RdMonth_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdMonth.Checked)
+            {
+                lblMonth.Text = "Month";
+                cmbMonth.Items.Clear();
+                dataHandler.LoadMonths(cmbMonth);
+                // Get current month name, e.g., "March"
+                string currentMonthName = DateTime.Now.ToString("MMMM");
+
+                // Find the index of the month in the ComboBox
+                int monthIndex = cmbMonth.Items.IndexOf(currentMonthName);
+
+                // Set the selected index if found
+                if (monthIndex >= 0)
+                {
+                    cmbMonth.SelectedIndex = monthIndex;
+                }
+
+            }
+        }
+
+        private void RdYear_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdYear.Checked)
+            {
+                lblMonth.Text = "Year";
+                cmbMonth.Items.Clear();
+
+                List<int> years = dataHandler.loadPreviouseAndNextFiveYears();
+                foreach (int year in years)
+                {
+                    cmbMonth.Items.Add(year);
+                }
+                int currentYear = DateTime.Now.Year;
+                int yearIndex = cmbMonth.Items.IndexOf(currentYear);
+                if (yearIndex >= 0)
+                {
+                    cmbMonth.SelectedIndex = yearIndex;
+                }
+            }
+        }
+
+        private void CmbMonth_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void StyleDataGrid(DataGridView dgv)
+        {
+            dgv.EnableHeadersVisualStyles = false;
+            dgv.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 120, 215);
+            dgv.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            dgv.RowHeadersVisible = false;
+            dgv.DefaultCellStyle.Font = new Font("Segoe UI", 10);
+            dgv.DefaultCellStyle.BackColor = Color.White;
+            dgv.DefaultCellStyle.ForeColor = Color.Black;
+            dgv.DefaultCellStyle.SelectionBackColor = Color.LightSkyBlue;
+            dgv.DefaultCellStyle.SelectionForeColor = Color.Black;
+            dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv.GridColor = Color.Gray;
+            dgv.BorderStyle = BorderStyle.None;
+            dgv.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            string selectedValue = cmbMonth.SelectedItem?.ToString();
+            if (string.IsNullOrEmpty(selectedValue))
+            {
+                MessageBox.Show("Please select a month/year.");
+                return;
+            }
+            StyleDataGrid(dtExpense);
+            bool loadSuccess = false;
+            if (rdMonth.Checked)
+            {
+                string year = DateTime.Now.Year.ToString();
+                string month = selectedValue;
+                 loadSuccess = DB.expenseOfCurrentYearMonth(year, month, dtExpense);
+            }
+            else if (rdYear.Checked)
+            {
+                string year = selectedValue;
+                 loadSuccess = DB.LoadExpenseOfYear(year, dtExpense);
+            }
+            if(loadSuccess)
+            {
+                //create excel file 
+            }
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
